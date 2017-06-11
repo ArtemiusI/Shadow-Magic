@@ -1,0 +1,417 @@
+// WISDOM-based duration modifier
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,1,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",1)
+	ApplySpellRES("c0wis01",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",1)
+	!CheckStat(Myself,1,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,2,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",2)
+	ApplySpellRES("c0wis02",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",2)
+	!CheckStat(Myself,2,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,3,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",3)
+	ApplySpellRES("c0wis03",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",3)
+	!CheckStat(Myself,3,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,4,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",4)
+	ApplySpellRES("c0wis04",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",4)
+	!CheckStat(Myself,4,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,5,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",5)
+	ApplySpellRES("c0wis05",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",5)
+	!CheckStat(Myself,5,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,6,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",6)
+	ApplySpellRES("c0wis06",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",6)
+	!CheckStat(Myself,6,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,7,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",7)
+	ApplySpellRES("c0wis07",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",7)
+	!CheckStat(Myself,7,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,8,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",8)
+	ApplySpellRES("c0wis08",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",8)
+	!CheckStat(Myself,8,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStatGT(Myself,8,WIS)
+	CheckStatLT(Myself,17,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",9)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",9)
+	!CheckStat(Myself,9,WIS)
+	!CheckStat(Myself,10,WIS)
+	!CheckStat(Myself,11,WIS)
+	!CheckStat(Myself,12,WIS)
+	!CheckStat(Myself,13,WIS)
+	!CheckStat(Myself,14,WIS)
+	!CheckStat(Myself,15,WIS)
+	!CheckStat(Myself,16,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,17,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",17)
+	ApplySpellRES("c0wis17",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",17)
+	!CheckStat(Myself,17,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,18,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",18)
+	ApplySpellRES("c0wis18",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",18)
+	!CheckStat(Myself,18,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,19,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",19)
+	ApplySpellRES("c0wis19",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",19)
+	!CheckStat(Myself,19,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,20,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",20)
+	ApplySpellRES("c0wis20",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",20)
+	!CheckStat(Myself,20,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,21,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",21)
+	ApplySpellRES("c0wis21",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",21)
+	!CheckStat(Myself,21,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,22,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",22)
+	ApplySpellRES("c0wis22",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",22)
+	!CheckStat(Myself,22,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,23,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",23)
+	ApplySpellRES("c0wis23",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",23)
+	!CheckStat(Myself,23,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,24,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",24)
+	ApplySpellRES("c0wis24",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",24)
+	!CheckStat(Myself,24,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",0)
+	CheckStat(Myself,25,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",25)
+	ApplySpellRES("c0wis25",Myself)
+	Continue()
+END
+
+IF
+	Kit(Myself,C0SADEPT)
+	Global("C0SAWISDOM","LOCALS",25)
+	!CheckStat(Myself,25,WIS)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAWISDOM","LOCALS",0)
+	ApplySpellRES("c0wis00",Myself)
+	Continue()
+END
+
+// Nightsinger's Tithe
+
+IF
+  Kit(Myself,C0SADEPT)
+  GlobalGT("C0SA903","LOCALS",49)
+  Global("C0NightsingerTithe","LOCALS",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0NightsingerTithe","LOCALS",1)
+	ApplySpellRES("C0SA903B",Myself)
+	Continue()
+END

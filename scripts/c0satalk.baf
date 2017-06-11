@@ -1,0 +1,59 @@
+// Kit change
+
+IF
+  Kit(Lastsummonerof(Myself),C0SADEP2)
+THEN
+  RESPONSE #100
+	ActionOverride(Lastsummonerof(Myself),AddKit(C0SADEPT))
+	DestroySelf()
+END
+
+IF
+	InMyArea("c0satalk")
+THEN
+  RESPONSE #100
+	DestroySelf()
+END
+
+IF
+  Kit(Lastsummonerof(Myself),C0SADEPT)
+  Detect(Lastsummonerof(Myself))
+  Global("C0SADialog","Global",0)
+  !Global("C0SABOOK","GLOBAL",1)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SADialog","Global",1)
+	SetGlobal("Start","LOCALS",1)
+END
+
+IF
+  Global("C0SADialog","Global",1)
+  Global("Start","LOCALS",1)
+THEN
+  RESPONSE #100
+    ActionOverride(LastSummonerOf(Myself),StartDialogOverride("c0satalk",Myself))
+END
+
+IF
+  Global("C0SADialog","Global",1)
+  !Global("Start","LOCALS",1)
+THEN
+  RESPONSE #100
+    DestroySelf()
+END
+
+IF
+  Global("C0SADialog","Global",2)
+THEN
+  RESPONSE #100
+  SetGlobal("C0SADialog","GLOBAL",0)
+	DestroySelf()
+END
+
+IF
+	Kit(Lastsummonerof(Myself),C0SADEPT)
+	Global("C0SABOOK","GLOBAL",1)
+THEN
+  RESPONSE #100
+  DestroySelf()
+ END
