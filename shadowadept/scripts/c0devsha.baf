@@ -1,0 +1,40 @@
+IF
+  HPPercentLT(Myself,50)
+  Global("MoreShadows","LOCALS",0)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("ICMAGICH",Myself)
+    CreateCreatureObject("c0shadfi",Myself,0,0,0)
+    CreateCreatureObject("c0shadfi",Myself,0,0,0)
+    SetGlobal("MoreShadows","LOCALS",1)
+    Continue()
+END
+
+IF
+  HPPercentLT(Myself,30)
+  Global("CuredSelf","LOCALS",0)
+THEN
+  RESPONSE #100
+    ForceSpell(Myself,CLERIC_CURE_CRITICAL_WOUNDS)
+    SetGlobal("CuredSelf","LOCALS",1)
+    Continue()
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HPPercentGT(Myself,49)
+THEN
+  RESPONSE #100
+    AttackReevaluate(Nearestenemyof(Myself),30)
+    Continue()
+END
+
+IF
+  !See([GOODCUTOFF])
+  Allegiance(Myself,ENEMY)
+  Range(Player1,40)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
