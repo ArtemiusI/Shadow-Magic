@@ -13,6 +13,10 @@ COPY ~shadowadept/animations~ ~override~
 COPY ~shadowadept/spells~ ~override~
 COPY ~shadowadept/creatures~ ~override~
 
+//AUDIO
+
+LAF HANDLE_AUDIO END
+
 INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
 ADD_KIT ~C0SADEPT~
 
@@ -72,7 +76,7 @@ The Shadow Weave is a mysterious and dark entity, far more alien and harder to c
 
 DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light. <PRO_HESHE> permanently gains infravision and immunity to blindness.
 
- - Gains one bonus spell cast per level.
+ - May cast one additional spell per level.
  - +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  - 4th level: May use the Shield of Shadows ability once per day.
  
@@ -96,9 +100,15 @@ Disadvantages:
 Prime Requisites For Dual-Classing: Intelligence, Charisma~
 
 LAF fl#add_kit_ee
+  INT_VAR
+	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+	
+When the voices became too much to resist, in the dead of night, you snuck into the depths of Candlekeepwhere unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the dark source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
   STR_VAR
     kit_name = C0SADEPT
 	hpclass = ~HPDD~
+	clascolr = ~27 136 119 21 187~
+	clsrcreq = ~1 1 1 1 1 1 1~
 END
 
 INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
@@ -160,7 +170,7 @@ The Shadow Weave is a mysterious and dark entity, far more alien and harder to c
 
 DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light. <PRO_HESHE> permanently gains infravision and immunity to blindness.
 
- - Gains one bonus spell cast per level.
+ - May cast one additional spell per level.
  - +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  - 4th level: May use the Shield of Shadows ability once per day.
  
@@ -184,9 +194,15 @@ Disadvantages:
 Prime Requisites For Dual-Classing: Intelligence, Charisma~
 
 LAF fl#add_kit_ee
+  INT_VAR
+	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+	
+When the voices became too much to resist, in the dead of night, you snuck into the depths of Candlekeepwhere unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the dark source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
   STR_VAR
     kit_name = C0SADEP2
 	hpclass = ~HPDD~
+	clascolr = ~27 136 119 21 187~
+	clsrcreq = ~1 1 1 1 1 1 1~
 END
 
 // PROJECTILES
@@ -621,7 +637,7 @@ SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
 (Necromancy - Shadow Weave)
 
 Level: 2
-Range: Visual range of the caster
+Range: Touch
 Duration: 1 turn
 Casting Time: 1
 Area of Effect: 1 creature
@@ -1048,7 +1064,7 @@ SAY UNIDENTIFIED_DESC ~Drain Vitality
 (Necromancy - Shadow Weave)
 
 Level: 4
-Range: Visual range of the caster
+Range: Touch
 Duration: 1 turn
 Casting Time: 1
 Area of Effect: 1 creature
@@ -1713,7 +1729,7 @@ SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
 (Necromancy - Shadow Weave)
 
 Level: 7
-Range: Visual range of the caster
+Range: Touch
 Duration: 1 turn
 Casting Time: 1
 Area of Effect: 1 creature
@@ -1867,7 +1883,7 @@ Casting Time: 1 round
 Area of Effect: Special
 Saving Throw: None
 
-This spell conjures a one-way portal linked to the Plane of Shadow at the caster's targeted location for 8 rounds. For each round that the portal is active, a creature of the Plane of Shadow has a chance of emerging. These creatures are allied with the caster. There is a 60% chance of spawning a Shadow Fiend, a 15% chance of spawning a Wraith, a 5% chance of spawning a Devil Shade and a 2% chance of spawning a Nightwalker each turn. The Shadow Gate may be targeted and destroyed by enemies, though it is immune to elemental damage as well as weapons of +1 enchantment and below.
+This spell conjures a one-way portal linked to the Plane of Shadow at the caster's targeted location for 8 rounds. For each round that the portal is active, a creature of the Plane of Shadow has a chance of emerging. These creatures are allied with the caster. There is a 40% chance of spawning a Shadow Fiend, a 40% chance of spawning a Wraith, a 10% chance of spawning a Devil Shade and a 5% chance of spawning a Nightwalker each turn. The Shadow Gate may be targeted and destroyed by enemies, though it is immune to elemental damage as well as weapons of +1 enchantment and below.
 
 Creatures summoned by this spell remain for 1 turn.~
 
