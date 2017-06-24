@@ -2658,3 +2658,196 @@ STATISTICS:
 
 Weight: 2~
 SAY 0xD6 ~Shadow Adepts~
+
+// SHADOW MONK - requires Shadow Magic component
+
+BEGIN ~Shadow Magic: Shadow Monk monk kit for BG:EE~
+REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+
+COPY ~shadowadept/shadowmonk/luc0sm.2da~ ~override~
+
+INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+ADD_KIT ~C0SMONK~
+
+ // appended to CLASWEAP.2da
+ ~C0SMONK		1           1           1           1           1           1           1           1~
+
+ // appended column-wise to WEAPPROF.2da
+ ~C0SMONK		0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    
+ // appended to ABCLASRQ.2da
+ ~C0SMONK				0      14	5	0	9	0~
+
+ // appended to ABCLSMOD.2da
+ ~C0SMONK				-2	1	-4	0	0	0~
+
+ // appended to ABDCDSRQ.2da
+ ~C0SMONK                		0       0       0       0       0       0~
+
+ // appended to ABDCSCRQ.2da
+ ~C0SMONK                 	0       0       0       0       0		0~
+
+ // appended to ALIGNMNT.2da
+ ~C0SMONK                  	0       0       0       0       1	1       0       1       1~
+
+ // appended to DUALCLAS.2da
+ ~C0SMONK                  	0       0       0       0       0       0~
+
+ // path to your CLAB-style 2da file 
+ ~shadowadept/shadowmonk/C0SMONK.2da~
+
+ // PC races and classes allowed to use this kit, from KITTABLE.2da
+ ~K_MN_H~
+
+ // usability flags, added to the end of the KITLIST.2da entry
+ ~0x00004000     20~
+
+ // HLA table to use; see LUABBR.2da
+ ~C0SM~
+
+ // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+ ~* * HELM19 BAG23 RING06 RING29 CLCK02 BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN4,2 POTN14,5 * * *~
+
+ // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
+  SAY ~shadow monk~
+  SAY ~Shadow Monk~
+  SAY ~SHADOW MONK: Little is known about the secretive order of shadow monks, other than the fact that they draw upon the power of the Shadow Plane to wield dark ki. They are masterful assassins, manipulating powerful illusions to their advantage and skilled at striking from the shadows, but their ritualistic training has taken a toll on their physical stamina.
+
+Advantages:
+- +1 bonus to Dexterity.
+- Gains the Darkvision innate ability.
+
+DARKVISION: The shadow monk is gifted with the ability to see in the dark even better than in light. <PRO_HESHE> permanently gains infravision and immunity to blindness.
+
+- Gains the Life-Drain innate ability.
+
+LIFE-DRAIN: Shadow monks channel the power of the Shadow Plane into their fists, gaining bonus effects based off of their level.
+
+1st - 9th level: Drains 1 hit point on hit.
+10th - 19th level: Drains 2 hit points and lowers target's strength by 1 for 2 rounds (save vs. death to avoid strength drain)
+20th level onwards: Drains 3 hit points, lowers target's strength by 1 and 20% chance to drain one level permanently on hit
+
+- Has a backstab multiplier of x2. Increases to x3 at 11th level and x4 at 21st level.
+
+- 3rd level: May use the Shadow Pool ability.
+
+SHADOW POOL: Shadow monks wield the power of the Shadow Plane and can manipulate it in order to cast a limited amount of Shadow Magic. The shadow monk must first spend one round drawing energy from the Shadow Weave then cast the spell. The shadow monk's concentration may be disrupted during the channeling or the casting time.
+
+Level 1 (3rd, 6th, 9th, 12th levels): Shadow Missile, Blinding Darkness, Shadow Veil, Decoy
+Level 2 (7th, 10th, 13th, 16th levels): Dark Mirage, Black Mist, Ghostly Visage, Shadow Walk
+Level 3 (11th, 17th, 23rd levels): Shadowblast, Lifedrinker Touch, Shadow Comets, Impose
+Level 4 (15th, 21st, 27th levels): Fireshield (Shadow), Shadeskin, Summon Shadow, Shar's Blessing
+
+- 5th level: May cast Shadowstep once per day. Gains an additional use every 5 levels thereafter.
+
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow monk cannot attack or use spells while in the Shadow Plane.
+
+- 12th level: May cast Shadow Door once per day. Gains additional uses at 16th and 20th level.
+- 15th level: May use the Deathstrike ability once per day.
+
+DEATHSTRIKE: The shadow monk teleports to a chosen target and turns invisible for one round. <PRO_HISHER> next attack within one round drains six levels from the target. If the attack is a backstab, the target must make a save vs. death at -3 or die instantly, fully restoring the shadow monk's hit points in the process.
+
+Disadvantages:
+- Hit Die: d6
+- -2 penalty to Strength.
+- -4 penalty to Constitution.
+- Alignment restricted to non-lawful and non-good.
+- Uses the shadowdancer's high level abilities table instead of the fighter's, with the exclusion of Use Any Item.
+- May not use the Lay On Hands ability.
+- May not use the Stunning Blow ability.
+- May not use the Quivering Palm ability.~
+
+LAF fl#add_kit_ee
+  STR_VAR
+    kit_name = C0SMONK
+	hpclass = ~HPROG~
+	clascolr = ~27 136 119 21 187~
+END
+
+COPY ~shadowadept/shadowmonk/C0SMNKAB.spl~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMDRN.eff~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMDRN2.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 1
+ parameter1 = RESOLVE_STR_REF (~One Level Drained~)
+  END
+
+COPY ~shadowadept/shadowmonk/C0MNKHLA.bam~ ~override~
+COPY ~shadowadept/shadowmonk/C0MNKHLA.spl~ ~override~
+SAY NAME1 ~One With Shadows~
+SAY NAME2 ~One With Shadows~
+SAY UNIDENTIFIED_DESC ~One With Shadows
+The shadow monk's training has allowed <PRO_HIMHER> to become a being of both the Prime Material Plane and the Shadow Plane, giving <PRO_HIMHER> 20% resistance to physical damage, +2 bonus to all saves, -2 bonus to armor class and immunity to Imprisonment and Time Stop.~
+
+COPY ~shadowadept/shadowmonk/C0SMONK1.2da~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMONK1.bam~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMONK1.spl~ ~override~
+SAY NAME1 ~Shadow Pool I~
+SAY NAME2 ~Shadow Pool I~
+SAY UNIDENTIFIED_DESC ~Shadow Pool I
+
+The shadow monk channels the power of the Shadow Weave to cast one of the following 1st level Shadow Weave spells: Shadow Missile, Blinding Darkness, Shadow Veil, Decoy.~
+
+COPY ~shadowadept/shadowmonk/C0SMONK2.2da~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMONK2.bam~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMONK2.spl~ ~override~
+SAY NAME1 ~Shadow Pool II~
+SAY NAME2 ~Shadow Pool II~
+SAY UNIDENTIFIED_DESC ~Shadow Pool II
+
+The shadow monk channels the power of the Shadow Weave to cast one of the following 2nd level Shadow Weave spells: Dark Mirage, Black Mist, Ghostly Visage, Shadow Walk.~
+
+COPY ~shadowadept/shadowmonk/C0SMONK3.2da~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMONK3.bam~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMONK3.spl~ ~override~
+SAY NAME1 ~Shadow Pool III~
+SAY NAME2 ~Shadow Pool III~
+SAY UNIDENTIFIED_DESC ~Shadow Pool III
+
+The shadow monk channels the power of the Shadow Weave to cast one of the following 3rd level Shadow Weave spells: Shadowblast, Lifedrinker Touch, Shadow Comets, Impose.~
+
+COPY ~shadowadept/shadowmonk/C0SMONK4.2da~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMONK4.bam~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMONK4.spl~ ~override~
+SAY NAME1 ~Shadow Pool IV~
+SAY NAME2 ~Shadow Pool IV~
+SAY UNIDENTIFIED_DESC ~Shadow Pool IV
+
+The shadow monk channels the power of the Shadow Weave to cast one of the following 4th level Shadow Weave spells: Fireshield (Shadow), Shadeskin, Summon Shadow, Shar's Blessing.~
+
+COPY ~shadowadept/shadowmonk/C0SMONK5.spl~ ~override~
+SAY NAME1 ~Shadow Door~
+SAY NAME2 ~Shadow Door~
+SAY UNIDENTIFIED_DESC ~Shadow Door
+Shadow Door
+(Illusion/Phantasm)
+
+Level: 5
+Range: 0
+Duration: 9 rounds + 1 round/level after 9th
+Casting Time: 2
+Area of Effect: The caster
+Saving Throw: None
+
+By means of this spell, the shadow monk creates the illusion of a door. The illusion also permits the shadow monk to appear to step through this "door" and disappear. In reality, <PRO_HESHE> has darted aside and can flee, totally invisible (as per the Improved Invisibility spell), for the spell's duration. A True Seeing spell, a Gem of Seeing, or similar magical means can reveal the shadow monk.~
+
+COPY ~shadowadept/shadowmonk/C0SMONK6.bam~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMSP6A.eff~ ~override~
+COPY ~shadowadept/shadowmonk/C0SMSP6A.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 1
+ parameter1 = RESOLVE_STR_REF (~Six Levels Drained~)
+  END
+COPY ~shadowadept/shadowmonk/C0SMONK6.spl~ ~override~
+SAY NAME1 ~Deathstrike~
+SAY NAME2 ~Deathstrike~
+SAY UNIDENTIFIED_DESC ~Deathstrike
+The shadow monk teleports to a chosen target and turns invisible for one round. <PRO_HISHER> next attack within one round is a guaranteed critical hit and drains six levels from the target.~
