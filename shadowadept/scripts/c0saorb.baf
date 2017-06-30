@@ -1,0 +1,16 @@
+// Kit change
+
+IF
+  Class(Lastsummonerof(Myself),MAGE_ALL)
+  Detect(Lastsummonerof(Myself))
+THEN
+  RESPONSE #100
+	StartDialogueNoSet(Lastsummonerof(Myself))
+END
+
+IF
+  !Class(Lastsummonerof(Myself),MAGE_ALL)
+THEN
+  RESPONSE #100
+	DestroySelf()
+END

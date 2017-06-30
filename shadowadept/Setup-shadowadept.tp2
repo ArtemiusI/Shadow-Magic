@@ -13,6 +13,30 @@ COPY ~shadowadept/animations~ ~override~
 COPY ~shadowadept/spells~ ~override~
 COPY ~shadowadept/creatures~ ~override~
 
+// 2da
+
+APPEND ~splprot.2da~ ~C0SAWIS%TAB%39%TAB%-1%TAB%1~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SAWIS~ BEGIN
+	    SET C0SAWIS = %row%
+	  END
+	END
+
+APPEND ~splprot.2da~ ~C0SA611%TAB%0x111%TAB%0x00000001%TAB%8~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SA611~ BEGIN
+	    SET C0SA611 = %row%
+	  END
+	END
+
 //AUDIO
 
 LAF HANDLE_AUDIO END
@@ -42,7 +66,7 @@ ADD_KIT ~C0SADEPT~
  ~C0SADEPT                  	0       1       1       0       1	1       0       1       1~
 
  // appended to DUALCLAS.2da
- ~C0SADEPT                  	0       0       0       0       0       0~
+ ~C0SADEPT                  	1       1       0       1       0       0~
 
  // path to your CLAB-style 2da file 
  ~shadowadept/2da/C0SADEPT.2da~
@@ -102,8 +126,8 @@ Prime Requisites For Dual-Classing: Intelligence, Charisma~
 LAF fl#add_kit_ee
   INT_VAR
 	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-	
-When the voices became too much to resist, in the dead of night, you snuck into the depths of Candlekeepwhere unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the dark source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+
+When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
   STR_VAR
     kit_name = C0SADEPT
 	hpclass = ~HPDD~
@@ -196,8 +220,8 @@ Prime Requisites For Dual-Classing: Intelligence, Charisma~
 LAF fl#add_kit_ee
   INT_VAR
 	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-	
-When the voices became too much to resist, in the dead of night, you snuck into the depths of Candlekeepwhere unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the dark source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+
+When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
   STR_VAR
     kit_name = C0SADEP2
 	hpclass = ~HPDD~
@@ -231,11 +255,184 @@ ADD_PROJECTILE ~shadowadept/spells/c0proj20.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj21.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj22.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj23.PRO~
+ADD_PROJECTILE ~shadowadept/spells/c0proj24.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0nightk.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0sasper.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0chlgt.PRO~
 
 // spells
+
+COPY ~shadowadept/spells/c0sawis1.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter2 = 131
+	  parameter2 = %C0SAWIS%
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis3.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 45
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis4.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 40
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis5.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 35
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis6.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 30
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis7.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 25
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis8.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 20
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis9.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 15
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis0.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 10
+END
+
+COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawisa.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 50
+	  parameter1 = 5
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisb.spl~
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisc.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 110
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisd.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 115
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawise.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 120
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisf.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 125
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisg.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 130
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawish.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 135
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisi.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 140
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisj.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 145
+END
+
+COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisk.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_parameter1 = 105
+      parameter1 = 150
+END
 
 COPY ~shadowadept/spells/c0sacon1.spl~ ~override~
   LPF ALTER_EFFECT
@@ -531,10 +728,33 @@ Level: 1
 Range: Visual range of caster
 Duration: 1 round
 Casting Time: 1
-Area of Effect:
+Area of Effect: 1 creature
 Saving Throw: None
 
 This spell briefly conjures a projection of the caster next to <PRO_HIMHER> while turning invisible for 1 round.~
+
+COPY ~shadowadept/spells/C0SA111.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 1
+ parameter1 = RESOLVE_STR_REF (~Mesmerized~)
+  END
+SAY NAME1 ~Mesmerize~
+SAY NAME2 ~Mesmerize~
+SAY UNIDENTIFIED_DESC ~Mesmerize
+(Enchantment/Charm - Shadow Weave)
+
+Level: 1
+Range: Visual range of caster
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a save vs. spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely upon being attacked.~
 
 COPY ~shadowadept/spells/C0SA201.spl~ ~override~
 SAY NAME1 ~Dark Mirage~
@@ -929,6 +1149,21 @@ SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
+COPY ~shadowadept/spells/C0SA310.spl~ ~override~
+SAY NAME1 ~Cursed Earth~
+SAY NAME2 ~Cursed Earth~
+SAY UNIDENTIFIED_DESC ~Cursed Earth
+(Conjuration - Shadow Weave)
+
+Level: 3
+Range: 90 ft.
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: 30' radius
+Saving Throw: Neg.
+
+This spell creates a zone of blackened, poisonous earth within a 30' radius. All creatures standing within the area must make a saving throw vs. death at -4 each round or suffer 1d4 poison damage and have their movement rate halved.~
+
 COPY ~shadowadept/spells/C0SA401.spl~ ~override~
 SAY NAME1 ~Fire Shield (Shadow)~
 SAY NAME2 ~Fire Shield (Shadow)~
@@ -959,7 +1194,7 @@ Saving Throw: None
 
 When a shadow adept casts this powerful spell upon <PRO_HIMHER>self, an outer skin of shadowstuff will move up from the ground, completely covering <PRO_HIMHER>. This skin is of course magical and will hinder the shadow adept in no way. The effect of this is to protect the shadow adept from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting. For example, a 10th-level shadow adept would receive 5 skins while a 20th-level shadow adept would receive 10. For each skin the shadow adept possesses, the spell will stop one attack, so a 10th-level shadow adept would be protected from the first 5 attacks made against <PRO_HIMHER>, but the 6th would affect <PRO_HIMHER> normally. The skins will remain on the shadow adept until <PRO_HESHE> is affected by a Dispel Magic, all of the skins are removed due to physical attacks, or the spell duration expires. It is important to note that this will not protect the shadow adept from any magical attacks, such as Fireball.
 
-The innermost layer of shadeskin always protects the shadow adept for the full duration of the spell, providing 10% resistance to damage.~
+Additionally, so long as at least one layer of Shadeskin is active, the shadow adept gains 25% resistance to acid, cold, fire, electrical and magic damage.~
 
 COPY ~shadowadept/spells/C0SA403.spl~ ~override~
 SAY NAME1 ~Sigil of Misfortune~
@@ -1439,6 +1674,67 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
 END
 
+COPY ~shadowadept/spells/C0SA510.spl~ ~override~
+SAY NAME1 ~Void Blast~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj24%~
+END
+SAY NAME2 ~Void Blast~
+SAY UNIDENTIFIED_DESC ~Void Blast
+(Evocation - Shadow Weave)
+
+Level: 5
+Range: 90 ft.
+Duration: 1d4 rounds
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a save vs. spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds.~
+
+COPY ~shadowadept/spells/C0SA510A.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 1
+ parameter1 = RESOLVE_STR_REF (~Banished~)
+  END
+
+COPY ~shadowadept/spells/C0SA510B.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 1
+ parameter1 = RESOLVE_STR_REF (~Banished~)
+  END
+
+COPY ~shadowadept/spells/C0SA510C.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 1
+ parameter1 = RESOLVE_STR_REF (~Banished~)
+  END
+
+COPY ~shadowadept/spells/C0SA510D.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 1
+ parameter1 = RESOLVE_STR_REF (~Banished~)
+  END
+
 COPY ~shadowadept/spells/C0SA601.spl~ ~override~
 SAY NAME1 ~Shar's Shield~
 SAY NAME2 ~Shar's Shield~
@@ -1612,6 +1908,31 @@ Area of Effect: 20 ft. radius
 Saving Throw: None
 
 Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius will suffer 6d6 magical damage and suffers a -3 penalty to Armor Class, THAC0 and damage for 1 turn. There is no saving throw against this spell's effects.~
+
+COPY ~shadowadept/spells/C0SA611.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 326
+      match_parameter2 = 0
+	  parameter2 = %C0SA611%
+END
+SAY NAME1 ~Devour Dream~
+SAY NAME2 ~Devour Dream~
+SAY UNIDENTIFIED_DESC ~Devour Dream
+(Enchantment/Charm - Shadow Weave)
+
+Level: 6
+Range: Touch
+Duration: Instant
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell may only affect sleeping targets. Upon casting the spell, the shadow adept consumes the target's thoughts, dealing 10d8 magical damage and restoring up to five of the caster's previously cast spells. The target is always woken up after the effects of this spell.
+
+Devour Dream cannot recall 6th-level or greater spells.~
 
 COPY ~shadowadept/spells/C0SA701.spl~ ~override~
 SAY NAME1 ~Black Ray of Destruction~
@@ -2425,7 +2746,7 @@ COPY ~shadowadept/spells/c0sahla5.spl~ ~override~
 SAY NAME1 ~Disciple of Darkness~
 SAY NAME2 ~Disciple of Darkness~
 SAY UNIDENTIFIED_DESC ~Disciple of Darkness
-The shadow adept has fully mastered control over the Shadow Weave, gaining +2 to Wisdom and Charisma, 10% magic resistance and increased casting speed.
+The shadow adept has fully mastered control over the Shadow Weave, gaining +2 to Wisdom and Charisma and 20% magic resistance.
 
 Only one of either Disciple of Darkness or Wrath of Darkness may be chosen.~
 
@@ -2433,7 +2754,7 @@ COPY ~shadowadept/spells/c0sahla6.spl~ ~override~
 SAY NAME1 ~Wrath of Darkness~
 SAY NAME2 ~Wrath of Darkness~
 SAY UNIDENTIFIED_DESC ~Wrath of Darkness 
-The shadow adept infuses the power of the Shadow Weave into his very body, gaining +2 to Strength and Dexterity, regeneration of one hit point per 3 seconds and one bonus attack per round.
+The shadow adept infuses the power of the Shadow Weave into <PRO_HISHER> very body, gaining +2 to Strength and Constitution, regeneration of one hit point per 3 seconds and one bonus attack per round.
 
 Only one of either Disciple of Darkness or Wrath of Darkness may be chosen.~
 
@@ -2490,11 +2811,17 @@ WRITE_ASCII 0x2cc ~c0satalk~ #8  // dialogue
 WRITE_ASCII 0x248 ~c0satalk~ #8  // override
 WRITE_ASCII 0x280 ~c0satalk~ #32 // death variable
 
+COPY ~shadowadept/spells/c0satalk.cre~ ~override/c0saorb.cre~
+WRITE_ASCII 0x2cc ~c0saorb~ #8  // dialogue
+WRITE_ASCII 0x248 ~c0saorb~ #8  // override
+WRITE_ASCII 0x280 ~c0saorb~ #32 // death variable
+
 ////////////////////////////////////////
 /////////DIALOGUE///////////////////////
 ////////////////////////////////////////
 
 COMPILE ~shadowadept/dialogue/c0satalk.d~
+COMPILE ~shadowadept/dialogue/c0saorb.d~
 
 ////////////////////////////////////////
 /////////SCRIPTS////////////////////////
@@ -2502,7 +2829,20 @@ COMPILE ~shadowadept/dialogue/c0satalk.d~
 
 EXTEND_TOP ~dplayer3.bcs~ ~shadowadept/scripts/dplayer3.baf~
 
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur.bcs~ ~shadowadept/scripts/c0sa402.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
+EXTEND_TOP ~bdbaldur.bcs~ ~shadowadept/scripts/c0sa402.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0sa402.baf~
+END
+
 COMPILE ~shadowadept/scripts/c0satalk.baf~
+COMPILE ~shadowadept/scripts/c0saorb.baf~
 COMPILE ~shadowadept/scripts/c0devsha.baf~
 COMPILE ~shadowadept/scripts/c0sa711.baf~
 COMPILE ~shadowadept/scripts/c0sa908.baf~
@@ -2659,6 +2999,14 @@ STATISTICS:
 Weight: 2~
 SAY 0xD6 ~Shadow Adepts~
 
+COPY ~shadowadept/Items/c0saorb.bam~ ~override~
+COPY ~shadowadept/Items/c0saorbc.bam~ ~override~
+COPY ~shadowadept/Items/c0saorb.itm~ ~override~
+SAY NAME1 ~Black Orb~
+SAY NAME2 ~Shadow Orb~
+SAY DESC ~This smoky glass sphere emanates an aura of power unlike any magic you're familiar with. A strange energy struggles to break free of it.~
+SAY 0xD6 ~Non-good Generalist Mages~
+
 // SHADOW MONK - requires Shadow Magic component
 
 BEGIN ~Shadow Magic: Shadow Monk monk kit for BG:EE~
@@ -2745,7 +3093,7 @@ SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are f
 - 12th level: May cast Shadow Door once per day. Gains additional uses at 16th and 20th level.
 - 15th level: May use the Deathstrike ability once per day.
 
-DEATHSTRIKE: The shadow monk teleports to a chosen target and turns invisible for one round. <PRO_HISHER> next attack within one round drains six levels from the target. If the attack is a backstab, the target must make a save vs. death at -3 or die instantly, fully restoring the shadow monk's hit points in the process.
+DEATHSTRIKE: The shadow monk teleports to a chosen target and turns invisible for one round. <PRO_HISHER> next attack within one round is a guaranteed critical hit and drains six levels from the target.
 
 Disadvantages:
 - Hit Die: d6

@@ -1,0 +1,59 @@
+IF
+	Kit(Player1,C0SADEPT)
+	!CheckStatGT(Player1,0,STONESKINS)
+	CheckSpellState(Player1,STONESKIN)
+THEN
+  RESPONSE #100
+	ApplySpellRES("C0SA402a",Player1)
+	Continue()
+END
+
+IF
+	Kit(Player2,C0SADEPT)
+	!CheckStatGT(Player2,0,STONESKINS)
+	CheckSpellState(Player2,STONESKIN)
+THEN
+  RESPONSE #100
+	ApplySpellRES("C0SA402a",Player2)
+	Continue()
+END
+
+IF
+	Kit(Player3,C0SADEPT)
+	!CheckStatGT(Player3,0,STONESKINS)
+	CheckSpellState(Player3,STONESKIN)
+THEN
+  RESPONSE #100
+	ApplySpellRES("C0SA402a",Player3)
+	Continue()
+END
+
+IF
+	Kit(Player4,C0SADEPT)
+	!CheckStatGT(Player4,0,STONESKINS)
+	CheckSpellState(Player4,STONESKIN)
+THEN
+  RESPONSE #100
+	ApplySpellRES("C0SA402a",Player4)
+	Continue()
+END
+
+IF
+	Kit(Player5,C0SADEPT)
+	!CheckStatGT(Player5,0,STONESKINS)
+	CheckSpellState(Player5,STONESKIN)
+THEN
+  RESPONSE #100
+	ApplySpellRES("C0SA402a",Player5)
+	Continue()
+END
+
+IF
+	Kit(Player6,C0SADEPT)
+	!CheckStatGT(Player6,0,STONESKINS)
+	CheckSpellState(Player6,STONESKIN)
+THEN
+  RESPONSE #100
+	ApplySpellRES("C0SA402a",Player6)
+	Continue()
+END
