@@ -3404,7 +3404,9 @@ COPY ~shadowadept/itempack/c0sasta1.itm~ ~override~
 END
 SAY NAME1 ~Quarterstaff~
 SAY NAME2 ~Staff of Starless Nights~
-SAY DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands. Powerful enchantments have improved this staff's accuracy and damage, but they bear no signature.
+SAY DESC ~This powerful wizard's staff was created by Acthelion, a archmage and favored priest of Shar. It was said to have always been in his hand during his lifetime, and its separation from him is taken to be a likely sign of his death, though some claim that he ascended to some other plane and left behind all his possessions, including this one. Others believe he may still be seeking it...
+
+When the night holds dominance over the Prime Material Plane, the black gem on the tip of the staff seems to glow, and its power is greater.
 
 STATISTICS:
 
@@ -3449,7 +3451,7 @@ COPY ~shadowadept/itempack/c0sadag1.itm~ ~override~
 END
 SAY NAME1 ~Dagger~
 SAY NAME2 ~Night Cutter +1~
-SAY DESC ~
+SAY DESC ~This wicked knife seems to suck in light around it rather than reflecting it. Only a wielder familiar with Shadow Magic may draw upon its powers.
 
 STATISTICS:
 
@@ -3496,7 +3498,7 @@ Fighter / Shadow Adept / Thief~)
 END
 SAY NAME1 ~Long Sword~
 SAY NAME2 ~Edge of Eclipse +4~
-SAY DESC ~
+SAY DESC ~This blade is made out of some unusual black metal which, instead of bearing a reflective sheen, is dotted with sparkles of light that resemble stars in the night sky. When a wielder of Shadow Magic draws the blade, they feel empowered, gaining a strange desire to drain the life out of their opponents. The edge of the blade is sharp and cuts through steel as if it were paper.
 
 STATISTICS:
 
