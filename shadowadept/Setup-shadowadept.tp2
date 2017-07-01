@@ -240,6 +240,7 @@ ADD_PROJECTILE ~shadowadept/spells/c0proj05.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj06.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj07.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj08.PRO~
+ADD_PROJECTILE ~shadowadept/spells/c0pro08a.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj09.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj10.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj11.PRO~
@@ -258,7 +259,12 @@ ADD_PROJECTILE ~shadowadept/spells/c0proj23.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj24.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0nightk.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0sasper.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0chlgt.PRO~
+
+COPY ~shadowadept/spells/c0proj08.pro~ ~override~
+SAY 0x21A ~c0pro08a~
+
+COPY ~shadowadept/spells/c0proj10.pro~ ~override~
+SAY 0x21A ~c0pro10a~
 
 // spells
 
@@ -2841,6 +2847,11 @@ ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0sa402.baf~
 END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~bdcutgl2.bcs~ THEN BEGIN
+COMPILE ~shadowadept/dialogue/soddial.d~
+COMPILE ~shadowadept/scripts/c0cutgl2.baf~
+END
+
 COMPILE ~shadowadept/scripts/c0satalk.baf~
 COMPILE ~shadowadept/scripts/c0saorb.baf~
 COMPILE ~shadowadept/scripts/c0devsha.baf~
@@ -2988,6 +2999,16 @@ SAY 0xD6 ~Shadow Adepts~
 
 COPY ~shadowadept/Items/c0sabook.bam~ ~override~
 COPY ~shadowadept/Items/c0sabook.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
 SAY NAME1 ~Book~
 SAY NAME2 ~Shadow Tome of Shar~
 SAY DESC ~This black leather-bound tome is filled with magical runes and incantations that seem to shift and change slightly as you blink.
@@ -2997,7 +3018,6 @@ STATISTICS:
 - Learns all Shadow Weave spells on use.
 
 Weight: 2~
-SAY 0xD6 ~Shadow Adepts~
 
 COPY ~shadowadept/Items/c0saorb.bam~ ~override~
 COPY ~shadowadept/Items/c0saorbc.bam~ ~override~
@@ -3199,3 +3219,330 @@ SAY NAME1 ~Deathstrike~
 SAY NAME2 ~Deathstrike~
 SAY UNIDENTIFIED_DESC ~Deathstrike
 The shadow monk teleports to a chosen target and turns invisible for one round. <PRO_HISHER> next attack within one round is a guaranteed critical hit and drains six levels from the target.~
+
+// SHADOW MAGIC ITEM PACK - requires Shadow Magic component
+
+BEGIN ~Shadow Magic: Item Pack~
+REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+
+COPY ~shadowadept/itempack/bams~ ~override~
+
+// Ring of Black Light
+
+COPY ~shadowadept/itempack/c0sarng1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Ring~
+SAY NAME2 ~Ring of Black Light~
+SAY DESC ~This black glass ring feels heavy and unnatural in your hands. When worn by those profiicent in shadow magic, it bolsters their ability to resist the life-draining nature of the Shadow Weave.
+
+STATISTICS:
+- Constitution: +1
+- Save vs. Death: +4
+
+Weight: 0~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~davaeo.cre~ THEN BEGIN
+COPY_EXISTING ~davaeo.cre~ ~override~
+ADD_CRE_ITEM ~c0sarng1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ar0602.bcs~ THEN BEGIN
+EXTEND_TOP ~ar0602.bcs~ ~shadowadept/scripts/ar0602.baf~
+END
+
+// Dark Dreamer +2
+
+APPEND ~splprot.2da~ ~C0SAS2H1%TAB%0x111%TAB%0x00000001%TAB%8~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SAS2H1~ BEGIN
+	    SET C0SAS2H1 = %row%
+	  END
+	END
+
+COPY ~shadowadept/itempack/c0sas2h1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sas2h1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
+Fighter / Shadow Adept / Thief~)
+END
+LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 326
+      match_parameter2 = 0
+	  parameter2 = %C0SAS2H1%
+END
+SAY NAME1 ~Two-handed Sword~
+SAY NAME2 ~Dark Dreamer +2~
+SAY DESC ~This dark steel two-handed sword appears to be nothing more than a well-balanced weapon in the hands of a regular warrior, but when wielded by a user of Shadow Magic it seems to come to life. Its blade has the ability to compel anyone cut to fall into a magically induced sleep, then hungrily devours the victim's dreams to restore the wielder's memory. The holy symbol in the sword's pommel suggests that it once belonged to followers of Shar, goddess of night and loss.
+
+STATISTICS:
+
+Combat Effects:
+- 20% chance that hit target must save vs. spells at +3 or be put to sleep for 2 rounds
+- Dream Eater: Attacks against sleeping targets deal 1d10 magic damage and restore one of the wielder's lost spells of up to 4th level
+
+Equipped Effects:
+- Saves vs. Enchantment: +3
+- Hit Points: -10
+
+THAC0: +2
+Damage: 1d10+2, +1 magic damage
+Damage type: slashing
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdziatar.cre~ THEN BEGIN
+COPY_EXISTING ~bdziatar.cre~ ~override~
+REMOVE_CRE_ITEM ~sw2h02~
+ADD_CRE_ITEM ~c0sas2h1~ #0 #0 #0 ~NONE~ ~weapon1~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bodfgt03.cre~ THEN BEGIN
+COPY_EXISTING ~bodfgt03.cre~ ~override~
+REMOVE_CRE_ITEM ~sw2h11~
+ADD_CRE_ITEM ~c0sas2h1~ #0 #0 #0 ~NONE~ ~weapon1~
+END
+
+COPY ~shadowadept/itempack/c0saamu1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Amulet~
+SAY NAME2 ~Shadow Phylactery~
+SAY DESC ~The purple stone in this amulet draws upon and contains a limited amount of energy from the Shadow Weave. When a user of Shadow Magic summons the power of the Shadow Weave, the amulet is used as a medium for channelling the energy required, allowing the shadow adept to cast lower level spells without risking their own life force. However, a constant amount of vitality is required to sustain the amulet's power as long as it is worn.
+
+STATISTICS:
+
+Equipped Effects:
+- Hit Points: -15
+- Can memorize one extra wizard spell of 1st to 4th level
+- Protects the wearer from Constitution loss by using 1st to 4th level Shadow Weave spells
+
+Weight: 1~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~shadel.cre~ THEN BEGIN
+COPY_EXISTING ~shadel.cre~ ~override~
+ADD_CRE_ITEM ~c0saamu1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+COPY ~shadowadept/itempack/c0sarob1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Mage Robes~
+SAY NAME2 ~Shrouded Robes~
+SAY DESC ~These black robes are made of some sort of unusually light material bear enchantments that empower the magic used by shadow adepts.
+
+STATISTICS:
+
+Equipped Effects:
+- All cold and magic damage inflicted by the wearer is increased by 15%
+- Spell Duration: +10%
+- Hit Points: -10
+- Cold Resistance: +50%
+- Fire Resistance: -25%
+
+Weight: 1~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~lavok2.cre~ THEN BEGIN
+COPY_EXISTING ~lavok2.cre~ ~override~
+ADD_CRE_ITEM ~c0sarob1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+COPY ~shadowadept/itempack/c0sasta1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sasta1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Staff of Starless Nights~
+SAY DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands. Powerful enchantments have improved this staff's accuracy and damage, but they bear no signature.
+
+STATISTICS:
+
+Charge abilities:
+- Shadow Shield once per day
+- Fireshield (Shadow) once per day
+- Negative Energy Burst once per day (centered on self)
+
+Combat abilities:
+- 50% chance to cast Drain Vitality on successful hit
+
+Equipped abilities:
+- Casting Level: +2 (+4 during nighttime)
+- Magic Resistance: +10% (20% during nighttime)
+- Magic Damage Resistance: +20% (40% during nighttime)
+
+THAC0: +5 bonus, strikes as a +5 weapon
+Damage: 1D6 + 1, +1d6+3 magic damage
+Damage type: crushing
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: 2-handed
+Requires: 5 Strength
+
+Weight: 4~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ribald3.sto~ THEN BEGIN
+COPY_EXISTING ~ribald3.sto~ ~override~
+ADD_STORE_ITEM ~c0sasta1~ #0 #0 #0 ~IDENTIFIED~ #6
+END
+
+COPY ~shadowadept/itempack/c0sadag1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Dagger~
+SAY NAME2 ~Night Cutter +1~
+SAY DESC ~
+
+STATISTICS:
+
+Combat abilities:
+- On a successful backstab, casts Blinding Darkness on target 
+
+Equipped abilities:
+- Can memorize two extra spells of 1st level
+- Hit Points: -5
+
+THAC0: +1
+Damage: 1d4+1 (piercing)
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~nimbul.cre~ THEN BEGIN
+COPY_EXISTING ~nimbul.cre~ ~override~
+ADD_CRE_ITEM ~c0sadag1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~maevar.cre~ THEN BEGIN
+COPY_EXISTING ~maevar.cre~ ~override~
+ADD_CRE_ITEM ~c0sadag1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+COPY ~shadowadept/itempack/c0sas1h1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sas1h1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
+Shadow Adept / Thief
+Fighter / Shadow Adept / Thief~)
+END
+SAY NAME1 ~Long Sword~
+SAY NAME2 ~Edge of Eclipse +4~
+SAY DESC ~
+
+STATISTICS:
+
+Combat abilities:
+- On a critical hit, drains ten hit points and one point of Strength (1 turn) from the target and transfers them to the wielder.
+- Reduces target's armor class by one point for 2 rounds on successful hit
+
+Equipped abilities:
+- Strength: +1
+- Critical Hit Chance: +10% (this weapon only)
+- Hit Points: -10
+
+THAC0: +4
+Damage: 1d8+4 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~uddrow23.sto~ THEN BEGIN
+COPY_EXISTING ~uddrow23.sto~ ~override~
+ADD_STORE_ITEM ~c0sas1h1~ #0 #0 #0 ~IDENTIFIED~ #6
+END
+
+COPY ~shadowadept/itempack/c0sapot1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sapot1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Potion~
+SAY NAME2 ~Shar's Infusion~
+SAY DESC ~This black-colored liquid gives off a shadowy smoke when the bottle is unstoppered.
+
+STATISTICS:
+
+Special: Protects from Constitution loss by casting Shadow Weave spells
+Duration: 1 turn
+
+Weight: 1~

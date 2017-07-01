@@ -1,0 +1,14 @@
+IF
+	OR(6)
+	Kit(Player1,C0SADEPT)
+	Kit(Player2,C0SADEPT)
+	Kit(Player3,C0SADEPT)
+	Kit(Player4,C0SADEPT)
+	Kit(Player5,C0SADEPT)
+	Kit(Player6,C0SADEPT)
+	Global("C0SARingSpawn","AR0602",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SARingSpawn","AR0602",1)
+	ActionOverride("Picture 1",CreateItem("c0sarng1",0,0,0))
+END
