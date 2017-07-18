@@ -1,0 +1,10 @@
+IF
+	Kit(Player1,C0SADEPT)
+	ClassLevelGT(Player1,WIZARD,5)
+	Global("C0SASummonFamiliar","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
+	ActionOverride(Player1,AddSpecialAbility("c0safam1"))
+	Continue()
+END

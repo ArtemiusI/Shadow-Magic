@@ -1,0 +1,26 @@
+IF
+	Global("C0SAFamiliarDead","GLOBAL",1)
+	GlobalTimerExpired("C0SAFamiliarDeadTimer","GLOBAL")
+THEN
+	RESPONSE #100
+	SetGlobal("C0SAFamiliarDead","GLOBAL",0)
+	MoveGlobalObject("c0safam",Player1)
+	ActionOverride("c0safam",ChangeEnemyAlly(Myself,FAMILIAR))
+	ActionOverride("c0safam",CreateVisualEffectObject("c0cloud1",Myself))
+	ActionOverride("c0safam",SetGlobal("Revival","LOCALS",1))
+	ActionOverride("c0safam",ApplySpell(Myself,HEAL_NO_VISUAL))
+	ActionOverride("c0safam",ClearAllActions())
+END
+
+IF
+	Global("C0SACallFamiliar","GLOBAL",1)
+THEN
+	RESPONSE #100
+	MoveGlobalObject("c0safam",Player1)
+	ActionOverride("c0safam",ChangeEnemyAlly(Myself,FAMILIAR))
+	ActionOverride("c0safam",CreateVisualEffectObject("c0black2",Myself))
+	ActionOverride("c0safam",CreateVisualEffectObject("c0cloud1",Myself))
+	ActionOverride("c0safam",SetGlobal("Summoned","LOCALS",1))
+	ActionOverride("c0safam",ClearAllActions())
+	SetGlobal("C0SACallFamiliar","GLOBAL",0)
+END

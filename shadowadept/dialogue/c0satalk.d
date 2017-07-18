@@ -150,7 +150,7 @@ OR(11)
 !HaveKnownSpellRES("c0sa211")~ + ~2nd level~ + level2
 + ~ClassLevelGT(Myself,WIZARD,4)
 GlobalGT("C0SALv3","GLOBAL",0)
-OR(10)
+OR(11)
 !HaveKnownSpellRES("c0sa301")
 !HaveKnownSpellRES("c0sa302")
 !HaveKnownSpellRES("c0sa303")
@@ -160,7 +160,8 @@ OR(10)
 !HaveKnownSpellRES("c0sa307")
 !HaveKnownSpellRES("c0sa308")
 !HaveKnownSpellRES("c0sa309")
-!HaveKnownSpellRES("c0sa310")~ + ~3rd level~ + level3
+!HaveKnownSpellRES("c0sa310")
+!HaveKnownSpellRES("c0sa311")~ + ~3rd level~ + level3
 + ~ClassLevelGT(Myself,WIZARD,6)
 GlobalGT("C0SALv4","GLOBAL",0)
 OR(11)
@@ -178,7 +179,7 @@ OR(11)
 !HaveKnownSpellRES("c0sa411")~ + ~4th level~ + level4
 + ~ClassLevelGT(Myself,WIZARD,8)
 GlobalGT("C0SALv5","GLOBAL",0)
-OR(10) 
+OR(11) 
 !HaveKnownSpellRES("c0sa501")
 !HaveKnownSpellRES("c0sa502")
 !HaveKnownSpellRES("c0sa503")
@@ -188,7 +189,8 @@ OR(10)
 !HaveKnownSpellRES("c0sa507")
 !HaveKnownSpellRES("c0sa508")
 !HaveKnownSpellRES("c0sa509")
-!HaveKnownSpellRES("c0sa510")~ + ~5th level~ + level5
+!HaveKnownSpellRES("c0sa510")
+!HaveKnownSpellRES("c0sa511")~ + ~5th level~ + level5
 + ~ClassLevelGT(Myself,WIZARD,11)
 GlobalGT("C0SALv6","GLOBAL",0)
 OR(12) 
@@ -290,6 +292,7 @@ SAY ~Choose one 3rd level spell:~
 + ~!HaveKnownSpellRES("c0sa308")~ + ~Impose~ + 3.8
 + ~!HaveKnownSpellRES("c0sa309")~ + ~Shadow Spear~ + 3.9
 + ~!HaveKnownSpellRES("c0sa310")~ + ~Cursed Earth~ + 3.10
++ ~!HaveKnownSpellRES("c0sa311")~ + ~Expunge Magic~ + 3.11
 END
 
 IF ~~ level4
@@ -319,6 +322,7 @@ SAY ~Choose one 5th level spell:~
 + ~!HaveKnownSpellRES("c0sa508")~ + ~Nightshade~ + 5.8
 + ~!HaveKnownSpellRES("c0sa509")~ + ~Shadow Chain~ + 5.9
 + ~!HaveKnownSpellRES("c0sa510")~ + ~Void Blast~ + 5.10
++ ~!HaveKnownSpellRES("c0sa511")~ + ~Shadow Screen~ + 5.11
 END
 
 IF ~~ level6
@@ -506,7 +510,7 @@ SAY ~Curse
 
 Level: 1
 Range: Sight
-Duration: 6 rounds
+Duration: 1 turn
 Casting Time: 1 round
 Area of Effect: 30 ft. radius
 Saving Throw: None
@@ -559,7 +563,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a save vs. spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely upon being attacked.~
+This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a save vs. spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely if they are attacked.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","GLOBAL",-1) AddSpecialAbility("c0sa111")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -575,7 +579,7 @@ Casting Time: 2
 Area of Effect: The caster
 Saving Throw: None
 
-When Dark Mirage is cast, the shadow adept causes the outline of <PRO_HISHER> form to become blurred, shifting and wavering. This distortion causes all missile and melee attacks against the caster to be made with a -3 penalty. The shadow adept also gains a +1 bonus to all of <PRO_HISHER> Saving Throws. Additionally, the caster causes from 2 to 8 exact duplicates of <PRO_HIMHER>self to come into being around <PRO_HIMHER>. These iWIZARDs do exactly what the shadow adept does. Since the spell causes a blurring and slight distortion when cast, it is impossible for opponents to be certain which are the illusions and which is the actual shadow adept. When an iWIZARD is struck by a melee or missile attack—magical or otherwise—it disappears, but any other existing iWIZARDs remain intact until they are struck. However, it is important to note that this will not protect the caster against every attack, as it is possible for an enemy to choose the real caster amongst all the iWIZARDs.~
+When Dark Mirage is cast, the shadow adept causes the outline of <PRO_HISHER> form to become blurred, shifting and wavering. This distortion causes all missile and melee attacks against the caster to be made with a -3 penalty. The shadow adept also gains a +1 bonus to all of <PRO_HISHER> Saving Throws. Additionally, the caster causes from 2 to 8 exact duplicates of <PRO_HIMHER>self to come into being around <PRO_HIMHER>. These images do exactly what the shadow adept does. Since the spell causes a blurring and slight distortion when cast, it is impossible for opponents to be certain which are the illusions and which is the actual shadow adept. When an image is struck by a melee or missile attack—magical or otherwise—it disappears, but any other existing images remain intact until they are struck. However, it is important to note that this will not protect the caster against every attack, as it is possible for an enemy to choose the real caster amongst all the images.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","GLOBAL",-1) AddSpecialAbility("C0SA201")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -604,12 +608,12 @@ SAY ~Dark Fortune
 
 Level: 2
 Range: 15 ft.
-Duration: 1 turn
+Duration: 1 hour
 Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-The recipient of this spell gains extraordinary luck for the next turn, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
+The recipient of this spell gains extraordinary luck for the next hour, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","GLOBAL",-1) AddSpecialAbility("C0SA203")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -924,6 +928,24 @@ This spell creates a zone of blackened, poisonous earth within a 30' radius. All
 ++ ~Return to spell selection.~ + learn
 END
 
+IF ~~ 3.11
+SAY ~Expunge Magic
+(Abjuration - Shadow Weave)
+
+Level: 3
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+A Expunge Magic spell removes magical effects upon anyone within the area. This includes effects given from spells, potions and certain magical items such as wands. It does not, however, affect enchanted magical items or spell protections such as Spell Turning and Spell Deflection. The chance of the dispel succeeding is determined by the effective level of the caster and the level of the magic being dispelled (Expunge Magic is cast as though at 1.5x the caster's actual level). The base chance of successfully dispelling is 50%. For every level that the caster of the Expunge Magic is above the original caster, <PRO_HISHER> chance of success increases by 5%. For every level that the caster of Expunge Magic is below the original caster, <PRO_HISHER> chance of success decreases by 10%. However, despite the difference in levels, there is always at least a 5% chance of success or failure. Thus, if a caster is 10 levels higher than the magic <PRO_HESHE> is trying to dispel, there is only a 5% chance of failure. Similarly if the caster is 4 levels lower than the magic <PRO_HESHE> is trying to dispel, there is only a 10% chance of success. Intuitively, this spell is almost useless if the target is 5 or more levels higher than the caster.
+
+Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","GLOBAL",-1) AddSpecialAbility("C0SA311")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
 IF ~~ 4.1
 SAY ~Minor Sequencer
 (Conjuration/Summoning,Invocation/Evocation)
@@ -935,7 +957,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-This spell allows a wizard to store two spells and activate them both at the same time from <PRO_HISHER> Special Ability button. Both spells must be of 2nd level or lower. To create a sequencer, a WIZARD must memorize not only Minor Sequencer but also the spells <PRO_HESHE> intends to store in it (a Sorcerer can store spells of any level for which <PRO_HESHE> still has spell slots). After casting Minor Sequencer, the player will be prompted to choose the sequenced spells from those <PRO_HESHE> has memorized.
+This spell allows a wizard to store two spells and activate them both at the same time from <PRO_HISHER> Special Ability button. Both spells must be of 2nd level or lower. To create a sequencer, a mage must memorize not only Minor Sequencer but also the spells <PRO_HESHE> intends to store in it (a Sorcerer can store spells of any level for which <PRO_HESHE> still has spell slots). After casting Minor Sequencer, the player will be prompted to choose the sequenced spells from those <PRO_HESHE> has memorized.
 
 A sequencer lasts until activated and, once used, releases its spells immediately (no casting time). The Special Ability icon also disappears until the next time a sequencer is formed. A wizard can possess only one Minor Sequencer at a time, and it may not be given to other characters.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","GLOBAL",-1) AddSpecialAbility("spwi420")~ + NEXT
@@ -997,12 +1019,12 @@ SAY ~Summon Shadow
 (Necromancy - Shadow Weave)
 Level: 4
 Range: Long
-Duration: 8 hours
+Duration: 1 hour
 Casting Time: 1 round
 Area of Effect: Special
 Saving Throw: None
 
-By means of this spell, the caster summons a number of shadows, undead monsters which serve the WIZARD under any conditions. The type and number of creatures that appear depend upon the level of the wizard casting the spell.
+By means of this spell, the caster summons a number of shadows, undead monsters which serve the mage under any conditions. The type and number of creatures that appear depend upon the level of the wizard casting the spell.
 
 7th: 3 shadows
 9th: 3 shadow fiends
@@ -1041,7 +1063,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Special
 
-The caster creates a phantasmal iWIZARD of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a save vs. spells to recognize the iWIZARD as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a save vs. death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.~
+The caster creates a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a save vs. spells to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a save vs. death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","GLOBAL",-1) AddSpecialAbility("C0SA406")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1105,7 +1127,7 @@ Casting Time: 3
 Area of Effect: 1 creature and any enemy within 7.5 ft.
 Saving Throw: 1/2
 
-With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a saving throw vs. death at -2 take half damage and avoid the secondary effects.~
+With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a saving throw vs. death at -2 take half damage and avoid the secondary effects. This spell ignores magic resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","GLOBAL",-1) AddSpecialAbility("C0SA410")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1223,7 +1245,7 @@ Saving Throw: None
 
 When this spell is cast, an area roughly 30 feet in radius around the caster will be affected. All hostile illusion/phantasm spells in this area will be dispelled. This spell only affects one's enemies.
 
-The spells that are affected by this are: Reflected IWIZARD, Invisibility, Blur, Mirror IWIZARD, Ghost Armor, Invisibility Sphere, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project IWIZARD, and Mass Invisibility.~
+The spells that are affected by this are: Reflected Image, Invisibility, Blur, Mirror Image, Ghost Armor, Invisibility Sphere, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project Image, and Mass Invisibility.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","GLOBAL",-1) AddSpecialAbility("C0SA507")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1271,8 +1293,24 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a save vs. spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds~
+With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a save vs. spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","GLOBAL",-1) AddSpecialAbility("C0SA510")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
+IF ~~ 5.11
+SAY ~Shadow Screen
+(Abjuration - Shadow Weave)
+
+Level: 5
+Range: 0
+Duration: 2 hours
+Casting Time: 8
+Area of Effect: The caster
+Saving Throw: None
+
+When this spell is cast, the shadow adept is protected from the next magical attack against <PRO_HIMHER>. The spells from which the shadow adept is protected are Dispel/Remove Magic, Spell Thrust, Secret Word, Breach, Lower Resistance, Pierce Magic, Ruby Ray, Khelben's Warding Whip, Pierce Shield, and Spellstrike. If one of these spells is cast at the shadow adept, this spell activates and absorbs the attack. However, this only works once and this spell is consumed in the process. Otherwise, it will last for its duration.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","GLOBAL",-1) AddSpecialAbility("C0SA511")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 
@@ -1325,7 +1363,7 @@ Casting Time: 1
 Area of Effect: Special
 Saving Throw: None
 
-When this spell is cast, the wizard is affected by an Improved Invisibility spell and is teleported a few feet away from <PRO_HISHER> original position. Meanwhile, an exact iWIZARD of the caster is created where <PRO_HESHE> used to be, with exactly the same Hit Points as the caster. The iWIZARD cannot perform any actions at all, such as attacking or casting spells. It can, however, move around and act as a decoy for the invisible wizard. The iWIZARD will remain under control of the caster until reduced to 0 Hit Points, or until affected by a Dispel Magic or a spell that reveals illusions, such as True Sight.
+When this spell is cast, the wizard is affected by an Improved Invisibility spell and is teleported a few feet away from <PRO_HISHER> original position. Meanwhile, an exact image of the caster is created where <PRO_HESHE> used to be, with exactly the same Hit Points as the caster. The image cannot perform any actions at all, such as attacking or casting spells. It can, however, move around and act as a decoy for the invisible wizard. The image will remain under control of the caster until reduced to 0 Hit Points, or until affected by a Dispel Magic or a spell that reveals illusions, such as True Sight.
 
 After 3 rounds have passed, a second decoy is spontaneously created, regardless of whether or not the first has been destroyed.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","GLOBAL",-1) AddSpecialAbility("C0SA602")~ + NEXT
@@ -1391,7 +1429,7 @@ Casting Time: 5
 Area of Effect: Special 
 Saving Throw: 1/2 
 
-When this spell is cast upon a target creature there will be two major effects. The first is that it will dispel one spell protection of 8th level or lower from the creature. This will always dispel the highest level of spell protection on the target first. If the target has two or more protections tied for the highest level, the choice will be random. The second effect of the spell is that the creature's magic resistance is temporary nullified. The resistance remains lowered for 2 rounds, and this effect cannot be negated in any way. Additionally, WIZARDs will take 4d10 magic damage and lose their ability to cast spells for 2 rounds. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's magic resistance, if any, does not affect this spell.~
+When this spell is cast upon a target creature there will be two major effects. The first is that it will dispel one spell protection of 8th level or lower from the creature. This will always dispel the highest level of spell protection on the target first. If the target has two or more protections tied for the highest level, the choice will be random. The second effect of the spell is that the creature's magic resistance is temporary nullified. The resistance remains lowered for 2 rounds, and this effect cannot be negated in any way. Additionally, mages will take 4d10 magic damage and suffer 50% spell failure for the next 2 rounds. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's magic resistance, if any, does not affect this spell.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","GLOBAL",-1) AddSpecialAbility("C0SA606")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1457,7 +1495,7 @@ Casting Time: 6
 Area of Effect: 20 ft. radius
 Saving Throw: None
 
-Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius will suffer 6d6 magical damage and suffers a -3 penalty to Armor Class, THAC0 and damage for 1 turn. There is no saving throw against this spell's effects.~
+Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius take 6d6 magical damage and suffer a -3 penalty to Armor Class, THAC0 and damage for 1 turn. There is no saving throw against this spell's effects.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","GLOBAL",-1) AddSpecialAbility("C0SA610")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1491,7 +1529,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-This spell allows a wizard to store three spells and activate them all at the same time from <PRO_HISHER> Special Ability button. All spells must be of 4th level or lower. To create a sequencer, a WIZARD must memorize not only Spell Sequencer but also the spells <PRO_HESHE> intends to store in it (a Sorcerer can store spells of any level for which <PRO_HESHE> still has spell slots). After casting Spell Sequencer, the player will be prompted to choose the sequenced spells from those <PRO_HESHE> has memorized.
+This spell allows a wizard to store three spells and activate them all at the same time from <PRO_HISHER> Special Ability button. All spells must be of 4th level or lower. To create a sequencer, a mage must memorize not only Spell Sequencer but also the spells <PRO_HESHE> intends to store in it (a Sorcerer can store spells of any level for which <PRO_HESHE> still has spell slots). After casting Spell Sequencer, the player will be prompted to choose the sequenced spells from those <PRO_HESHE> has memorized.
 
 A sequencer lasts until activated and, once used, releases its spells immediately (no casting time). The Special Ability icon also disappears until the next time a sequencer is formed. A wizard can possess only one Spell Sequencer at a time, and it may not be given to other characters.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","GLOBAL",-1) AddSpecialAbility("spwi710")~ + NEXT
@@ -1549,7 +1587,7 @@ Casting Time: 1
 Area of Effect: 1 creature 
 Saving Throw: None
 
-When a Power Word, Stun spell is uttered, any creature of the WIZARD's choice within visual range is stunned for the duration depending on its current Hit Points: 
+When a Power Word, Stun spell is uttered, any creature of the mage's choice within visual range is stunned for the duration depending on its current Hit Points: 
  1 to 29 Hit Points: Stunned for 4d4 rounds; 
  30 to 59 Hit Points: Stunned for 2d4 rounds; 
  60 to 89 Hit Points: Stunned for 1d4 rounds; 
@@ -1814,7 +1852,9 @@ Casting Time: 8
 Area of Effect: The caster
 Saving Throw: 1/2
 
-The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 fire damage (save vs. spells for half damage). If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a devil shade under the caster's allegiance for 5 turns before becoming assimilated into the Shadow Plane.~
+The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 fire damage (save vs. spells for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
+
+If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a devil shade under the caster's allegiance for 5 turns before becoming assimilated into the Shadow Plane.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","GLOBAL",-1)  AddSpecialAbility("C0SA806")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2010,7 +2050,7 @@ Casting Time: 8
 Area of Effect: Special
 Saving Throw: Special
 
-You create a phantasmal iWIZARD of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a save vs. spells at -4 to recognize the iWIZARD as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a save vs. death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.~
+You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a save vs. spells at -4 to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a save vs. death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","GLOBAL",-1) AddSpecialAbility("C0SA906")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END

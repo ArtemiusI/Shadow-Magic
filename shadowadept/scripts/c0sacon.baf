@@ -1,0 +1,226 @@
+// Constitution Check
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),1,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 1~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),2,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 2~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),3,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 3~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),4,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 4~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),5,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 5~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),6,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 6~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),7,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 7~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),8,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 8~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),9,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 9~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),10,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 10~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),11,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 11~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),12,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 12~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),13,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 13~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),14,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 14~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),15,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 15~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),16,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 16~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),17,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 17~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),18,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 18~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),19,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 19~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),20,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 20~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),21,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 21~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),22,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 22~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),23,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 23~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),24,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 24~)
+	DestroySelf()
+END
+
+IF
+	OnCreation()
+	CheckStat(Lastsummonerof(Myself),25,CON)
+THEN
+RESPONSE #100
+	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 25~)
+	DestroySelf()
+END

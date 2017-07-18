@@ -1,0 +1,735 @@
+COPY ~shadowadept/itempack/bams~ ~override~
+
+////////////////////////////////////////
+/////////CREATURES//////////////////////
+////////////////////////////////////////
+
+COPY ~shadowadept/creatures/c0sakryn.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sakryn~  #8  // override
+WRITE_ASCII 0x2cc ~c0sakryn~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sakryn~ #32 // death variable
+SAY NAME1 ~Kryn Darkflame~
+SAY NAME2 ~Kryn Darkflame~
+WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
+
+COPY ~shadowadept/creatures/c0xarius.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x2cc ~c0xarius~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0xarius~ #32 // death variable
+SAY NAME1 ~Xarius~
+SAY NAME2 ~Xarius~
+
+COMPILE ~shadowadept/dialogue/c0xarius.d~
+COMPILE ~shadowadept/scripts/c0sadept.baf~
+
+/*ACTION_IF GAME_IS ~bgee~
+THEN BEGIN
+EXTEND_TOP ~ar5001.bcs~ ~shadowadept/scripts/ar5001.baf~
+END
+
+ACTION_IF GAME_IS ~eet~
+THEN BEGIN
+EXTEND_TOP ~bg5001.bcs~ ~shadowadept/scripts/ar5001.baf~
+END*/
+////////////////////////////////////////
+/////////ITEMS//////////////////////////
+////////////////////////////////////////
+
+// Ring of Black Light
+
+COPY ~shadowadept/itempack/c0sarng1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Ring~
+SAY NAME2 ~Ring of Black Light~
+SAY DESC ~This black glass ring feels heavy and unnatural in your hands. When worn by those profiicent in shadow magic, it bolsters their ability to resist the life-draining nature of the Shadow Weave.
+
+STATISTICS:
+- Constitution: +1
+- Save vs. Death: +4
+
+Weight: 0~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~davaeo.cre~ THEN BEGIN
+COPY_EXISTING ~davaeo.cre~ ~override~
+ADD_CRE_ITEM ~c0sarng1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ar0602.bcs~ THEN BEGIN
+EXTEND_TOP ~ar0602.bcs~ ~shadowadept/scripts/ar0602.baf~
+END
+
+// Dark Dreamer +2
+
+APPEND ~splprot.2da~ ~C0SAS2H1%TAB%0x111%TAB%0x00000001%TAB%8~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SAS2H1~ BEGIN
+	    SET C0SAS2H1 = %row%
+	  END
+	END
+
+COPY ~shadowadept/itempack/c0sas2h1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sas2h1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
+Fighter / Shadow Adept / Thief~)
+END
+LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 326
+      match_parameter2 = 0
+	  parameter2 = %C0SAS2H1%
+END
+SAY NAME1 ~Two-handed Sword~
+SAY NAME2 ~Dark Dreamer +2~
+SAY UNIDENTIFIED_DESC ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons, and in an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
+
+STATISTICS:
+
+Damage: 2D6
+Damage type: slashing
+Weight: 8
+Speed Factor: 10
+Proficiency Type: Two-Handed Sword
+Type: 2-handed
+Requires: 14 Strength~
+SAY DESC ~This dark steel two-handed sword appears to be nothing more than a well-balanced weapon in the hands of a regular warrior, but when wielded by a user of Shadow Magic it seems to come to life. Its blade has the ability to compel anyone cut to fall into a magically induced sleep, then hungrily devours the victim's dreams to restore the wielder's memory. The holy symbol in the sword's pommel suggests that it once belonged to followers of Shar, goddess of night and loss.
+
+STATISTICS:
+
+Combat Effects:
+- 20% chance that hit target must save vs. spells at +3 or be put to sleep for 2 rounds
+- Dream Eater: Attacks against sleeping targets deal 1d10 magic damage and restore one of the wielder's lost spells of up to 4th level
+
+Equipped Effects:
+- Saves vs. Enchantment: +3
+- Hit Points: -10
+
+THAC0: +2
+Damage: 1d10+2, +1 magic damage
+Damage type: slashing
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdziatar.cre~ THEN BEGIN
+COPY_EXISTING ~bdziatar.cre~ ~override~
+REMOVE_CRE_ITEM ~sw2h02~
+ADD_CRE_ITEM ~c0sas2h1~ #0 #0 #0 ~NONE~ ~weapon1~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bodfgt03.cre~ THEN BEGIN
+COPY_EXISTING ~bodfgt03.cre~ ~override~
+REMOVE_CRE_ITEM ~sw2h11~
+ADD_CRE_ITEM ~c0sas2h1~ #0 #0 #0 ~NONE~ ~weapon1~
+END
+
+COPY ~shadowadept/itempack/c0saamu1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Amulet~
+SAY NAME2 ~Shadow Phylactery~
+SAY DESC ~The purple stone in this amulet draws upon and contains a limited amount of energy from the Shadow Weave. When a user of Shadow Magic summons the power of the Shadow Weave, the amulet is used as a medium for channelling the energy required, allowing the shadow adept to cast lower level spells without risking their own life force. However, a constant amount of vitality is required to sustain the amulet's power as long as it is worn.
+
+STATISTICS:
+
+Equipped Effects:
+- Hit Points: -15
+- Can memorize one extra wizard spell of 1st to 4th level
+- Protects the wearer from Constitution loss by using 1st to 4th level Shadow Weave spells
+
+Weight: 1~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~shadel.cre~ THEN BEGIN
+COPY_EXISTING ~shadel.cre~ ~override~
+ADD_CRE_ITEM ~c0saamu1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+COPY ~shadowadept/itempack/c0sarob1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Mage Robes~
+SAY NAME2 ~Shrouded Robes~
+SAY UNIDENTIFIED_DESC ~Since the age of Netheril, mages have learned to bestow a wide variety of magical properties upon the everyday objects that surround them. A favorite item of such enchantment is the common robe. It is lightweight, affordable, and holds its enchantment well, thereby making it ideal equipment for a mage. Due to their magical heritage, however, only single-, dual-, and multi-class mages may wear these enchanted robes.~
+SAY DESC ~These black robes are made of some sort of unusually light material bear enchantments that empower the magic used by shadow adepts.
+
+STATISTICS:
+
+Equipped Effects:
+- All cold and magic damage inflicted by the wearer is increased by 15%
+- Spell Duration: +10%
+- Hit Points: -10
+- Cold Resistance: +50%
+- Fire Resistance: -25%
+
+Weight: 1~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~lavok2.cre~ THEN BEGIN
+COPY_EXISTING ~lavok2.cre~ ~override~
+ADD_CRE_ITEM ~c0sarob1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+COPY ~shadowadept/itempack/c0sasta1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sasta1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Staff of Starless Nights~
+SAY UNIDENTIFIED_DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.~
+SAY DESC ~This powerful wizard's staff was created by Acthelion, a archmage and favored priest of Shar. It was said to have always been in his hand during his lifetime, and its separation from him is taken to be a likely sign of his death, though some claim that he ascended to some other plane and left behind all his possessions, including this one. Others believe he may still be seeking it...
+
+When the night holds dominance over the Prime Material Plane, the black gem on the tip of the staff seems to glow, and its power is greater.
+
+STATISTICS:
+
+Charge abilities:
+- Shadow Shield once per day
+- Fireshield (Shadow) once per day
+- Negative Energy Burst once per day (centered on self)
+
+Combat abilities:
+- 50% chance to cast Drain Vitality on successful hit
+
+Equipped abilities:
+- Casting Level: +2 (+4 during nighttime)
+- Magic Resistance: +10% (20% during nighttime)
+- Magic Damage Resistance: +20% (40% during nighttime)
+
+THAC0: +5 bonus, strikes as a +5 weapon
+Damage: 1D6 + 1, +1d6+3 magic damage
+Damage type: crushing
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: 2-handed
+Requires: 5 Strength
+
+Weight: 4~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ribald3.sto~ THEN BEGIN
+COPY_EXISTING ~ribald3.sto~ ~override~
+ADD_STORE_ITEM ~c0sasta1~ #0 #0 #0 ~IDENTIFIED~ #6
+END
+
+COPY ~shadowadept/itempack/c0sadag1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Dagger~
+SAY NAME2 ~Night Cutter +1~
+SAY UNIDENTIFIED_DESC ~The typical dagger has a pointed, double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter.
+
+STATISTICS:
+
+Damage: 1D4
+Damage type: piercing
+Weight: 1
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: 1-handed
+Requires: 3 Strength~
+SAY DESC ~This wicked knife seems to suck in light around it rather than reflecting it. Only a wielder familiar with Shadow Magic may draw upon its powers.
+
+STATISTICS:
+
+Combat abilities:
+- On a successful backstab, casts Blinding Darkness on target 
+
+Equipped abilities:
+- Can memorize two extra spells of 1st level
+- Hit Points: -5
+
+THAC0: +1
+Damage: 1d4+1 (piercing)
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~nimbul.cre~ THEN BEGIN
+COPY_EXISTING ~nimbul.cre~ ~override~
+ADD_CRE_ITEM ~c0sadag1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~maevar.cre~ THEN BEGIN
+COPY_EXISTING ~maevar.cre~ ~override~
+ADD_CRE_ITEM ~c0sadag1~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+COPY ~shadowadept/itempack/c0sas1h1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sas1h1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
+Shadow Adept / Thief
+Fighter / Shadow Adept / Thief~)
+END
+SAY NAME1 ~Long Sword~
+SAY NAME2 ~Edge of Eclipse +4~
+SAY UNIDENTIFIED_DESC ~These swords are usually referred to as doubled-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture, and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from 35 to 47 inches. In the latter case, the blade is known to take up 40 inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting.
+
+STATISTICS:
+
+Damage: 1D8
+Damage type: slashing
+Weight: 4
+Speed Factor: 5
+Proficiency Type: Long Sword
+Type: 1-handed
+Requires: 6 Strength~
+SAY DESC ~This blade is made out of some unusual black metal which, instead of bearing a reflective sheen, is dotted with sparkles of light that resemble stars in the night sky. When a wielder of Shadow Magic draws the blade, they feel empowered, gaining a strange desire to drain the life out of their opponents. The edge of the blade is sharp and cuts through steel as if it were paper.
+
+STATISTICS:
+
+Combat abilities:
+- On a critical hit, drains ten hit points and one point of Strength (1 turn) from the target and transfers them to the wielder.
+- Reduces target's armor class by one point for 2 rounds on successful hit
+
+Equipped abilities:
+- Strength: +1
+- Critical Hit Chance: +10% (this weapon only)
+- Hit Points: -10
+
+THAC0: +4
+Damage: 1d8+4 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~uddrow23.sto~ THEN BEGIN
+COPY_EXISTING ~uddrow23.sto~ ~override~
+ADD_STORE_ITEM ~c0sas1h1~ #0 #0 #0 ~IDENTIFIED~ #6
+END
+
+COPY ~shadowadept/itempack/c0sapot1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sapot1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Potion~
+SAY NAME2 ~Shar's Infusion~
+SAY UNIDENTIFIED_DESC ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
+
+STATISTICS:
+
+Weight: 1~
+SAY DESC ~This bottle contains a mysterious black-colored liquid gives off a shadowy smoke when the bottle is unstoppered.
+
+STATISTICS:
+
+Special: Protects from Constitution loss by casting Shadow Weave spells
+Duration: 1 turn
+
+Weight: 1~
+
+COPY ~shadowadept/itempack/c0bstar1.eff~ ~override~
+COPY ~shadowadept/itempack/c0bstar2.eff~ ~override~
+COPY ~shadowadept/itempack/c0bstar3.eff~ ~override~
+COPY ~shadowadept/itempack/c0bstar1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sadar1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Dart~
+SAY NAME2 ~The Black Star +2~
+SAY UNIDENTIFIED_DESC ~The dart is a small, easily concealable missile weapon that is thrown, rather than fired from a launcher.
+
+STATISTICS:
+
+Damage: 1D3
+Damage type: missile
+Weight: 0
+Speed Factor: 2
+Proficiency Type: Dart
+Type: 1-handed~
+SAY DESC ~This tiny black dart was enchanted using magic from the Shadow Weave. As a result, it is innately opposed to Mystra's Weave and is significantly more effective when used against practitioners of arcane magic, tearing away spells from their memory.
+
+STATISTICS:
+
+Combat abilities:
+- Returns to the wielder's hand when thrown
+- Mages and bards must save vs. spell or suffer 1d4 magic damage and lose one memorized spell
+
+THAC0: +2, +4 vs. mages and bards
+Damage: 1d3+2, +4 vs. mages and bards
+Damage type: missile
+Speed Factor: 0
+Proficiency Type: Dart
+Type: One-handed
+
+Weight: 0~
+
+COPY ~shadowadept/itempack/c0sarng2.eff~ ~override~
+COPY ~shadowadept/itempack/c0sarn2a.eff~ ~override~
+COPY ~shadowadept/itempack/c0sarn2b.eff~ ~override~
+COPY ~shadowadept/itempack/c0sarng2.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 177 // display string
+      match_parameter1 = 0
+ parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  END
+SAY NAME1 ~Ring~
+SAY NAME2 ~Ring of Shadowkin~
+SAY DESC ~This ring appears to be made of a smoky-grey material with a surface which is constantly shifting with movements that resemble flowing water. When worn, the wearer becomes partially translucent, resembling a shadow.
+
+STATISTICS:
+
+Charge abilities:
+- Charm Spectral Undead for 5 turns three times per day (Save vs. Spell negates)
+
+Equipped abilities:
+- Armor Class: +1, +3 vs. spectral undead
+- Saving Throws: +1, +3 vs. spectral undead
+- Charisma: +1 (Shadow Adepts)
+
+Weight: 0~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdshkorl.cre~ THEN BEGIN
+COPY_EXISTING ~bdshkorl.cre~ ~override~
+ADD_CRE_ITEM ~c0sarng2~ #0 #0 #0 ~NONE~ ~inv~
+END
+
+COPY ~shadowadept/itempack/c0saclc1.itm~ ~override~
+SAY NAME1 ~Cloak~
+SAY NAME2 ~Mantle of Dark Mists~
+SAY UNIDENTIFIED_DESC ~The cloak can be made in every possible shape with just about every type of fabric. The most common forms are a circular piece of fabric with a hole in the center for the head, and fabric draped from neck, connected by a chain, brooch, cord, or pins.~
+SAY DESC ~This cloak seems to constantly expel a thin black mist, which upon uttering the correct command word is expelled into a thick fog that blinds all within it. In addition, the cloak seems to be enchanted to repel certain types of magic and mask the wearer's presence from any form of spectral undead.
+
+STATISTICS:
+
+Charge abilities:
+- Black Mist once per day centered on self
+
+Equipped abilities:
+- Wearer is ignored by shadows, wraiths and other incorporeal undead
+- Save vs. Illusion: +2
+- Save vs. Necromancy: +2
+- Save vs. Alteration: +2
+
+Weight: 1~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bd0115.bcs~ THEN BEGIN
+EXTEND_TOP ~bd0115.bcs~ ~shadowadept/scripts/bd0115.baf~
+END
+
+COPY ~shadowadept/itempack/c0sas1h2.eff~ ~override~
+COPY ~shadowadept/itempack/c0sas1h2.spl~ ~override~
+COPY ~shadowadept/itempack/c0sas1h2.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
+Fighter / Shadow Adept / Thief~)
+END
+SAY NAME1 ~Bastard Sword~
+SAY NAME2 ~Dreadflame +5~
+SAY UNIDENTIFIED_DESC ~Also known as the hand-and-a-half sword, the bastard sword derives its name from the fact that it is halfway between the two-handed sword and the long sword. The bastard sword has a double-edged blade and a long grip, which can accommodate both hands if preferred. The overall length of the bastard sword ranges between four feet and four feet ten inches.
+
+STATISTICS:
+
+Damage: 1D10
+Damage type: slashing
+Weight: 6
+Speed Factor: 7
+Proficiency Type: Bastard Sword
+Type: 1-handed
+Requires: 11 Strength~
+SAY DESC ~Kryn Darkflame discovered this powerful sword during one of his many ventures into the dangerous Plane of Shadow. Its blade constantly releases purple flames that run cold rather than hot, allowing it to be sheathed. By some strange magic, its flames only burn when the victim is made to feel fear. When commanded, the flames can be manipulated to create a protective wall around the wielder.
+
+The weapon seems innately opposed to creatures of good and light and deals greater harm when cutting such beings.
+
+STATISTICS:
+
+Charge abilities:
+- Fireshield (Shadow) three times per day
+  Special: Any who strike the user within a 5-ft. radius suffers 1d6+2 cold damage and suffer a -1 penalty to THAC0 and armor class for 6 rounds
+  Duration: 1 turn
+  Area of Effect: The user
+
+Equipped abilities:
+- Immunity to fear and morale failure
+- Wielder regenerates 1 hit point per round
+- Hit Points: -20
+
+Combat abilities:
+- Deals 3d6 points of magic damage to good-aligned creatures
+- 20% per hit to cause target to run in panic for 5 rounds on a failed Save vs. Spell. Deals 1d6 fire damage to panicked targets.
+- On a critical hit, cast Blackfire Fury on target (10d10 unmitigated fire damage, target is raised as a devil shade allied with the wielder if slain. Save vs. Spell at -4 for half damage)
+
+THAC0: +5
+Damage: 2d4+5, 1d6 cold damage
+Damage type: slashing
+Speed Factor: 3
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 7~
+
+COPY ~shadowadept/itempack/c0sawand.spl~ ~override~
+COPY ~shadowadept/itempack/c0sawan1.itm~ ~override~
+SAY NAME1 ~Wand~
+SAY NAME2 ~Wand of Negative Energy~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of arcane magic. When used, this wand launches a thin red ray of negative energy which weakens its target.
+
+As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
+
+STATISTICS:
+
+Charge abilities:
+- Negative Energy Ray
+  Damage: 6d6 magic (3d6 initial, 3d6 after one round)
+  Special: Reduces target's armor class, THAC0 and damage by 1 point each time damage is dealt
+  Range: 100 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+COPY ~shadowadept/itempack/c0sawan2.itm~ ~override~
+SAY NAME1 ~Wand~
+SAY NAME2 ~Wand of Life-Draining~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of arcane magic. When used, this wand drains the vitality of its target and grants it to the wielder. However, it may not affect the same target again for one turn.
+
+As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
+
+STATISTICS:
+
+Charge abilities:
+- Drains four points of Constitution from target
+  Range: 100 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+COPY ~shadowadept/itempack/c0sawan3.itm~ ~override~
+SAY NAME1 ~Wand~
+SAY NAME2 ~Wand of Nightshade~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of arcane magic. When used, this wand fires a bolt of energy that shreds the target's life force, dealing damage proportional to their health.
+
+As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
+
+STATISTICS:
+
+Charge abilities:
+- Deals 30% of target's maximum hit points in magic damage (Save vs. Wand for half)
+  Range: 100 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+COPY ~shadowadept/itempack/c0sawan4.itm~ ~override~
+SAY NAME1 ~Wand~
+SAY NAME2 ~Wand of Shadow Missiles~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of moderate intelligence. When used, this wand launches five icy missiles that deal damage to the target.
+
+As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
+
+STATISTICS:
+
+Charge abilities:
+- 5 Shadow Missiles will strike the target
+  Damage: 1d4 magic damage, 1 cold damage per missile
+  Special: Each missile penalizes target's THAC0 by one point
+  Range: 100 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+COPY ~shadowadept/itempack/c0sawan5.itm~ ~override~
+SAY NAME1 ~Wand~
+SAY NAME2 ~Wand of Shadow Fire~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of moderate intelligence. This wand is capable of manipulating magical fire from the Plane of Shadow, launching either a large blast or arrows of flame according to the user's choice.
+
+As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
+
+STATISTICS:
+
+Charge abilities:
+- Shadowblast
+  Damage: 3d6 cold, 3d6 magic (Save vs. Wand to avoid magic damage)
+  Special: Reduces saving throws and attack rolls by one point (Save vs. Wand to avoid)
+  Range: 90 ft.
+  Area of Effect: 30-ft. radius 
+
+- 3 Blackfire Arrows
+  Damage: 1d6 cold, 4d6 fire per arrow (Save vs. Wand for half)
+  Range: 90 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+COPY ~shadowadept/itempack/c0sabo1a.eff~ ~override~
+COPY ~shadowadept/itempack/c0sabo1b.eff~ ~override~
+COPY ~shadowadept/itempack/c0saboo1.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 177 // display string
+      match_parameter1 = 0
+ parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  END
+SAY NAME1 ~Boots~
+SAY NAME2 ~Night Treads~
+SAY UNIDENTIFIED_DESC ~Boots are normally hand-made by cobblers. Common boots are made by using a form, but good boots are designed for the foot of an individual.~
+SAY DESC ~These boots seem to be crafted of sturdy material yet weigh almost nothing. Their enchantments grant the wearer greater agility and speed as well as the ability to walk between planes, walking from the Prime Material Plane into the Plane of Shadow in a single step. This ability is limited, however, though the other powers of these boots remain persistent.
+
+STATISTICS:
+
+Charge abilities (five charges):
+- Shadowstep
+
+Equipped abilities:
+- Dexterity: +2 (Shadow Adepts), +1 (Others)
+- Movement Rate: +2 (Shadow Adepts)
+
+Weight: 1~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdnazram.sto~ THEN BEGIN
+COPY_EXISTING ~bdnazram.sto~ ~override~
+ADD_STORE_ITEM ~c0saboo1~ #0 #0 #0 ~IDENTIFIED~ #6
+END
+
+COPY ~shadowadept/itempack/c0sabel1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sabel1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Belt~
+SAY NAME2 ~Belt of Darkflame~
+SAY UNIDENTIFIED_DESC ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+
+STATISTICS:
+
+Weight: 2~
+SAY DESC ~Kryn Darkflame, in his younger days, experimented tirelessly in an attempt to draw more power from the Shadow Weave. The creation of this belt was an indicator of some success, as wearing it causes a shadow adept's powers to increase dramatically. However, as all things have their disadvantages, the wearer will find themselves more susceptible to the draining effects of Shadow Magic. Darkflame's magic eventually became great enough that he no longer required the belt's power and its effects became more of a hindrance, but to one less experienced in wielding the Shadow Weave it is a valuable item... so long as one can live with the added risk.
+
+STATISTICS:
+
+Equipped abilities:
+- Caster Level: +2 (+5 when below 10% maximum hit points)
+- Fire Resistance: +40%
+- Cold Resistance: +40%
+- Save vs. Death: -4
+- Hit Points: -15
+- May only be removed with a Remove Curse spell
+
+Weight: 2~

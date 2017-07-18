@@ -1,0 +1,462 @@
+IF
+  Global("C0SAFamiliarSummoned", "GLOBAL", 0)
+THEN RESPONSE #100
+  SetGlobal("C0SAFamiliarSummoned","GLOBAL",1)
+  CreateVisualEffectObject("c0cloud1",Myself)
+  MakeGlobal()
+  SetInterrupt(FALSE)
+  Wait(1)
+  SetInterrupt(TRUE)
+  StartDialogueNoSet(Lastsummonerof(Myself))
+END
+
+IF
+  Global("C0SAFamiliarSummoned","GLOBAL",1)
+  !Allegiance(Myself,FAMILIAR)
+THEN RESPONSE #100
+  ChangeEnemyAlly(Myself,FAMILIAR)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_LAWFUL)
+  RandomNum(3,1)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"Rrgh... I will not fall so pitifully a second time."~)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_LAWFUL)
+  RandomNum(3,2)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"Yin'rou will never die!"~)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_LAWFUL)
+  RandomNum(3,3)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"We are bound, and thus death has no hold on me, summoner."~)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_LCNEUTRAL)
+  RandomNum(3,1)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"There isss no end to my exissstence..."~)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_LCNEUTRAL)
+  RandomNum(3,2)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"My deepessst apologiesss, massster..."~)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_LCNEUTRAL)
+  RandomNum(3,3)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"I return..."~)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_CHAOTIC)
+  RandomNum(3,1)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"Well, that never gets any more pleasant. Let's not have that happen again, 'kay boss?"~)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_CHAOTIC)
+  RandomNum(3,2)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"Oof, I'll be feeling that one for days to come..."~)
+END
+
+IF
+  Global("Revival","LOCALS",1)
+  Alignment(Myself,MASK_CHAOTIC)
+  RandomNum(3,3)
+THEN RESPONSE #100
+  SetGlobal("Revival","LOCALS",0)
+  DisplayStringHead(Myself,~"Hope you weren't too worried, boss."~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_LAWFUL)
+  RandomNum(3,1)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  DisplayStringHead(Myself,~"What adversary stands in our way, summoner?"~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_LAWFUL)
+  RandomNum(3,2)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  DisplayStringHead(Myself,~"The summoner calls, and Yin'rou answers!"~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_LAWFUL)
+  RandomNum(3,3)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  PlaySound("WWOLF03")
+  DisplayStringHead(Myself,~*howl*~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_LCNEUTRAL)
+  RandomNum(3,1)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  DisplayStringHead(Myself,~"I anssswer thy call, massster!"~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_LCNEUTRAL)
+  RandomNum(3,2)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  DisplayStringHead(Myself,~"What isss thy command, massster?"~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_LCNEUTRAL)
+  RandomNum(3,3)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  DisplayStringHead(Myself,~"Ka'Ssshai comes at thy beckoning..."~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_CHAOTIC)
+  RandomNum(3,1)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  DisplayStringHead(Myself,~"Did'ya miss me, boss?"~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_CHAOTIC)
+  RandomNum(3,2)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  DisplayStringHead(Myself,~"Oh, bother! Couldn't you have picked a better time?"~)
+END
+
+IF
+  Global("Summoned","LOCALS",1)
+  Alignment(Myself,MASK_CHAOTIC)
+  RandomNum(3,3)
+THEN RESPONSE #100
+  SetGlobal("Summoned","LOCALS",0)
+  DisplayStringHead(Myself,~"*yawn* So what's eating ya this time, boss?"~)
+END
+
+IF
+HPLT(Myself,2)
+TookDamage()
+THEN
+RESPONSE #100
+ChangeEnemyAlly(Myself,ALLY)
+CreateVisualEffectObject("c0cloud1",Myself)
+PlayDead(0)
+DisplayString(Myself,~Death~)
+DropInventory()
+SetGlobal("C0SAFamiliarDead","GLOBAL",1)
+SetGlobalTimer("C0SAFamiliarDeadTimer","GLOBAL",ONE_DAY)
+Wait(1)
+DestroySelf()
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM02","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM02","LOCALS",0)
+DisplayStringHead(Myself,~"You shall not escape me!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM08","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM08","LOCALS",0)
+PlaySound("DWOLF04")
+DisplayStringHead(Myself,~*howls*~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM16","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM16","LOCALS",0)
+DisplayStringHead(Myself,~"Fear my uncaged wrath!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM22","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM22","LOCALS",0)
+DisplayStringHead(Myself,~"Your blades cannot harm me!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM12","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM12","LOCALS",0)
+DisplayStringHead(Myself,~"Do you fear the darknessss?"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM10","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM10","LOCALS",0)
+DisplayStringHead(Myself,~"Ressst... death will find you sssoon..."~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM17","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM17","LOCALS",0)
+DisplayStringHead(Myself,~"Fortune hath forsssaken thee..."~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM23","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM23","LOCALS",0)
+DisplayStringHead(Myself,~"A BLACK SSSTORM RISESSS!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM07","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM07","LOCALS",0)
+DisplayStringHead(Myself,~"Can you see through this?"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM05","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM05","LOCALS",0)
+DisplayStringHead(Myself,~"Time to beat a retreat!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM18","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM18","LOCALS",0)
+DisplayStringHead(Myself,~"A little something from home!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM24","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM24","LOCALS",0)
+DisplayStringHead(Myself,~"Black-thorned flower, bloom!"~)
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,10)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",0)
+Alignment(Myself,MASK_LAWFUL)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~My power has increased! Our enemies shall be crushed between my fangs!~)
+ApplySpellRES("c0famlv1",Myself)
+AddSpecialAbility("c0sfam13")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,15)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",1)
+Alignment(Myself,MASK_LAWFUL)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~My power has increased! Our enemies shall be crushed between my fangs!~)
+ApplySpellRES("c0famlv1",Myself)
+AddSpecialAbility("c0sfam16")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,20)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",2)
+Alignment(Myself,MASK_LAWFUL)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~My power has increased! Our enemies shall be crushed between my fangs!~)
+ApplySpellRES("c0famlv1",Myself)
+AddSpecialAbility("c0sfam19")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,25)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",3)
+Alignment(Myself,MASK_LAWFUL)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~My power has increased! Our enemies shall be crushed between my fangs!~)
+ApplySpellRES("c0famlv1",Myself)
+AddSpecialAbility("c0sfam22")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,10)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",0)
+Alignment(Myself,MASK_LCNEUTRAL)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~I feel... my exissstence... ssstrengthening...~)
+ApplySpellRES("c0famlv2",Myself)
+AddSpecialAbility("c0sfam14")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,15)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",1)
+Alignment(Myself,MASK_LCNEUTRAL)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~I feel... my exissstence... ssstrengthening...~)
+ApplySpellRES("c0famlv2",Myself)
+AddSpecialAbility("c0sfam17")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,20)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",2)
+Alignment(Myself,MASK_LCNEUTRAL)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~I feel... my exissstence... ssstrengthening...~)
+ApplySpellRES("c0famlv2",Myself)
+AddSpecialAbility("c0sfam20")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,25)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",3)
+Alignment(Myself,MASK_LCNEUTRAL)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~I feel... my exissstence... ssstrengthening...~)
+ApplySpellRES("c0famlv2",Myself)
+AddSpecialAbility("c0sfam23")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,10)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",0)
+Alignment(Myself,MASK_CHAOTIC)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~Looks like I've gotten stronger, boss. Check out what I can do now!~)
+ApplySpellRES("c0famlv3",Myself)
+AddSpecialAbility("c0sfam15")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,15)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",1)
+Alignment(Myself,MASK_CHAOTIC)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~Looks like I've gotten stronger, boss. Check out what I can do now!~)
+ApplySpellRES("c0famlv3",Myself)
+AddSpecialAbility("c0sfam18")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,20)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",2)
+Alignment(Myself,MASK_CHAOTIC)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~Looks like I've gotten stronger, boss. Check out what I can do now!~)
+ApplySpellRES("c0famlv3",Myself)
+AddSpecialAbility("c0sfam21")
+END
+
+IF
+ClassLevelGT(Player1,WIZARD,25)
+CheckStat(Player1, 0, LEVELDRAIN)
+Global("LevelUp","LOCALS",3)
+Alignment(Myself,MASK_CHAOTIC)
+THEN
+RESPONSE #100
+IncrementGlobal("LevelUp","LOCALS",1)
+DisplayStringHead(Myself,~Looks like I've gotten stronger, boss. Check out what I can do now!~)
+ApplySpellRES("c0famlv3",Myself)
+AddSpecialAbility("c0sfam24")
+END

@@ -1,0 +1,7 @@
+IF
+	Global("C0SARingSpawn","MYAREA",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SARingSpawn","MYAREA",1)
+	ActionOverride("Chest01",CreateItem("c0saclc1",0,0,0))
+END
