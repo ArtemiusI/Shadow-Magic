@@ -217,7 +217,7 @@ DO ~GivePartyAllEquipment()~ EXIT
 
 CHAIN C0SAFAM c3.5
 ~"What?" Nyx make s sudden drop from surprise at being asked. "You wanna know about me, boss? Really?"~
-= ~"Alright, well, lemme just . I'm actually not native to the Plane of Shadow. I am - was, I dunno - anymore, an air mephit from the Elemental Plane of, well, Air. Bit of a wild thing, I was, and I found myself ending up in different planes all the time, and getting out just as suddenly as I got in... well, until I ended up getting sucked into the Plane of Shadow, that is."~
+= ~"Alright, well, lemme just get one thing straight, boss. I'm actually not native to the Plane of Shadow. I am - was, I dunno - anymore, an air mephit from the Elemental Plane of, well, Air. Bit of a wild thing, I was, and I found myself ending up in different planes all the time, and getting out just as suddenly as I got in... well, until I ended up getting sucked into the Plane of Shadow, that is."~
 = ~"Actually, I don't really remember much of what happened. But as far as I remember, I ended up in the Shadow Plane, and I eventually got changed. Maybe I died and was reborn like this, or maybe that's just what happens when you live in the plane for too long. Either way, I was changed completely. And by that, I mean, I grew legs. Yeah... the planes do weird things to you, let's just put it that way. Wouldn't suggest it if you value your limbs."~
 = ~"Anyways, I ain't sure what I am now, but I ain't what I used to be. An' now I'm bound to you, boss. Not sure I like bein' tied down, but I don't blame you at all. You've done well by me so far."~
 EXIT

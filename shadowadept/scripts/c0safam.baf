@@ -420,6 +420,7 @@ IncrementGlobal("LevelUp","LOCALS",1)
 DisplayStringHead(Myself,~Looks like I've gotten stronger, boss. Check out what I can do now!~)
 ApplySpellRES("c0famlv3",Myself)
 AddSpecialAbility("c0sfam15")
+ApplySpellRES("spcl332",Myself)
 END
 
 IF
@@ -446,6 +447,7 @@ IncrementGlobal("LevelUp","LOCALS",1)
 DisplayStringHead(Myself,~Looks like I've gotten stronger, boss. Check out what I can do now!~)
 ApplySpellRES("c0famlv3",Myself)
 AddSpecialAbility("c0sfam21")
+ApplySpellRES("spcl332",Myself)
 END
 
 IF
