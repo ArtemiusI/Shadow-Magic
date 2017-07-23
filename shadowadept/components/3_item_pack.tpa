@@ -259,6 +259,9 @@ COPY_EXISTING ~ribald3.sto~ ~override~
 ADD_STORE_ITEM ~c0sasta1~ #0 #0 #0 ~IDENTIFIED~ #6
 END
 
+COPY ~shadowadept/itempack/c0sadag1.spl~ ~override~
+SAY NAME1 ~Blinding Darkness~
+SAY NAME2 ~Blinding Darkness~
 COPY ~shadowadept/itempack/c0sadag1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
@@ -271,7 +274,7 @@ COPY ~shadowadept/itempack/c0sadag1.itm~ ~override~
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Dagger~
-SAY NAME2 ~Night Cutter +1~
+SAY NAME2 ~Night Cutter +2~
 SAY UNIDENTIFIED_DESC ~The typical dagger has a pointed, double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter.
 
 STATISTICS:
@@ -288,14 +291,16 @@ SAY DESC ~This wicked knife seems to suck in light around it rather than reflect
 STATISTICS:
 
 Combat abilities:
-- On a successful backstab, casts Blinding Darkness on target 
+- Returns to the wielder's hand when thrown
+- When thrown, there is a 10% chance that the wielder will be teleported into melee range of the target and turn invisible for five rounds.
+- On a successful backstab, casts Blinding Darkness on target and restores one 1st level spell to the wielder's memory.
 
 Equipped abilities:
-- Can memorize two extra spells of 1st level
 - Hit Points: -5
 
-THAC0: +1
-Damage: 1d4+1 (piercing)
+THAC0: +2
+Damage: 1d4+1, +1 magic (melee only)
+Damage type: Piercing or missile
 Speed Factor: 1
 Proficiency Type: Dagger
 Type: One-handed
