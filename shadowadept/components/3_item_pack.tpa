@@ -259,6 +259,7 @@ COPY_EXISTING ~ribald3.sto~ ~override~
 ADD_STORE_ITEM ~c0sasta1~ #0 #0 #0 ~IDENTIFIED~ #6
 END
 
+ADD_PROJECTILE ~shadowadept/itempack/c0sadagg.pro~
 COPY ~shadowadept/itempack/c0sadag1.spl~ ~override~
 SAY NAME1 ~Blinding Darkness~
 SAY NAME2 ~Blinding Darkness~
@@ -308,6 +309,7 @@ Requires:
  3 Strength
 
 Weight: 1~
+WRITE_SHORT 0x9C ~%c0sadagg%~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~nimbul.cre~ THEN BEGIN
 COPY_EXISTING ~nimbul.cre~ ~override~
