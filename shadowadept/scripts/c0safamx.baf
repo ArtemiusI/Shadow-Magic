@@ -6,6 +6,8 @@ THEN
 	SetGlobal("C0SAFamiliarDead","GLOBAL",0)
 	MoveGlobalObject("c0safam",Player1)
 	ActionOverride("c0safam",ChangeEnemyAlly(Myself,FAMILIAR))
+	ActionOverride("c0safam",MakeGlobalOverride())
+	ActionOverride("c0safam",AddFamiliar())
 	ActionOverride("c0safam",CreateVisualEffectObject("c0cloud1",Myself))
 	ActionOverride("c0safam",SetGlobal("Revival","LOCALS",1))
 	ActionOverride("c0safam",ApplySpell(Myself,HEAL_NO_VISUAL))
@@ -18,6 +20,8 @@ THEN
 	RESPONSE #100
 	MoveGlobalObject("c0safam",Player1)
 	ActionOverride("c0safam",ChangeEnemyAlly(Myself,FAMILIAR))
+	ActionOverride("c0safam",MakeGlobalOverride())
+	ActionOverride("c0safam",AddFamiliar())
 	ActionOverride("c0safam",CreateVisualEffectObject("c0black2",Myself))
 	ActionOverride("c0safam",CreateVisualEffectObject("c0cloud1",Myself))
 	ActionOverride("c0safam",SetGlobal("Summoned","LOCALS",1))

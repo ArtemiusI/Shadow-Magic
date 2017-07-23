@@ -162,7 +162,7 @@ ADD_KIT ~C0SADEP2~
  ~C0SADEP2                  	0       1       1       0       1	1       0       1       1~
 
  // appended to DUALCLAS.2da
- ~C0SADEP2                  	0       0       0       0       0       0~
+ ~C0SADEP2                  	1       1       0       1       0       0~
 
  // path to your CLAB-style 2da file 
  ~shadowadept/2da/C0SADEP2.2da~

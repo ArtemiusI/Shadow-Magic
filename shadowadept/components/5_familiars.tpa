@@ -133,7 +133,7 @@ SAY NAME2 ~Call Shadow Familiar~
 SAY UNIDENTIFIED_DESC ~Call Shadow Familiar
 This spell summons the shadow adept's bound shadow familiar from their home plane.~
 
-ACTION_IF GAME_IS ~bgee~
+ACTION_IF GAME_IS ~bgee eet~
 THEN BEGIN
 COMPILE ~shadowadept/dialogue/bg1/c0safam.d~
 END

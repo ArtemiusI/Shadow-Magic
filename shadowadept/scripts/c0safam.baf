@@ -187,10 +187,11 @@ THEN
 RESPONSE #100
 ChangeEnemyAlly(Myself,ALLY)
 CreateVisualEffectObject("c0cloud1",Myself)
-PlayDead(0)
+PlayDeadInterruptible(1)
 DisplayString(Myself,~Death~)
 DropInventory()
 SetGlobal("C0SAFamiliarDead","GLOBAL",1)
+RemoveFamiliar()
 SetGlobalTimer("C0SAFamiliarDeadTimer","GLOBAL",ONE_DAY)
 Wait(1)
 DestroySelf()
@@ -207,12 +208,28 @@ END
 
 IF
 See([ENEMY])
+Global("C0SFAM02","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM02","LOCALS",0)
+END
+
+IF
+See([ENEMY])
 Global("C0SFAM08","LOCALS",1)
 THEN
 RESPONSE #100
 SetGlobal("C0SFAM08","LOCALS",0)
 PlaySound("DWOLF04")
 DisplayStringHead(Myself,~*howls*~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM08","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM08","LOCALS",0)
 END
 
 IF
@@ -226,11 +243,27 @@ END
 
 IF
 See([ENEMY])
+Global("C0SFAM16","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM16","LOCALS",0)
+END
+
+IF
+See([ENEMY])
 Global("C0SFAM22","LOCALS",1)
 THEN
 RESPONSE #100
 SetGlobal("C0SFAM22","LOCALS",0)
 DisplayStringHead(Myself,~"Your blades cannot harm me!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM22","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM22","LOCALS",0)
 END
 
 IF
@@ -244,11 +277,27 @@ END
 
 IF
 See([ENEMY])
+Global("C0SFAM12","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM12","LOCALS",0)
+END
+
+IF
+See([ENEMY])
 Global("C0SFAM10","LOCALS",1)
 THEN
 RESPONSE #100
 SetGlobal("C0SFAM10","LOCALS",0)
 DisplayStringHead(Myself,~"Ressst... death will find you sssoon..."~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM10","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM10","LOCALS",0)
 END
 
 IF
@@ -262,11 +311,27 @@ END
 
 IF
 See([ENEMY])
+Global("C0SFAM17","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM17","LOCALS",0)
+END
+
+IF
+See([ENEMY])
 Global("C0SFAM23","LOCALS",1)
 THEN
 RESPONSE #100
 SetGlobal("C0SFAM23","LOCALS",0)
 DisplayStringHead(Myself,~"A BLACK SSSTORM RISESSS!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM23","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM23","LOCALS",0)
 END
 
 IF
@@ -280,11 +345,27 @@ END
 
 IF
 See([ENEMY])
+Global("C0SFAM07","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM07","LOCALS",0)
+END
+
+IF
+See([ENEMY])
 Global("C0SFAM05","LOCALS",1)
 THEN
 RESPONSE #100
 SetGlobal("C0SFAM05","LOCALS",0)
 DisplayStringHead(Myself,~"Time to beat a retreat!"~)
+END
+
+IF
+!See([ENEMY])
+Global("C0SFAM05","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM05","LOCALS",0)
 END
 
 IF
@@ -298,11 +379,27 @@ END
 
 IF
 See([ENEMY])
+Global("C0SFAM18","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM18","LOCALS",0)
+END
+
+IF
+See([ENEMY])
 Global("C0SFAM24","LOCALS",1)
 THEN
 RESPONSE #100
 SetGlobal("C0SFAM24","LOCALS",0)
 DisplayStringHead(Myself,~"Black-thorned flower, bloom!"~)
+END
+
+IF
+See([ENEMY])
+Global("C0SFAM24","LOCALS",1)
+THEN
+RESPONSE #100
+SetGlobal("C0SFAM24","LOCALS",0)
 END
 
 IF
