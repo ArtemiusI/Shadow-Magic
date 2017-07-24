@@ -164,6 +164,14 @@ WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
 SAY NAME1 ~Yin'rou~
 SAY NAME2 ~Yin'rou~
 WRITE_ASCII 0X34 ~C0Yinrou~ #8   //small portrait
+SAY BATTLE_CRY1 ~~ [VWOLF03]
+SAY BATTLE_CRY2 ~~ [VWOLF04]
+SAY ATTACK1 ~~ [VWOLF05]
+SAY ATTACK2 ~~ [VWOLF06]
+SAY DAMAGE ~~ [VWOLF08]
+SAY DYING ~~ [VWOLF09]
+SAY SELECT_COMMON1 ~~ [VWOLF01]
+SAY SELECT_COMMON2 ~~ [VWOLF02]
 
 COPY ~shadowadept/creatures/c0safam2.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override

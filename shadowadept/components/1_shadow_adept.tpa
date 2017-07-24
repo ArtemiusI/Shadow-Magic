@@ -259,6 +259,8 @@ ADD_PROJECTILE ~shadowadept/spells/c0proj21.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj22.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj23.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0proj24.PRO~
+ADD_PROJECTILE ~shadowadept/spells/c0negeb.PRO~
+ADD_PROJECTILE ~shadowadept/spells/c0weird.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0nightk.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0sasper.PRO~
 
@@ -2105,6 +2107,13 @@ Saving Throw: 1/2
 This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a saving throw vs. spells, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another save vs. spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 
 COPY ~shadowadept/spells/C0SA610.spl~ ~override~
+SAY NAME1 ~Disintegrate~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0negeb%~
+END
 SAY NAME1 ~Negative Energy Burst~
 SAY NAME2 ~Negative Energy Burst~
 SAY UNIDENTIFIED_DESC ~Negative Energy Burst
@@ -2730,6 +2739,13 @@ Saving Throw: None
 This spell enables the caster to create a black, blade-shaped planar rift about three feet long. It jumps into the caster's hand and is used as a normal sword, remaining there for the duration of the spell. The caster is considered to be proficient to the point of Grand Mastery in this weapon. The sword acts as a +5 weapon and deals 2-24 damage to its victims. Also, every time it hits a target, the victim must make a Save vs. Death at +4 or be disintegrated. There is also a 10% chance with every hit that the sword drains 4 levels from the target and heals the wielder 20 Hit Points.~
 
 COPY ~shadowadept/spells/c0sa906.spl~ ~override~
+SAY NAME1 ~Negastorm~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0weird%~
+END
 SAY NAME1 ~Weird~
 SAY NAME2 ~Weird~
 SAY UNIDENTIFIED_DESC ~Weird
