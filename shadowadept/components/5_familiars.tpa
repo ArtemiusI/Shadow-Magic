@@ -543,9 +543,9 @@ Saving Throw: Neg.
 With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a save vs. spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds.~
 
 COPY ~shadowadept/familiars/c0sfam21.spl~ ~override~
-SAY NAME1 ~Shar's Memory Loss~
-SAY NAME2 ~Shar's Memory Loss~
-SAY UNIDENTIFIED_DESC ~Shar's Memory Loss
+SAY NAME1 ~Shar's Memory Drain~
+SAY NAME2 ~Shar's Memory Drain~
+SAY UNIDENTIFIED_DESC ~Shar's Memory Drain
 (Enchantment - Shadow Weave)
 
 Level: 5

@@ -1,0 +1,187 @@
+// Nightsinger's Tithe
+
+IF
+  Kit(Player1,C0SADEPT)
+  GlobalGT("C0SA903","GLOBAL",49)
+  Global("C0NightsingerTithe","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0NightsingerTithe","GLOBAL",1)
+	ApplySpellRES("C0SA903B",Player1)
+	Continue()
+END
+
+// CHEATER
+
+IF	
+	Kit(Player1,C0SADEPT)
+	Global("C0SACHEATS","GLOBAL",1)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SACHEATS","GLOBAL",2)
+	ActionOverride(Player1,AddSpecialAbility("c0sa101"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa102"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa103"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa104"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa105"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa106"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa107"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa108"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa109"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa110"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa201"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa202"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa203"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa204"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa205"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa206"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa207"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa208"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa209"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa210"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa211"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa301"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa302"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa303"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa304"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa305"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa306"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa307"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa308"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa401"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa402"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa403"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa404"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa405"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa406"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa407"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa408"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa409"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa410"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa501"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa502"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa503"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa504"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa505"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa506"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa507"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa508"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa509"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa601"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa602"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa603"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa604"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa605"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa606"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa607"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa608"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa609"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa610"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa701"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa702"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa703"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa704"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa705"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa706"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa707"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa708"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa709"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa710"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa801"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa802"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa803"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa804"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa805"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa806"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa807"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa808"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa809"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa810"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa811"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa901"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa902"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa903"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa904"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa905"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa906"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa907"))
+	ActionOverride(Player1,AddSpecialAbility("c0sa908"))
+END
+
+
+// Shadow Sword
+
+IF
+  Race(Player1,VAMPIRE)
+  Kit(Player1,C0SADEPT)
+  !PartyHasItem("c0saswd1")
+  Global("C0ShadowSword","GLOBAL",0)
+  LevelGT(Player1,5)
+THEN
+  RESPONSE #100
+	SetGlobal("C0ShadowSword","GLOBAL",1)
+	CreateVisualEffectObject("c0flmbld",Player1)
+	GiveItemCreate("c0saswd1",Player1,0,0,0)
+	DisplayStringHead(Player1,~The shadow adept has created a dark blade forged from shadowstuff.~)
+	Continue()
+END
+  
+IF
+  HasItemEquiped("c0saswd1",Player1)
+  Global("C0ShadowSword","GLOBAL",1)
+  LevelGT(Player1,10)
+THEN
+  RESPONSE #100
+	CreateVisualEffectObject("c0flmbld",Player1)
+    ActionOverride(Player1,TransformItem("c0saswd1","c0saswd2"))
+	DisplayStringHead(Player1,~The shadow adept's blade has increased in power.~)
+	Continue()
+END
+  
+IF
+  HasItemEquiped("c0saswd2",Player1)
+  Global("C0ShadowSword","GLOBAL",1)
+  LevelGT(Player1,15)
+THEN
+  RESPONSE #100
+	CreateVisualEffectObject("c0flmbld",Player1)
+    ActionOverride(Player1,TransformItem("c0saswd2","c0saswd3"))
+	DisplayStringHead(Player1,~The shadow adept's blade has increased in power.~)
+	Continue()
+END
+
+IF
+  HasItemEquiped("c0saswd3",Player1)
+  Global("C0ShadowSword","GLOBAL",1)
+  LevelGT(Player1,20)
+THEN
+  RESPONSE #100
+	CreateVisualEffectObject("c0flmbld",Player1)
+    ActionOverride(Player1,TransformItem("c0saswd3","c0saswd4"))
+	DisplayStringHead(Player1,~The shadow adept's blade has increased in power.~)
+	Continue()
+END
+
+IF
+  HasItemEquiped("c0saswd4",Player1)
+  Global("C0ShadowSword","GLOBAL",1)
+  LevelGT(Player1,25)
+THEN
+  RESPONSE #100
+	CreateVisualEffectObject("c0flmbld",Player1)
+    ActionOverride(Player1,TransformItem("c0saswd4","c0saswd5"))
+	DisplayStringHead(Player1,~The shadow adept's blade has increased in power.~)
+	Continue()
+END
+
+IF
+  HasItemEquiped("c0saswd5",Player1)
+  Global("C0ShadowSword","GLOBAL",1)
+  LevelGT(Player1,30)
+THEN
+  RESPONSE #100
+	CreateVisualEffectObject("c0flmbld",Player1)
+    ActionOverride(Player1,TransformItem("c0saswd5","c0saswd6"))
+	DisplayStringHead(Player1,~The shadow adept's blade has increased in power.~)
+	Continue()
+END

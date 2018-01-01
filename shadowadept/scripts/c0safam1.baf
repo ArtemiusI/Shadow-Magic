@@ -1,6 +1,11 @@
 IF
+	OR(3)
 	Kit(Player1,C0SADEPT)
+	Kit(Player1,C0SASORC)
+	Kit(Player1,C0SABARD)
+	OR(2)
 	ClassLevelGT(Player1,WIZARD,5)
+	ClassLevelGT(Player1,ROGUE,7)
 	Global("C0SASummonFamiliar","GLOBAL",0)
 THEN
   RESPONSE #100

@@ -1,9 +1,7 @@
-ADD_TRANS_TRIGGER BDWYNAN 15 ~!Kit(Player1,C0SADEPT)~
+ADD_TRANS_TRIGGER BDWYNAN 15 ~!Kit(Player1,C0SADEPT)~ DO 0
 
 EXTEND_TOP BDWYNAN 15
 + ~Kit(Player1,C0SADEPT)~ + ~I believe I can.~ EXTERN BDWYNAN bdwynan1
-+ ~Kit(Player1,C0SADEPT)~ + ~Here it is.~ EXTERN BDWYNAN 17
-+ ~Kit(Player1,C0SADEPT)~ + ~Slow down there. We need to talk about how much this scroll is worth first.~ EXTERN BDWYNAN 18
 END
 
 CHAIN BDWYNAN bdwynan1

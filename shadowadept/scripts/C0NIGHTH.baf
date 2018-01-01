@@ -1,0 +1,308 @@
+IF
+	HasItem("c0nighth",Myself)
+	AreaType(OUTDOOR)
+	OR(2)
+	TimeOfDay(DAY)
+	TimeOfDay(MORNING)
+THEN
+  RESPONSE #100
+	DestroyItem("c0nighth")
+END
+
+IF
+	!HasItem("c0nighth",Myself)
+	AreaType(OUTDOOR)
+	OR(2)
+	TimeOfDay(DAY)
+	TimeOfDay(MORNING)
+THEN
+  RESPONSE #100
+	GiveItemCreate("c0nighth",Myself,1,0,0)
+	XEquipItem("c0nighth",Myself,SLOT_RING_RIGHT,EQUIP)
+END
+
+IF
+  OR(2)
+    StateCheck(Myself,STATE_IMMOBILE)
+    StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  !Allegiance(Myself,EVILCUTOFF)
+  !InActiveArea(Myself)
+  !Range(Nearestenemyof(Myself),30)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  StateCheck(Myself,STATE_PANIC)
+THEN
+  RESPONSE #100
+    RandomWalkContinuous()
+END
+
+IF
+  Global("BD_RangedA","LOCALS",0)
+  IsWeaponRanged(Myself)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_RangedA","LOCALS",1)
+    Continue()
+END
+
+IF
+  Global("BD_RangedA","LOCALS",0)
+  !IsWeaponRanged(Myself)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_RangedA","LOCALS",2)
+    Continue()
+END
+
+IF
+  Global("BD_RangedA","LOCALS",1)
+  Range(Nearestenemyof(Myself),4)
+  IsWeaponRanged(Myself)
+THEN
+  RESPONSE #100
+    EquipMostDamagingMelee()
+    Continue()
+END
+
+IF
+  Global("BD_RangedA","LOCALS",1)
+  !Range(Nearestenemyof(Myself),4)
+  !IsWeaponRanged(Myself)
+  CanEquipRanged()
+THEN
+  RESPONSE #100
+    EquipRanged()
+    Continue()
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(Nearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Nearestenemyof(Myself),MAINHAND)
+  See(Nearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(Sixthnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Sixthnearestenemyof(Myself),MAINHAND)
+  !StateCheck(Sixthnearestenemyof(Myself),STATE_PANIC)
+  CheckStatLT(Sixthnearestenemyof(Myself),1,STONESKINS)
+  !StateCheck(Sixthnearestenemyof(Myself),STATE_MIRRORIMAGE)
+  See(Sixthnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(Fifthnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Fifthnearestenemyof(Myself),MAINHAND)
+  !StateCheck(Fifthnearestenemyof(Myself),STATE_PANIC)
+  CheckStatLT(Fifthnearestenemyof(Myself),1,STONESKINS)
+  !StateCheck(Fifthnearestenemyof(Myself),STATE_MIRRORIMAGE)
+  See(Fifthnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(Fourthnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Fourthnearestenemyof(Myself),MAINHAND)
+  !StateCheck(Fourthnearestenemyof(Myself),STATE_PANIC)
+  CheckStatLT(Fourthnearestenemyof(Myself),1,STONESKINS)
+  !StateCheck(Fourthnearestenemyof(Myself),STATE_MIRRORIMAGE)
+  See(Fourthnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(Thirdnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Thirdnearestenemyof(Myself),MAINHAND)
+  !StateCheck(Thirdnearestenemyof(Myself),STATE_PANIC)
+  CheckStatLT(Thirdnearestenemyof(Myself),1,STONESKINS)
+  !StateCheck(Thirdnearestenemyof(Myself),STATE_MIRRORIMAGE)
+  See(Thirdnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(Secondnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Secondnearestenemyof(Myself),MAINHAND)
+  !StateCheck(Secondnearestenemyof(Myself),STATE_PANIC)
+  CheckStatLT(Secondnearestenemyof(Myself),1,STONESKINS)
+  !StateCheck(Secondnearestenemyof(Myself),STATE_MIRRORIMAGE)
+  See(Secondnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(Nearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Nearestenemyof(Myself),MAINHAND)
+  !StateCheck(Nearestenemyof(Myself),STATE_PANIC)
+  CheckStatLT(Nearestenemyof(Myself),1,STONESKINS)
+  !StateCheck(Nearestenemyof(Myself),STATE_MIRRORIMAGE)
+  See(Nearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  AttackedBy(Nearestenemyof(Myself),DEFAULT)
+  WeaponEffectiveVs(Lastattackerof(Myself),MAINHAND)
+  WeaponCanDamage(Lastattackerof(Myself),MAINHAND)
+  !StateCheck(Lastattackerof(Myself),STATE_PANIC)
+  !StateCheck(Lastattackerof(Myself),STATE_MIRRORIMAGE)
+  CheckStatLT(Lastattackerof(Myself),1,STONESKINS)
+  Range(Lastattackerof(Myself),8)
+  RandomNum(3,1)
+  See(Lastattackerof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  AttackedBy(Nearestenemyof(Myself),DEFAULT)
+  WeaponEffectiveVs(Lastattackerof(Myself),MAINHAND)
+  WeaponCanDamage(Lastattackerof(Myself),MAINHAND)
+  !StateCheck(Lastattackerof(Myself),STATE_PANIC)
+  !StateCheck(Lastattackerof(Myself),STATE_MIRRORIMAGE)
+  CheckStatLT(Lastattackerof(Myself),1,STONESKINS)
+  Range(Lastattackerof(Myself),4)
+  See(Lastattackerof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(Sixthnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Sixthnearestenemyof(Myself),MAINHAND)
+  StateCheck(Sixthnearestenemyof(Myself),STATE_IMMOBILE)
+  See(Sixthnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(Fifthnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Fifthnearestenemyof(Myself),MAINHAND)
+  StateCheck(Fifthnearestenemyof(Myself),STATE_IMMOBILE)
+  See(Fifthnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(Fourthnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Fourthnearestenemyof(Myself),MAINHAND)
+  StateCheck(Fourthnearestenemyof(Myself),STATE_IMMOBILE)
+  See(Fourthnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(Thirdnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Thirdnearestenemyof(Myself),MAINHAND)
+  StateCheck(Thirdnearestenemyof(Myself),STATE_IMMOBILE)
+  See(Thirdnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(Secondnearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Secondnearestenemyof(Myself),MAINHAND)
+  StateCheck(Secondnearestenemyof(Myself),STATE_IMMOBILE)
+  See(Secondnearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(Nearestenemyof(Myself),MAINHAND)
+  WeaponCanDamage(Nearestenemyof(Myself),MAINHAND)
+  StateCheck(Nearestenemyof(Myself),STATE_IMMOBILE)
+  See(Nearestenemyof(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  OR(2)
+    ActionListEmpty()
+    Specifics(Myself,SPIRIT)
+  !StateCheck(Lastseenby(Myself),STATE_REALLY_DEAD)
+  Allegiance(Lastseenby(Myself),EVILCUTOFF)
+  !InParty(Lastseenby(Myself))
+THEN
+  RESPONSE #100
+    AttackOneRound(Lastseenby(Myself))
+END
+
+IF
+  Allegiance(Myself,EVILCUTOFF)
+  !StateCheck(Lastseenby(Myself),STATE_REALLY_DEAD)
+  !Allegiance(Lastseenby(Myself),EVILCUTOFF)
+THEN
+  RESPONSE #100
+    AttackOneRound(Lastseenby(Myself))
+END
+

@@ -5,6 +5,7 @@ IF
 THEN
   RESPONSE #100
 	ActionOverride(Lastsummonerof(Myself),AddKit(C0SADEPT))
+	ChangeSpecifics(Lastsummonerof(Myself),12)
 	DestroySelf()
 END
 
@@ -51,7 +52,7 @@ THEN
 END
 
 IF
-	Kit(Lastsummonerof(Myself),C0SADEPT)
+  Kit(Lastsummonerof(Myself),C0SADEPT)
 	Global("C0SABOOK","GLOBAL",1)
 THEN
   RESPONSE #100

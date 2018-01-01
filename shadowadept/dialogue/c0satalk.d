@@ -21,19 +21,25 @@ END
 
 // Extra Level 2 Spell
 
-IF ~ClassLevelGT(Myself,WIZARD,2) CheckStat(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA4
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,2)
+ClassLevelGT(Myself,ROGUE,3) CheckStat(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA4
 SAY ~\[17 CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","GLOBAL",1)
 StartDialogueNoSet(Myself)~ EXIT
 END
 
-IF ~ClassLevelGT(Myself,WIZARD,2) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA5
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,2)
+ClassLevelGT(Myself,ROGUE,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA5
 SAY ~\[18+ CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for two extra level 2 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",2) IncrementGlobal("C0SALv2","GLOBAL",2)
 StartDialogueNoSet(Myself)~ EXIT
 END
 
-IF ~ClassLevelGT(Myself,WIZARD,2) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",1)~ EXTRA6
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,2)
+ClassLevelGT(Myself,ROGUE,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",1)~ EXTRA6
 SAY ~\[18+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","GLOBAL",1)
 StartDialogueNoSet(Myself)~ EXIT
@@ -41,19 +47,25 @@ END
 
 // Extra Level 3 Spell
 
-IF ~ClassLevelGT(Myself,WIZARD,4) CheckStat(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA7
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,4)
+ClassLevelGT(Myself,ROGUE,6) CheckStat(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA7
 SAY ~\[18 CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for an extra level 3 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","GLOBAL",1)
 StartDialogueNoSet(Myself)~ EXIT
 END
 
-IF ~ClassLevelGT(Myself,WIZARD,4) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA8
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,4)
+ClassLevelGT(Myself,ROGUE,6) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA8
 SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",2) IncrementGlobal("C0SALv3","GLOBAL",2)
 StartDialogueNoSet(Myself)~ EXIT
 END
 
-IF ~ClassLevelGT(Myself,WIZARD,4) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",1)~ EXTRA9
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,4)
+ClassLevelGT(Myself,ROGUE,6) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",1)~ EXTRA9
 SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","GLOBAL",1)
 StartDialogueNoSet(Myself)~ EXIT
@@ -61,19 +73,25 @@ END
 
 // Extra Level 4 Spell
 
-IF ~ClassLevelGT(Myself,WIZARD,6) CheckStat(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA10
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,6)
+ClassLevelGT(Myself,ROGUE,9) CheckStat(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA10
 SAY ~\[19 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 4 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","GLOBAL",1)
 StartDialogueNoSet(Myself)~ EXIT
 END
 
-IF ~ClassLevelGT(Myself,WIZARD,6) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA11
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,6)
+ClassLevelGT(Myself,ROGUE,9) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA11
 SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",2) IncrementGlobal("C0SALv4","GLOBAL",2)
 StartDialogueNoSet(Myself)~ EXIT
 END
 
-IF ~ClassLevelGT(Myself,WIZARD,6) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",1)~ EXTRA12
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,6)
+ClassLevelGT(Myself,ROGUE,9) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",1)~ EXTRA12
 SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","GLOBAL",2)
 StartDialogueNoSet(Myself)~ EXIT
@@ -81,7 +99,9 @@ END
 
 // Extra Level 5 Spell
 
-IF ~ClassLevelGT(Myself,WIZARD,8) CheckStatGT(Myself,20,CHR) Global("C0SAExtraLevel5Spell","LOCALS",0)~ EXTRA13
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,8)
+ClassLevelGT(Myself,ROGUE,12) CheckStatGT(Myself,20,CHR) Global("C0SAExtraLevel5Spell","LOCALS",0)~ EXTRA13
 SAY ~\[21 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 5 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel5Spell","LOCALS",1) IncrementGlobal("C0SALv5","GLOBAL",1)
 StartDialogueNoSet(Myself)~ EXIT
@@ -89,7 +109,9 @@ END
 
 // Extra Level 6 Spell
 
-IF ~ClassLevelGT(Myself,WIZARD,11) CheckStatGT(Myself,21,CHR) Global("C0SAExtraLevel6Spell","LOCALS",0)~ EXTRA14
+IF ~OR(2)
+ClassLevelGT(Myself,WIZARD,11)
+ClassLevelGT(Myself,ROGUE,15) CheckStatGT(Myself,21,CHR) Global("C0SAExtraLevel6Spell","LOCALS",0)~ EXTRA14
 SAY ~\[22 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 6 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel6Spell","LOCALS",1) IncrementGlobal("C0SALv6","GLOBAL",1)
 StartDialogueNoSet(Myself)~ EXIT
@@ -134,7 +156,9 @@ OR(11)
 !HaveKnownSpellRES("c0sa109")
 !HaveKnownSpellRES("c0sa110")
 !HaveKnownSpellRES("c0sa111")~ + ~1st level~ + level1
-+ ~ClassLevelGT(Myself,WIZARD,2)
++ ~OR(2)
+ClassLevelGT(Myself,WIZARD,2)
+ClassLevelGT(Myself,ROGUE,3)
 GlobalGT("C0SALv2","GLOBAL",0)
 OR(11)
 !HaveKnownSpellRES("c0sa201")
@@ -148,7 +172,9 @@ OR(11)
 !HaveKnownSpellRES("c0sa209")
 !HaveKnownSpellRES("c0sa210")
 !HaveKnownSpellRES("c0sa211")~ + ~2nd level~ + level2
-+ ~ClassLevelGT(Myself,WIZARD,4)
++ ~OR(2)
+ClassLevelGT(Myself,WIZARD,4)
+ClassLevelGT(Myself,ROGUE,6)
 GlobalGT("C0SALv3","GLOBAL",0)
 OR(11)
 !HaveKnownSpellRES("c0sa301")
@@ -162,9 +188,11 @@ OR(11)
 !HaveKnownSpellRES("c0sa309")
 !HaveKnownSpellRES("c0sa310")
 !HaveKnownSpellRES("c0sa311")~ + ~3rd level~ + level3
-+ ~ClassLevelGT(Myself,WIZARD,6)
++ ~OR(2)
+ClassLevelGT(Myself,WIZARD,6)
+ClassLevelGT(Myself,ROGUE,9)
 GlobalGT("C0SALv4","GLOBAL",0)
-OR(11)
+OR(12)
 !HaveKnownSpellRES("spwi420")
 !HaveKnownSpellRES("c0sa401")
 !HaveKnownSpellRES("c0sa402")
@@ -177,9 +205,11 @@ OR(11)
 !HaveKnownSpellRES("c0sa409")
 !HaveKnownSpellRES("c0sa410")
 !HaveKnownSpellRES("c0sa411")~ + ~4th level~ + level4
-+ ~ClassLevelGT(Myself,WIZARD,8)
++ ~OR(2)
+ClassLevelGT(Myself,WIZARD,8)
+ClassLevelGT(Myself,ROGUE,12)
 GlobalGT("C0SALv5","GLOBAL",0)
-OR(11) 
+OR(12) 
 !HaveKnownSpellRES("c0sa501")
 !HaveKnownSpellRES("c0sa502")
 !HaveKnownSpellRES("c0sa503")
@@ -190,8 +220,11 @@ OR(11)
 !HaveKnownSpellRES("c0sa508")
 !HaveKnownSpellRES("c0sa509")
 !HaveKnownSpellRES("c0sa510")
-!HaveKnownSpellRES("c0sa511")~ + ~5th level~ + level5
-+ ~ClassLevelGT(Myself,WIZARD,11)
+!HaveKnownSpellRES("c0sa511")
+!HaveKnownSpellRES("c0sa512")~ + ~5th level~ + level5
++ ~OR(2)
+ClassLevelGT(Myself,WIZARD,11)
+ClassLevelGT(Myself,ROGUE,15)
 GlobalGT("C0SALv6","GLOBAL",0)
 OR(12) 
 !HaveKnownSpellRES("spwi617")
@@ -208,7 +241,7 @@ OR(12)
 !HaveKnownSpellRES("c0sa611")~ + ~6th level~ + level6
 + ~ClassLevelGT(Myself,WIZARD,13)
 GlobalGT("C0SALv7","GLOBAL",0)
-OR(12) 
+OR(13) 
 !HaveKnownSpellRES("spwi710")
 !HaveKnownSpellRES("c0sa701")
 !HaveKnownSpellRES("c0sa702")
@@ -220,7 +253,8 @@ OR(12)
 !HaveKnownSpellRES("c0sa708")
 !HaveKnownSpellRES("c0sa709")
 !HaveKnownSpellRES("c0sa710")
-!HaveKnownSpellRES("c0sa711")~ + ~7th level~ + level7
+!HaveKnownSpellRES("c0sa711")
+!HaveKnownSpellRES("c0sa712")~ + ~7th level~ + level7
 + ~ClassLevelGT(Myself,WIZARD,15)
 GlobalGT("C0SALv8","GLOBAL",0)
 OR(12) 
@@ -308,6 +342,7 @@ SAY ~Choose one 4th level spell:~
 + ~!HaveKnownSpellRES("c0sa408")~ + ~Dread Whispers~ + 4.9
 + ~!HaveKnownSpellRES("c0sa409")~ + ~Immunity~ + 4.10
 + ~!HaveKnownSpellRES("c0sa410")~ + ~Black Ooze~ + 4.11
++ ~!HaveKnownSpellRES("c0sa411")~ + ~Wall of Black Flame~ + 4.12
 END
 
 IF ~~ level5
@@ -317,12 +352,13 @@ SAY ~Choose one 5th level spell:~
 + ~!HaveKnownSpellRES("c0sa503")~ + ~Breaching Dark~ + 5.3
 + ~!HaveKnownSpellRES("c0sa504")~ + ~Shadow Blade~ + 5.4
 + ~!HaveKnownSpellRES("c0sa505")~ + ~Sigil of Madness~ + 5.5
-+ ~!HaveKnownSpellRES("c0sa506")~ + ~Shar's Memory Loss~ + 5.6
++ ~!HaveKnownSpellRES("c0sa506")~ + ~Shar's Memory Drain~ + 5.6
 + ~!HaveKnownSpellRES("c0sa507")~ + ~Unmask~ + 5.7
 + ~!HaveKnownSpellRES("c0sa508")~ + ~Nightshade~ + 5.8
 + ~!HaveKnownSpellRES("c0sa509")~ + ~Shadow Chain~ + 5.9
 + ~!HaveKnownSpellRES("c0sa510")~ + ~Void Blast~ + 5.10
 + ~!HaveKnownSpellRES("c0sa511")~ + ~Shadow Screen~ + 5.11
++ ~!HaveKnownSpellRES("c0sa512")~ + ~Summon Nighthaunt~ + 5.12
 END
 
 IF ~~ level6
@@ -355,6 +391,7 @@ SAY ~Choose one 7th level spell:~
 + ~!HaveKnownSpellRES("c0sa709")~ + ~Possess~ + 7.10
 + ~!HaveKnownSpellRES("c0sa710")~ + ~Malefic Bomb~ + 7.11
 + ~!HaveKnownSpellRES("c0sa711")~ + ~Shadow Gate~ + 7.12
++ ~!HaveKnownSpellRES("c0sa712")~ + ~Nightfall~ + 7.13
 END
 
 IF ~~ level8
@@ -1132,6 +1169,12 @@ With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from
 ++ ~Return to spell selection.~ + learn
 END
 
+IF ~~ 4.12
+SAY ~~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","GLOBAL",-1) AddSpecialAbility("C0SA411")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
 IF ~~ 5.1
 SAY ~Cone of Bitter Cold
 (Invocation/Evocation - Shadow Weave)
@@ -1217,7 +1260,7 @@ The effects of this spell are identical to the 5th-level spell Chaos in all resp
 END
 
 IF ~~ 5.6
-SAY ~Shar's Memory Loss
+SAY ~Shar's Memory Drain
 (Enchantment - Shadow Weave)
 
 Level: 5
@@ -1311,6 +1354,24 @@ Saving Throw: None
 
 When this spell is cast, the shadow adept is protected from the next magical attack against <PRO_HIMHER>. The spells from which the shadow adept is protected are Dispel/Remove Magic, Spell Thrust, Secret Word, Breach, Lower Resistance, Pierce Magic, Ruby Ray, Khelben's Warding Whip, Pierce Shield, and Spellstrike. If one of these spells is cast at the shadow adept, this spell activates and absorbs the attack. However, this only works once and this spell is consumed in the process. Otherwise, it will last for its duration.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","GLOBAL",-1) AddSpecialAbility("C0SA511")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
+IF ~~ 5.12
+SAY ~Summon Nighthaunt
+(Conjuration/Summoning)
+
+Level: 5
+Range: 45 ft.
+Duration: 1 turn + 1 round/level
+Casting Time: 8
+Area of Effect: Special
+Saving Throw: None
+
+This spell conjures forth a nighthaunt, an undead monster from the Shadow Plane. Nighthaunts are deadly creatures that emit an aura of desecration, reducing the THAC0 and damage of all nearby living creatures by one point while increasing THAC0 and damage of all undead creatures by one point. Its natural weapon is capable of draining two levels on hit and strikes as a +4 weapon. However, nighthaunts are greatly weakened in natural daylight. From 14th level onwards, two nighthaunts are summoned instead.
+
+The nighthaunt is fully under the control of the caster for the duration of the spell and will follow all of <PRO_HISHER> orders until the duration has expired.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","GLOBAL",-1) AddSpecialAbility("C0SA512")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 
@@ -1729,6 +1790,22 @@ This spell conjures a one-way portal linked to the Plane of Shadow at the caster
 
 Creatures summoned by this spell remain for 1 turn.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","GLOBAL",-1) AddSpecialAbility("C0SA711")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
+IF ~~ 7.13
+SAY ~Nightfall
+(Evocation - Shadow Weave) 
+
+Level: 7
+Range: Visual range of the caster 
+Duration: 6 rounds
+Casting Time: 8
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+This spell creates a rainfall of shadowstuff on the target location for six rounds. All creatures suffer 2d6 magical damage for every round that they remain within the rainfall and suffer a cumulative penalty of -1 to Armor Class and all Saving Throws for one turn. However, shadow adepts and undead creatures standing in the rainfall are healed for 2d6 hit points per round instead.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","GLOBAL",-1) AddSpecialAbility("C0SA712")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 

@@ -1,37 +1,6 @@
 COPY ~shadowadept/itempack/bams~ ~override~
 
 ////////////////////////////////////////
-/////////CREATURES//////////////////////
-////////////////////////////////////////
-
-COPY ~shadowadept/creatures/c0sakryn.cre~ ~override~
-WRITE_ASCII 0x248 ~c0sakryn~  #8  // override
-WRITE_ASCII 0x2cc ~c0sakryn~  #8  // dialogue
-WRITE_ASCII 0x280 ~c0sakryn~ #32 // death variable
-SAY NAME1 ~Kryn Darkflame~
-SAY NAME2 ~Kryn Darkflame~
-WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
-
-COPY ~shadowadept/creatures/c0xarius.cre~ ~override~
-WRITE_ASCII 0x248 ~c0sadept~  #8  // override
-WRITE_ASCII 0x2cc ~c0xarius~  #8  // dialogue
-WRITE_ASCII 0x280 ~c0xarius~ #32 // death variable
-SAY NAME1 ~Xarius~
-SAY NAME2 ~Xarius~
-
-COMPILE ~shadowadept/dialogue/c0xarius.d~
-COMPILE ~shadowadept/scripts/c0sadept.baf~
-
-/*ACTION_IF GAME_IS ~bgee~
-THEN BEGIN
-EXTEND_TOP ~ar5001.bcs~ ~shadowadept/scripts/ar5001.baf~
-END
-
-ACTION_IF GAME_IS ~eet~
-THEN BEGIN
-EXTEND_TOP ~bg5001.bcs~ ~shadowadept/scripts/ar5001.baf~
-END*/
-////////////////////////////////////////
 /////////ITEMS//////////////////////////
 ////////////////////////////////////////
 
@@ -43,8 +12,8 @@ COPY ~shadowadept/itempack/c0sarng1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
@@ -87,11 +56,12 @@ COPY ~shadowadept/itempack/c0sas2h1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
-Fighter / Shadow Adept / Thief~)
+Fighter / Shadow Adept / Thief
+Nightsinger~)
 END
 LPF ALTER_EFFECT
     INT_VAR
@@ -155,8 +125,8 @@ COPY ~shadowadept/itempack/c0saamu1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
@@ -184,8 +154,8 @@ COPY ~shadowadept/itempack/c0sarob1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
@@ -217,8 +187,8 @@ COPY ~shadowadept/itempack/c0sasta1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
@@ -269,8 +239,8 @@ COPY ~shadowadept/itempack/c0sadag1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
@@ -328,12 +298,13 @@ COPY ~shadowadept/itempack/c0sas1h1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
 Shadow Adept / Thief
-Fighter / Shadow Adept / Thief~)
+Fighter / Shadow Adept / Thief
+Nightsinger~)
 END
 SAY NAME1 ~Long Sword~
 SAY NAME2 ~Edge of Eclipse +4~
@@ -383,8 +354,8 @@ COPY ~shadowadept/itempack/c0sapot1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
@@ -414,8 +385,8 @@ COPY ~shadowadept/itempack/c0sadar1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
@@ -458,7 +429,7 @@ COPY ~shadowadept/itempack/c0sarng2.itm~ ~override~
       check_headers = 1
       match_opcode = 177 // display string
       match_parameter1 = 0
- parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+ parameter1 = 12
   END
 SAY NAME1 ~Ring~
 SAY NAME2 ~Ring of Shadowkin~
@@ -512,8 +483,8 @@ COPY ~shadowadept/itempack/c0sas1h2.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
 Fighter / Shadow Adept / Thief~)
@@ -685,7 +656,7 @@ COPY ~shadowadept/itempack/c0saboo1.itm~ ~override~
       check_headers = 1
       match_opcode = 177 // display string
       match_parameter1 = 0
- parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+ parameter1 = 12
   END
 SAY NAME1 ~Boots~
 SAY NAME2 ~Night Treads~
@@ -715,8 +686,8 @@ COPY ~shadowadept/itempack/c0sabel1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
+	  parameter1 = 12
+	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
@@ -740,3 +711,91 @@ Equipped abilities:
 - May only be removed with a Remove Curse spell
 
 Weight: 2~
+
+COPY ~shadowadept/itempack/c0sacha1.itm~ ~override/chan09.itm~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Chain Mail~
+SAY NAME2 ~Darkmail +3~
+SAY UNIDENTIFIED_DESC ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+
+STATISTICS:
+
+Armor Class: 5 (3 vs. slashing, 7 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 5~
+SAY DESC ~This suit of dark-colored chain mail is surprisingly light and somehow makes no sound, despite being composed of countless metal links. Having been worn by inhabitants of the Shadow Plane, it appears to have taken on some of its previous owner's power, giving it magical properties. Those who wear this armor find their forms shrouded in a protective veil of shadow.
+
+STATISTICS:
+
+Equipped abilities:
+- Save vs. Death: +2
+- Immunity to level drain
+- Spellcasting is not disabled
+- All magic damage inflicted by the wearer is increased by 15%
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+Requires:
+ 8 Strength
+
+Weight: 5~
+
+COPY ~shadowadept/itempack/c0sanos1.spl~ ~override~
+COPY ~shadowadept/itempack/c0sanos1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Spellbook~
+SAY NAME2 ~Nosferatu~
+SAY UNIDENTIFIED_DESC ~This heavy spellbook emanates a malignant aura, making it uncomfortable even to hold.
+
+STATISTICS:
+
+Weight: 4~
+SAY DESC ~This heavy spellbook emanates a malignant aura, making it uncomfortable even to hold. When held in one's hand, it serves as an amplifier for shadow magic, and allows one to channel pure shadow energy in the form of powerful life-draining blasts.
+
+STATISTICS:
+
+Combat abilities:
+- Drain 3d6+2 hit points from the target and transfers it to the wielder (40 charges)
+- Upon killing a target, regain one spell of up to 6th level
+
+Equipped abilities:
+- May only be removed with a Remove Curse spell
+- May cast one bonus spell of each level
+- Hit Points: -40
+- Caster Level: +2 
+- Casting Speed: +1
+- Attacks per round set to 1
+
+STATISTICS:
+
+THAC0: +6
+Damage: 3d6+2 (magic)
+Speed Factor: 2
+Proficiency Type: None
+Type: One-handed
+
+Weight: 4~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~demilich.cre~ THEN BEGIN
+COPY_EXISTING ~demilich.cre~ ~override~
+ADD_CRE_ITEM ~c0sanos1~ #0 #0 #0 ~NONE~ ~inv~
+END

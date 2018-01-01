@@ -1,0 +1,185 @@
+INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+ADD_KIT ~C0SASORC~
+
+ // appended to CLASWEAP.2da
+ ~C0SASORC		1           1           1           1           1           1           1           1~
+
+ // appended column-wise to WEAPPROF.2da
+ ~C0SASORC		0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    
+ // appended to ABCLASRQ.2da
+ ~C0SASORC				0	0	12	9	0	9~
+
+ // appended to ABCLSMOD.2da
+ ~C0SASORC				0	0	0	0	0	0~
+
+ // appended to ABDCDSRQ.2da
+ ~C0SASORC                		0       0       15       15       0       15~
+
+ // appended to ABDCSCRQ.2da
+ ~C0SASORC                 	0       0       0       0       0		0~
+
+ // appended to ALIGNMNT.2da
+ ~C0SASORC                  	0       1       1       0       1	1       0       1       1~
+
+ // appended to DUALCLAS.2da
+ ~C0SASORC                  	0       0       0       0       0       0~
+
+ // path to your CLAB-style 2da file 
+ ~shadowadept/2da/C0SADEP3.2da~
+
+ // PC races and classes allowed to use this kit, from KITTABLE.2da
+ ~~
+
+ // usability flags, added to the end of the KITLIST.2da entry
+ ~0x00003FC0     19~
+
+ // HLA table to use; see LUABBR.2da
+ ~C0SA~
+
+ // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+ ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+
+ // Lower, mixed, and help kit names and UNIDENTIFIED_DESCriptions, added to KITLIST.2da
+  SAY ~shadow disciple~
+  SAY ~Shadow Disciple~
+  SAY ~SHADOW DISCIPLE: Shadow disciples are born with the innate ability to wield magic of the Shadow Weave, usually granted as a blessing from Shar, the Nightsinger. Like their equivalent, the sorcerer, they wield the power of their native magic, the Shadow Weave, with a level of skill that other spellcasters would envy.
+
+Advantages:
+ - Hit Die: d6
+ - May use Shadow Magic.
+
+SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow disciple must make a save vs. death at +5 minus spell level (e.g. +4 for level 1, -4 for level 9) or temporarily lose Constitution equal to the level of the spell cast for 3 rounds. If the shadow disciple's Constitution reaches zero, <PRO_HESHE> is killed instantly.
+
+The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
+
+- Gains the Darkvision innate ability.
+
+DARKVISION: The shadow disciple is gifted with the ability to see in the dark even better than in light. <PRO_HESHE> permanently gains infravision and immunity to blindness.
+
+ - +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+ - 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+ - 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow disciple cannot attack or use spells while in the Shadow Plane.
+
+ - 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow disciple creates a copy of <HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+ - -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+ - May not learn or use spells from the Weave. (Spells chosen on level-up will be erased)
+ - Alignment restricted to non-good.~
+
+LAF fl#add_kit_ee
+  INT_VAR
+	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+
+When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+  STR_VAR
+    kit_name = C0SASORC
+	hpclass = ~HPDD~
+	clascolr = ~27 136 119 21 187~
+	clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+ADD_KIT ~C0SASOR2~
+
+ // appended to CLASWEAP.2da
+ ~C0SASOR2		1           1           1           1           1           1           1           1~
+
+ // appended column-wise to WEAPPROF.2da
+ ~C0SASOR2		0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    
+ // appended to ABCLASRQ.2da
+ ~C0SASOR2				0	0	12	9	0	9~
+
+ // appended to ABCLSMOD.2da
+ ~C0SASOR2				0	0	0	0	0	0~
+
+ // appended to ABDCDSRQ.2da
+ ~C0SASOR2                		0       0       0       15       0       15~
+
+ // appended to ABDCSCRQ.2da
+ ~C0SASOR2                 	0       0       0       0       0		0~
+
+ // appended to ALIGNMNT.2da
+ ~C0SASOR2                  	0       1       1       0       1	1       0       1       1~
+
+ // appended to DUALCLAS.2da
+ ~C0SASOR2                  	0       0       0       0       0       0~
+
+ // path to your CLAB-style 2da file 
+ ~shadowadept/2da/C0SADEP2.2da~
+
+ // PC races and classes allowed to use this kit, from KITTABLE.2da
+ ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
+
+ // usability flags, added to the end of the KITLIST.2da entry
+ ~0x00004000 19~
+
+ // HLA table to use; see LUABBR.2da
+ ~C0SA~
+
+ // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+ ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+
+ // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
+  SAY ~shadow disciple~
+  SAY ~Shadow Disciple~
+  SAY ~SHADOW DISCIPLE: Shadow disciples are born with the innate ability to wield magic of the Shadow Weave, usually granted as a blessing from Shar, the Nightsinger. Like their equivalent, the sorcerer, they wield the power of their native magic, the Shadow Weave, with a level of skill that other spellcasters would envy.
+
+Advantages:
+ - Hit Die: d6
+ - May use Shadow Magic.
+
+SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow disciple must make a save vs. death at +5 minus spell level (e.g. +4 for level 1, -4 for level 9) or temporarily lose Constitution equal to the level of the spell cast for 3 rounds. If the shadow disciple's Constitution reaches zero, <PRO_HESHE> is killed instantly.
+
+The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
+
+- Gains the Darkvision innate ability.
+
+DARKVISION: The shadow disciple is gifted with the ability to see in the dark even better than in light. <PRO_HESHE> permanently gains infravision and immunity to blindness.
+
+ - +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+ - 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+ - 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow disciple cannot attack or use spells while in the Shadow Plane.
+
+ - 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow disciple creates a copy of <HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+ - -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+ - May not learn or use spells from the Weave. (Spells chosen on level-up will be erased)
+ - Alignment restricted to non-good.~
+
+LAF fl#add_kit_ee
+  INT_VAR
+	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+
+When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+  STR_VAR
+    kit_name = C0SASOR2
+	hpclass = ~HPDD~
+	clascolr = ~27 136 119 21 187~
+	clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~c0satalk.bcs~ THEN BEGIN
+EXTEND_TOP ~c0satalk.bcs~ ~shadowadept/scripts/c0satal2.baf~
+END

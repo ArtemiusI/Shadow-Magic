@@ -1,0 +1,219 @@
+////////////////////////////////////////
+/////////CREATURES//////////////////////
+////////////////////////////////////////
+
+COPY ~shadowadept/creatures/c0sakryn.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sakryn~  #8  // override
+WRITE_ASCII 0x2cc ~c0sakryn~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sakryn~ #32 // death variable
+SAY NAME1 ~Kryn Darkflame~
+SAY NAME2 ~Kryn Darkflame~
+WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
+
+COPY ~shadowadept/creatures/c0samag1.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x2cc ~c0samag1~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag1~ #32 // death variable
+SAY NAME1 ~Xarius the Black~
+SAY NAME2 ~Xarius the Black~
+
+COPY ~shadowadept/itempack/c0samag1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Staff of Xarius the Black~
+SAY UNIDENTIFIED_DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.~
+SAY DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+
+This wizard's staff, branded with the mark of the Shade Enclave, belonged to Xarius the Black, one of Kryn Darkflame's apprentices.
+
+STATISTICS:
+
+Equipped abilities:
+- Save vs. Death: +2
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+
+COPY ~shadowadept/creatures/c0samag2.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x2cc ~c0samag2~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag2~ #32 // death variable
+SAY NAME1 ~Chang Yu'ke~
+SAY NAME2 ~Chang Yu'ke~
+
+COPY ~shadowadept/itempack/c0samag2.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Staff of Chang Yu'ke~
+SAY UNIDENTIFIED_DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.~
+SAY DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+
+This wizard's staff, branded with the mark of the Shade Enclave, belonged to Chang Yu'ke, one of Kryn Darkflame's apprentices.
+
+STATISTICS:
+
+Combat abilities:
+- Deals 1d4 points of magic damage on hit
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+
+COPY ~shadowadept/creatures/c0samag3.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x2cc ~c0samag3~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag3~ #32 // death variable
+SAY NAME1 ~Mak'kai~
+SAY NAME2 ~Mak'kai~
+
+COPY ~shadowadept/itempack/c0samag3.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Staff of Mak'kai~
+SAY UNIDENTIFIED_DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.~
+SAY DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+
+This wizard's staff, branded with the mark of the Shade Enclave, belonged to Mak'kai, one of Kryn Darkflame's apprentices.
+
+STATISTICS:
+
+Equipped abilities:
+- Intelligence: +1
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+
+COPY ~shadowadept/creatures/c0samag4.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x2cc ~c0samag4~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag4~ #32 // death variable
+SAY NAME1 ~Evil-Eyed Andare~
+SAY NAME2 ~Evil-Eyed Andare~
+
+COPY ~shadowadept/itempack/c0samag4.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Staff of Evil-Eyed Andare~
+SAY UNIDENTIFIED_DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.~
+SAY DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+
+This wizard's staff, branded with the mark of the Shade Enclave, belonged to Evil-Eyed Andare, one of Kryn Darkflame's apprentices.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor Class: +1
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+
+COPY ~shadowadept/creatures/c0samag5.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x2cc ~c0samag5~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag5~ #32 // death variable
+SAY NAME1 ~Ivette Cold-Whisper~
+SAY NAME2 ~Ivette Cold-Whisper~
+
+COPY ~shadowadept/itempack/c0samag5.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Staff of Ivette Cold-Whisper~
+SAY UNIDENTIFIED_DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.~
+SAY DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
+
+This wizard's staff, branded with the mark of the Shade Enclave, belonged to Ivette Cold-Whisper, one of Kryn Darkflame's apprentices.
+
+STATISTICS:
+
+Charge abilities:
+- Shadow Missile three times per day (3 missiles)
+
+Damage: 1d6 (crushing)
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 4~
+
+COMPILE ~shadowadept/dialogue/c0xarius.d~
+COMPILE ~shadowadept/scripts/c0sadept.baf~
+
+ACTION_IF GAME_IS ~bgee~
+THEN BEGIN
+EXTEND_TOP ~ar5001.bcs~ ~shadowadept/scripts/ar5001.baf~
+END
+
+ACTION_IF GAME_IS ~eet~
+THEN BEGIN
+EXTEND_TOP ~bg5001.bcs~ ~shadowadept/scripts/ar5001.baf~
+END

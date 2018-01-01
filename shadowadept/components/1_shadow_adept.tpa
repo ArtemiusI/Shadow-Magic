@@ -263,6 +263,8 @@ ADD_PROJECTILE ~shadowadept/spells/c0negeb.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0weird.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0nightk.PRO~
 ADD_PROJECTILE ~shadowadept/spells/c0sasper.PRO~
+ADD_PROJECTILE ~shadowadept/spells/c0sarain.PRO~
+ADD_PROJECTILE ~shadowadept/spells/c0sawall.PRO~
 
 COPY ~shadowadept/spells/c0proj08.pro~ ~override~
 SAY 0x21A ~c0pro08a~
@@ -1391,7 +1393,7 @@ SAY UNIDENTIFIED_DESC ~Summon Shadow
 (Necromancy - Shadow Weave)
 Level: 4
 Range: Long
-Duration: 1 hour
+Duration: 2 hours
 Casting Time: 1 round
 Area of Effect: Special
 Saving Throw: None
@@ -1547,6 +1549,28 @@ Saving Throw: 1/2
 
 With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a saving throw vs. death at -2 take half damage and avoid the secondary effects. This spell ignores magic resistance.~
 
+COPY ~shadowadept/spells/C0SA411.spl~ ~override~
+SAY NAME1 ~Wall of Black Flame~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sawall%~
+END
+SAY NAME2 ~Wall of Black Flame~
+SAY UNIDENTIFIED_DESC ~Wall of Black Flame
+(Invocation/Evocation - Shadow Weave)
+
+Level: 4
+School: Evocation
+Range: Long
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 10'
+Saving Throw: 1/2
+
+With this spell, the shadow adept creates a wall of black fire, dealing 2d6 fire damage to all creatures who pass through it (Save vs. Spells for half) and reduces their Armor Class by -2 for one round. Creatures cannot take damage more than once per round.~
+
 COPY ~shadowadept/spells/C0SA501.spl~ ~override~
 SAY NAME1 ~Cone of Bitter Cold~
 READ_LONG 0x64 "abil_off"
@@ -1692,9 +1716,9 @@ Saving Throw: Special
 The effects of this spell are identical to the 5th-level spell Chaos in all respects, except this spell ignores magic resistance. The victims wander around as if in a daze, sometimes wandering away, sometimes attacking either friend or foe. If the victim is 4th level or lower, <PRO_HESHE> does not receive a Saving Throw vs. the effects. However, if the victim is 5th level or higher, <PRO_HESHE> receives a Save vs. Spell with a -4 penalty. The spell lasts for the duration or until a successful Dispel Magic is cast.~
 
 COPY ~shadowadept/spells/C0SA506.spl~ ~override~
-SAY NAME1 ~Shar's Memory Loss~
-SAY NAME2 ~Shar's Memory Loss~
-SAY UNIDENTIFIED_DESC ~Shar's Memory Loss
+SAY NAME1 ~Shar's Memory Drain~
+SAY NAME2 ~Shar's Memory Drain~
+SAY UNIDENTIFIED_DESC ~Shar's Memory Drain
 (Enchantment - Shadow Weave)
 
 Level: 5
@@ -1855,7 +1879,7 @@ Saving Throw: None
 
 This spell creates several shadowy threads which wraps itself around all enemies in a 30 ft. radius from the center of the caster's targeted location. and pulls them towards the caster. It deals no damage, but targets become disoriented once they arrive and are unable to attack or use spells for 1 round.~
 
-COPY ~shadowadept/spells/C0SA509.spl~ ~override~
+COPY ~shadowadept/spells/C0SA509a.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -1946,6 +1970,29 @@ Area of Effect: The caster
 Saving Throw: None
 
 When this spell is cast, the shadow adept is protected from the next magical attack against <PRO_HIMHER>. The spells from which the shadow adept is protected are Dispel/Remove Magic, Spell Thrust, Secret Word, Breach, Lower Resistance, Pierce Magic, Ruby Ray, Khelben's Warding Whip, Pierce Shield, and Spellstrike. If one of these spells is cast at the shadow adept, this spell activates and absorbs the attack. However, this only works once and this spell is consumed in the process. Otherwise, it will last for its duration.~
+
+COPY ~shadowadept/spells/C0SA512.spl~ ~override~
+SAY NAME1 ~Summon Nighthaunt~
+SAY NAME2 ~Summon Nighthaunt~
+SAY UNIDENTIFIED_DESC ~Summon Nighthaunt
+(Conjuration/Summoning)
+
+Level: 5
+Range: 45 ft.
+Duration: 1 turn + 1 round/level
+Casting Time: 8
+Area of Effect: Special
+Saving Throw: None
+
+This spell conjures forth a nighthaunt, an undead monster from the Shadow Plane. Nighthaunts are deadly creatures that emit an aura of desecration, reducing the THAC0 and damage of all nearby living creatures by two points while increasing THAC0 and damage of all undead creatures by two points. Its natural weapon is capable of draining two levels on hit and strikes as a +4 weapon. However, nighthaunts are greatly weakened in natural daylight. From 14th level onwards, two nighthaunts are summoned instead.
+
+The nighthaunt is fully under the control of the caster for the duration of the spell and will follow all of <PRO_HISHER> orders until the duration has expired.~
+
+COPY ~shadowadept/spells/c0nighth.cre~ ~override~
+SAY NAME1 ~Nighthaunt~
+SAY NAME2 ~Nighthaunt~
+  WRITE_ASCII 0x248 ~c0nighth~ #8
+  WRITE_ASCII 0x280 ~c0nighth~  #32
 
 COPY ~shadowadept/spells/C0SA601.spl~ ~override~
 SAY NAME1 ~Shar's Shield~
@@ -2448,6 +2495,27 @@ SAY NAME1 ~Shadow Gate~
 SAY NAME2 ~Shadow Gate~
 WRITE_ASCII 0x248 ~c0sa711~ #8
 
+COPY ~shadowadept/spells/c0sa712.spl~ ~override~
+SAY NAME1 ~Nightfall~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sarain%~
+END
+SAY NAME2 ~Nightfall~
+SAY UNIDENTIFIED_DESC ~Nightfall
+(Evocation - Shadow Weave) 
+
+Level: 7
+Range: Visual range of the caster 
+Duration: 6 rounds
+Casting Time: 8
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+This spell creates a rainfall of shadowstuff on the target location for six rounds. Enemy creatures suffer 1d6 magical damage for every round that they remain within the rainfall and suffer a cumulative penalty of -1 to Armor Class and all Saving Throws for one turn. Allied creatures are healed for 2d6 hit points every round instead.~
+
 COPY ~shadowadept/spells/C0SA801.spl~ ~override~
 SAY NAME1 ~Negastorm~
 READ_LONG 0x64 "abil_off"
@@ -2913,7 +2981,7 @@ SAY UNIDENTIFIED_DESC ~Summon Nightwalker
 
 Level: 10
 Range: 0
-Duration: 9 rounds
+Duration: 2 hours
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: Neg.
@@ -3093,6 +3161,7 @@ END
 COMPILE ~shadowadept/scripts/c0satalk.baf~
 COMPILE ~shadowadept/scripts/c0saorb.baf~
 COMPILE ~shadowadept/scripts/c0devsha.baf~
+COMPILE ~shadowadept/scripts/c0nighth.baf~
 COMPILE ~shadowadept/scripts/c0sa711.baf~
 COMPILE ~shadowadept/scripts/c0sa908.baf~
 COMPILE ~shadowadept/scripts/c0sacon.baf~

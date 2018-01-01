@@ -9,6 +9,20 @@ BEGIN ~Shadow Magic: Shadow Adept mage Kit for BG:EE~
 
 INCLUDE ~shadowadept/components/1_shadow_adept.tpa~
 
+// SHADOW MAGIC: SORCERER KIT
+
+BEGIN ~Shadow Magic: Shadow Disciple Sorcerer Kit~
+REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+
+INCLUDE ~shadowadept/components/6_sa_sorcerer.tpa~
+
+// SHADOW MAGIC: BARD KIT
+
+BEGIN ~Shadow Magic: Nightsinger Bard Kit~
+REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+
+INCLUDE ~shadowadept/components/7_sa_bard.tpa~
+
 // SHADOW MONK - requires Shadow Magic component
 
 BEGIN ~Shadow Magic: Shadow Monk monk kit for BG:EE~
@@ -36,3 +50,10 @@ BEGIN ~Shadow Magic: Familiars~
 REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~shadowadept/components/5_familiars.tpa~
+
+// SHADOW MAGIC: QUESTS AND ENCOUNTERS
+
+BEGIN ~Shadow Magic: Quests and Encounters~
+REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+
+INCLUDE ~shadowadept/components/8_quests.tpa~
