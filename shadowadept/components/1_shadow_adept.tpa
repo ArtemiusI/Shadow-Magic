@@ -1755,12 +1755,12 @@ SAY UNIDENTIFIED_DESC ~Pain Mirror
 
 Level; 4
 Range: Visual range of the caster
-Duration: 1 round/level
+Duration: 1 turn
 Casting Time: 7
 Area of Effect: 1 creature
-Saving Throw: 1/2
+Saving Throw: None
 
-With this dark spell, the shadow adept surrounds <PRO_HIMHER>self with necromantic energy. For the duration of this spell, the shadow adept takes 20% reduced damage and, upon taking damage from any source, drains 1d6 hit points from the attacker and replenishes <PRO_HISHER> own hit points.~
+When the caster is struck with an attack, <PRO_HESHE> takes no damage and drains 1d4 hit points per level from the attacker instead. It only works for one attack, and the effects are not cumulative (you cannot have more than one mirror erected). If the spell is not triggered, it lasts for 1 turn.~
 
 COPY ~shadowadept/spells/C0SA501.spl~ ~override~
 SAY NAME1 ~Cone of Bitter Cold~
