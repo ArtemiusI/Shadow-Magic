@@ -144,7 +144,7 @@ END
 IF ~True()~ learn
 SAY ~Choose a spell level:~ [C0BLANK]
 + ~GlobalGT("C0SALv1","GLOBAL",0)
-OR(11)
+OR(12)
 !HaveKnownSpellRES("c0sa101")
 !HaveKnownSpellRES("c0sa102")
 !HaveKnownSpellRES("c0sa103")
@@ -155,12 +155,13 @@ OR(11)
 !HaveKnownSpellRES("c0sa108")
 !HaveKnownSpellRES("c0sa109")
 !HaveKnownSpellRES("c0sa110")
-!HaveKnownSpellRES("c0sa111")~ + ~1st level~ + level1
+!HaveKnownSpellRES("c0sa111")
+!HaveKnownSpellRES("c0sa112")~ + ~1st level~ + level1
 + ~OR(2)
 ClassLevelGT(Myself,WIZARD,2)
 ClassLevelGT(Myself,ROGUE,3)
 GlobalGT("C0SALv2","GLOBAL",0)
-OR(11)
+OR(12)
 !HaveKnownSpellRES("c0sa201")
 !HaveKnownSpellRES("c0sa202")
 !HaveKnownSpellRES("c0sa203")
@@ -171,12 +172,13 @@ OR(11)
 !HaveKnownSpellRES("c0sa208")
 !HaveKnownSpellRES("c0sa209")
 !HaveKnownSpellRES("c0sa210")
-!HaveKnownSpellRES("c0sa211")~ + ~2nd level~ + level2
+!HaveKnownSpellRES("c0sa211")
+!HaveKnownSpellRES("c0sa212")~ + ~2nd level~ + level2
 + ~OR(2)
 ClassLevelGT(Myself,WIZARD,4)
 ClassLevelGT(Myself,ROGUE,6)
 GlobalGT("C0SALv3","GLOBAL",0)
-OR(11)
+OR(12)
 !HaveKnownSpellRES("c0sa301")
 !HaveKnownSpellRES("c0sa302")
 !HaveKnownSpellRES("c0sa303")
@@ -187,13 +189,13 @@ OR(11)
 !HaveKnownSpellRES("c0sa308")
 !HaveKnownSpellRES("c0sa309")
 !HaveKnownSpellRES("c0sa310")
-!HaveKnownSpellRES("c0sa311")~ + ~3rd level~ + level3
+!HaveKnownSpellRES("c0sa311")
+!HaveKnownSpellRES("c0sa312")~ + ~3rd level~ + level3
 + ~OR(2)
 ClassLevelGT(Myself,WIZARD,6)
 ClassLevelGT(Myself,ROGUE,9)
 GlobalGT("C0SALv4","GLOBAL",0)
 OR(12)
-!HaveKnownSpellRES("spwi420")
 !HaveKnownSpellRES("c0sa401")
 !HaveKnownSpellRES("c0sa402")
 !HaveKnownSpellRES("c0sa403")
@@ -204,7 +206,8 @@ OR(12)
 !HaveKnownSpellRES("c0sa408")
 !HaveKnownSpellRES("c0sa409")
 !HaveKnownSpellRES("c0sa410")
-!HaveKnownSpellRES("c0sa411")~ + ~4th level~ + level4
+!HaveKnownSpellRES("c0sa411")
+!HaveKnownSpellRES("c0sa412")~ + ~4th level~ + level4
 + ~OR(2)
 ClassLevelGT(Myself,WIZARD,8)
 ClassLevelGT(Myself,ROGUE,12)
@@ -226,8 +229,7 @@ OR(12)
 ClassLevelGT(Myself,WIZARD,11)
 ClassLevelGT(Myself,ROGUE,15)
 GlobalGT("C0SALv6","GLOBAL",0)
-OR(12) 
-!HaveKnownSpellRES("spwi617")
+OR(11) 
 !HaveKnownSpellRES("c0sa601")
 !HaveKnownSpellRES("c0sa602")
 !HaveKnownSpellRES("c0sa603")
@@ -241,8 +243,7 @@ OR(12)
 !HaveKnownSpellRES("c0sa611")~ + ~6th level~ + level6
 + ~ClassLevelGT(Myself,WIZARD,13)
 GlobalGT("C0SALv7","GLOBAL",0)
-OR(13) 
-!HaveKnownSpellRES("spwi710")
+OR(12) 
 !HaveKnownSpellRES("c0sa701")
 !HaveKnownSpellRES("c0sa702")
 !HaveKnownSpellRES("c0sa703")
@@ -257,8 +258,7 @@ OR(13)
 !HaveKnownSpellRES("c0sa712")~ + ~7th level~ + level7
 + ~ClassLevelGT(Myself,WIZARD,15)
 GlobalGT("C0SALv8","GLOBAL",0)
-OR(12) 
-!HaveKnownSpellRES("spwi809")
+OR(11) 
 !HaveKnownSpellRES("c0sa801")
 !HaveKnownSpellRES("c0sa802")
 !HaveKnownSpellRES("c0sa803")
@@ -272,8 +272,7 @@ OR(12)
 !HaveKnownSpellRES("c0sa811")~ + ~8th level~ + level8
 + ~ClassLevelGT(Myself,WIZARD,17)
 GlobalGT("C0SALv9","GLOBAL",0)
-OR(9) 
-!HaveKnownSpellRES("spwi908")
+OR(8) 
 !HaveKnownSpellRES("c0sa901")
 !HaveKnownSpellRES("c0sa902")
 !HaveKnownSpellRES("c0sa903")
@@ -297,6 +296,7 @@ SAY ~Choose one 1st level spell:~
 + ~!HaveKnownSpellRES("c0sa109")~ + ~Shadow Rope~ + 1.9
 + ~!HaveKnownSpellRES("c0sa110")~ + ~Decoy~ + 1.10
 + ~!HaveKnownSpellRES("c0sa111")~ + ~Mesmerize~ + 1.11
++ ~!HaveKnownSpellRES("c0sa112")~ + ~Cursed Flames~ + 1.12
 END
 
 IF ~~ level2
@@ -312,6 +312,7 @@ SAY ~Choose one 2nd level spell:~
 + ~!HaveKnownSpellRES("c0sa209")~ + ~Negative Energy Ray~ + 2.9
 + ~!HaveKnownSpellRES("c0sa210")~ + ~Sigil of Vulnerability~ + 2.10
 + ~!HaveKnownSpellRES("c0sa211")~ + ~Shadow Walk~ + 2.11
++ ~!HaveKnownSpellRES("c0sa212")~ + ~Hallucinate~ + 2.12
 END
 
 IF ~~ level3
@@ -327,11 +328,11 @@ SAY ~Choose one 3rd level spell:~
 + ~!HaveKnownSpellRES("c0sa309")~ + ~Shadow Spear~ + 3.9
 + ~!HaveKnownSpellRES("c0sa310")~ + ~Cursed Earth~ + 3.10
 + ~!HaveKnownSpellRES("c0sa311")~ + ~Expunge Magic~ + 3.11
++ ~!HaveKnownSpellRES("c0sa312")~ + ~Void Edge~ + 3.12
 END
 
 IF ~~ level4
 SAY ~Choose one 4th level spell:~
-+ ~!HaveKnownSpellRES("spwi420")~ + ~Minor Spell Sequencer~ + 4.1
 + ~!HaveKnownSpellRES("c0sa401")~ + ~Fireshield (Shadow)~ + 4.2
 + ~!HaveKnownSpellRES("c0sa402")~ + ~Shadeskin~ + 4.3
 + ~!HaveKnownSpellRES("c0sa403")~ + ~Sigil of Misfortune~ + 4.4
@@ -343,6 +344,7 @@ SAY ~Choose one 4th level spell:~
 + ~!HaveKnownSpellRES("c0sa409")~ + ~Immunity~ + 4.10
 + ~!HaveKnownSpellRES("c0sa410")~ + ~Black Ooze~ + 4.11
 + ~!HaveKnownSpellRES("c0sa411")~ + ~Wall of Black Flame~ + 4.12
++ ~!HaveKnownSpellRES("c0sa412")~ + ~Pain Mirror~ + 4.13
 END
 
 IF ~~ level5
@@ -363,7 +365,6 @@ END
 
 IF ~~ level6
 SAY ~Choose one 6th level spell:~
-+ ~!HaveKnownSpellRES("spwi617")~ + ~Contingency~ + 6.1
 + ~!HaveKnownSpellRES("c0sa601")~ + ~Shar's Shield~ + 6.2
 + ~!HaveKnownSpellRES("c0sa602")~ + ~Twin Mislead~ + 6.3
 + ~!HaveKnownSpellRES("c0sa603")~ + ~Protection from Weave-forged Weapons~ + 6.4
@@ -379,7 +380,6 @@ END
 
 IF ~~ level7
 SAY ~Choose one 7th level spell:~
-+ ~!HaveKnownSpellRES("spwi710")~ + ~Spell Sequencer~ + 7.1
 + ~!HaveKnownSpellRES("c0sa701")~ + ~Black Ray of Destruction~ + 7.2
 + ~!HaveKnownSpellRES("c0sa702")~ + ~Shadowspray~ + 7.3
 + ~!HaveKnownSpellRES("c0sa703")~ + ~Power Word: Stun~ + 7.4
@@ -396,7 +396,6 @@ END
 
 IF ~~ level8
 SAY ~Choose one 8th level spell:~
-+ ~!HaveKnownSpellRES("spwi809")~ + ~Spell Trigger~ + 8.1
 + ~!HaveKnownSpellRES("c0sa801")~ + ~Negastorm~ + 8.2
 + ~!HaveKnownSpellRES("c0sa802")~ + ~Annulment~ + 8.3
 + ~!HaveKnownSpellRES("c0sa803")~ + ~Shadow Prison~ + 8.4
@@ -412,7 +411,6 @@ END
 
 IF ~~ level9
 SAY ~Choose one 9th level spell:~
-+ ~!HaveKnownSpellRES("spwi908")~ + ~Chain Contingency~ + 9.1
 + ~!HaveKnownSpellRES("c0sa901")~ + ~Darkbolt~ + 9.2
 + ~!HaveKnownSpellRES("c0sa902")~ + ~Umbral Stasis~ + 9.3
 + ~!HaveKnownSpellRES("c0sa903")~ + ~Nightsinger's Tithe~ + 9.4
@@ -605,6 +603,22 @@ This spell inflicts an enchantment upon a target creature of the shadow adept's 
 ++ ~Return to spell selection.~ + learn
 END
 
+IF ~~ 1.12
+SAY ~Cursed Flames
+(Alteration - Shadow Weave)
+
+Level: 1
+Range: 5 ft.
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+When the shadow adept casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The shadow adept's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the shadow adept. All targets within range take 1d4+2 fire damage and have their Luck reduced by two points for 2 rounds + 1 round per level to a maximum of 10 rounds at 9th level, additionally, they take 2 points of fire damage per round for the duration. A successful Saving Throw vs. Spells negates half damage and the secondary effects.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","GLOBAL",-1) AddSpecialAbility("c0sa112")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
 IF ~~ 2.1
 SAY ~Dark Mirage
 (Illusion/Phantasm - Shadow Weave)
@@ -782,6 +796,22 @@ Saving Throw: None
 
 This spell transports the caster to any place within the visual range of the caster. When the spell is cast, the shadow adept makes a brief planar jaunt into the Plane of Shadow and exits at a different location, making it seem as though <PRO_HESHE> has teleported. The caster is also briefly invisible for the travel duration, cancelling spells targeted at <PRO_HIMHER> unless the spellcaster can see through invisibility.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","GLOBAL",-1) AddSpecialAbility("C0SA211")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
+IF ~~ 2.12
+SAY ~Hallucinate
+(Illusion/Phantasm - Shadow Weave)
+
+Level: 2
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 5 
+Area of Effect: 1 person or mammal 
+Saving Throw: Neg.
+
+The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","GLOBAL",-1) AddSpecialAbility("C0SA212")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 
@@ -983,6 +1013,22 @@ Note: While this spell dispels the individual effects of Grease, Web, Stinking C
 ++ ~Return to spell selection.~ + learn
 END
 
+IF ~~ 3.12
+SAY ~Void Edge
+(Invocation/Evocation - Shadow Weave)
+
+Level: 3
+Range: Self
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: Self
+Saving Throw: None
+
+Upon casting this spell, the shadow adept imbues <PRO_HISHER> next melee attack with shadow magic, providing it with a +5 enchantment bonus and the ability to drain 2 hit points per level as magic damage.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","GLOBAL",-1) AddSpecialAbility("C0SA312")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
 IF ~~ 4.1
 SAY ~Minor Sequencer
 (Conjuration/Summoning,Invocation/Evocation)
@@ -1170,8 +1216,35 @@ With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from
 END
 
 IF ~~ 4.12
-SAY ~~
+SAY ~Wall of Black Flame
+(Invocation/Evocation - Shadow Weave)
+
+Level: 4
+School: Evocation
+Range: Long
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 10'
+Saving Throw: 1/2
+
+With this spell, the shadow adept creates a wall of black fire, dealing 2d6 fire damage to all creatures who pass through it (Save vs. Spells for half) and reduces their Armor Class by -2 for one round. Creatures cannot take damage more than once per round.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","GLOBAL",-1) AddSpecialAbility("C0SA411")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
+IF ~~ 4.13
+SAY ~Pain Mirror
+(Necromancy - Shadow Weave)
+
+Level; 4
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
+
+When the caster is struck with an attack, <PRO_HESHE> takes no damage and drains 1d4 hit points per level from the attacker instead. It only works for one attack, and the effects are not cumulative (you cannot have more than one mirror erected). If the spell is not triggered, it lasts for 1 turn.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","GLOBAL",-1) AddSpecialAbility("C0SA412")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 
