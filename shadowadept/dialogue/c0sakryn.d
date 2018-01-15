@@ -59,7 +59,7 @@ CHAIN C0SAKRYN a1.8
 ~I cannot. My apprentices know that I seek them, and hide their presences from me for fear of my punishment. I fear that what remaining sanity they may have will be driven away by their terror or paranoia should I confront them personally, and lead them to fight to the death. I do not desire this.~
 = ~Although, I confess... it is unlikely that any of them may be saved regardless. Though if there is any chance, I would rather take it.~
 END
-++ ~Fair enough. I will do what I can to find them.~ + a1.9
+++ ~Fair enough. I will do what I can to find them.~ DO ~SetGlobal("C0SAQuest1","GLOBAL",1)~ + a1.9
 ++ ~That's too bad. I'll be going now.~ + b0
 
 CHAIN C0SAKRYN a1.9

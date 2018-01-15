@@ -281,6 +281,7 @@ OR(8)
 !HaveKnownSpellRES("c0sa906")
 !HaveKnownSpellRES("c0sa907")
 !HaveKnownSpellRES("c0sa908")~ + ~9th level~ + level9
+IF ~~ EXIT
 END
 
 IF ~~ level1
