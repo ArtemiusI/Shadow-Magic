@@ -1,7 +1,13 @@
 // Nightsinger's Tithe
 
 IF
-  Kit(Player1,C0SADEPT)
+	OR(6)
+	Specifics(Player1,12)
+	Specifics(Player2,12)
+	Specifics(Player3,12)
+	Specifics(Player4,12)
+	Specifics(Player5,12)
+	Specifics(Player6,12)
   GlobalGT("C0SA903","GLOBAL",49)
   Global("C0NightsingerTithe","GLOBAL",0)
 THEN
@@ -14,7 +20,13 @@ END
 // CHEATER
 
 IF	
-	Kit(Player1,C0SADEPT)
+	OR(6)
+	Specifics(Player1,12)
+	Specifics(Player2,12)
+	Specifics(Player3,12)
+	Specifics(Player4,12)
+	Specifics(Player5,12)
+	Specifics(Player6,12)
 	Global("C0SACHEATS","GLOBAL",1)
 THEN
   RESPONSE #100
@@ -113,7 +125,13 @@ END
 
 IF
   Race(Player1,VAMPIRE)
-  Kit(Player1,C0SADEPT)
+	OR(6)
+	Specifics(Player1,12)
+	Specifics(Player2,12)
+	Specifics(Player3,12)
+	Specifics(Player4,12)
+	Specifics(Player5,12)
+	Specifics(Player6,12)
   !PartyHasItem("c0saswd1")
   Global("C0ShadowSword","GLOBAL",0)
   LevelGT(Player1,5)

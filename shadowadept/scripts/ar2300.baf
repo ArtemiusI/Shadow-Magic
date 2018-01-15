@@ -1,0 +1,8 @@
+IF
+	Global("C0SAKrynSpawn","MYAREA",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAKrynSpawn","MYAREA",1)
+	CreateCreature("c0sakryn",[1682.2008],SE)
+	Deactivate("c0sakryn")
+END

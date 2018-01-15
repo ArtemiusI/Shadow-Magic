@@ -187,7 +187,7 @@ THEN
 RESPONSE #100
 ChangeEnemyAlly(Myself,ALLY)
 CreateVisualEffectObject("c0cloud1",Myself)
-PlayDeadInterruptible(1)
+SetSequence(SEQ_DIE)
 DisplayString(Myself,~Death~)
 DropInventory()
 SetGlobal("C0SAFamiliarDead","GLOBAL",1)

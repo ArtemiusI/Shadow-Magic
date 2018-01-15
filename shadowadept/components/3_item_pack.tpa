@@ -1,4 +1,4 @@
-COPY ~shadowadept/itempack/bams~ ~override~
+COPY ~%MOD_FOLDER%/itempack/bams~ ~override~
 
 ////////////////////////////////////////
 /////////ITEMS//////////////////////////
@@ -6,7 +6,7 @@ COPY ~shadowadept/itempack/bams~ ~override~
 
 // Ring of Black Light
 
-COPY ~shadowadept/itempack/c0sarng1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarng1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -27,13 +27,8 @@ STATISTICS:
 
 Weight: 0~
 
-ACTION_IF FILE_EXISTS_IN_GAME ~davaeo.cre~ THEN BEGIN
-COPY_EXISTING ~davaeo.cre~ ~override~
-ADD_CRE_ITEM ~c0sarng1~ #0 #0 #0 ~NONE~ ~inv~
-END
-
 ACTION_IF FILE_EXISTS_IN_GAME ~ar0602.bcs~ THEN BEGIN
-EXTEND_TOP ~ar0602.bcs~ ~shadowadept/scripts/ar0602.baf~
+EXTEND_TOP ~ar0602.bcs~ ~%MOD_FOLDER%/scripts/ar0602.baf~
 END
 
 // Dark Dreamer +2
@@ -49,8 +44,8 @@ COPY_EXISTING ~splprot.2da~ ~override~
 	  END
 	END
 
-COPY ~shadowadept/itempack/c0sas2h1.spl~ ~override~
-COPY ~shadowadept/itempack/c0sas2h1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sas2h1.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sas2h1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -119,7 +114,7 @@ REMOVE_CRE_ITEM ~sw2h11~
 ADD_CRE_ITEM ~c0sas2h1~ #0 #0 #0 ~NONE~ ~weapon1~
 END
 
-COPY ~shadowadept/itempack/c0saamu1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0saamu1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -143,12 +138,24 @@ Equipped Effects:
 
 Weight: 1~
 
+COPY ~%MOD_FOLDER%/itempack/c0saamu2.itm~ ~override~
+SAY NAME1 ~Amulet~
+SAY NAME2 ~Shadovar Amulet~
+SAY DESC ~This amulet appears old yet carries a powerful magical enchantment. The symbol of the Shade Enclave, an ancient city of the Shadovar, is printed on the back of the triangular-shaped pendant.
+
+STATISTICS:
+
+Equipped Effects:
+- Casting Speed: +2
+
+Weight: 1~
+
 ACTION_IF FILE_EXISTS_IN_GAME ~shadel.cre~ THEN BEGIN
 COPY_EXISTING ~shadel.cre~ ~override~
 ADD_CRE_ITEM ~c0saamu1~ #0 #0 #0 ~NONE~ ~inv~
 END
 
-COPY ~shadowadept/itempack/c0sarob1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarob1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -180,8 +187,8 @@ COPY_EXISTING ~lavok2.cre~ ~override~
 ADD_CRE_ITEM ~c0sarob1~ #0 #0 #0 ~NONE~ ~inv~
 END
 
-COPY ~shadowadept/itempack/c0sasta1.spl~ ~override~
-COPY ~shadowadept/itempack/c0sasta1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sasta1.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sasta1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -207,7 +214,7 @@ Charge abilities:
 - Negative Energy Burst once per day (centered on self)
 
 Combat abilities:
-- 50% chance to cast Drain Vitality on successful hit
+- 25% chance to cast Drain Vitality on successful hit
 
 Equipped abilities:
 - Casting Level: +2 (+4 during nighttime)
@@ -229,11 +236,11 @@ COPY_EXISTING ~ribald3.sto~ ~override~
 ADD_STORE_ITEM ~c0sasta1~ #0 #0 #0 ~IDENTIFIED~ #6
 END
 
-ADD_PROJECTILE ~shadowadept/itempack/c0sadagg.pro~
-COPY ~shadowadept/itempack/c0sadag1.spl~ ~override~
+ADD_PROJECTILE ~%MOD_FOLDER%/itempack/c0sadagg.pro~
+COPY ~%MOD_FOLDER%/itempack/c0sadag1.spl~ ~override~
 SAY NAME1 ~Blinding Darkness~
 SAY NAME2 ~Blinding Darkness~
-COPY ~shadowadept/itempack/c0sadag1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sadag1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -281,18 +288,13 @@ Requires:
 Weight: 1~
 WRITE_SHORT 0x9C ~%c0sadagg%~
 
-ACTION_IF FILE_EXISTS_IN_GAME ~nimbul.cre~ THEN BEGIN
-COPY_EXISTING ~nimbul.cre~ ~override~
-ADD_CRE_ITEM ~c0sadag1~ #0 #0 #0 ~NONE~ ~inv~
-END
-
 ACTION_IF FILE_EXISTS_IN_GAME ~maevar.cre~ THEN BEGIN
 COPY_EXISTING ~maevar.cre~ ~override~
 ADD_CRE_ITEM ~c0sadag1~ #0 #0 #0 ~NONE~ ~inv~
 END
 
-COPY ~shadowadept/itempack/c0sas1h1.spl~ ~override~
-COPY ~shadowadept/itempack/c0sas1h1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sas1h1.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sas1h1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -347,8 +349,8 @@ COPY_EXISTING ~uddrow23.sto~ ~override~
 ADD_STORE_ITEM ~c0sas1h1~ #0 #0 #0 ~IDENTIFIED~ #6
 END
 
-COPY ~shadowadept/itempack/c0sapot1.spl~ ~override~
-COPY ~shadowadept/itempack/c0sapot1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sapot1.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sapot1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -366,7 +368,7 @@ SAY UNIDENTIFIED_DESC ~Potions are typically found in ceramic, crystal, glass, o
 STATISTICS:
 
 Weight: 1~
-SAY DESC ~This bottle contains a mysterious black-colored liquid gives off a shadowy smoke when the bottle is unstoppered.
+SAY DESC ~This bottle contains a mysterious black-colored liquid which gives off a shadowy smoke when the bottle is unstoppered.
 
 STATISTICS:
 
@@ -375,11 +377,11 @@ Duration: 1 turn
 
 Weight: 1~
 
-COPY ~shadowadept/itempack/c0bstar1.eff~ ~override~
-COPY ~shadowadept/itempack/c0bstar2.eff~ ~override~
-COPY ~shadowadept/itempack/c0bstar3.eff~ ~override~
-COPY ~shadowadept/itempack/c0bstar1.spl~ ~override~
-COPY ~shadowadept/itempack/c0sadar1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0bstar1.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0bstar2.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0bstar3.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0bstar1.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sadar1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -419,10 +421,10 @@ Type: One-handed
 
 Weight: 0~
 
-COPY ~shadowadept/itempack/c0sarng2.eff~ ~override~
-COPY ~shadowadept/itempack/c0sarn2a.eff~ ~override~
-COPY ~shadowadept/itempack/c0sarn2b.eff~ ~override~
-COPY ~shadowadept/itempack/c0sarng2.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarng2.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarn2a.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarn2b.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarng2.itm~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -430,6 +432,7 @@ COPY ~shadowadept/itempack/c0sarng2.itm~ ~override~
       match_opcode = 177 // display string
       match_parameter1 = 0
  parameter1 = 12
+ parameter2 = 6
   END
 SAY NAME1 ~Ring~
 SAY NAME2 ~Ring of Shadowkin~
@@ -452,7 +455,7 @@ COPY_EXISTING ~bdshkorl.cre~ ~override~
 ADD_CRE_ITEM ~c0sarng2~ #0 #0 #0 ~NONE~ ~inv~
 END
 
-COPY ~shadowadept/itempack/c0saclc1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0saclc1.itm~ ~override~
 SAY NAME1 ~Cloak~
 SAY NAME2 ~Mantle of Dark Mists~
 SAY UNIDENTIFIED_DESC ~The cloak can be made in every possible shape with just about every type of fabric. The most common forms are a circular piece of fabric with a hole in the center for the head, and fabric draped from neck, connected by a chain, brooch, cord, or pins.~
@@ -472,12 +475,12 @@ Equipped abilities:
 Weight: 1~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bd0115.bcs~ THEN BEGIN
-EXTEND_TOP ~bd0115.bcs~ ~shadowadept/scripts/bd0115.baf~
+EXTEND_TOP ~bd0115.bcs~ ~%MOD_FOLDER%/scripts/bd0115.baf~
 END
 
-COPY ~shadowadept/itempack/c0sas1h2.eff~ ~override~
-COPY ~shadowadept/itempack/c0sas1h2.spl~ ~override~
-COPY ~shadowadept/itempack/c0sas1h2.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sas1h2.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sas1h2.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sas1h2.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -487,7 +490,8 @@ COPY ~shadowadept/itempack/c0sas1h2.itm~ ~override~
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
-Fighter / Shadow Adept / Thief~)
+Fighter / Shadow Adept / Thief
+Nightsinger~)
 END
 SAY NAME1 ~Bastard Sword~
 SAY NAME2 ~Dreadflame +5~
@@ -535,8 +539,8 @@ Requires:
 
 Weight: 7~
 
-COPY ~shadowadept/itempack/c0sawand.spl~ ~override~
-COPY ~shadowadept/itempack/c0sawan1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sawand.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sawan1.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Negative Energy~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -558,7 +562,7 @@ Requires:
 
 Weight: 1~
 
-COPY ~shadowadept/itempack/c0sawan2.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sawan2.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Life-Draining~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -578,7 +582,7 @@ Requires:
 
 Weight: 1~
 
-COPY ~shadowadept/itempack/c0sawan3.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sawan3.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Nightshade~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -598,7 +602,7 @@ Requires:
 
 Weight: 1~
 
-COPY ~shadowadept/itempack/c0sawan4.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sawan4.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Missiles~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -620,7 +624,7 @@ Requires:
 
 Weight: 1~
 
-COPY ~shadowadept/itempack/c0sawan5.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sawan5.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Fire~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -647,9 +651,9 @@ Requires:
 
 Weight: 1~
 
-COPY ~shadowadept/itempack/c0sabo1a.eff~ ~override~
-COPY ~shadowadept/itempack/c0sabo1b.eff~ ~override~
-COPY ~shadowadept/itempack/c0saboo1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sabo1a.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sabo1b.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0saboo1.itm~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -657,6 +661,7 @@ COPY ~shadowadept/itempack/c0saboo1.itm~ ~override~
       match_opcode = 177 // display string
       match_parameter1 = 0
  parameter1 = 12
+ parameter2 = 6
   END
 SAY NAME1 ~Boots~
 SAY NAME2 ~Night Treads~
@@ -674,13 +679,8 @@ Equipped abilities:
 
 Weight: 1~
 
-ACTION_IF FILE_EXISTS_IN_GAME ~bdnazram.sto~ THEN BEGIN
-COPY_EXISTING ~bdnazram.sto~ ~override~
-ADD_STORE_ITEM ~c0saboo1~ #0 #0 #0 ~IDENTIFIED~ #6
-END
-
-COPY ~shadowadept/itempack/c0sabel1.spl~ ~override~
-COPY ~shadowadept/itempack/c0sabel1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sabel1.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sabel1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -693,7 +693,7 @@ COPY ~shadowadept/itempack/c0sabel1.itm~ ~override~
 END
 SAY NAME1 ~Belt~
 SAY NAME2 ~Belt of Darkflame~
-SAY UNIDENTIFIED_DESC ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
+SAY DESC ~Girdles are generally similar to belts. Unlike belts, girdles are not used to hold up pants and dungarees, but to carry pouches, scabbards, and the like. 
 
 STATISTICS:
 
@@ -712,7 +712,136 @@ Equipped abilities:
 
 Weight: 2~
 
-COPY ~shadowadept/itempack/c0sacha1.itm~ ~override/chan09.itm~
+COPY ~%MOD_FOLDER%/itempack/c0sasta2.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Shadowstone Staff +2~
+SAY DESC ~The simplest of staff weapons is the quarterstaff, a length of wood six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. Powerful enchantments during the making of this staff have improved its accuracy and the damage it can cause, but they bear no signature.
+
+This enchanted staff is topped with a shadow gem, bestowing upon it powers from the Plane of Shadow but restricting it to those proficient in its brand of magic.
+
+STATISTICS:
+
+Combat abilities:
+- 50% chance to deal 2d6 magic damage and silence for 2 rounds on a failed save vs. spell
+
+Equipped effects:
+- Intelligence: +1
+- Armor Class: +2 vs. good creatures
+
+THAC0: +2
+Damage: 1d6+2 (crushing)
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+COPY ~%MOD_FOLDER%/itempack/c0sarob2.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Mage Robe~
+SAY NAME2 ~Robe of the Shadow Magi~
+SAY DESC ~This powerful mage robe offers protection from all forms of physical attack while at the same time increasing one's resistance to magic and the life-draining effects of Shadow Magic. Due to the nature of its enchantment, it can only be worn by Shadow Adepts.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor Class: 5
+- Magic Resistance: +5%
+- Protects from Constitution loss from 1st and 2nd level Shadow Weave spells
+
+Weight: 6~
+
+COPY ~%MOD_FOLDER%/itempack/c0saiou1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Ioun Stone~
+SAY NAME2 ~Ioun of Sacred Darkness~
+SAY DESC ~This ioun stone has a dark-colored hue. When worn, the stone regenerates its bearer's wounds and provides them with greater clarity.
+
+STATISTICS:
+
+Equipped abilities:
+- Regenerate 1 hit point every 12 seconds
+- Wisdom: +1
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0samis1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Candlestick~
+SAY NAME2 ~Soulflare Candle~
+SAY DESC ~This candle emanates a powerful magical presence. Only a shadow adept may light it, and upon being lit, it gives off a ghostly flame which can be manipulated to replicate powerful Shadow Weave magic. However, lighting the candle is draining on the shadow adept's life force and can only be done a limited number of times per day.
+
+STATISTICS:
+
+Charge abilities (once per day):
+- May cast Unmask and Breaching Dark at the cost of ten hit points
+
+Weight: 3~
+
+COPY ~%MOD_FOLDER%/itempack/c0samis2.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Nightsinger~)
+END
+SAY NAME1 ~Lute~
+SAY NAME2 ~Lute of Lifedraining~
+SAY DESC ~This sinister lute makes unpleasant sounds when strummed, causing a chill to go down the spines who hear its notes. When played by one skilled in Shadow Magic, its magic allows its user to drain the life force of others.
+
+STATISTICS:
+
+Charge abilities (three times per day):
+- Mass Lesser Drain Vitality
+  Range: Self
+  Area of Effect: 30'
+
+Weight: 3~
+
+COPY ~%MOD_FOLDER%/itempack/c0sacha1.itm~ ~override/chan09.itm~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -725,7 +854,7 @@ COPY ~shadowadept/itempack/c0sacha1.itm~ ~override/chan09.itm~
 END
 SAY NAME1 ~Chain Mail~
 SAY NAME2 ~Darkmail +3~
-SAY UNIDENTIFIED_DESC ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
+SAY DESC ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
 
 STATISTICS:
 
@@ -750,8 +879,8 @@ Requires:
 
 Weight: 5~
 
-COPY ~shadowadept/itempack/c0sanos1.spl~ ~override~
-COPY ~shadowadept/itempack/c0sanos1.itm~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sanos1.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sanos1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -764,7 +893,7 @@ COPY ~shadowadept/itempack/c0sanos1.itm~ ~override~
 END
 SAY NAME1 ~Spellbook~
 SAY NAME2 ~Nosferatu~
-SAY UNIDENTIFIED_DESC ~This heavy spellbook emanates a malignant aura, making it uncomfortable even to hold.
+SAY DESC ~This heavy spellbook emanates a malignant aura, making it uncomfortable even to hold.
 
 STATISTICS:
 
@@ -799,3 +928,299 @@ ACTION_IF FILE_EXISTS_IN_GAME ~demilich.cre~ THEN BEGIN
 COPY_EXISTING ~demilich.cre~ ~override~
 ADD_CRE_ITEM ~c0sanos1~ #0 #0 #0 ~NONE~ ~inv~
 END
+
+COPY ~%MOD_FOLDER%/itempack/leat19a.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/leat19b.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/leat19c.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/leat19.itm~ ~override~
+SAY DESC ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer immunity to level drain, but while worn by a shadow adept, it greatly empowers them, allowing them to use their magic with less risk.
+
+STATISTICS:
+
+Equipped abilities:
+- Immunity to level drain
+- Spellcasting is not disabled (Shadow Adepts)
+- Save vs. Death: +4 (Shadow Adepts), +2 (Others)
+- Maximum Hit Points: +20% (Shadow Adepts)
+
+Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 10~
+
+COMPILE ~%MOD_FOLDER%/dialogue/c0sascrl.d~
+
+COPY_EXISTING ~ITEMDIAL.2da~ ~override~
+APPEND_FILE ~%MOD_FOLDER%/itempack/ITEMDIAL.txt~
+REPLACE ~c0sascrl~ ~Read Scroll~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll I~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 1st level Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr2.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll II~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 2nd level Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr3.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll III~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 3rd level Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr4.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll IV~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 4th level Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr5.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll V~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 5th level Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr6.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll VI~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 6th level Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr7.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll VII~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 7th level Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr8.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll VIII~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 8th level Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sascr9.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
+END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 19
+	  parameter2 = 5
+	  power = 0
+END
+SAY NAME1 ~Scroll~
+SAY NAME2 ~Shadow Scroll IX~
+SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
+
+STATISTICS:
+
+Special: Learn one 9th level Shadow Weave spell.
+
+Weight: 0~

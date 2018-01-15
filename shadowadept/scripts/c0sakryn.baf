@@ -1,0 +1,282 @@
+IF
+	Global("C0SAKrynSpawn","MYAREA",1)
+	Range(Player1,20)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAKrynSpawn","MYAREA",2)
+	Activate(Myself)
+	SetSequence(SEQ_CAST)
+	CreateVisualEffectObject("C0DDOOR",Myself)
+	Wait(3)
+	DisplayStringHead(Myself,~Yes, this place will do for now.~)
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+	Global("Attacked","LOCALS",0)
+THEN
+  RESPONSE #100
+	SetGlobal("Attacked","LOCALS",1)
+	StartDialogueNoSet(Player1)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  Global("Prep","LOCALS",0)
+THEN
+  RESPONSE #100
+    ApplySpellRES("c0sa1",Myself)
+    ApplySpellRES("c0sa201",Myself)
+    ApplySpellRES("c0sa511",Myself)
+    ApplySpellRES("c0sa402",Myself)
+    ApplySpellRES("c0sa601",Myself)
+	UseItem("c0sapot1",Myself)
+	RealSetGlobalTimer("C0DrinkPotion","LOCALS",60)
+    SetGlobal("Prep","LOCALS",1)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  HasItem("c0sapot1",Myself)
+  RealGlobalTimerExpired("C0DrinkPotion","LOCALS")
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,~*quaffs a potion*~)
+	UseItem("c0sapot1",Myself)
+	RealSetGlobalTimer("C0DrinkPotion","LOCALS",60)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  OR(7)
+    StateCheck(Lastseenby(Myself),STATE_HASTED)
+    StateCheck(Lastseenby(Myself),STATE_IMPROVEDINVISIBILITY)
+    StateCheck(Lastseenby(Myself),STATE_BLESS)
+    StateCheck(Lastseenby(Myself),STATE_CHANT)
+    StateCheck(Lastseenby(Myself),STATE_MIRRORIMAGE)
+    StateCheck(Lastseenby(Myself),STATE_BLUR)
+    StateCheck(Lastseenby(Myself),STATE_INVISIBLE)
+  Global("PrepDef","LOCALS",0)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #70
+    ReallyForceSpellRES("C0SA311",Lastseenby(Myself))
+    SetGlobal("PrepDef","LOCALS",1)
+  RESPONSE #30
+    ApplySpellRES("c0sa201",Myself)
+    SetGlobal("PrepDef","LOCALS",1)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Detect([PC])
+  !See(Lastseenby(Myself))
+  OR(2)
+  Global("C0SA507","LOCALS",0)
+  RealGlobalTimerExpired("c0sa507","LOCALS")
+THEN
+  RESPONSE #100
+    ReallyForceSpellRES("c0sa507",Myself)
+	SetGlobal("C0SA507","LOCALS",1)
+	RealSetGlobalTimer("c0sa507","LOCALS",30)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  CheckStatLT(Myself,1,STONESKINS)
+  TookDamage()
+  Global("Prep2","LOCALS",0)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    DisplayStringHead(Myself,~Contingency~)
+    ApplySpellRES("c0sa402",Myself)
+    SetGlobal("Prep2","LOCALS",1)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa404")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa404",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa505")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa505",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa501")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa501",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa104")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa104",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa307")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa307",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  Range(Nearestenemyof(Myself),5)
+  HaveSpellRES("c0sa510")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa510",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa406")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa406",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa108")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa108",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  Range(Nearestenemyof(Myself),20)
+  HaveSpellRES("c0sa302")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa302",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa305")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa305",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa202")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa202",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa204")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa204",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa208")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa208",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa209")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa209",Nearestenemyof(Myself))
+END
+
+IF
+  !IsWeaponRanged(Myself)
+  !Range(Nearestenemyof(Myself),5)
+  See(Nearestenemyof(Myself))
+THEN
+  RESPONSE #100
+	EquipRanged()
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa103")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa103",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa101")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa101",Nearestenemyof(Myself))
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("c0sa106")
+THEN
+  RESPONSE #100
+    SpellRES("c0sa106",Nearestenemyof(Myself))
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  Detect([PC])
+  !See(Lastseenby(Myself))
+  OR(2)
+  Global("UseWand","LOCALS",0)
+  RealGlobalTimerExpired("UseWandTimer","LOCALS")
+THEN
+  RESPONSE #100
+	SetGlobal("UseWand","LOCALS",1)
+    UseItem("c0sawan1",Nearestenemyof(Myself))
+	RealSetGlobalTimer("UseWandTimer","LOCALS",18)
+END
+
+IF
+  Range(Nearestenemyof(Myself),5)
+  See(Nearestenemyof(Myself))
+  HaveSpellRES("spsd02")
+THEN
+  RESPONSE #100
+	SpellRES("spsd02",Myself)
+	RunAwayFrom(Nearestenemyof(Myself),10)
+END
+
+IF
+  IsWeaponRanged(Myself)
+  Range(Nearestenemyof(Myself),5)
+  See(Nearestenemyof(Myself))
+THEN
+  RESPONSE #100
+	EquipMostDamagingMelee()
+END
+
+IF
+  See(Nearestenemyof(Myself))
+THEN
+  RESPONSE #100
+    AttackReevaluate(Nearestenemyof(Myself),15)
+END

@@ -2136,7 +2136,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None 
 
-This powerful spell causes the shadow adept to partially shift to the Plane of Shadow at the exact same point as he was, creating an effect identical to the Time Stop spell. The caster may move freely for 3 rounds in terms of time in the Plane of Shadow while time stands still in the Prime Material Plane. The shadow adept's movement rate is also doubled for the duration of the spell.~
+This powerful spell causes the shadow adept to partially shift to the Plane of Shadow at the exact same point as he was, creating an effect identical to the Time Stop spell. The caster may move freely for 3 rounds in terms of time in the Plane of Shadow while time stands still in the Prime Material Plane. Additionally, the shadow adept's casting speed is increased by 4 and <PRO_HISHER> movement rate is doubled for the duration of the spell.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","GLOBAL",-1) AddSpecialAbility("C0SA902")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END

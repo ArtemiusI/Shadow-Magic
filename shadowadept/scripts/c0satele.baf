@@ -1,0 +1,23 @@
+IF
+	True()
+THEN
+  RESPONSE #100
+	CutsceneId(Player1)
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa805",Myself))
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa807",Myself))
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa809",Myself))
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa703",Player1))
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa703",Player2))
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa703",Player3))
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa703",Player4))
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa703",Player5))
+	ActionOverride("c0sakryn",ReallyForceSpellRES("c0sa703",Player6))
+	ActionOverride("c0sakryn",SetSequence(SEQ_CAST))
+	Wait(2)
+	ActionOverride("c0sakryn",SetSequence(SEQ_CAST))
+	ActionOverride("c0sakryn",CreateVisualEffectObject("C0DDOOR",Myself))
+	SmallWait(5)
+	ActionOverride("c0sakryn",DestroySelf())
+	EndCutsceneMode()
+END
+	

@@ -1,11 +1,11 @@
 IF
 	OR(6)
-	Kit(Player1,C0SADEPT)
-	Kit(Player2,C0SADEPT)
-	Kit(Player3,C0SADEPT)
-	Kit(Player4,C0SADEPT)
-	Kit(Player5,C0SADEPT)
-	Kit(Player6,C0SADEPT)
+	Specifics(Player1,12)
+	Specifics(Player2,12)
+	Specifics(Player3,12)
+	Specifics(Player4,12)
+	Specifics(Player5,12)
+	Specifics(Player6,12)
 	Global("C0SARingSpawn","AR0602",0)
 THEN
   RESPONSE #100

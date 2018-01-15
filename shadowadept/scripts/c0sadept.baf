@@ -1,4 +1,12 @@
 IF
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+THEN
+  RESPONSE #100
+	Enemy()
+END
+
+IF
   See(Nearestenemyof(Myself))
   Global("Prep","LOCALS",0)
 THEN
@@ -8,7 +16,20 @@ THEN
     ApplySpellRES("c0sa511",Myself)
     ApplySpellRES("c0sa402",Myself)
     ApplySpellRES("c0sa601",Myself)
+	UseItem("c0sapot1",Myself)
+	RealSetGlobalTimer("C0DrinkPotion","LOCALS",60)
     SetGlobal("Prep","LOCALS",1)
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  HasItem("c0sapot1",Myself)
+  RealGlobalTimerExpired("C0DrinkPotion","LOCALS")
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,~*quaffs a potion*~)
+	UseItem("c0sapot1",Myself)
+	RealSetGlobalTimer("C0DrinkPotion","LOCALS",60)
 END
 
 IF
@@ -30,17 +51,6 @@ THEN
   RESPONSE #30
     ApplySpellRES("c0sa201",Myself)
     SetGlobal("PrepDef","LOCALS",1)
-END
-
-IF
-  Allegiance(Myself,ENEMY)
-  HasItem("c0sapot1",Myself)
-  RealGlobalTimerExpired("C0DrinkPotion","LOCALS")
-THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,~*quaffs a potion*~)
-	UseItem("c0sapot1",Myself)
-	RealSetGlobalTimer("C0DrinkPotion","LOCALS",60)
 END
 
 IF

@@ -1,0 +1,8 @@
+IF
+	Global("C0SAQuest1","GLOBAL",1)
+	Global("C0SAMakkaiSpawn","MYAREA",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAMakkaiSpawn","MYAREA",1)
+	CreateCreature("c0samag3",[393.909],NW)
+END

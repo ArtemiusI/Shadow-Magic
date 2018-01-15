@@ -1,4 +1,4 @@
-CHAIN IF WEIGHT #-1 ~Kit(Player1,C0SADEPT) Global("C0EdwinShadowAdeptReaction","LOCALS",0)~ THEN BEDWIN edwin
+CHAIN IF WEIGHT #-1 ~Specifics(Player1,12) Global("C0EdwinShadowAdeptReaction","LOCALS",0)~ THEN BEDWIN edwin
 ~You. Stop a moment. I must have a word with you regarding the... unusual brand of magic that you wield.~
 DO ~SetGlobal("C0EdwinShadowAdeptReaction","LOCALS",1)~
 END

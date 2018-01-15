@@ -1,61 +1,40 @@
 BACKUP ~shadowadept/backup~
 AUTHOR ~Artemius_I~
-AUTO_TRA ~shadowadept/translations/%s~
+AUTO_TRA ~%MOD_FOLDER%/translations/%s~
 LANGUAGE ~English~
          ~English~
-		 ~shadowadept/languages/english/setup.tra~
+		 ~%MOD_FOLDER%/languages/english/setup.tra~
 
 BEGIN ~Shadow Magic: Shadow Adept mage Kit for BG:EE~
 
-INCLUDE ~shadowadept/components/1_shadow_adept.tpa~
-/*
-// SHADOW MAGIC: SORCERER KIT
+INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 
-BEGIN ~Shadow Magic: Shadow Disciple Sorcerer Kit~
-REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
-
-INCLUDE ~shadowadept/components/6_sa_sorcerer.tpa~
-
-// SHADOW MAGIC: BARD KIT
-
-BEGIN ~Shadow Magic: Nightsinger Bard Kit~
-REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
-
-INCLUDE ~shadowadept/components/7_sa_bard.tpa~
-*/
 // SHADOW MONK - requires Shadow Magic component
 
 BEGIN ~Shadow Magic: Shadow Monk monk kit for BG:EE~
-REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
 
-INCLUDE ~shadowadept/components/2_shadow_monk.tpa~
+INCLUDE ~%MOD_FOLDER%/components/2_shadow_monk.tpa~
 
 // SHADOW MAGIC ITEM PACK - requires Shadow Magic component
 
 BEGIN ~Shadow Magic: Item Pack~
-REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
 
-INCLUDE ~shadowadept/components/3_item_pack.tpa~
+INCLUDE ~%MOD_FOLDER%/components/3_item_pack.tpa~
 
 /*
 // SHADOW MAGIC NPC REACTIONS - requires Shadow Magic component
 
 BEGIN ~Shadow Magic: NPC Reactions~
-REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
 
-INCLUDE ~shadowadept/components/4_npc_reactions.tpa~
-
-// SHADOW MAGIC: FAMILIARS
-
-BEGIN ~Shadow Magic: Familiars~
-REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
-
-INCLUDE ~shadowadept/components/5_familiars.tpa~
-
+INCLUDE ~%MOD_FOLDER%/components/4_npc_reactions.tpa~
+*/
 // SHADOW MAGIC: QUESTS AND ENCOUNTERS
 
-BEGIN ~Shadow Magic: Quests and Encounters~
-REQUIRE_COMPONENT ~shadowadept/shadowadept.tp2~ ~0~ ~Main component must be installed~
+BEGIN ~Shadow Magic: Quests and Encounters (BG:EE)~
+  REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
+  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
 
-INCLUDE ~shadowadept/components/8_quests.tpa~
-*/
+INCLUDE ~%MOD_FOLDER%/components/8_quests.tpa~

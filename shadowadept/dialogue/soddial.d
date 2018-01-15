@@ -1,7 +1,7 @@
-ADD_TRANS_TRIGGER BDWYNAN 15 ~!Kit(Player1,C0SADEPT)~ DO 0
+ADD_TRANS_TRIGGER BDWYNAN 15 ~!Specifics(Player1,12)~ DO 0
 
 EXTEND_TOP BDWYNAN 15
-+ ~Kit(Player1,C0SADEPT)~ + ~I believe I can.~ EXTERN BDWYNAN bdwynan1
++ ~Specifics(Player1,12)~ + ~I believe I can.~ EXTERN BDWYNAN bdwynan1
 END
 
 CHAIN BDWYNAN bdwynan1

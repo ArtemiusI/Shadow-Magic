@@ -18,5 +18,5 @@ END
 
 IF ~~ a2
 SAY ~Your feel triumph as the energies take possession of you, cutting you off from the magic of the Weave. You have become a Shadow Adept and may cast spells of the Shadow Weave.~
-IF ~~ DO ~ActionOverride(LastTalkedToBy(Myself),AddKit(C0SADEPT)) DestroySelf()~ EXIT
+IF ~~ DO ~CreateVisualEffectObject("c0darkbo",LastTalkedToBy(Myself)) ActionOverride(LastTalkedToBy(Myself),AddKit(C0SADEPT)) ChangeSpecifics(Lastsummonerof(Myself),12) DestroySelf()~ EXIT
 END
