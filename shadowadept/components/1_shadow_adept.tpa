@@ -510,6 +510,225 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
 
+////////////////////////////////////////
+/////////CREATURES//////////////////////
+////////////////////////////////////////
+
+COPY ~shadowadept/spells/c0satalk.cre~ ~override~
+WRITE_ASCII 0x2cc ~c0satalk~ #8  // dialogue
+WRITE_ASCII 0x248 ~c0satalk~ #8  // override
+WRITE_ASCII 0x280 ~c0satalk~ #32 // death variable
+
+COPY ~shadowadept/spells/c0satalk.cre~ ~override/c0saorb.cre~
+WRITE_ASCII 0x2cc ~c0saorb~ #8  // dialogue
+WRITE_ASCII 0x248 ~c0saorb~ #8  // override
+WRITE_ASCII 0x280 ~c0saorb~ #32 // death variable
+
+////////////////////////////////////////
+/////////DIALOGUE///////////////////////
+////////////////////////////////////////
+
+COMPILE ~shadowadept/dialogue/c0satalk.d~
+COMPILE ~shadowadept/dialogue/c0saorb.d~
+
+////////////////////////////////////////
+/////////SCRIPTS////////////////////////
+////////////////////////////////////////
+
+EXTEND_TOP ~dplayer3.bcs~ ~shadowadept/scripts/dplayer3.baf~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur.bcs~ ~shadowadept/scripts/c0sa402.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
+EXTEND_TOP ~bdbaldur.bcs~ ~shadowadept/scripts/c0sa402.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0sa402.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdcutgl2.bcs~ THEN BEGIN
+COMPILE ~shadowadept/dialogue/soddial.d~
+COMPILE ~shadowadept/scripts/c0cutgl2.baf~
+END
+
+COMPILE ~shadowadept/scripts/c0satalk.baf~
+COMPILE ~shadowadept/scripts/c0saorb.baf~
+COMPILE ~shadowadept/scripts/c0devsha.baf~
+COMPILE ~shadowadept/scripts/c0nighth.baf~
+COMPILE ~shadowadept/scripts/c0sa711.baf~
+COMPILE ~shadowadept/scripts/c0sa908.baf~
+
+// items
+
+COPY ~shadowadept/items/c0sablad.bam~ ~override~
+COPY ~shadowadept/Items/C0SASWD1.itm~ ~override/C0SASWD1.itm~
+SAY NAME1 ~Shadow Sword +1~
+SAY NAME2 ~Shadow Sword +1~
+SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
+
+STATISTICS:
+
+Equipped abilities:
+ - Cold Resistance: +25%
+ - Wielded as though proficient in long swords
+
+THAC0: +1
+Damage: 1d8+1, 1 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+SAY 0xD6 ~Shadow Adepts~
+
+COPY ~shadowadept/Items/C0SASWD2.itm~ ~override/C0SASWD2.itm~
+SAY NAME1 ~Shadow Sword +2~
+SAY NAME2 ~Shadow Sword +2~
+SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
+
+STATISTICS:
+
+Equipped abilities:
+ - 2% chance to cast Essence Drain on hit
+ - Cold Resistance: +25%
+ - Wielded as though Proficient in long swords
+
+THAC0: +2
+Damage: 1d8+2, 2 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+SAY 0xD6 ~Shadow Adepts~
+
+COPY ~shadowadept/Items/C0SASWD3.itm~ ~override/C0SASWD3.itm~
+SAY NAME1 ~Shadow Sword +3~
+SAY NAME2 ~Shadow Sword +3~
+SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
+
+STATISTICS:
+
+Equipped abilities:
+ - 5% chance to cast Essence Drain on hit
+ - 2% chance to cast Shadow Binding on hit
+ - Cold Resistance: +50%
+ - Wielded as though Specialized in long swords
+
+THAC0: +3
+Damage: 1d8+3, 3 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+SAY 0xD6 ~Shadow Adepts~
+
+COPY ~shadowadept/Items/C0SASWD4.itm~ ~override/C0SASWD4.itm~
+SAY NAME1 ~Shadow Sword +4~
+SAY NAME2 ~Shadow Sword +4~
+SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
+
+STATISTICS:
+
+Equipped abilities:
+ - 5% chance to cast Essence Drain on hit
+ - 5% chance to cast Shadow Binding on hit
+ - 2% chance to cast Nightshade on hit
+ - 1 extra attack per round
+ - Cold Resistance: +50%
+ - Wielded as though Mastery with long swords
+
+THAC0: +4
+Damage: 1d8+4, 4 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+SAY 0xD6 ~Shadow Adepts~
+
+COPY ~shadowadept/Items/C0SASWD5.itm~ ~override/C0SASWD5.itm~
+SAY NAME1 ~Shadow Sword +5~
+SAY NAME2 ~Shadow Sword +5~
+SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
+
+STATISTICS:
+
+Equipped abilities:
+ - 10% chance to cast Essence Drain on hit
+ - 5% chance to cast Shadow Binding on hit
+ - 5% chance to cast Nightshade on hit
+ - 1 extra attack per round
+ - Cold Resistance: +75%
+ - Wielded as though High Mastery with long swords
+
+THAC0: +5
+Damage: 1d8+5, 5 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+SAY 0xD6 ~Shadow Adepts~
+
+COPY ~shadowadept/Items/C0SASWD6.itm~ ~override/C0SASWD6.itm~
+SAY NAME1 ~Shadow Sword +6~
+SAY NAME2 ~Shadow Sword +6~
+SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
+
+STATISTICS:
+
+Equipped abilities:
+ - 20% chance to cast Essence Drain on hit
+ - 10% chance to cast Shadow Binding on hit
+ - 10% chance to cast Nightshade on hit
+ - 2% chance to cast Death Mark on hit
+ - 1 extra attack per round
+ - Cold Resistance: +100%
+ - Wielded as though Grand Mastery with long swords
+
+THAC0: +6
+Damage: 1d8+6, 6 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+SAY 0xD6 ~Shadow Adepts~
+
+COPY ~shadowadept/Items/c0sabook.bam~ ~override~
+COPY ~shadowadept/Items/c0sabook.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+	  parameter2 = 9
+	  power = 1
+	  special = RESOLVE_STR_REF (@1)
+END
+SAY NAME1 ~Book~
+SAY NAME2 ~Shadow Tome of Shar~
+SAY DESC ~This black leather-bound tome is filled with magical runes and incantations that seem to shift and change slightly as you blink.
+
+STATISTICS:
+
+- Learns all Shadow Weave spells on use.
+
+Weight: 2~
+
+COPY ~shadowadept/Items/c0saorb.bam~ ~override~
+COPY ~shadowadept/Items/c0saorbc.bam~ ~override~
+COPY ~shadowadept/Items/c0saorb.itm~ ~override~
+SAY NAME1 ~Black Orb~
+SAY NAME2 ~Shadow Orb~
+SAY DESC ~This smoky glass sphere emanates an aura of power unlike any magic you're familiar with. A strange energy struggles to break free of it.~
+
 PRINT ~Add Shadow Disciple (Sorcerer Kit)?
 [1] Yes
 [2] No~
@@ -3588,225 +3807,6 @@ SAY NAME1 ~Arcane Lore~
 SAY NAME2 ~Arcane Lore~
 SAY UNIDENTIFIED_DESC ~Arcane Lore
 The shadow adept taps into the deeper secrets of the shadow weave, gaining a permanent +1 to Intelligence and +10 Lore. <PRO_HESHE> also learns one extra Shadow Weave spell of each level.~
-
-////////////////////////////////////////
-/////////CREATURES//////////////////////
-////////////////////////////////////////
-
-COPY ~shadowadept/spells/c0satalk.cre~ ~override~
-WRITE_ASCII 0x2cc ~c0satalk~ #8  // dialogue
-WRITE_ASCII 0x248 ~c0satalk~ #8  // override
-WRITE_ASCII 0x280 ~c0satalk~ #32 // death variable
-
-COPY ~shadowadept/spells/c0satalk.cre~ ~override/c0saorb.cre~
-WRITE_ASCII 0x2cc ~c0saorb~ #8  // dialogue
-WRITE_ASCII 0x248 ~c0saorb~ #8  // override
-WRITE_ASCII 0x280 ~c0saorb~ #32 // death variable
-
-////////////////////////////////////////
-/////////DIALOGUE///////////////////////
-////////////////////////////////////////
-
-COMPILE ~shadowadept/dialogue/c0satalk.d~
-COMPILE ~shadowadept/dialogue/c0saorb.d~
-
-////////////////////////////////////////
-/////////SCRIPTS////////////////////////
-////////////////////////////////////////
-
-EXTEND_TOP ~dplayer3.bcs~ ~shadowadept/scripts/dplayer3.baf~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~shadowadept/scripts/c0sa402.baf~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~shadowadept/scripts/c0sa402.baf~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0sa402.baf~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~bdcutgl2.bcs~ THEN BEGIN
-COMPILE ~shadowadept/dialogue/soddial.d~
-COMPILE ~shadowadept/scripts/c0cutgl2.baf~
-END
-
-COMPILE ~shadowadept/scripts/c0satalk.baf~
-COMPILE ~shadowadept/scripts/c0saorb.baf~
-COMPILE ~shadowadept/scripts/c0devsha.baf~
-COMPILE ~shadowadept/scripts/c0nighth.baf~
-COMPILE ~shadowadept/scripts/c0sa711.baf~
-COMPILE ~shadowadept/scripts/c0sa908.baf~
-
-// items
-
-COPY ~shadowadept/items/c0sablad.bam~ ~override~
-COPY ~shadowadept/Items/C0SASWD1.itm~ ~override/C0SASWD1.itm~
-SAY NAME1 ~Shadow Sword +1~
-SAY NAME2 ~Shadow Sword +1~
-SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
-
-STATISTICS:
-
-Equipped abilities:
- - Cold Resistance: +25%
- - Wielded as though proficient in long swords
-
-THAC0: +1
-Damage: 1d8+1, 1 cold (slashing)
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-
-Weight: 3~
-SAY 0xD6 ~Shadow Adepts~
-
-COPY ~shadowadept/Items/C0SASWD2.itm~ ~override/C0SASWD2.itm~
-SAY NAME1 ~Shadow Sword +2~
-SAY NAME2 ~Shadow Sword +2~
-SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
-
-STATISTICS:
-
-Equipped abilities:
- - 2% chance to cast Essence Drain on hit
- - Cold Resistance: +25%
- - Wielded as though Proficient in long swords
-
-THAC0: +2
-Damage: 1d8+2, 2 cold (slashing)
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-
-Weight: 3~
-SAY 0xD6 ~Shadow Adepts~
-
-COPY ~shadowadept/Items/C0SASWD3.itm~ ~override/C0SASWD3.itm~
-SAY NAME1 ~Shadow Sword +3~
-SAY NAME2 ~Shadow Sword +3~
-SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
-
-STATISTICS:
-
-Equipped abilities:
- - 5% chance to cast Essence Drain on hit
- - 2% chance to cast Shadow Binding on hit
- - Cold Resistance: +50%
- - Wielded as though Specialized in long swords
-
-THAC0: +3
-Damage: 1d8+3, 3 cold (slashing)
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-
-Weight: 3~
-SAY 0xD6 ~Shadow Adepts~
-
-COPY ~shadowadept/Items/C0SASWD4.itm~ ~override/C0SASWD4.itm~
-SAY NAME1 ~Shadow Sword +4~
-SAY NAME2 ~Shadow Sword +4~
-SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
-
-STATISTICS:
-
-Equipped abilities:
- - 5% chance to cast Essence Drain on hit
- - 5% chance to cast Shadow Binding on hit
- - 2% chance to cast Nightshade on hit
- - 1 extra attack per round
- - Cold Resistance: +50%
- - Wielded as though Mastery with long swords
-
-THAC0: +4
-Damage: 1d8+4, 4 cold (slashing)
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-
-Weight: 3~
-SAY 0xD6 ~Shadow Adepts~
-
-COPY ~shadowadept/Items/C0SASWD5.itm~ ~override/C0SASWD5.itm~
-SAY NAME1 ~Shadow Sword +5~
-SAY NAME2 ~Shadow Sword +5~
-SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
-
-STATISTICS:
-
-Equipped abilities:
- - 10% chance to cast Essence Drain on hit
- - 5% chance to cast Shadow Binding on hit
- - 5% chance to cast Nightshade on hit
- - 1 extra attack per round
- - Cold Resistance: +75%
- - Wielded as though High Mastery with long swords
-
-THAC0: +5
-Damage: 1d8+5, 5 cold (slashing)
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-
-Weight: 3~
-SAY 0xD6 ~Shadow Adepts~
-
-COPY ~shadowadept/Items/C0SASWD6.itm~ ~override/C0SASWD6.itm~
-SAY NAME1 ~Shadow Sword +6~
-SAY NAME2 ~Shadow Sword +6~
-SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
-
-STATISTICS:
-
-Equipped abilities:
- - 20% chance to cast Essence Drain on hit
- - 10% chance to cast Shadow Binding on hit
- - 10% chance to cast Nightshade on hit
- - 2% chance to cast Death Mark on hit
- - 1 extra attack per round
- - Cold Resistance: +100%
- - Wielded as though Grand Mastery with long swords
-
-THAC0: +6
-Damage: 1d8+6, 6 cold (slashing)
-Speed Factor: 2
-Proficiency Type: Long Sword
-Type: One-handed
-
-Weight: 3~
-SAY 0xD6 ~Shadow Adepts~
-
-COPY ~shadowadept/Items/c0sabook.bam~ ~override~
-COPY ~shadowadept/Items/c0sabook.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-	  parameter2 = 9
-	  power = 1
-	  special = RESOLVE_STR_REF (@1)
-END
-SAY NAME1 ~Book~
-SAY NAME2 ~Shadow Tome of Shar~
-SAY DESC ~This black leather-bound tome is filled with magical runes and incantations that seem to shift and change slightly as you blink.
-
-STATISTICS:
-
-- Learns all Shadow Weave spells on use.
-
-Weight: 2~
-
-COPY ~shadowadept/Items/c0saorb.bam~ ~override~
-COPY ~shadowadept/Items/c0saorbc.bam~ ~override~
-COPY ~shadowadept/Items/c0saorb.itm~ ~override~
-SAY NAME1 ~Black Orb~
-SAY NAME2 ~Shadow Orb~
-SAY DESC ~This smoky glass sphere emanates an aura of power unlike any magic you're familiar with. A strange energy struggles to break free of it.~
 
 PRINT ~Add Familiars?
 [1] Yes

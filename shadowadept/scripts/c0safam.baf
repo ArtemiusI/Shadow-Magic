@@ -403,7 +403,9 @@ SetGlobal("C0SFAM24","LOCALS",0)
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,10)
+ClassLevelGT(Player1,ROGUE,12)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",0)
 Alignment(Myself,MASK_LAWFUL)
@@ -416,7 +418,9 @@ AddSpecialAbility("c0sfam13")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,15)
+ClassLevelGT(Player1,ROGUE,17)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",1)
 Alignment(Myself,MASK_LAWFUL)
@@ -429,7 +433,9 @@ AddSpecialAbility("c0sfam16")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,20)
+ClassLevelGT(Player1,ROGUE,22)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",2)
 Alignment(Myself,MASK_LAWFUL)
@@ -442,7 +448,9 @@ AddSpecialAbility("c0sfam19")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,25)
+ClassLevelGT(Player1,ROGUE,27)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",3)
 Alignment(Myself,MASK_LAWFUL)
@@ -455,7 +463,9 @@ AddSpecialAbility("c0sfam22")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,10)
+ClassLevelGT(Player1,ROGUE,12)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",0)
 Alignment(Myself,MASK_LCNEUTRAL)
@@ -468,7 +478,9 @@ AddSpecialAbility("c0sfam14")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,15)
+ClassLevelGT(Player1,ROGUE,17)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",1)
 Alignment(Myself,MASK_LCNEUTRAL)
@@ -481,7 +493,9 @@ AddSpecialAbility("c0sfam17")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,20)
+ClassLevelGT(Player1,ROGUE,22)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",2)
 Alignment(Myself,MASK_LCNEUTRAL)
@@ -494,7 +508,9 @@ AddSpecialAbility("c0sfam20")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,25)
+ClassLevelGT(Player1,ROGUE,27)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",3)
 Alignment(Myself,MASK_LCNEUTRAL)
@@ -507,7 +523,9 @@ AddSpecialAbility("c0sfam23")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,10)
+ClassLevelGT(Player1,ROGUE,12)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",0)
 Alignment(Myself,MASK_CHAOTIC)
@@ -521,7 +539,9 @@ ApplySpellRES("spcl332",Myself)
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,15)
+ClassLevelGT(Player1,ROGUE,17)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",1)
 Alignment(Myself,MASK_CHAOTIC)
@@ -534,7 +554,9 @@ AddSpecialAbility("c0sfam18")
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,20)
+ClassLevelGT(Player1,ROGUE,22)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",2)
 Alignment(Myself,MASK_CHAOTIC)
@@ -548,7 +570,9 @@ ApplySpellRES("spcl332",Myself)
 END
 
 IF
+OR(2)
 ClassLevelGT(Player1,WIZARD,25)
+ClassLevelGT(Player1,ROGUE,27)
 CheckStat(Player1, 0, LEVELDRAIN)
 Global("LevelUp","LOCALS",3)
 Alignment(Myself,MASK_CHAOTIC)
