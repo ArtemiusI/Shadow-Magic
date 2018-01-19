@@ -4,5 +4,5 @@ IF
 THEN
   RESPONSE #100
 	SetGlobal("C0SAChangSpawn","MYAREA",1)
-	CreateCreature("c0samag4",[767.843],W)
+	CreateCreature("c0samag2",[767.843],W)
 END

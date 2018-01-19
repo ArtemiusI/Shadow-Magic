@@ -71,7 +71,11 @@ EXIT
 CHAIN IF ~!Global("C0KrynTalk","GLOBAL",0)~ THEN C0SAKRYN b
 ~I see you have returned. What might I do for you this time?~
 END
++ ~Global("TalkMakkai","LOCALS",1) Global("TalkSlaves","LOCALS",0)~ + ~Mak'kai mentioned that your apprentices are slaves. Is that true?~ DO ~SetGlobal("TalkSlaves","LOCALS",1)~ + slaves
++ ~Global("TalkMakkai","LOCALS",1) Global("TalkEbonshade","LOCALS",0)~ + ~What is the ebonshade madness?~ DO ~SetGlobal("TalkEbonshade","LOCALS",1)~ + ebonshade
 + ~!Global("C0KrynTask","GLOBAL",1)~ + ~Tell me of your purpose for being here.~ + a1.7
++ ~Dead("c0samag3") Global("TalkMakkai","LOCALS",0)~ + ~Mak'kai managed to regain his sanity before he forced me to kill him.~ DO ~SetGlobal("TalkMakkai","LOCALS",1)~ + makkai
++ ~Dead("c0samag5") Global("TalkOphelia","LOCALS",0)~ + ~Ivette kept mentioning someone called Ophelia. Do you know who she was talking about?~ DO ~SetGlobal("TalkOphelia","LOCALS",1)~ + ophelia
 + ~PartyHasItem("c0samag1")~ + ~I have the staff of Xarius the Black.~ DO ~TakePartyItem("c0samag1") DestroyItem("c0samag1") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
 + ~PartyHasItem("c0samag2")~ + ~I have the staff of Chang Yu'ke.~ DO ~TakePartyItem("c0samag2") DestroyItem("c0samag2") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
 + ~PartyHasItem("c0samag3")~ + ~I have the staff of Mak'kai.~ DO ~TakePartyItem("c0samag3") DestroyItem("c0samag3") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
@@ -91,6 +95,74 @@ Specifics(Player4,12)
 Specifics(Player5,12)
 Specifics(Player6,12)~ + ~I would like to see your special stock.~ + b3
 ++ ~Nothing for now.~ + b0
+
+CHAIN IF ~!Global("C0KrynTalk","GLOBAL",0)~ THEN C0SAKRYN b.1
+~Is there anything else you require?~
+END
++ ~Global("TalkMakkai","LOCALS",1) Global("TalkSlaves","LOCALS",0)~ + ~Mak'kai mentioned that your apprentices are slaves. Is that true?~ DO ~SetGlobal("TalkSlaves","LOCALS",1)~ + slaves
++ ~Global("TalkMakkai","LOCALS",1) Global("TalkEbonshade","LOCALS",0)~ + ~What is the ebonshade madness?~ DO ~SetGlobal("TalkEbonshade","LOCALS",1)~ + ebonshade
++ ~!Global("C0KrynTask","GLOBAL",1)~ + ~Tell me of your purpose for being here.~ + a1.7
++ ~Dead("c0samag3") Global("TalkMakkai","LOCALS",0)~ + ~Mak'kai managed to regain his sanity before he forced me to kill him.~ DO ~SetGlobal("TalkMakkai","LOCALS",1)~ + makkai
++ ~Dead("c0samag5") Global("TalkOphelia","LOCALS",0)~ + ~Ivette kept mentioning someone called Ophelia. Do you know who she was talking about?~ DO ~SetGlobal("TalkOphelia","LOCALS",1)~ + ophelia
++ ~PartyHasItem("c0samag1")~ + ~I have the staff of Xarius the Black.~ DO ~TakePartyItem("c0samag1") DestroyItem("c0samag1") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
++ ~PartyHasItem("c0samag2")~ + ~I have the staff of Chang Yu'ke.~ DO ~TakePartyItem("c0samag2") DestroyItem("c0samag2") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
++ ~PartyHasItem("c0samag3")~ + ~I have the staff of Mak'kai.~ DO ~TakePartyItem("c0samag3") DestroyItem("c0samag3") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
++ ~PartyHasItem("c0samag4")~ + ~I have the staff of Nym Phaundal.~ DO ~TakePartyItem("c0samag4") DestroyItem("c0samag4") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
++ ~PartyHasItem("c0samag5")~ + ~I have the staff of Ivette Cold-Whisper.~ DO ~TakePartyItem("c0samag5") DestroyItem("c0samag5") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
++ ~GlobalGT("C0KrynTalk","GLOBAL",1) !Specifics(Lasttalkedtoby(Myself),12)
+Class(Lasttalkedtoby(Myself),MAGE_ALL)
+!Alignment(Lasttalkedtoby(Myself),MASK_GOOD)~ + ~I want to learn Shadow Magic.~ + b1.6
++ ~Global("C0KrynKnowsStore","GLOBAL",0)~ + ~I was wondering, do you have any magical wares for sale?~ DO ~SetGlobal("C0KrynKnowsStore","GLOBAL",1)~ + b1.7
++ ~Global("C0KrynKnowsStore","GLOBAL",1)~ + ~May I see what wares you have available?~ + b2
++ ~Global("C0KrynKnowsStore","GLOBAL",1)
+OR(6)
+Specifics(Player1,12)
+Specifics(Player2,12)
+Specifics(Player3,12)
+Specifics(Player4,12)
+Specifics(Player5,12)
+Specifics(Player6,12)~ + ~I would like to see your special stock.~ + b3
+++ ~Nothing for now.~ + b0
+
+CHAIN C0SAKRYN makkai
+~Indeed? That is... impressive. Once the ebonshade madness has consumed the imbiber, it is difficult, if not impossible, to ever regain one's coherency. The fact that Mak'kai was able to remain sane enough for his final moments is a testament to his ability.~
+END
++ ~Global("TalkSlaves","LOCALS",0)~ + ~He mentioned that your apprentices are slaves. Is that true?~ DO ~SetGlobal("TalkSlaves","LOCALS",1)~ + slaves
++ ~Global("TalkEbonshade","LOCALS",0)~ + ~What is the ebonshade madness?~ DO ~SetGlobal("TalkEbonshade","LOCALS",1)~ + ebonshade
+++ ~I see. Let's talk about something else.~ + b.1
+
+CHAIN C0SAKRYN slaves
+~The Shade Enclave deals in slavery, this I will not deny. Neither will I deny that I 'owned' my apprentices, in a manner of speaking.~
+= ~But the truth is not so simple. The Shadover come to this plane to claim those with skills of any kind. Those with arcane talent are treated... especially cruelly. They are administered a nearly lethal amount of ebonshade to enable their control over the Shadow Weave.~
+= ~If the process does not kill them, it inevitably drives them mad if left alone. It cannot be treated - only overcome. I do what I can for these unfortunate souls by giving them the training they require. But, as you have seen... sometimes even that is not enough.~
+= ~Perhaps you, with whatever morals you hold, think this does not justify the act of indulging in slavery, but I consider my actions a necessary evil.~
+END
+++ ~Maybe you're right. I'll not press the issue then.~ + b.1
+++ ~I don't like it, but it's not my place to judge. Let's talk about something else.~ + b.1
++ ~Global("TalkMakkai","LOCALS",1) Global("TalkEbonshade","LOCALS",0)~ + ~What is the ebonshade madness?~ DO ~SetGlobal("TalkEbonshade","LOCALS",1)~ + ebonshade
+++ ~I will not deal with slave handlers!~ + attacked
+
+CHAIN C0SAKRYN ebonshade
+~The ebonshade - known to some as Shar's Infusion - is the essence of the Shadow Weave given physical form. For shadow magi, it can be taken safely in regulated doses, allowing us to channel our power at less risk to ourselves. However, when overdosed, it has dangerous and often irreversible effects.~
+= ~My apprentices were not driven mad solely by their magic. They were taken by Shadovar hunters and overdosed with ebonshade, forcibly instilling the Shadow Weave into them. They became powerful users of shadow magic, but their minds were damaged, and they became dependent on the ebonshade, suffering unbearable pain if deprived of it for too long.~
+END
++ ~PartyHasItem("c0sapot1")~ + ~If I drink the ebonshade, will it have any negative effects on me?~ + ebonshade.1
+++ ~There's no way to cure the effects?~ + ebonshade.2
+++ ~I see. Let's talk about something else.~ + b.1
+
+CHAIN C0SAKRYN ebonshade.1
+~Worry not. That is a highly diluted concoction I made in an effort to help my apprentices dull the pain while reducing any adverse effects. The symptoms of ebonshade withdrawal only occur in extreme circumstances.~
+EXTERN C0SAKRYN ebonshade.2
+
+CHAIN C0SAKRYN ebonshade.2
+~I have researched methods of treating the ebonshade curse for many years now, and I have failed to find any lasting solution. So long as the condition is untreatable, all I can do is take care of my apprentices and make them strong enough to overcome the condition.~
+= ~Perhaps one day, I will find a cure, but I fear many lives will be destroyed by the ebonshade until then.~
+EXTERN C0SAKRYN b.1
+
+CHAIN C0SAKRYN ophelia
+~Ivette still remembers Ophelia, I see... no doubt she was trying to cling on to her last, most important memories.~
+= ~Ophelia is one of my older apprentices. She acted as a caretaker for the more recent members of the mage tower, and Ivette in particular was fond of her. She will be despondent to hear of Ivette's passing.~
+EXTERN C0SAKRYN b.1
 
 CHAIN C0SAKRYN b0
 ~Shadow guide you.~

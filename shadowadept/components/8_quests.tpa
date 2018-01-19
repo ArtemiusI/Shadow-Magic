@@ -209,6 +209,8 @@ Weight: 4~
 
 
 COMPILE ~shadowadept/dialogue/c0sakryn.d~
+COMPILE ~shadowadept/dialogue/c0samage.d~
+COMPILE ~%MOD_FOLDER%/dialogue/bg1dial.d~
 
 COMPILE ~shadowadept/scripts/c0sadept.baf~
 COMPILE ~shadowadept/scripts/c0sakryn.baf~

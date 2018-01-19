@@ -1,8 +1,8 @@
-COPY ~shadowadept/2da~ ~override~
-COPY ~shadowadept/audio~ ~override~
-COPY ~shadowadept/animations~ ~override~
-COPY ~shadowadept/portraits~ ~override~
-COPY ~shadowadept/spells~ ~override~
+COPY ~%MOD_FOLDER%/2da~ ~override~
+COPY ~%MOD_FOLDER%/audio~ ~override~
+COPY ~%MOD_FOLDER%/animations~ ~override~
+COPY ~%MOD_FOLDER%/portraits~ ~override~
+COPY ~%MOD_FOLDER%/spells~ ~override~
 
 // 2da
 
@@ -54,7 +54,7 @@ OUTER_WHILE (!(IS_AN_INT ~hpcost~) OR (~hpcost~ > 0x5) OR (~hpcost~ < 0x1)) BEGI
 END
       ACTION_IF ("hpcost" = 1) THEN BEGIN
 LOAD_TRA ~%MOD_FOLDER%/languages/english/setup.tra~
-COPY ~shadowadept/spells/c0sacon1.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon1.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -64,7 +64,7 @@ COPY ~shadowadept/spells/c0sacon1.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-1 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon2.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon2.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -74,7 +74,7 @@ COPY ~shadowadept/spells/c0sacon2.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-2 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon3.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon3.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -84,7 +84,7 @@ COPY ~shadowadept/spells/c0sacon3.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-3 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon4.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon4.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -94,7 +94,7 @@ COPY ~shadowadept/spells/c0sacon4.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-4 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon5.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon5.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -104,7 +104,7 @@ COPY ~shadowadept/spells/c0sacon5.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-5 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon6.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon6.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -114,7 +114,7 @@ COPY ~shadowadept/spells/c0sacon6.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-6 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon7.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon7.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -124,7 +124,7 @@ COPY ~shadowadept/spells/c0sacon7.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-7 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon8.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon8.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -134,7 +134,7 @@ COPY ~shadowadept/spells/c0sacon8.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-8 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon9.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon9.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -144,7 +144,7 @@ COPY ~shadowadept/spells/c0sacon9.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~-9 penalty to Constitution~)
 END
 
-COPY ~shadowadept/spells/c0sacon0.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon0.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -153,9 +153,9 @@ COPY ~shadowadept/spells/c0sacon0.spl~ ~override~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-10 penalty to Constitution~)
 END
-COMPILE ~shadowadept/scripts/c0sacon.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sacon.baf~
 
-COPY ~shadowadept/spells/C0SA207.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA207.spl~ ~override~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
@@ -186,7 +186,7 @@ Saving Throw: None
 
 This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 
-COPY ~shadowadept/spells/C0SA407.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA407.spl~ ~override~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
@@ -217,7 +217,7 @@ Saving Throw: None
 
 This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 
-COPY ~shadowadept/spells/C0SA706.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA706.spl~ ~override~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
@@ -252,7 +252,7 @@ This spell allows the shadow adept to drain eight points of Constitution from a 
       END
       ACTION_IF ("hpcost" = 2) THEN BEGIN
 LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-2.tra~
-COPY ~shadowadept/alt-spell/c0sacon1.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -261,7 +261,7 @@ COPY ~shadowadept/alt-spell/c0sacon1.spl~ ~override~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-2 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -270,7 +270,7 @@ COPY ~shadowadept/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-4 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -279,7 +279,7 @@ COPY ~shadowadept/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-6 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -288,7 +288,7 @@ COPY ~shadowadept/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-8 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -297,7 +297,7 @@ COPY ~shadowadept/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-10 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -306,7 +306,7 @@ COPY ~shadowadept/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-12 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -315,7 +315,7 @@ COPY ~shadowadept/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-14 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -324,7 +324,7 @@ COPY ~shadowadept/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-16 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -333,7 +333,7 @@ COPY ~shadowadept/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~-18 Hit Points~)
 END
-COPY ~shadowadept/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -343,9 +343,9 @@ COPY ~shadowadept/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
  parameter1 = RESOLVE_STR_REF (~-20 Hit Points~)
 END
 
-COMPILE ~shadowadept/alt-spell/c0sacon.baf~
-COPY ~shadowadept/alt-spell/C0SA207a.spl~ ~override~
-COPY ~shadowadept/alt-spell/C0SA207.spl~ ~override~
+COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA207a.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
@@ -359,8 +359,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~shadowadept/alt-spell/C0SA407a.spl~ ~override~
-COPY ~shadowadept/alt-spell/C0SA407.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA407a.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA407.spl~ ~override~
 SAY NAME1 ~Drain Vitality~
 SAY NAME2 ~Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Drain Vitality
@@ -374,8 +374,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~shadowadept/alt-spell/C0SA706a.spl~ ~override~
-COPY ~shadowadept/alt-spell/C0SA706.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA706a.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA706.spl~ ~override~
 SAY NAME1 ~Greater Drain Vitality~
 SAY NAME2 ~Greater Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
@@ -392,7 +392,7 @@ This spell allows the shadow adept to drain six hit points per level from the ta
       PRINT ~Resource: Hit Point drain on cast~
       END
 
-INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/fl#add_kit_ee.tpa~
 ADD_KIT ~C0SADEPT~
 
  // appended to CLASWEAP.2da
@@ -420,7 +420,7 @@ ADD_KIT ~C0SADEPT~
  ~C0SADEPT                  	1       1       0       1       0       0~
 
  // path to your CLAB-style 2da file 
- ~shadowadept/2da/C0SADEPT.2da~
+ ~%MOD_FOLDER%/2da/C0SADEPT.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~~
@@ -451,7 +451,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
 
-INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/fl#add_kit_ee.tpa~
 ADD_KIT ~C0SADEP2~
 
  // appended to CLASWEAP.2da
@@ -479,7 +479,7 @@ ADD_KIT ~C0SADEP2~
  ~C0SADEP2                  	1       1       0       1       0       0~
 
  // path to your CLAB-style 2da file 
- ~shadowadept/2da/C0SADEP2.2da~
+ ~%MOD_FOLDER%/2da/C0SADEP2.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~K_M_H K_M_E K_M_HE K_M_HL K_M_G K_M_D K_M_HO~
@@ -514,12 +514,12 @@ END
 /////////CREATURES//////////////////////
 ////////////////////////////////////////
 
-COPY ~shadowadept/spells/c0satalk.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0satalk.cre~ ~override~
 WRITE_ASCII 0x2cc ~c0satalk~ #8  // dialogue
 WRITE_ASCII 0x248 ~c0satalk~ #8  // override
 WRITE_ASCII 0x280 ~c0satalk~ #32 // death variable
 
-COPY ~shadowadept/spells/c0satalk.cre~ ~override/c0saorb.cre~
+COPY ~%MOD_FOLDER%/spells/c0satalk.cre~ ~override/c0saorb.cre~
 WRITE_ASCII 0x2cc ~c0saorb~ #8  // dialogue
 WRITE_ASCII 0x248 ~c0saorb~ #8  // override
 WRITE_ASCII 0x280 ~c0saorb~ #32 // death variable
@@ -528,43 +528,42 @@ WRITE_ASCII 0x280 ~c0saorb~ #32 // death variable
 /////////DIALOGUE///////////////////////
 ////////////////////////////////////////
 
-COMPILE ~shadowadept/dialogue/c0satalk.d~
-COMPILE ~shadowadept/dialogue/c0saorb.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0satalk.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0saorb.d~
 
 ////////////////////////////////////////
 /////////SCRIPTS////////////////////////
 ////////////////////////////////////////
 
-EXTEND_TOP ~dplayer3.bcs~ ~shadowadept/scripts/dplayer3.baf~
+EXTEND_TOP ~dplayer3.bcs~ ~%MOD_FOLDER%/scripts/dplayer3.baf~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~shadowadept/scripts/c0sa402.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0sa402.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~shadowadept/scripts/c0sa402.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0sa402.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0sa402.baf~
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0sa402.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcutgl2.bcs~ THEN BEGIN
-COMPILE ~shadowadept/dialogue/soddial.d~
-COMPILE ~shadowadept/scripts/c0cutgl2.baf~
+COMPILE ~%MOD_FOLDER%/dialogue/soddial.d~
+COMPILE ~%MOD_FOLDER%/scripts/c0cutgl2.baf~
 END
 
-COMPILE ~shadowadept/scripts/c0satalk.baf~
-COMPILE ~shadowadept/scripts/c0saorb.baf~
-COMPILE ~shadowadept/scripts/c0devsha.baf~
-COMPILE ~shadowadept/scripts/c0nighth.baf~
-COMPILE ~shadowadept/scripts/c0sa711.baf~
-COMPILE ~shadowadept/scripts/c0sa908.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0satalk.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0saorb.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0devsha.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0nighth.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa711.baf~
 
 // items
 
-COPY ~shadowadept/items/c0sablad.bam~ ~override~
-COPY ~shadowadept/Items/C0SASWD1.itm~ ~override/C0SASWD1.itm~
+COPY ~%MOD_FOLDER%/items/c0sablad.bam~ ~override~
+COPY ~%MOD_FOLDER%/Items/C0SASWD1.itm~ ~override/C0SASWD1.itm~
 SAY NAME1 ~Shadow Sword +1~
 SAY NAME2 ~Shadow Sword +1~
 SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
@@ -584,7 +583,7 @@ Type: One-handed
 Weight: 3~
 SAY 0xD6 ~Shadow Adepts~
 
-COPY ~shadowadept/Items/C0SASWD2.itm~ ~override/C0SASWD2.itm~
+COPY ~%MOD_FOLDER%/Items/C0SASWD2.itm~ ~override/C0SASWD2.itm~
 SAY NAME1 ~Shadow Sword +2~
 SAY NAME2 ~Shadow Sword +2~
 SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
@@ -605,7 +604,7 @@ Type: One-handed
 Weight: 3~
 SAY 0xD6 ~Shadow Adepts~
 
-COPY ~shadowadept/Items/C0SASWD3.itm~ ~override/C0SASWD3.itm~
+COPY ~%MOD_FOLDER%/Items/C0SASWD3.itm~ ~override/C0SASWD3.itm~
 SAY NAME1 ~Shadow Sword +3~
 SAY NAME2 ~Shadow Sword +3~
 SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
@@ -627,7 +626,7 @@ Type: One-handed
 Weight: 3~
 SAY 0xD6 ~Shadow Adepts~
 
-COPY ~shadowadept/Items/C0SASWD4.itm~ ~override/C0SASWD4.itm~
+COPY ~%MOD_FOLDER%/Items/C0SASWD4.itm~ ~override/C0SASWD4.itm~
 SAY NAME1 ~Shadow Sword +4~
 SAY NAME2 ~Shadow Sword +4~
 SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
@@ -651,7 +650,7 @@ Type: One-handed
 Weight: 3~
 SAY 0xD6 ~Shadow Adepts~
 
-COPY ~shadowadept/Items/C0SASWD5.itm~ ~override/C0SASWD5.itm~
+COPY ~%MOD_FOLDER%/Items/C0SASWD5.itm~ ~override/C0SASWD5.itm~
 SAY NAME1 ~Shadow Sword +5~
 SAY NAME2 ~Shadow Sword +5~
 SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
@@ -675,7 +674,7 @@ Type: One-handed
 Weight: 3~
 SAY 0xD6 ~Shadow Adepts~
 
-COPY ~shadowadept/Items/C0SASWD6.itm~ ~override/C0SASWD6.itm~
+COPY ~%MOD_FOLDER%/Items/C0SASWD6.itm~ ~override/C0SASWD6.itm~
 SAY NAME1 ~Shadow Sword +6~
 SAY NAME2 ~Shadow Sword +6~
 SAY DESC ~This powerful blade was created by energies from the Plane of Shadow and can only be wielded by shadow adepts.
@@ -700,8 +699,8 @@ Type: One-handed
 Weight: 3~
 SAY 0xD6 ~Shadow Adepts~
 
-COPY ~shadowadept/Items/c0sabook.bam~ ~override~
-COPY ~shadowadept/Items/c0sabook.itm~ ~override~
+COPY ~%MOD_FOLDER%/Items/c0sabook.bam~ ~override~
+COPY ~%MOD_FOLDER%/Items/c0sabook.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
@@ -722,9 +721,9 @@ STATISTICS:
 
 Weight: 2~
 
-COPY ~shadowadept/Items/c0saorb.bam~ ~override~
-COPY ~shadowadept/Items/c0saorbc.bam~ ~override~
-COPY ~shadowadept/Items/c0saorb.itm~ ~override~
+COPY ~%MOD_FOLDER%/Items/c0saorb.bam~ ~override~
+COPY ~%MOD_FOLDER%/Items/c0saorbc.bam~ ~override~
+COPY ~%MOD_FOLDER%/Items/c0saorb.itm~ ~override~
 SAY NAME1 ~Black Orb~
 SAY NAME2 ~Shadow Orb~
 SAY DESC ~This smoky glass sphere emanates an aura of power unlike any magic you're familiar with. A strange energy struggles to break free of it.~
@@ -739,7 +738,7 @@ OUTER_WHILE (!(IS_AN_INT ~sorcerer~) OR (~sorcerer~ > 0x5) OR (~sorcerer~ < 0x1)
   ACTION_READLN ~sorcerer~
 END
       ACTION_IF ("sorcerer" = 1) THEN BEGIN
-INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/fl#add_kit_ee.tpa~
 ADD_KIT ~C0SASORC~
 
  // appended to CLASWEAP.2da
@@ -767,7 +766,7 @@ ADD_KIT ~C0SASORC~
  ~C0SASORC                  	0       0       0       0       0       0~
 
  // path to your CLAB-style 2da file 
- ~shadowadept/2da/C0SADEP3.2da~
+ ~%MOD_FOLDER%/2da/C0SADEP3.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~~
@@ -798,7 +797,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
 
-INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/fl#add_kit_ee.tpa~
 ADD_KIT ~C0SASOR2~
 
  // appended to CLASWEAP.2da
@@ -826,7 +825,7 @@ ADD_KIT ~C0SASOR2~
  ~C0SASOR2                  	0       0       0       0       0       0~
 
  // path to your CLAB-style 2da file 
- ~shadowadept/2da/C0SADEP2.2da~
+ ~%MOD_FOLDER%/2da/C0SADEP2.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
@@ -858,7 +857,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~c0satalk.bcs~ THEN BEGIN
-EXTEND_TOP ~c0satalk.bcs~ ~shadowadept/scripts/c0satal2.baf~
+EXTEND_TOP ~c0satalk.bcs~ ~%MOD_FOLDER%/scripts/c0satal2.baf~
 END
       END
       ACTION_IF ("sorcerer" = 2) THEN BEGIN
@@ -874,7 +873,7 @@ OUTER_WHILE (!(IS_AN_INT ~bard~) OR (~bard~ > 0x5) OR (~bard~ < 0x1)) BEGIN
   ACTION_READLN ~bard~
 END
       ACTION_IF ("bard" = 1) THEN BEGIN
-INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/fl#add_kit_ee.tpa~
 ADD_KIT ~C0SABARD~
 
  // appended to CLASWEAP.2da
@@ -913,7 +912,7 @@ ADD_KIT ~C0SABARD~
  ~C0SABARD                  	1       1       0       1       0       0~
 
  // path to your CLAB-style 2da file 
- ~shadowadept/2da/C0SABARD.2da~
+ ~%MOD_FOLDER%/2da/C0SABARD.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~~
@@ -944,7 +943,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
 
-INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/fl#add_kit_ee.tpa~
 ADD_KIT ~C0SABAR2~
 
  // appended to CLASWEAP.2da
@@ -983,7 +982,7 @@ ADD_KIT ~C0SABAR2~
  ~C0SABAR2                  	0       0       0       0       0       0~
 
  // path to your CLAB-style 2da file 
- ~shadowadept/2da/C0SADEP2.2da~
+ ~%MOD_FOLDER%/2da/C0SADEP2.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~K_B_H K_B_E K_B_HE K_B_HL K_B_G K_B_D K_B_HO~
@@ -1015,10 +1014,10 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~c0satalk.bcs~ THEN BEGIN
-EXTEND_TOP ~c0satalk.bcs~ ~shadowadept/scripts/c0satal3.baf~
+EXTEND_TOP ~c0satalk.bcs~ ~%MOD_FOLDER%/scripts/c0satal3.baf~
 END
 
-COPY ~shadowadept/spells/c0sahlac.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahlac.spl~ ~override~
 SAY NAME1 ~Light's Requiem~
 SAY NAME2 ~Light's Requiem~
 SAY UNIDENTIFIED_DESC ~Light's Requiem
@@ -1026,58 +1025,61 @@ This dark hymn is a powerful aid to the Nightsinger. The song gives the Nightsin
 
 This ability replaces the current Bard Song.~
 
-COPY ~shadowadept/spells/c0sabrds.spl~ ~override~
-COPY ~shadowadept/spells/c0sason2.spl~ ~override~
-COPY ~shadowadept/spells/c0sasong.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sabrds.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sason2.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sasong.spl~ ~override~
       END
       ACTION_IF ("bard" = 2) THEN BEGIN
       END
 
 // PROJECTILES
 
-ADD_PROJECTILE ~shadowadept/spells/c0pro10a.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj01.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj02.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj03.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj04.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj05.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj06.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj07.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj08.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0pro08a.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj09.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj10.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj11.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj12.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj13.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj14.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj15.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj16.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj17.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj18.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj19.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj20.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj21.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj22.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj23.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0proj24.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0negeb.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0weird.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0nightk.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0sasper.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0sarain.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0sawall.PRO~
-ADD_PROJECTILE ~shadowadept/spells/c0cflame.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro10a.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj01.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj02.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj03.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj04.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj05.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj06.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj07.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj08.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro08a.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj09.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj10.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj11.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj12.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj13.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj14.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj15.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj16.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj17.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj18.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj19.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj20.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj21.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj22.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj23.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj24.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0negeb.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0weird.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0nightk.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sasper.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sarain.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sawall.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0cflame.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0blizza.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0oblivi.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pandem.PRO~
 
-COPY ~shadowadept/spells/c0proj08.pro~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0proj08.pro~ ~override~
 SAY 0x21A ~c0pro08a~
 
-COPY ~shadowadept/spells/c0proj10.pro~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0proj10.pro~ ~override~
 SAY 0x21A ~c0pro10a~
 
 // spells
 
-COPY ~shadowadept/spells/c0saint1.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0saint1.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1086,21 +1088,21 @@ COPY ~shadowadept/spells/c0saint1.spl~ ~override~
 	  parameter2 = %C0SAINT%
 END
 
-COPY ~shadowadept/spells/c0sainta.spl~ ~override/c0saint7.spl~
+COPY ~%MOD_FOLDER%/spells/c0sainta.spl~ ~override/c0saint7.spl~
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 191
 	  parameter1 = 1
 END
 
-COPY ~shadowadept/spells/c0sainta.spl~ ~override/c0saint8.spl~
+COPY ~%MOD_FOLDER%/spells/c0sainta.spl~ ~override/c0saint8.spl~
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 191
 	  parameter1 = 2
 END
 
-COPY ~shadowadept/spells/c0saintb.spl~ ~override/c0saint9.spl~
+COPY ~%MOD_FOLDER%/spells/c0saintb.spl~ ~override/c0saint9.spl~
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 191
@@ -1112,7 +1114,7 @@ END
 	  parameter1 = 1
 END
 
-COPY ~shadowadept/spells/c0saintb.spl~ ~override/c0saint0.spl~
+COPY ~%MOD_FOLDER%/spells/c0saintb.spl~ ~override/c0saint0.spl~
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 191
@@ -1124,7 +1126,7 @@ END
 	  parameter1 = 1
 END
 
-COPY ~shadowadept/spells/c0saintb.spl~ ~override/c0sainta.spl~
+COPY ~%MOD_FOLDER%/spells/c0saintb.spl~ ~override/c0sainta.spl~
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 191
@@ -1136,7 +1138,7 @@ END
 	  parameter1 = 2
 END
 
-COPY ~shadowadept/spells/c0saintb.spl~ ~override/c0saintb.spl~
+COPY ~%MOD_FOLDER%/spells/c0saintb.spl~ ~override/c0saintb.spl~
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 191
@@ -1148,7 +1150,7 @@ END
 	  parameter1 = 2
 END
 
-COPY ~shadowadept/spells/c0saintb.spl~ ~override/c0saintc.spl~
+COPY ~%MOD_FOLDER%/spells/c0saintb.spl~ ~override/c0saintc.spl~
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 191
@@ -1160,7 +1162,7 @@ END
 	  parameter1 = 3
 END
 
-COPY ~shadowadept/spells/c0saintb.spl~ ~override/c0saintd.spl~
+COPY ~%MOD_FOLDER%/spells/c0saintb.spl~ ~override/c0saintd.spl~
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 191
@@ -1172,7 +1174,7 @@ END
 	  parameter1 = 4
 END
 
-COPY ~shadowadept/spells/c0sawis1.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sawis1.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1181,7 +1183,7 @@ COPY ~shadowadept/spells/c0sawis1.spl~ ~override~
 	  parameter2 = %C0SAWIS%
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis3.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis3.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1190,7 +1192,7 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis3.spl~
 	  parameter1 = 45
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis4.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis4.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1199,7 +1201,7 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis4.spl~
 	  parameter1 = 40
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis5.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis5.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1208,7 +1210,7 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis5.spl~
 	  parameter1 = 35
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis6.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis6.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1217,7 +1219,7 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis6.spl~
 	  parameter1 = 30
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis7.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis7.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1226,7 +1228,7 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis7.spl~
 	  parameter1 = 25
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis8.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis8.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1235,7 +1237,7 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis8.spl~
 	  parameter1 = 20
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis9.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis9.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1244,7 +1246,7 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis9.spl~
 	  parameter1 = 15
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis0.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis0.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1253,7 +1255,7 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawis0.spl~
 	  parameter1 = 10
 END
 
-COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawisa.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawisa.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1262,8 +1264,8 @@ COPY ~shadowadept/spells/c0sawis2.spl~ ~override/c0sawisa.spl~
 	  parameter1 = 5
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisb.spl~
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisc.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawisb.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawisc.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1272,7 +1274,7 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisc.spl~
       parameter1 = 110
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisd.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawisd.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1281,7 +1283,7 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisd.spl~
       parameter1 = 115
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawise.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawise.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1290,7 +1292,7 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawise.spl~
       parameter1 = 120
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisf.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawisf.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1299,7 +1301,7 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisf.spl~
       parameter1 = 125
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisg.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawisg.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1308,7 +1310,7 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisg.spl~
       parameter1 = 130
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawish.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawish.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1317,7 +1319,7 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawish.spl~
       parameter1 = 135
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisi.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawisi.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1326,7 +1328,7 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisi.spl~
       parameter1 = 140
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisj.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawisj.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1335,7 +1337,7 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisj.spl~
       parameter1 = 145
 END
 
-COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisk.spl~
+COPY ~%MOD_FOLDER%/spells/c0sawis3.spl~ ~override/c0sawisk.spl~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1344,25 +1346,25 @@ COPY ~shadowadept/spells/c0sawis3.spl~ ~override/c0sawisk.spl~
       parameter1 = 150
 END
 
-COPY ~shadowadept/spells/c0sacon.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sacon.cre~ ~override~
   WRITE_ASCII 0x248 ~c0sacon~ #8
   WRITE_ASCII 0x280 ~c0sacon~  #32
 
-COPY ~shadowadept/spells/c0sadept.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sadept.spl~ ~override~
 
-COPY ~shadowadept/spells/C0SA1.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA1.spl~ ~override~
 SAY NAME1 ~Shield of Shadows~
 SAY NAME2 ~Shield of Shadows~
 SAY UNIDENTIFIED_DESC ~Shield of Shadows
 The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.~
 
-COPY ~shadowadept/spells/C0SA2.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA2.spl~ ~override~
 SAY NAME1 ~Shadow Double~
 SAY NAME2 ~Shadow Double~
 SAY UNIDENTIFIED_DESC ~Shadow Double
 The shadow adept creates a copy of himself out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.~
 
-COPY ~shadowadept/spells/C0SA101.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA101.spl~ ~override~
 SAY NAME1 ~Shadow Missile~
 SAY NAME2 ~Shadow Missile~
 SAY UNIDENTIFIED_DESC ~Shadow Missile
@@ -1377,7 +1379,7 @@ Saving Throw: None
 
 The shadow adept launches a missile of energy that unerringly strikes the target for 1d4 magic damage (+1 cold) and reduces the target's THAC0 by 1 for 3 rounds. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+5 damage and -5 THAC0) at level 9.~
 
-COPY ~shadowadept/spells/C0SA101a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA101a.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -1385,7 +1387,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
 END
 
-COPY ~shadowadept/spells/C0SA101b.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA101b.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -1393,7 +1395,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
 END
 
-COPY ~shadowadept/spells/C0SA101c.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA101c.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -1401,7 +1403,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
 END
 
-COPY ~shadowadept/spells/C0SA101d.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA101d.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -1409,7 +1411,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
 END
 
-COPY ~shadowadept/spells/C0SA101e.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA101e.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -1417,7 +1419,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
 END
 
-COPY ~shadowadept/spells/C0SA102.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA102.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1425,15 +1427,15 @@ COPY ~shadowadept/spells/C0SA102.spl~ ~override~
       match_opcode = 139 // display string
  parameter1 = RESOLVE_STR_REF (~Doomed~)
 END
-SAY NAME1 ~Sigil of Weakness~
+SAY NAME1 ~Sigil of Despair~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
 FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj01%~
 END
-SAY NAME2 ~Sigil of Weakness~
-SAY UNIDENTIFIED_DESC ~Sigil of Weakness
+SAY NAME2 ~Sigil of Despair~
+SAY UNIDENTIFIED_DESC ~Sigil of Despair
 (Alteration - Shadow Weave)
 
 Level: 1
@@ -1443,9 +1445,9 @@ Casting Time: 9
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell causes a feeling of doom to overwhelm the target. For the duration of the spell, the target receives a -2 penalty to all <PRO_HISHER> rolls, including THAC0 and Saving Throws. Additionally, the target suffers a -1 penalty to all statistics. There is no Saving Throw for this spell.~
+This spell causes a feeling of doom to overwhelm the target. For the duration of the spell, the target receives a -2 penalty to all <PRO_HISHER> rolls, including THAC0 and Saving Throws. Additionally, the target suffers a -1 penalty to all statistics. There is no Saving Throw for this spell, and it is not affected by Magic Resistance.~
 
-COPY ~shadowadept/spells/C0SA103.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA103.spl~ ~override~
 SAY NAME1 ~Blinding Darkness~
 SAY NAME2 ~Blinding Darkness~
 SAY UNIDENTIFIED_DESC ~Blinding Darkness
@@ -1460,7 +1462,7 @@ Saving Throw: Neg.
 
 This 1st-level spell temporarily blinds its target. A Saving Throw at -2 penalty is allowed and, if successful, there are no harmful effects. If a victim is blinded, <PRO_HESHE> receives a -4 penalty to <PRO_HISHER> attack rolls and Armor Class.~
 
-COPY ~shadowadept/spells/C0SA104.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA104.spl~ ~override~
 SAY NAME1 ~Deep Slumber~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -1483,7 +1485,7 @@ When a shadow adept casts Deep Slumber, <PRO_HESHE> causes a comatose slumber to
 
 At 9th level, targets above 4 Hit Dice may be affected though with no saving throw penalty.~
 
-COPY ~shadowadept/spells/C0SA105.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA105.spl~ ~override~
 SAY NAME1 ~Bittercold Touch~
 SAY NAME2 ~Bittercold Touch~
 SAY UNIDENTIFIED_DESC ~Bittercold Touch
@@ -1498,7 +1500,7 @@ Saving Throw: Neg.
 
 When the caster completes this spell, <PRO_HISHER> hand sucks in all light. This energy attacks the life force of any living creature upon which the shadow adept makes a successful melee attack (+4 bonus to hit). (Nonliving creatures such as golems and undead are unaffected by this spell.) The creature is punched for 1d2 fist damage (Strength bonuses apply) and must make a Saving Throw vs. Spell or suffer 1d8 points of cold damage and become Chilled for 3 rounds. Chilled creatures suffer a -2 penalty to Armor Class and THAC0 and move at half of their normal rate. Non-living creatures, such as undead or constructs, must instead make a Saving Throw vs. Spell at -2 or suffer 1d10 magic damage and do not become Chilled.~
 
-COPY ~shadowadept/spells/C0SA105a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA105a.spl~ ~override~
 LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1508,7 +1510,7 @@ LPF ALTER_EFFECT
  parameter1 = RESOLVE_STR_REF (~Chilled~)
   END
 
-COPY ~shadowadept/spells/C0SA106.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA106.spl~ ~override~
 SAY NAME1 ~Essence Drain~
 SAY NAME2 ~Essence Drain~
 SAY UNIDENTIFIED_DESC ~Essence Drain
@@ -1525,7 +1527,7 @@ With this spell, the shadow adept drains the life force from a target and adds i
 
 If the target is slain, the amount of health gained by the caster is doubled.~
 
-COPY ~shadowadept/spells/C0SA107.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA107.spl~ ~override~
 SAY NAME1 ~Shadow Veil~
 SAY NAME2 ~Shadow Veil~
 SAY UNIDENTIFIED_DESC ~Shadow Veil
@@ -1542,9 +1544,9 @@ By means of this spell, the shadow adept creates a magical field of force that s
 
 Additionally, whenever the caster suffers damage while the shadow veil is active, <PRO_HESHE> has a 5% chance to turn invisible for 2 rounds.~
 
-COPY ~shadowadept/spells/C0SA107a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA107a.spl~ ~override~
 
-COPY ~shadowadept/spells/C0SA108.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA108.spl~ ~override~
 SAY NAME1 ~Curse~
 SAY NAME2 ~Curse~
 SAY UNIDENTIFIED_DESC ~Curse
@@ -1557,9 +1559,9 @@ Casting Time: 1 round
 Area of Effect: 30 ft. radius
 Saving Throw: None
 
-When the Curse spell is uttered, the caster lowers the morale of enemy creatures and penalizes their saving throws and attack rolls by -1. At the instant the spell is completed, it affects all creatures in a 30 ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not.~
+When the Curse spell is uttered, the caster lowers the morale of enemy creatures and penalizes their saving throws and attack rolls by -1. At the instant the spell is completed, it affects all creatures in a 30 ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not. This spell is not affected by Magic Resistance.~
 
-COPY ~shadowadept/spells/C0SA109.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA109.spl~ ~override~
 SAY NAME1 ~Shadow Rope~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -1578,9 +1580,9 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell creates a shadowy thread which wraps itself around the caster's target and pulls them towards the caster. It deals no damage, but the target becomes disoriented once they arrive and are unable to attack or use spells for 1 round.~
+This spell creates a shadowy thread which wraps itself around the caster's target and pulls them towards the caster. It deals no damage, but the target is immobilized for the duration and is unable to attack or use spells for one round.~
 
-COPY ~shadowadept/spells/C0SA110.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA110.spl~ ~override~
 SAY NAME1 ~Decoy~
 SAY NAME2 ~Decoy~
 SAY UNIDENTIFIED_DESC ~Decoy
@@ -1595,7 +1597,7 @@ Saving Throw: None
 
 This spell briefly conjures a projection of the caster next to <PRO_HIMHER> while turning invisible for 1 round.~
 
-COPY ~shadowadept/spells/C0SA111.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA111.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1616,9 +1618,9 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a save vs. spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely if they are attacked.~
+This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a Save vs. Spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely if they are attacked.~
 
-COPY ~shadowadept/spells/C0SA112.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA112.spl~ ~override~
 SAY NAME1 ~Shadow Rope~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -1640,7 +1642,7 @@ Saving Throw: 1/2
 
 When the shadow adept casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The shadow adept's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the shadow adept. All targets within range take 1d4+2 fire damage and have their Luck reduced by two points for 2 rounds + 1 round per level to a maximum of 10 rounds at 9th level, additionally, they take 2 points of fire damage per round for the duration. A successful Saving Throw vs. Spells negates half damage and the secondary effects.~
 
-COPY ~shadowadept/spells/C0SA201.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA201.spl~ ~override~
 SAY NAME1 ~Dark Mirage~
 SAY NAME2 ~Dark Mirage~
 SAY UNIDENTIFIED_DESC ~Dark Mirage
@@ -1648,14 +1650,14 @@ SAY UNIDENTIFIED_DESC ~Dark Mirage
 
 Level: 2
 Range: 0
-Duration: 5 rounds
+Duration: 1 hour
 Casting Time: 2
 Area of Effect: The caster
 Saving Throw: None
 
 When Dark Mirage is cast, the shadow adept causes the outline of <PRO_HISHER> form to become blurred, shifting and wavering. This distortion causes all missile and melee attacks against the caster to be made with a -3 penalty. The shadow adept also gains a +1 bonus to all of <PRO_HISHER> Saving Throws. Additionally, the caster causes from 2 to 8 exact duplicates of <PRO_HIMHER>self to come into being around <PRO_HIMHER>. These images do exactly what the shadow adept does. Since the spell causes a blurring and slight distortion when cast, it is impossible for opponents to be certain which are the illusions and which is the actual shadow adept. When an image is struck by a melee or missile attack—magical or otherwise—it disappears, but any other existing images remain intact until they are struck. However, it is important to note that this will not protect the caster against every attack, as it is possible for an enemy to choose the real caster amongst all the images.~
 
-COPY ~shadowadept/spells/C0SA202.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA202.spl~ ~override~
 SAY NAME1 ~Night Terrors~
 SAY NAME2 ~Night Terrors~
 SAY UNIDENTIFIED_DESC ~Night Terrors
@@ -1668,11 +1670,11 @@ Casting Time: 2
 Area of Effect: 30-ft. radius
 Saving Throw: Neg.
 
-All enemies within the area of effect when this spell is cast must save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.
+All enemies within the area of effect when this spell is cast must Save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.
 
 At 12th level, this spell gains the effects of the 6th level wizard spell Death Spell: creatures below 8 Hit Dice and all summoned creatures will die instantly from overwhelming fear. (no saving throw)~
 
-COPY ~shadowadept/spells/C0SA203.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA203.spl~ ~override~
 SAY NAME1 ~Dark Fortune~
 SAY NAME2 ~Dark Fortune~
 SAY UNIDENTIFIED_DESC ~Dark Fortune
@@ -1687,7 +1689,7 @@ Saving Throw: None
 
 The recipient of this spell gains extraordinary luck for the next hour, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
 
-COPY ~shadowadept/spells/C0SA204.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA204.spl~ ~override~
 SAY NAME1 ~Power Word: Sleep~
 SAY NAME2 ~Power Word: Sleep~
 SAY UNIDENTIFIED_DESC ~Power Word, Sleep
@@ -1702,9 +1704,9 @@ Saving Throw: None
 
 When a shadow adept calls upon a Power Word, Sleep spell, <PRO_HESHE> causes a comatose slumber to come upon 1 creature (other than undead and certain other creatures specifically excluded from the spell's effects). The creature targeted must have less than 20 Hit Points and gets no Saving Throw. Magically sleeping opponents can be attacked with substantial bonuses. The Sleep effect will last for 5 rounds. This spell has no effect on creatures with more than 20 Hit Points.
 
-At 10th level, creatures above 20 Hit Points are put to sleep for 2 rounds.~
+At 10th level, creatures above 20 Hit Points are put to sleep for 2 rounds. This spell is not affected by Magic Resistance.~
 
-COPY ~shadowadept/spells/C0SA205.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA205.spl~ ~override~
 SAY NAME1 ~Dread Silence~
 SAY NAME2 ~Dread Silence~
 SAY UNIDENTIFIED_DESC ~Dread Silence
@@ -1719,7 +1721,7 @@ Saving Throw: Neg.
 
 Upon casting this spell, complete silence prevails in the affected area. All sound is stopped: Conversation is impossible and spells cannot be cast. Each creature in the area must make a Saving Throw vs. Spell with a -5 penalty; if the save is failed then they are silenced for the duration of the spell. Note that this spell does not continue to affect the area after being cast; only those in the area at the time of the casting are affected by the silence. Only the caster is immune to the spell's effects - both allies and enemies can be affected.~
 
-COPY ~shadowadept/spells/C0SA206.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA206.spl~ ~override~
 SAY NAME1 ~Ghostly Visage~
 SAY NAME2 ~Ghostly Visage~
 SAY UNIDENTIFIED_DESC ~Ghostly Visage
@@ -1734,7 +1736,7 @@ Saving Throw: None
 
 The caster is surrounded by a ghostly nimbus of light that grants 10% resistance to physical damage and prevents all level 1 spells from affecting <PRO_HIMHER>.~
 
-COPY ~shadowadept/spells/C0SA208.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA208.spl~ ~override~
 SAY NAME1 ~Black Mist~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -1753,9 +1755,9 @@ Casting Time: 2
 Area of Effect: 30' radius
 Saving Throw: Neg.
 
-When this spell is cast, a thick shadowy mist spreads across the area selected by the caster. Any creatures caught within the mist must make a save vs. spells at -2 at the beginning of each round or become blinded for that round, receiving a -4 penalty to their Armor Class and attack rolls and greatly reducing their vision range. Those who make successful Saving Throws can leave the mist without suffering any ill effects, although those remaining in the mist must continue to save each round. A Dispel Magic will remove the blindness on a particular character, but if they remain in the mist, then they are still subject to its effects.~
+When this spell is cast, a thick shadowy mist spreads across the area selected by the caster. Any creatures caught within the mist must make a Save vs. Spells at -2 at the beginning of each round or become blinded for that round, receiving a -4 penalty to their Armor Class and attack rolls and greatly reducing their vision range. Those who make successful Saving Throws can leave the mist without suffering any ill effects, although those remaining in the mist must continue to save each round. A Dispel Magic will remove the blindness on a particular character, but if they remain in the mist, then they are still subject to its effects.~
 
-COPY ~shadowadept/spells/C0SA209.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA209.spl~ ~override~
 SAY NAME1 ~Negative Energy Ray~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -1776,7 +1778,7 @@ Saving Throw: None
 
 Upon casting this spell, a black ray appears at the caster's fingertips and bursts out towards one target of the caster's choice. That target will be hit by the ray for 3d6 points of magical damage and suffers a -1 penalty to Armor Class, THAC0 and damage for 1 turn. The ray strikes a second time halfway through its duration, dealing the same amount of damage and applying a second instance of penalties. The caster may move while the spell is in effect. There is no saving throw against this spell's effects.~
 
-COPY ~shadowadept/spells/C0SA210.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA210.spl~ ~override~
 SAY NAME1 ~Sigil of Vulnerability~
 SAY NAME2 ~Sigil of Vulnerability~
 SAY UNIDENTIFIED_DESC ~Sigil of Vulnerability
@@ -1789,18 +1791,18 @@ Casting Time: 1 round
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-This spell curses the target creature with mortality. For as long as the curse is in effect, the target loses 1% resistance to physical damage per level of the caster and is unable to be healed by any magical means. A saving throw vs. spells negates the effect.~
+This spell curses the target creature with mortality. For as long as the curse is in effect, the target loses 1% resistance to physical damage per level of the caster and is unable to be healed by any magical means. A Saving Throw vs. Spells negates the effect.~
 
 ACTION_IF GAME_IS ~bgee~
 THEN BEGIN
-COPY ~shadowadept/eff/ohbcwou1.eff~ ~override~
-COPY ~shadowadept/eff/ohbcwou2.eff~ ~override~
-COPY ~shadowadept/eff/ohbcwou3.eff~ ~override~
-COPY ~shadowadept/eff/ohbcwou4.eff~ ~override~
-COPY ~shadowadept/eff/ohbcwou5.eff~ ~override~
+COPY ~%MOD_FOLDER%/eff/ohbcwou1.eff~ ~override~
+COPY ~%MOD_FOLDER%/eff/ohbcwou2.eff~ ~override~
+COPY ~%MOD_FOLDER%/eff/ohbcwou3.eff~ ~override~
+COPY ~%MOD_FOLDER%/eff/ohbcwou4.eff~ ~override~
+COPY ~%MOD_FOLDER%/eff/ohbcwou5.eff~ ~override~
 END
 
-COPY ~shadowadept/spells/C0SA211.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA211.spl~ ~override~
 SAY NAME1 ~Shadow Walk~
 SAY NAME2 ~Shadow Walk~
 SAY UNIDENTIFIED_DESC ~Shadow Walk
@@ -1815,7 +1817,7 @@ Saving Throw: None
 
 This spell transports the caster to any place within the visual range of the caster. When the spell is cast, the shadow adept makes a brief planar jaunt into the Plane of Shadow and exits at a different location, making it seem as though <PRO_HESHE> has teleported. The caster is also briefly invisible for the travel duration, cancelling spells targeted at <PRO_HIMHER> unless the spellcaster can see through invisibility.~
 
-COPY ~shadowadept/spells/C0SA212.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA212.spl~ ~override~
 SAY NAME1 ~Hallucinate~
 SAY NAME2 ~Hallucinate~
 SAY UNIDENTIFIED_DESC ~Hallucinate
@@ -1830,7 +1832,7 @@ Saving Throw: Neg.
 
 The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.~
 
-COPY ~shadowadept/spells/C0SA301.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA301.spl~ ~override~
 SAY NAME1 ~Blackfire Arrow~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -1851,7 +1853,7 @@ Saving Throw: 1/2
 
 This spell enables the caster to hurl coldfire bolts at multiple opponents within range. Each bolt inflicts 1d6 points of cold damage plus 4d6 points of fire damage. Only half of the fire damage is inflicted if the creature struck saves vs. Spell. The caster receives one bolt every 5 levels beyond the 5th (2 bolts at 10th level, 3 at 15th level, etc.). Each arrow may be targeted individually towards any chosen target.~
 
-COPY ~shadowadept/spells/C0SA302.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA302.spl~ ~override~
 SAY NAME1 ~Shadowblast~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -1874,7 +1876,7 @@ The shadow adept launches an unstable mass of shadowstuff which explodes, dealin
 
 From 10th level onwards, targets damaged by Shadowblast lose 20% resistance to cold and magic damage for 1 turn.~
 
-COPY ~shadowadept/spells/C0SA303.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA303.spl~ ~override~
 SAY NAME1 ~Inertia~
 SAY NAME2 ~Inertia~
 SAY UNIDENTIFIED_DESC ~Inertia
@@ -1887,9 +1889,9 @@ Casting Time: 3
 Area of Effect: 30-ft. radius
 Saving Throw: Neg.
 
-This spell causes creatures to move and attack at half of their normal rates. It negates Haste, but does not otherwise affect magically hasted or slowed creatures. Slowed creatures have an Armor Class and attack penalty of -4. Creatures save at -4 vs. Spell. Targets must also make an initial save vs. spells or be slowed to a halt, becoming held for 1 round.~
+This spell causes creatures to move and attack at half of their normal rates. It negates Haste, but does not otherwise affect magically hasted or slowed creatures. Slowed creatures have an Armor Class and attack penalty of -4. Creatures save at -4 vs. Spell. Targets must also make an initial Save vs. Spells or be slowed to a halt, becoming held for 1 round.~
 
-COPY ~shadowadept/spells/C0SA304.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA304.spl~ ~override~
 SAY NAME1 ~Lifedrinker Touch~
 SAY NAME2 ~Lifedrinker Touch~
 SAY UNIDENTIFIED_DESC ~Lifedrinker Touch
@@ -1905,9 +1907,9 @@ Saving Throw: None
 When this spell is cast, the target loses 1d6 Hit Points for every 2 caster levels, to a maximum drain of 6d6 for a 12th-level caster. In addition, the target transfers 3 points of either Strength, Dexterity or Constitution to the caster. The Hit Points are added to the caster's current Hit Points, with any Hit Points over the caster's normal maximum treated as temporary additional Hit Points. The temporary Hit Points and statistics last for 1 hour.
 
 Note: This spell may not be cast multiple times to radically increase the caster's Hit Points. The caster must wait for the first Lifedrinker Touch spell to run its course before casting another.~
-COPY ~shadowadept/spells/C0SA304a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA304a.spl~ ~override~
 
-COPY ~shadowadept/spells/C0SA305.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA305.spl~ ~override~
 SAY NAME1 ~Beguile~
 SAY NAME2 ~Beguile~
 SAY UNIDENTIFIED_DESC ~Beguile
@@ -1928,7 +1930,7 @@ If the caster harms - or attempts to harm - the charmed person by some overt act
 
 The saving throw penalty increases by -1 for every 5 caster levels.~
 
-COPY ~shadowadept/spells/C0SA306.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA306.spl~ ~override~
 SAY NAME1 ~Shadow Comets~
 SAY NAME2 ~Shadow Comets~
 SAY UNIDENTIFIED_DESC ~Shadow Comets
@@ -1943,11 +1945,11 @@ Saving Throw: None
 
 This spell creates several small globes of shadowy matter, two for each experience level of the shadow adept, which are held in <PRO_HISHER> hands in place of <PRO_HISHER> usual weapons. The meteors can be hurled at targets up to 270 feet away and are treated as missiles with a +5 bonus to the attack rolls. Each meteor bursts into a 1-ft. diameter sphere upon impact, inflicting 1d4+3 points of damage plus an additional 3 points of cold damage to any creature struck. The shadow adept may hurl up to five missiles per round.~
 
-COPY ~shadowadept/spells/c0meteor.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0meteor.itm~ ~override~
 SAY NAME1 ~Shadow Comets~
 SAY NAME2 ~Shadow Comets~
 
-COPY ~shadowadept/spells/C0SA307.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA307.spl~ ~override~
 SAY NAME1 ~Shadow Binding~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -1966,11 +1968,11 @@ Casting Time: 3
 Area of Effect: 1 creature and any enemy within 7.5 ft.
 Saving Throw: Neg. 
 
-This spell holds 1d4 humans, demihumans, or humanoid creatures rigidly immobile and in place for five or more rounds. The Hold Person spell affects any bipedal human, demihuman, or humanoid of mansize or smaller, including brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be held, while an ogre could not. The effect is centered on the victim selected by the caster. Every enemy within 7.5 ft. of the target is also affected. Those who save vs. Spell at -4 are totally unaffected by the spell. Undead creatures cannot be held.
+This spell holds 1d4 humans, demihumans, or humanoid creatures rigidly immobile and in place for five or more rounds. The Hold Person spell affects any bipedal human, demihuman, or humanoid of mansize or smaller, including brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be held, while an ogre could not. The effect is centered on the victim selected by the caster. Every enemy within 7.5 ft. of the target is also affected. Those who Save vs. Spell at -4 are totally unaffected by the spell. Undead creatures cannot be held.
 
 Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subjects' condition due to wounds, disease, or poison.~
 
-COPY ~shadowadept/spells/C0SA308.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA308.spl~ ~override~
 SAY NAME1 ~Impose~
 SAY NAME2 ~Impose~
 SAY UNIDENTIFIED_DESC ~Impose
@@ -1985,7 +1987,7 @@ Saving Throw: None
 
 This spell launches a blast of invisible force towards a target, dealing 3d6 crushing damage and knocking them away from the caster as well as stunning them for 1 round. There is no saving throw.~
 
-COPY ~shadowadept/spells/C0SA309.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA309.spl~ ~override~
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 SAY UNIDENTIFIED_DESC ~Shadow Spear
@@ -2006,34 +2008,34 @@ Upon casting this spell, a spear made of shadowstuff forms in the caster's hands
 14th-16th level: Drains two levels from targets for one turn
 17th level and above: Instantly kills targets
 
-Targets may make a saving throw vs. death to avoid all secondary effects.~
+Targets may make a Saving Throw vs. Death to avoid all secondary effects.~
 
-COPY ~shadowadept/spells/c0sa309a.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa309a.itm~ ~override~
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
-COPY ~shadowadept/spells/c0sa309b.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa309b.itm~ ~override~
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
-COPY ~shadowadept/spells/c0sa309c.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa309c.itm~ ~override~
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
-COPY ~shadowadept/spells/c0sa309d.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa309d.itm~ ~override~
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
-COPY ~shadowadept/spells/c0sa309e.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa309e.itm~ ~override~
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
-COPY ~shadowadept/spells/C0SA310.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA310.spl~ ~override~
 SAY NAME1 ~Cursed Earth~
 SAY NAME2 ~Cursed Earth~
 SAY UNIDENTIFIED_DESC ~Cursed Earth
@@ -2046,9 +2048,9 @@ Casting Time: 4
 Area of Effect: 30' radius
 Saving Throw: Neg.
 
-This spell creates a zone of blackened, poisonous earth within a 30' radius. All creatures standing within the area must make a saving throw vs. death at -4 each round or suffer 1d4 poison damage and have their movement rate halved.~
+This spell creates a zone of blackened, poisonous earth within a 30' radius. All creatures standing within the area must make a Saving Throw vs. Death at -4 each round or suffer 2d4 poison damage and have their movement rate halved.~
 
-COPY ~shadowadept/spells/c0sa311.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa311.spl~ ~override~
 SAY NAME1 ~Expunge Magic~
 SAY NAME2 ~Expunge Magic~
 SAY UNIDENTIFIED_DESC ~Expunge Magic
@@ -2065,7 +2067,7 @@ A Expunge Magic spell removes magical effects upon anyone within the area. This 
 
 Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
 
-COPY ~shadowadept/spells/C0SA312.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA312.spl~ ~override~
 SAY NAME1 ~Void Edge~
 SAY NAME2 ~Void Edge~
 SAY UNIDENTIFIED_DESC ~Void Edge
@@ -2080,7 +2082,7 @@ Saving Throw: None
 
 Upon casting this spell, the shadow adept imbues <PRO_HISHER> next melee attack with shadow magic, providing it with a +5 enchantment bonus and the ability to drain 2 hit points per level as magic damage.~
 
-COPY ~shadowadept/spells/C0SA401.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA401.spl~ ~override~
 SAY NAME1 ~Fire Shield (Shadow)~
 SAY NAME2 ~Fire Shield (Shadow)~
 SAY UNIDENTIFIED_DESC ~Fireshield (Shadow) 
@@ -2095,7 +2097,7 @@ Saving Throw: None
 
 The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 1d8+2 cold damage and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
 
-COPY ~shadowadept/spells/C0SA402.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA402.spl~ ~override~
 SAY NAME1 ~Shadeskin~
 SAY NAME2 ~Shadeskin~
 SAY UNIDENTIFIED_DESC ~Shadeskin
@@ -2112,7 +2114,7 @@ When a shadow adept casts this powerful spell upon <PRO_HIMHER>self, an outer sk
 
 Additionally, so long as at least one layer of Shadeskin is active, the shadow adept gains 25% resistance to acid, cold, fire, electrical and magic damage.~
 
-COPY ~shadowadept/spells/C0SA403.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA403.spl~ ~override~
 SAY NAME1 ~Sigil of Misfortune~
 SAY NAME2 ~Sigil of Misfortune~
 SAY UNIDENTIFIED_DESC ~Sigil of Misfortune
@@ -2125,9 +2127,11 @@ Casting Time: 4
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-The spell allows the caster to adversely affect all the Saving Throws of <PRO_HISHER> enemies. The effect is applied to all hostile creatures within the area of effect. Opponents under the influence of this spell make all Saving Throws and attack rolls at a penalty of -4.~
+The spell allows the caster to adversely affect all the Saving Throws of <PRO_HISHER> enemies. The effect is applied to all hostile creatures within the area of effect. Opponents under the influence of this spell make all Saving Throws and attack rolls at a penalty of -4.
 
-COPY ~shadowadept/spells/C0SA404.spl~ ~override~
+This spell is not affected by Magic Resistance.~
+
+COPY ~%MOD_FOLDER%/spells/C0SA404.spl~ ~override~
 SAY NAME1 ~Summon Shadow~
 SAY NAME2 ~Summon Shadow~
 SAY UNIDENTIFIED_DESC ~Summon Shadow
@@ -2148,31 +2152,31 @@ By means of this spell, the caster summons a number of shadows, undead monsters 
 
 The undead creatures will remain under the shadow adept's control until they are slain or the spell duration expires.~
 
-COPY ~shadowadept/spells/c0devsha.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0devsha.cre~ ~override~
 SAY NAME1 ~Devil Shade~
 SAY NAME2 ~Devil Shade~
   WRITE_ASCII 0x248 ~c0devsha~ #8
   WRITE_ASCII 0x280 ~c0devsha~  #32
 
-COPY ~shadowadept/spells/c0shadsu.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0shadsu.cre~ ~override~
 SAY NAME1 ~Shadow~
 SAY NAME2 ~Shadow~
   WRITE_ASCII 0x248 ~bdsum00~ #8
   WRITE_ASCII 0x280 ~c0shadow~  #32
 
-COPY ~shadowadept/spells/c0shadfi.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0shadfi.cre~ ~override~
 SAY NAME1 ~Shadow Fiend~
 SAY NAME2 ~Shadow Fiend~
   WRITE_ASCII 0x248 ~bdsum00~ #8
   WRITE_ASCII 0x280 ~c0shadfi~  #32
 
-COPY ~shadowadept/spells/c0wraith.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0wraith.cre~ ~override~
 SAY NAME1 ~Wraith~
 SAY NAME2 ~Wraith~
   WRITE_ASCII 0x248 ~bdsum00~ #8
   WRITE_ASCII 0x280 ~c0wraith~  #32
 
-COPY ~shadowadept/spells/C0SA405.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA405.spl~ ~override~
 SAY NAME1 ~Shar's Blessing~
 SAY NAME2 ~Shar's Blessing~
 SAY UNIDENTIFIED_DESC ~Shar's Blessing
@@ -2187,7 +2191,7 @@ Saving Throw: None
 
 Through this spell, the caster draws upon energy from the Plane of Shadow to imbue <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The shadow adept's Strength score is increased by four points, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HESHE> gains one extra attack per round and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
 
-COPY ~shadowadept/spells/C0SA406.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA406.spl~ ~override~
 SAY NAME1 ~Phantasmal Killer~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2206,9 +2210,9 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Special
 
-The caster creates a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a save vs. spells to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a save vs. death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.~
+The caster creates a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a Save vs. Spells to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.~
 
-COPY ~shadowadept/spells/C0SA408.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA408.spl~ ~override~
 SAY NAME1 ~Dread Whispers~
 SAY NAME2 ~Dread Whispers~
 SAY UNIDENTIFIED_DESC ~Dread Whispers
@@ -2221,9 +2225,49 @@ Casting Time: 9
 Area of Effect: 30 ft. radius
 Saving Throw: None
 
-Dread Whispers causes all enemies within range to become afflicted by an ominous chorus of voices infesting their mind. The voices are distracting, causing 50% spell failure on targets. In addition, at the beginning of every round after the first, the target must make a save vs. spell at -2 or lose morale, running in panic for 1 round.~
+Dread Whispers causes all enemies within range to become afflicted by an ominous chorus of voices infesting their mind. The voices are distracting, causing 50% spell failure on targets. In addition, at the beginning of every round after the first, the target must make a Save vs. Spell at -2 or lose morale, running in panic for 1 round.~
 
-COPY ~shadowadept/spells/C0SA409.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA409.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 267
+	  match_parameter1 = 25802
+	  parameter1 = RESOLVE_STR_REF (~One Level Drained~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 267
+	  match_parameter1 = 25803
+	  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 267
+	  match_parameter1 = 25804
+	  parameter1 = RESOLVE_STR_REF (~Three Levels Drained~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 267
+	  match_parameter1 = 25805
+	  parameter1 = RESOLVE_STR_REF (~Four Levels Drained~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 267
+	  match_parameter1 = 25806
+	  parameter1 = RESOLVE_STR_REF (~Five Levels Drained~)
+  END
 SAY NAME1 ~Immunity~
 SAY NAME2 ~Immunity~
 SAY UNIDENTIFIED_DESC ~Immunity
@@ -2238,7 +2282,7 @@ Saving Throws: None
 
 This spell grants the target immunity to blindness, fear, sleep, confusion and level drain for 1 turn per level of the caster.~
 
-COPY ~shadowadept/spells/C0SA410.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA410.spl~ ~override~
 SAY NAME1 ~Black Ooze~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2257,9 +2301,9 @@ Casting Time: 3
 Area of Effect: 1 creature and any enemy within 7.5 ft.
 Saving Throw: 1/2
 
-With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a saving throw vs. death at -2 take half damage and avoid the secondary effects. This spell ignores magic resistance.~
+With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a Saving Throw vs. Death at -2 take half damage and avoid the secondary effects. This spell ignores magic resistance.~
 
-COPY ~shadowadept/spells/C0SA411.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA411.spl~ ~override~
 SAY NAME1 ~Wall of Black Flame~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2281,7 +2325,7 @@ Saving Throw: 1/2
 
 With this spell, the shadow adept creates a wall of black fire, dealing 2d6 fire damage to all creatures who pass through it (Save vs. Spells for half) and reduces their Armor Class by -2 for one round. Creatures cannot take damage more than once per round.~
 
-COPY ~shadowadept/spells/C0SA412.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA412.spl~ ~override~
 SAY NAME1 ~Pain Mirror~
 SAY NAME2 ~Pain Mirror~
 SAY UNIDENTIFIED_DESC ~Pain Mirror
@@ -2296,7 +2340,7 @@ Saving Throw: None
 
 When the caster is struck with an attack, <PRO_HESHE> takes no damage and drains 1d4 hit points per level from the attacker instead. It only works for one attack, and the effects are not cumulative (you cannot have more than one mirror erected). If the spell is not triggered, it lasts for 1 turn.~
 
-COPY ~shadowadept/spells/C0SA501.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA501.spl~ ~override~
 SAY NAME1 ~Cone of Bitter Cold~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2315,9 +2359,9 @@ Casting Time: 5
 Area of Effect: Special
 Saving Throw: 1/2
 
-When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outward in a cone 5 ft. long and 1 ft. in diameter per level of the caster. It drains heat and causes 1d4+1 points of damage per level of the caster. For example, a 10th-level shadow adept would cast a cone of cold 10 ft. in diameter and 50 ft. in length, causing 10d4+10 points of damage (save vs. spell at -2 for half). Targets who fail their saving throw are also slowed and take 1d6 extra cold damage per round for 4 rounds.~
+When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outward in a cone 5 ft. long and 1 ft. in diameter per level of the caster. It drains heat and causes 1d4+1 points of damage per level of the caster. For example, a 10th-level shadow adept would cast a cone of cold 10 ft. in diameter and 50 ft. in length, causing 10d4+10 points of damage (Save vs. Spell at -2 for half). Targets who fail their saving throw are also slowed and take 1d6 extra cold damage per round for 4 rounds.~
 
-COPY ~shadowadept/spells/C0SA502.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA502.spl~ ~override~
 SAY NAME1 ~Shadow Assault~
 SAY NAME2 ~Shadow Assault~
 SAY UNIDENTIFIED_DESC ~Shadow Assault
@@ -2336,7 +2380,7 @@ Additionally, the caster's movement rate is doubled, allowing for a quick retrea
 
 Note: After making an attack, the shadow adept is no longer completely invisible. Opponents can target the shadow adept.~
 
-COPY ~shadowadept/spells/C0SA503.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
 SAY NAME1 ~Breaching Dark~
 SAY NAME2 ~Breaching Dark~
 SAY UNIDENTIFIED_DESC ~Breaching Dark
@@ -2351,7 +2395,7 @@ Saving Throw: None
 
 When this spell is cast at a creature, it breaches and dispels all of the specific and combat protections on the target creature. Here is a complete list of all the specific protection spells that are dispelled by Breach: Shield, Protection Circle, Resist Fear, Protection From Fire/Cold, Fireshield, Protection From Acid, Protection From Electricity, Protection From Magic Energy, Protection From The Elements, and Protection From Energy. The combat protection spells dispelled by Breach are Protection From Normal Missiles, Protection From Normal Weapons, Protection From Magical Weapons, Stoneskin, Iron Skins, Armor, Ghost Armor, Spirit Armor, Absolute Immunity, Mantle, and Improved Mantle. The target's Magic Resistance, if any, does not affect this spell. Additionally, this spell also lower's the opponent's magic resistance by 10% + 1% per level of the caster.~
 
-COPY ~shadowadept/spells/C0SA504.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA504.spl~ ~override~
 SAY NAME1 ~Shadow Blade~
 SAY NAME2 ~Shadow Blade~
 SAY UNIDENTIFIED_DESC ~Shadow Blade
@@ -2421,11 +2465,11 @@ Speed Factor: 2
 Proficiency Type: Long Sword
 Type: One-handed~
 
-COPY ~shadowadept/spells/c0blade.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0blade.itm~ ~override~
 SAY NAME1 ~Shadow Blade +3~
 SAY NAME2 ~Shadow Blade +3~
 
-COPY ~shadowadept/spells/C0SA505.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA505.spl~ ~override~
 SAY NAME1 ~Sigil of Madness~
 SAY NAME2 ~Sigil of Madness~
 SAY UNIDENTIFIED_DESC ~Sigil of Madness
@@ -2440,7 +2484,7 @@ Saving Throw: Special
 
 The effects of this spell are identical to the 5th-level spell Chaos in all respects, except this spell ignores magic resistance. The victims wander around as if in a daze, sometimes wandering away, sometimes attacking either friend or foe. If the victim is 4th level or lower, <PRO_HESHE> does not receive a Saving Throw vs. the effects. However, if the victim is 5th level or higher, <PRO_HESHE> receives a Save vs. Spell with a -4 penalty. The spell lasts for the duration or until a successful Dispel Magic is cast.~
 
-COPY ~shadowadept/spells/C0SA506.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA506.spl~ ~override~
 SAY NAME1 ~Shar's Memory Drain~
 SAY NAME2 ~Shar's Memory Drain~
 SAY UNIDENTIFIED_DESC ~Shar's Memory Drain
@@ -2453,9 +2497,9 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-This powerful spell erases a portion of the target's memory, weakening them. All saving throws are reduced by 2 and arcane casters lose two memorized spells and have their casting time increased by 2. After 5 rounds, the target must make a save vs. spells at -4 or suffer the same effects a second time.~
+This powerful spell erases a portion of the target's memory, weakening them. All saving throws are reduced by 2 and arcane casters lose two memorized spells and have their casting time increased by 2. After 5 rounds, the target must make a Save vs. Spells at -4 or suffer the same effects a second time.~
 
-COPY ~shadowadept/spells/C0SA507.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA507.spl~ ~override~
 SAY NAME1 ~Unmask~
 SAY NAME2 ~Unmask~
 SAY UNIDENTIFIED_DESC ~Unmask
@@ -2472,7 +2516,7 @@ When this spell is cast, an area roughly 30 feet in radius around the caster wil
 
 The spells that are affected by this are: Reflected Image, Invisibility, Blur, Mirror Image, Ghost Armor, Invisibility Sphere, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project Image, and Mass Invisibility.~
 
-COPY ~shadowadept/spells/C0SA508.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -2587,9 +2631,9 @@ Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-When this spell is cast, the target suffers damage equal to 2% of their maximum hit points per level of the caster up to a maximum of 40%. The target may make a saving throw vs. death to take half damage.~
+When this spell is cast, the target suffers damage equal to 2% of their maximum hit points per level of the caster up to a maximum of 40%. The target may make a Saving Throw vs. Death at -2 to take half damage.~
 
-COPY ~shadowadept/spells/C0SA509.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA509.spl~ ~override~
 SAY NAME1 ~Shadow Chain~
 SAY NAME2 ~Shadow Chain~
 SAY UNIDENTIFIED_DESC ~Shadow Chain
@@ -2602,9 +2646,9 @@ Casting Time: 1
 Area of Effect: 30 ft. radius
 Saving Throw: None
 
-This spell creates several shadowy threads which wraps itself around all enemies in a 30 ft. radius from the center of the caster's targeted location. and pulls them towards the caster. It deals no damage, but targets become disoriented once they arrive and are unable to attack or use spells for 1 round.~
+This spell creates several shadowy threads which wraps itself around all enemies in a 30 ft. radius from the center of the caster's targeted location. and pulls them towards the caster. It deals no damage, but targets become immobilized for the duration and are unable to attack or use spells for one round.~
 
-COPY ~shadowadept/spells/C0SA509a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA509a.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -2612,7 +2656,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
 END
 
-COPY ~shadowadept/spells/C0SA510.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA510.spl~ ~override~
 SAY NAME1 ~Void Blast~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2631,9 +2675,9 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a save vs. spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds.~
+With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a Save vs. Spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds.~
 
-COPY ~shadowadept/spells/C0SA510A.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA510A.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -2643,7 +2687,7 @@ COPY ~shadowadept/spells/C0SA510A.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
-COPY ~shadowadept/spells/C0SA510B.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA510B.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -2653,7 +2697,7 @@ COPY ~shadowadept/spells/C0SA510B.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
-COPY ~shadowadept/spells/C0SA510C.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA510C.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -2663,7 +2707,7 @@ COPY ~shadowadept/spells/C0SA510C.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
-COPY ~shadowadept/spells/C0SA510D.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA510D.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -2673,7 +2717,7 @@ COPY ~shadowadept/spells/C0SA510D.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
   
-COPY ~shadowadept/spells/C0SA511.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA511.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -2696,7 +2740,7 @@ Saving Throw: None
 
 When this spell is cast, the shadow adept is protected from the next magical attack against <PRO_HIMHER>. The spells from which the shadow adept is protected are Dispel/Remove Magic, Spell Thrust, Secret Word, Breach, Lower Resistance, Pierce Magic, Ruby Ray, Khelben's Warding Whip, Pierce Shield, and Spellstrike. If one of these spells is cast at the shadow adept, this spell activates and absorbs the attack. However, this only works once and this spell is consumed in the process. Otherwise, it will last for its duration.~
 
-COPY ~shadowadept/spells/C0SA512.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA512.spl~ ~override~
 SAY NAME1 ~Summon Nighthaunt~
 SAY NAME2 ~Summon Nighthaunt~
 SAY UNIDENTIFIED_DESC ~Summon Nighthaunt
@@ -2713,13 +2757,13 @@ This spell conjures forth a nighthaunt, an undead monster from the Shadow Plane.
 
 The nighthaunt is fully under the control of the caster for the duration of the spell and will follow all of <PRO_HISHER> orders until the duration has expired.~
 
-COPY ~shadowadept/spells/c0nighth.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0nighth.cre~ ~override~
 SAY NAME1 ~Nighthaunt~
 SAY NAME2 ~Nighthaunt~
   WRITE_ASCII 0x248 ~c0nighth~ #8
   WRITE_ASCII 0x280 ~c0nighth~  #32
 
-COPY ~shadowadept/spells/C0SA601.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA601.spl~ ~override~
 SAY NAME1 ~Shar's Shield~
 SAY NAME2 ~Shar's Shield~
 SAY UNIDENTIFIED_DESC ~Shar's Shield
@@ -2736,7 +2780,7 @@ This spell creates an immobile, faintly shimmering magical sphere around the cas
 
 Additionally, the shadow adept gains 20% magic resistance as long as the globe is up.~
 
-COPY ~shadowadept/spells/C0SA602.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA602.spl~ ~override~
 SAY NAME1 ~Twin Mislead~
 SAY NAME2 ~Twin Mislead~
 SAY UNIDENTIFIED_DESC ~Twin Mislead
@@ -2753,7 +2797,7 @@ When this spell is cast, the shadow adept is affected by an Improved Invisibilit
 
 After 3 rounds have passed, a second decoy is spontaneously created, regardless of whether or not the first has been destroyed.~
 
-COPY ~shadowadept/spells/C0SA603.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA603.spl~ ~override~
 SAY NAME1 ~Protection from Weave-forged Weapons~
 SAY NAME2 ~Protection from Weave-forged Weapons~
 SAY UNIDENTIFIED_DESC ~Protection From Weave-forged Weapons
@@ -2768,7 +2812,7 @@ Saving Throw: None
 
 When the spell is cast, it confers complete invulnerability to all magical weapons created using Weave magic. This includes weapons that are blessed or enchanted. The attacks of powerful monsters are also considered magical weapons. This spell cannot be cast on anyone who is protected from normal weapons as well as anyone protected by Mantle, Improved Mantle, or Absolute Immunity. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the shadow adept a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.~
 
-COPY ~shadowadept/spells/C0SA604.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA604.spl~ ~override~
 SAY NAME1 ~Power Word: Silence~
 SAY NAME2 ~Power Word: Silence~
 SAY UNIDENTIFIED_DESC ~Power Word, Silence
@@ -2783,7 +2827,7 @@ Saving Throw: None
 
 In using this spell, the shadow adept points at an individual and utters the Power Word. For the next 7 rounds, that creature cannot make any sound. This silence completely foils any spells that require verbal components. The only ways to counter this spell are either a Dispel Magic or a Vocalize spell. There is no Saving Throw and the spell ignores magic resistance.~
 
-COPY ~shadowadept/spells/C0SA605.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA605.spl~ ~override~
 SAY NAME1 ~Black Lightning~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2804,7 +2848,7 @@ Saving Throw: 1/2
 
 When the shadow adept casts Black Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical and fire damage. The lightning causes 1d6 points of damage for every 2 levels of the caster and causes targets to go berserk for 3 rounds. If the target of the lightning saves vs. Spell, they avoid berserking and only half damage is inflicted. Thus, a 12th-level shadow adept will cause 6d6 (half electrical, half fire) damage to a victim (3d6 electrical if the victim makes <PRO_HISHER> Saving Throw vs. Spell).~
 
-COPY ~shadowadept/spells/C0SA606.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA606.spl~ ~override~
 SAY NAME1 ~Shatter Weave~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2825,7 +2869,7 @@ Saving Throw: 1/2
 
 When this spell is cast upon a target creature there will be two major effects. The first is that it will dispel one spell protection of 8th level or lower from the creature. This will always dispel the highest level of spell protection on the target first. If the target has two or more protections tied for the highest level, the choice will be random. The second effect of the spell is that the creature's magic resistance is temporary nullified. The resistance remains lowered for 2 rounds, and this effect cannot be negated in any way. Additionally, mages will take 4d10 magic damage and suffer from a 50% chance of spell failure for 2 rounds. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's magic resistance, if any, does not affect this spell.~
 
-COPY ~shadowadept/spells/C0SA607.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA607.spl~ ~override~
 SAY NAME1 ~Umbral Blades~
 SAY NAME2 ~Umbral Blades~
 SAY UNIDENTIFIED_DESC ~Umbral Blades
@@ -2840,7 +2884,7 @@ Saving Throw: Special
 
 The shadow adept employs this spell to set up a ring of circling, razor sharp blades. These whirl and flash around the caster, providing a bonus of 4 Armor Class against melee weapons and dealing damage to enemies in range every round. Any creature attempting to pass through the blades will suffer 6d8 points of damage and lose 1 point of Strength for 1 turn. Creatures within the area of the barrier when it is invoked are entitled to a Saving Throw vs. Spell to negate the damage. The barrier remains for 1 turn.~
 
-COPY ~shadowadept/spells/C0SA608.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA608.spl~ ~override~
 SAY NAME1 ~Disintegrate~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2863,7 +2907,7 @@ When this spell is cast at another creature, a thin purple ray is shot out. Upon
 
 Targets slain by this spell will be raised as a wraith under the caster's allegiance for 5 turns.~
 
-COPY ~shadowadept/spells/C0SA609.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA609.spl~ ~override~
 SAY NAME1 ~Black Rose~
 SAY NAME2 ~Black Rose~
 SAY UNIDENTIFIED_DESC ~Black Rose
@@ -2876,9 +2920,9 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a saving throw vs. spells, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another save vs. spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
+This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 
-COPY ~shadowadept/spells/C0SA610.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA610.spl~ ~override~
 SAY NAME1 ~Disintegrate~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2900,7 +2944,7 @@ Saving Throw: None
 
 Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius take 6d6 magical damage and suffer a -3 penalty to Armor Class, THAC0 and damage for 1 turn. There is no saving throw against this spell's effects.~
 
-COPY ~shadowadept/spells/C0SA611.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA611.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -2925,7 +2969,7 @@ This spell may only affect sleeping targets. Upon casting the spell, the shadow 
 
 Devour Dream cannot recall 6th-level or greater spells.~
 
-COPY ~shadowadept/spells/C0SA701.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA701.spl~ ~override~
 SAY NAME1 ~Black Ray of Destruction~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2944,9 +2988,9 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-When this spell is cast, it dispels one spell protection of any level affecting the target creature. The spells affected by Ruby Ray Of Reversal are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. Additionally, this spell creates a small dead magic zone around the target, preventing the target from casting spells for 2 rounds. The target's Magic Resistance, if any, does not affect this spell.~
+When this spell is cast, it dispels one spell protection of any level affecting the target creature. The spells affected by the Black Ray of Destruction are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. Additionally, this spell creates a small dead magic zone around the target, preventing the target from casting spells for 5 rounds. The target's Magic Resistance, if any, does not affect this spell.~
 
-COPY ~shadowadept/spells/C0SA702.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA702.spl~ ~override~
 SAY NAME1 ~Shadowspray~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -2975,7 +3019,7 @@ When casting this spell, the shadow adept unleashes a wave of shadow fire from <
   - Save vs. Wand or be feebleminded.
   - Save vs. Spell or be disintegrated.~
   
-COPY ~shadowadept/spells/C0SA703.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA703.spl~ ~override~
 SAY NAME1 ~Power Word: Stun~
 SAY NAME2 ~Power Word: Stun~
 SAY UNIDENTIFIED_DESC ~Power Word, Stun
@@ -2995,7 +3039,7 @@ When a Power Word, Stun spell is uttered, any creature of the Mage's choice with
  90 or more Hit Points: unaffected.
 Note that if a creature is weakened so that its Hit Points are below its usual maximum, the current number of Hit Points is used to determine this spell's effects. This spell ignores magic resistance.~
 
-COPY ~shadowadept/spells/C0SA704.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA704.spl~ ~override~
 SAY NAME1 ~Sword of the Night~
 SAY NAME2 ~Sword of the Night~
 SAY UNIDENTIFIED_DESC ~Sword of the Night
@@ -3010,7 +3054,7 @@ Saving Throw: None
 
 Upon casting this spell, the shadow adept brings into being a shimmering, sword-like plane of force that leaps into <PRO_HISHER> hands. The sword acts as a +4 weapon in all respects and deals 3d4 points of slashing damage and 2d4 cold damage upon hitting a target. Once the spell is cast, the sword will float in the air completely under the caster's control. This does not prevent the caster from doing any other actions during the spell's duration.~
 
-COPY ~shadowadept/spells/C0SA705.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA705.spl~ ~override~
 SAY NAME1 ~Shadowplague~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -3030,11 +3074,11 @@ Saving Throw: Special
 
 When the caster utters the spell, he calls forth a swarm of venomous biting and stinging shadow creatures to plague the target. This carpet-like mass swarms over a large area, spreading to all creatures within 30 feet of the target. Invisibility is no protection.
 
-For the duration of the spell, those affected fight with a -2 penalty to attack rolls and armor class. In addition, each round, the victims suffer 2d6 points of damage from bites, have a 100% chance of spell failure, and must make saving throws vs. death at -2 or run away in fear. If a successful save vs. breath at -6 is made, the target manages to avoid most of the swarm, reducing damage from bites by half and completely negating the spell failure penalty.
+For the duration of the spell, those affected fight with a -2 penalty to attack rolls and armor class. In addition, each round, the victims suffer 2d6 points of damage from bites, have a 100% chance of spell failure, and must make saving throws vs. Death at -2 or run away in fear. If a successful Save vs. breath at -6 is made, the target manages to avoid most of the swarm, reducing damage from bites by half and completely negating the spell failure penalty.
 
-This spell is blocked by any form of fire shield.~
+This spell is not affected by Magic Resistance.~
 
-COPY ~shadowadept/spells/C0SA707.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA707.spl~ ~override~
 SAY NAME1 ~Vengeful Shade~
 SAY NAME2 ~Vengeful Shade~
 SAY UNIDENTIFIED_DESC ~Vengeful Shade
@@ -3049,7 +3093,7 @@ Saving Throw: None
 
 This powerful and dangerous spell has the power to temporarily revive dead allies. For 1 turn, the target ally is resurrected with full hit points and dramatically increased power - the resurrected ally is hasted for the duration, Strength and Dexterity are set to 25, base AC is set to -6 and target gains immunity to all mind-affecting spells. The target deals maximum damage for the duration of the spell and their casting speed is increased by 4. However, this spell does not truly resurrect the target - once the spell has expired, the target dies again, regardless of their current hit points.~
 
-COPY ~shadowadept/spells/c0sa707a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa707a.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3091,7 +3135,7 @@ COPY ~shadowadept/spells/c0sa707a.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 1 round~)
   END
 
-COPY ~shadowadept/spells/C0SA708.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA708.spl~ ~override~
 SAY NAME1 ~Nightmare~
 SAY NAME2 ~Nightmare~
 SAY UNIDENTIFIED_DESC ~Nightmare
@@ -3104,9 +3148,9 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-Nightmare is both a deadly weapon and a horrific torture device. When the shadow adept casts this spell, <PRO_HESHE> causes one creature to fall into a deep sleep and become tormented with terrible nightmares. For each round that the target remains asleep, they must make a save vs. spell at -4 to wake up from the nightmare. If the save is failed, they must make a save vs. death at -2 or lose 10% of their hit points. Once 5 rounds have passed, the victim awakens from their nightmare without needing a save.~
+Nightmare is both a deadly weapon and a horrific torture device. When the shadow adept casts this spell, <PRO_HESHE> causes one creature to fall into a deep sleep and become tormented with terrible nightmares. For each round that the target remains asleep, they must make a Save vs. Spell at -4 to wake up from the nightmare. If the save is failed, they must make a Save vs. Death at -2 or lose 10% of their hit points. Once 5 rounds have passed, the victim awakens from their nightmare without needing a save.~
 
-COPY ~shadowadept/spells/c0sa709.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa709.spl~ ~override~
 SAY NAME1 ~Possess~
 SAY NAME2 ~Possess~
 SAY UNIDENTIFIED_DESC ~Possess
@@ -3119,18 +3163,18 @@ Casting Time: 1 round
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-When the shadow adept casts Possess, <PRO_HESHE> attempts to forcibly take control of one creature within <PRO_HISHER> visual range. The target must make as saving throw vs. spells at -7 or become directly controlled by the caster. The shadow adept loses control of <PRO_HISHER> body but may see through the eyes of <PRO_HISHER> target and use spells and abilities available to them. Possess may not be dispelled and the target only regains control over their own body once the duration has ended or if the caster chooses to relinquish control of <PRO_HISHER> own volition.
+When the shadow adept casts Possess, <PRO_HESHE> attempts to forcibly take control of one creature within <PRO_HISHER> visual range. The target must make as Saving Throw vs. Spells at -7 or become directly controlled by the caster. The shadow adept loses control of <PRO_HISHER> body but may see through the eyes of <PRO_HISHER> target and use spells and abilities available to them. Possess may not be dispelled and the target only regains control over their own body once the duration has ended or if the caster chooses to relinquish control of <PRO_HISHER> own volition.
 
 Once the duration expires, the vertigo and shock of suddenly regaining control causes the target to suffer 5d10 non-lethal damage and fall unconscious for 5 rounds (no save).~
 
-COPY ~shadowadept/spells/c0sa709a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa709a.spl~ ~override~
 SAY NAME1 ~End Possession~
 SAY NAME2 ~End Possession~
 SAY UNIDENTIFIED_DESC ~End Possession
 
 Use this ability to end Possession. The possessed target will suffer 5d10 non-lethal damage and fall unconscious for 5 rounds.~
 
-COPY ~shadowadept/spells/C0SA710.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA710.spl~ ~override~
 SAY NAME1 ~Malefic Bomb~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -3149,9 +3193,9 @@ Casting Time: 6
 Area of Effect: 10 ft. radius
 Saving Throw: 1/2
 
-The shadow adept launches a mass of volatile shadowstuff towards a target location, dealing 8d6 magic damage in a 20 ft. radius (save vs. death at -2 for half). All enemies that fail the save will, after 1 round, spontaneously explode with another Malefic Bomb dealing 4d6 damage in a 20 ft. radius (save vs. death for half), afflicting all enemies that fail the save with another Malefic Bomb dealing 2d6 damage in a 20 ft. radius.~
+The shadow adept launches a mass of volatile shadowstuff towards a target location, dealing 8d6 magic damage in a 20 ft. radius (Save vs. Death at -2 for half). All enemies that fail the save will, after 1 round, spontaneously explode with another Malefic Bomb dealing 4d6 damage in a 20 ft. radius (Save vs. Death for half), afflicting all enemies that fail the save with another Malefic Bomb dealing 2d6 damage in a 20 ft. radius.~
 
-COPY ~shadowadept/spells/C0SA710a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA710a.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -3159,7 +3203,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj20%~
 END
 
-COPY ~shadowadept/spells/C0SA710b.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA710b.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -3167,7 +3211,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj20%~
 END
 
-COPY ~shadowadept/spells/C0SA711.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA711.spl~ ~override~
 SAY NAME1 ~Shadow Gate~
 SAY NAME2 ~Shadow Gate~
 SAY UNIDENTIFIED_DESC ~Shadow Gate
@@ -3184,12 +3228,12 @@ This spell conjures a one-way portal linked to the Plane of Shadow at the caster
 
 Creatures summoned by this spell remain for 1 turn.~
 
-COPY ~shadowadept/spells/c0sa711.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa711.cre~ ~override~
 SAY NAME1 ~Shadow Gate~
 SAY NAME2 ~Shadow Gate~
 WRITE_ASCII 0x248 ~c0sa711~ #8
 
-COPY ~shadowadept/spells/c0sa712.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa712.spl~ ~override~
 SAY NAME1 ~Nightfall~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -3210,7 +3254,7 @@ Saving Throw: None
 
 This spell creates a rainfall of shadowstuff on the target location for six rounds. Enemy creatures suffer 1d6 magical damage for every round that they remain within the rainfall and suffer a cumulative penalty of -1 to Armor Class and all Saving Throws for one turn. Non-hostile creatures are healed for 2d6 hit points every round instead.~
 
-COPY ~shadowadept/spells/C0SA801.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA801.spl~ ~override~
 SAY NAME1 ~Negastorm~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -3233,7 +3277,7 @@ This spell summons a shower of negative energy upon a targeted location, inflict
 
 The negastorm lasts for 2 rounds and does not affect allies.~
 
-COPY ~shadowadept/spells/C0SA802.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA802.spl~ ~override~
 SAY NAME1 ~Annulment~
 SAY NAME2 ~Annulment~
 SAY UNIDENTIFIED_DESC ~Annulment
@@ -3248,7 +3292,7 @@ Saving Throw: None
 
 When the spell is cast, it confers 75% immunity against all energy attacks - such as fire, cold, acid, magic, and electricity, whether from magical or non-magical sources - such as spells, weapons, wands, breath weapons, etc. The target also becomes immune to all spells of 6th level and below, both beneficial and harmful, cast by others. This excludes any physical attacks and spell-created weapons, such as Enchanted Weapon and Spiritual Hammer. In other words, any physical damage, such as piercing, crushing, or slashing will get through. This effect lasts for the duration of the spell or until dispelled.~
 
-COPY ~shadowadept/spells/c0sa803.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa803.spl~ ~override~
 SAY NAME1 ~Shadow Prison~
 SAY NAME2 ~Shadow Prison~
 SAY UNIDENTIFIED_DESC ~Shadow Prison
@@ -3274,7 +3318,7 @@ Intelligence of Target    -    Time trapped in maze
 
 Note that if the 9th-level spell Freedom is cast in the area where a creature is mazed, it will effectively bring <PRO_HIMHER> back to this plane, ending the spell prematurely. Note that a mazed creature is not freed through Dispel Magic.~
 
-COPY ~shadowadept/spells/c0sa804.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa804.spl~ ~override~
 SAY NAME1 ~Power Word: Blind~
 SAY NAME2 ~Power Word: Blind~
 SAY UNIDENTIFIED_DESC ~Power Word, Blind
@@ -3289,7 +3333,7 @@ Saving Throw: None
 
 When a Power Word, Blind spell is cast, one or more creatures within the area of effect become sightless. The spellcaster selects one creature as the target center, and the effect spreads outward from the center, affecting all within a 10-ft. radius. This lasts for 6 rounds or until dispelled. All of the effects of blindness apply to the victims, such as a penalty to hit and to AC. The visibility range of the afflicted character is also decreased. This spell is not effected by magic resistance.~
 
-COPY ~shadowadept/spells/c0sa805.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa805.spl~ ~override~
 SAY NAME1 ~Shadow Shield~
 SAY NAME2 ~Shadow Shield~
 SAY UNIDENTIFIED_DESC ~Shadow Shield
@@ -3304,7 +3348,7 @@ Saving Throw: None
 
 This spell shrouds the shadow adept in a cloak of shadow that protects <PRO_HIMHER> with the following effects: +5 bonus to AC, immunity to magic damage, 20% magic and physical resistance. This spell, unlike other Shadow Weave spells, does not drain the caster's life force and will in fact temporarily protect the shadow adept from loss of Constitution while it is active.~
 
-COPY ~shadowadept/spells/c0sa806.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa806.spl~ ~override~
 SAY NAME1 ~Blackfire Fury~
 SAY NAME2 ~Blackfire Fury~
 SAY UNIDENTIFIED_DESC ~Blackfire Fury
@@ -3317,11 +3361,11 @@ Casting Time: 8
 Area of Effect: The caster
 Saving Throw: 1/2
 
-The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 fire damage (save vs. spells for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
+The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 fire damage (Save vs. Spells for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
 
 If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a devil shade under the caster's allegiance for 5 turns before becoming assimilated into the Shadow Plane.~
 
-COPY ~shadowadept/spells/c0sa807.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa807.spl~ ~override~
 SAY NAME1 ~Shar's Mantle~
 SAY NAME2 ~Shar's Mantle~
 SAY UNIDENTIFIED_DESC ~Shar's Mantle
@@ -3334,9 +3378,9 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius must make a save vs. death or lose one level permanently.~
+This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius must make a Save vs. Death or lose one level permanently.~
 
-COPY ~shadowadept/spells/c0sa808.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa808.spl~ ~override~
 SAY NAME1 ~Shadow's Refuge~
 SAY NAME2 ~Shadow's Refuge~
 SAY UNIDENTIFIED_DESC ~Shadow's Refuge
@@ -3353,7 +3397,7 @@ When a shadow adept casts Shadow's Refuge, <PRO_HESHE> opens a gate to a safe (i
 
 WARNING: Using this spell without other party members causes a game over!~
 
-COPY ~shadowadept/spells/c0sa809.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa809.spl~ ~override~
 SAY NAME1 ~Dark Premonition~
 SAY NAME2 ~Dark Premonition~
 SAY UNIDENTIFIED_DESC ~Dark Premonition
@@ -3368,7 +3412,7 @@ Saving Throw: None
 
 This spell grants the caster with a brief and short-sighted degree of prescience, enough to predict events in the immediate future and react to them in advance. For 4 rounds, the shadow adept gains a bonus of 20 to Armor Class, a +20 bonus to hit, +20 to all saves and immunity to backstabs. Due to this spell's short casting time and duration, it is mainly used to buy the shadow adept a few rounds in the thick of combat.~
 
-COPY ~shadowadept/spells/c0sa810.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa810.spl~ ~override~
 SAY NAME1 ~Dark Passage~
 SAY NAME2 ~Dark Passage~
 SAY UNIDENTIFIED_DESC ~Dark Passage
@@ -3381,16 +3425,16 @@ Casting Time: 1 round
 Area of Effect: Party
 Saving Throw: None
 
-This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, hasting them, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster suffers 1d6 points of magic damage (save vs. death to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a save vs. death at -2 is made.~
+This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, hasting them, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster suffers 1d6 points of magic damage (Save vs. Death to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
 
-COPY ~shadowadept/spells/c0sa810a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa810a.spl~ ~override~
 SAY NAME1 ~End Dark Passage~
 SAY NAME2 ~End Dark Passage~
 SAY UNIDENTIFIED_DESC ~End Dark Passage
 
-Use this ability to break the Dark Passage. The shadow adept will be stunned for 2 rounds unless a save vs. death at -2 is made.~
+Use this ability to break the Dark Passage. The shadow adept will be stunned for 2 rounds unless a Save vs. Death at -2 is made.~
 
-COPY ~shadowadept/spells/C0SA811.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA811.spl~ ~override~
 SAY NAME1 ~Invoke Reflection~
 SAY NAME2 ~Invoke Reflection~
 SAY UNIDENTIFIED_DESC ~Invoke Reflection
@@ -3403,9 +3447,30 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: Special
 
-A duplicate of the target is created with this spell. The duplicate is almost identical to the target, making it a very powerful ally. It is created at 60% of the target's level and has all the spells and abilities that the target would have at that level. It also has 60% of the target's Hit Points and is fully under the caster's control. Enemies can make a saving throw vs. spells at -3 to avoid the spell's effect.~
+A duplicate of the target is created with this spell. The duplicate is almost identical to the target, making it a very powerful ally. It is created at 60% of the target's level and has all the spells and abilities that the target would have at that level. It also has 60% of the target's Hit Points and is fully under the caster's control. Enemies can make a Saving Throw vs. Spells at -3 to avoid the spell's effect.~
 
-COPY ~shadowadept/spells/c0sa901.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA812.spl~ ~override~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0blizza%~
+END
+SAY NAME1 ~Merciless Blizzard~
+SAY NAME2 ~Merciless Blizzard~
+SAY UNIDENTIFIED_DESC ~Merciless Blizzard
+(Invocation/Evocation - Shadow Weave) 
+
+Level: 8
+Range: Visual range of the caster
+Duration: 1 turn 
+Casting Time: 8
+Area of Effect: 30-ft. radius cloud 
+Saving Throw: 1/2
+
+This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be slowed for that round. This spell is not affected by Magic Resistance.~
+
+COPY ~%MOD_FOLDER%/spells/c0sa901.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3432,11 +3497,11 @@ Casting Time: 0
 Area of Effect: 1 creature
 Saving Throw: Special 
 
-This spell fires a bolt of necrotic energy which rends the soul of its target. Targets who fail a save vs. death at -2 have their maximum hit points cut in half for five rounds. Even if the target makes its save, they take 5d6+10 magic damage and their magic resistance, if any, is nullified for five rounds. This spell is not affected by magic resistance.
+This spell fires a bolt of necrotic energy which rends the soul of its target. Targets who fail a Save vs. Death at -2 have their maximum hit points cut in half for five rounds. Even if the target makes its save, they take 5d6+10 magic damage and their magic resistance, if any, is nullified for five rounds. This spell is not affected by magic resistance.
 
 If this spell kills its target, the caster temporarily gains a 50% bonus to their maximum hit points for 1 turn and regains two spells of 8th level or below.~
 
-COPY ~shadowadept/spells/c0sa902.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa902.spl~ ~override~
 SAY NAME1 ~Umbral Stasis~
 SAY NAME2 ~Umbral Stasis~
 SAY UNIDENTIFIED_DESC ~Umbral Stasis
@@ -3449,9 +3514,9 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None 
 
-This powerful spell causes the shadow adept to partially shift to the Plane of Shadow at the exact same point as he was, creating an effect identical to the Time Stop spell. The caster may move freely for 3 rounds in terms of time in the Plane of Shadow while time stands still in the Prime Material Plane. The shadow adept's casting speed and movement rate is also doubled for the duration of the spell.~
+This powerful spell causes the shadow adept to partially shift to the Plane of Shadow at the exact same point as he was, creating an effect identical to the Time Stop spell. The caster may move freely for 3 rounds in terms of time in the Plane of Shadow while time stands still in the Prime Material Plane. Additionally, the shadow adept's casting speed is increased by 4 and <PRO_HISHER> movement rate is doubled for the duration of the spell.~
 
-COPY ~shadowadept/spells/c0sa903.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa903.spl~ ~override~
 SAY NAME1 ~Nightsinger's Tithe~
 SAY NAME2 ~Nightsinger's Tithe~
 SAY UNIDENTIFIED_DESC ~Nightsinger's Tithe
@@ -3466,11 +3531,11 @@ Saving Throw: None
 
 When Nightsinger's Tithe is uttered, one creature within the spell range is slain. The target must have 60 or fewer current Hit Points, otherwise the spell has no effect. There is no Saving Throw. Creatures slain by this spell have their souls sent to the Plane of Shadow as a sacrifice to Shar. There is an 50% chance that killing a target with this spell will permanently bestow 1 bonus hit point to the caster. Once 50 enemies have been slain with this spell, the shadow adept permanently gains +2 to Constitution, +1 to all saves and -1 casting time, and further castings of this spell will no longer grant hit points.~
 
-COPY ~shadowadept/spells/c0sa903b.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa903b.spl~ ~override~
 SAY NAME1 ~Nightsinger's Boon~
 SAY NAME2 ~Nightsinger's Boon~
 
-COPY ~shadowadept/spells/c0sa904.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa904.spl~ ~override~
 SAY NAME1 ~Enervation~
 SAY NAME2 ~Enervation~
 SAY UNIDENTIFIED_DESC ~Enervation
@@ -3483,9 +3548,9 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A saving throw vs. death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target.~
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A Saving Throw vs. Death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target.~
 
-COPY ~shadowadept/spells/c0sa905.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa905.spl~ ~override~
 SAY NAME1 ~Black Blade of Disaster~
 SAY NAME2 ~Black Blade of Disaster~
 SAY UNIDENTIFIED_DESC ~Black Blade of Disaster
@@ -3500,7 +3565,7 @@ Saving Throw: None
 
 This spell enables the caster to create a black, blade-shaped planar rift about three feet long. It jumps into the caster's hand and is used as a normal sword, remaining there for the duration of the spell. The caster is considered to be proficient to the point of Grand Mastery in this weapon. The sword acts as a +5 weapon and deals 2-24 damage to its victims. Also, every time it hits a target, the victim must make a Save vs. Death at +4 or be disintegrated. There is also a 10% chance with every hit that the sword drains 4 levels from the target and heals the wielder 20 Hit Points.~
 
-COPY ~shadowadept/spells/c0sa906.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa906.spl~ ~override~
 SAY NAME1 ~Negastorm~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -3520,9 +3585,9 @@ Casting Time: 8
 Area of Effect: Special
 Saving Throw: Special
 
-You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a save vs. spells at -4 to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a save vs. death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.~
+You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a Save vs. Spells at -4 to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.~
 
-COPY ~shadowadept/spells/c0sa907.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa907.spl~ ~override~
 SAY NAME1 ~Death Mark~
   LPF ALTER_EFFECT
     INT_VAR
@@ -3543,9 +3608,9 @@ Casting Time: 9
 Area of Effect: 1 creature
 Saving Throw: Special 
 
-This horrific spell marks a specific target with a curse that dooms them to an inevitable end. The victim suffers 15% of their maximum hit points in damage on the first round with no save. On the next round, they must make another saving throw vs. death at -5 or suffer the same amount of damage, then on the next round, make another saving throw at -4, and so on until a save modifier of zero. The curse remains indefinitely until the target is either killed, the curse is dispelled or resisted, or a successful save is made.~
+This horrific spell marks a specific target with a curse that dooms them to an inevitable end. The victim suffers 15% of their maximum hit points in damage on the first round with no save. On the next round, they must make another Saving Throw vs. Death at -5 or suffer the same amount of damage, then on the next round, make another saving throw at -4, and so on until a save modifier of zero. The curse remains indefinitely until the target is either killed, the curse is dispelled or resisted, or a successful save is made.~
 
-COPY ~shadowadept/spells/c0sa907a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa907a.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3554,7 +3619,7 @@ COPY ~shadowadept/spells/c0sa907a.spl~ ~override~
       match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
-COPY ~shadowadept/spells/c0sa907b.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa907b.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3563,7 +3628,7 @@ COPY ~shadowadept/spells/c0sa907b.spl~ ~override~
       match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
-COPY ~shadowadept/spells/c0sa907c.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa907c.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3572,7 +3637,7 @@ COPY ~shadowadept/spells/c0sa907c.spl~ ~override~
       match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
-COPY ~shadowadept/spells/c0sa907d.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa907d.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3581,7 +3646,7 @@ COPY ~shadowadept/spells/c0sa907d.spl~ ~override~
       match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
-COPY ~shadowadept/spells/c0sa907e.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa907e.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3591,14 +3656,14 @@ COPY ~shadowadept/spells/c0sa907e.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
 
-COPY ~shadowadept/spells/c0sa908.spl~ ~override~
-SAY NAME1 ~Oblivion Pull~
+COPY ~%MOD_FOLDER%/spells/c0sa908.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
 FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj21%~
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0oblivi%~
 END
+SAY NAME1 ~Oblivion Pull~
 SAY NAME2 ~Oblivion Pull~
 SAY UNIDENTIFIED_DESC ~Oblivion Pull
 (Abjuration - Shadow Weave)
@@ -3610,22 +3675,32 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: Special
 
-When Oblivion Pull is cast, the shadow adept launches a tiny, fast-moving projectile towards a target which spawns a portal at the targeted location. The portal remains for 3 rounds. At the beginning of each round, all creatures that fail a saving throw vs. spells at -3 within a 10' radius will be pulled towards the portal. After 3 rounds have passed, all creatures within a 5' radius of the portal are pulled into it and sent to a small pocket in the Shadow Plane where they are trapped indefinitely. The victim remains there unless the spell "Freedom" is cast. If a Freedom spell is cast in the area where the creature was imprisoned, then <PRO_HESHE> will reappear exactly where <PRO_HESHE> was last standing. Dispel Magic will not free creatures trapped in this manner. There is no Saving Throw against imprisonment.~
+When Oblivion Pull is cast, the shadow adept launches a tiny, fast-moving projectile towards a target which spawns a portal at the targeted location. The portal remains until an enemy comes within 5 ft. of it. When this happens, the portal pulls it and all other enemies within a 10 ft. radius into it and sends them to a small pocket in the Plane of Shadow where they are trapped indefinitely. The victim remains there unless the spell "Freedom" is cast. If a Freedom spell is cast in the area where the creature was imprisoned, then <PRO_HESHE> will reappear exactly where <PRO_HESHE> was last standing. Dispel Magic will not free creatures trapped in this manner. There is no Saving Throw against imprisonment.~
 
-COPY ~shadowadept/spells/c0sa908c.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa909.spl~ ~override~
+SAY NAME1 ~Fiery Pandemonium~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
 FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0pandem%~
 END
+SAY NAME2 ~Fiery Pandemonium~
+SAY UNIDENTIFIED_DESC ~Fiery Pandemonium
+(Invocation/Evocation - Shadow Weave)
 
-COPY ~shadowadept/spells/c0sa908.cre~ ~override~
-SAY NAME1 ~Oblivion Gate~
-SAY NAME2 ~Oblivion Gate~
-WRITE_ASCII 0x248 ~c0sa908~ #8
+Level: 9
+Range: 270 ft.
+Duration: 6 rounds
+Casting Time: 9
+Area of Effect: 30-ft. radius
+Saving Throw: None
 
-COPY ~shadowadept/spells/c0sahla1.spl~ ~override~
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.
+
+This spell is not affected by Magic Resistance.~
+
+COPY ~%MOD_FOLDER%/spells/c0sahla1.spl~ ~override~
 SAY NAME1 ~Relentless Assault~
 SAY NAME2 ~Relentless Assault~
 SAY UNIDENTIFIED_DESC ~Relentless Assault
@@ -3642,11 +3717,27 @@ Relentless Assault essentially erases the pause between casting spells. When cas
 
 If the shadow adept's hit points fall below 25% of <PRO_HISHER> maximum during the spell's lifetime, the remaining duration is reset to 2 rounds (only once per cast).~
 
-COPY ~shadowadept/spells/c0saalac.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0saalac.spl~ ~override~
 SAY NAME1 ~Relentless Assault: Second Wind~
 SAY NAME2 ~Relentless Assault: Second Wind~
 
-COPY ~shadowadept/spells/c0sahla2.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla2.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 139
+	  match_parameter1 = 40979
+	  parameter1 = RESOLVE_STR_REF (~Four Levels Drained~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 139
+	  match_parameter1 = 40968
+	  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+  END
 SAY NAME1 ~Shadow Dragon Breath~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -3665,9 +3756,9 @@ Casting Time: 1
 Area of Effect: Special
 Saving Throw: Neg.
 
-The shadow adept releases a deadly breath of negative energy causing blindness and draining six levels from all targets hit by the blast. Targets may save vs. breath at -2 to lose only 2 levels.~
+The shadow adept releases a deadly breath of negative energy causing blindness, dealing 8d8 magic damage and draining six levels from all targets hit by the blast. Targets may Save vs. Breath at -6 to take half damage and lose only 2 levels.~
 
-COPY ~shadowadept/spells/c0sahla3.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla3.spl~ ~override~
 SAY NAME1 ~Summon Nightwalker~
 SAY NAME2 ~Summon Nightwalker~
 SAY UNIDENTIFIED_DESC ~Summon Nightwalker
@@ -3682,13 +3773,13 @@ Saving Throw: Neg.
 
 The shadow adept summons a deadly nightwalker, one of the most powerful creatures from the Plane of Shadows, under <PRO_HISHER> command.~
 
-COPY ~shadowadept/spells/c0nightw.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0nightw.cre~ ~override~
 SAY NAME1 ~Nightwalker~
 SAY NAME2 ~Nightwalker~
   WRITE_ASCII 0x248 ~bdsum00~ #8
   WRITE_ASCII 0x280 ~c0nightw~  #32
 
-COPY ~shadowadept/spells/c0sahla4.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla4.spl~ ~override~
 SAY NAME1 ~Shapeshift: Shadow Dragon Scion~
 SAY NAME2 ~Shapeshift: Shadow Dragon Scion~
 SAY UNIDENTIFIED_DESC ~Shapeshift: Shadow Dragon Scion
@@ -3708,7 +3799,7 @@ Dexterity: 24
 
 Base Armor Class: -6
 Number of Attacks: 3
-Damage: 1d12+6 slashing, 1d4 cold, 50% chance to drain two levels on hit (save vs. death at -4 to avoid), strikes as a +5 weapon.
+Damage: 1d12+6 slashing, 1d4 cold, 50% chance to drain two levels on hit (Save vs. Death at -4 to avoid), strikes as a +5 weapon.
 40% physical resistance
 80% elemental damage resistance
 100% magical damage resistance
@@ -3716,11 +3807,11 @@ Damage: 1d12+6 slashing, 1d4 cold, 50% chance to drain two levels on hit (save v
 Movement rate increased by 4
 Regenerate 1 hp per 3 seconds~
 
-COPY ~shadowadept/spells/c0shape4.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0shape4.itm~ ~override~
 SAY NAME1 ~Shadow's Edge +5~
 SAY NAME2 ~Shadow's Edge +5~
 
-COPY ~shadowadept/spells/c0sahlaa.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahlaa.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3743,12 +3834,12 @@ Saving Throw: None
 
 This spell conjures several blades made of shadowstuff. The blades give +10 to THAC0, and when thrown does 1d4+2 missile damage as well as 1d4 cold damage. Additionally, the blades remain impaled within targets upon striking, dealing the same amount of damage again after a delay of 2 rounds. The spell creates 20 blades and sets the caster's attacks to 9 as long as the blades are held.~
 
-COPY ~shadowadept/spells/c0nightk.itm~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0nightk.itm~ ~override~
 SAY NAME1 ~Night Knives~
 SAY NAME2 ~Night Knives~
 WRITE_SHORT 0x9C ~%c0nightk%~
 
-COPY ~shadowadept/spells/c0sahla5.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla5.spl~ ~override~
 SAY NAME1 ~Disciple of Darkness~
 SAY NAME2 ~Disciple of Darkness~
 SAY UNIDENTIFIED_DESC ~Disciple of Darkness
@@ -3756,7 +3847,7 @@ The shadow adept has fully mastered control over the Shadow Weave, gaining +2 to
 
 Only one of either Disciple of Darkness or Wrath of Darkness may be chosen.~
 
-COPY ~shadowadept/spells/c0sahla6.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla6.spl~ ~override~
 SAY NAME1 ~Wrath of Darkness~
 SAY NAME2 ~Wrath of Darkness~
 SAY UNIDENTIFIED_DESC ~Wrath of Darkness 
@@ -3764,7 +3855,7 @@ The shadow adept infuses the power of the Shadow Weave into <PRO_HISHER> very bo
 
 Only one of either Disciple of Darkness or Wrath of Darkness may be chosen.~
 
-COPY ~shadowadept/spells/c0sahla7.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla7.spl~ ~override~
 SAY NAME1 ~Shadow Pact I~
 SAY NAME2 ~Shadow Pact I~
 SAY UNIDENTIFIED_DESC ~Shadow Pact I
@@ -3772,7 +3863,7 @@ The shadow adept may trade a portion of <PRO_HISHER> life force in order to incr
 
 This ability may be chosen twice.~
 
-COPY ~shadowadept/spells/c0sahla8.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla8.spl~ ~override~
 SAY NAME1 ~Shadow Pact II~
 SAY NAME2 ~Shadow Pact II~
 SAY UNIDENTIFIED_DESC ~Shadow Pact II
@@ -3782,7 +3873,7 @@ This ability may be chosen twice.
 
 Requires: Shadow Pact I~
 
-COPY ~shadowadept/spells/c0sahla9.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla9.spl~ ~override~
 SAY NAME1 ~Shadow Pact III~
 SAY NAME2 ~Shadow Pact III~
 SAY UNIDENTIFIED_DESC ~Shadow Pact III
@@ -3792,7 +3883,7 @@ This ability may be chosen twice.
 
 Requires: Shadow Pact II~
 
-COPY ~shadowadept/spells/c0sahla0.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahla0.spl~ ~override~
 SAY NAME1 ~Shadow Pact IV~
 SAY NAME2 ~Shadow Pact IV~
 SAY UNIDENTIFIED_DESC ~Shadow Pact IV
@@ -3802,7 +3893,7 @@ This ability may only be chosen once.
 
 Requires: Shadow Pact III~
 
-COPY ~shadowadept/spells/c0sahlab.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sahlab.spl~ ~override~
 SAY NAME1 ~Arcane Lore~
 SAY NAME2 ~Arcane Lore~
 SAY UNIDENTIFIED_DESC ~Arcane Lore
@@ -3818,7 +3909,7 @@ OUTER_WHILE (!(IS_AN_INT ~familiar~) OR (~familiar~ > 0x5) OR (~familiar~ < 0x1)
   ACTION_READLN ~familiar~
 END
       ACTION_IF ("familiar" = 1) THEN BEGIN
-COPY ~shadowadept/familiars~ ~override~
+COPY ~%MOD_FOLDER%/familiars~ ~override~
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
   COPY_EXISTING ~clastext.2da~ ~override~
@@ -4061,18 +4152,18 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~shadowadept/scripts/c0safam1.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~shadowadept/scripts/c0safam1.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0safam1.baf~
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
 END
 
-COPY ~shadowadept/familiars/C0SAFAM1.spl~ ~override~
+COPY ~%MOD_FOLDER%/familiars/C0SAFAM1.spl~ ~override~
 SAY NAME1 ~Find Shadow Familiar~
 SAY NAME2 ~Find Shadow Familiar~
 SAY UNIDENTIFIED_DESC ~Find Shadow Familiar
@@ -4107,7 +4198,7 @@ STR: 10 DEX: 19 CON: 16 INT: 16 WIS: 12 CHA: 16
 Starting Spells: Blinding Darkness, Decoy, Dark Mirage, Dark Fortune
 Other abilities: Shadowstep, Hide in Plain Sight, can use thieving skills~
 
-COPY ~shadowadept/familiars/C0SAFAM2.spl~ ~override~
+COPY ~%MOD_FOLDER%/familiars/C0SAFAM2.spl~ ~override~
 SAY NAME1 ~Call Shadow Familiar~
 SAY NAME2 ~Call Shadow Familiar~
 SAY UNIDENTIFIED_DESC ~Call Shadow Familiar
@@ -4115,29 +4206,29 @@ This spell summons the shadow adept's bound shadow familiar from their home plan
 
 ACTION_IF GAME_IS ~bgee eet~
 THEN BEGIN
-COMPILE ~shadowadept/dialogue/bg1/c0safam.d~
+COMPILE ~%MOD_FOLDER%/dialogue/bg1/c0safam.d~
 END
 
 ACTION_IF GAME_IS ~bg2ee~
 THEN BEGIN
-COMPILE ~shadowadept/dialogue/c0safam.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0safam.d~
 END
 
-COMPILE ~shadowadept/scripts/c0safam.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0safam.baf~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~shadowadept/scripts/c0safamx.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~shadowadept/scripts/c0safamx.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0safamx.baf~
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
 END
 
-COPY ~shadowadept/creatures/c0safam1.cre~ ~override~
+COPY ~%MOD_FOLDER%/creatures/c0safam1.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
 WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
@@ -4153,7 +4244,7 @@ SAY DYING ~~ [VWOLF09]
 SAY SELECT_COMMON1 ~~ [VWOLF01]
 SAY SELECT_COMMON2 ~~ [VWOLF02]
 
-COPY ~shadowadept/creatures/c0safam2.cre~ ~override~
+COPY ~%MOD_FOLDER%/creatures/c0safam2.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
 WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
@@ -4161,7 +4252,7 @@ SAY NAME1 ~Ka'Shai~
 SAY NAME2 ~Ka'Shai~
 WRITE_ASCII 0X34 ~C0Kashai~ #8   //small portrait
 
-COPY ~shadowadept/creatures/c0safam3.cre~ ~override~
+COPY ~%MOD_FOLDER%/creatures/c0safam3.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
 WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0safam~ #32 // death variable

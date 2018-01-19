@@ -3,7 +3,8 @@ IF
 	!Allegiance(Myself,ENEMY)
 THEN
   RESPONSE #100
-	Enemy()
+	Wait(1)
+	StartDialogueNoSet(Player1)
 END
 
 IF
@@ -23,6 +24,7 @@ END
 
 IF
   Allegiance(Myself,ENEMY)
+  See(Nearestenemyof(Myself))
   HasItem("c0sapot1",Myself)
   RealGlobalTimerExpired("C0DrinkPotion","LOCALS")
 THEN

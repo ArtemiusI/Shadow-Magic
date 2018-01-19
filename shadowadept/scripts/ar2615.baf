@@ -4,5 +4,5 @@ IF
 THEN
   RESPONSE #100
 	SetGlobal("C0SAMakkaiSpawn","MYAREA",1)
-	CreateCreature("c0samag3",[393.909],NW)
+	CreateCreature("c0samag3",[394.919],NW)
 END
