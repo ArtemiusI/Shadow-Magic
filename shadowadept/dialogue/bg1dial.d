@@ -39,4 +39,5 @@ CHAIN OUBLEK oublek
 DO ~GivePartyGold(1000) Addexperienceparty(2000) SetGlobal("C0OublekXariusBounty","GLOBAL",1)~ EXIT
 
 I_C_T TETHTO2 3 C0SATETHTO23
+== TETHTO2 IF ~Global("C0SAQuest1","GLOBAL",1)~ THEN ~Be wary of who you find in the catacombs. A few days prior to your return, a shadow magi with a madness-inducing affliction by the name of Mak'kai was sent down to die in peace. He will likely be violent should you encounter him at this time. Avoid straying too far into the tombs.~
 END
