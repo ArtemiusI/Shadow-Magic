@@ -583,3 +583,16 @@ DisplayStringHead(Myself,~Looks like I've gotten stronger, boss. Check out what 
 ApplySpellRES("c0famlv3",Myself)
 AddSpecialAbility("c0sfam24")
 END
+
+// COMMENTS
+
+IF
+Alignment(Myself,MASK_LCNEUTRAL)
+AreaCheck("C0SA04")
+See("c0sapp06")
+Global("KaShaiKeeper","LOCALS",0)
+THEN
+RESPONSE #100
+SetGlobal("KaShaiKeeper","LOCALS",1)
+DisplayStringHead(Myself,~'Ware, massster... thisss being isss far greater than you can comprehend...~)
+END

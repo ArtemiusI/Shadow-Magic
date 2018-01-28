@@ -4,6 +4,15 @@ IF
   Kit(Lastsummonerof(Myself),C0SASOR2)
 THEN
   RESPONSE #100
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV1","LOCALS",0))
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV2","LOCALS",0))
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV3","LOCALS",0))
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV4","LOCALS",0))
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV5","LOCALS",0))
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV6","LOCALS",0))
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV7","LOCALS",0))
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV8","LOCALS",0))
+	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV9","LOCALS",0))
 	ActionOverride(Lastsummonerof(Myself),AddKit(C0SASORC))
 	ChangeSpecifics(Lastsummonerof(Myself),12)
 	DestroySelf()

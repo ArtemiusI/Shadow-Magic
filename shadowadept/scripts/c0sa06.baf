@@ -1,0 +1,27 @@
+IF
+	Global("Begin","MYAREA",0)
+THEN
+	RESPONSE #100
+	SetGlobal("Begin","MYAREA",1)
+	Explore()
+    AddMapNote([2958.482],~Phantasmal Tower~)
+    AddMapNote([1602.1001],~The Umbral Arcanaeum~)
+    AddMapNote([894.573],~Ebonshade Tavern~)
+    AddMapNote([3083.2044],~Temple of Shar~)
+    AddMapNote([3022.2936],~Warehouse~)
+    AddMapNote([2022.2362],~Blacksteel Smithy~)
+    AddMapNote([834.2660],~Guardhouse~)
+    AddMapNote([194.2340],~Tent~)
+    AddMapNote([3814.2307],~Tent~)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+	Wait(1)
+	CloseDoor("ar0600d1")
+	CloseDoor("ar0600d2")
+	CloseDoor("ar0600d3")
+	CloseDoor("ar0600d4")
+END

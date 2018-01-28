@@ -1,0 +1,55 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+	Explore()
+END
+
+IF
+	GlobalTimerExpired("OpheliaLeaves","MYAREA")
+	Global("OpheliaReturns","MYAREA",0)
+THEN
+	RESPONSE #100
+	SetGlobal("OpheliaReturns","MYAREA",1)
+	MoveGlobal("C0SA04","C0Ophel",[685.506])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #60
+	NoAction()
+	Wait(15)
+	RESPONSE #5
+	ActionOverride("c0sapp06",SetSequence(SEQ_ATTACK_BACKSLASH))
+	CreateVisualEffect("c0black2",[532.923])
+	Wait(15)
+	RESPONSE #5
+	ActionOverride("c0sapp06",SetSequence(SEQ_CAST))
+	CreateVisualEffect("c0drain",[532.923])
+	Wait(15)
+	RESPONSE #5
+	ActionOverride("c0sapp06",SetSequence(SEQ_CAST))
+	CreateVisualEffect("c0ghostv",[532.923])
+	Wait(15)
+	RESPONSE #5
+	ActionOverride("c0sapp06",SetSequence(SEQ_ATTACK_BACKSLASH))
+	CreateVisualEffect("c0magich",[532.923])
+	Wait(15)
+	RESPONSE #5
+	ActionOverride("c0sapp06",SetSequence(SEQ_ATTACK_BACKSLASH))
+	CreateVisualEffect("c0maliso",[532.923])
+	Wait(15)
+	RESPONSE #5
+	ActionOverride("c0sapp06",SetSequence(SEQ_CAST))
+	CreateVisualEffect("c0nights",[532.923])
+	Wait(15)
+	RESPONSE #5
+	ActionOverride("c0sapp06",SetSequence(SEQ_CAST))
+	CreateVisualEffect("c0pkill",[532.923])
+	Wait(15)
+	RESPONSE #5
+	ActionOverride("c0sapp06",SetSequence(SEQ_ATTACK_BACKSLASH))
+	CreateVisualEffect("c0pwwrd",[532.923])
+	Wait(15)
+END

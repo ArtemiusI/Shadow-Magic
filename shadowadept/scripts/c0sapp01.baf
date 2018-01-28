@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #98
+	NoAction()
+	RESPONSE #1
+	SetSequence(SEQ_CAST)
+	CreateVisualEffectObject("c0pwwrd",Myself)
+	RESPONSE #1
+	SetSequence(SEQ_CAST)
+	CreateVisualEffectObject("c0charm",Myself)
+END

@@ -13,7 +13,8 @@ SAY NAME2 ~Kryn Darkflame~
 WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
 
 COPY ~%MOD_FOLDER%/creatures/c0samag1.cre~ ~override~
-WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0samag1~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag1~ #32 // death variable
 SAY NAME1 ~Xarius the Black~
@@ -52,7 +53,8 @@ Requires:
 Weight: 4~
 
 COPY ~%MOD_FOLDER%/creatures/c0samag2.cre~ ~override~
-WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0samag2~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag2~ #32 // death variable
 SAY NAME1 ~Chang Yu'ke~
@@ -91,9 +93,17 @@ Requires:
 Weight: 4~
 
 COPY ~%MOD_FOLDER%/creatures/c0samag3.cre~ ~override~
-WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0samag3~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag3~ #32 // death variable
+SAY NAME1 ~Mak'kai~
+SAY NAME2 ~Mak'kai~
+
+COPY ~%MOD_FOLDER%/creatures/c0maksim.cre~ ~override~
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0maksim~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0maksim~ #32 // death variable
 SAY NAME1 ~Mak'kai~
 SAY NAME2 ~Mak'kai~
 
@@ -130,7 +140,8 @@ Requires:
 Weight: 4~
 
 COPY ~%MOD_FOLDER%/creatures/c0samag4.cre~ ~override~
-WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0samag4~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag4~ #32 // death variable
 SAY NAME1 ~Nym Phaundal~
@@ -169,7 +180,8 @@ Requires:
 Weight: 4~
 
 COPY ~%MOD_FOLDER%/creatures/c0samag5.cre~ ~override~
-WRITE_ASCII 0x248 ~c0sadept~  #8  // override
+WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0samag5~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag5~ #32 // death variable
 SAY NAME1 ~Ivette Cold-Whisper~

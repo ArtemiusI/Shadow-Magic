@@ -169,7 +169,7 @@ END
 SAY NAME1 ~Mage Robes~
 SAY NAME2 ~Shrouded Robes~
 SAY UNIDENTIFIED_DESC ~Since the age of Netheril, mages have learned to bestow a wide variety of magical properties upon the everyday objects that surround them. A favorite item of such enchantment is the common robe. It is lightweight, affordable, and holds its enchantment well, thereby making it ideal equipment for a mage. Due to their magical heritage, however, only single-, dual-, and multi-class mages may wear these enchanted robes.~
-SAY DESC ~These black robes are made of some sort of unusually light material bear enchantments that empower the magic used by shadow adepts.
+SAY DESC ~These black robes are made of some sort of unusually light material and bear enchantments that empower the magic used by shadow adepts.
 
 STATISTICS:
 
@@ -539,6 +539,51 @@ Requires:
 
 Weight: 7~
 
+COPY ~%MOD_FOLDER%/itempack/c0sas1h3.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+  END
+SAY NAME1 ~Scimitar~
+SAY NAME2 ~Soulbane +4~
+SAY UNIDENTIFIED_DESC ~The long, curved, single-edged blade is characteristic of both the saber and the scimitar, even though their origins lie in different parts of Faerûn. Whereas the saber was intended chiefly for horsemen, mainly due to its versatility, the scimitar has a heavier oriental influence. The "shamshir," as it was originally called, is larger, more highly curved, and tapered to an elongated, sharp point. This makes the weapon slightly slower but more effective and deadly in combat.
+
+STATISTICS:
+
+Damage: 1d8 (slashing)
+Speed Factor: 5
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~
+SAY DESC ~This scimitar was the signature weapon of Sirius Victus, a Shadovar warrior. Its wicked edge is complemented by life-draining magic that permanently weakens anyone it cuts.
+
+STATISTICS:
+
+Combat abilities:
+- Each hit reduces target's save vs. death modifier by one point for five turns
+- Each hit drains two levels on a failed save vs. death at -2
+
+Equipped abilities:
+- Magic Resistance: +25%
+
+THAC0: +4
+Damage: 1d8+6, +2 magic
+Damage type: slashing
+Speed Factor: 1
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 1~
+
 COPY ~%MOD_FOLDER%/itempack/c0sawand.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sawan1.itm~ ~override~
 SAY NAME1 ~Wand~
@@ -624,7 +669,14 @@ Requires:
 
 Weight: 1~
 
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj05.pro~
+
 COPY ~%MOD_FOLDER%/itempack/c0sawan5.itm~ ~override~
+  LPF ALTER_ITEM_HEADER
+	INT_VAR
+	header = 1
+	projectile = c0proj05
+END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Fire~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -645,6 +697,26 @@ Charge abilities:
   Damage: 1d6 cold, 4d6 fire per arrow (Save vs. Wand for half)
   Range: 90 ft.
   Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+COPY ~%MOD_FOLDER%/itempack/c0sawan6.itm~ ~override~
+SAY NAME1 ~Wand~
+SAY NAME2 ~Wand of Shadow Binding~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of moderate intelligence. This wand is capable of creating shadowy tendrils which bind themselves around the chosen target, holding them in place.
+
+As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
+
+STATISTICS:
+
+Charge abilities:
+- Targets must save vs. spells at -4 or become held for one turn
+  Range: 35 ft.
+  Area of Effect: 1 creature and any enemy within 7.5 ft.
 
 Requires:
  9 Intelligence
@@ -768,7 +840,7 @@ STATISTICS:
 Equipped abilities:
 - Armor Class: 5
 - Magic Resistance: +5%
-- Protects from Constitution loss from 1st and 2nd level Shadow Weave spells
+- Protects against Constitution loss from 1st and 2nd level Shadow Weave spells
 
 Weight: 6~
 

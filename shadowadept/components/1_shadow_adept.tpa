@@ -536,6 +536,7 @@ COMPILE ~%MOD_FOLDER%/dialogue/c0saorb.d~
 ////////////////////////////////////////
 
 EXTEND_TOP ~dplayer3.bcs~ ~%MOD_FOLDER%/scripts/dplayer3.baf~
+EXTEND_TOP ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/dplayer2.baf~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0sa402.baf~
@@ -556,6 +557,7 @@ END
 
 COMPILE ~%MOD_FOLDER%/scripts/c0satalk.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0saorb.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sasumm.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0devsha.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0nighth.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sa711.baf~
@@ -1672,7 +1674,7 @@ Saving Throw: Neg.
 
 All enemies within the area of effect when this spell is cast must Save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.
 
-At 12th level, this spell gains the effects of the 6th level wizard spell Death Spell: creatures below 8 Hit Dice and all summoned creatures will die instantly from overwhelming fear. (no saving throw)~
+From 14th level onwards, this spell gains the effects of the 6th level wizard spell Death Spell: creatures below 8 Hit Dice and all summoned creatures will die instantly from overwhelming fear. (no saving throw)~
 
 COPY ~%MOD_FOLDER%/spells/C0SA203.spl~ ~override~
 SAY NAME1 ~Dark Fortune~
@@ -2115,6 +2117,14 @@ When a shadow adept casts this powerful spell upon <PRO_HIMHER>self, an outer sk
 Additionally, so long as at least one layer of Shadeskin is active, the shadow adept gains 25% resistance to acid, cold, fire, electrical and magic damage.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA403.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 44916
+ parameter1 = RESOLVE_STR_REF (~Saving Throws Lowered~)
+ END
 SAY NAME1 ~Sigil of Misfortune~
 SAY NAME2 ~Sigil of Misfortune~
 SAY UNIDENTIFIED_DESC ~Sigil of Misfortune
@@ -2155,25 +2165,26 @@ The undead creatures will remain under the shadow adept's control until they are
 COPY ~%MOD_FOLDER%/spells/c0devsha.cre~ ~override~
 SAY NAME1 ~Devil Shade~
 SAY NAME2 ~Devil Shade~
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~c0devsha~ #8
   WRITE_ASCII 0x280 ~c0devsha~  #32
 
 COPY ~%MOD_FOLDER%/spells/c0shadsu.cre~ ~override~
 SAY NAME1 ~Shadow~
 SAY NAME2 ~Shadow~
-  WRITE_ASCII 0x248 ~bdsum00~ #8
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0shadow~  #32
 
 COPY ~%MOD_FOLDER%/spells/c0shadfi.cre~ ~override~
 SAY NAME1 ~Shadow Fiend~
 SAY NAME2 ~Shadow Fiend~
-  WRITE_ASCII 0x248 ~bdsum00~ #8
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0shadfi~  #32
 
 COPY ~%MOD_FOLDER%/spells/c0wraith.cre~ ~override~
 SAY NAME1 ~Wraith~
 SAY NAME2 ~Wraith~
-  WRITE_ASCII 0x248 ~bdsum00~ #8
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0wraith~  #32
 
 COPY ~%MOD_FOLDER%/spells/C0SA405.spl~ ~override~
@@ -2781,6 +2792,14 @@ This spell creates an immobile, faintly shimmering magical sphere around the cas
 Additionally, the shadow adept gains 20% magic resistance as long as the globe is up.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA602.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 60481
+ parameter1 = RESOLVE_STR_REF (~Misled~)
+ END
 SAY NAME1 ~Twin Mislead~
 SAY NAME2 ~Twin Mislead~
 SAY UNIDENTIFIED_DESC ~Twin Mislead
@@ -2797,7 +2816,25 @@ When this spell is cast, the shadow adept is affected by an Improved Invisibilit
 
 After 3 rounds have passed, a second decoy is spontaneously created, regardless of whether or not the first has been destroyed.~
 
+COPY ~%MOD_FOLDER%/spells/C0SA602a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 60481
+ parameter1 = RESOLVE_STR_REF (~Misled~)
+ END
+
 COPY ~%MOD_FOLDER%/spells/C0SA603.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 7609
+ parameter1 = RESOLVE_STR_REF (~Protected from Magical Weapons~)
+ END
 SAY NAME1 ~Protection from Weave-forged Weapons~
 SAY NAME2 ~Protection from Weave-forged Weapons~
 SAY UNIDENTIFIED_DESC ~Protection From Weave-forged Weapons
@@ -3038,6 +3075,10 @@ When a Power Word, Stun spell is uttered, any creature of the Mage's choice with
  60 to 89 Hit Points: Stunned for 1d4 rounds; 
  90 or more Hit Points: unaffected.
 Note that if a creature is weakened so that its Hit Points are below its usual maximum, the current number of Hit Points is used to determine this spell's effects. This spell ignores magic resistance.~
+
+COPY ~%MOD_FOLDER%/spells/c0morsw.cre~ ~override~
+SAY NAME1 ~Magical Sword~
+SAY NAME2 ~Magical Sword~
 
 COPY ~%MOD_FOLDER%/spells/C0SA704.spl~ ~override~
 SAY NAME1 ~Sword of the Night~
@@ -3776,7 +3817,7 @@ The shadow adept summons a deadly nightwalker, one of the most powerful creature
 COPY ~%MOD_FOLDER%/spells/c0nightw.cre~ ~override~
 SAY NAME1 ~Nightwalker~
 SAY NAME2 ~Nightwalker~
-  WRITE_ASCII 0x248 ~bdsum00~ #8
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0nightw~  #32
 
 COPY ~%MOD_FOLDER%/spells/c0sahla4.spl~ ~override~

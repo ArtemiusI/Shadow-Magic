@@ -1,0 +1,502 @@
+////////////////////////////////////////
+///////////////KIT//////////////////////
+////////////////////////////////////////
+
+INCLUDE ~%MOD_FOLDER%/fl#add_kit_ee.tpa~
+ADD_KIT ~C0OPHEL~
+
+ // appended to CLASWEAP.2da
+ ~C0OPHEL		1           1           1           1           1           1           1           1~
+
+ // appended column-wise to WEAPPROF.2da
+ ~C0OPHEL		0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    
+ // appended to ABCLASRQ.2da
+ ~C0OPHEL				0	0	12	9	0	9~
+
+ // appended to ABCLSMOD.2da
+ ~C0OPHEL				0	0	0	0	0	0~
+
+ // appended to ABDCDSRQ.2da
+ ~C0OPHEL                		0       0       15       15       0       15~
+
+ // appended to ABDCSCRQ.2da
+ ~C0OPHEL                 	0       0       0       0       0		0~
+
+ // appended to ALIGNMNT.2da
+ ~C0OPHEL                  	0       1       1       0       1	1       0       1       1~
+
+ // appended to DUALCLAS.2da
+ ~C0OPHEL                  	0       0       0       0       0       0~
+
+ // path to your CLAB-style 2da file 
+ ~%MOD_FOLDER%/2da/C0SADEP3.2da~
+
+ // PC races and classes allowed to use this kit, from KITTABLE.2da
+ ~~
+
+ // usability flags, added to the end of the KITLIST.2da entry
+ ~0x00003FC0     19~
+
+ // HLA table to use; see LUABBR.2da
+ ~C0SA~
+
+ // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+ ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+
+ // Lower, mixed, and help kit names and UNIDENTIFIED_DESCriptions, added to KITLIST.2da
+  SAY ~shadow disciple~
+  SAY ~Shadow Disciple~
+  SAY @10003
+
+LAF fl#add_kit_ee
+  INT_VAR
+	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+
+When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+  STR_VAR
+    kit_name = C0OPHEL
+	hpclass = ~HPDD~
+	clascolr = ~27 136 119 21 187~
+	clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+////////////////////////////////////////
+/////////CREATURES//////////////////////
+////////////////////////////////////////
+
+COPY ~%MOD_FOLDER%/audio/ophelia~ ~override~
+COPY ~%MOD_FOLDER%/areas~ ~override~
+
+//AUDIO
+
+LAF HANDLE_AUDIO
+END
+
+COPY ~%MOD_FOLDER%/creatures/C0Ophel.cre~ ~override~
+  SAY NAME1 ~Ophelia~
+  SAY NAME2 ~Ophelia~
+  WRITE_ASCII 0x248 ~C0Ophel~ #8  //override script
+  WRITE_ASCII 0x280 ~C0Ophel~ #32  //DV
+  WRITE_ASCII 0x2cc ~C0Ophel~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~~ #8   //small portrait
+  WRITE_ASCII 0x3c ~~ #8   //medium portrait
+  SAY BIO ~~
+  SAY INITIAL_MEETING ~Hmm?~ [C0OPH21]
+  SAY MORALE ~This battle cannot be won. We should retreat!~ [C0OPH01]
+  SAY HAPPY ~You are the best of us.~ [C0OPH39]
+  SAY UNHAPPY_ANNOYED ~If you feel you're not fit to lead, say the words and I'll take over.~ [C0OPH33]
+  SAY UNHAPPY_SERIOUS ~Well, you may challenge my resolve, but I fear the opposite of that which you're convinced will occur, will occur.~ [C0OPH32]
+  SAY UNHAPPY_BREAKING_POINT ~What a shame. I thought I liked you.~
+  SAY LEADER ~Finally! Let me show you the right way of doing things.~ [C0OPH09]
+  SAY TIRED ~Ugh, let's retire this long day and ourselves with it.~ [C0DRA007]
+  SAY BORED ~Have all our tasks been completed?~ [C0OPH13]
+  SAY BATTLE_CRY1 ~Victory is ours for the taking!~ [C0OPH03]
+  SAY BATTLE_CRY2 ~Come, let's show them our mettle!~ [C0OPH04]
+  SAY BATTLE_CRY3 ~Glory is at hand!~ [C0OPH05]
+  SAY BATTLE_CRY4 ~United, we are invincible!~ [C0OPH06]
+  SAY BATTLE_CRY5 ~It's time to create our legends!~ [C0OPH07]
+  SAY DAMAGE ~Uh!~ [C0OPH35]
+  SAY DYING ~Eh...! Ohh...~ [C0OPH38]
+  SAY HURT ~Please... help me!~ [C0OPH14]
+  SAY AREA_FOREST ~The scenery is nice, but shouldn't we push on?~ [C0OPH12]
+  SAY AREA_CITY ~This is nothing like Thultanthar.~
+  SAY AREA_DUNGEON ~I can handle the cold and the darkness, but the stench is just... ugh.~
+  SAY AREA_DAY ~It's... so... bright!~
+  SAY AREA_NIGHT ~For one born in a world of shadow, this is nothing.~
+  SAY SELECT_COMMON1 ~What's your pleasure?~ [C0OPH17]
+  SAY SELECT_COMMON2 ~Your desire?~ [C0OPH22]
+  SAY SELECT_COMMON3 ~What would you like?~ [C0OPH18]
+  SAY SELECT_COMMON4 ~I'm here.~ [C0OPH19]
+  SAY SELECT_COMMON5 ~I'm listening.~ [C0OPH20]
+  SAY SELECT_COMMON6 ~Hmm?~ [C0OPH21]
+  SAY SELECT_ACTION1 ~Yes.~ [C0OPH23]
+  SAY SELECT_ACTION2 ~If it pleases you.~ [C0OPH24]
+  SAY SELECT_ACTION3 ~If you'd like.~ [C0OPH25]
+  SAY SELECT_ACTION4 ~I'm there.~ [C0OPH26]
+  SAY SELECT_ACTION5 ~It'll be so.~ [C0OPH27]
+  SAY SELECT_ACTION6 ~Uh-huh.~ [C0OPH28]
+  SAY SELECT_ACTION7 ~As you desire.~ [C0OPH29]
+  SAY SELECT_RARE1 ~Yes.~ [C0OPH16]
+  SAY SELECT_RARE2 ~Does this robe make me look fat?~ [C0OPH30]
+  SAY CRITICAL_HIT ~Hmm! I bet you didn't see that coming.~ [C0OPH41]
+  SAY CRITICAL_MISS ~Argh, kal'vodar!~
+  SAY TARGET_IMMUNE ~A strange enchantment protects this one!~
+  SAY INVENTORY_FULL ~Do I look like I'm meant to carry heavy loads?~
+  SAY SPELL_DISRUPTED ~~ [C0OPH31]
+  SAY SET_A_TRAP ~~
+  SAY HIDDEN_IN_SHADOWS ~~
+  SAY PICKED_POCKET ~~
+  WRITE_SHORT 0x246 0x4000 + ~%C0OPHEL%~
+
+COPY ~%MOD_FOLDER%/items/c0ophrob.bam~ ~override~
+COPY ~%MOD_FOLDER%/items/c0ophrob.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter2 = 11
+	  power = 1
+	  special = RESOLVE_STR_REF (~Ophelia~)
+	STR_VAR
+	  resource = C0Ophel
+END
+SAY NAME1 ~Mage Robe~
+SAY NAME2 ~Ophelia's Knave Robe~
+SAY DESC ~A favorite among Mage/Thieves, the Knave's Robe has been enchanted to shield its wearer from the blades and poisons of any darkened alley. As with others of its type, however, its use is restricted to students of the arcane. This particular robe was modified by Ophelia to improve upon its enchantments and match her aesthetic.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor Class: +2 vs. slashing attacks
+- Save vs. Death: +2
+
+Weight: 4~
+
+COPY ~%MOD_FOLDER%/items/c0ophsta.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter2 = 11
+	  power = 1
+	  special = RESOLVE_STR_REF (~Ophelia~)
+	STR_VAR
+	  resource = C0Ophel
+END
+SAY NAME1 ~Quarterstaff~
+SAY NAME2 ~Ophelia's Battle Staff +2~
+SAY DESC ~This metal-bound quarterstaff, bearing the mark of the Shade Enclave, is topped with a magical gem which bestows upon it significant magical power. It belongs to the sorceress Ophelia and its enchantments only respond to her.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor Class: +1
+
+THAC0: +2
+Damage: 1d6+2, +1 magic
+Damage type: crushing
+Speed Factor: 2
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 3~
+
+COPY ~%MOD_FOLDER%/items/c0ophrin.bam~ ~override~
+COPY ~%MOD_FOLDER%/items/c0ophrin.itm~ ~override~
+SAY NAME1 ~Ring~
+SAY NAME2 ~Reyn'Tanthul Signet Ring~
+SAY DESC ~This ring bears the insignia of House Reyn'Tanthul, a noble house related to the Reyns and Tanthuls. Its emblem is a fusion of that of the two houses. The magic of the signet ring bonds it to those of the Reyn'Tanthul line and prevents it from being removed from its owner, Ophelia.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor Class: +2
+- Saving Throws: +2
+- Can cast two extra sorcerer spells of each level
+
+Weight: 0~
+OUTER_SET strref = RESOLVE_STR_REF (~The ring resists every attempt to remove it, as it is bonded to Ophelia by blood.~ [GAM_47])
+APPEND item_use.2da ~c0ophrin Ophelia %strref% 3~
+
+COPY ~%MOD_FOLDER%/items/c0unisha.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/c0unish2.itm~ ~override~
+
+COPY ~%MOD_FOLDER%/creatures/c0sakryn.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sakryn~  #8  // override
+WRITE_ASCII 0x250 ~shout~  #8  // class
+WRITE_ASCII 0x2cc ~c0sakryn~  #8  // dialogue
+WRITE_ASCII 0x268 ~c0sadept~  #8  // default
+WRITE_ASCII 0x280 ~c0sakryn~ #32 // death variable
+SAY NAME1 ~Kryn Darkflame~
+SAY NAME2 ~Kryn Darkflame~
+WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
+
+COPY ~%MOD_FOLDER%/creatures/c0sagol.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sagol~  #8  // override
+WRITE_ASCII 0x2cc ~c0sagol~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sagol~ #32 // death variable
+SAY NAME1 ~Darkflame Servant~
+SAY NAME2 ~Darkflame Servant~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp01.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp01~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp01~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp01~ #32 // death variable
+SAY NAME1 ~Chang Su'Lin~
+SAY NAME2 ~Chang Su'Lin~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp02.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp02~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp02~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp02~ #32 // death variable
+SAY NAME1 ~Hadron Maleficus~
+SAY NAME2 ~Hadron Maleficus~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp03.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp03~  #8  // override	
+WRITE_ASCII 0x2cc ~c0sapp03~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp03~ #32 // death variable
+SAY NAME1 ~High Priest Andros~
+SAY NAME2 ~High Priest Andros~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp04.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp04~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp04~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp04~ #32 // death variable
+SAY NAME1 ~Acolyte Dacton~
+SAY NAME2 ~Acolyte Dacton~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp05.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp05~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp05~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp05~ #32 // death variable
+SAY NAME1 ~Korim Blackfist~
+SAY NAME2 ~Korim Blackfist~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp06.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp06~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp06~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sapp06~ #32 // death variable
+SAY NAME1 ~The Keeper~
+SAY NAME2 ~The Keeper~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp07.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp07~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp07~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp07~ #32 // death variable
+SAY NAME1 ~Elak T'sahn~
+SAY NAME2 ~Elak T'sahn~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp08.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp08~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp08~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp08~ #32 // death variable
+SAY NAME1 ~Umbra ut Veritas~
+SAY NAME2 ~Umbra ut Veritas~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp09.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp09~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp09~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp09~ #32 // death variable
+SAY NAME1 ~Janus~
+SAY NAME2 ~Janus~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp10.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp10~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp10~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp10~ #32 // death variable
+SAY NAME1 ~Aldon Val'kar~
+SAY NAME2 ~Aldon Val'kar~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp11.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp11~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0sapp11~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp11~ #32 // death variable
+SAY NAME1 ~Acolyte Brennan~
+SAY NAME2 ~Acolyte Brennan~
+
+COPY ~%MOD_FOLDER%/creatures/c0sapp12.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sapp12~  #8  // override
+WRITE_ASCII 0x2cc ~c0sapp12~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sapp12~ #32 // death variable
+SAY NAME1 ~High Priestess Alestria~
+SAY NAME2 ~High Priestess Alestria~
+
+COPY ~%MOD_FOLDER%/creatures/c0sagua1.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sagua1~  #8  // override
+WRITE_ASCII 0x250 ~ohbpal01~  #8  // class
+WRITE_ASCII 0x2cc ~c0sagua1~  #8  // dialogue
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x280 ~c0sagua1~ #32 // death variable
+SAY NAME1 ~Shadovar Guard~
+SAY NAME2 ~Shadovar Guard~
+
+COPY ~%MOD_FOLDER%/creatures/c0sagua1.cre~ ~override/c0sagua2.cre~
+WRITE_ASCII 0x248 ~c0sagua1~  #8  // override
+WRITE_ASCII 0x250 ~ohbpal01~  #8  // class
+WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x2cc ~c0sagua1~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sagua1~ #32 // death variable
+SAY NAME1 ~Shadovar Sentry~
+SAY NAME2 ~Shadovar Sentry~
+
+COPY ~%MOD_FOLDER%/creatures/c0sacom1.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sacom~  #8  // override
+WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x250 ~ohbmag01~  #8  // class
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
+SAY NAME1 ~Shadovar Noble~
+SAY NAME2 ~Shadovar Noble~
+
+COPY ~%MOD_FOLDER%/creatures/c0sacom2.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sacom~  #8  // override
+WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x250 ~ohbmag01~  #8  // class
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
+SAY NAME1 ~Shadovar Rogue~
+SAY NAME2 ~Shadovar Rogue~
+
+COPY ~%MOD_FOLDER%/creatures/c0sacom3.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sacom~  #8  // override
+WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x250 ~ohbmag01~  #8  // class
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
+SAY NAME1 ~Shadovar Mage~
+SAY NAME2 ~Shadovar Mage~
+
+COPY ~%MOD_FOLDER%/creatures/c0sacom4.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sacom~  #8  // override
+WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x250 ~ohbmag01~  #8  // class
+WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
+SAY NAME1 ~Shadovar Noble~
+SAY NAME2 ~Shadovar Noble~
+
+COPY ~%MOD_FOLDER%/creatures/c0sacom5.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sacom~  #8  // override
+WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
+SAY NAME1 ~Commoner~
+SAY NAME2 ~Commoner~
+
+COPY ~%MOD_FOLDER%/creatures/c0sacom6.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sacom~  #8  // override
+WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
+SAY NAME1 ~Commoner~
+SAY NAME2 ~Commoner~
+
+COPY_EXISTING ~elepuz01.cre~ ~override/c0sapat1.cre~
+WRITE_ASCII 0x248 ~c0sapat1~  #8  // override
+WRITE_ASCII 0x2cc ~c0sapat1~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sapat1~ #32 // death variable
+SAY NAME1 ~Patron~
+SAY NAME2 ~Patron~
+ADD_CRE_ITEM ~c0unisha~ #0 #0 #0 ~NONE~ ~cloak~
+
+COPY_EXISTING ~elepuz03.cre~ ~override/c0sapat3.cre~
+WRITE_ASCII 0x248 ~c0sapat1~  #8  // override
+WRITE_ASCII 0x2cc ~c0sapat1~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sapat1~ #32 // death variable
+SAY NAME1 ~Patron~
+SAY NAME2 ~Patron~
+ADD_CRE_ITEM ~c0unisha~ #0 #0 #0 ~NONE~ ~cloak~
+
+COPY ~%MOD_FOLDER%/creatures/c0victus.cre~ ~override~
+WRITE_ASCII 0x248 ~c0victus~  #8  // override
+WRITE_ASCII 0x250 ~ohbthief~  #8  // class
+WRITE_ASCII 0x258 ~c0victus~  #8  // race
+WRITE_ASCII 0x260 ~c0victus~  #8  // general
+WRITE_ASCII 0x268 ~ohbfig03~  #8  // default
+WRITE_ASCII 0x2cc ~c0victus~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0victus~ #32 // death variable
+SAY NAME1 ~Commander Victus~
+SAY NAME2 ~Commander Victus~
+
+COPY ~%MOD_FOLDER%/creatures/c0velsim.cre~ ~override~
+WRITE_ASCII 0x248 ~c0velsim~  #8  // override
+WRITE_ASCII 0x250 ~ohbthief~  #8  // class
+WRITE_ASCII 0x258 ~c0velsim~  #8  // race
+WRITE_ASCII 0x260 ~c0velsim~  #8  // general
+WRITE_ASCII 0x268 ~ohbfig01~  #8  // default
+WRITE_ASCII 0x2cc ~c0velsim~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0velsim~ #32 // death variable
+SAY NAME1 ~Commander Victus~
+SAY NAME2 ~Commander Victus~
+
+COMPILE ~%MOD_FOLDER%/dialogue/c0ophel.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sagol.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sagua1.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sapp01.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sapp03.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sapp06.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sapp07.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sapp09.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sapp11.d~
+
+COMPILE ~%MOD_FOLDER%/scripts/c0ophel.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sadept.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sagol.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sagua1.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sacom.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa01.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa02.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa03.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa04.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa05.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa06.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa09.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sa11.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sapp01.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sapp03.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sapp06.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0victus.baf~
+
+COPY ~%MOD_FOLDER%/items/c0sasto1.sto~ ~override~
+SAY 0xc ~Darkflame Enclave~
+
+COPY ~%MOD_FOLDER%/items/c0sasto2.sto~ ~override~
+SAY 0xc ~Darkflame Enclave~
+
+COPY ~%MOD_FOLDER%/items/c0sasto3.sto~ ~override~
+SAY 0xc ~High Priest Andros~
+
+COPY ~%MOD_FOLDER%/items/c0sasto4.sto~ ~override~
+SAY 0xc ~Elak T'sahn, Apothecary~
+
+ACTION_IF GAME_IS ~bgee~
+THEN BEGIN
+EXTEND_TOP ~ar2300.bcs~ ~shadowadept/scripts/ar2300.baf~
+EXTEND_TOP ~ar0900.bcs~ ~shadowadept/scripts/ar0900.baf~
+EXTEND_TOP ~ar2615.bcs~ ~shadowadept/scripts/ar2615.baf~
+EXTEND_TOP ~ar3802.bcs~ ~shadowadept/scripts/ar3802.baf~
+EXTEND_TOP ~ar3901.bcs~ ~shadowadept/scripts/ar3901.baf~
+EXTEND_TOP ~ar5001.bcs~ ~shadowadept/scripts/ar5001.baf~
+END
+
+ACTION_IF GAME_IS ~eet~
+THEN BEGIN
+EXTEND_TOP ~bg2300.bcs~ ~shadowadept/scripts/ar2300.baf~
+EXTEND_TOP ~bg0900.bcs~ ~shadowadept/scripts/ar0900.baf~
+EXTEND_TOP ~bg2615.bcs~ ~shadowadept/scripts/ar2615.baf~
+EXTEND_TOP ~bg3802.bcs~ ~shadowadept/scripts/ar3802.baf~
+EXTEND_TOP ~bg3901.bcs~ ~shadowadept/scripts/ar3901.baf~
+EXTEND_TOP ~bg5001.bcs~ ~shadowadept/scripts/ar5001.baf~
+END

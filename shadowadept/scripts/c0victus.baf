@@ -1,0 +1,13 @@
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ShadowTwin","LOCALS",0)
+THEN
+  RESPONSE #100
+	SetGlobal("ShadowTwin","LOCALS",1)
+	SetSequence(SEQ_CAST)
+	DisplayStringHead(Myself,~Shadow Twin~)
+	CreateVisualEffectObject("c0saef2",Myself)
+	CreateCreatureObjectOffset("c0velsim",Myself,[-10.-10])
+	CreateCreatureObjectOffset("c0velsim",Myself,[-10.-10])
+    Continue()
+END

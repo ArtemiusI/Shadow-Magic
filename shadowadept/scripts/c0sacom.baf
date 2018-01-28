@@ -1,0 +1,16 @@
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ShadeEnclaveHostile","MYAREA",0)
+THEN
+  RESPONSE #100
+	SetGlobal("ShadeEnclaveHostile","MYAREA",1)
+END
+
+IF
+	!Class(Myself,INNOCENT)
+	Global("ShadeEnclaveHostile","MYAREA",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+  RESPONSE #100
+	Enemy()
+END

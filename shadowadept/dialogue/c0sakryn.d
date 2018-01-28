@@ -52,7 +52,7 @@ CHAIN C0SAKRYN a1.7
 = ~Despite their actions, I do not wish them harmed, but I fear that their power, together with their lost sanity, will draw unnecessary harm and attention in this realm. I seek those of capable skill in this place, where travellers come and go, to seek out my lost apprentices.~
 END
 ++ ~If you're their master, surely you could find and deal with them yourself?~ + a1.8
-++ ~Perhaps I could find these apprentices for you.~ + a1.9
+++ ~Perhaps I could find these apprentices for you.~ DO ~SetGlobal("C0SAQuest1","GLOBAL",1)~ + a1.9
 ++ ~Good luck with that. I'll be going now.~ + b0
 
 CHAIN C0SAKRYN a1.8
@@ -73,7 +73,7 @@ CHAIN IF ~!Global("C0KrynTalk","GLOBAL",0)~ THEN C0SAKRYN b
 END
 + ~Global("TalkMakkai","LOCALS",1) Global("TalkSlaves","LOCALS",0)~ + ~Mak'kai mentioned that your apprentices are slaves. Is that true?~ DO ~SetGlobal("TalkSlaves","LOCALS",1)~ + slaves
 + ~Global("TalkMakkai","LOCALS",1) Global("TalkEbonshade","LOCALS",0)~ + ~What is the ebonshade madness?~ DO ~SetGlobal("TalkEbonshade","LOCALS",1)~ + ebonshade
-+ ~!Global("C0KrynTask","GLOBAL",1)~ + ~Tell me of your purpose for being here.~ + a1.7
++ ~!Global("C0SAQuest1","GLOBAL",1)~ + ~Tell me of your purpose for being here.~ + a1.7
 + ~Dead("c0samag3") Global("TalkMakkai","LOCALS",0)~ + ~Mak'kai managed to regain his sanity before he forced me to kill him.~ DO ~SetGlobal("TalkMakkai","LOCALS",1)~ + makkai
 + ~Dead("c0samag5") Global("TalkOphelia","LOCALS",0)~ + ~Ivette kept mentioning someone called Ophelia. Do you know who she was talking about?~ DO ~SetGlobal("TalkOphelia","LOCALS",1)~ + ophelia
 + ~PartyHasItem("c0samag1")~ + ~I have the staff of Xarius the Black.~ DO ~TakePartyItem("c0samag1") DestroyItem("c0samag1") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
@@ -96,12 +96,12 @@ Specifics(Player5,12)
 Specifics(Player6,12)~ + ~I would like to see your special stock.~ + b3
 ++ ~Nothing for now.~ + b0
 
-CHAIN IF ~!Global("C0KrynTalk","GLOBAL",0)~ THEN C0SAKRYN b.1
+CHAIN C0SAKRYN b.1
 ~Is there anything else you require?~
 END
 + ~Global("TalkMakkai","LOCALS",1) Global("TalkSlaves","LOCALS",0)~ + ~Mak'kai mentioned that your apprentices are slaves. Is that true?~ DO ~SetGlobal("TalkSlaves","LOCALS",1)~ + slaves
 + ~Global("TalkMakkai","LOCALS",1) Global("TalkEbonshade","LOCALS",0)~ + ~What is the ebonshade madness?~ DO ~SetGlobal("TalkEbonshade","LOCALS",1)~ + ebonshade
-+ ~!Global("C0KrynTask","GLOBAL",1)~ + ~Tell me of your purpose for being here.~ + a1.7
++ ~!Global("C0SAQuest1","GLOBAL",1)~ + ~Tell me of your purpose for being here.~ + a1.7
 + ~Dead("c0samag3") Global("TalkMakkai","LOCALS",0)~ + ~Mak'kai managed to regain his sanity before he forced me to kill him.~ DO ~SetGlobal("TalkMakkai","LOCALS",1)~ + makkai
 + ~Dead("c0samag5") Global("TalkOphelia","LOCALS",0)~ + ~Ivette kept mentioning someone called Ophelia. Do you know who she was talking about?~ DO ~SetGlobal("TalkOphelia","LOCALS",1)~ + ophelia
 + ~PartyHasItem("c0samag1")~ + ~I have the staff of Xarius the Black.~ DO ~TakePartyItem("c0samag1") DestroyItem("c0samag1") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
@@ -133,7 +133,7 @@ END
 
 CHAIN C0SAKRYN slaves
 ~The Shade Enclave deals in slavery, this I will not deny. Neither will I deny that I 'owned' my apprentices, in a manner of speaking.~
-= ~But the truth is not so simple. The Shadover come to this plane to claim those with skills of any kind. Those with arcane talent are treated... especially cruelly. They are administered a nearly lethal amount of ebonshade to enable their control over the Shadow Weave.~
+= ~But the truth is not so simple. The Shadovar come to this plane to claim those with skills of any kind. Those with arcane talent are treated... especially cruelly. They are administered a nearly lethal amount of ebonshade to enable their control over the Shadow Weave.~
 = ~If the process does not kill them, it inevitably drives them mad if left alone. It cannot be treated - only overcome. I do what I can for these unfortunate souls by giving them the training they require. But, as you have seen... sometimes even that is not enough.~
 = ~Perhaps you, with whatever morals you hold, think this does not justify the act of indulging in slavery, but I consider my actions a necessary evil.~
 END
@@ -174,9 +174,7 @@ DO ~GiveGoldForce(2000)~
 == C0SAKRYN ~Your reward, as promised...~
 END
 IF ~GlobalLT("C0SAMageStaves","GLOBAL",2)~ EXTERN C0SAKRYN b1.1
-IF ~Global("C0SAMageStaves","GLOBAL",2)~ EXTERN C0SAKRYN b1.2
-IF ~Global("C0SAMageStaves","GLOBAL",3)~ EXTERN C0SAKRYN b1.2
-IF ~Global("C0SAMageStaves","GLOBAL",4)~ EXTERN C0SAKRYN b1.2
+IF ~GlobalGT("C0SAMageStaves","GLOBAL",1) GlobalLT("C0SAMageStaves","GLOBAL",5)~ EXTERN C0SAKRYN b1.2
 IF ~GlobalGT("C0SAMageStaves","GLOBAL",4)~ EXTERN C0SAKRYN b1.3
 
 CHAIN C0SAKRYN b1.1
@@ -202,7 +200,7 @@ DO ~Addexperienceparty(1000)~
 EXIT
 
 CHAIN C0SAKRYN b1.3
-~You have found all five of my apprentices. *sigh* 'Tis unfortunate that the madness had taken them beyond any chance of recovery, and now ther souls will become one with the Shadow Weave. Perhaps I should have sought them out myself after all...~
+~You have found all five of my apprentices. *sigh* 'Tis unfortunate that the madness had taken them beyond any chance of recovery, and now their souls will become one with the Shadow Weave. Perhaps I should have sought them out myself after all...~
 = ~Regardless, I appreciate your assistance in this matter. Take this as a token of my gratitude.~
 END
 IF ~OR(6)

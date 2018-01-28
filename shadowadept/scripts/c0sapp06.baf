@@ -1,0 +1,21 @@
+IF
+	OR(2)
+	AttackedBy(Player1,DEFAULT)
+	AttackedBy([PC],DEFAULT)
+	!See([ENEMY])
+THEN
+  RESPONSE #100
+	FaceObject(Lastattackerof(Myself))
+	SmallWait(5)
+	SetSequence(SEQ_ATTACK_BACKSLASH)
+	CreateVisualEffectObject("c0pwwrd",Lastattackerof(Myself))
+	Kill(Lastattackerof(Myself))
+END
+
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+	Face(SE)
+	Continue()
+END

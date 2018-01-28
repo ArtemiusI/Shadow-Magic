@@ -1,0 +1,38 @@
+IF
+	Global("RandomWeapon","LOCALS",0)
+THEN
+	RESPONSE #25
+	SetGlobal("RandomWeapon","LOCALS",1)
+	DestroyItem("sw1h42")
+	DestroyItem("halb07")
+	EquipMostDamagingMelee()
+	Continue()
+	RESPONSE #50
+	SetGlobal("RandomWeapon","LOCALS",1)
+	DestroyItem("blun13")
+	DestroyItem("halb07")
+	EquipMostDamagingMelee()
+	Continue()
+	RESPONSE #25
+	SetGlobal("RandomWeapon","LOCALS",1)
+	DestroyItem("sw1h42")
+	DestroyItem("blun13")
+	EquipMostDamagingMelee()
+	Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("ShadeEnclaveHostile","MYAREA",0)
+THEN
+  RESPONSE #100
+	SetGlobal("ShadeEnclaveHostile","MYAREA",1)
+END
+
+IF
+	Global("ShadeEnclaveHostile","MYAREA",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+  RESPONSE #100
+	Enemy()
+END

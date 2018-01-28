@@ -1,0 +1,35 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+	Wait(1)
+	DisplayString(Player1,~You feel a strange emanation as you realize you are unable to use any magic in this area.~)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #90
+	NoAction()
+	RESPONSE #5
+	ActionOverride("c0sapp09",MoveToPoint([360.462]))
+	Wait(2)
+	ActionOverride("c0sapp09",Face(SE))
+	Wait(4)
+	ActionOverride("c0sapp09",MoveToPoint([254.542]))
+	Wait(2)
+	ActionOverride("c0sapp09",Face(SE))
+	Wait(4)
+	ActionOverride("c0sapp09",MoveToPoint([330.474]))
+	Wait(2)
+	ActionOverride("c0sapp09",Face(SE))
+	RESPONSE #3
+	ActionOverride("c0sapp09",Face(NE))
+	ActionOverride("c0sapp09",SetSequence(SEQ_CAST))
+	CreateVisualEffect("c0charm",[381.460])
+	RESPONSE #2
+	ActionOverride("c0sapp09",Face(NE))
+	ActionOverride("c0sapp09",SetSequence(SEQ_CAST))
+	CreateVisualEffect("c0charm",[322.507])
+END
+	
