@@ -9,13 +9,3 @@ THEN
 	ApplySpellRES("C0SA903B",Myself)
 	Continue()
 END
-
-IF
-	!InParty(Myself)
-	Specifics(Myself,12)
-	Global("C0NoSpellDuplicates","LOCALS",0)
-THEN
-  RESPONSE #100
-	SetGlobal("C0NoSpellDuplicates","LOCALS",1)
-	ApplySpellRES("c0sansd",Myself)
-END

@@ -1079,7 +1079,1521 @@ SAY 0x21A ~c0pro08a~
 COPY ~%MOD_FOLDER%/spells/c0proj10.pro~ ~override~
 SAY 0x21A ~c0pro10a~
 
-// spells
+////////////////////////////////////////
+//////////SPELLS////////////////////////
+////////////////////////////////////////
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv11.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %C0SALV1a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv12.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %C0SALV1b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv13.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %C0SALV1c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv14.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %C0SALV1d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv15.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %C0SALV1e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv16.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %C0SALV1f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv21.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv2a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv22.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv2b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv23.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv2c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv24.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv2d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv25.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv2e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv26.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv2f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv31.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv3a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv32.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv3b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv33.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv3c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv34.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv3d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv35.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv3e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv36.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv3f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv41.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv4a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv42.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv4b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv43.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv4c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv44.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv4d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv45.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv4e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv46.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv4f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv51.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv5a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv52.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv5b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv53.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv5c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv54.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv5d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv55.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv5e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv56.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv5f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv61.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv6a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv62.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv6b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv63.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv6c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv64.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv6d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv65.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv6e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv66.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv6f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv71.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv7a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv72.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv7b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv73.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv7c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv74.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv7d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv75.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv7e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv76.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv7f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv81.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv8a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv82.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv8b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv83.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv8c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv84.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv8d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv85.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv8e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv86.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv8f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv91.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv9a%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv92.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv9b%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv93.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv9c%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv94.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv9d%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv95.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv9e%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv11.spl~ ~override/c0salv96.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206
+	STR_VAR
+	  resource = %c0salv9f%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv1a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV1%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV11%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv1b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV1%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV12%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv1c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV1%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV13%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv1d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV1%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV14%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv1e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV1%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV15%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv1f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV1%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV16%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv2a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV2%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV21%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv2b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV2%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV22%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv2c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV2%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV23%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv2d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV2%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV24%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv2e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV2%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV25%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv2f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV2%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV26%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv3a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV3%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV31%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv3b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV3%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV32%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv3c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV3%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV33%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv3d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV3%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV34%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv3e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV3%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV35%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv3f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV3%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV36%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv4a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV4%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV41%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv4b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV4%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV42%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv4c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV4%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV43%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv4d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV4%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV44%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv4e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV4%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV45%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv4f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV4%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV46%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv5a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV5%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV51%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv5b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV5%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV52%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv5c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV5%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV53%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv5d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV5%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV54%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv5e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV5%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV55%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv5f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV5%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV56%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv6a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV6%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV61%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv6b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV6%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV62%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv6c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV6%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV63%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv6d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV6%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV64%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv6e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV6%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV65%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv6f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV6%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV66%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv7a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV7%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV71%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv7b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV7%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV72%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv7c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV7%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV73%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv7d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV7%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV74%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv7e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV7%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV75%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv7f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV7%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV76%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv8a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV8%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV81%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv8b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV8%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV82%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv8c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV8%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV83%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv8d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV8%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV84%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv8e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV8%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV85%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv8f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV8%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV86%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/c0salv9a.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV9%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV91%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/C0SALV9b.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV9%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV92%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/C0SALV9c.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV9%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV93%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/C0SALV9d.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV9%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV94%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/C0SALV9e.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV9%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV95%
+END
+
+COPY ~%MOD_FOLDER%/spells/c0salv1.spl~ ~override/C0SALV9f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 309
+	STR_VAR
+	  resource = %C0SALV9%
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 146
+	STR_VAR
+	  resource = %C0SALV96%
+END
 
 COPY ~%MOD_FOLDER%/spells/c0saint1.spl~ ~override~
   LPF ALTER_EFFECT

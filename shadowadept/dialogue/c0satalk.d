@@ -6,17 +6,17 @@ BEGIN C0SATALK
 
 IF ~!Class(Myself,SORCERER) CheckStat(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA1
 SAY ~\[16 CHARISMA\] Your above-average charisma has allowed you to bargain with the Shadow Weave for an extra level 1 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogueNoSet(Myself)~ EXIT
+IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~!Class(Myself,SORCERER) CheckStatGT(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA2
 SAY ~\[17+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for two extra level 1 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",2) IncrementGlobal("C0SALv1","LOCALS",2) StartDialogueNoSet(Myself)~ EXIT
+IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",2) IncrementGlobal("C0SALv1","LOCALS",2) StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~!Class(Myself,SORCERER) CheckStatGT(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",1)~ EXTRA3
 SAY ~\[17+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 1 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogueNoSet(Myself)~ EXIT
+IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 2 Spell
@@ -27,7 +27,7 @@ ClassLevelGT(Myself,WIZARD,2)
 ClassLevelGT(Myself,ROGUE,3) CheckStat(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA4
 SAY ~\[17 CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~!Class(Myself,SORCERER) 
@@ -36,7 +36,7 @@ ClassLevelGT(Myself,WIZARD,2)
 ClassLevelGT(Myself,ROGUE,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA5
 SAY ~\[18+ CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for two extra level 2 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",2) IncrementGlobal("C0SALv2","LOCALS",2)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~!Class(Myself,SORCERER) 
@@ -45,7 +45,7 @@ ClassLevelGT(Myself,WIZARD,2)
 ClassLevelGT(Myself,ROGUE,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",1)~ EXTRA6
 SAY ~\[18+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 3 Spell
@@ -56,7 +56,7 @@ ClassLevelGT(Myself,WIZARD,4)
 ClassLevelGT(Myself,ROGUE,6) CheckStat(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA7
 SAY ~\[18 CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for an extra level 3 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~!Class(Myself,SORCERER) 
@@ -65,7 +65,7 @@ ClassLevelGT(Myself,WIZARD,4)
 ClassLevelGT(Myself,ROGUE,6) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA8
 SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",2) IncrementGlobal("C0SALv3","LOCALS",2)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~!Class(Myself,SORCERER) 
@@ -74,7 +74,7 @@ ClassLevelGT(Myself,WIZARD,4)
 ClassLevelGT(Myself,ROGUE,6) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",1)~ EXTRA9
 SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 4 Spell
@@ -85,7 +85,7 @@ ClassLevelGT(Myself,WIZARD,6)
 ClassLevelGT(Myself,ROGUE,9) CheckStat(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA10
 SAY ~\[19 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 4 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~!Class(Myself,SORCERER) 
@@ -94,7 +94,7 @@ ClassLevelGT(Myself,WIZARD,6)
 ClassLevelGT(Myself,ROGUE,9) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA11
 SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",2) IncrementGlobal("C0SALv4","LOCALS",2)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~!Class(Myself,SORCERER) 
@@ -103,7 +103,7 @@ ClassLevelGT(Myself,WIZARD,6)
 ClassLevelGT(Myself,ROGUE,9) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",1)~ EXTRA12
 SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","LOCALS",2)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 5 Spell
@@ -114,7 +114,7 @@ ClassLevelGT(Myself,WIZARD,8)
 ClassLevelGT(Myself,ROGUE,12) CheckStatGT(Myself,20,CHR) Global("C0SAExtraLevel5Spell","LOCALS",0)~ EXTRA13
 SAY ~\[21 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 5 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel5Spell","LOCALS",1) IncrementGlobal("C0SALv5","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 6 Spell
@@ -125,7 +125,7 @@ ClassLevelGT(Myself,WIZARD,11)
 ClassLevelGT(Myself,ROGUE,15) CheckStatGT(Myself,21,CHR) Global("C0SAExtraLevel6Spell","LOCALS",0)~ EXTRA14
 SAY ~\[22 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 6 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel6Spell","LOCALS",1) IncrementGlobal("C0SALv6","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 7 Spell
@@ -134,7 +134,7 @@ IF ~!Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,13) CheckStatGT(Myself,22,CHR) Global("C0SAExtraLevel7Spell","LOCALS",0)~ EXTRA15
 SAY ~\[23 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 7 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel7Spell","LOCALS",1) IncrementGlobal("C0SALv7","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 8 Spell
@@ -143,7 +143,7 @@ IF ~!Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,15) CheckStatGT(Myself,23,CHR) Global("C0SAExtraLevel8Spell","LOCALS",0)~ EXTRA16
 SAY ~\[24 CHARISMA\] Your deific charisma has allowed you to bargain with the Shadow Weave for an extra level 8 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel8Spell","LOCALS",1) IncrementGlobal("C0SALv8","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 9 Spell
@@ -152,24 +152,24 @@ IF ~!Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,17) CheckStatGT(Myself,24,CHR) Global("C0SAExtraLevel9Spell","LOCALS",0)~ EXTRA17
 SAY ~\[25 CHARISMA\] Your deific charisma has allowed you to bargain with the Shadow Weave for an extra level 9 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel9Spell","LOCALS",1) IncrementGlobal("C0SALv9","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 1 Spell
 
 IF ~Class(Myself,SORCERER) CheckStat(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA1
 SAY ~\[16 CHARISMA\] Your above-average charisma has allowed you to bargain with the Shadow Weave for an extra level 1 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogueNoSet(Myself)~ EXIT
+IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~Class(Myself,SORCERER) CheckStatGT(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA2
 SAY ~\[17+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for two extra level 1 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",2) IncrementGlobal("C0SALv1","LOCALS",2) StartDialogueNoSet(Myself)~ EXIT
+IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",2) IncrementGlobal("C0SALv1","LOCALS",2) StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~Class(Myself,SORCERER) CheckStatGT(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",1)~ EXTRA3
 SAY ~\[17+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 1 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogueNoSet(Myself)~ EXIT
+IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 2 Spell
@@ -178,21 +178,21 @@ IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,3) CheckStat(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA4
 SAY ~\[17 CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA5
 SAY ~\[18+ CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for two extra level 2 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",2) IncrementGlobal("C0SALv2","LOCALS",2)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~Class(Myself,SORCERER) 
 ClassLevelGT(Myself,WIZARD,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",1)~ EXTRA6
 SAY ~\[18+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 3 Spell
@@ -201,21 +201,21 @@ IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,5) CheckStat(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA7
 SAY ~\[18 CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for an extra level 3 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~Class(Myself,SORCERER) 
 ClassLevelGT(Myself,WIZARD,5) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA8
 SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",2) IncrementGlobal("C0SALv3","LOCALS",2)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~Class(Myself,SORCERER) 
 ClassLevelGT(Myself,WIZARD,5) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",1)~ EXTRA9
 SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 4 Spell
@@ -224,21 +224,21 @@ IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,7) CheckStat(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA10
 SAY ~\[19 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 4 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~Class(Myself,SORCERER) 
 ClassLevelGT(Myself,WIZARD,7) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA11
 SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",2) IncrementGlobal("C0SALv4","LOCALS",2)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 IF ~Class(Myself,SORCERER) 
 ClassLevelGT(Myself,WIZARD,7) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",1)~ EXTRA12
 SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","LOCALS",2)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 5 Spell
@@ -247,7 +247,7 @@ IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,9) CheckStatGT(Myself,20,CHR) Global("C0SAExtraLevel5Spell","LOCALS",0)~ EXTRA13
 SAY ~\[21 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 5 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel5Spell","LOCALS",1) IncrementGlobal("C0SALv5","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 6 Spell
@@ -256,7 +256,7 @@ IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,11) CheckStatGT(Myself,21,CHR) Global("C0SAExtraLevel6Spell","LOCALS",0)~ EXTRA14
 SAY ~\[22 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 6 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel6Spell","LOCALS",1) IncrementGlobal("C0SALv6","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 7 Spell
@@ -265,7 +265,7 @@ IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,13) CheckStatGT(Myself,22,CHR) Global("C0SAExtraLevel7Spell","LOCALS",0)~ EXTRA15
 SAY ~\[23 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 7 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel7Spell","LOCALS",1) IncrementGlobal("C0SALv7","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 8 Spell
@@ -274,7 +274,7 @@ IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,15) CheckStatGT(Myself,23,CHR) Global("C0SAExtraLevel8Spell","LOCALS",0)~ EXTRA16
 SAY ~\[24 CHARISMA\] Your deific charisma has allowed you to bargain with the Shadow Weave for an extra level 8 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel8Spell","LOCALS",1) IncrementGlobal("C0SALv8","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
 // Extra Level 9 Spell
@@ -283,10 +283,19 @@ IF ~Class(Myself,SORCERER)
 ClassLevelGT(Myself,WIZARD,17) CheckStatGT(Myself,24,CHR) Global("C0SAExtraLevel9Spell","LOCALS",0)~ EXTRA17
 SAY ~\[25 CHARISMA\] Your deific charisma has allowed you to bargain with the Shadow Weave for an extra level 9 spell.~ [C0BLANK]
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel9Spell","LOCALS",1) IncrementGlobal("C0SALv9","LOCALS",1)
-StartDialogueNoSet(Myself)~ EXIT
+StartDialogOverride("c0satalk",Myself)~ EXIT
 END
 
-IF ~True()~ learn
+IF ~OR(9)
+!Global("C0SALv1","LOCALS",0)
+!Global("C0SALv2","LOCALS",0)
+!Global("C0SALv3","LOCALS",0)
+!Global("C0SALv4","LOCALS",0)
+!Global("C0SALv5","LOCALS",0)
+!Global("C0SALv6","LOCALS",0)
+!Global("C0SALv7","LOCALS",0)
+!Global("C0SALv8","LOCALS",0)
+!Global("C0SALv9","LOCALS",0)~ learn
 SAY ~Choose a spell level:~ [C0BLANK]
 + ~GlobalGT("C0SALv1","LOCALS",0)
 OR(12)
@@ -2435,7 +2444,7 @@ IF ~OR(9)
 !Global("C0SALv6","LOCALS",0)
 !Global("C0SALv7","LOCALS",0)
 !Global("C0SALv8","LOCALS",0)
-!Global("C0SALv9","LOCALS",0)~ EXIT
+!Global("C0SALv9","LOCALS",0)~ DO ~StartDialogOverride("c0satalk",Myself)~ EXIT
 IF ~Global("C0SALv1","LOCALS",0)
 Global("C0SALv2","LOCALS",0)
 Global("C0SALv3","LOCALS",0)
@@ -2444,7 +2453,7 @@ Global("C0SALv5","LOCALS",0)
 Global("C0SALv6","LOCALS",0)
 Global("C0SALv7","LOCALS",0)
 Global("C0SALv8","LOCALS",0)
-Global("C0SALv9","LOCALS",0)~ DO ~SetGlobal("C0SADialog","GLOBAL",2)~ EXIT
+Global("C0SALv9","LOCALS",0)~ EXIT
 END
 
 IF ~Global("C0SABOOK","LOCALS",1)~ CHEATER

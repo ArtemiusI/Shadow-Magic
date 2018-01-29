@@ -1,4 +1,4 @@
-// Kit change
+// Kit
 
 IF
   Kit(Lastsummonerof(Myself),C0SADEP2)
@@ -14,6 +14,7 @@ THEN
 	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV8","LOCALS",0))
 	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV9","LOCALS",0))
 	ActionOverride(Lastsummonerof(Myself),AddKit(C0SADEPT))
+	ApplySpellRES("c0erase2",Lastsummonerof(Myself))
 	ChangeSpecifics(Lastsummonerof(Myself),12)
 	DestroySelf()
 END
@@ -21,49 +22,23 @@ END
 // Dialog
 
 IF
-	InMyArea("c0satalk")
-THEN
-  RESPONSE #100
-	DestroySelf()
-END
-
-IF
-  Kit(Lastsummonerof(Myself),C0SADEPT)
+  OnCreation()
   Detect(Lastsummonerof(Myself))
-  Global("C0SADialog","Global",0)
   !Global("C0SABOOK","GLOBAL",1)
 THEN
   RESPONSE #100
-	SetGlobal("C0SADialog","Global",1)
 	SetGlobal("Start","LOCALS",1)
 END
 
 IF
-  Global("C0SADialog","Global",1)
   Global("Start","LOCALS",1)
 THEN
   RESPONSE #100
     ActionOverride(LastSummonerOf(Myself),StartDialogOverride("c0satalk",Myself))
-END
-
-IF
-  Global("C0SADialog","Global",1)
-  !Global("Start","LOCALS",1)
-THEN
-  RESPONSE #100
-    DestroySelf()
-END
-
-IF
-  Global("C0SADialog","Global",2)
-THEN
-  RESPONSE #100
-  SetGlobal("C0SADialog","GLOBAL",0)
 	DestroySelf()
 END
 
 IF
-  Kit(Lastsummonerof(Myself),C0SADEPT)
 	Global("C0SABOOK","GLOBAL",1)
 THEN
   RESPONSE #100

@@ -190,7 +190,7 @@ COPY ~%MOD_FOLDER%/items/c0ophrin.bam~ ~override~
 COPY ~%MOD_FOLDER%/items/c0ophrin.itm~ ~override~
 SAY NAME1 ~Ring~
 SAY NAME2 ~Reyn'Tanthul Signet Ring~
-SAY DESC ~This ring bears the insignia of House Reyn'Tanthul, a noble house related to the Reyns and Tanthuls. Its emblem is a fusion of that of the two houses. The magic of the signet ring bonds it to those of the Reyn'Tanthul line and prevents it from being removed from its owner, Ophelia.
+SAY DESC ~This ring bears the insignia of House Reyn'Tanthul, a branch of the noble Tanthul house. The magic of the signet ring bonds it to those of the Reyn'Tanthul line and prevents it from being removed from its owner, Ophelia.
 
 STATISTICS:
 
