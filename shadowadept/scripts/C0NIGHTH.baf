@@ -1,4 +1,12 @@
 IF
+	Die()
+THEN
+  RESPONSE #100
+	CreateVisualEffectObject("c0blackf",Myself)
+	DestroySelf()
+END
+
+IF
 	HasItem("c0nighth",Myself)
 	AreaType(OUTDOOR)
 	OR(2)

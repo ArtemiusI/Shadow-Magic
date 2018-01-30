@@ -1,7 +1,19 @@
 IF
+	HPLT(Player1,1)
+THEN
+RESPONSE #100
+	CreateVisualEffectObject("c0disint",Lastsummonerof(Myself))
+	Kill(Lastsummonerof(Myself))
+	GameOver(~The main character has overused the power of the Shadow Weave and was destroyed by its energies. You must restart the game.~)
+	Continue()
+END
+
+IF
+	!HPLT(Player1,1)
 	HPLT(Lastsummonerof(Myself),1)
 THEN
 RESPONSE #100
 	CreateVisualEffectObject("c0disint",Lastsummonerof(Myself))
 	Kill(Lastsummonerof(Myself))
+	DestroySelf()
 END

@@ -1,6 +1,6 @@
-COPY ~shadowadept/shadowmonk/luc0sm.2da~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/luc0sm.2da~ ~override~
 
-INCLUDE ~shadowadept/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
 ADD_KIT ~C0SMONK~
 
  // appended to CLASWEAP.2da
@@ -28,7 +28,7 @@ ADD_KIT ~C0SMONK~
  ~C0SMONK                  	0       0       0       0       0       0~
 
  // path to your CLAB-style 2da file 
- ~shadowadept/shadowmonk/C0SMONK.2da~
+ ~%MOD_FOLDER%/shadowmonk/C0SMONK.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~K_MN_H~
@@ -98,9 +98,9 @@ LAF fl#add_kit_ee
 	clascolr = ~27 136 119 21 187~
 END
 
-COPY ~shadowadept/shadowmonk/C0SMNKAB.spl~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMDRN.eff~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMDRN2.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMNKAB.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMDRN.eff~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMDRN2.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -110,50 +110,50 @@ COPY ~shadowadept/shadowmonk/C0SMDRN2.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~One Level Drained~)
   END
 
-COPY ~shadowadept/shadowmonk/C0MNKHLA.bam~ ~override~
-COPY ~shadowadept/shadowmonk/C0MNKHLA.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0MNKHLA.bam~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0MNKHLA.spl~ ~override~
 SAY NAME1 ~One With Shadows~
 SAY NAME2 ~One With Shadows~
 SAY UNIDENTIFIED_DESC ~One With Shadows
 The shadow monk's training has allowed <PRO_HIMHER> to become a being of both the Prime Material Plane and the Shadow Plane, giving <PRO_HIMHER> 20% resistance to physical damage, +2 bonus to all saves, -2 bonus to armor class and immunity to Imprisonment and Time Stop.~
 
-COPY ~shadowadept/shadowmonk/C0SMONK1.2da~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMONK1.bam~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMONK1.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK1.2da~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK1.bam~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK1.spl~ ~override~
 SAY NAME1 ~Shadow Pool I~
 SAY NAME2 ~Shadow Pool I~
 SAY UNIDENTIFIED_DESC ~Shadow Pool I
 
 The shadow monk channels the power of the Shadow Weave to cast one of the following 1st level Shadow Weave spells: Shadow Missile, Blinding Darkness, Shadow Veil, Decoy.~
 
-COPY ~shadowadept/shadowmonk/C0SMONK2.2da~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMONK2.bam~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMONK2.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK2.2da~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK2.bam~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK2.spl~ ~override~
 SAY NAME1 ~Shadow Pool II~
 SAY NAME2 ~Shadow Pool II~
 SAY UNIDENTIFIED_DESC ~Shadow Pool II
 
 The shadow monk channels the power of the Shadow Weave to cast one of the following 2nd level Shadow Weave spells: Dark Mirage, Black Mist, Ghostly Visage, Shadow Walk.~
 
-COPY ~shadowadept/shadowmonk/C0SMONK3.2da~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMONK3.bam~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMONK3.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK3.2da~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK3.bam~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK3.spl~ ~override~
 SAY NAME1 ~Shadow Pool III~
 SAY NAME2 ~Shadow Pool III~
 SAY UNIDENTIFIED_DESC ~Shadow Pool III
 
 The shadow monk channels the power of the Shadow Weave to cast one of the following 3rd level Shadow Weave spells: Shadowblast, Lifedrinker Touch, Shadow Comets, Impose.~
 
-COPY ~shadowadept/shadowmonk/C0SMONK4.2da~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMONK4.bam~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMONK4.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK4.2da~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK4.bam~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK4.spl~ ~override~
 SAY NAME1 ~Shadow Pool IV~
 SAY NAME2 ~Shadow Pool IV~
 SAY UNIDENTIFIED_DESC ~Shadow Pool IV
 
 The shadow monk channels the power of the Shadow Weave to cast one of the following 4th level Shadow Weave spells: Fireshield (Shadow), Shadeskin, Summon Shadow, Shar's Blessing.~
 
-COPY ~shadowadept/shadowmonk/C0SMONK5.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK5.spl~ ~override~
 SAY NAME1 ~Shadow Door~
 SAY NAME2 ~Shadow Door~
 SAY UNIDENTIFIED_DESC ~Shadow Door
@@ -169,9 +169,9 @@ Saving Throw: None
 
 By means of this spell, the shadow monk creates the illusion of a door. The illusion also permits the shadow monk to appear to step through this "door" and disappear. In reality, <PRO_HESHE> has darted aside and can flee, totally invisible (as per the Improved Invisibility spell), for the spell's duration. A True Seeing spell, a Gem of Seeing, or similar magical means can reveal the shadow monk.~
 
-COPY ~shadowadept/shadowmonk/C0SMONK6.bam~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMSP6A.eff~ ~override~
-COPY ~shadowadept/shadowmonk/C0SMSP6A.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK6.bam~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMSP6A.eff~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMSP6A.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -180,7 +180,7 @@ COPY ~shadowadept/shadowmonk/C0SMSP6A.spl~ ~override~
       match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Six Levels Drained~)
   END
-COPY ~shadowadept/shadowmonk/C0SMONK6.spl~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK6.spl~ ~override~
 SAY NAME1 ~Deathstrike~
 SAY NAME2 ~Deathstrike~
 SAY UNIDENTIFIED_DESC ~Deathstrike

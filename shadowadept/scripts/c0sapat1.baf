@@ -1,0 +1,33 @@
+IF
+  Gender(Myself,MALE)
+  OR(2)
+  AttackedBy([GOODCUTOFF],DEFAULT)
+  Global("ShadeEnclaveHostile","MYAREA",1)
+  OR(3)
+    Allegiance(Myself,GOODBUTBLUE)
+    Allegiance(Myself,NEUTRAL)
+    Allegiance(Myself,EVILBUTBLUE)
+	Global("ImOutOfHere","LOCALS",0)
+THEN
+	RESPONSE #100
+	SetGlobal("ImOutOfHere","MYAREA",1)
+	Polymorph(NOBLE_MAN)
+	EscapeArea()
+END
+
+IF
+  Gender(Myself,FEMALE)
+  OR(2)
+  AttackedBy([GOODCUTOFF],DEFAULT)
+  Global("ShadeEnclaveHostile","MYAREA",1)
+  OR(3)
+    Allegiance(Myself,GOODBUTBLUE)
+    Allegiance(Myself,NEUTRAL)
+    Allegiance(Myself,EVILBUTBLUE)
+	Global("ImOutOfHere","LOCALS",0)
+THEN
+	RESPONSE #100
+	SetGlobal("ImOutOfHere","MYAREA",1)
+	Polymorph(NOBLE_WOMAN)
+	EscapeArea()
+END

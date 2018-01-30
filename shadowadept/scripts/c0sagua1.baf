@@ -22,6 +22,18 @@ THEN
 END
 
 IF
+  AttackedBy([GOODCUTOFF],DEFAULT)
+  OR(3)
+    Allegiance(Myself,GOODBUTBLUE)
+    Allegiance(Myself,NEUTRAL)
+    Allegiance(Myself,EVILBUTBLUE)
+THEN
+  RESPONSE #100
+    Shout(151)
+    Enemy()
+END
+
+IF
 	Allegiance(Myself,ENEMY)
 	Global("ShadeEnclaveHostile","MYAREA",0)
 THEN
@@ -36,3 +48,14 @@ THEN
   RESPONSE #100
 	Enemy()
 END
+
+IF
+	CharName("Shadovar Sentry",Myself)
+	Allegiance(Myself,NEUTRAL)
+THEN
+  RESPONSE #50
+	RandomWalkTime(2)
+  RESPONSE #50
+	NoAction()
+END
+	

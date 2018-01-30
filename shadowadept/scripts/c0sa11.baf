@@ -4,10 +4,17 @@ THEN
 	RESPONSE #100
 	Wait(1)
 	DisplayString(Player1,~You feel a strange emanation as you realize you are unable to use any magic in this area.~)
+	ApplySpellRES("c0saspf",Player1)
+	ApplySpellRES("c0saspf",Player2)
+	ApplySpellRES("c0saspf",Player3)
+	ApplySpellRES("c0saspf",Player4)
+	ApplySpellRES("c0saspf",Player5)
+	ApplySpellRES("c0saspf",Player6)
+	Continue()
 END
 
 IF
-	True()
+	CombatCounter(0)
 THEN
 	RESPONSE #90
 	NoAction()
@@ -31,5 +38,5 @@ THEN
 	ActionOverride("c0sapp09",Face(NE))
 	ActionOverride("c0sapp09",SetSequence(SEQ_CAST))
 	CreateVisualEffect("c0charm",[322.507])
+	Continue()
 END
-	

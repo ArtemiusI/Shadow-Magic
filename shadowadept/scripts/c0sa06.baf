@@ -18,10 +18,24 @@ END
 IF
 	OnCreation()
 THEN
+  RESPONSE #100
+	ApplySpellRES("c0saspf2",Player1)
+	ApplySpellRES("c0saspf2",Player2)
+	ApplySpellRES("c0saspf2",Player3)
+	ApplySpellRES("c0saspf2",Player4)
+	ApplySpellRES("c0saspf2",Player5)
+	ApplySpellRES("c0saspf2",Player6)
+	Continue()
+END
+
+IF
+	OnCreation()
+THEN
 	RESPONSE #100
 	Wait(1)
 	CloseDoor("ar0600d1")
 	CloseDoor("ar0600d2")
 	CloseDoor("ar0600d3")
 	CloseDoor("ar0600d4")
+	Continue()
 END

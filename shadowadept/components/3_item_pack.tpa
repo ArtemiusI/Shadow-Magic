@@ -1,5 +1,21 @@
 COPY ~%MOD_FOLDER%/itempack/bams~ ~override~
 
+// PVRZ-based bams
+
+ACTION_FOR_EACH bamFile IN ~c0samasc.bam~ BEGIN
+    COPY ~%MOD_FOLDER%/itempack/bams/%bamFile%~ ~override~
+      LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+    ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+      LAF INSTALL_PVRZ
+      INT_VAR
+        original_base_index = original_base_index
+        new_base_index = new_base_index
+      STR_VAR
+        source_file = EVAL ~%MOD_FOLDER%/pvrz/mos%original_base_index%.pvrz~
+      END
+    END
+END
+
 ////////////////////////////////////////
 /////////ITEMS//////////////////////////
 ////////////////////////////////////////
@@ -950,6 +966,22 @@ Requires:
  8 Strength
 
 Weight: 5~
+
+COPY ~%MOD_FOLDER%/itempack/c0samas1.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0samas2.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0samas3.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0samask.itm~ ~override~
+SAY NAME1 ~Mask~
+SAY NAME2 ~Eyes of the Void~
+SAY DESC ~This ornate mask resonates with power, as it contains a powerful enchantment that allows it to shield its wearer's mind from magical intrusion. The symbol of Shar is carved upon its center.
+
+STATISTICS:
+
+Equipped abilities:
+– Intelligence, Wisdom, Charisma: +1 (Sharrans)
+– Immunity to blindness, charm, confusion, domination, and hold
+
+Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sanos1.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sanos1.itm~ ~override~

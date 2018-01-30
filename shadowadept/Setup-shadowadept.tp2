@@ -1,5 +1,10 @@
 BACKUP ~shadowadept/backup~
 AUTHOR ~Artemius_I~
+ALWAYS
+  INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
+  INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
+  INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
+END
 AUTO_TRA ~%MOD_FOLDER%/translations/%s~
 LANGUAGE ~English~
          ~English~

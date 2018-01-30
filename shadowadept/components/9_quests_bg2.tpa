@@ -2,7 +2,7 @@
 ///////////////KIT//////////////////////
 ////////////////////////////////////////
 
-INCLUDE ~%MOD_FOLDER%/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
 ADD_KIT ~C0OPHEL~
 
  // appended to CLASWEAP.2da
@@ -79,8 +79,64 @@ COPY ~%MOD_FOLDER%/creatures/C0Ophel.cre~ ~override~
   WRITE_ASCII 0x248 ~C0Ophel~ #8  //override script
   WRITE_ASCII 0x280 ~C0Ophel~ #32  //DV
   WRITE_ASCII 0x2cc ~C0Ophel~ #8   //pre-joining dialogue file
-  WRITE_ASCII 0X34 ~~ #8   //small portrait
-  WRITE_ASCII 0x3c ~~ #8   //medium portrait
+  WRITE_ASCII 0X34 ~C0OPHEL~ #8   //small portrait
+  WRITE_ASCII 0x3c ~C0OPHEL~ #8   //medium portrait
+  SAY BIO ~~
+  SAY INITIAL_MEETING ~Hmm?~ [C0OPH21]
+  SAY MORALE ~This battle cannot be won. We should retreat!~ [C0OPH01]
+  SAY HAPPY ~You are the best of us.~ [C0OPH39]
+  SAY UNHAPPY_ANNOYED ~If you feel you're not fit to lead, say the words and I'll take over.~ [C0OPH33]
+  SAY UNHAPPY_SERIOUS ~Well, you may challenge my resolve, but I fear the opposite of that which you're convinced will occur, will occur.~ [C0OPH32]
+  SAY UNHAPPY_BREAKING_POINT ~What a shame. I thought I liked you.~
+  SAY LEADER ~Finally! Let me show you the right way of doing things.~ [C0OPH09]
+  SAY TIRED ~Ugh, let's retire this long day and ourselves with it.~ [C0DRA007]
+  SAY BORED ~Have all our tasks been completed?~ [C0OPH13]
+  SAY BATTLE_CRY1 ~Victory is ours for the taking!~ [C0OPH03]
+  SAY BATTLE_CRY2 ~Come, let's show them our mettle!~ [C0OPH04]
+  SAY BATTLE_CRY3 ~Glory is at hand!~ [C0OPH05]
+  SAY BATTLE_CRY4 ~United, we are invincible!~ [C0OPH06]
+  SAY BATTLE_CRY5 ~It's time to create our legends!~ [C0OPH07]
+  SAY DAMAGE ~Uh!~ [C0OPH35]
+  SAY DYING ~Eh...! Ohh...~ [C0OPH38]
+  SAY HURT ~Please... help me!~ [C0OPH14]
+  SAY AREA_FOREST ~The scenery is nice, but shouldn't we push on?~ [C0OPH12]
+  SAY AREA_CITY ~This is nothing like Thultanthar.~
+  SAY AREA_DUNGEON ~I can handle the cold and the darkness, but the stench is just... ugh.~
+  SAY AREA_DAY ~It's... so... bright!~
+  SAY AREA_NIGHT ~For one born in a world of shadow, this is nothing.~
+  SAY SELECT_COMMON1 ~What's your pleasure?~ [C0OPH17]
+  SAY SELECT_COMMON2 ~Your desire?~ [C0OPH22]
+  SAY SELECT_COMMON3 ~What would you like?~ [C0OPH18]
+  SAY SELECT_COMMON4 ~I'm here.~ [C0OPH19]
+  SAY SELECT_COMMON5 ~I'm listening.~ [C0OPH20]
+  SAY SELECT_COMMON6 ~Hmm?~ [C0OPH21]
+  SAY SELECT_ACTION1 ~Yes.~ [C0OPH23]
+  SAY SELECT_ACTION2 ~If it pleases you.~ [C0OPH24]
+  SAY SELECT_ACTION3 ~If you'd like.~ [C0OPH25]
+  SAY SELECT_ACTION4 ~I'm there.~ [C0OPH26]
+  SAY SELECT_ACTION5 ~It'll be so.~ [C0OPH27]
+  SAY SELECT_ACTION6 ~Uh-huh.~ [C0OPH28]
+  SAY SELECT_ACTION7 ~As you desire.~ [C0OPH29]
+  SAY SELECT_RARE1 ~Yes.~ [C0OPH16]
+  SAY SELECT_RARE2 ~Does this robe make me look fat?~ [C0OPH30]
+  SAY CRITICAL_HIT ~Hmm! I bet you didn't see that coming.~ [C0OPH41]
+  SAY CRITICAL_MISS ~Argh, kal'vodar!~
+  SAY TARGET_IMMUNE ~A strange enchantment protects this one!~
+  SAY INVENTORY_FULL ~Do I look like I'm meant to carry heavy loads?~
+  SAY SPELL_DISRUPTED ~~ [C0OPH31]
+  SAY SET_A_TRAP ~~
+  SAY HIDDEN_IN_SHADOWS ~~
+  SAY PICKED_POCKET ~~
+  WRITE_SHORT 0x246 0x4000 + ~%C0OPHEL%~
+  
+COPY ~%MOD_FOLDER%/creatures/C0Oph25.cre~ ~override~
+  SAY NAME1 ~Ophelia~
+  SAY NAME2 ~Ophelia~
+  WRITE_ASCII 0x248 ~C0Oph25~ #8  //override script
+  WRITE_ASCII 0x280 ~C0Ophel~ #32  //DV
+  WRITE_ASCII 0x2cc ~C0Oph25~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~C0OPHEL~ #8   //small portrait
+  WRITE_ASCII 0x3c ~C0OPHEL~ #8   //medium portrait
   SAY BIO ~~
   SAY INITIAL_MEETING ~Hmm?~ [C0OPH21]
   SAY MORALE ~This battle cannot be won. We should retreat!~ [C0OPH01]
@@ -197,7 +253,7 @@ STATISTICS:
 Equipped abilities:
 - Armor Class: +2
 - Saving Throws: +2
-- Can cast two extra sorcerer spells of each level
+- Can cast one extra sorcerer spell of each level
 
 Weight: 0~
 OUTER_SET strref = RESOLVE_STR_REF (~The ring resists every attempt to remove it, as it is bonded to Ophelia by blood.~ [GAM_47])
@@ -227,7 +283,7 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp01.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp01~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp01~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp01~ #32 // death variable
 SAY NAME1 ~Chang Su'Lin~
 SAY NAME2 ~Chang Su'Lin~
@@ -236,7 +292,7 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp02.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp02~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp02~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp02~ #32 // death variable
 SAY NAME1 ~Hadron Maleficus~
 SAY NAME2 ~Hadron Maleficus~
@@ -244,7 +300,7 @@ SAY NAME2 ~Hadron Maleficus~
 COPY ~%MOD_FOLDER%/creatures/c0sapp03.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp03~  #8  // override	
 WRITE_ASCII 0x2cc ~c0sapp03~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp03~ #32 // death variable
 SAY NAME1 ~High Priest Andros~
 SAY NAME2 ~High Priest Andros~
@@ -253,7 +309,7 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp04.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp04~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp04~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp04~ #32 // death variable
 SAY NAME1 ~Acolyte Dacton~
 SAY NAME2 ~Acolyte Dacton~
@@ -262,7 +318,7 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp05.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp05~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp05~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp05~ #32 // death variable
 SAY NAME1 ~Korim Blackfist~
 SAY NAME2 ~Korim Blackfist~
@@ -279,7 +335,7 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp07.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp07~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp07~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x268 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp07~ #32 // death variable
 SAY NAME1 ~Elak T'sahn~
 SAY NAME2 ~Elak T'sahn~
@@ -288,7 +344,7 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp08.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp08~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp08~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x268 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp08~ #32 // death variable
 SAY NAME1 ~Umbra ut Veritas~
 SAY NAME2 ~Umbra ut Veritas~
@@ -297,7 +353,7 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp09.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp09~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp09~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x268 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp09~ #32 // death variable
 SAY NAME1 ~Janus~
 SAY NAME2 ~Janus~
@@ -306,7 +362,7 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp10.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp10~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp10~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x268 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp10~ #32 // death variable
 SAY NAME1 ~Aldon Val'kar~
 SAY NAME2 ~Aldon Val'kar~
@@ -315,15 +371,18 @@ COPY ~%MOD_FOLDER%/creatures/c0sapp11.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp11~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
 WRITE_ASCII 0x2cc ~c0sapp11~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x268 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp11~ #32 // death variable
+  WRITE_ASCII 0X34 ~C0BRENN~ #8   //small portrait
+  WRITE_ASCII 0x3c ~C0BRENN~ #8   //medium portrait
 SAY NAME1 ~Acolyte Brennan~
 SAY NAME2 ~Acolyte Brennan~
 
 COPY ~%MOD_FOLDER%/creatures/c0sapp12.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sapp12~  #8  // override
 WRITE_ASCII 0x2cc ~c0sapp12~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x250 ~pries18b~  #8  // class
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x280 ~c0sapp12~ #32 // death variable
 SAY NAME1 ~High Priestess Alestria~
 SAY NAME2 ~High Priestess Alestria~
@@ -331,8 +390,8 @@ SAY NAME2 ~High Priestess Alestria~
 COPY ~%MOD_FOLDER%/creatures/c0sagua1.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sagua1~  #8  // override
 WRITE_ASCII 0x250 ~ohbpal01~  #8  // class
+WRITE_ASCII 0x258 ~gpshout~  #8  // race
 WRITE_ASCII 0x2cc ~c0sagua1~  #8  // dialogue
-WRITE_ASCII 0x268 ~shout~  #8  // default
 WRITE_ASCII 0x280 ~c0sagua1~ #32 // death variable
 SAY NAME1 ~Shadovar Guard~
 SAY NAME2 ~Shadovar Guard~
@@ -340,8 +399,7 @@ SAY NAME2 ~Shadovar Guard~
 COPY ~%MOD_FOLDER%/creatures/c0sagua1.cre~ ~override/c0sagua2.cre~
 WRITE_ASCII 0x248 ~c0sagua1~  #8  // override
 WRITE_ASCII 0x250 ~ohbpal01~  #8  // class
-WRITE_ASCII 0x260 ~randwalk~  #8  // general
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~gpshout~  #8  // race
 WRITE_ASCII 0x2cc ~c0sagua1~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0sagua1~ #32 // death variable
 SAY NAME1 ~Shadovar Sentry~
@@ -349,9 +407,9 @@ SAY NAME2 ~Shadovar Sentry~
 
 COPY ~%MOD_FOLDER%/creatures/c0sacom1.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sacom~  #8  // override
-WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x268 ~randwalk~  #8  // default
 WRITE_ASCII 0x250 ~ohbmag01~  #8  // class
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
 SAY NAME1 ~Shadovar Noble~
@@ -359,19 +417,19 @@ SAY NAME2 ~Shadovar Noble~
 
 COPY ~%MOD_FOLDER%/creatures/c0sacom2.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sacom~  #8  // override
-WRITE_ASCII 0x260 ~randwalk~  #8  // general
-WRITE_ASCII 0x250 ~ohbmag01~  #8  // class
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x268 ~randwalk~  #8  // default
+WRITE_ASCII 0x250 ~ohbthief~  #8  // class
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
-SAY NAME1 ~Shadovar Rogue~
-SAY NAME2 ~Shadovar Rogue~
+SAY NAME1 ~Rogue~
+SAY NAME2 ~Rogue~
 
 COPY ~%MOD_FOLDER%/creatures/c0sacom3.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sacom~  #8  // override
-WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x268 ~randwalk~  #8  // default
 WRITE_ASCII 0x250 ~ohbmag01~  #8  // class
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
 SAY NAME1 ~Shadovar Mage~
@@ -379,9 +437,9 @@ SAY NAME2 ~Shadovar Mage~
 
 COPY ~%MOD_FOLDER%/creatures/c0sacom4.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sacom~  #8  // override
-WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x268 ~randwalk~  #8  // default
 WRITE_ASCII 0x250 ~ohbmag01~  #8  // class
-WRITE_ASCII 0x268 ~shout~  #8  // default
+WRITE_ASCII 0x258 ~shout~  #8  // race
 WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
 SAY NAME1 ~Shadovar Noble~
@@ -389,7 +447,7 @@ SAY NAME2 ~Shadovar Noble~
 
 COPY ~%MOD_FOLDER%/creatures/c0sacom5.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sacom~  #8  // override
-WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x268 ~randwalk~  #8  // default
 WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
 SAY NAME1 ~Commoner~
@@ -397,27 +455,45 @@ SAY NAME2 ~Commoner~
 
 COPY ~%MOD_FOLDER%/creatures/c0sacom6.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sacom~  #8  // override
-WRITE_ASCII 0x260 ~randwalk~  #8  // general
+WRITE_ASCII 0x268 ~randwalk~  #8  // default
 WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
 SAY NAME1 ~Commoner~
 SAY NAME2 ~Commoner~
 
-COPY_EXISTING ~elepuz01.cre~ ~override/c0sapat1.cre~
-WRITE_ASCII 0x248 ~c0sapat1~  #8  // override
-WRITE_ASCII 0x2cc ~c0sapat1~  #8  // dialogue
-WRITE_ASCII 0x280 ~c0sapat1~ #32 // death variable
-SAY NAME1 ~Patron~
-SAY NAME2 ~Patron~
-ADD_CRE_ITEM ~c0unisha~ #0 #0 #0 ~NONE~ ~cloak~
+COPY_EXISTING ~cltcut01.cre~ ~override/c0sacom7.cre~
+WRITE_ASCII 0x248 ~c0sacom~  #8  // override
+WRITE_ASCII 0x250 ~OHBMAG01~  #8  // class
+WRITE_ASCII 0x268 ~OHBPRI01~  #8  // default
+WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
+SAY NAME1 ~Sharran Acolyte~
+SAY NAME2 ~Sharran Acolyte~
+ADD_CRE_ITEM ~c0unish2~ #0 #0 #0 ~NONE~ ~cloak~
 
-COPY_EXISTING ~elepuz03.cre~ ~override/c0sapat3.cre~
+COPY_EXISTING ~acolyte2.cre~ ~override/c0sacom8.cre~
+WRITE_ASCII 0x248 ~c0sacom~  #8  // override
+WRITE_ASCII 0x2cc ~c0sacom~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sacom~ #32 // death variable
+SAY NAME1 ~Sharran Acolyte~
+SAY NAME2 ~Sharran Acolyte~
+ADD_CRE_ITEM ~c0unish2~ #0 #0 #0 ~NONE~ ~cloak~
+
+COPY_EXISTING ~copcust3.cre~ ~override/c0sapat1.cre~
 WRITE_ASCII 0x248 ~c0sapat1~  #8  // override
 WRITE_ASCII 0x2cc ~c0sapat1~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0sapat1~ #32 // death variable
 SAY NAME1 ~Patron~
 SAY NAME2 ~Patron~
-ADD_CRE_ITEM ~c0unisha~ #0 #0 #0 ~NONE~ ~cloak~
+ADD_CRE_ITEM ~c0unish2~ #0 #0 #0 ~NONE~ ~cloak~
+
+COPY_EXISTING ~noblew3.cre~ ~override/c0sapat3.cre~
+WRITE_ASCII 0x248 ~c0sapat1~  #8  // override
+WRITE_ASCII 0x2cc ~c0sapat1~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sapat3~ #32 // death variable
+SAY NAME1 ~Patron~
+SAY NAME2 ~Patron~
+ADD_CRE_ITEM ~c0unish2~ #0 #0 #0 ~NONE~ ~cloak~
 
 COPY ~%MOD_FOLDER%/creatures/c0victus.cre~ ~override~
 WRITE_ASCII 0x248 ~c0victus~  #8  // override
@@ -443,6 +519,7 @@ SAY NAME2 ~Commander Victus~
 
 COMPILE ~%MOD_FOLDER%/dialogue/c0ophel.d~
 COMPILE ~%MOD_FOLDER%/dialogue/c0sagol.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sacom.d~
 COMPILE ~%MOD_FOLDER%/dialogue/c0sagua1.d~
 COMPILE ~%MOD_FOLDER%/dialogue/c0sapp01.d~
 COMPILE ~%MOD_FOLDER%/dialogue/c0sapp03.d~
@@ -455,6 +532,7 @@ COMPILE ~%MOD_FOLDER%/scripts/c0ophel.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sadept.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sagol.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sagua1.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sapat1.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sacom.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sa01.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sa02.baf~
@@ -467,7 +545,10 @@ COMPILE ~%MOD_FOLDER%/scripts/c0sa11.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sapp01.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sapp03.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sapp06.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sapp12.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0victus.baf~
+
+EXTEND_TOP ~viconia.bcs~ ~shadowadept/scripts/viconia.baf~
 
 COPY ~%MOD_FOLDER%/items/c0sasto1.sto~ ~override~
 SAY 0xc ~Darkflame Enclave~
@@ -480,23 +561,3 @@ SAY 0xc ~High Priest Andros~
 
 COPY ~%MOD_FOLDER%/items/c0sasto4.sto~ ~override~
 SAY 0xc ~Elak T'sahn, Apothecary~
-
-ACTION_IF GAME_IS ~bgee~
-THEN BEGIN
-EXTEND_TOP ~ar2300.bcs~ ~shadowadept/scripts/ar2300.baf~
-EXTEND_TOP ~ar0900.bcs~ ~shadowadept/scripts/ar0900.baf~
-EXTEND_TOP ~ar2615.bcs~ ~shadowadept/scripts/ar2615.baf~
-EXTEND_TOP ~ar3802.bcs~ ~shadowadept/scripts/ar3802.baf~
-EXTEND_TOP ~ar3901.bcs~ ~shadowadept/scripts/ar3901.baf~
-EXTEND_TOP ~ar5001.bcs~ ~shadowadept/scripts/ar5001.baf~
-END
-
-ACTION_IF GAME_IS ~eet~
-THEN BEGIN
-EXTEND_TOP ~bg2300.bcs~ ~shadowadept/scripts/ar2300.baf~
-EXTEND_TOP ~bg0900.bcs~ ~shadowadept/scripts/ar0900.baf~
-EXTEND_TOP ~bg2615.bcs~ ~shadowadept/scripts/ar2615.baf~
-EXTEND_TOP ~bg3802.bcs~ ~shadowadept/scripts/ar3802.baf~
-EXTEND_TOP ~bg3901.bcs~ ~shadowadept/scripts/ar3901.baf~
-EXTEND_TOP ~bg5001.bcs~ ~shadowadept/scripts/ar5001.baf~
-END

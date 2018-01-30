@@ -1,0 +1,6 @@
+IF
+	!Specifics(Myself,12)
+THEN
+  RESPONSE #100
+	ChangeSpecifics(Myself,12)
+END
