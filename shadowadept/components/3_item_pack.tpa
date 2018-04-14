@@ -600,6 +600,43 @@ Requires:
 
 Weight: 1~
 
+COPY ~%MOD_FOLDER%/itempack/c0sas1h4.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sas1h4.itm~ ~override~
+SAY NAME1 ~Katana~
+SAY NAME2 ~Weaveshear +2~
+SAY UNIDENTIFIED_DESC ~The katana is a single-edged, slightly curved sword that ends with a chisel point. The katana is perhaps one of the finest swords ever made, the steps to its creation a long and secret process that is more art form than anything else. This blade is an important facet of Kara-Turan culture. To touch or wield a samurai's katana is to insult the samurai and to incite his wrath. For a gaijin, or foreigner, to own such a blade is a rare occurrence. Either the gaijin is a greatly honored friend of an important minister, or the gaijin has murdered a samurai.
+
+STATISTICS:
+
+Damage: 1d10 (slashing)
+Speed Factor: 4
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 6~
+SAY DESC ~This blade was the signature weapon of the ogre mage Shadruk, who by all accounts forged it from a wound in the Weave. Whether such a thing is true is debatable, but the blade's disruptive powers lend some credibility to the claim.
+
+STATISTICS:
+
+Combat abilities:
+- Each hit inflicts a cumulative 5% chance of spell failure (no save)
+- On a critical hit, drain two wizard spells of up to 6th level and restores two of the wielder's wizard spells
+
+Equipped abilities:
+- Magic Resistance: +5%
+
+THAC0: +2
+Damage: 1d10+2 (slashing)
+Speed Factor: 2
+Proficiency Type: Katana
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 4~
+
 COPY ~%MOD_FOLDER%/itempack/c0sawand.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sawan1.itm~ ~override~
 SAY NAME1 ~Wand~
@@ -791,11 +828,12 @@ SAY DESC ~Kryn Darkflame, in his younger days, experimented tirelessly in an att
 STATISTICS:
 
 Equipped abilities:
-- Caster Level: +2 (+5 when below 10% maximum hit points)
+- Caster Level: +2 (+4 when below 50% hit points)
 - Fire Resistance: +40%
 - Cold Resistance: +40%
 - Save vs. Death: -4
 - Hit Points: -15
+- May cast one additional wizard spell of each level
 - May only be removed with a Remove Curse spell
 
 Weight: 2~

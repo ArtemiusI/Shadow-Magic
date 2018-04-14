@@ -31,6 +31,7 @@ IF ~~ DO ~CreateVisualEffectObject("c0darkbo",LastTalkedToBy(Myself))
 	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV8","LOCALS",0))
 	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV9","LOCALS",0))
 	ApplySpellRES("c0erase2",Lastsummonerof(Myself))
+	ApplySpellRES("c0sadual",Lastsummonerof(Myself))
 	ChangeSpecifics(Lastsummonerof(Myself),12)
 	DestroySelf()~ EXIT
 END

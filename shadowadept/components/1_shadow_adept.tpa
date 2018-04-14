@@ -132,6 +132,25 @@ ACTION_IF (NOT GAME_IS_BGEE) BEGIN
   END
 END
 
+// Nightwalker
+
+ACTION_IF (NOT GAME_IS_BGEE) BEGIN
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xe000 slotMax = 0xe999 RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~ // No free creature animation slot found.
+  END
+
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% C0_NIGHTWALKER~ UNLESS ~C0_NIGHTWALKER~
+  CLEAR_IDS_MAP
+
+  COPY ~%MOD_FOLDER%/animations/c0nw/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/c0nw~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+END
+
 //AUDIO
 
 LAF HANDLE_AUDIO END
@@ -572,7 +591,7 @@ ADD_KIT ~C0SADEP2~
  ~C0SADEP2                  	1       1       0       1       0       0~
 
  // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/C0SADEP2.2da~
+ ~%MOD_FOLDER%/2da/blankclab.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~K_M_H K_M_E K_M_HE K_M_HL K_M_G K_M_D K_M_HO~
@@ -633,14 +652,17 @@ EXTEND_TOP ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/dplayer2.baf~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0sa402.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
 EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0sa402.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0sa402.baf~
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcutgl2.bcs~ THEN BEGIN
@@ -926,7 +948,7 @@ ADD_KIT ~C0SASOR2~
  ~C0SASOR2                  	0       0       0       0       0       0~
 
  // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/C0SADEP2.2da~
+ ~%MOD_FOLDER%/2da/blankclab.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
@@ -957,8 +979,16 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~c0satalk.bcs~ THEN BEGIN
-EXTEND_TOP ~c0satalk.bcs~ ~%MOD_FOLDER%/scripts/c0satal2.baf~
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0satal2.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0satal2.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0satal2.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~c0saorb.d~ THEN BEGIN
@@ -1087,7 +1117,7 @@ ADD_KIT ~C0SABAR2~
  ~C0SABAR2                  	0       0       0       0       0       0~
 
  // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/C0SADEP2.2da~
+ ~%MOD_FOLDER%/2da/blankclab.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~K_B_H K_B_E K_B_HE K_B_HL K_B_G K_B_D K_B_HO~
@@ -1118,8 +1148,16 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~c0satalk.bcs~ THEN BEGIN
-EXTEND_TOP ~c0satalk.bcs~ ~%MOD_FOLDER%/scripts/c0satal3.baf~
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0satal3.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0satal3.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0satal3.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~c0saorb.d~ THEN BEGIN
@@ -3591,7 +3629,7 @@ Casting Time: 3
 Area of Effect: 1 creature and any enemy within 7.5 ft.
 Saving Throw: Neg. 
 
-This spell holds 1d4 humans, demihumans, or humanoid creatures rigidly immobile and in place for five or more rounds. The Hold Person spell affects any bipedal human, demihuman, or humanoid of mansize or smaller, including brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be held, while an ogre could not. The effect is centered on the victim selected by the caster. Every enemy within 7.5 ft. of the target is also affected. Those who Save vs. Spell at -4 are totally unaffected by the spell. Undead creatures cannot be held.
+This spell holds 1d4 humans, demihumans, or humanoid creatures rigidly immobile and in place for five or more rounds. Shadow Binding affects any bipedal human, demihuman, or humanoid of mansize or smaller, including brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be held, while an ogre could not. The effect is centered on the victim selected by the caster. Every enemy within 7.5 ft. of the target is also affected. Those who Save vs. Spell at -4 are totally unaffected by the spell. Undead creatures cannot be held.
 
 Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subjects' condition due to wounds, disease, or poison.~
 
@@ -3821,7 +3859,9 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-Through this spell, the caster draws upon energy from the Plane of Shadow to imbue <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The shadow adept's Strength score is increased by four points, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HESHE> gains one extra attack per round and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
+Through this spell, the caster draws upon energy from the Plane of Shadow to imbue <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The shadow adept's Strength score is increased by four points, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HESHE> gains one extra attack per round and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.
+
+From 14th level onwards, the caster's attacks per round are doubled instead.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA406.spl~ ~override~
 SAY NAME1 ~Phantasmal Killer~
@@ -4144,7 +4184,7 @@ Casting Time: 5
 Area of Effect: 235-ft. radius
 Saving Throw: None
 
-When this spell is cast, an area roughly 30 feet in radius around the caster will be affected. All hostile illusion/phantasm spells in this area will be dispelled. This spell only affects one's enemies.
+When this spell is cast, an area roughly 30 feet in radius around the caster will be affected. All hostile illusion/phantasm spells in this area will be dispelled and all traps are revealed. This spell only affects one's enemies.
 
 The spells that are affected by this are: Reflected Image, Invisibility, Blur, Mirror Image, Ghost Armor, Invisibility Sphere, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project Image, and Mass Invisibility.~
 
@@ -4579,7 +4619,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
+This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 plus 20% of the target's maximum hit points as piercing damage. If the target fails a Saving Throw vs. Spells at -6, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA610.spl~ ~override~
 SAY NAME1 ~Disintegrate~
@@ -4859,20 +4899,7 @@ Saving Throw: 1/2
 The shadow adept launches a mass of volatile shadowstuff towards a target location, dealing 8d6 magic damage in a 20 ft. radius (Save vs. Death at -2 for half). All enemies that fail the save will, after 1 round, spontaneously explode with another Malefic Bomb dealing 4d6 damage in a 20 ft. radius (Save vs. Death for half), afflicting all enemies that fail the save with another Malefic Bomb dealing 2d6 damage in a 20 ft. radius.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA710a.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj20%~
-END
-
 COPY ~%MOD_FOLDER%/spells/C0SA710b.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj20%~
-END
 
 COPY ~%MOD_FOLDER%/spells/C0SA711.spl~ ~override~
 SAY NAME1 ~Shadow Gate~
@@ -5041,7 +5068,7 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius must make a Save vs. Death or lose one level permanently.~
+This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius must make a Save vs. Death or suffer 10% of their maximum hit points as magic damage, transferring it to the caster, as well as lose one level permanently.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa808.spl~ ~override~
 SAY NAME1 ~Shadow's Refuge~
@@ -5441,6 +5468,7 @@ SAY NAME1 ~Nightwalker~
 SAY NAME2 ~Nightwalker~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0nightw~  #32
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_NIGHTWALKER~))
 
 COPY ~%MOD_FOLDER%/spells/c0sahla4.spl~ ~override~
 SAY NAME1 ~Shapeshift: Shadow Dragon Scion~

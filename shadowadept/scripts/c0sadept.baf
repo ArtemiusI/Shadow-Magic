@@ -525,7 +525,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -543,7 +542,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -561,7 +559,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -577,7 +574,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1489,7 +1485,6 @@ IF
   See(LastSeenBy)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
   StateCheck(LastSeenBy,STATE_SLEEPING)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1504,7 +1499,6 @@ IF
   See(LastSeenBy)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
   StateCheck(LastSeenBy,STATE_SLEEPING)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1519,7 +1513,6 @@ IF
   See(LastSeenBy)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
   !StateCheck(LastSeenBy,STATE_SLEEPING)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1533,7 +1526,6 @@ IF
   HaveSpellRES("C0SA710")
   See(LastSeenBy)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1547,7 +1539,6 @@ IF
   HaveSpellRES("C0SA610")
   See(LastSeenBy)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1782,7 +1773,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1798,7 +1788,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1813,7 +1802,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1828,7 +1816,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1844,7 +1831,6 @@ IF
   HPLT(LastSeenBy,61)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1859,7 +1845,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1874,7 +1859,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1891,7 +1875,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1907,7 +1890,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1926,7 +1908,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1942,7 +1923,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1958,7 +1938,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1973,7 +1952,6 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -4673,9 +4651,7 @@ IF
   See(LastSeenBy)
   !Range(LastSeenBy,0)
   !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-  NextTriggerObject(LastSeenBy)
   Range(NearestAllyOf(Myself),15)
-  NextTriggerObject(LastSeenBy)
   !Range(NearestEnemyOf(Myself),15)
 THEN
   RESPONSE #100

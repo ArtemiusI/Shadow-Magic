@@ -1,20 +1,110 @@
 // Kit
 
 IF
-  Kit(Lastsummonerof(Myself),C0SASOR2)
+  Kit(Player1,C0SASOR2)
 THEN
   RESPONSE #100
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Lastsummonerof(Myself),AddKit(C0SASORC))
-	ApplySpellRES("c0erase2",Lastsummonerof(Myself))
-	ChangeSpecifics(Lastsummonerof(Myself),12)
+	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
+	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
+	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
+	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
+	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
+	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
+	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
+	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
+	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
+	ActionOverride(Player1,AddKit(C0SASORC))
+	ApplySpellRES("c0erase2",Player1)
+	ChangeSpecifics(Player1,12)
+	DestroySelf()
+END
+IF
+  Kit(Player2,C0SASOR2)
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
+	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
+	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
+	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
+	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
+	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
+	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
+	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
+	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
+	ActionOverride(Player2,AddKit(C0SASORC))
+	ApplySpellRES("c0erase2",Player2)
+	ChangeSpecifics(Player2,12)
+	DestroySelf()
+END
+IF
+  Kit(Player3,C0SASOR2)
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
+	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
+	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
+	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
+	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
+	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
+	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
+	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
+	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
+	ActionOverride(Player3,AddKit(C0SASORC))
+	ApplySpellRES("c0erase2",Player3)
+	ChangeSpecifics(Player3,12)
+	DestroySelf()
+END
+IF
+  Kit(Player4,C0SASOR2)
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
+	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
+	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
+	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
+	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
+	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
+	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
+	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
+	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
+	ActionOverride(Player4,AddKit(C0SASORC))
+	ApplySpellRES("c0erase2",Player4)
+	ChangeSpecifics(Player4,12)
+	DestroySelf()
+END
+IF
+  Kit(Player5,C0SASOR2)
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
+	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
+	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
+	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
+	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
+	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
+	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
+	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
+	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
+	ActionOverride(Player5,AddKit(C0SASORC))
+	ApplySpellRES("c0erase2",Player5)
+	ChangeSpecifics(Player5,12)
+	DestroySelf()
+END
+IF
+  Kit(Player6,C0SASOR2)
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
+	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
+	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
+	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
+	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
+	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
+	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
+	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
+	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
+	ActionOverride(Player6,AddKit(C0SASORC))
+	ApplySpellRES("c0erase2",Player6)
+	ChangeSpecifics(Player6,12)
 	DestroySelf()
 END

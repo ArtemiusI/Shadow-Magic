@@ -1300,7 +1300,9 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-Through this spell, the caster draws upon energy from the Plane of Shadow to imbue <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The shadow adept's Strength score is increased by four points, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HESHE> gains one extra attack per round and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
+Through this spell, the caster draws upon energy from the Plane of Shadow to imbue <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The shadow adept's Strength score is increased by four points, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HESHE> gains one extra attack per round and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.
+
+From 14th level onwards, the caster's attacks per round are doubled instead.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) AddSpecialAbility("C0SA405")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1783,7 +1785,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
+This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 plus 20% of the target's maximum hit points as piercing damage. If the target fails a Saving Throw vs. Spells at -6, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","LOCALS",-1) AddSpecialAbility("C0SA609")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2185,12 +2187,12 @@ SAY ~Shar's Mantle
 
 Level: 8
 Range: 0
-Duration: 1 round/2 levels
+Duration: 1 round/4 levels
 Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +2 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius must make a Save vs. Death or lose one level permanently.~
+This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius must make a Save vs. Death or suffer 10% of their maximum hit points as magic damage, transferring it to the caster, as well as lose one level permanently.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) AddSpecialAbility("C0SA807")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
