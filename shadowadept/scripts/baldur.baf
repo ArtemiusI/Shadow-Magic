@@ -16,7 +16,7 @@ THEN
 	ActionOverride(Player1,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player1)
 	ChangeSpecifics(Player1,12)
-	DestroySelf()
+	Continue()
 END
 IF
   Kit(Player2,C0SADEP2)
@@ -34,7 +34,7 @@ THEN
 	ActionOverride(Player2,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player2)
 	ChangeSpecifics(Player2,12)
-	DestroySelf()
+	Continue()
 END
 IF
   Kit(Player3,C0SADEP2)
@@ -52,7 +52,7 @@ THEN
 	ActionOverride(Player3,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player3)
 	ChangeSpecifics(Player3,12)
-	DestroySelf()
+	Continue()
 END
 IF
   Kit(Player4,C0SADEP2)
@@ -70,7 +70,7 @@ THEN
 	ActionOverride(Player4,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player4)
 	ChangeSpecifics(Player4,12)
-	DestroySelf()
+	Continue()
 END
 IF
   Kit(Player5,C0SADEP2)
@@ -88,7 +88,7 @@ THEN
 	ActionOverride(Player5,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player5)
 	ChangeSpecifics(Player5,12)
-	DestroySelf()
+	Continue()
 END
 IF
   Kit(Player6,C0SADEP2)
@@ -106,5 +106,5 @@ THEN
 	ActionOverride(Player6,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player6)
 	ChangeSpecifics(Player6,12)
-	DestroySelf()
+	Continue()
 END
