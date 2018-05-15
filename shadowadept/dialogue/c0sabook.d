@@ -5,6 +5,8 @@ SAY ~You open the Shadow Tome of Shar, and your mind is filled with endless caco
 IF ~~ DO ~ClearAllActions()
 StartCutsceneMode()
 SetGlobal("C0SABOOK","LOCALS",1)
+ScreenShake([50.50],5)
+CreateVisualEffectObject("c0useany",Myself)
 AddSpecialAbility("C0SA101")
 AddSpecialAbility("C0SA102")
 AddSpecialAbility("C0SA103")

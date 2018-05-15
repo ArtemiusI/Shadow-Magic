@@ -49,3 +49,4 @@ BEGIN ~Shadow Magic: Quests and Encounters (BG2:EE)~
   REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/9_quests_bg2.tpa~
+*/

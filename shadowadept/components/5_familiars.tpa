@@ -1,4 +1,4 @@
-COPY ~shadowadept/familiars~ ~override~
+COPY ~%MOD_FOLDER%/familiars~ ~override~
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
   COPY_EXISTING ~clastext.2da~ ~override~
@@ -75,24 +75,184 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
 	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SADEP2~ BEGIN
 	    SET patch_row = %row%
 		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@3)
+	  END
+	END
+  BUT_ONLY
+END
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
+  COPY_EXISTING ~clastext.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SASORC~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@4)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  COPY_EXISTING ~sodcltxt.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SASORC~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@4)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
+  COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 1 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SASORC~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@4)
+	  END
+	END
+  BUT_ONLY
+END
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
+  COPY_EXISTING ~clastext.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SASOR2~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@5)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  COPY_EXISTING ~sodcltxt.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SASOR2~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@5)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
+  COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 1 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SASOR2~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@5)
+	  END
+	END
+  BUT_ONLY
+END
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
+  COPY_EXISTING ~clastext.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SABARD~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@6)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  COPY_EXISTING ~sodcltxt.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SABARD~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@6)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
+  COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 1 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SABARD~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@6)
+	  END
+	END
+  BUT_ONLY
+END
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
+  COPY_EXISTING ~clastext.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SABAR2~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@7)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  COPY_EXISTING ~sodcltxt.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SABAR2~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@7)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
+  COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 1 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~C0SABAR2~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (@7)
 	  END
 	END
   BUT_ONLY
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~shadowadept/scripts/c0safam1.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~shadowadept/scripts/c0safam1.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0safam1.baf~
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
 END
 
-COPY ~shadowadept/familiars/C0SAFAM1.spl~ ~override~
+COPY ~%MOD_FOLDER%/familiars/C0SAFAM1.spl~ ~override~
 SAY NAME1 ~Find Shadow Familiar~
 SAY NAME2 ~Find Shadow Familiar~
 SAY UNIDENTIFIED_DESC ~Find Shadow Familiar
@@ -114,9 +274,9 @@ Gender: None
 Alignment: True Neutral
 Base Class: Bard
 Hit Points: 30
-STR: 14 DEX: 16 CON: 12 INT: 14 WIS: 14 CHA: 19
+STR: 12 DEX: 16 CON: 10 INT: 16 WIS: 16 CHA: 19
 Starting Spells: Curse, Mesmerize, Power Word: Sleep, Black Mist
-Other abilities: Bardsong reduces enemies' luck, cannot Pick Pockets, can attack with either ranged or melee. Ranged attacks drain 1d4+1 hit points and melee attacks drain 1 point of strength on hit
+Other abilities: Bardsong reduces enemies' THAC0, damage, saving throws and morale, cannot Pick Pockets, can attack with either ranged or melee.
 
 CHAOTIC NEUTRAL, CHAOTIC EVIL: Nyx, Shadow Mephit
 Gender: Female
@@ -125,9 +285,9 @@ Base Class: Shadowdancer
 Hit Points: 38
 STR: 10 DEX: 19 CON: 16 INT: 16 WIS: 12 CHA: 16
 Starting Spells: Blinding Darkness, Decoy, Dark Mirage, Dark Fortune
-Other abilities: Shadowstep, Hide in Plain Sight, can use thieving skills~
+Other abilities: Shadowstep, Hide in Plain Sight, Backstab, can use thieving skills~
 
-COPY ~shadowadept/familiars/C0SAFAM2.spl~ ~override~
+COPY ~%MOD_FOLDER%/familiars/C0SAFAM2.spl~ ~override~
 SAY NAME1 ~Call Shadow Familiar~
 SAY NAME2 ~Call Shadow Familiar~
 SAY UNIDENTIFIED_DESC ~Call Shadow Familiar
@@ -135,29 +295,29 @@ This spell summons the shadow adept's bound shadow familiar from their home plan
 
 ACTION_IF GAME_IS ~bgee eet~
 THEN BEGIN
-COMPILE ~shadowadept/dialogue/bg1/c0safam.d~
+COMPILE ~%MOD_FOLDER%/dialogue/bg1/c0safam.d~
 END
 
 ACTION_IF GAME_IS ~bg2ee~
 THEN BEGIN
-COMPILE ~shadowadept/dialogue/c0safam.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0safam.d~
 END
 
-COMPILE ~shadowadept/scripts/c0safam.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0safam.baf~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~shadowadept/scripts/c0safamx.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~shadowadept/scripts/c0safamx.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~shadowadept/scripts/c0safamx.baf~
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
 END
 
-COPY ~shadowadept/creatures/c0safam1.cre~ ~override~
+COPY ~%MOD_FOLDER%/familiars/c0safam1.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
 WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
@@ -173,7 +333,7 @@ SAY DYING ~~ [VWOLF09]
 SAY SELECT_COMMON1 ~~ [VWOLF01]
 SAY SELECT_COMMON2 ~~ [VWOLF02]
 
-COPY ~shadowadept/creatures/c0safam2.cre~ ~override~
+COPY ~%MOD_FOLDER%/familiars/c0safam2.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
 WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
@@ -181,7 +341,7 @@ SAY NAME1 ~Ka'Shai~
 SAY NAME2 ~Ka'Shai~
 WRITE_ASCII 0X34 ~C0Kashai~ #8   //small portrait
 
-COPY ~shadowadept/creatures/c0safam3.cre~ ~override~
+COPY ~%MOD_FOLDER%/familiars/c0safam3.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
 WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
@@ -193,417 +353,351 @@ WRITE_ASCII 0X34 ~C0Nyx~ #8   //small portrait
 ///////////////familiars///////////////////
 ////////////////////////////////////////
 
-COPY ~shadowadept/familiars/c0sfam01.spl~ ~override~
-SAY NAME1 ~Shadow Veil~
-SAY NAME2 ~Shadow Veil~
-SAY UNIDENTIFIED_DESC ~Shadow Veil
-(Abjuration - Shadow Weave)
+COPY ~shadowadept/familiars/c0saatk1.itm~ ~override~
+SAY NAME1 ~Spectral Drain~
+SAY NAME2 ~Spectral Drain~
 
-Level: 1
-Range: 0
-Duration: 9 hours
-Casting Time: 9
-Area of Effect: The caster
-Saving Throw: None
+COPY ~shadowadept/familiars/c0saatk2.itm~ ~override~
+SAY NAME1 ~Spectral Touch~
+SAY NAME2 ~Spectral Touch~
 
-By means of this spell, the shadow adept creates a magical field of force that serves as armor, increasing the caster's armor class by 1 point per 3 levels of the caster up to a maximum of +4 at level 13. It is cumulative with Dexterity bonuses to Armor Class. The veil is invisible, does not hinder movement, adds no weight or encumbrance, and doesn't prevent spellcasting. It lasts until successfully dispelled or until its duration expires.
-
-Additionally, whenever the caster suffers damage while the shadow veil is active, <PRO_HESHE> has a 5% chance to turn invisible for 2 rounds.~
-
-COPY ~shadowadept/familiars/c0sfam02.spl~ ~override~
-SAY NAME1 ~Shadow Rope~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
-END
-SAY NAME2 ~Shadow Rope~
-SAY UNIDENTIFIED_DESC ~Shadow Rope
-(Conjuration/Summoning - Shadow Weave)
-
-Level: 1
-Range: Visual range of the caster
-Duration: Special
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell creates a shadowy thread which wraps itself around the caster's target and pulls them towards the caster. It deals no damage, but the target becomes disoriented once they arrive and are unable to attack or use spells for 1 round.~
-
-COPY ~shadowadept/familiars/c0sfam03.spl~ ~override~
-SAY NAME1 ~Blinding Darkness~
-SAY NAME2 ~Blinding Darkness~
-SAY UNIDENTIFIED_DESC ~Blinding Darkness
-(Illusion/Phantasm - Shadow Weave)
-
-Level: 1
-Range: 40 ft.
-Duration: 2 hours
-Casting Time: 2
-Area of Effect: 1 creature
-Saving Throw: Neg.
-
-This 1st-level spell temporarily blinds its target. A Saving Throw at -2 penalty is allowed and, if successful, there are no harmful effects. If a victim is blinded, <PRO_HESHE> receives a -4 penalty to <PRO_HISHER> attack rolls and Armor Class.~
-
-COPY ~shadowadept/familiars/c0sfam04.spl~ ~override~
-SAY NAME1 ~Curse~
-SAY NAME2 ~Curse~
-SAY UNIDENTIFIED_DESC ~Curse
-(Conjuration/Summoning - Shadow Weave)
-
-Level: 1
-Range: Sight
-Duration: 1 turn
-Casting Time: 1 round
-Area of Effect: 30 ft. radius
-Saving Throw: None
-
-When the Curse spell is uttered, the caster lowers the morale of enemy creatures and penalizes their saving throws and attack rolls by -1. At the instant the spell is completed, it affects all creatures in a 30 ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not.~
-
-COPY ~shadowadept/familiars/c0sfam05.spl~ ~override~
-SAY NAME1 ~Decoy~
-SAY NAME2 ~Decoy~
-SAY UNIDENTIFIED_DESC ~Decoy
-(Illusion/Phantasm - Shadow Weave)
-
-Level: 1
-Range: Visual range of caster
-Duration: 1 round
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell briefly conjures a projection of the caster next to <PRO_HIMHER> while turning invisible for 1 round.~
-
-COPY ~shadowadept/familiars/c0sfam06.spl~ ~override~
+COPY ~shadowadept/familiars/c0saatk3.itm~ ~override~
+SAY NAME1 ~Spectral Fang~
+SAY NAME2 ~Spectral Fang~
+COPY ~shadowadept/familiars/c0saatk3.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-	  parameter1 = RESOLVE_STR_REF (~Mesmerized~)
-  END
-SAY NAME1 ~Mesmerize~
-SAY NAME2 ~Mesmerize~
-SAY UNIDENTIFIED_DESC ~Mesmerize
-(Enchantment/Charm - Shadow Weave)
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+ END
 
-Level: 1
-Range: Visual range of caster
-Duration: 1 turn
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
+COPY ~shadowadept/familiars/c0saatk4.itm~ ~override~
+SAY NAME1 ~Spectral Shiv~
+SAY NAME2 ~Spectral Shiv~
 
-This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a save vs. spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely if they are attacked.~
-
-COPY ~shadowadept/familiars/c0sfam07.spl~ ~override~
-SAY NAME1 ~Dark Mirage~
-SAY NAME2 ~Dark Mirage~
-SAY UNIDENTIFIED_DESC ~Dark Mirage
-(Illusion/Phantasm - Shadow Weave)
-
-Level: 2
-Range: 0
-Duration: 5 rounds
-Casting Time: 2
-Area of Effect: The caster
-Saving Throw: None
-
-When Dark Mirage is cast, the shadow adept causes the outline of <PRO_HISHER> form to become blurred, shifting and wavering. This distortion causes all missile and melee attacks against the caster to be made with a -3 penalty. The shadow adept also gains a +1 bonus to all of <PRO_HISHER> Saving Throws. Additionally, the caster causes from 2 to 8 exact duplicates of <PRO_HIMHER>self to come into being around <PRO_HIMHER>. These images do exactly what the shadow adept does. Since the spell causes a blurring and slight distortion when cast, it is impossible for opponents to be certain which are the illusions and which is the actual shadow adept. When an image is struck by a melee or missile attack—magical or otherwise—it disappears, but any other existing images remain intact until they are struck. However, it is important to note that this will not protect the caster against every attack, as it is possible for an enemy to choose the real caster amongst all the images.~
-
-COPY ~shadowadept/familiars/c0sfam08.spl~ ~override~
-SAY NAME1 ~Night Terrors~
-SAY NAME2 ~Night Terrors~
-SAY UNIDENTIFIED_DESC ~Night Terrors
-(Necromancy - Shadow Weave)
-
-Level: 2
-Range: 40 ft.
-Duration: 1 turn
-Casting Time: 2
-Area of Effect: 30-ft. radius
-Saving Throw: Neg.
-
-All enemies within the area of effect when this spell is cast must save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.
-
-At 12th level, this spell gains the effects of the 6th level wizard spell Death Spell: creatures below 8 Hit Dice and all summoned creatures will die instantly from overwhelming fear. (no saving throw)~
-
-COPY ~shadowadept/familiars/c0sfam09.spl~ ~override~
-SAY NAME1 ~Dark Fortune~
-SAY NAME2 ~Dark Fortune~
-SAY UNIDENTIFIED_DESC ~Dark Fortune
-(Enchantment/Charm - Shadow Weave)
-
-Level: 2
-Range: 15 ft.
-Duration: 1 hour
-Casting Time: 2
-Area of Effect: 1 creature
-Saving Throw: None
-
-The recipient of this spell gains extraordinary luck for the next hour, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
-
-COPY ~shadowadept/familiars/c0sfam10.spl~ ~override~
-SAY NAME1 ~Power Word: Sleep~
-SAY NAME2 ~Power Word: Sleep~
-SAY UNIDENTIFIED_DESC ~Power Word, Sleep
-(Conjuration/Summoning - Shadow Weave)
-
-Level: 2
-Range: 90 ft.
-Duration: 5 rounds
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-When a shadow adept calls upon a Power Word, Sleep spell, <PRO_HESHE> causes a comatose slumber to come upon 1 creature (other than undead and certain other creatures specifically excluded from the spell's effects). The creature targeted must have less than 20 Hit Points and gets no Saving Throw. Magically sleeping opponents can be attacked with substantial bonuses. The Sleep effect will last for 5 rounds. This spell has no effect on creatures with more than 20 Hit Points.
-
-At 10th level, creatures above 20 Hit Points are put to sleep for 2 rounds.~
-
-COPY ~shadowadept/familiars/c0sfam11.spl~ ~override~
-SAY NAME1 ~Ghostly Visage~
-SAY NAME2 ~Ghostly Visage~
-SAY UNIDENTIFIED_DESC ~Ghostly Visage
-(Illusion/Phantasm - Shadow Weave)
-
-Level: 2
-Range: Self
-Duration: 1 turn/level
-Casting Time: 2
-Area of Effect: 1 creature
-Saving Throw: None
-
-The caster is surrounded by a ghostly nimbus of light that grants 10% resistance to physical damage and prevents all level 1 spells from affecting <PRO_HIMHER>.~
-
-COPY ~shadowadept/familiars/c0sfam12.spl~ ~override~
-SAY NAME1 ~Black Mist~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj16%~
+COPY_EXISTING ~c0sa107.spl~ ~override/c0sfam01.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
 END
-SAY NAME2 ~Black Mist~
-SAY UNIDENTIFIED_DESC ~Black Mist
-(Illusion/Phantasm - Shadow Weave)
 
-Level: 2
-Range: 90 ft.
-Duration: 1 turn
-Casting Time: 2
-Area of Effect: 30' radius
-Saving Throw: Neg.
-
-When this spell is cast, a thick shadowy mist spreads across the area selected by the caster. Any creatures caught within the mist must make a save vs. spells at -2 at the beginning of each round or become blinded for that round, receiving a -4 penalty to their Armor Class and attack rolls and greatly reducing their vision range. Those who make successful Saving Throws can leave the mist without suffering any ill effects, although those remaining in the mist must continue to save each round. A Dispel Magic will remove the blindness on a particular character, but if they remain in the mist, then they are still subject to its effects.~
-
-COPY ~shadowadept/familiars/c0sfam13.spl~ ~override~
-SAY NAME1 ~Lifedrinker Touch~
-SAY NAME2 ~Lifedrinker Touch~
-SAY UNIDENTIFIED_DESC ~Lifedrinker Touch
-(Necromancy - Shadow Weave)
-
-Level: 3
-Range: Touch
-Duration: Instant 
-Casting Time: 3 
-Area of Effect: 1 creature
-Saving Throw: None 
-
-When this spell is cast, the target loses 1d6 Hit Points for every 2 caster levels, to a maximum drain of 6d6 for a 12th-level caster. In addition, the target transfers 3 points of either Strength, Dexterity or Constitution to the caster. The Hit Points are added to the caster's current Hit Points, with any Hit Points over the caster's normal maximum treated as temporary additional Hit Points. The temporary Hit Points and statistics last for 1 hour.
-
-Note: This spell may not be cast multiple times to radically increase the caster's Hit Points. The caster must wait for the first Lifedrinker Touch spell to run its course before casting another.~
-
-COPY ~shadowadept/familiars/c0sfam14.spl~ ~override~
-SAY NAME1 ~Beguile~
-SAY NAME2 ~Beguile~
-SAY UNIDENTIFIED_DESC ~Beguile
-(Enchantment/Charm - Shadow Weave)
-
-Level: 3
-Range: 60 ft.
-Duration: 5 rounds
-Casting Time: 3
-Area of Effect: 1 creature
-Saving Throw: Neg. 
-
-This spell works in the exact same manner as Charm Person, with one difference: There is no Saving Throw bonus. Dire Charm affects any single person it is cast upon. The term person includes any bipedal human, demihuman, or humanoid of man-size or smaller, such as brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be charmed, but an ogre could not. The person is allowed a Saving Throw vs. Spell to negate the effect.
-
-If the spell's recipient fails <PRO_HISHER> Saving Throw, <PRO_HESHE> regards the caster as a trusted friend and ally to be heeded and protected. The caster may give <PRO_HIMHER> orders, and the charmed individual will carry them out as quickly as possible.
-
-If the caster harms - or attempts to harm - the charmed person by some overt action, or if a Dispel Magic spell is cast upon the charmed person, the Dire Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject has full memory of the events that took place while <PRO_HESHE> was charmed. Also note that you cannot have a charmed creature leave the area where <PRO_HESHE> is charmed.
-
-The saving throw penalty increases by -1 for every 5 caster levels.~
-
-COPY ~shadowadept/familiars/c0sfam15.spl~ ~override~
-SAY NAME1 ~Shadow Comets~
-SAY NAME2 ~Shadow Comets~
-SAY UNIDENTIFIED_DESC ~Shadow Comets
-(Invocation/Evocation - Shadow Weave)
-
-Level: 3
-Range: 0
-Duration: Special
-Casting Time: 3
-Area of Effect: The caster
-Saving Throw: None
-
-This spell creates several small globes of shadowy matter, two for each experience level of the shadow adept, which are held in <PRO_HISHER> hands in place of <PRO_HISHER> usual weapons. The meteors can be hurled at targets up to 270 feet away and are treated as missiles with a +5 bonus to the attack rolls. Each meteor bursts into a 1-ft. diameter sphere upon impact, inflicting 1d4+3 points of damage plus an additional 3 points of cold damage to any creature struck. The shadow adept may hurl up to five missiles per round.~
-
-COPY ~shadowadept/familiars/c0sfam16.spl~ ~override~
-SAY NAME1 ~Shar's Blessing~
-SAY NAME2 ~Shar's Blessing~
-SAY UNIDENTIFIED_DESC ~Shar's Blessing
-(Invocation/Evocation - Shadow Weave)
-
-Level: 4
-Range: 0
-Duration: 1 round/level
-Casting Time: 6
-Area of Effect: The caster
-Saving Throw: None
-
-Through this spell, the caster draws upon energy from the Plane of Shadow to imbue <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The shadow adept's Strength score is increased by four points, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HESHE> gains one extra attack per round and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
-
-COPY ~shadowadept/familiars/c0sfam17.spl~ ~override~
-SAY NAME1 ~Sigil of Misfortune~
-SAY NAME2 ~Sigil of Misfortune~
-SAY UNIDENTIFIED_DESC ~Sigil of Misfortune
-(Enchantment/Charm - Shadow Weave)
-
-Level: 4
-Range: 50 ft.
-Duration: 2 rounds/level
-Casting Time: 4
-Area of Effect: 30-ft. radius
-Saving Throw: None
-
-The spell allows the caster to adversely affect all the Saving Throws of <PRO_HISHER> enemies. The effect is applied to all hostile creatures within the area of effect. Opponents under the influence of this spell make all Saving Throws and attack rolls at a penalty of -4.~
-
-COPY ~shadowadept/familiars/c0sfam18.spl~ ~override~
-SAY NAME1 ~Black Ooze~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj14%~
+COPY_EXISTING ~c0sa109.spl~ ~override/c0sfam02.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
 END
-SAY NAME2 ~Black Ooze~
-SAY UNIDENTIFIED_DESC ~Black Ooze
-(Conjuration - Shadow Weave)
 
-Level; 4
-Range: Visual range of the caster
-Duration: 1 turn
-Casting Time: 3
-Area of Effect: 1 creature and any enemy within 7.5 ft.
-Saving Throw: 1/2
-
-With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a saving throw vs. death at -2 take half damage and avoid the secondary effects. This spell ignores magic resistance.~
-
-COPY ~shadowadept/familiars/c0sfam19.spl~ ~override~
-SAY NAME1 ~Shadow Assault~
-SAY NAME2 ~Shadow Assault~
-SAY UNIDENTIFIED_DESC ~Shadow Assault
-(Illusion/Phantasm - Shadow Weave)
-
-Level: 5
-Range: 0
-Duration: 9 rounds + 1 round/level after 9th
-Casting Time: 2
-Area of Effect: The caster
-Saving Throw: None
-
-This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces - a shimmering - allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus. For the duration of the spell, the shadow adept is also able to backstab with a x2 multiplier, increased to x3 at level 14 and x4 at level 21.
-
-Additionally, the caster's movement rate is doubled, allowing for a quick retreat from battle if necessary.
-
-Note: After making an attack, the shadow adept is no longer completely invisible. Opponents can target the shadow adept.~
-
-COPY ~shadowadept/familiars/c0sfam20.spl~ ~override~
-SAY NAME1 ~Void Blast~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj24%~
+COPY_EXISTING ~c0sa103.spl~ ~override/c0sfam03.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
 END
-SAY NAME2 ~Void Blast~
-SAY UNIDENTIFIED_DESC ~Void Blast
-(Evocation - Shadow Weave)
 
-Level: 5
-Range: 90 ft.
-Duration: 1d4 rounds
-Casting Time: 2
-Area of Effect: 1 creature
-Saving Throw: Neg.
-
-With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a save vs. spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds.~
-
-COPY ~shadowadept/familiars/c0sfam21.spl~ ~override~
-SAY NAME1 ~Shar's Memory Drain~
-SAY NAME2 ~Shar's Memory Drain~
-SAY UNIDENTIFIED_DESC ~Shar's Memory Drain
-(Enchantment - Shadow Weave)
-
-Level: 5
-Range: 40 ft.
-Duration: 5 rounds
-Casting Time: 5
-Area of Effect: 1 creature
-Saving Throw: None
-
-This powerful spell erases a portion of the target's memory, weakening them. All saving throws are reduced by 2 and arcane casters lose two memorized spells and have their casting time increased by 2. After 5 rounds, the target must make a save vs. spells at -4 or suffer the same effects a second time.~
-
-COPY ~shadowadept/familiars/c0sfam22.spl~ ~override~
-SAY NAME1 ~Protection from Weave-forged Weapons~
-SAY NAME2 ~Protection from Weave-forged Weapons~
-SAY UNIDENTIFIED_DESC ~Protection From Weave-forged Weapons
-(Abjuration - Shadow Weave)
-
-Level: 6
-Range: 0
-Duration: 4 rounds
-Casting Time: 1
-Area of Effect: The caster
-Saving Throw: None 
-
-When the spell is cast, it confers complete invulnerability to all magical weapons created using Weave magic. This includes weapons that are blessed or enchanted. The attacks of powerful monsters are also considered magical weapons. This spell cannot be cast on anyone who is protected from normal weapons as well as anyone protected by Mantle, Improved Mantle, or Absolute Immunity. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the shadow adept a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.~
-
-COPY ~shadowadept/familiars/c0sfam23.spl~ ~override~
-SAY NAME1 ~Black Lightning~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj08%~
+COPY_EXISTING ~c0sa108.spl~ ~override/c0sfam04.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
 END
-SAY NAME2 ~Black Lightning~
-SAY UNIDENTIFIED_DESC ~Black Lightning 
-(Invocation/Evocation - Shadow Weave)
 
-Level: 6
-Range: 40 ft.
-Duration: Instant
-Casting Time: 5
-Area of Effect: Special 
-Saving Throw: 1/2 
+COPY_EXISTING ~c0sa110.spl~ ~override/c0sfam05.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
 
-When the shadow adept casts Black Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical and fire damage. The lightning causes 1d6 points of damage for every 2 levels of the caster and causes targets to go berserk for 3 rounds. If the target of the lightning saves vs. Spell, they avoid berserking and only half damage is inflicted. Thus, a 12th-level shadow adept will cause 6d6 (half electrical, half fire) damage to a victim (3d6 electrical if the victim makes <PRO_HISHER> Saving Throw vs. Spell).~
+COPY_EXISTING ~c0sa111.spl~ ~override/c0sfam06.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
 
-COPY ~shadowadept/familiars/c0sfam24.spl~ ~override~
-SAY NAME1 ~Black Rose~
-SAY NAME2 ~Black Rose~
-SAY UNIDENTIFIED_DESC ~Black Rose
-(Conjuration/Summoning - Shadow Weave)
+COPY_EXISTING ~c0sa201.spl~ ~override/c0sfam07.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
 
-Level: 6
-Range: Visual range of the caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 1 creature
-Saving Throw: 1/2
+COPY_EXISTING ~c0sa202.spl~ ~override/c0sfam08.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
 
-This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a saving throw vs. spells, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another save vs. spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
+COPY_EXISTING ~c0sa203.spl~ ~override/c0sfam09.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa204.spl~ ~override/c0sfam10.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa206.spl~ ~override/c0sfam11.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa208.spl~ ~override/c0sfam12.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa304.spl~ ~override/c0sfam13.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa305.spl~ ~override/c0sfam14.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa306.spl~ ~override/c0sfam15.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa405.spl~ ~override/c0sfam16.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa403.spl~ ~override/c0sfam17.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa410.spl~ ~override/c0sfam18.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa502.spl~ ~override/c0sfam19.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa510.spl~ ~override/c0sfam20.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa506.spl~ ~override/c0sfam21.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa603.spl~ ~override/c0sfam22.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa605.spl~ ~override/c0sfam23.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa609.spl~ ~override/c0sfam24.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa708.spl~ ~override/c0sfam25.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa711.spl~ ~override/c0sfam26.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa806.spl~ ~override/c0sfam27.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
