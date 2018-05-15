@@ -2455,7 +2455,8 @@ IF ~OR(9)
 !Global("C0SALv6","LOCALS",0)
 !Global("C0SALv7","LOCALS",0)
 !Global("C0SALv8","LOCALS",0)
-!Global("C0SALv9","LOCALS",0)~ DO ~StartDialogOverride("c0satalk",Myself)~ EXIT
+!Global("C0SALv9","LOCALS",0)~ DO ~StartCutsceneMode()
+StartDialogOverride("c0satalk",Myself)~ EXIT
 IF ~Global("C0SALv1","LOCALS",0)
 Global("C0SALv2","LOCALS",0)
 Global("C0SALv3","LOCALS",0)
@@ -2469,5 +2470,5 @@ END
 
 IF ~Global("C0SABOOK","LOCALS",1)~ CHEATER
 SAY ~You have read the Shadow Tome of Shar and already have learned all of the Shadow Weave's secrets. Have fun cheater.~
-IF ~~ DO ~DestroySelf()~ EXIT
+IF ~~ DO ~ClearAllActions()~ EXIT
 END

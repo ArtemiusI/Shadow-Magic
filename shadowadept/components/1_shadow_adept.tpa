@@ -1183,6 +1183,10 @@ COPY ~%MOD_FOLDER%/spells/c0sasong.spl~ ~override~
 
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro10a.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj01.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2d.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2c.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2b.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2a.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj02.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj03.PRO~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj04.PRO~
@@ -3026,6 +3030,31 @@ SAY UNIDENTIFIED_DESC ~Shadow Double
 The shadow adept creates a copy of himself out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA101.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		header = 1
+		projectile = c0proj2d
+END
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		header = 2
+		projectile = c0proj2c
+END
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		header = 3
+		projectile = c0proj2b
+END
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		header = 4
+		projectile = c0proj2a
+END
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		header = 5
+		projectile = c0proj02
+END
 SAY NAME1 ~Shadow Missile~
 SAY NAME2 ~Shadow Missile~
 SAY UNIDENTIFIED_DESC ~Shadow Missile
@@ -3039,46 +3068,6 @@ Area of Effect: 1 creature
 Saving Throw: None 
 
 The shadow adept launches a missile of energy that unerringly strikes the target for 1d4 magic damage (+1 cold) and reduces the target's THAC0 by 1 for 3 rounds. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+5 damage and -5 THAC0) at level 9.~
-
-COPY ~%MOD_FOLDER%/spells/C0SA101a.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
-END
-
-COPY ~%MOD_FOLDER%/spells/C0SA101b.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
-END
-
-COPY ~%MOD_FOLDER%/spells/C0SA101c.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
-END
-
-COPY ~%MOD_FOLDER%/spells/C0SA101d.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
-END
-
-COPY ~%MOD_FOLDER%/spells/C0SA101e.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj02%~
-END
 
 COPY ~%MOD_FOLDER%/spells/C0SA102.spl~ ~override~
   LPF ALTER_EFFECT

@@ -9,9 +9,8 @@ END
 IF
 	HasItem("c0nighth",Myself)
 	AreaType(OUTDOOR)
-	OR(2)
-	TimeOfDay(DAY)
-	TimeOfDay(MORNING)
+	!TimeOfDay(DAY)
+	!TimeOfDay(MORNING)
 THEN
   RESPONSE #100
 	DestroyItem("c0nighth")
