@@ -332,6 +332,7 @@ SAY DAMAGE ~~ [VWOLF08]
 SAY DYING ~~ [VWOLF09]
 SAY SELECT_COMMON1 ~~ [VWOLF01]
 SAY SELECT_COMMON2 ~~ [VWOLF02]
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_WOLF~))
 
 COPY ~%MOD_FOLDER%/familiars/c0safam2.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override

@@ -151,6 +151,25 @@ ACTION_IF (NOT GAME_IS_BGEE) BEGIN
   END
 END
 
+// Shadow Wolf
+
+ACTION_IF (NOT GAME_IS_BGEE) BEGIN
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xe000 slotMax = 0xe999 RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~ // No free creature animation slot found.
+  END
+
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% C0_SHADOW_WOLF~ UNLESS ~C0_SHADOW_WOLF~
+  CLEAR_IDS_MAP
+
+  COPY ~%MOD_FOLDER%/animations/c0wo/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/c0wo~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+END
+
 //AUDIO
 
 LAF HANDLE_AUDIO END
