@@ -50,6 +50,7 @@ CHAIN C0SAFAM a3.1
 ~The shade wolf's eyes close as it begins to dematerialize into black mist. "Very well, summoner. I shall await your call."~
 DO ~GivePartyAllEquipment()
 ActionOverride(LastTalkedToBy,AddSpecialAbility("c0safam2"))
+CreateVisualEffectObject("c0black2",Myself)
 CreateVisualEffectObject("c0cloud1",Myself)
 Wait(1)
 DestroySelf()~ EXIT
@@ -166,6 +167,7 @@ CHAIN C0SAFAM b3.1
 ~The shadow wordlessly begins to dissipate, becoming less and less visible until it is gone entirely.~
 DO ~GivePartyAllEquipment()
 ActionOverride(LastTalkedToBy,AddSpecialAbility("c0safam2"))
+CreateVisualEffectObject("c0black2",Myself)
 CreateVisualEffectObject("c0cloud1",Myself)
 Wait(1)
 DestroySelf()~ EXIT
@@ -276,6 +278,7 @@ CHAIN C0SAFAM c3.1
 ~The mephit nods as it opens a planar gate. "You got it, boss. I could use a break anyways. See ya around."~
 DO ~GivePartyAllEquipment()
 ActionOverride(LastTalkedToBy,AddSpecialAbility("c0safam2"))
+CreateVisualEffectObject("c0black2",Myself)
 CreateVisualEffectObject("c0cloud1",Myself)
 Wait(1)
 DestroySelf()~ EXIT

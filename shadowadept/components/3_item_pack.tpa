@@ -38,8 +38,8 @@ SAY NAME2 ~Ring of Black Light~
 SAY DESC ~This black glass ring feels heavy and unnatural in your hands. When worn by those profiicent in shadow magic, it bolsters their ability to resist the life-draining nature of the Shadow Weave.
 
 STATISTICS:
-- Constitution: +1
-- Save vs. Death: +4
+– Constitution: +1
+– Save vs. Death: +4
 
 Weight: 0~
 
@@ -100,12 +100,12 @@ SAY DESC ~This dark steel two-handed sword appears to be nothing more than a wel
 STATISTICS:
 
 Combat Effects:
-- 20% chance that hit target must save vs. spells at +3 or be put to sleep for 2 rounds
-- Dream Eater: Attacks against sleeping targets deal 1d10 magic damage and restore one of the wielder's lost spells of up to 4th level
+– 20% chance that hit target must save vs. spells at +3 or be put to sleep for 2 rounds
+– Dream Eater: Attacks against sleeping targets deal 1d10 magic damage and restore one of the wielder's lost spells of up to 4th level
 
 Equipped Effects:
-- Saves vs. Enchantment: +3
-- Hit Points: -10
+– Saves vs. Enchantment: +3
+– Hit Points: -10
 
 THAC0: +2
 Damage: 1d10+2, +1 magic damage
@@ -148,9 +148,9 @@ SAY DESC ~The purple stone in this amulet draws upon and contains a limited amou
 STATISTICS:
 
 Equipped Effects:
-- Hit Points: -15
-- Can memorize one extra wizard spell of 1st to 4th level
-- Protects the wearer from Constitution loss by using 1st to 4th level Shadow Weave spells
+– Hit Points: -15
+– Can memorize one extra wizard spell of 1st to 4th level
+– Protects the wearer from Constitution loss by using 1st to 4th level Shadow Weave spells
 
 Weight: 1~
 
@@ -162,7 +162,7 @@ SAY DESC ~This amulet appears old yet carries a powerful magical enchantment. Th
 STATISTICS:
 
 Equipped Effects:
-- Casting Speed: +2
+– Casting Speed: +2
 
 Weight: 1~
 
@@ -190,11 +190,11 @@ SAY DESC ~These black robes are made of some sort of unusually light material an
 STATISTICS:
 
 Equipped Effects:
-- All cold and magic damage inflicted by the wearer is increased by 15%
-- Spell Duration: +10%
-- Hit Points: -10
-- Cold Resistance: +50%
-- Fire Resistance: -25%
+– All cold and magic damage inflicted by the wearer is increased by 15%
+– Spell Duration: +10%
+– Hit Points: -10
+– Cold Resistance: +50%
+– Fire Resistance: -25%
 
 Weight: 1~
 
@@ -225,17 +225,17 @@ When the night holds dominance over the Prime Material Plane, the black gem on t
 STATISTICS:
 
 Charge abilities:
-- Shadow Shield once per day
-- Fireshield (Shadow) once per day
-- Negative Energy Burst once per day (centered on self)
+– Shadow Shield once per day
+– Fireshield (Shadow) once per day
+– Negative Energy Burst once per day (centered on self)
 
 Combat abilities:
-- 25% chance to cast Drain Vitality on successful hit
+– 25% chance to cast Drain Vitality on successful hit
 
 Equipped abilities:
-- Casting Level: +2 (+4 during nighttime)
-- Magic Resistance: +10% (20% during nighttime)
-- Magic Damage Resistance: +20% (40% during nighttime)
+– Casting Level: +2 (+4 during nighttime)
+– Magic Resistance: +10% (20% during nighttime)
+– Magic Damage Resistance: +20% (40% during nighttime)
 
 THAC0: +5 bonus, strikes as a +5 weapon
 Damage: 1D6 + 1, +1d6+3 magic damage
@@ -285,12 +285,12 @@ SAY DESC ~This wicked knife seems to suck in light around it rather than reflect
 STATISTICS:
 
 Combat abilities:
-- Returns to the wielder's hand when thrown
-- When thrown, there is a 10% chance that the wielder will be teleported into melee range of the target and turn invisible for five rounds.
-- On a successful backstab, casts Blinding Darkness on target and restores one 1st level spell to the wielder's memory.
+– Returns to the wielder's hand when thrown
+– When thrown, there is a 10% chance that the wielder will be teleported into melee range of the target and turn invisible for five rounds.
+– On a successful backstab, casts Blinding Darkness on target and restores one 1st level spell to the wielder's memory.
 
 Equipped abilities:
-- Hit Points: -5
+– Hit Points: -5
 
 THAC0: +2
 Damage: 1d4+1, +1 magic (melee only)
@@ -342,13 +342,13 @@ SAY DESC ~This blade is made out of some unusual black metal which, instead of b
 STATISTICS:
 
 Combat abilities:
-- On a critical hit, drains ten hit points and one point of Strength (1 turn) from the target and transfers them to the wielder.
-- Reduces target's armor class by one point for 2 rounds on successful hit
+– On a critical hit, drains ten hit points and one point of Strength (1 turn) from the target and transfers them to the wielder.
+– Reduces target's armor class by one point for 2 rounds on successful hit
 
 Equipped abilities:
-- Strength: +1
-- Critical Hit Chance: +10% (this weapon only)
-- Hit Points: -10
+– Strength: +1
+– Critical Hit Chance: +10% (this weapon only)
+– Hit Points: -10
 
 THAC0: +4
 Damage: 1d8+4 (slashing)
@@ -425,8 +425,8 @@ SAY DESC ~This tiny black dart was enchanted using magic from the Shadow Weave. 
 STATISTICS:
 
 Combat abilities:
-- Returns to the wielder's hand when thrown
-- Mages and bards must save vs. spell or suffer 1d4 magic damage and lose one memorized spell
+– Returns to the wielder's hand when thrown
+– Mages and bards must save vs. spell or suffer 1d4 magic damage and lose one memorized spell
 
 THAC0: +2, +4 vs. mages and bards
 Damage: 1d3+2, +4 vs. mages and bards
@@ -457,12 +457,12 @@ SAY DESC ~This ring appears to be made of a smoky-grey material with a surface w
 STATISTICS:
 
 Charge abilities:
-- Charm Spectral Undead for 5 turns three times per day (Save vs. Spell negates)
+– Charm Spectral Undead for 5 turns three times per day (Save vs. Spell negates)
 
 Equipped abilities:
-- Armor Class: +1, +3 vs. spectral undead
-- Saving Throws: +1, +3 vs. spectral undead
-- Charisma: +1 (Shadow Adepts)
+– Armor Class: +1, +3 vs. spectral undead
+– Saving Throws: +1, +3 vs. spectral undead
+– Charisma: +1 (Shadow Adepts)
 
 Weight: 0~
 
@@ -480,13 +480,13 @@ SAY DESC ~This cloak seems to constantly expel a thin black mist, which upon utt
 STATISTICS:
 
 Charge abilities:
-- Black Mist once per day centered on self
+– Black Mist once per day centered on self
 
 Equipped abilities:
-- Wearer is ignored by shadows, wraiths and other incorporeal undead
-- Save vs. Illusion: +2
-- Save vs. Necromancy: +2
-- Save vs. Alteration: +2
+– Wearer is ignored by shadows, wraiths and other incorporeal undead
+– Save vs. Illusion: +2
+– Save vs. Necromancy: +2
+– Save vs. Alteration: +2
 
 Weight: 1~
 
@@ -529,20 +529,20 @@ The weapon seems innately opposed to creatures of good and light and deals great
 STATISTICS:
 
 Charge abilities:
-- Fireshield (Shadow) three times per day
+– Fireshield (Shadow) three times per day
   Special: Any who strike the user within a 5-ft. radius suffers 1d6+2 cold damage and suffer a -1 penalty to THAC0 and armor class for 6 rounds
   Duration: 1 turn
   Area of Effect: The user
 
 Equipped abilities:
-- Immunity to fear and morale failure
-- Wielder regenerates 1 hit point per round
-- Hit Points: -20
+– Immunity to fear and morale failure
+– Wielder regenerates 1 hit point per round
+– Hit Points: -20
 
 Combat abilities:
-- Deals 3d6 points of magic damage to good-aligned creatures
-- 20% per hit to cause target to run in panic for 5 rounds on a failed Save vs. Spell. Deals 1d6 fire damage to panicked targets.
-- On a critical hit, cast Blackfire Fury on target (10d10 unmitigated fire damage, target is raised as a devil shade allied with the wielder if slain. Save vs. Spell at -4 for half damage)
+– Deals 3d6 points of magic damage to good-aligned creatures
+– 20% per hit to cause target to run in panic for 5 rounds on a failed Save vs. Spell. Deals 1d6 fire damage to panicked targets.
+– On a critical hit, cast Blackfire Fury on target (10d10 unmitigated fire damage, target is raised as a devil shade allied with the wielder if slain. Save vs. Spell at -4 for half damage)
 
 THAC0: +5
 Damage: 2d4+5, 1d6 cold damage
@@ -583,11 +583,11 @@ SAY DESC ~This scimitar was the signature weapon of Sirius Victus, a Shadovar wa
 STATISTICS:
 
 Combat abilities:
-- Each hit reduces target's save vs. death modifier by one point for five turns
-- Each hit drains two levels on a failed save vs. death at -2
+– Each hit reduces target's save vs. death modifier by one point for five turns
+– Each hit drains two levels on a failed save vs. death at -2
 
 Equipped abilities:
-- Magic Resistance: +25%
+– Magic Resistance: +25%
 
 THAC0: +4
 Damage: 1d8+6, +2 magic
@@ -621,11 +621,11 @@ SAY DESC ~This blade was the signature weapon of the ogre mage Shadruk, who by a
 STATISTICS:
 
 Combat abilities:
-- Each hit inflicts a cumulative 5% chance of spell failure (no save)
-- On a critical hit, drain two wizard spells of up to 6th level and restores two of the wielder's wizard spells
+– Each hit inflicts a cumulative 5% chance of spell failure (no save)
+– On a critical hit, drain two wizard spells of up to 6th level and restores two of the wielder's wizard spells
 
 Equipped abilities:
-- Magic Resistance: +5%
+– Magic Resistance: +5%
 
 THAC0: +2
 Damage: 1d10+2 (slashing)
@@ -641,7 +641,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sawand.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sawan1.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Negative Energy~
-SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
 SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of arcane magic. When used, this wand launches a thin red ray of negative energy which weakens its target.
 
 As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
@@ -649,7 +649,7 @@ As this wand draws power from the Shadow Weave, anyone aside from a shadow adept
 STATISTICS:
 
 Charge abilities:
-- Negative Energy Ray
+– Negative Energy Ray
   Damage: 6d6 magic (3d6 initial, 3d6 after one round)
   Special: Reduces target's armor class, THAC0 and damage by 1 point each time damage is dealt
   Range: 100 ft.
@@ -663,7 +663,7 @@ Weight: 1~
 COPY ~%MOD_FOLDER%/itempack/c0sawan2.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Life-Draining~
-SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
 SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of arcane magic. When used, this wand drains the vitality of its target and grants it to the wielder. However, it may not affect the same target again for one turn.
 
 As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
@@ -671,7 +671,7 @@ As this wand draws power from the Shadow Weave, anyone aside from a shadow adept
 STATISTICS:
 
 Charge abilities:
-- Drains four points of Constitution from target
+– Drains four points of Constitution from target
   Range: 100 ft.
   Area of Effect: 1 creature
 
@@ -683,7 +683,7 @@ Weight: 1~
 COPY ~%MOD_FOLDER%/itempack/c0sawan3.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Nightshade~
-SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
 SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of arcane magic. When used, this wand fires a bolt of energy that shreds the target's life force, dealing damage proportional to their health.
 
 As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
@@ -691,7 +691,7 @@ As this wand draws power from the Shadow Weave, anyone aside from a shadow adept
 STATISTICS:
 
 Charge abilities:
-- Deals 30% of target's maximum hit points in magic damage (Save vs. Wand for half)
+– Deals 30% of target's maximum hit points in magic damage (Save vs. Wand for half)
   Range: 100 ft.
   Area of Effect: 1 creature
 
@@ -703,7 +703,7 @@ Weight: 1~
 COPY ~%MOD_FOLDER%/itempack/c0sawan4.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Missiles~
-SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
 SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of moderate intelligence. When used, this wand launches five icy missiles that deal damage to the target.
 
 As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
@@ -711,7 +711,7 @@ As this wand draws power from the Shadow Weave, anyone aside from a shadow adept
 STATISTICS:
 
 Charge abilities:
-- 5 Shadow Missiles will strike the target
+– 5 Shadow Missiles will strike the target
   Damage: 1d4 magic damage, 1 cold damage per missile
   Special: Each missile penalizes target's THAC0 by one point
   Range: 100 ft.
@@ -732,7 +732,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sawan5.itm~ ~override~
 END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Fire~
-SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
 SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of moderate intelligence. This wand is capable of manipulating magical fire from the Plane of Shadow, launching either a large blast or arrows of flame according to the user's choice.
 
 As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
@@ -740,13 +740,13 @@ As this wand draws power from the Shadow Weave, anyone aside from a shadow adept
 STATISTICS:
 
 Charge abilities:
-- Shadowblast
+– Shadowblast
   Damage: 3d6 cold, 3d6 magic (Save vs. Wand to avoid magic damage)
   Special: Reduces saving throws and attack rolls by one point (Save vs. Wand to avoid)
   Range: 90 ft.
   Area of Effect: 30-ft. radius 
 
-- 3 Blackfire Arrows
+– 3 Blackfire Arrows
   Damage: 1d6 cold, 4d6 fire per arrow (Save vs. Wand for half)
   Range: 90 ft.
   Area of Effect: 1 creature
@@ -759,7 +759,7 @@ Weight: 1~
 COPY ~%MOD_FOLDER%/itempack/c0sawan6.itm~ ~override~
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Binding~
-SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something - metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
+SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
 SAY DESC ~This wand was created using Shadow Magic and, unlike other items enchanted by the same source, may be used by any user of moderate intelligence. This wand is capable of creating shadowy tendrils which bind themselves around the chosen target, holding them in place.
 
 As this wand draws power from the Shadow Weave, anyone aside from a shadow adept who attempts to use this wand will suffer 1d10 magic damage.
@@ -767,7 +767,7 @@ As this wand draws power from the Shadow Weave, anyone aside from a shadow adept
 STATISTICS:
 
 Charge abilities:
-- Targets must save vs. spells at -4 or become held for one turn
+– Targets must save vs. spells at -4 or become held for one turn
   Range: 35 ft.
   Area of Effect: 1 creature and any enemy within 7.5 ft.
 
@@ -796,11 +796,11 @@ SAY DESC ~These boots seem to be crafted of sturdy material yet weigh almost not
 STATISTICS:
 
 Charge abilities (five charges):
-- Shadowstep
+– Shadowstep
 
 Equipped abilities:
-- Dexterity: +2 (Shadow Adepts), +1 (Others)
-- Movement Rate: +2 (Shadow Adepts)
+– Dexterity: +2 (Shadow Adepts), +1 (Others)
+– Movement Rate: +2 (Shadow Adepts)
 
 Weight: 1~
 
@@ -828,13 +828,13 @@ SAY DESC ~Kryn Darkflame, in his younger days, experimented tirelessly in an att
 STATISTICS:
 
 Equipped abilities:
-- Caster Level: +2 (+4 when below 50% hit points)
-- Fire Resistance: +40%
-- Cold Resistance: +40%
-- Save vs. Death: -4
-- Hit Points: -15
-- May cast one additional wizard spell of each level
-- May only be removed with a Remove Curse spell
+– Caster Level: +2 (+4 when below 50% hit points)
+– Fire Resistance: +40%
+– Cold Resistance: +40%
+– Save vs. Death: -4
+– Hit Points: -15
+– May cast one additional wizard spell of each level
+– May only be removed with a Remove Curse spell
 
 Weight: 2~
 
@@ -858,11 +858,11 @@ This enchanted staff is topped with a shadow gem, bestowing upon it powers from 
 STATISTICS:
 
 Combat abilities:
-- 50% chance to deal 2d6 magic damage and silence for 2 rounds on a failed save vs. spell
+– 50% chance to deal 2d6 magic damage and silence for 2 rounds on a failed save vs. spell
 
 Equipped effects:
-- Intelligence: +1
-- Armor Class: +2 vs. good creatures
+– Intelligence: +1
+– Armor Class: +2 vs. good creatures
 
 THAC0: +2
 Damage: 1d6+2 (crushing)
@@ -892,9 +892,9 @@ SAY DESC ~This powerful mage robe offers protection from all forms of physical a
 STATISTICS:
 
 Equipped abilities:
-- Armor Class: 5
-- Magic Resistance: +5%
-- Protects against Constitution loss from 1st and 2nd level Shadow Weave spells
+– Armor Class: 5
+– Magic Resistance: +5%
+– Protects against Constitution loss from 1st and 2nd level Shadow Weave spells
 
 Weight: 6~
 
@@ -916,8 +916,8 @@ SAY DESC ~This ioun stone has a dark-colored hue. When worn, the stone regenerat
 STATISTICS:
 
 Equipped abilities:
-- Regenerate 1 hit point every 12 seconds
-- Wisdom: +1
+– Regenerate 1 hit point every 12 seconds
+– Wisdom: +1
 
 Weight: 0~
 
@@ -939,7 +939,7 @@ SAY DESC ~This candle emanates a powerful magical presence. Only a shadow adept 
 STATISTICS:
 
 Charge abilities (once per day):
-- May cast Unmask and Breaching Dark at the cost of ten hit points
+– May cast Unmask and Breaching Dark at the cost of ten hit points
 
 Weight: 3~
 
@@ -961,7 +961,7 @@ SAY DESC ~This sinister lute makes unpleasant sounds when strummed, causing a ch
 STATISTICS:
 
 Charge abilities (three times per day):
-- Mass Lesser Drain Vitality
+– Mass Lesser Drain Vitality
   Range: Self
   Area of Effect: 30'
 
@@ -994,10 +994,10 @@ SAY DESC ~This suit of dark-colored chain mail is surprisingly light and somehow
 STATISTICS:
 
 Equipped abilities:
-- Save vs. Death: +2
-- Immunity to level drain
-- Spellcasting is not disabled
-- All magic damage inflicted by the wearer is increased by 15%
+– Save vs. Death: +2
+– Immunity to level drain
+– Spellcasting is not disabled
+– All magic damage inflicted by the wearer is increased by 15%
 
 Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
 Requires:
@@ -1045,16 +1045,16 @@ SAY DESC ~This heavy spellbook emanates a malignant aura, making it uncomfortabl
 STATISTICS:
 
 Combat abilities:
-- Drain 3d6+2 hit points from the target and transfers it to the wielder (40 charges)
-- Upon killing a target, regain one spell of up to 6th level
+– Drain 3d6+2 hit points from the target and transfers it to the wielder (40 charges)
+– Upon killing a target, regain one spell of up to 6th level
 
 Equipped abilities:
-- May only be removed with a Remove Curse spell
-- May cast one bonus spell of each level
-- Hit Points: -40
-- Caster Level: +2 
-- Casting Speed: +1
-- Attacks per round set to 1
+– May only be removed with a Remove Curse spell
+– May cast one bonus spell of each level
+– Hit Points: -40
+– Caster Level: +2 
+– Casting Speed: +1
+– Attacks per round set to 1
 
 STATISTICS:
 
@@ -1080,10 +1080,10 @@ SAY DESC ~This suit of armor is formed from interlocking shadow dragon scales. E
 STATISTICS:
 
 Equipped abilities:
-- Immunity to level drain
-- Spellcasting is not disabled (Shadow Adepts)
-- Save vs. Death: +4 (Shadow Adepts), +2 (Others)
-- Maximum Hit Points: +20% (Shadow Adepts)
+– Immunity to level drain
+– Spellcasting is not disabled (Shadow Adepts)
+– Save vs. Death: +4 (Shadow Adepts), +2 (Others)
+– Maximum Hit Points: +20% (Shadow Adepts)
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
 Requires:

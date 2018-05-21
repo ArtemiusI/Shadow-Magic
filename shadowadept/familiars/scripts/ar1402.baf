@@ -1,0 +1,67 @@
+IF
+  Global("C0SAFamiliarThaxInterjection","AR1402",0)
+  Allegiance("shadra01",ENEMY)
+  InMyArea("c0safam")
+  Alignment("c0safam",MASK_LAWFUL)
+THEN RESPONSE #100
+  Wait(2)
+  SetGlobal("C0SAFamiliarThaxInterjection","AR1402",1)
+  DisplayStringHead("c0safam",~*growl* "At last, a worthy opponent!"~)
+  Wait(4)
+  DisplayStringHead("c0safam",~"Come then, wyrm! Your blood shall taste the sweetest!"~)
+END
+
+IF
+  Global("C0SAFamiliarThaxInterjection","AR1402",0)
+  Allegiance("shadra01",ENEMY)
+  InMyArea("c0safam")
+  Alignment("c0safam",MASK_LCNEUTRAL)
+THEN RESPONSE #100
+  Wait(2)
+  SetGlobal("C0SAFamiliarThaxInterjection","AR1402",1)
+  DisplayStringHead("c0safam",~"Brave you are, massster... I ssshall do my utmossst to aid!"~)
+END
+
+IF
+  Global("C0SAFamiliarThaxInterjection","AR1402",0)
+  Allegiance("shadra01",ENEMY)
+  InMyArea("c0safam")
+  Alignment("c0safam",MASK_CHAOTIC)
+THEN RESPONSE #100
+  Wait(2)
+  SetGlobal("C0SAFamiliarThaxInterjection","AR1402",1)
+  DisplayStringHead("c0safam",~"Agh, have you got a deathwish, boss?!"~)
+END
+
+IF
+  Global("C0SAFamiliarThaxInterjection","AR1402",1)
+  Dead("shadra01")
+  InMyArea("c0safam")
+  Alignment("c0safam",MASK_LAWFUL)
+THEN RESPONSE #100
+  Wait(2)
+  SetGlobal("C0SAFamiliarThaxInterjection","AR1402",2)
+  DisplayStringHead("c0safam",~"A fine hunt, summoner. Savor the taste of hard-earned victory."~)
+END
+
+IF
+  Global("C0SAFamiliarThaxInterjection","AR1402",1)
+  Dead("shadra01")
+  InMyArea("c0safam")
+  Alignment("c0safam",MASK_LCNEUTRAL)
+THEN RESPONSE #100
+  Wait(2)
+  SetGlobal("C0SAFamiliarThaxInterjection","AR1402",2)
+  DisplayStringHead("c0safam",~"Mossst impressive, massster..."~)
+END
+
+IF
+  Global("C0SAFamiliarThaxInterjection","AR1402",1)
+  Dead("shadra01")
+  InMyArea("c0safam")
+  Alignment("c0safam",MASK_CHAOTIC)
+THEN RESPONSE #100
+  Wait(2)
+  SetGlobal("C0SAFamiliarThaxInterjection","AR1402",2)
+  DisplayStringHead("c0safam",~"Whoa, what a monster... but we showed him who's boss, eh, boss?"~)
+END

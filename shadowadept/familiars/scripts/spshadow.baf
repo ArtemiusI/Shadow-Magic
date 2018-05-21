@@ -1,0 +1,7 @@
+IF
+  IsOverMe("c0safam")
+  Race("c0safam",SHADOW)
+THEN
+  RESPONSE #50
+  ApplyDamage(LastTrigger,10,MAGIC)
+END

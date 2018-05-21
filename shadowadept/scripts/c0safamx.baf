@@ -10,7 +10,7 @@ THEN
 	ActionOverride("c0safam",AddFamiliar())
 	ActionOverride("c0safam",CreateVisualEffectObject("c0cloud1",Myself))
 	ActionOverride("c0safam",SetGlobal("Revival","LOCALS",1))
-	ActionOverride("c0safam",ApplySpell(Myself,HEAL_NO_VISUAL))
+	ActionOverride("c0safam",ApplySpellRES("c0safamr",Myself))
 	ActionOverride("c0safam",ClearAllActions())
 END
 

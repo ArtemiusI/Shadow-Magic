@@ -176,11 +176,13 @@ LAF HANDLE_AUDIO END
 
 PRINT ~Please choose one of the following:
 [1] Constitution drain on cast
-[2] Drain Hit Points on cast~
+[2] Drain Current Hit Points on cast
+[3] Drain Maximum Hit Points on cast
+[4] No Cost~
 
 OUTER_SPRINT ~hpcost~ ~placeholder_value~
 OUTER_WHILE (!(IS_AN_INT ~hpcost~) OR (~hpcost~ > 0x5) OR (~hpcost~ < 0x1)) BEGIN
-  PRINT ~Please select 1 or 2 and press Enter.~
+  PRINT ~Please select 1, 2, 3 or 4 and press Enter.~
   ACTION_READLN ~hpcost~
 END
       ACTION_IF ("hpcost" = 1) THEN BEGIN
@@ -475,8 +477,14 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
 END
 
 COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA207a.spl~ ~override~
 COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
@@ -490,8 +498,14 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA407a.spl~ ~override~
 COPY ~%MOD_FOLDER%/alt-spell/C0SA407.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
 SAY NAME1 ~Drain Vitality~
 SAY NAME2 ~Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Drain Vitality
@@ -505,8 +519,14 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA706a.spl~ ~override~
 COPY ~%MOD_FOLDER%/alt-spell/C0SA706.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
 SAY NAME1 ~Greater Drain Vitality~
 SAY NAME2 ~Greater Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
@@ -520,7 +540,353 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-      PRINT ~Resource: Hit Point drain on cast~
+      PRINT ~Resource: Drain Current Hit Points on cast~
+      END
+      ACTION_IF ("hpcost" = 3) THEN BEGIN
+LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-3.tra~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-2 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-4 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-6 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-8 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-10 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-12 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-14 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-16 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-18 Hit Points~)
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 17 // display string
+	  opcode = 18
+      timing = 0
+	  duration = 36
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      match_parameter1 = 0
+ parameter1 = RESOLVE_STR_REF (~-20 Hit Points~)
+END
+
+COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
+SAY NAME1 ~Lesser Drain Vitality~
+SAY NAME2 ~Lesser Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
+(Necromancy - Shadow Weave)
+
+Level: 2
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA407.spl~ ~override~
+SAY NAME1 ~Drain Vitality~
+SAY NAME2 ~Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Drain Vitality
+(Necromancy - Shadow Weave)
+
+Level: 4
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA706.spl~ ~override~
+SAY NAME1 ~Greater Drain Vitality~
+SAY NAME2 ~Greater Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
+(Necromancy - Shadow Weave)
+
+Level: 7
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
+      PRINT ~Resource: Drain Maximum Hit Points on cast~
+      END
+      ACTION_IF ("hpcost" = 4) THEN BEGIN
+LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-4.tra~
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
+  LPF DELETE_SPELL_EFFECT
+      INT_VAR
+	  opcode_to_delete = %-1%
+END
+
+COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
+SAY NAME1 ~Lesser Drain Vitality~
+SAY NAME2 ~Lesser Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
+(Necromancy - Shadow Weave)
+
+Level: 2
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA407.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
+SAY NAME1 ~Drain Vitality~
+SAY NAME2 ~Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Drain Vitality
+(Necromancy - Shadow Weave)
+
+Level: 4
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+COPY ~%MOD_FOLDER%/alt-spell/C0SA706.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
+SAY NAME1 ~Greater Drain Vitality~
+SAY NAME2 ~Greater Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
+(Necromancy - Shadow Weave)
+
+Level: 7
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+      PRINT ~Resource: No Cost~
       END
 
 INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
@@ -661,6 +1027,10 @@ WRITE_ASCII 0x280 ~c0saorb~ #32 // death variable
 
 COMPILE ~%MOD_FOLDER%/dialogue/c0satalk.d~
 COMPILE ~%MOD_FOLDER%/dialogue/c0saorb.d~
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+COMPILE ~%MOD_FOLDER%/dialogue/bg2dial.d~
+END
 
 ////////////////////////////////////////
 /////////SCRIPTS////////////////////////
@@ -1200,52 +1570,52 @@ COPY ~%MOD_FOLDER%/spells/c0sasong.spl~ ~override~
 
 // PROJECTILES
 
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro10a.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj01.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2d.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2c.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2b.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2a.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj02.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj03.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj04.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj05.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj06.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj07.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj08.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro08a.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj09.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj10.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj11.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj12.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj13.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj14.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj15.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj16.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj17.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj18.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj19.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj20.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj21.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj22.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj23.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj24.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0negeb.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0weird.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0nightk.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sasper.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sarain.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sawall.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0cflame.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0blizza.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0oblivi.PRO~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pandem.PRO~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj01.PRO~ ~SM Flying Skull~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2d.PRO~ ~SM Magic Missile 1~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2c.PRO~ ~SM Magic Missile 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2b.PRO~ ~SM Magic Missile 3~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2a.PRO~ ~SM Magic Missile 4~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj02.PRO~ ~SM Magic Missile 5~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj03.PRO~ ~SM Sparkle~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj04.PRO~ ~SM Flame Arrow~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj05.PRO~ ~SM Purple Fireball~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj06.PRO~ ~SM Red Ray~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj07.PRO~ ~SM Cone of Cold~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj08.PRO~ ~SM Chain Lightning 1~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro08a.PRO~ ~SM Chain Lightning 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj09.PRO~ ~SM Purple Fire Cone~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj10.PRO~ ~SM Insects 1~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro10a.PRO~ ~SM Insects 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj11.PRO~ ~SM Negastorm~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj12.PRO~ ~SM Dark Bolt~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj13.PRO~ ~SM Phantasm~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj14.PRO~ ~SM Small Area~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj15.PRO~ ~SM Purple Ray~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj16.PRO~ ~SM Black Mist~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj17.PRO~ ~SM Black Missile~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj18.PRO~ ~SM Small Area Enemies Only~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj19.PRO~ ~SM Purple Orb~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj20.PRO~ ~SM Green Fireball~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj21.PRO~ ~SM Purple Ray 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj22.PRO~ ~SM Nightshade~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj23.PRO~ ~SM Night Knives 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj24.PRO~ ~SM Void Blast~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0negeb.PRO~ ~SM Negative Burst~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0weird.PRO~ ~SM Weird~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0nightk.PRO~ ~SM Night Knives~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sasper.PRO~ ~SM Shadow Spear~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sarain.PRO~ ~SM Black Rain~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sawall.PRO~ ~SM Wall of Fire~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0cflame.PRO~ ~SM Cursed Flames~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0blizza.PRO~ ~SM Blizzard~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0oblivi.PRO~ ~SM Oblivion Pull~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pandem.PRO~ ~SM Pandemonium~
 
-COPY ~%MOD_FOLDER%/spells/c0proj08.pro~ ~override~
-SAY 0x21A ~c0pro08a~
+COPY_EXISTING ~c0proj08.pro~ ~override~
+WRITE_SHORT 0x21A (IDS_OF_SYMBOL (~projectl~ ~c0pro08a~)) + 1
 
-COPY ~%MOD_FOLDER%/spells/c0proj10.pro~ ~override~
-SAY 0x21A ~c0pro10a~
+COPY_EXISTING ~c0proj10.pro~ ~override~
+WRITE_SHORT 0x21A (IDS_OF_SYMBOL (~projectl~ ~c0pro10a~)) + 1
 
 ////////////////////////////////////////
 //////////SPELLS////////////////////////
@@ -3175,7 +3545,6 @@ LPF ALTER_EFFECT
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Chilled~)
   END
 
@@ -3272,7 +3641,6 @@ COPY ~%MOD_FOLDER%/spells/C0SA111.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Mesmerized~)
   END
 SAY NAME1 ~Mesmerize~
@@ -3487,6 +3855,14 @@ Saving Throw: None
 This spell transports the caster to any place within the visual range of the caster. When the spell is cast, the shadow adept makes a brief planar jaunt into the Plane of Shadow and exits at a different location, making it seem as though <PRO_HESHE> has teleported. The caster is also briefly invisible for the travel duration, cancelling spells targeted at <PRO_HIMHER> unless the spellcaster can see through invisibility.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA212.spl~ ~override~
+LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 215
+      savingthrow = 1
+	  resist_dispel = 1
+END
 SAY NAME1 ~Hallucinate~
 SAY NAME2 ~Hallucinate~
 SAY UNIDENTIFIED_DESC ~Hallucinate
@@ -3913,40 +4289,45 @@ COPY ~%MOD_FOLDER%/spells/C0SA409.spl~ ~override~
       check_globals = 1
       check_headers = 1
 	  match_opcode = 267
-	  match_parameter1 = 25802
 	  parameter1 = RESOLVE_STR_REF (~One Level Drained~)
+    STR_VAR
+	  match_resource = 1
   END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
 	  match_opcode = 267
-	  match_parameter1 = 25803
 	  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+    STR_VAR
+	  match_resource = 2
   END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
 	  match_opcode = 267
-	  match_parameter1 = 25804
 	  parameter1 = RESOLVE_STR_REF (~Three Levels Drained~)
+    STR_VAR
+	  match_resource = 3
   END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
 	  match_opcode = 267
-	  match_parameter1 = 25805
 	  parameter1 = RESOLVE_STR_REF (~Four Levels Drained~)
+    STR_VAR
+	  match_resource = 4
   END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
 	  match_opcode = 267
-	  match_parameter1 = 25806
 	  parameter1 = RESOLVE_STR_REF (~Five Levels Drained~)
+    STR_VAR
+	  match_resource = 5
   END
 SAY NAME1 ~Immunity~
 SAY NAME2 ~Immunity~
@@ -4202,7 +4583,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
+      header = 0
  parameter1 = RESOLVE_STR_REF (~9% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4210,7 +4591,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 2
+      header = 1
  parameter1 = RESOLVE_STR_REF (~10% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4218,7 +4599,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 3
+      header = 2
  parameter1 = RESOLVE_STR_REF (~11% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4226,7 +4607,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 4
+      header = 3
  parameter1 = RESOLVE_STR_REF (~12% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4234,7 +4615,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 5
+      header = 4
  parameter1 = RESOLVE_STR_REF (~13% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4242,7 +4623,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 6
+      header = 5
  parameter1 = RESOLVE_STR_REF (~14% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4250,7 +4631,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 7
+      header = 6
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4258,7 +4639,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 8
+      header = 7
  parameter1 = RESOLVE_STR_REF (~16% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4266,7 +4647,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 9
+      header = 8
  parameter1 = RESOLVE_STR_REF (~17% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4274,7 +4655,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 10
+      header = 9
  parameter1 = RESOLVE_STR_REF (~18% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4282,7 +4663,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 11
+      header = 10
  parameter1 = RESOLVE_STR_REF (~19% of maximum hit points lost~)
   END
   LPF ALTER_EFFECT
@@ -4290,7 +4671,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 12
+      header = 11
  parameter1 = RESOLVE_STR_REF (~20% of maximum hit points lost~)
   END
 SAY NAME1 ~Nightshade~
@@ -4363,7 +4744,6 @@ COPY ~%MOD_FOLDER%/spells/C0SA510A.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
@@ -4373,7 +4753,6 @@ COPY ~%MOD_FOLDER%/spells/C0SA510B.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
@@ -4383,7 +4762,6 @@ COPY ~%MOD_FOLDER%/spells/C0SA510C.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
@@ -4393,7 +4771,6 @@ COPY ~%MOD_FOLDER%/spells/C0SA510D.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
   
@@ -4403,7 +4780,6 @@ COPY ~%MOD_FOLDER%/spells/C0SA511.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 26230
  parameter1 = RESOLVE_STR_REF (~Protected by Shadow Screen~)
   END
 SAY NAME1 ~Shadow Screen~
@@ -4657,7 +5033,6 @@ COPY ~%MOD_FOLDER%/spells/C0SA611.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 326
-      match_parameter2 = 0
 	  parameter2 = %C0SA611%
 END
 SAY NAME1 ~Devour Dream~
@@ -4810,7 +5185,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa707a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
+	  multi_match = 1
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 5 rounds~)
   END
   LPF ALTER_EFFECT
@@ -4818,7 +5193,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa707a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 2
+	  multi_match = 1
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 4 rounds~)
   END
   LPF ALTER_EFFECT
@@ -4826,7 +5201,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa707a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 3
+	  multi_match = 1
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 3 rounds~)
   END
   LPF ALTER_EFFECT
@@ -4834,7 +5209,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa707a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 4
+	  multi_match = 1
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 2 rounds~)
   END
   LPF ALTER_EFFECT
@@ -4842,7 +5217,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa707a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 5
+	  multi_match = 1
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 1 round~)
   END
 
@@ -5132,6 +5507,14 @@ SAY UNIDENTIFIED_DESC ~End Dark Passage
 
 Use this ability to break the Dark Passage. The shadow adept will be stunned for 2 rounds unless a Save vs. Death at -2 is made.~
 
+COPY ~%MOD_FOLDER%/spells/c0sa810c.spl~ ~override~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
+END
+
 COPY ~%MOD_FOLDER%/spells/C0SA811.spl~ ~override~
 SAY NAME1 ~Invoke Reflection~
 SAY NAME2 ~Invoke Reflection~
@@ -5174,7 +5557,6 @@ COPY ~%MOD_FOLDER%/spells/c0sa901.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Maximum Hit Points reduced to half~)
   END
 SAY NAME1 ~Darkbolt~
@@ -5292,7 +5674,6 @@ SAY NAME1 ~Death Mark~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
 SAY NAME2 ~Death Mark~
@@ -5314,7 +5695,6 @@ COPY ~%MOD_FOLDER%/spells/c0sa907a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa907b.spl~ ~override~
@@ -5323,7 +5703,6 @@ COPY ~%MOD_FOLDER%/spells/c0sa907b.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa907c.spl~ ~override~
@@ -5332,7 +5711,6 @@ COPY ~%MOD_FOLDER%/spells/c0sa907c.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa907d.spl~ ~override~
@@ -5341,7 +5719,6 @@ COPY ~%MOD_FOLDER%/spells/c0sa907d.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa907e.spl~ ~override~
@@ -5350,7 +5727,6 @@ COPY ~%MOD_FOLDER%/spells/c0sa907e.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-      match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
   END
 
@@ -5612,3 +5988,19 @@ INCLUDE ~%MOD_FOLDER%/components/5_familiars.tpa~
       END
       ACTION_IF ("familiar" = 2) THEN BEGIN
       END
+
+///////////////////////////
+/////////CROSSMOD//////////
+///////////////////////////
+
+// Shadow Magic
+
+ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~ AND FILE_EXISTS_IN_GAME ~L#Fou25.cre~
+THEN BEGIN
+  PRINT ~Adding crossmod compatibility between Foundling and Shadow Magic~
+  COMPILE ~%MOD_FOLDER%/dialogue/npc/foundling.d~
+COPY_EXISTING ~L#Fou.cre~ ~override~
+WRITE_SHORT 0x274 12
+COPY_EXISTING ~L#Fou25.cre~ ~override~
+WRITE_SHORT 0x274 12
+END

@@ -1,0 +1,11 @@
+IF
+  Global("C0YinrouRuinsInterjection","AR1404",0)
+  InMyArea("c0safam")
+  Alignment("c0safam",MASK_LAWFUL)
+THEN RESPONSE #100
+  Wait(5)
+  SetGlobal("C0YinrouRuinsInterjection","AR1404",1)
+  DisplayStringHead("c0safam",~"Hnh... the touch of darkness infests these woods."~)
+  Wait(4)
+  DisplayStringHead("c0safam",~"The shadows here will make for fine sport. I shall savor this opportunity to hunt."~)
+END
