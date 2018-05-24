@@ -11,7 +11,7 @@ LANGUAGE ~English~
          ~English~
 		 ~%MOD_FOLDER%/languages/english/setup.tra~
 
-BEGIN ~Shadow Magic: Shadow Adept mage kit~
+BEGIN ~Shadow Magic: Main Component~
 
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 

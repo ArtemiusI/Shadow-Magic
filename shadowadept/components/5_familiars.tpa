@@ -240,18 +240,6 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
   BUT_ONLY
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0safam1.baf~
-END
-
 COPY ~%MOD_FOLDER%/familiars/C0SAFAM1.spl~ ~override~
 SAY NAME1 ~Find Shadow Familiar~
 SAY NAME2 ~Find Shadow Familiar~

@@ -1106,20 +1106,7 @@ SAY NAME1 ~Black Orb~
 SAY NAME2 ~Shadow Orb~
 SAY DESC ~This smoky glass sphere emanates an aura of power unlike any magic you're familiar with. A strange energy struggles to break free of it.~
 
-PRINT ~Add Familiars?
-[1] Yes
-[2] No~
-
-OUTER_SPRINT ~familiar~ ~placeholder_value~
-OUTER_WHILE (!(IS_AN_INT ~familiar~) OR (~familiar~ > 0x5) OR (~familiar~ < 0x1)) BEGIN
-  PRINT ~Please select 1 or 2 and press Enter.~
-  ACTION_READLN ~familiar~
-END
-      ACTION_IF ("familiar" = 1) THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/components/5_familiars.tpa~
-      END
-      ACTION_IF ("familiar" = 2) THEN BEGIN
-      END
 
 ///////////////////////////
 /////////CROSSMOD//////////

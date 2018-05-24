@@ -63,6 +63,33 @@ THEN
 	Continue()
 END
 
+// Familiar
+
+IF
+	InPartySlot(Myself,0)
+	Specifics(Myself,12)
+	ClassLevelGT(Myself,WIZARD,5)
+	Global("C0SASummonFamiliar","LOCALS",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SASummonFamiliar","LOCALS",1)
+	ActionOverride(Myself,AddSpecialAbility("c0safam1"))
+	Continue()
+END
+
+IF
+	InPartySlot(Myself,0)
+	Specifics(Myself,12)
+	Class(Myself,BARD_ALL)
+	LevelGT(Myself,7)
+	Global("C0SASummonFamiliar","LOCALS",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SASummonFamiliar","LOCALS",1)
+	ActionOverride(Myself,AddSpecialAbility("c0safam1"))
+	Continue()
+END
+
 // Nightsinger's Tithe
 
 IF

@@ -1073,6 +1073,7 @@ END
 
 COPY ~%MOD_FOLDER%/itempack/leat19a.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19b.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/leat19c.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19.itm~ ~override~
 SAY DESC ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer immunity to level drain, but while worn by a shadow adept, it greatly empowers them, allowing them to use their magic with less risk.
 
