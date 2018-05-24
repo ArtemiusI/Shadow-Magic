@@ -150,7 +150,7 @@ STATISTICS:
 Equipped Effects:
 – Hit Points: -15
 – Can memorize one extra wizard spell of 1st to 4th level
-– Protects the wearer from Constitution loss by using 1st to 4th level Shadow Weave spells
+– Protects the wearer against Constitution loss from using 1st–4th level Shadow Weave spells
 
 Weight: 1~
 
@@ -162,7 +162,7 @@ SAY DESC ~This amulet appears old yet carries a powerful magical enchantment. Th
 STATISTICS:
 
 Equipped Effects:
-– Casting Speed: +2
+– Casting Speed: +2 (Shadow Adepts), +1 (Others)
 
 Weight: 1~
 
@@ -1073,7 +1073,6 @@ END
 
 COPY ~%MOD_FOLDER%/itempack/leat19a.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19b.eff~ ~override~
-COPY ~%MOD_FOLDER%/itempack/leat19c.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19.itm~ ~override~
 SAY DESC ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer immunity to level drain, but while worn by a shadow adept, it greatly empowers them, allowing them to use their magic with less risk.
 
@@ -1093,9 +1092,16 @@ Weight: 10~
 
 COMPILE ~%MOD_FOLDER%/dialogue/c0sascrl.d~
 
-COPY_EXISTING ~ITEMDIAL.2da~ ~override~
-APPEND_FILE ~%MOD_FOLDER%/itempack/ITEMDIAL.txt~
-REPLACE ~c0sascrl~ ~Read Scroll~
+OUTER_SET readscroll = RESOLVE_STR_REF (~Read Scroll~)
+APPEND ~ITEMDIAL.2da~ ~C0SASCR1    %readscroll%    C0SASCR1
+C0SASCR2    %readscroll%    C0SASCR2
+C0SASCR3    %readscroll%    C0SASCR3
+C0SASCR4    %readscroll%    C0SASCR4
+C0SASCR5    %readscroll%    C0SASCR5
+C0SASCR6    %readscroll%    C0SASCR6
+C0SASCR7    %readscroll%    C0SASCR7
+C0SASCR8    %readscroll%    C0SASCR8
+C0SASCR9    %readscroll%    C0SASCR9~
 
 COPY ~%MOD_FOLDER%/itempack/c0sascr1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT

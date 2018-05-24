@@ -1,11 +1,27 @@
 IF
   HPPercentLT(Myself,50)
+  Race(Myself,SHADOW)
+  Allegiance(Myself,NOTEVIL)
   Global("MoreShadows","LOCALS",0)
 THEN
   RESPONSE #100
     CreateVisualEffectObject("ICMAGICH",Myself)
     CreateCreatureObject("c0shadfi",Myself,0,0,0)
     CreateCreatureObject("c0shadfi",Myself,0,0,0)
+    SetGlobal("MoreShadows","LOCALS",1)
+    Continue()
+END
+
+IF
+  HPPercentLT(Myself,50)
+  Race(Myself,SHADOW)
+  !Allegiance(Myself,NOTEVIL)
+  Global("MoreShadows","LOCALS",0)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("ICMAGICH",Myself)
+    CreateCreatureObject("shadfi01",Myself,0,0,0)
+    CreateCreatureObject("shadfi01",Myself,0,0,0)
     SetGlobal("MoreShadows","LOCALS",1)
     Continue()
 END
@@ -30,9 +46,8 @@ THEN
 END
 
 IF
-  !See([GOODCUTOFF])
-  Allegiance(Myself,ENEMY)
-  Range(Player1,40)
+  !Allegiance(Myself,ENEMY)
+  !Range(Player1,40)
 THEN
   RESPONSE #100
     MoveToObject(Player1)

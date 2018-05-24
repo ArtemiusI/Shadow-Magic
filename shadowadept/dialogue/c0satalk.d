@@ -567,7 +567,7 @@ SAY ~Choose one 8th level spell:~
 + ~!HaveKnownSpellRES("c0sa803")~ + ~Shadow Prison~ + 8.4
 + ~!HaveKnownSpellRES("c0sa804")~ + ~Power Word: Blind~ + 8.5
 + ~!HaveKnownSpellRES("c0sa805")~ + ~Shadow Shield~ + 8.6
-+ ~!HaveKnownSpellRES("c0sa806")~ + ~Blackfire Fury~ + 8.7
++ ~!HaveKnownSpellRES("c0sa806") !HaveKnownSpellRES("c0sa813")~ + ~Blackfire Fury~ + 8.7
 + ~!HaveKnownSpellRES("c0sa807")~ + ~Shar's Mantle~ + 8.8
 + ~!HaveKnownSpellRES("c0sa808")~ + ~Shadow's Refuge~ + 8.9
 + ~!HaveKnownSpellRES("c0sa809")~ + ~Dark Premonition~ + 8.10
@@ -2174,7 +2174,7 @@ Casting Time: 8
 Area of Effect: The caster
 Saving Throw: 1/2
 
-The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 fire damage (Save vs. Spells for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
+The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes shadow fire after a short delay dealing 10d10 fire damage (Save vs. Spells at at -4 for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
 
 If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a devil shade under the caster's allegiance for 5 turns before becoming assimilated into the Shadow Plane.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1)  AddSpecialAbility("C0SA806")~ + NEXT
@@ -2274,7 +2274,7 @@ Casting Time: 8
 Area of Effect: 30-ft. radius cloud 
 Saving Throw: 1/2
 
-This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be slowed for that round. This spell is not affected by Magic Resistance.~
+This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round. This spell is not affected by Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) AddSpecialAbility("C0SA812")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END

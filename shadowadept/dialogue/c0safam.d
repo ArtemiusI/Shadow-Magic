@@ -51,7 +51,8 @@ CHAIN C0SAFAM a3.1
 DO ~GivePartyAllEquipment()
 ActionOverride(LastTalkedToBy,AddSpecialAbility("c0safam2"))
 CreateVisualEffectObject("c0black2",Myself)
-CreateVisualEffectObject("c0cloud1",Myself)
+CreateVisualEffectObject("c0incan1",Myself)
+CreateVisualEffectObject("c0incan2",Myself)
 Wait(1)
 DestroySelf()~ EXIT
 
@@ -168,7 +169,8 @@ CHAIN C0SAFAM b3.1
 DO ~GivePartyAllEquipment()
 ActionOverride(LastTalkedToBy,AddSpecialAbility("c0safam2"))
 CreateVisualEffectObject("c0black2",Myself)
-CreateVisualEffectObject("c0cloud1",Myself)
+CreateVisualEffectObject("c0incan1",Myself)
+CreateVisualEffectObject("c0incan2",Myself)
 Wait(1)
 DestroySelf()~ EXIT
 
@@ -279,7 +281,8 @@ CHAIN C0SAFAM c3.1
 DO ~GivePartyAllEquipment()
 ActionOverride(LastTalkedToBy,AddSpecialAbility("c0safam2"))
 CreateVisualEffectObject("c0black2",Myself)
-CreateVisualEffectObject("c0cloud1",Myself)
+CreateVisualEffectObject("c0incan1",Myself)
+CreateVisualEffectObject("c0incan2",Myself)
 Wait(1)
 DestroySelf()~ EXIT
 

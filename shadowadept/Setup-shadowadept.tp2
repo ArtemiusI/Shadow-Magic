@@ -4,27 +4,28 @@ ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
   INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/qd_multiclass.tpa~
 END
 AUTO_TRA ~%MOD_FOLDER%/translations/%s~
 LANGUAGE ~English~
          ~English~
 		 ~%MOD_FOLDER%/languages/english/setup.tra~
 
-BEGIN ~Shadow Magic: Shadow Adept mage Kit for BG:EE~
+BEGIN ~Shadow Magic: Shadow Adept mage kit~
 
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 
 // SHADOW MONK - requires Shadow Magic component
 
-BEGIN ~Shadow Magic: Shadow Monk monk kit for BG:EE~
-  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
+BEGIN ~Shadow Magic: Shadow Monk monk kit~
+  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/2_shadow_monk.tpa~
 
 // SHADOW MAGIC ITEM PACK - requires Shadow Magic component
 
 BEGIN ~Shadow Magic: Item Pack~
-  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
+  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/3_item_pack.tpa~
 
@@ -32,7 +33,7 @@ INCLUDE ~%MOD_FOLDER%/components/3_item_pack.tpa~
 // SHADOW MAGIC NPC REACTIONS - requires Shadow Magic component
 
 BEGIN ~Shadow Magic: NPC Reactions~
-  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
+  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/4_npc_reactions.tpa~
 */
@@ -40,6 +41,6 @@ INCLUDE ~%MOD_FOLDER%/components/4_npc_reactions.tpa~
 
 BEGIN ~Shadow Magic: Quests and Encounters (BG:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
-  REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sadept.spl~) ~Main component must be installed~
+  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/8_quests.tpa~

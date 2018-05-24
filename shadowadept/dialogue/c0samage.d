@@ -39,11 +39,7 @@ CHAIN C0SAMAG3 a3.3
 = ~I learned of this castle, Candlekeep, a library of knowledge... and held onto hope that a cure for my condition would be found here. When I failed to find anything of use, I could only ask for a lonely place to die in peace. The monks led me here.~
 = ~Have you encountered any of my fellows? If so, then they are dead, I suspect. Our fates were sealed the day we became slaves to the Shadovar. Master Darkflame believed we would find peace under his tutelage, but that does not change what we are.~
 = ~The insanity will consume me soon, stranger, and fully this time. I cannot return, even if I wished to. I would rather die at your hands in this place, and you can tell my master that this was my choice.~
-DO ~Enemy()
-SetSequence(SEQ_CAST)
-DisplayStringHead(Myself,@100001)
-CreateVisualEffectObject("c0saef2",Myself)
-CreateCreatureObjectOffset("c0maksim",Myself,[-10.-10])~ EXIT
+DO ~Enemy()~ EXIT
 
 BEGIN C0SAMAG4
 

@@ -100,13 +100,6 @@ WRITE_ASCII 0x280 ~c0samag3~ #32 // death variable
 SAY NAME1 ~Mak'kai~
 SAY NAME2 ~Mak'kai~
 
-COPY ~%MOD_FOLDER%/creatures/c0maksim.cre~ ~override~
-WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0maksim~  #8  // dialogue
-WRITE_ASCII 0x280 ~c0maksim~ #32 // death variable
-SAY NAME1 ~Mak'kai~
-SAY NAME2 ~Mak'kai~
-
 COPY ~%MOD_FOLDER%/itempack/c0samag3.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR

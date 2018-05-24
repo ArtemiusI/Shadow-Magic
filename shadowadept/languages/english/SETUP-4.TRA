@@ -16,7 +16,7 @@ DARKVISION: The shadow adept is gifted with the ability to see in the dark even 
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 4th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -30,7 +30,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 
  – 14th level: May use the Shadow Double ability once per day.
  
-SHADOW DOUBLE: The shadow adept creates a copy of himself out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
  – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
@@ -54,7 +54,7 @@ DARKVISION: The shadow adept is gifted with the ability to see in the dark even 
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 4th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -68,7 +68,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 
  – 14th level: May use the Shadow Double ability once per day.
  
-SHADOW DOUBLE: The shadow adept creates a copy of himself out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
  – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
@@ -93,7 +93,7 @@ DARKVISION: The shadow disciple is gifted with the ability to see in the dark ev
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 4th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -130,7 +130,7 @@ DARKVISION: The shadow disciple is gifted with the ability to see in the dark ev
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 4th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -170,7 +170,7 @@ DARKVISION: The shadow adept is gifted with the ability to see in the dark even 
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 6th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -210,7 +210,7 @@ DARKVISION: The shadow adept is gifted with the ability to see in the dark even 
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 6th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -247,7 +247,7 @@ DARKVISION: The shadow adept is gifted with the ability to see in the dark even 
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 4th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -257,7 +257,7 @@ SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are f
 
  – 14th level: May use the Shadow Double ability once per day.
  
-SHADOW DOUBLE: The shadow adept creates a copy of himself out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
  – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
@@ -281,7 +281,7 @@ DARKVISION: The shadow adept is gifted with the ability to see in the dark even 
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 4th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -291,7 +291,7 @@ SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are f
 
  – 14th level: May use the Shadow Double ability once per day.
  
-SHADOW DOUBLE: The shadow adept creates a copy of himself out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
  – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
@@ -316,7 +316,7 @@ DARKVISION: The shadow disciple is gifted with the ability to see in the dark ev
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 4th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -349,7 +349,7 @@ DARKVISION: The shadow disciple is gifted with the ability to see in the dark ev
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 4th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -385,7 +385,7 @@ DARKVISION: The shadow adept is gifted with the ability to see in the dark even 
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 6th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -421,7 +421,7 @@ DARKVISION: The shadow adept is gifted with the ability to see in the dark even 
  – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
  – 6th level: May use the Shield of Shadows ability once per day.
  
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at him for 1 hour per 2 levels to a maximum of 9 hours.
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
 
 From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
 
@@ -437,4 +437,178 @@ Disadvantages:
  – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
  – May not learn or use spells from the Weave. (Spells chosen at character creation will be erased)
  – Alignment restricted to True Neutral, Chaotic Neutral or Neutral Evil.~
-@100001	= ~Shadow Double~
+@10007	= ~NIGHTBLADE: This character can use the abilities of a Shadow Adept and a Thief, though arcane spells cannot be cast while wearing armor.
+
+Advantages:
+– May use Shadow Magic.
+
+SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic. The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
+
+– Gains the Darkvision innate ability.
+
+DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
+
+– May cast one additional spell per level.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+@10008	= ~NIGHTBRINGER: This character can use the abilities of a Cleric and a Shadow Adept, though weapons are restricted to only those allowed by the Cleric's ethos, and arcane spells cannot be cast while wearing armor.
+
+Advantages:
+– May use Shadow Magic.
+
+SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic. The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
+
+– Gains the Darkvision innate ability.
+
+DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
+
+– May cast one additional spell per level.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+@10009	= ~SHADE WARRIOR: This character can use the abilities of a Fighter and a Shadow Adept, though they cannot cast spells while wearing armor. They may Specialize in, but not Master, any weapon they can use.
+
+Advantages:
+– May use Shadow Magic.
+
+SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic. The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
+
+– Gains the Darkvision innate ability.
+
+DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
+
+– May cast one additional spell per level.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+@10010	= ~SHADOW ENFORCER: This character can use the abilities of a Fighter, Shadow Adept, and Thief, though they cannot use their thieving skills while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.
+
+Advantages:
+– May use Shadow Magic.
+
+SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic. The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
+
+– Gains the Darkvision innate ability.
+
+DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
+
+– May cast one additional spell per level.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+@10011	= ~DARK JUSTICIAR: This character can use the abilities of a Fighter, Shadow Adept, and Cleric, though they are restricted to weapons allowed by the Cleric's ethos and cannot cast arcane spells while wearing armor. This character may Specialize in, but not Master, any weapon they can use.
+
+Advantages:
+– May use Shadow Magic.
+
+SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic. The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
+
+– Gains the Darkvision innate ability.
+
+DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
+
+– May cast one additional spell per level.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
