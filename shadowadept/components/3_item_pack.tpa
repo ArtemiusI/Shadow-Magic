@@ -124,12 +124,6 @@ REMOVE_CRE_ITEM ~sw2h02~
 ADD_CRE_ITEM ~c0sas2h1~ #0 #0 #0 ~NONE~ ~weapon1~
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~bodfgt03.cre~ THEN BEGIN
-COPY_EXISTING ~bodfgt03.cre~ ~override~
-REMOVE_CRE_ITEM ~sw2h11~
-ADD_CRE_ITEM ~c0sas2h1~ #0 #0 #0 ~NONE~ ~weapon1~
-END
-
 COPY ~%MOD_FOLDER%/itempack/c0saamu1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
@@ -303,11 +297,6 @@ Requires:
 
 Weight: 1~
 WRITE_SHORT 0x9C ~%c0sadagg%~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~maevar.cre~ THEN BEGIN
-COPY_EXISTING ~maevar.cre~ ~override~
-ADD_CRE_ITEM ~c0sadag1~ #0 #0 #0 ~NONE~ ~inv~
-END
 
 COPY ~%MOD_FOLDER%/itempack/c0sas1h1.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sas1h1.itm~ ~override~
@@ -578,7 +567,7 @@ Requires:
  10 Strength
 
 Weight: 4~
-SAY DESC ~This scimitar was the signature weapon of Sirius Victus, a Shadovar warrior. Its wicked edge is complemented by life-draining magic that permanently weakens anyone it cuts.
+SAY DESC ~This scimitar was the signature weapon of Septimus Victus, a Shadovar warrior. Its wicked edge is complemented by life-draining magic that permanently weakens anyone it cuts.
 
 STATISTICS:
 

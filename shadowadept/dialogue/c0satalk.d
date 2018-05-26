@@ -315,7 +315,7 @@ OR(12)
 ClassLevelGT(Myself,WIZARD,2)
 ClassLevelGT(Myself,ROGUE,3)
 GlobalGT("C0SALv2","LOCALS",0)
-OR(12)
+OR(13)
 !HaveKnownSpellRES("c0sa201")
 !HaveKnownSpellRES("c0sa202")
 !HaveKnownSpellRES("c0sa203")
@@ -327,7 +327,8 @@ OR(12)
 !HaveKnownSpellRES("c0sa209")
 !HaveKnownSpellRES("c0sa210")
 !HaveKnownSpellRES("c0sa211")
-!HaveKnownSpellRES("c0sa212")~ + ~2nd level~ + level2
+!HaveKnownSpellRES("c0sa212")
+!HaveKnownSpellRES("c0sa213")~ + ~2nd level~ + level2
 + ~OR(2)
 ClassLevelGT(Myself,WIZARD,4)
 ClassLevelGT(Myself,ROGUE,6)
@@ -507,7 +508,7 @@ SAY ~Choose one 4th level spell:~
 + ~!HaveKnownSpellRES("c0sa406")~ + ~Phantasmal Killer~ + 4.7
 + ~!HaveKnownSpellRES("c0sa407")~ + ~Drain Vitality~ + 4.8
 + ~!HaveKnownSpellRES("c0sa408")~ + ~Dread Whispers~ + 4.9
-+ ~!HaveKnownSpellRES("c0sa409")~ + ~Immunity~ + 4.10
++ ~!HaveKnownSpellRES("c0sa409")~ + ~Negative Immunity~ + 4.10
 + ~!HaveKnownSpellRES("c0sa410")~ + ~Black Ooze~ + 4.11
 + ~!HaveKnownSpellRES("c0sa411")~ + ~Wall of Black Flame~ + 4.12
 + ~!HaveKnownSpellRES("c0sa412")~ + ~Pain Mirror~ + 4.13
@@ -702,7 +703,7 @@ Saving Throw: None
 
 By means of this spell, the shadow adept creates a magical field of force that serves as armor, increasing the caster's armor class by 1 point per 3 levels of the caster up to a maximum of +4 at level 13. It is cumulative with Dexterity bonuses to Armor Class. The veil is invisible, does not hinder movement, adds no weight or encumbrance, and doesn't prevent spellcasting. It lasts until successfully dispelled or until its duration expires.
 
-Additionally, whenever the caster suffers damage while the shadow veil is active, <PRO_HESHE> has a 5% chance to turn invisible for 2 rounds.~
+Additionally, whenever the caster suffers damage while the shadow veil is active, <PRO_HESHE> has a 5% (+5% per ten caster levels) chance to turn invisible for 2 rounds.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) AddSpecialAbility("c0sa107")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -750,7 +751,7 @@ Casting Time: 1
 Area of Effect:
 Saving Throw: None
 
-This spell briefly conjures a projection of the caster next to <PRO_HIMHER> while turning invisible for 1 round.~
+This spell briefly conjures a projection of the caster next to <PRO_HIMHER> while turning <PRO_HIMHER> invisible for 1 round.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) AddSpecialAbility("c0sa110")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -983,6 +984,24 @@ The target of this spell must make a Saving Throw vs. Spell or come under its ef
 ++ ~Return to spell selection.~ + learn
 END
 
+IF ~~ 2.13
+SAY ~Shadowfade
+(Illusion/Phantasm - Shadow Weave)
+
+Level: 2
+Range: Touch 
+Duration: Special 
+Casting Time: 2 
+Area of Effect: 1 creature 
+Saving Throw: None 
+
+This spell causes the creature touched to vanish from sight and be undetectable by normal vision or even infravision. Of course, the invisible creature is not magically silenced, and certain other conditions can render the creature detectable. Even allies cannot see the invisible creature or its gear, unless these allies can normally see invisible things or employ magic to do so. Items dropped or put down by the invisible creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. The spell remains in effect until it is magically broken or dispelled, until the recipient attacks any creature, or until 24 hours have passed. The caster cannot perform any actions that manipulate the environment around <PRO_HIMHER>, such as opening doors, disarming a trap, or opening a chest. The caster can, however, cast defensive spells on <PRO_HIMHER>self and fellow party members. And if <PRO_HESHE> attacks, <PRO_HESHE> immediately becomes visible, although the invisibility enables <PRO_HIMHER> to attack first.
+
+Additionally, if the target is either a shadow adept or a native of the Shadow Plane, they are healed for 1d6 hit points (+1d6 per five caster levels).~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","LOCALS",-1) AddSpecialAbility("C0SA213")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
 IF ~~ 3.1
 SAY ~Blackfire Arrow
 (Conjuration/Summoning - Shadow Weave)
@@ -1100,9 +1119,9 @@ Casting Time: 3
 Area of Effect: 1 creature and any enemy within 7.5 ft.
 Saving Throw: Neg. 
 
-This spell holds 1d4 humans, demihumans, or humanoid creatures rigidly immobile and in place for five or more rounds. The Hold Person spell affects any bipedal human, demihuman, or humanoid of mansize or smaller, including brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be held, while an ogre could not. The effect is centered on the victim selected by the caster. Every enemy within 7.5 ft. of the target is also affected. Those who Save vs. Spell at -4 are totally unaffected by the spell. Undead creatures cannot be held.
+This spell holds one creature of any type rigidly immobile and in place for one turn, unless a Saving Throw vs. Spell is made with a -4 penalty. Those who succeed on their Saving Throws are totally unaffected by the spell.
 
-Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subjects' condition due to wounds, disease, or poison.~
+Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subject's condition due to wounds, diseases, or poison.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","LOCALS",-1) AddSpecialAbility("C0SA307")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1260,9 +1279,7 @@ Casting Time: 4
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-The spell allows the caster to adversely affect all the Saving Throws of <PRO_HISHER> enemies. The effect is applied to all hostile creatures within the area of effect. Opponents under the influence of this spell make all Saving Throws and attack rolls at a penalty of -4.
-
-This spell is not affected by Magic Resistance.~
+The spell allows the caster to adversely affect all the Saving Throws of <PRO_HISHER> enemies. The effect is applied to all hostile creatures within the area of effect. Opponents under the influence of this spell make all Saving Throws and attack rolls at a penalty of -4. This spell is not affected by Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) AddSpecialAbility("C0SA403")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1272,19 +1289,21 @@ SAY ~Summon Shadow
 (Necromancy - Shadow Weave)
 Level: 4
 Range: Long
-Duration: 1 hour
+Duration: 2 hours
 Casting Time: 1 round
 Area of Effect: Special
 Saving Throw: None
 
-By means of this spell, the caster summons a number of shadows, undead monsters which serve the mage under any conditions. The type and number of creatures that appear depend upon the level of the wizard casting the spell.
+By means of this spell, the caster summons a number of shadows, undead monsters which serve the mage under any conditions. The type and number of creatures that appear depend upon the level of the shadow adept casting the spell.
 
 7th: 3 shadows
 9th: 3 shadow fiends
 12th+ : 3 wraiths
 16th+ : 2 wraiths, 1 devil shade
 
-The undead creatures will remain under the wizard's control until they are slain or the spell duration expires.~
+The undead creatures will remain under the shadow adept's control until they are slain or the spell duration expires.
+
+NOTE: Due to being creatures of the Plane of Shadow, shadows are weakened in natural daylight.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) AddSpecialAbility("C0SA404")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1356,7 +1375,7 @@ Dread Whispers causes all enemies within range to become afflicted by an ominous
 END
 
 IF ~~ 4.10
-SAY ~Immunity
+SAY ~Negative Immunity
 (Abjuration - Shadow Weave)
 
 Level: 4
@@ -1382,7 +1401,7 @@ Casting Time: 3
 Area of Effect: 1 creature and any enemy within 7.5 ft.
 Saving Throw: 1/2
 
-With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a Saving Throw vs. Death at -2 take half damage and avoid the secondary effects. This spell ignores magic resistance.~
+With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a Saving Throw vs. Death at -2 take half damage and avoid the secondary effects. This spell ignores Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) AddSpecialAbility("C0SA410")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1399,7 +1418,7 @@ Casting Time: 3
 Area of Effect: 10'
 Saving Throw: 1/2
 
-With this spell, the shadow adept creates a wall of black fire, dealing 2d6 fire damage to all creatures who pass through it (Save vs. Spells for half) and reduces their Armor Class by -2 for one round. Creatures cannot take damage more than once per round.~
+With this spell, the shadow adept creates a wall of black fire, dealing 4d6 damage (half fire, half magic) to all creatures who pass through it (Save vs. Spells at -4 for half) and reduces their Armor Class by -4 for one round. Creatures cannot take damage more than once per round.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) AddSpecialAbility("C0SA411")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1651,9 +1670,7 @@ Casting Time: 6
 Area of Effect: 5-ft. radius sphere
 Saving Throw: None
 
-This spell creates an immobile, faintly shimmering magical sphere around the caster that prevents any 1st-, 2nd-, 3rd-, or 4th-level spell effects from penetrating (i.e., the area of effect of any such spells does not include the area of the Globe of Invulnerability). This includes innate abilities and effects from devices. However, any type of spell can be cast out of the magical sphere, and these pass from the caster of the globe to their subject without affecting the globe. 5th- and higher level spells are not affected by the globe, and magical attacks of 5th-level or higher, such as Spellstrike and Pierce Magic, can bring it down.
-
-Additionally, the shadow adept gains 20% magic resistance as long as the globe is up.~
+This spell creates an immobile, faintly shimmering magical sphere around the caster that prevents any 1st-, 2nd-, 3rd-, or 4th-level spell effects from penetrating (i.e., the area of effect of any such spells does not include the area of the Globe of Invulnerability). This includes innate abilities and effects from devices. However, any type of spell can be cast out of the magical sphere, and these pass from the caster of the globe to their subject without affecting the globe. 5th- and higher level spells are not affected by the globe, and magical attacks of 5th-level or higher, such as Spellstrike and Pierce Magic, can bring it down. Additionally, the shadow adept gains 20% magic resistance as long as the globe is up.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","LOCALS",-1) AddSpecialAbility("C0SA601")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1853,7 +1870,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-When this spell is cast, it dispels one spell protection of any level affecting the target creature. The spells affected by Ruby Ray Of Reversal are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. Additionally, this spell creates a small dead magic zone around the target, preventing the target from casting spells for 2 rounds. The target's Magic Resistance, if any, does not affect this spell.~
+When this spell is cast, it dispels one spell protection of any level affecting the target creature. The spells affected by the Black Ray of Destruction are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. Additionally, this spell creates a small dead magic zone around the target, preventing the target from casting spells for 5 rounds. The target's Magic Resistance, if any, does not affect this spell.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) AddSpecialAbility("C0SA701")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1931,9 +1948,7 @@ Saving Throw: Special
 
 When the caster utters the spell, he calls forth a swarm of venomous biting and stinging shadow creatures to plague the target. This carpet-like mass swarms over a large area, spreading to all creatures within 30 feet of the target. Invisibility is no protection.
 
-For the duration of the spell, those affected fight with a -2 penalty to attack rolls and armor class. In addition, each round, the victims suffer 2d6 points of damage from bites, have a 100% chance of spell failure, and must make saving throws vs. Death at -2 or run away in fear. If a successful Save vs. breath at -6 is made, the target manages to avoid most of the swarm, reducing damage from bites by half and completely negating the spell failure penalty.
-
-This spell is not affected by Magic Resistance.~
+For the duration of the spell, those affected fight with a -2 penalty to attack rolls and armor class. In addition, each round, the victims suffer 2d6 points of damage from bites, have a 100% chance of spell failure, and must make saving throws vs. Death at -2 or run away in fear. If a successful Save vs. breath at -6 is made, the target manages to avoid most of the swarm, reducing damage from bites by half and completely negating the spell failure penalty. This spell is not affected by Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) AddSpecialAbility("C0SA705")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2208,9 +2223,7 @@ Casting Time: 3
 Area of Effect: The caster
 Saving Throw: None
 
-When a shadow adept casts Shadow's Refuge, <PRO_HESHE> opens a gate to a safe (in relative terms) pocket area in the Plane of Shadow, where time passes more slowly and gives <PRO_HIMHER> time to rest and recuperate away from the present battle. For one turn, the shadow adept is safe from combat and <PRO_HISHER> hit points are restored to full, and <PRO_HESHE> regains two spells of each spell level of 7th level and below when <PRO_HESHE> returns.
-
-WARNING: Using this spell without other party members causes a game over!~
+When a shadow adept casts Shadow's Refuge, <PRO_HESHE> opens a gate to a safe (in relative terms) pocket area in the Plane of Shadow, where time passes more slowly and gives <PRO_HIMHER> time to rest and recuperate away from the present battle. For one turn, the shadow adept is safe from combat and <PRO_HISHER> hit points are restored to full, and <PRO_HESHE> regains two arcane spells of each spell level of 7th level and below when <PRO_HESHE> returns. In addition, as the caster will be resting for a long period of time, all effects whether beneficial or otherwise will be removed when they return. The shadow adept may choose to return from the refuge before its duration has expired, but <PRO_HESHE> will only get partial benefits.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) AddSpecialAbility("C0SA808")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2239,10 +2252,10 @@ Level: 8
 Range: Party
 Duration: Special
 Casting Time: 1 round
-Area of Effect: Party
+Area of Effect: 20-ft
 Saving Throw: None
 
-This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster suffers 1d6 points of magic damage (Save vs. Death to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
+This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies within 20' in range for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster suffers 1d6 points of magic damage (Save vs. Death to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) AddSpecialAbility("C0SA810")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2274,7 +2287,7 @@ Casting Time: 8
 Area of Effect: 30-ft. radius cloud 
 Saving Throw: 1/2
 
-This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round. This spell is not affected by Magic Resistance.~
+This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round. This spell is not affected by Magic Resistance. Creatures that are immune to cold are unaffected by the blizzard.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) AddSpecialAbility("C0SA812")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2306,9 +2319,7 @@ Casting Time: 0
 Area of Effect: 1 creature
 Saving Throw: Special 
 
-This spell fires a bolt of necrotic energy which rends the soul of its target. Targets who fail a Save vs. Death at -2 have their maximum hit points cut in half for five rounds. Even if the target makes its save, they take 5d6+10 magic damage and their magic resistance, if any, is nullified for five rounds. This spell is not affected by magic resistance.
-
-If this spell kills its target, the caster temporarily gains a 50% bonus to their maximum hit points for 1 turn and regains two spells of 8th level or below.~
+This spell fires a bolt of necrotic energy which rends the soul of its target. Targets who fail a Save vs. Death at -2 have their maximum hit points cut in half for five rounds. Even if the target makes its save, they take 5d6+10 magic damage and their magic resistance, if any, is nullified for five rounds. If the bolt kills its target, the caster temporarily gains a 50% bonus to their maximum hit points for 1 turn and regains two spells of 8th level or below. This spell is not affected by Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) AddSpecialAbility("C0SA901")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2436,9 +2447,7 @@ Casting Time: 9
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.
-
-This spell is not affected by Magic Resistance.~
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell. This spell is not affected by Magic Resistance. Creatures immune to fire are unaffected. Creatures immune to fire are unaffected.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) AddSpecialAbility("C0SA909")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END

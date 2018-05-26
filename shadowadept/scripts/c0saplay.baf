@@ -63,11 +63,23 @@ THEN
 	Continue()
 END
 
+// First Memory
+
+IF
+	Delay(15)
+	Global("C0SAFirstMemory","LOCALS",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAFirstMemory","LOCALS",1)
+	ApplySpellRES("c0samemo",Myself)
+END
+
 // Familiar
 
 IF
 	InPartySlot(Myself,0)
 	Specifics(Myself,12)
+	ActionListEmpty()
 	ClassLevelGT(Myself,WIZARD,5)
 	Global("C0SASummonFamiliar","LOCALS",0)
 THEN
@@ -80,6 +92,7 @@ END
 IF
 	InPartySlot(Myself,0)
 	Specifics(Myself,12)
+	ActionListEmpty()
 	Class(Myself,BARD_ALL)
 	LevelGT(Myself,7)
 	Global("C0SASummonFamiliar","LOCALS",0)
@@ -93,11 +106,13 @@ END
 // Nightsinger's Tithe
 
 IF
+  ActionListEmpty()
   GlobalGT("C0SA903","LOCALS",49)
   Global("C0NightsingerTithe","LOCALS",0)
 THEN
   RESPONSE #100
 	SetGlobal("C0NightsingerTithe","LOCALS",1)
 	ApplySpellRES("C0SA903B",Myself)
+	DisplayStringHead(Myself,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
 	Continue()
 END

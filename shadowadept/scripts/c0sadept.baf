@@ -172,84 +172,6 @@ THEN
 END
 
 IF
-  Global("OH_Heal","LOCALS",1)
-  OR(2)
-    HPPercentGT(Myself,84)
-    !HasItem("POTN52",Myself)
-THEN
-  RESPONSE #100
-    SetGlobal("OH_Heal","LOCALS",0)
-END
-
-IF
-  HPPercentLT(Myself,85)
-  Global("OH_Heal","LOCALS",0)
-  HasItem("POTN52",Myself)
-THEN
-  RESPONSE #100
-    SetGlobal("OH_Heal","LOCALS",1)
-END
-
-IF
-  See(Nearestenemyof(Myself))
-  !ClassLevelGT(Myself,WIZARD,15)
-  HasItem("C0SApot1",Myself)
-  Global("DrinkEbonshade","LOCALS",0)
-THEN
-  RESPONSE #100
-	UseItem("C0SApot1",Myself)
-	SetGlobalTimer("C0DrinkPotion","LOCALS",ONE_TURN)
-    SetGlobal("DrinkEbonshade","LOCALS",1)
-	Continue()
-END
-
-IF
-  Allegiance(Myself,ENEMY)
-  See(Nearestenemyof(Myself))
-  !ClassLevelGT(Myself,WIZARD,15)
-  HasItem("C0SApot1",Myself)
-  GlobalTimerExpired("C0DrinkPotion","LOCALS")
-THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,~*quaffs a potion*~)
-	UseItem("C0SApot1",Myself)
-	SetGlobalTimer("C0DrinkPotion","LOCALS",ONE_TURN)
-END
-
-IF
-  Global("OH_Heal","LOCALS",1)
-  !StateCheck(Myself,STATE_INVISIBLE)
-  !Global("dvgldust","LOCALS",1)
-  HasItem("POTN10",Myself)
-  !GlobalTimerNotExpired("OH_Cast","LOCALS")
-  !CheckStatGT(Player1,0,TRUE_SIGHT)
-  !CheckStatGT(Player2,0,TRUE_SIGHT)
-  !CheckStatGT(Player3,0,TRUE_SIGHT)
-  !CheckStatGT(Player4,0,TRUE_SIGHT)
-  !CheckStatGT(Player5,0,TRUE_SIGHT)
-  !CheckStatGT(Player6,0,TRUE_SIGHT)
-  !CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
-  !CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    UseItem("POTN10",Myself)
-    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
-END
-
-IF
-  Global("OH_Heal","LOCALS",1)
-  !GlobalTimerNotExpired("OH_Cast","LOCALS")
-  HasItem("POTN52",Myself)
-  HPPercentLT(Myself,85)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    UseItem("POTN52",Myself)
-    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
-END
-
-IF
   !CheckStatGT(Myself,0,AURACLEANSING)
   ClassLevelGT(Myself,WIZARD,15)
   Global("OH_Trig","LOCALS",0)
@@ -12727,6 +12649,207 @@ THEN
   RESPONSE #100
     SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
     SpellRES("C0SA208",Myself)
+END
+
+IF
+  Global("OH_Heal","LOCALS",1)
+  OR(2)
+    HPPercentGT(Myself,84)
+    !HasItem("POTN52",Myself)
+THEN
+  RESPONSE #100
+    SetGlobal("OH_Heal","LOCALS",0)
+END
+
+IF
+  HPPercentLT(Myself,85)
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN52",Myself)
+THEN
+  RESPONSE #100
+    SetGlobal("OH_Heal","LOCALS",1)
+END
+
+IF
+  See(Nearestenemyof(Myself))
+  !ClassLevelGT(Myself,WIZARD,15)
+  HasItem("C0SApot1",Myself)
+  Global("DrinkEbonshade","LOCALS",0)
+THEN
+  RESPONSE #100
+	UseItem("C0SApot1",Myself)
+	SetGlobalTimer("C0DrinkPotion","LOCALS",ONE_TURN)
+    SetGlobal("DrinkEbonshade","LOCALS",1)
+	Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(Nearestenemyof(Myself))
+  !ClassLevelGT(Myself,WIZARD,15)
+  HasItem("C0SApot1",Myself)
+  GlobalTimerExpired("C0DrinkPotion","LOCALS")
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,~*quaffs a potion*~)
+	UseItem("C0SApot1",Myself)
+	SetGlobalTimer("C0DrinkPotion","LOCALS",ONE_TURN)
+END
+
+IF
+  Global("OH_Heal","LOCALS",1)
+  !StateCheck(Myself,STATE_INVISIBLE)
+  !Global("dvgldust","LOCALS",1)
+  HasItem("POTN10",Myself)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+  !CheckStatGT(Player1,0,TRUE_SIGHT)
+  !CheckStatGT(Player2,0,TRUE_SIGHT)
+  !CheckStatGT(Player3,0,TRUE_SIGHT)
+  !CheckStatGT(Player4,0,TRUE_SIGHT)
+  !CheckStatGT(Player5,0,TRUE_SIGHT)
+  !CheckStatGT(Player6,0,TRUE_SIGHT)
+  !CheckStatGT([GOODCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+  !CheckStatGT([GOODCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN10",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN11",Myself)
+  CheckStatGT(Myself,0,ARMORCLASS)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN11",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN35",Myself)
+  CheckStatLT(Myself,50,MAGICDAMAGERESISTANCE)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN35",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN14",Myself)
+  !StateCheck(Myself,STATE_HASTED)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN14",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN34",Myself)
+  CheckStatLT(Myself,100,RESISTMAGIC)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN34",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN21",Myself)
+  CheckStat(Myself,0,SCRIPTINGSTATE4)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN21",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN45",Myself)
+  !CheckStatGT(Myself,0,CLERIC_FREE_ACTION)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN45",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HasItem("POTN05",Myself)
+  CheckStatLT(Myself,22,STR)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN05",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("OH_Heal","LOCALS",1)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+  HasItem("POTN52",Myself)
+  HPPercentLT(Myself,85)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN52",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",1)
+  HasItem("POTN55",Myself)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN55",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",1)
+  !HasItem("POTN55",Myself)
+  HasItem("POTN52",Myself)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN52",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
+END
+
+IF
+  Global("OH_Heal","LOCALS",0)
+  HPPercentLT(Myself,85)
+  HasItem("POTN55",Myself)
+  !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    UseItem("POTN55",Myself)
+    DisplayStringHead(Myself,46150) // '*quaffs a potion*'
 END
 
 IF Allegiance(Myself,GOODCUTOFF)

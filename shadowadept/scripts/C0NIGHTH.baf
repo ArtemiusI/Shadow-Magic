@@ -7,25 +7,46 @@ THEN
 END
 
 IF
-	HasItem("c0nighth",Myself)
-	AreaType(OUTDOOR)
-	!TimeOfDay(DAY)
-	!TimeOfDay(MORNING)
-THEN
-  RESPONSE #100
-	DestroyItem("c0nighth")
-END
-
-IF
-	!HasItem("c0nighth",Myself)
+	Race(Myself,SHADOW)
 	AreaType(OUTDOOR)
 	OR(2)
 	TimeOfDay(DAY)
 	TimeOfDay(MORNING)
+	Global("DaylightWeakened","LOCALS",0)
 THEN
   RESPONSE #100
-	GiveItemCreate("c0nighth",Myself,1,0,0)
-	XEquipItem("c0nighth",Myself,SLOT_RING_RIGHT,EQUIP)
+	SetGlobal("DaylightWeakened","LOCALS",1)
+	ChangeStat(Myself,STR,-2,ADD)
+	ChangeStat(Myself,CON,-4,ADD)
+	ChangeStat(Myself,THAC0,4,ADD)
+	ChangeStat(Myself,ARMORCLASS,4,ADD)
+END
+
+IF
+	Race(Myself,SHADOW)
+	AreaType(OUTDOOR)
+	!TimeOfDay(DAY)
+	!TimeOfDay(MORNING)
+	Global("DaylightWeakened","LOCALS",1)
+THEN
+  RESPONSE #100
+	SetGlobal("DaylightWeakened","LOCALS",0)
+	ChangeStat(Myself,STR,2,ADD)
+	ChangeStat(Myself,CON,4,ADD)
+	ChangeStat(Myself,THAC0,-4,ADD)
+	ChangeStat(Myself,ARMORCLASS,-4,ADD)
+END
+
+IF
+	!AreaType(OUTDOOR)
+	Global("DaylightWeakened","LOCALS",1)
+THEN
+  RESPONSE #100
+	SetGlobal("DaylightWeakened","LOCALS",0)
+	ChangeStat(Myself,STR,2,ADD)
+	ChangeStat(Myself,CON,4,ADD)
+	ChangeStat(Myself,THAC0,-4,ADD)
+	ChangeStat(Myself,ARMORCLASS,-4,ADD)
 END
 
 IF

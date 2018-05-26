@@ -24,6 +24,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Rrgh... I will not fall so pitifully a second time."~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -33,6 +34,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Yin'rou will never die!"~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -41,7 +43,8 @@ IF
   RandomNum(3,3)
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
-  DisplayStringHead(Myself,~"We are bound, and thus death has no hold on me, summoner."~)
+  DisplayStringHead(Myself,~"So long as we are bound, death has no hold on me, summoner."~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -51,6 +54,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"There isss no end to my exissstence..."~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -60,6 +64,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"My deepessst apologiesss, massster..."~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -69,6 +74,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"I return..."~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -78,6 +84,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Well, that never gets any more pleasant. Let's not have that happen again, 'kay boss?"~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -87,6 +94,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Oof, I'll be feeling that one for days to come..."~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -96,6 +104,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Hope you weren't too worried, boss."~)
+  ApplySpellRES("c0safamr",Myself)
 END
 
 IF
@@ -195,6 +204,51 @@ RemoveFamiliar()
 SetGlobalTimer("C0SAFamiliarDeadTimer","GLOBAL",ONE_DAY)
 Wait(1)
 DestroySelf()
+END
+
+IF
+	ActionListEmpty()
+	Delay(6)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!ButtonDisabled(BUTTON_THIEVING)
+	Class(Myself,RANGER_ALL)
+	Global("DisableFamiliarAI","LOCALS",0)
+THEN
+	RESPONSE #100
+		Hide()
+END
+
+IF
+	ActionListEmpty()
+	CombatCounter(0)
+	!ModalState(DETECTTRAPS)
+	Class(Myself,THIEF_ALL)
+	Global("DisableFamiliarAI","LOCALS",0)
+THEN
+	RESPONSE #100
+	FindTraps()
+END
+
+IF
+	ActionListEmpty()
+	!CombatCounter(0)
+	!ModalState(BATTLESONG)
+	Class(Myself,BARD_ALL)
+	Global("DisableFamiliarAI","LOCALS",0)
+THEN
+	RESPONSE #100
+	BattleSong()
+END
+
+IF
+	ActionListEmpty()
+	CombatCounter(0)
+	ModalState(BATTLESONG)
+	Class(Myself,BARD_ALL)
+	Global("DisableFamiliarAI","LOCALS",0)
+THEN
+	RESPONSE #100
+	ClearAllActions()
 END
 
 IF

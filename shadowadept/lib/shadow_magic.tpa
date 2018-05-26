@@ -716,50 +716,162 @@ Saving Throw: None
 This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
       PRINT ~Resource: No Cost~
       END
+	  
+COPY_EXISTING ~C0SACON1.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON1~
+	END	  
+COPY_EXISTING ~C0SACON2.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON2~
+	END	  
+COPY_EXISTING ~C0SACON3.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON3~
+	END	  
+COPY_EXISTING ~C0SACON4.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON4~
+	END	  
+COPY_EXISTING ~C0SACON5.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON5~
+	END	  
+COPY_EXISTING ~C0SACON6.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON6~
+	END	  
+COPY_EXISTING ~C0SACON7.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON7~
+	END	  
+COPY_EXISTING ~C0SACON8.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON8~
+	END	  
+COPY_EXISTING ~C0SACON9.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON9~
+	END	  
+COPY_EXISTING ~C0SACON0.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = EVAL ~C0SACON0~
+	END
 
 // PROJECTILES
 
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj01.PRO~ ~SM Flying Skull~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2d.PRO~ ~SM Magic Missile 1~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2c.PRO~ ~SM Magic Missile 2~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2b.PRO~ ~SM Magic Missile 3~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj2a.PRO~ ~SM Magic Missile 4~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj02.PRO~ ~SM Magic Missile 5~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj03.PRO~ ~SM Sparkle~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj04.PRO~ ~SM Flame Arrow~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj05.PRO~ ~SM Purple Fireball~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj06.PRO~ ~SM Red Ray~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj07.PRO~ ~SM Cone of Cold~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj08.PRO~ ~SM Chain Lightning 1~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro08a.PRO~ ~SM Chain Lightning 2~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj09.PRO~ ~SM Purple Fire Cone~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj10.PRO~ ~SM Insects 1~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pro10a.PRO~ ~SM Insects 2~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj11.PRO~ ~SM Negastorm~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj12.PRO~ ~SM Dark Bolt~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj13.PRO~ ~SM Phantasm~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj14.PRO~ ~SM Small Area~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj15.PRO~ ~SM Purple Ray~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj16.PRO~ ~SM Black Mist~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj17.PRO~ ~SM Black Missile~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj18.PRO~ ~SM Small Area Enemies Only~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj19.PRO~ ~SM Purple Orb~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj20.PRO~ ~SM Green Fireball~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj21.PRO~ ~SM Purple Ray 2~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj22.PRO~ ~SM Nightshade~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj23.PRO~ ~SM Night Knives 2~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj24.PRO~ ~SM Void Blast~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj25.PRO~ ~SM Blackfire Ruin~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0negeb.PRO~ ~SM Negative Burst~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0weird.PRO~ ~SM Weird~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0nightk.PRO~ ~SM Night Knives~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sasper.PRO~ ~SM Shadow Spear~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sarain.PRO~ ~SM Black Rain~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0sawall.PRO~ ~SM Wall of Fire~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0cflame.PRO~ ~SM Cursed Flames~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0blizza.PRO~ ~SM Blizzard~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0oblivi.PRO~ ~SM Oblivion Pull~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0pandem.PRO~ ~SM Pandemonium~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj01.PRO~ ~SM Flying Skull~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2d.PRO~ ~SM Magic Missile 1~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2c.PRO~ ~SM Magic Missile 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2b.PRO~ ~SM Magic Missile 3~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2a.PRO~ ~SM Magic Missile 4~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj02.PRO~ ~SM Magic Missile 5~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj03.PRO~ ~SM Sparkle~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj04.PRO~ ~SM Flame Arrow~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj05.PRO~ ~SM Purple Fireball~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj06.PRO~ ~SM Red Ray~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj07.PRO~ ~SM Cone of Cold~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj08.PRO~ ~SM Chain Lightning 1~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0pro08a.PRO~ ~SM Chain Lightning 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj09.PRO~ ~SM Purple Fire Cone~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj10.PRO~ ~SM Insects 1~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0pro10a.PRO~ ~SM Insects 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj11.PRO~ ~SM Negastorm~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj12.PRO~ ~SM Dark Bolt~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj13.PRO~ ~SM Phantasm~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj14.PRO~ ~SM Small Area~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj15.PRO~ ~SM Purple Ray~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj16.PRO~ ~SM Black Mist~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj17.PRO~ ~SM Black Missile~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj18.PRO~ ~SM Small Area Enemies Only~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj19.PRO~ ~SM Purple Orb~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj20.PRO~ ~SM Green Fireball~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj21.PRO~ ~SM Purple Ray 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj22.PRO~ ~SM Nightshade~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj23.PRO~ ~SM Night Knives 3~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj24.PRO~ ~SM Void Blast~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj25.PRO~ ~SM Blackfire Ruin~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0negeb.PRO~ ~SM Negative Burst~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0weird.PRO~ ~SM Weird~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0night2.PRO~ ~SM Night Knives 2~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0nightk.PRO~ ~SM Night Knives~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sasper.PRO~ ~SM Shadow Spear~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sarain.PRO~ ~SM Black Rain~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sawall.PRO~ ~SM Wall of Fire~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0cflame.PRO~ ~SM Cursed Flames~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0blizza.PRO~ ~SM Blizzard~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0oblivi.PRO~ ~SM Oblivion Pull~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0pandem.PRO~ ~SM Pandemonium~
 
 COPY_EXISTING ~c0proj08.pro~ ~override~
 WRITE_SHORT 0x21A (IDS_OF_SYMBOL (~projectl~ ~c0pro08a~)) + 1
@@ -2713,11 +2825,22 @@ With this spell, the shadow adept drains the life force from a target and adds i
 
 If the target is slain, the amount of health gained by the caster is doubled.~
 
+COPY ~%MOD_FOLDER%/spells/C0SA106b.spl~ ~override~
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      opcode = 139 // display string
+	  target = 1
+	  timing = 1
+	  parameter1 = RESOLVE_STR_REF (~Essence Drain Bonus Doubled~)
+  END
+
 COPY ~%MOD_FOLDER%/spells/C0SA107.spl~ ~override~
 SAY NAME1 ~Shadow Veil~
 SAY NAME2 ~Shadow Veil~
 SAY UNIDENTIFIED_DESC ~Shadow Veil
-(Abjuration - Shadow Weave)
+(Conjuration/Summoning - Shadow Weave)
 
 Level: 1
 Range: 0
@@ -2728,9 +2851,7 @@ Saving Throw: None
 
 By means of this spell, the shadow adept creates a magical field of force that serves as armor, increasing the caster's armor class by 1 point per 3 levels of the caster up to a maximum of +4 at level 13. It is cumulative with Dexterity bonuses to Armor Class. The veil is invisible, does not hinder movement, adds no weight or encumbrance, and doesn't prevent spellcasting. It lasts until successfully dispelled or until its duration expires.
 
-Additionally, whenever the caster suffers damage while the shadow veil is active, <PRO_HESHE> has a 5% chance to turn invisible for 2 rounds.~
-
-COPY ~%MOD_FOLDER%/spells/C0SA107a.spl~ ~override~
+Additionally, whenever the caster suffers damage while the shadow veil is active, <PRO_HESHE> has a 5% (+5% per ten caster levels) chance to turn invisible for 2 rounds.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA108.spl~ ~override~
 SAY NAME1 ~Curse~
@@ -2781,7 +2902,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell briefly conjures a projection of the caster next to <PRO_HIMHER> while turning invisible for 1 round.~
+This spell briefly conjures a projection of the caster next to <PRO_HIMHER> while turning <PRO_HIMHER> invisible for 1 round.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA111.spl~ ~override~
   LPF ALTER_EFFECT
@@ -2943,6 +3064,16 @@ Saving Throw: Neg.
 When this spell is cast, a thick shadowy mist spreads across the area selected by the caster. Any creatures caught within the mist must make a Save vs. Spells at -2 at the beginning of each round or become blinded for that round, receiving a -4 penalty to their Armor Class and attack rolls and greatly reducing their vision range. Those who make successful Saving Throws can leave the mist without suffering any ill effects, although those remaining in the mist must continue to save each round. A Dispel Magic will remove the blindness on a particular character, but if they remain in the mist, then they are still subject to its effects.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA209.spl~ ~override~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = C0SA209
+	END
 SAY NAME1 ~Negative Energy Ray~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -3025,6 +3156,39 @@ Saving Throw: Neg.
 
 The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.~
 
+COPY ~%MOD_FOLDER%/spells/C0SA213.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+ parameter1 = RESOLVE_STR_REF (~Invisible~)
+END
+SAY NAME1 ~Shadowfade~
+SAY NAME2 ~Shadowfade~
+SAY UNIDENTIFIED_DESC ~Shadowfade
+(Illusion/Phantasm - Shadow Weave)
+
+Level: 2
+Range: Touch 
+Duration: Special 
+Casting Time: 2 
+Area of Effect: 1 creature 
+Saving Throw: None 
+
+This spell causes the creature touched to vanish from sight and be undetectable by normal vision or even infravision. Of course, the invisible creature is not magically silenced, and certain other conditions can render the creature detectable. Even allies cannot see the invisible creature or its gear, unless these allies can normally see invisible things or employ magic to do so. Items dropped or put down by the invisible creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. The spell remains in effect until it is magically broken or dispelled, until the recipient attacks any creature, or until 24 hours have passed. The caster cannot perform any actions that manipulate the environment around <PRO_HIMHER>, such as opening doors, disarming a trap, or opening a chest. The caster can, however, cast defensive spells on <PRO_HIMHER>self and fellow party members. And if <PRO_HESHE> attacks, <PRO_HESHE> immediately becomes visible, although the invisibility enables <PRO_HIMHER> to attack first.
+
+Additionally, if the target is either a shadow adept or a native of the Shadow Plane, they are healed for 1d6 hit points (+1d6 per five caster levels).~
+
+COPY ~%MOD_FOLDER%/spells/C0SA213a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+ parameter1 = RESOLVE_STR_REF (~Healed~)
+END
+ 
 COPY ~%MOD_FOLDER%/spells/C0SA301.spl~ ~override~
 SAY NAME1 ~Blackfire Arrow~
 READ_LONG 0x64 "abil_off"
@@ -3161,9 +3325,9 @@ Casting Time: 3
 Area of Effect: 1 creature and any enemy within 7.5 ft.
 Saving Throw: Neg. 
 
-This spell holds 1d4 humans, demihumans, or humanoid creatures rigidly immobile and in place for five or more rounds. Shadow Binding affects any bipedal human, demihuman, or humanoid of mansize or smaller, including brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be held, while an ogre could not. The effect is centered on the victim selected by the caster. Every enemy within 7.5 ft. of the target is also affected. Those who Save vs. Spell at -4 are totally unaffected by the spell. Undead creatures cannot be held.
+This spell holds one creature of any type rigidly immobile and in place for one turn, unless a Saving Throw vs. Spell is made with a -4 penalty. Those who succeed on their Saving Throws are totally unaffected by the spell.
 
-Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subjects' condition due to wounds, disease, or poison.~
+Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subject's condition due to wounds, diseases, or poison.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA308.spl~ ~override~
 SAY NAME1 ~Impose~
@@ -3351,7 +3515,9 @@ By means of this spell, the caster summons a number of shadows, undead monsters 
 12th+ : 3 wraiths
 16th+ : 2 wraiths, 1 devil shade
 
-The undead creatures will remain under the shadow adept's control until they are slain or the spell duration expires.~
+The undead creatures will remain under the shadow adept's control until they are slain or the spell duration expires.
+
+NOTE: Due to being creatures of the Plane of Shadow, shadows are weakened in natural daylight.~
 
 COPY ~%MOD_FOLDER%/spells/c0devsha.cre~ ~override~
 SAY NAME1 ~Devil Shade~
@@ -3377,19 +3543,6 @@ SAY NAME1 ~Wraith~
 SAY NAME2 ~Wraith~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0wraith~  #32
-
-COPY ~%MOD_FOLDER%/spells/c0blackf.cre~ ~override~
-SAY NAME1 ~Blackfire Vessel~
-SAY NAME2 ~Blackfire Vessel~
-  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
-  WRITE_ASCII 0x248 ~c0devsha~ #8
-  WRITE_ASCII 0x280 ~c0devsha~  #32
-
-COPY ~%MOD_FOLDER%/spells/c0blacks.cre~ ~override~
-SAY NAME1 ~Blackfire Vessel~
-SAY NAME2 ~Blackfire Vessel~
-  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
-  WRITE_ASCII 0x280 ~c0shadfi~  #32
 
 COPY ~%MOD_FOLDER%/spells/C0SA405.spl~ ~override~
 SAY NAME1 ~Shar's Blessing~
@@ -3442,7 +3595,7 @@ Casting Time: 9
 Area of Effect: 30 ft. radius
 Saving Throw: None
 
-Dread Whispers causes all enemies within range to become afflicted by an ominous chorus of voices infesting their mind. The voices are distracting, causing 50% spell failure on targets. In addition, at the beginning of every round after the first, the target must make a Save vs. Spell at -2 or lose morale, running in panic for 1 round.~
+Dread Whispers causes all enemies within range to become afflicted by an ominous chorus of voices infesting their mind. The voices are distracting, causing 50% spell failure on targets. In addition, at the beginning of every round after the first, the target must make a Save vs. Spell at -6 or lose morale, running in panic for 1 round.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA409.spl~ ~override~
   LPF ALTER_EFFECT
@@ -3490,9 +3643,9 @@ COPY ~%MOD_FOLDER%/spells/C0SA409.spl~ ~override~
     STR_VAR
 	  match_resource = 5
   END
-SAY NAME1 ~Immunity~
-SAY NAME2 ~Immunity~
-SAY UNIDENTIFIED_DESC ~Immunity
+SAY NAME1 ~Negative Immunity~
+SAY NAME2 ~Negative Immunity~
+SAY UNIDENTIFIED_DESC ~Negative Immunity
 (Abjuration - Shadow Weave)
 
 Level: 4
@@ -3523,7 +3676,9 @@ Casting Time: 3
 Area of Effect: 1 creature and any enemy within 7.5 ft.
 Saving Throw: 1/2
 
-With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a Saving Throw vs. Death at -2 take half damage and avoid the secondary effects. This spell ignores magic resistance.~
+With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a Saving Throw vs. Death at -2 take half damage and avoid the secondary effects.
+
+This spell ignores Magic Resistance.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA411.spl~ ~override~
 SAY NAME1 ~Wall of Black Flame~
@@ -3545,7 +3700,7 @@ Casting Time: 3
 Area of Effect: 10'
 Saving Throw: 1/2
 
-With this spell, the shadow adept creates a wall of black fire, dealing 2d6 fire damage to all creatures who pass through it (Save vs. Spells for half) and reduces their Armor Class by -2 for one round. Creatures cannot take damage more than once per round.~
+With this spell, the shadow adept creates a wall of black fire, dealing 4d6 damage (half fire, half magic) to all creatures who pass through it (Save vs. Spells at -4 for half) and reduces their Armor Class by -4 for one round. Creatures cannot take damage more than once per round.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA412.spl~ ~override~
 SAY NAME1 ~Pain Mirror~
@@ -3872,6 +4027,16 @@ When this spell is cast, an area roughly 30 feet in radius around the caster wil
 The spells that are affected by this are: Reflected Image, Invisibility, Blur, Mirror Image, Ghost Armor, Invisibility Sphere, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project Image, and Mass Invisibility.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = C0SA508
+	END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -4244,7 +4409,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2 
 
-When this spell is cast upon a target creature there will be two major effects. The first is that it will dispel one spell protection of 8th level or lower from the creature. This will always dispel the highest level of spell protection on the target first. If the target has two or more protections tied for the highest level, the choice will be random. The second effect of the spell is that the creature's magic resistance is temporary nullified. The resistance remains lowered for 2 rounds, and this effect cannot be negated in any way. Additionally, mages will take 4d10 magic damage and suffer from a 50% chance of spell failure for 2 rounds. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's magic resistance, if any, does not affect this spell.~
+When this spell is cast upon a target creature there will be two major effects. The first is that it will dispel one spell protection of 8th level or lower from the creature. This will always dispel the highest level of spell protection on the target first. If the target has two or more protections tied for the highest level, the choice will be random. The second effect of the spell is that the creature's magic resistance is temporary nullified. The resistance remains lowered for 2 rounds, and this effect cannot be negated in any way. Additionally, mages will take 10d4 magic damage and suffer from a 50% chance of spell failure for 2 rounds. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's magic resistance, if any, does not affect this spell.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA607.spl~ ~override~
 SAY NAME1 ~Umbral Blades~
@@ -4300,6 +4465,16 @@ Saving Throw: 1/2
 This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 plus 20% of the target's maximum hit points as piercing damage. If the target fails a Saving Throw vs. Spells at -6, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA610.spl~ ~override~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = C0SA610
+	END
 SAY NAME1 ~Disintegrate~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -4601,7 +4776,6 @@ SAY NAME2 ~Shadow Gate~
 WRITE_ASCII 0x248 ~c0sa711~ #8
 
 COPY ~%MOD_FOLDER%/spells/c0sa712.spl~ ~override~
-SAY NAME2 ~Nightfall~
 SAY UNIDENTIFIED_DESC ~Nightfall
 (Invocation/Evocation - Shadow Weave) 
 
@@ -4615,7 +4789,6 @@ Saving Throw: None
 This spell creates a rainfall of shadowstuff centered on the caster for six rounds. Enemy creatures suffer 1d6 magical damage for every round that they remain within the rainfall and suffer a cumulative penalty of -1 to Armor Class and all Saving Throws for one turn. Non-hostile creatures are healed for 2d6 hit points every round instead.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa712a.spl~ ~override~
-SAY NAME1 ~Nightfall~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -4758,12 +4931,25 @@ Level: 8
 Range: 0
 Duration: 1 turn
 Casting Time: 8
-Area of Effect: The caster
+Area of Effect: 20-ft. radius
 Saving Throw: 1/2
 
 This powerful spell is the upgraded version of Blackfire Fury. The shadow adept conjures a rift from the Shadow Plane beneath their own feet, which unleashes shadow fire in a 20' radius centered on them dealing 10d10 fire damage (Save vs. Spells at -4 for half damage) to all enemies within range. This damage is not mitigated by fire resistance and ignores magic resistance.
 
 If a creature is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel under the caster's allegiance for one turn before becoming assimilated into the Shadow Plane.~
+
+COPY ~%MOD_FOLDER%/spells/c0blackf.cre~ ~override~
+SAY NAME1 ~Blackfire Vessel~
+SAY NAME2 ~Blackfire Vessel~
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
+  WRITE_ASCII 0x248 ~c0devsha~ #8
+  WRITE_ASCII 0x280 ~c0devsha~  #32
+
+COPY ~%MOD_FOLDER%/spells/c0blacks.cre~ ~override~
+SAY NAME1 ~Blackfire Vessel~
+SAY NAME2 ~Blackfire Vessel~
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
+  WRITE_ASCII 0x280 ~c0shadfi~  #32
 
 COPY ~%MOD_FOLDER%/spells/c0sa807.spl~ ~override~
 SAY NAME1 ~Shar's Mantle~
@@ -4793,9 +4979,12 @@ Casting Time: 3
 Area of Effect: The caster
 Saving Throw: None
 
-When a shadow adept casts Shadow's Refuge, <PRO_HESHE> opens a gate to a safe (in relative terms) pocket area in the Plane of Shadow, where time passes more slowly and gives <PRO_HIMHER> time to rest and recuperate away from the present battle. For one turn, the shadow adept is safe from combat and <PRO_HISHER> hit points are restored to full, and <PRO_HESHE> regains two spells of each spell level of 7th level and below when <PRO_HESHE> returns.
+When a shadow adept casts Shadow's Refuge, <PRO_HESHE> opens a gate to a safe (in relative terms) pocket area in the Plane of Shadow, where time passes more slowly and gives <PRO_HIMHER> time to rest and recuperate away from the present battle. For one turn, the shadow adept is safe from combat and <PRO_HISHER> hit points are restored to full, and <PRO_HESHE> regains two arcane spells of each spell level of 7th level and below when <PRO_HESHE> returns. In addition, as the caster will be resting for a long period of time, all effects whether beneficial or otherwise will be removed when they return.
 
-WARNING: Using this spell without other party members causes a game over!~
+The shadow adept may choose to return from the refuge before its duration has expired, but <PRO_HESHE> will only get partial benefits.~
+
+COPY ~%MOD_FOLDER%/spells/c0s808a.spl~ ~override~
+SAY NAME1 ~Shadow's Refuge: Return~
 
 COPY ~%MOD_FOLDER%/spells/c0sa809.spl~ ~override~
 SAY NAME1 ~Dark Premonition~
@@ -4816,18 +5005,18 @@ COPY ~%MOD_FOLDER%/spells/c0sa810.spl~ ~override~
 SAY NAME1 ~Dark Passage~
 SAY NAME2 ~Dark Passage~
 SAY UNIDENTIFIED_DESC ~Dark Passage
-(Invocation/Evocation - Shadow Weave)
+(Evocation - Shadow Weave)
 
 Level: 8
 Range: Party
 Duration: Special
 Casting Time: 1 round
-Area of Effect: Party
+Area of Effect: 20-ft. radius
 Saving Throw: None
 
-This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, hasting them, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster suffers 1d6 points of magic damage (Save vs. Death to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
+This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies within 20' in range for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster loses 10% of <PRO_HISHER> hit points (Save vs. Death to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
 
-COPY ~%MOD_FOLDER%/spells/c0sa810a.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0s810a.spl~ ~override~
 SAY NAME1 ~End Dark Passage~
 SAY NAME2 ~End Dark Passage~
 SAY UNIDENTIFIED_DESC ~End Dark Passage
@@ -4890,7 +5079,9 @@ Casting Time: 8
 Area of Effect: 30-ft. radius cloud 
 Saving Throw: 1/2
 
-This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round. This spell is not affected by Magic Resistance.~
+This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round.
+
+This spell is not affected by Magic Resistance. Creatures that are immune to cold are unaffected by the blizzard.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa901.spl~ ~override~
   LPF ALTER_EFFECT
@@ -4918,9 +5109,9 @@ Casting Time: 0
 Area of Effect: 1 creature
 Saving Throw: Special 
 
-This spell fires a bolt of necrotic energy which rends the soul of its target. Targets who fail a Save vs. Death at -2 have their maximum hit points cut in half for five rounds. Even if the target makes its save, they take 5d6+10 magic damage and their magic resistance, if any, is nullified for five rounds. This spell is not affected by magic resistance.
+This spell fires a bolt of necrotic energy which rends the soul of its target. Targets who fail a Save vs. Death at -2 have their maximum hit points cut in half for five rounds. Even if the target makes its save, they take 5d6+10 magic damage and their magic resistance, if any, is nullified for five rounds. If the bolt kills its target, the caster temporarily gains a 50% bonus to their maximum hit points for 1 turn and regains two spells of 8th level or below.
 
-If this spell kills its target, the caster temporarily gains a 50% bonus to their maximum hit points for 1 turn and regains two spells of 8th level or below.~
+This spell is not affected by Magic Resistance.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa902.spl~ ~override~
 SAY NAME1 ~Umbral Stasis~
@@ -4957,6 +5148,16 @@ SAY NAME1 ~Nightsinger's Boon~
 SAY NAME2 ~Nightsinger's Boon~
 
 COPY ~%MOD_FOLDER%/spells/c0sa904.spl~ ~override~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 1
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = C0SA904
+	END
 SAY NAME1 ~Enervation~
 SAY NAME2 ~Enervation~
 SAY UNIDENTIFIED_DESC ~Enervation
@@ -5248,7 +5449,7 @@ Casting Time: 3
 Area of Effect: Special
 Saving Throw: None
 
-This spell conjures several blades made of shadowstuff. The blades give +10 to THAC0, and when thrown does 1d4+2 missile damage as well as 1d4 cold damage. Additionally, the blades remain impaled within targets upon striking, dealing the same amount of damage again after a delay of 2 rounds. The spell creates 20 blades and sets the caster's attacks to 9 as long as the blades are held.~
+This spell conjures several blades made of shadowstuff. The blades give +10 to THAC0, and when thrown, the knives divide into two and deal 1d4+2 missile damage as well as 1d4 cold damage each. The spell creates 20 blades and sets the caster's attacks to 10 as long as the blades are held.~
 
 COPY ~%MOD_FOLDER%/spells/c0nightk.itm~ ~override~
 SAY NAME1 ~Night Knives~

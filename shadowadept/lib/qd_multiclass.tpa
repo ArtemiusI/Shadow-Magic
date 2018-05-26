@@ -449,105 +449,355 @@ DEFINE_ACTION_FUNCTION qd_multiclass
 			 ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MCR50.SPL~
 
 		COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#01.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_01~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF01~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT01~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP01~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM01~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD01~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR01~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#02.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_02~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF02~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT02~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP02~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM02~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD02~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR02~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#03.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_03~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF03~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT03~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP03~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM03~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD03~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR03~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#04.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_04~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF04~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT04~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP04~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM04~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD04~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR04~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#05.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_05~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF05~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT05~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP05~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM05~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD05~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR05~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#06.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_06~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF06~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT06~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP06~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM06~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD06~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR06~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#07.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_07~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF07~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT07~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP07~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM07~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD07~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR07~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#08.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_08~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF08~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT08~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP08~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM08~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD08~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR08~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#09.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_09~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF09~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT09~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP09~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM09~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD09~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR09~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#10.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_10~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF10~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT10~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP10~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM10~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD10~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR10~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#11.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_11~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF11~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT11~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP11~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM11~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD11~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR11~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#12.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_12~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF12~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT12~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP12~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM12~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD12~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR12~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#13.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_13~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF13~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT13~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP13~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM13~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD13~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR13~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#14.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_14~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF14~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT14~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP14~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM14~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD14~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR14~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#15.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_15~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF15~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT15~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP15~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM15~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD15~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR15~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#16.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_16~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF16~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT16~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP16~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM16~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD16~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR16~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#17.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_17~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF17~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT17~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP17~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM17~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD17~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR17~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#18.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_18~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF18~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT18~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP18~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM18~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD18~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR18~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#19.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_19~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF19~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT19~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP19~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM19~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD19~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR19~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#20.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_20~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF20~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT20~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP20~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM20~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD20~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR20~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#21.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_21~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF21~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT21~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP21~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM21~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD21~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR21~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#22.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_22~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF22~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT22~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP22~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM22~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD22~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR22~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#23.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_23~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF23~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT23~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP23~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM23~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD23~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR23~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#24.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_24~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF24~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT24~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP24~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM24~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD24~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR24~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#25.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_25~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF25~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT25~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP25~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM25~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD25~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR25~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#26.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_26~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF26~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT26~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP26~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM26~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD26~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR26~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#27.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_27~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF27~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT27~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP27~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM27~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD27~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR27~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#28.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_28~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF28~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT28~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP28~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM28~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD28~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR28~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#29.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_29~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF29~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT29~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP29~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM29~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD29~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR29~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#30.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_30~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF30~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT30~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP30~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM30~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD30~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR30~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#31.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_31~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF31~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT31~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP31~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM31~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD31~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR31~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#32.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_32~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF32~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT32~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP32~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM32~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD32~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR32~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#33.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_33~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF33~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT33~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP33~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM33~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD33~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR33~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#34.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_34~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF34~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT34~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP34~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM34~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD34~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR34~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#35.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_35~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF35~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT35~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP35~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM35~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD35~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR35~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#36.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_36~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF36~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT36~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP36~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM36~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD36~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR36~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#37.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_37~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF37~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT37~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP37~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM37~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD37~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR37~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#38.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_38~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF38~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT38~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP38~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM38~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD38~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR38~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#39.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_39~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF39~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT39~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP39~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM39~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD39~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR39~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#40.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_40~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF40~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT40~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP40~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM40~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD40~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR40~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#41.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_41~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF41~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT41~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP41~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM41~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD41~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR41~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#42.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_42~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF42~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT42~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP42~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM42~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD42~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR42~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#43.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_43~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF43~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT43~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP43~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM43~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD43~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR43~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#44.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_44~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF44~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT44~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP44~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM44~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD44~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR44~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#45.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_45~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF45~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT45~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP45~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM45~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD45~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR45~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#46.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_46~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF46~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT46~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP46~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM46~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD46~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR46~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#47.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_47~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF47~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT47~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP47~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM47~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD47~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR47~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#48.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_48~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF48~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT48~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP48~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM48~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD48~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR48~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#49.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_49~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF49~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT49~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP49~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM49~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD49~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR49~ END
 			 COPY ~%mc_dir%/QD_MC_01.SPL~ ~override/QD_MC#50.SPL~ 
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 9 STR_VAR resource = ~QD_MC_50~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCF50~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCT50~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCP50~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCM50~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCD50~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource = ~QD_MCR50~ END
 			 
 			 COPY_EXISTING ~sw1h01.itm~ ~override/qd_multi_spls.qd~ //multiclass macro spells identifier file
 		END
@@ -590,16 +840,20 @@ DEFINE_ACTION_FUNCTION qd_multiclass
 										WRITE_EVALUATED_ASCII 0x30 ~%abil_new%~
 										SET col_length = STRING_LENGTH ~%col%~
 									ACTION_IF (%col_length% = 1) BEGIN
+									COPY ~%mc_dir%/QD_MC_AP.eff~ ~override/QD_MC@0%col%.eff~
+										WRITE_EVALUATED_ASCII 0x30 ~QD_MC#0%col%~
 										COPY_EXISTING ~override/QD_MC%base_class%0%col%.spl~ ~override~ 
-											LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~%abil_new%#~ END  
-											LPF DELETE_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = EVAL ~QD_MC#0%col%~ END
-											LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 match_timing = 1 parameter2 = 1 STR_VAR resource = EVAL ~QD_MC#0%col%~ END
+											LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~%abil_new%#~ END
+											LPF DELETE_EFFECT INT_VAR match_opcode = 177 match_target = 1 match_timing = 9 match_resist_dispel = 0 match_power = 0 match_parameter1 = %kit_code% match_parameter2 = 9 STR_VAR match_resource = EVAL ~QD_MC@0%col%~ END
+											LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~QD_MC@0%col%~ END
 									END 
 									ACTION_IF (%col_length% = 2) BEGIN
+									COPY ~%mc_dir%/QD_MC_AP.eff~ ~override/QD_MC@%col%.eff~
+										WRITE_EVALUATED_ASCII 0x30 ~QD_MC#%col%~
 										COPY_EXISTING ~override/QD_MC%base_class%%col%.spl~ ~override~ 
 											LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~%abil_new%#~ END  
-											LPF DELETE_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = EVAL ~QD_MC#%col%~ END
-											LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 match_timing = 1 parameter2 = 1 STR_VAR resource = EVAL ~QD_MC#%col%~ END
+											LPF DELETE_EFFECT INT_VAR match_opcode = 177 match_target = 1 match_timing = 9 match_resist_dispel = 0 match_power = 0 match_parameter1 = %kit_code% match_parameter2 = 9 STR_VAR match_resource = EVAL ~QD_MC@%col%~ END
+											LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~QD_MC@%col%~ END
 									END 
 								END 
 							END
@@ -612,16 +866,20 @@ DEFINE_ACTION_FUNCTION qd_multiclass
 										WRITE_EVALUATED_ASCII 0x30 ~%abil_new%~
 										SET col_length = STRING_LENGTH ~%col%~
 									ACTION_IF (%col_length% = 1) BEGIN 
+									COPY ~%mc_dir%/QD_MC_GA.eff~ ~override/QD_MC@0%col%.eff~
+										WRITE_EVALUATED_ASCII 0x30 ~QD_MC#0%col%~
 										COPY_EXISTING ~override/QD_MC%base_class%0%col%.spl~ ~override~ 
 											LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~%abil_new%#~ END  
-											LPF DELETE_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = EVAL ~QD_MC#0%col%~ END
-											LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 match_timing = 1 parameter2 = 1 STR_VAR resource = EVAL ~QD_MC#0%col%~ END
+											LPF DELETE_EFFECT INT_VAR match_opcode = 177 match_target = 1 match_timing = 9 match_resist_dispel = 0 match_power = 0 match_parameter1 = %kit_code% match_parameter2 = 9 STR_VAR match_resource = EVAL ~QD_MC@0%col%~ END
+											LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~QD_MC@0%col%~ END
 									END 
 									ACTION_IF (%col_length% = 2) BEGIN
+									COPY ~%mc_dir%/QD_MC_GA.eff~ ~override/QD_MC@%col%.eff~
+										WRITE_EVALUATED_ASCII 0x30 ~QD_MC#%col%~
 										COPY_EXISTING ~override/QD_MC%base_class%%col%.spl~ ~override~ 
 											LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~%abil_new%#~ END  
-											LPF DELETE_EFFECT INT_VAR match_opcode = 146 STR_VAR match_resource = EVAL ~QD_MC#%col%~ END
-											LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 match_timing = 1 parameter2 = 1 STR_VAR resource = EVAL ~QD_MC#%col%~ END
+											LPF DELETE_EFFECT INT_VAR match_opcode = 177 match_target = 1 match_timing = 9 match_resist_dispel = 0 match_power = 0 match_parameter1 = %kit_code% match_parameter2 = 9 STR_VAR match_resource = EVAL ~QD_MC@%col%~ END
+											LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~QD_MC@%col%~ END
 									END 
 								END 
 							END
