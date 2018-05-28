@@ -7,7 +7,6 @@ THEN
 END
 
 IF
-	Race(Myself,SHADOW)
 	AreaType(OUTDOOR)
 	OR(2)
 	TimeOfDay(DAY)
@@ -23,7 +22,6 @@ THEN
 END
 
 IF
-	Race(Myself,SHADOW)
 	AreaType(OUTDOOR)
 	!TimeOfDay(DAY)
 	!TimeOfDay(MORNING)

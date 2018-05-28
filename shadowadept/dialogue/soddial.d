@@ -14,7 +14,7 @@ ClearAllActions()
 StartCutSceneEx("c0cutgl2",FALSE)~ EXIT
 
 EXTEND_BOTTOM BDWYNAN 21
-IF ~Global("bd_sdd200_player","bd2100",1) Kit(Player1,C0SADEPT)~ DO ~SetGlobal("BD_SDD200","GLOBAL",4)~ EXTERN BDWYNAN bdwynan2
+IF ~Global("bd_sdd200_player","bd2100",1) Specifics(Player1,12)~ DO ~SetGlobal("BD_SDD200","GLOBAL",4)~ EXTERN BDWYNAN bdwynan2
 END
 
 CHAIN BDWYNAN bdwynan2

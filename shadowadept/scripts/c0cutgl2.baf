@@ -29,7 +29,7 @@ THEN
 	SmallWait(25)
 	CreateVisualEffectObject("c0darkbo",Myself)
 	CreateVisualEffectObject("c0darkbo","BDWRAITH")
-	ApplySpellRES("C0SAHP",Myself)
+	ChangeStat(Myself,MAXHITPOINTS,5,ADD)
 	ActionOverride("BDWRAITH",Kill(Myself))
 	SmallWait(50)
 	AddXPObject(Player1,5000)

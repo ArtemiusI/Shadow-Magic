@@ -71,7 +71,8 @@ COPY ~%MOD_FOLDER%/itempack/c0sas2h1.itm~ ~override~
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
-Fighter / Shadow Adept / Thief
+Shade Warrior
+Shadow Enforcer
 Nightsinger~)
 END
 LPF ALTER_EFFECT
@@ -311,6 +312,9 @@ COPY ~%MOD_FOLDER%/itempack/c0sas1h1.itm~ ~override~
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
 Shadow Adept / Thief
 Fighter / Shadow Adept / Thief
+Shade Warrior
+Nightblade
+Shadow Enforcer
 Nightsinger~)
 END
 SAY NAME1 ~Long Sword~
@@ -495,7 +499,8 @@ COPY ~%MOD_FOLDER%/itempack/c0sas1h2.itm~ ~override~
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
-Fighter / Shadow Adept / Thief
+Shade Warrior
+Shadow Enforcer
 Nightsinger~)
 END
 SAY NAME1 ~Bastard Sword~
@@ -626,8 +631,24 @@ Requires:
 
 Weight: 4~
 
+COPY ~%MOD_FOLDER%/itempack/c0sawand.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sawand.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sawan1.itm~ ~override~
+  LPF ADD_ITEM_EFFECT
+	INT_VAR
+		insert_point = 0
+		opcode = 177
+		target = 1
+		duration = 0
+		parameter1 = 12
+		parameter2 = 6
+	STR_VAR
+		resource = C0SAWAND
+END
+  LPF ALTER_ITEM_HEADER
+	INT_VAR
+	projectile = c0proj06
+END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Negative Energy~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -650,6 +671,33 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan2.itm~ ~override~
+  LPF ADD_ITEM_EFFECT
+	INT_VAR
+		insert_point = 0
+		opcode = 177
+		target = 1
+		duration = 0
+		parameter1 = 12
+		parameter2 = 6
+	STR_VAR
+		resource = C0SAWAND
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 139
+	  target = 1
+	  timing = 4
+	  duration = 60
+	  parameter1 = RESOLVE_STR_REF (~Constitution Restored~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 206 // display string
+      match_parameter1 = 1
+ parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+  END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Life-Draining~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -670,6 +718,28 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan3.itm~ ~override~
+  LPF ADD_ITEM_EFFECT
+	INT_VAR
+		insert_point = 0
+		opcode = 177
+		target = 1
+		duration = 0
+		parameter1 = 12
+		parameter2 = 6
+	STR_VAR
+		resource = C0SAWAND
+END
+  LPF ALTER_ITEM_HEADER
+	INT_VAR
+	projectile = c0proj22
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+ parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+  END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Nightshade~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -690,6 +760,21 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan4.itm~ ~override~
+  LPF ADD_ITEM_EFFECT
+	INT_VAR
+		insert_point = 0
+		opcode = 177
+		target = 1
+		duration = 0
+		parameter1 = 12
+		parameter2 = 6
+	STR_VAR
+		resource = C0SAWAND
+END
+  LPF ALTER_ITEM_HEADER
+	INT_VAR
+	projectile = c0proj02
+END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Missiles~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -711,13 +796,27 @@ Requires:
 
 Weight: 1~
 
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0proj05.pro~
-
 COPY ~%MOD_FOLDER%/itempack/c0sawan5.itm~ ~override~
+  LPF ADD_ITEM_EFFECT
+	INT_VAR
+		insert_point = 0
+		opcode = 177
+		target = 1
+		duration = 0
+		parameter1 = 12
+		parameter2 = 6
+	STR_VAR
+		resource = C0SAWAND
+END
   LPF ALTER_ITEM_HEADER
 	INT_VAR
 	header = 1
 	projectile = c0proj05
+END
+  LPF ALTER_ITEM_HEADER
+	INT_VAR
+	header = 2
+	projectile = c0proj04
 END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Fire~
@@ -746,6 +845,17 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan6.itm~ ~override~
+  LPF ADD_ITEM_EFFECT
+	INT_VAR
+		insert_point = 0
+		opcode = 177
+		target = 1
+		duration = 0
+		parameter1 = 12
+		parameter2 = 6
+	STR_VAR
+		resource = C0SAWAND
+END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Binding~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~

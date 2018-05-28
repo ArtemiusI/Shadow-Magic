@@ -6963,220 +6963,30 @@ IF Allegiance(Myself,GOODCUTOFF)
   CheckStatLT(Myself,50,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player1,90)
-  See(Player1)
-  !StateCheck(Player1,STATE_REALLY_DEAD)
-  !StateCheck(Player1,STATE_NOT_TARGETABLE)
-  !StateCheck(Player1,STATE_HARMLESS)
-  !CheckStatGT(Player1,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player1,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player1,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player1,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player1,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player1,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player1,1,SCRIPTINGSTATE4)
-  !HasItemEquipedReal("NPSW01",Player1)
-  !HasItemEquipedReal("SW1H27",Player1)
-  !HasItemEquiped("RING09",Player1)
-  !HasItemEquipedReal("SW2H06",Player1)
-  CheckStatLT(Player1,50,RESISTMAGIC)
+  HPLT(Nearestenemyof(Myself),90)
+  See(Nearestenemyof(Myself))
+  !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  !StateCheck(Nearestenemyof(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(Nearestenemyof(Myself),STATE_HARMLESS)
+  !CheckStatGT(Nearestenemyof(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(Nearestenemyof(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(Nearestenemyof(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(Nearestenemyof(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStatGT(Nearestenemyof(Myself),0,CLERIC_FREE_ACTION)
+  !CheckStat(Nearestenemyof(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),1,SCRIPTINGSTATE4)
+  !HasItemEquipedReal("NPSW01",Nearestenemyof(Myself))
+  !HasItemEquipedReal("SW1H27",Nearestenemyof(Myself))
+  !HasItemEquiped("RING09",Nearestenemyof(Myself))
+  !HasItemEquipedReal("SW2H06",Nearestenemyof(Myself))
+  CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
     SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player1)
-    SetInterrupt(TRUE)
-END
-
-IF Allegiance(Myself,GOODCUTOFF)
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player2,90)
-  See(Player2)
-  !StateCheck(Player2,STATE_REALLY_DEAD)
-  !StateCheck(Player2,STATE_NOT_TARGETABLE)
-  !StateCheck(Player2,STATE_HARMLESS)
-  !CheckStatGT(Player2,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player2,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player2,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player2,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player2,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player2,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player2,1,SCRIPTINGSTATE4)
-  !CheckStat(Player2,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player2)
-  !HasItemEquipedReal("SW1H27",Player2)
-  !HasItemEquiped("RING09",Player2)
-  !HasItemEquipedReal("SW2H06",Player2)
-  CheckStatLT(Player2,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player2)
-    SetInterrupt(TRUE)
-END
-
-IF Allegiance(Myself,GOODCUTOFF)
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player3,90)
-  See(Player3)
-  !StateCheck(Player3,STATE_REALLY_DEAD)
-  !StateCheck(Player3,STATE_NOT_TARGETABLE)
-  !StateCheck(Player3,STATE_HARMLESS)
-  !CheckStatGT(Player3,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player3,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player3,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player3,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player3,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player3,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player3,1,SCRIPTINGSTATE4)
-  !CheckStat(Player3,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player3)
-  !HasItemEquipedReal("SW1H27",Player3)
-  !HasItemEquiped("RING09",Player3)
-  !HasItemEquipedReal("SW2H06",Player3)
-  CheckStatLT(Player3,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player3)
-    SetInterrupt(TRUE)
-END
-
-IF Allegiance(Myself,GOODCUTOFF)
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player4,90)
-  See(Player4)
-  !StateCheck(Player4,STATE_REALLY_DEAD)
-  !StateCheck(Player4,STATE_NOT_TARGETABLE)
-  !StateCheck(Player4,STATE_HARMLESS)
-  !CheckStatGT(Player4,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player4,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player4,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player4,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player4,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player4,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player4,1,SCRIPTINGSTATE4)
-  !CheckStat(Player4,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player4)
-  !HasItemEquipedReal("SW1H27",Player4)
-  !HasItemEquiped("RING09",Player4)
-  !HasItemEquipedReal("SW2H06",Player4)
-  CheckStatLT(Player4,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player4)
-    SetInterrupt(TRUE)
-END
-
-IF Allegiance(Myself,GOODCUTOFF)
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player5,90)
-  See(Player5)
-  !StateCheck(Player5,STATE_REALLY_DEAD)
-  !StateCheck(Player5,STATE_NOT_TARGETABLE)
-  !StateCheck(Player5,STATE_HARMLESS)
-  !CheckStatGT(Player5,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player5,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player5,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player5,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player5,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player5,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player5,1,SCRIPTINGSTATE4)
-  !CheckStat(Player5,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player5)
-  !HasItemEquipedReal("SW1H27",Player5)
-  !HasItemEquiped("RING09",Player5)
-  !HasItemEquipedReal("SW2H06",Player5)
-  CheckStatLT(Player5,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player5)
-    SetInterrupt(TRUE)
-END
-
-IF Allegiance(Myself,GOODCUTOFF)
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player6,90)
-  See(Player6)
-  !StateCheck(Player6,STATE_REALLY_DEAD)
-  !StateCheck(Player6,STATE_NOT_TARGETABLE)
-  !StateCheck(Player6,STATE_HARMLESS)
-  !CheckStatGT(Player6,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player6,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player6,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player6,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player6,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player6,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player6,1,SCRIPTINGSTATE4)
-  !CheckStat(Player6,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player6)
-  !HasItemEquipedReal("SW1H27",Player6)
-  !HasItemEquiped("RING09",Player6)
-  !HasItemEquipedReal("SW2H06",Player6)
-  CheckStatLT(Player6,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player6)
+    SpellRES("C0SA703",Nearestenemyof(Myself))
     SetInterrupt(TRUE)
 END
 
@@ -7585,7 +7395,7 @@ IF Allegiance(Myself,GOODCUTOFF)
   !CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
   CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",LastSeenBy(Myself))
 THEN
   RESPONSE #100
@@ -7621,7 +7431,7 @@ IF Allegiance(Myself,GOODCUTOFF)
   !CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
   CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",LastSeenBy(Myself))
 THEN
   RESPONSE #100
@@ -7657,7 +7467,7 @@ IF Allegiance(Myself,GOODCUTOFF)
   !CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
   CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",LastSeenBy(Myself))
 THEN
   RESPONSE #100
@@ -7693,7 +7503,7 @@ IF Allegiance(Myself,GOODCUTOFF)
   !CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
   CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",LastSeenBy(Myself))
 THEN
   RESPONSE #100
@@ -7729,7 +7539,7 @@ IF Allegiance(Myself,GOODCUTOFF)
   !CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
   CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",LastSeenBy(Myself))
 THEN
   RESPONSE #100
@@ -7765,7 +7575,7 @@ IF Allegiance(Myself,GOODCUTOFF)
   !CheckSpellState(LastSeenBy(Myself),MINSC_BERSERK)
   CheckStatLT(LastSeenBy(Myself),50,RESISTMAGIC)
   CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",LastSeenBy(Myself))
 THEN
   RESPONSE #100
@@ -12702,7 +12512,7 @@ IF
   !Global("dvgldust","LOCALS",1)
   HasItem("POTN10",Myself)
   !GlobalTimerNotExpired("OH_Cast","LOCALS")
-  !CheckStatGT(Player1,0,TRUE_SIGHT)
+  !CheckStatGT(Nearestenemyof(Myself),0,TRUE_SIGHT)
   !CheckStatGT(Player2,0,TRUE_SIGHT)
   !CheckStatGT(Player3,0,TRUE_SIGHT)
   !CheckStatGT(Player4,0,TRUE_SIGHT)
@@ -12856,15 +12666,15 @@ IF Allegiance(Myself,GOODCUTOFF)
   Global("OH_Heal","LOCALS",0)
   Global("OH_Active","LOCALS",1)
   !Detect([GOODCUTOFF])
-  InMyArea(Player1)
+  InMyArea(Nearestenemyof(Myself))
   !StateCheck(Myself,STATE_BLIND)
-  !StateCheck(Player1,STATE_REALLY_DEAD)
+  !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
   OR(2)
     RandomNum(5,1)
     CombatCounter(0)
 THEN
   RESPONSE #100
-    MoveToObject(Player1)
+    MoveToObject(Nearestenemyof(Myself))
 END
 
 IF Allegiance(Myself,GOODCUTOFF)
@@ -12904,36 +12714,287 @@ THEN
 END
 
 IF
-  See(NearestEnemyOf(Myself))
-  Range(LastSeenBy(Myself),5)
+  OR(2)
+    StateCheck(Myself,STATE_IMMOBILE)
+    StateCheck(Myself,STATE_REALLY_DEAD)
 THEN
   RESPONSE #100
-    EquipMostDamagingMelee()
-    AttackReevaluate(NearestEnemyOf(Myself),30)
-	Continue()
+    NoAction()
 END
 
 IF
-  See(NearestEnemyOf(Myself))
+  !Allegiance(Myself,EVILCUTOFF)
+  !InActiveArea(Myself)
+  !Range(NearestEnemyOf(Myself),30)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  StateCheck(Myself,STATE_PANIC)
+THEN
+  RESPONSE #100
+    RandomWalkContinuous()
+END
+
+IF
+  Global("BD_RangedA","LOCALS",0)
   IsWeaponRanged(Myself)
 THEN
   RESPONSE #100
-    AttackReevaluate(NearestEnemyOf(Myself),30)
-	Continue()
+    SetGlobal("BD_RangedA","LOCALS",1)
+    Continue()
+END
+
+IF
+  Global("BD_RangedA","LOCALS",0)
+  !IsWeaponRanged(Myself)
+THEN
+  RESPONSE #100
+    SetGlobal("BD_RangedA","LOCALS",2)
+    Continue()
+END
+
+IF
+  Global("BD_RangedA","LOCALS",1)
+  Range(NearestEnemyOf(Myself),4)
+  IsWeaponRanged(Myself)
+THEN
+  RESPONSE #100
+    EquipMostDamagingMelee()
+    Continue()
+END
+
+IF
+  Global("BD_RangedA","LOCALS",1)
+  !Range(NearestEnemyOf(Myself),4)
+  !IsWeaponRanged(Myself)
+  CanEquipRanged()
+THEN
+  RESPONSE #100
+    EquipRanged()
+    Continue()
 END
 
 IF
   See(NearestEnemyOf(Myself))
+  False()
 THEN
   RESPONSE #100
-    EquipRanged()
-    AttackReevaluate(NearestEnemyOf(Myself),30)
+    NoAction()
 END
 
-IF Allegiance(Myself,GOODCUTOFF)
+IF
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
   See(NearestEnemyOf(Myself))
-  Delay(2)
+  False()
 THEN
   RESPONSE #100
-    EquipRanged()
+    NoAction()
 END
+
+IF
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+  !StateCheck(SixthNearestEnemyOf(Myself),STATE_PANIC)
+  CheckStatLT(SixthNearestEnemyOf(Myself),1,STONESKINS)
+  !StateCheck(SixthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  See(SixthNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+  !StateCheck(FifthNearestEnemyOf(Myself),STATE_PANIC)
+  CheckStatLT(FifthNearestEnemyOf(Myself),1,STONESKINS)
+  !StateCheck(FifthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  See(FifthNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+  !StateCheck(FourthNearestEnemyOf(Myself),STATE_PANIC)
+  CheckStatLT(FourthNearestEnemyOf(Myself),1,STONESKINS)
+  !StateCheck(FourthNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  See(FourthNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+  !StateCheck(ThirdNearestEnemyOf(Myself),STATE_PANIC)
+  CheckStatLT(ThirdNearestEnemyOf(Myself),1,STONESKINS)
+  !StateCheck(ThirdNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  See(ThirdNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+  !StateCheck(SecondNearestEnemyOf(Myself),STATE_PANIC)
+  CheckStatLT(SecondNearestEnemyOf(Myself),1,STONESKINS)
+  !StateCheck(SecondNearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  See(SecondNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+  !StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
+  CheckStatLT(NearestEnemyOf(Myself),1,STONESKINS)
+  !StateCheck(NearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+  See(NearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+  WeaponEffectiveVs(LastAttackerOf(Myself),MAINHAND)
+  WeaponCanDamage(LastAttackerOf(Myself),MAINHAND)
+  !StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+  !StateCheck(LastAttackerOf(Myself),STATE_MIRRORIMAGE)
+  CheckStatLT(LastAttackerOf(Myself),1,STONESKINS)
+  Range(LastAttackerOf(Myself),8)
+  RandomNum(3,1)
+  See(LastAttackerOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+  WeaponEffectiveVs(LastAttackerOf(Myself),MAINHAND)
+  WeaponCanDamage(LastAttackerOf(Myself),MAINHAND)
+  !StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+  !StateCheck(LastAttackerOf(Myself),STATE_MIRRORIMAGE)
+  CheckStatLT(LastAttackerOf(Myself),1,STONESKINS)
+  Range(LastAttackerOf(Myself),4)
+  See(LastAttackerOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SixthNearestEnemyOf(Myself),MAINHAND)
+  StateCheck(SixthNearestEnemyOf(Myself),STATE_IMMOBILE)
+  See(SixthNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FifthNearestEnemyOf(Myself),MAINHAND)
+  StateCheck(FifthNearestEnemyOf(Myself),STATE_IMMOBILE)
+  See(FifthNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(FourthNearestEnemyOf(Myself),MAINHAND)
+  StateCheck(FourthNearestEnemyOf(Myself),STATE_IMMOBILE)
+  See(FourthNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(ThirdNearestEnemyOf(Myself),MAINHAND)
+  StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMMOBILE)
+  See(ThirdNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(SecondNearestEnemyOf(Myself),MAINHAND)
+  StateCheck(SecondNearestEnemyOf(Myself),STATE_IMMOBILE)
+  See(SecondNearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+  WeaponCanDamage(NearestEnemyOf(Myself),MAINHAND)
+  StateCheck(NearestEnemyOf(Myself),STATE_IMMOBILE)
+  See(NearestEnemyOf(Myself))
+  False()
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+  Allegiance(Myself,GOODCUTOFF)
+  OR(2)
+    ActionListEmpty()
+    Specifics(Myself,SPIRIT)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+  !InParty(LastSeenBy(Myself))
+THEN
+  RESPONSE #100
+    AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+  Allegiance(Myself,EVILCUTOFF)
+  !StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+  !Allegiance(LastSeenBy(Myself),EVILCUTOFF)
+THEN
+  RESPONSE #100
+    AttackOneRound(LastSeenBy(Myself))
+END
+

@@ -37,15 +37,6 @@ THEN
 END
 
 IF
-  See(Nearestenemyof(Myself))
-  HPPercentGT(Myself,49)
-THEN
-  RESPONSE #100
-    AttackReevaluate(Nearestenemyof(Myself),30)
-    Continue()
-END
-
-IF
   !Allegiance(Myself,ENEMY)
   !Range(Player1,40)
 THEN

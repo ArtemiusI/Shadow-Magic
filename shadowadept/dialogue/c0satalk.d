@@ -1,7 +1,7 @@
 // Shadow Adept - learn spell
 
 BEGIN C0SATALK
-
+/*
 // Extra Level 1 Spell
 
 IF ~!Class(Myself,SORCERER) CheckStat(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA1
@@ -285,7 +285,7 @@ SAY ~\[25 CHARISMA\] Your deific charisma has allowed you to bargain with the Sh
 IF ~~ DO ~IncrementGlobal("C0SAExtraLevel9Spell","LOCALS",1) IncrementGlobal("C0SALv9","LOCALS",1)
 StartDialogOverride("c0satalk",Myself)~ EXIT
 END
-
+*/
 IF ~OR(9)
 !Global("C0SALv1","LOCALS",0)
 !Global("C0SALv2","LOCALS",0)
@@ -2428,10 +2428,10 @@ Level: 9
 Range: 30 ft.
 Duration: 3 rounds
 Casting Time: 9
-Area of Effect: Special
+Area of Effect: 1 creature and any creature within 7.5 ft.
 Saving Throw: Special
 
-When Oblivion Pull is cast, the shadow adept launches a tiny, fast-moving projectile towards a target which spawns a portal at the targeted location. The portal remains until a creature comes within 5 ft. of it. When this happens, the portal pulls it and all other creatures within a 10 ft. radius into it and sends them to a small pocket in the Plane of Shadow where they are trapped indefinitely. The victim remains there unless the spell "Freedom" is cast. If a Freedom spell is cast in the area where the creature was imprisoned, then <PRO_HESHE> will reappear exactly where <PRO_HESHE> was last standing. Dispel Magic will not free creatures trapped in this manner. There is no Saving Throw against imprisonment.~
+When Oblivion Pull is cast, the shadow adept launches a tiny, fast-moving projectile towards a target which opens a portal using the target's body as a catalyst. When this happens, the portal pulls it and all other creatures within a 7.5 ft. radius into it and sends them to a small pocket in the Plane of Shadow where they are trapped indefinitely. The victim remains there unless the spell "Freedom" is cast. If a Freedom spell is cast in the area where the creature was imprisoned, then <PRO_HESHE> will reappear exactly where <PRO_HESHE> was last standing. Dispel Magic will not free creatures trapped in this manner. There is no Saving Throw against imprisonment for the target, but creatures within a 5 ft. radius may make a Save vs. Spells at -6 to resist being pulled into the portal.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) AddSpecialAbility("C0SA908")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END

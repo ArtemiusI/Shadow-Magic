@@ -22,13 +22,6 @@ BEGIN ~Shadow Magic: Shadow Monk monk kit~
 
 INCLUDE ~%MOD_FOLDER%/components/2_shadow_monk.tpa~
 
-// SHADOW MAGIC ITEM PACK - requires Shadow Magic component
-
-BEGIN ~Shadow Magic: Item Pack~
-  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
-
-INCLUDE ~%MOD_FOLDER%/components/3_item_pack.tpa~
-
 /*
 // SHADOW MAGIC NPC REACTIONS - requires Shadow Magic component
 

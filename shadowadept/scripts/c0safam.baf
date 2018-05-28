@@ -222,6 +222,7 @@ IF
 	ActionListEmpty()
 	CombatCounter(0)
 	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
 	Class(Myself,THIEF_ALL)
 	Global("DisableFamiliarAI","LOCALS",0)
 THEN

@@ -113,6 +113,12 @@ THEN
   RESPONSE #100
 	SetGlobal("C0NightsingerTithe","LOCALS",1)
 	ApplySpellRES("C0SA903B",Myself)
+	ChangeStat(Myself,CON,2,ADD)
+	ChangeStat(Myself,SAVEVSDEATH,-1,ADD)
+	ChangeStat(Myself,SAVEVSWANDS,-1,ADD)
+	ChangeStat(Myself,SAVEVSPOLY,-1,ADD)
+	ChangeStat(Myself,SAVEVSBREATH,-1,ADD)
+	ChangeStat(Myself,SAVEVSSPELL,-1,ADD)
 	DisplayStringHead(Myself,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
 	Continue()
 END

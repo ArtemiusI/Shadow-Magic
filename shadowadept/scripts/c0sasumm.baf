@@ -1,5 +1,21 @@
 IF
 	AreaType(OUTDOOR)
+	OR(2)
+	TimeOfDay(DAY)
+	TimeOfDay(MORNING)
+	Global("DaylightWeakened","LOCALS",0)
+THEN
+  RESPONSE #100
+	SetGlobal("DaylightWeakened","LOCALS",1)
+	ChangeStat(Myself,STR,-2,ADD)
+	ChangeStat(Myself,CON,-4,ADD)
+	ChangeStat(Myself,THAC0,4,ADD)
+	ChangeStat(Myself,ARMORCLASS,4,ADD)
+	Continue()
+END
+
+IF
+	AreaType(OUTDOOR)
 	!TimeOfDay(DAY)
 	!TimeOfDay(MORNING)
 	Global("DaylightWeakened","LOCALS",1)
@@ -10,6 +26,7 @@ THEN
 	ChangeStat(Myself,CON,4,ADD)
 	ChangeStat(Myself,THAC0,-4,ADD)
 	ChangeStat(Myself,ARMORCLASS,-4,ADD)
+	Continue()
 END
 
 IF
@@ -22,7 +39,9 @@ THEN
 	ChangeStat(Myself,CON,4,ADD)
 	ChangeStat(Myself,THAC0,-4,ADD)
 	ChangeStat(Myself,ARMORCLASS,-4,ADD)
+	Continue()
 END
+
 
 IF
   OR(2)
@@ -93,6 +112,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -110,6 +130,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -127,6 +148,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -142,6 +164,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -237,223 +260,32 @@ IF
   CheckStatLT(Myself,50,SPELLFAILUREMAGE)
   !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
   !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player1,90)
-  See(Player1)
-  !StateCheck(Player1,STATE_REALLY_DEAD)
-  !StateCheck(Player1,STATE_NOT_TARGETABLE)
-  !StateCheck(Player1,STATE_HARMLESS)
-  !CheckStatGT(Player1,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player1,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player1,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player1,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player1,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player1,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player1,1,SCRIPTINGSTATE4)
-  !HasItemEquipedReal("NPSW01",Player1)
-  !HasItemEquipedReal("SW1H27",Player1)
-  !HasItemEquiped("RING09",Player1)
-  !HasItemEquipedReal("SW2H06",Player1)
-  CheckStatLT(Player1,50,RESISTMAGIC)
+  HPLT(Nearestenemyof(Myself),90)
+  See(Nearestenemyof(Myself))
+  !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  !StateCheck(Nearestenemyof(Myself),STATE_NOT_TARGETABLE)
+  !StateCheck(Nearestenemyof(Myself),STATE_HARMLESS)
+  !CheckStatGT(Nearestenemyof(Myself),0,WIZARD_SPELL_DEFLECTION)
+  !CheckStatGT(Nearestenemyof(Myself),0,WIZARD_SPELL_TURNING)
+  !CheckStatGT(Nearestenemyof(Myself),0,WIZARD_SPELL_TRAP)
+  !CheckStatGT(Nearestenemyof(Myself),0,CLERIC_CHAOTIC_COMMANDS)
+  !CheckStatGT(Nearestenemyof(Myself),0,CLERIC_FREE_ACTION)
+  !CheckStat(Nearestenemyof(Myself),1,CLERIC_SHIELD_OF_THE_ARCHONS)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),1,SCRIPTINGSTATE4)
+  !HasItemEquipedReal("NPSW01",Nearestenemyof(Myself))
+  !HasItemEquipedReal("SW1H27",Nearestenemyof(Myself))
+  !HasItemEquiped("RING09",Nearestenemyof(Myself))
+  !HasItemEquipedReal("SW2H06",Nearestenemyof(Myself))
+  CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
     SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player1)
+    SpellRES("C0SA703",Nearestenemyof(Myself))
     SetInterrupt(TRUE)
 END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player2,90)
-  See(Player2)
-  !StateCheck(Player2,STATE_REALLY_DEAD)
-  !StateCheck(Player2,STATE_NOT_TARGETABLE)
-  !StateCheck(Player2,STATE_HARMLESS)
-  !CheckStatGT(Player2,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player2,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player2,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player2,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player2,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player2,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player2,1,SCRIPTINGSTATE4)
-  !CheckStat(Player2,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player2)
-  !HasItemEquipedReal("SW1H27",Player2)
-  !HasItemEquiped("RING09",Player2)
-  !HasItemEquipedReal("SW2H06",Player2)
-  CheckStatLT(Player2,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player2)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player3,90)
-  See(Player3)
-  !StateCheck(Player3,STATE_REALLY_DEAD)
-  !StateCheck(Player3,STATE_NOT_TARGETABLE)
-  !StateCheck(Player3,STATE_HARMLESS)
-  !CheckStatGT(Player3,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player3,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player3,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player3,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player3,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player3,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player3,1,SCRIPTINGSTATE4)
-  !CheckStat(Player3,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player3)
-  !HasItemEquipedReal("SW1H27",Player3)
-  !HasItemEquiped("RING09",Player3)
-  !HasItemEquipedReal("SW2H06",Player3)
-  CheckStatLT(Player3,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player3)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player4,90)
-  See(Player4)
-  !StateCheck(Player4,STATE_REALLY_DEAD)
-  !StateCheck(Player4,STATE_NOT_TARGETABLE)
-  !StateCheck(Player4,STATE_HARMLESS)
-  !CheckStatGT(Player4,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player4,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player4,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player4,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player4,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player4,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player4,1,SCRIPTINGSTATE4)
-  !CheckStat(Player4,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player4)
-  !HasItemEquipedReal("SW1H27",Player4)
-  !HasItemEquiped("RING09",Player4)
-  !HasItemEquipedReal("SW2H06",Player4)
-  CheckStatLT(Player4,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player4)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player5,90)
-  See(Player5)
-  !StateCheck(Player5,STATE_REALLY_DEAD)
-  !StateCheck(Player5,STATE_NOT_TARGETABLE)
-  !StateCheck(Player5,STATE_HARMLESS)
-  !CheckStatGT(Player5,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player5,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player5,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player5,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player5,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player5,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player5,1,SCRIPTINGSTATE4)
-  !CheckStat(Player5,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player5)
-  !HasItemEquipedReal("SW1H27",Player5)
-  !HasItemEquiped("RING09",Player5)
-  !HasItemEquipedReal("SW2H06",Player5)
-  CheckStatLT(Player5,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player5)
-    SetInterrupt(TRUE)
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  OR(2)
-    CheckStatGT(Myself,0,AURACLEANSING)
-    !GlobalTimerNotExpired("OH_PWR","LOCALS")
-  HaveSpellRES("C0SA703")
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-  !StateCheck(Myself,STATE_SILENCED)
-  HPLT(Player6,90)
-  See(Player6)
-  !StateCheck(Player6,STATE_REALLY_DEAD)
-  !StateCheck(Player6,STATE_NOT_TARGETABLE)
-  !StateCheck(Player6,STATE_HARMLESS)
-  !CheckStatGT(Player6,0,WIZARD_SPELL_DEFLECTION)
-  !CheckStatGT(Player6,0,WIZARD_SPELL_TURNING)
-  !CheckStatGT(Player6,0,WIZARD_SPELL_TRAP)
-  !CheckStatGT(Player6,0,CLERIC_CHAOTIC_COMMANDS)
-  !CheckStatGT(Player6,0,CLERIC_FREE_ACTION)
-  !CheckStat(Player6,2,WIZARD_SPELL_IMMUNITY)
-  !CheckStat(Player6,1,SCRIPTINGSTATE4)
-  !CheckStat(Player6,1,CLERIC_SHIELD_OF_THE_ARCHONS)
-  !HasItemEquipedReal("NPSW01",Player6)
-  !HasItemEquipedReal("SW1H27",Player6)
-  !HasItemEquiped("RING09",Player6)
-  !HasItemEquipedReal("SW2H06",Player6)
-  CheckStatLT(Player6,50,RESISTMAGIC)
-THEN
-  RESPONSE #100
-    SetInterrupt(FALSE)
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_PWR","LOCALS",TWO_ROUNDS)
-    SpellRES("C0SA703",Player6)
-    SetInterrupt(TRUE)
-END
-
 IF
   OR(2)
     !GlobalTimerNotExpired("OH_Cast","LOCALS")
@@ -859,7 +691,7 @@ IF
   !CheckSpellState(Nearestenemyof(Myself),MINSC_BERSERK)
   CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
   CheckStat(Nearestenemyof(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",Nearestenemyof(Myself))
 THEN
   RESPONSE #100
@@ -895,7 +727,7 @@ IF
   !CheckSpellState(Nearestenemyof(Myself),MINSC_BERSERK)
   CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
   CheckStat(Nearestenemyof(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",Nearestenemyof(Myself))
 THEN
   RESPONSE #100
@@ -931,7 +763,7 @@ IF
   !CheckSpellState(Nearestenemyof(Myself),MINSC_BERSERK)
   CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
   CheckStat(Nearestenemyof(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",Nearestenemyof(Myself))
 THEN
   RESPONSE #100
@@ -967,7 +799,7 @@ IF
   !CheckSpellState(Nearestenemyof(Myself),MINSC_BERSERK)
   CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
   CheckStat(Nearestenemyof(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",Nearestenemyof(Myself))
 THEN
   RESPONSE #100
@@ -1003,7 +835,7 @@ IF
   !CheckSpellState(Nearestenemyof(Myself),MINSC_BERSERK)
   CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
   CheckStat(Nearestenemyof(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",Nearestenemyof(Myself))
 THEN
   RESPONSE #100
@@ -1039,7 +871,7 @@ IF
   !CheckSpellState(Nearestenemyof(Myself),MINSC_BERSERK)
   CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
   CheckStat(Nearestenemyof(Myself),0,MINORGLOBE)
-  !CheckStat(Player1,2,WIZARD_SPELL_IMMUNITY)
+  !CheckStat(Nearestenemyof(Myself),2,WIZARD_SPELL_IMMUNITY)
   !HasItemEquiped("MORSWORD",Nearestenemyof(Myself))
 THEN
   RESPONSE #100
@@ -1053,6 +885,7 @@ IF
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
   StateCheck(Nearestenemyof(Myself),STATE_SLEEPING)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1067,6 +900,7 @@ IF
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
   StateCheck(Nearestenemyof(Myself),STATE_SLEEPING)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1081,6 +915,7 @@ IF
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
   !StateCheck(Nearestenemyof(Myself),STATE_SLEEPING)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1094,6 +929,7 @@ IF
   HaveSpellRES("C0SA710")
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1107,6 +943,7 @@ IF
   HaveSpellRES("C0SA610")
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1341,6 +1178,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1356,6 +1194,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1370,6 +1209,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1384,6 +1224,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1399,6 +1240,7 @@ IF
   HPLT(Nearestenemyof(Myself),61)
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1413,6 +1255,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1427,6 +1270,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1443,6 +1287,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1458,6 +1303,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1476,6 +1322,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1491,6 +1338,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1506,6 +1354,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1520,6 +1369,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1534,122 +1384,7 @@ IF
     CheckStatGT(Myself,0,AURACLEANSING)
   !GlobalTimerNotExpired("OH_Malison","LOCALS")
   HaveSpellRES("C0SA403")
-  See(Player1)
-  !StateCheck(Nearestenemyof(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(Nearestenemyof(Myself),STATE_HARMLESS)
-  CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
-  !CheckSpellState(Nearestenemyof(Myself),MALISON)
-  !CheckStat(Nearestenemyof(Myself),4,WIZARD_SPELL_IMMUNITY)
-  !CheckStatGT(Nearestenemyof(Myself),0,MINORGLOBE)
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !StateCheck(Myself,STATE_SILENCED)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_Malison","LOCALS",THREE_ROUNDS)
-    SpellRES("C0SA403",Nearestenemyof(Myself))
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  !GlobalTimerNotExpired("OH_Malison","LOCALS")
-  HaveSpellRES("C0SA403")
-  See(Player2)
-  !StateCheck(Nearestenemyof(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(Nearestenemyof(Myself),STATE_HARMLESS)
-  CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
-  !CheckSpellState(Nearestenemyof(Myself),MALISON)
-  !CheckStat(Nearestenemyof(Myself),4,WIZARD_SPELL_IMMUNITY)
-  !CheckStatGT(Nearestenemyof(Myself),0,MINORGLOBE)
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !StateCheck(Myself,STATE_SILENCED)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_Malison","LOCALS",THREE_ROUNDS)
-    SpellRES("C0SA403",Nearestenemyof(Myself))
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  !GlobalTimerNotExpired("OH_Malison","LOCALS")
-  HaveSpellRES("C0SA403")
-  See(Player3)
-  !StateCheck(Nearestenemyof(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(Nearestenemyof(Myself),STATE_HARMLESS)
-  CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
-  !CheckSpellState(Nearestenemyof(Myself),MALISON)
-  !CheckStat(Nearestenemyof(Myself),4,WIZARD_SPELL_IMMUNITY)
-  !CheckStatGT(Nearestenemyof(Myself),0,MINORGLOBE)
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !StateCheck(Myself,STATE_SILENCED)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_Malison","LOCALS",THREE_ROUNDS)
-    SpellRES("C0SA403",Nearestenemyof(Myself))
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  !GlobalTimerNotExpired("OH_Malison","LOCALS")
-  HaveSpellRES("C0SA403")
-  See(Player4)
-  !StateCheck(Nearestenemyof(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(Nearestenemyof(Myself),STATE_HARMLESS)
-  CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
-  !CheckSpellState(Nearestenemyof(Myself),MALISON)
-  !CheckStat(Nearestenemyof(Myself),4,WIZARD_SPELL_IMMUNITY)
-  !CheckStatGT(Nearestenemyof(Myself),0,MINORGLOBE)
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !StateCheck(Myself,STATE_SILENCED)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_Malison","LOCALS",THREE_ROUNDS)
-    SpellRES("C0SA403",Nearestenemyof(Myself))
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  !GlobalTimerNotExpired("OH_Malison","LOCALS")
-  HaveSpellRES("C0SA403")
-  See(Player5)
-  !StateCheck(Nearestenemyof(Myself),STATE_NOT_TARGETABLE)
-  !StateCheck(Nearestenemyof(Myself),STATE_HARMLESS)
-  CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
-  !CheckSpellState(Nearestenemyof(Myself),MALISON)
-  !CheckStat(Nearestenemyof(Myself),4,WIZARD_SPELL_IMMUNITY)
-  !CheckStatGT(Nearestenemyof(Myself),0,MINORGLOBE)
-  CheckStatLT(Myself,50,SPELLFAILUREMAGE)
-  !StateCheck(Myself,STATE_SILENCED)
-  !CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
-THEN
-  RESPONSE #100
-    SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetGlobalTimer("OH_Malison","LOCALS",THREE_ROUNDS)
-    SpellRES("C0SA403",Nearestenemyof(Myself))
-END
-
-IF
-  OR(2)
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
-    CheckStatGT(Myself,0,AURACLEANSING)
-  !GlobalTimerNotExpired("OH_Malison","LOCALS")
-  HaveSpellRES("C0SA403")
-  See(Player6)
+  See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_NOT_TARGETABLE)
   !StateCheck(Nearestenemyof(Myself),STATE_HARMLESS)
   CheckStatLT(Nearestenemyof(Myself),50,RESISTMAGIC)
@@ -4219,7 +3954,9 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
+  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),15)
+  NextTriggerObject(Nearestenemyof(Myself))
   !Range(NearestEnemyOf(Myself),15)
 THEN
   RESPONSE #100
@@ -5929,15 +5666,15 @@ IF
   Global("OH_Heal","LOCALS",0)
   Global("OH_Active","LOCALS",1)
   !Detect([GOODCUTOFF])
-  InMyArea(Player1)
+  InMyArea(Nearestenemyof(Myself))
   !StateCheck(Myself,STATE_BLIND)
-  !StateCheck(Player1,STATE_REALLY_DEAD)
+  !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
   OR(2)
     RandomNum(5,1)
     CombatCounter(0)
 THEN
   RESPONSE #100
-    MoveToObject(Player1)
+    MoveToObject(Nearestenemyof(Myself))
 END
 
 IF

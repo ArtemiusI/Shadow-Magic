@@ -38,6 +38,8 @@ CHAIN IF WEIGHT #-1 ~Global("C0SAFamiliarSummoned","GLOBAL",2) Alignment(Myself,
 END
 + ~Global("Background","LOCALS",0)~ + ~Tell me about yourself, Yin'rou.~ DO ~SetGlobal("Background","LOCALS",1)~ + a3.4
 ++ ~Return to your home plane for now. I will call for you when you're needed.~ + a3.1
++ ~Global("DisableFamiliarAI","GLOBAL",0)~ + ~I want you to stop hiding while out of combat.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",1)~ + a3.5
++ ~Global("DisableFamiliarAI","GLOBAL",1)~ + ~I want you to hide in shadows while out of combat.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",0)~ + a3.6
 ++ ~How are you? Is everything alright?~ + a3.3
 ++ ~Nothing right now. Let's get moving.~ + a3.0
 
@@ -95,12 +97,22 @@ CHAIN C0SAFAM a3.4
 = ~Suddenly, he exposes his fangs in what appears to be a grin. "So far, however... I am satisfied with what I have seen. I have no reason to believe you are not worth serving, as of the moment... but only time will tell if that lasts."~
 EXIT
 
+CHAIN C0SAFAM a3.5
+~Very well, then. I will face our foes head on.~
+EXIT
+
+CHAIN C0SAFAM a3.6
+~As you wish. Our enemies will not see me until it is too late.~
+EXIT
+
 CHAIN IF WEIGHT #-1 ~Global("C0SAFamiliarSummoned","GLOBAL",2) Alignment(Myself,MASK_LCNEUTRAL) InPartySlot(LastTalkedToBy,0)~ THEN C0SAFAM b3
 ~Ka'Shai's incorporeal form takes shape and becomes more solid as you beckon it. "I am lissstening, massster. What is your desssire?"~
 END
 + ~Global("Background","LOCALS",0)~ + ~Tell me about yourself, Ka'Shai.~ DO ~SetGlobal("Background","LOCALS",1)~ + b3.4
 ++ ~Return to your home plane for now. I will call for you when you're needed.~ + b3.1
 ++ ~How are you? Is everything alright?~ + b3.3
++ ~Global("DisableFamiliarAI","GLOBAL",0)~ + ~I want you to stop singing while in combat.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",1)~ + b3.5
++ ~Global("DisableFamiliarAI","GLOBAL",1)~ + ~I want you to sing while of combat.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",0)~ + b3.5
 ++ ~Nothing right now. Let's get moving.~ + b3.0
 
 CHAIN C0SAFAM b3.0
@@ -157,12 +169,18 @@ CHAIN C0SAFAM b3.4
 = ~"Lead and command me however you choose, massster... and I will obssserve... and continue to learn..."~
 EXIT
 
+CHAIN C0SAFAM b3.5
+~Assss you command, massster...~
+EXIT
+
 CHAIN IF WEIGHT #-1 ~Global("C0SAFamiliarSummoned","GLOBAL",2) Alignment(Myself,MASK_CHAOTIC) InPartySlot(LastTalkedToBy,0)~ THEN C0SAFAM c3
 ~Nyx looks back at you and crosses her arms impatiently. "Yeah, boss? Whatcha got for me this time?"~
 END
 + ~Global("Background","LOCALS",0)~ + ~Tell me about yourself, Nyx.~ DO ~SetGlobal("Background","LOCALS",1)~ + c3.5
 ++ ~Return to your home plane for now. I will call for you when you're needed.~ + c3.1
 ++ ~Give me anything you have pickpocketed, will you?~ + c3.4
++ ~Global("DisableFamiliarAI","GLOBAL",0)~ + ~I want you to stop searching for traps.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",1)~ + c3.5
++ ~Global("DisableFamiliarAI","GLOBAL",1)~ + ~I want you to search for traps.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",0)~ + c3.5
 ++ ~Nothing right now. Let's get moving.~ + c3.0
 
 CHAIN C0SAFAM c3.0
@@ -220,4 +238,8 @@ CHAIN C0SAFAM c3.5
 = ~"Alright, well, lemme just get one thing straight, boss. I'm actually not native to the Plane of Shadow. I am - was, I dunno - anymore, an air mephit from the Elemental Plane of, well, Air. Bit of a wild thing, I was, and I found myself ending up in different planes all the time, and getting out just as suddenly as I got in... well, until I ended up getting sucked into the Plane of Shadow, that is."~
 = ~"Actually, I don't really remember much of what happened. But as far as I remember, I ended up in the Shadow Plane, and I eventually got changed. Maybe I died and was reborn like this, or maybe that's just what happens when you live in the plane for too long. Either way, I was changed completely. And by that, I mean, I grew legs. Yeah... the planes do weird things to you, let's just put it that way. Wouldn't suggest it if you value your limbs."~
 = ~"Anyways, I ain't sure what I am now, but I ain't what I used to be. An' now I'm bound to you, boss. Not sure I like bein' tied down, but I don't blame you at all. You've done well by me so far."~
+EXIT
+
+CHAIN C0SAFAM c3.6
+~Will do, boss.~
 EXIT

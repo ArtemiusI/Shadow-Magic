@@ -170,7 +170,7 @@ EXIT
 
 CHAIN C0SAKRYN b1
 ~I see. Then my apprentice...? Aye, dead, I am sure. A pity, but 'tis the most merciful thing that could have been done.~
-DO ~GiveGoldForce(2000)~
+DO ~GiveGoldForce(1000)~
 == C0SAKRYN ~Your reward, as promised...~
 END
 IF ~GlobalLT("C0SAMageStaves","GLOBAL",2)~ EXTERN C0SAKRYN b1.1
