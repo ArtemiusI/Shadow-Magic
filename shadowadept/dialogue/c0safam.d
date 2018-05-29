@@ -285,8 +285,8 @@ END
 ++ ~Return to your home plane for now. I will call for you when you're needed.~ + c3.1
 ++ ~You wouldn't happen to have any advice, would you?~ + c3.2
 ++ ~How are you? Is everything alright?~ + c3.3
-+ ~Global("DisableFamiliarAI","GLOBAL",0)~ + ~I want you to stop searching for traps.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",1)~ + c3.5
-+ ~Global("DisableFamiliarAI","GLOBAL",1)~ + ~I want you to search for traps.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",0)~ + c3.5
++ ~Global("DisableFamiliarAI","GLOBAL",0)~ + ~I want you to stop searching for traps.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",1)~ + c3.6
++ ~Global("DisableFamiliarAI","GLOBAL",1)~ + ~I want you to search for traps.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",0)~ + c3.6
 ++ ~Give me anything you have pickpocketed, will you?~ + c3.4
 ++ ~Nothing right now. Let's get moving.~ + c3.0
 

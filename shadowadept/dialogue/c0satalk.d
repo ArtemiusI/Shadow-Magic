@@ -783,7 +783,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-When the shadow adept casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The shadow adept's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the shadow adept. All targets within range take 1d4+2 fire damage and have their Luck reduced by two points for 2 rounds + 1 round per level to a maximum of 10 rounds at 9th level, additionally, they take 2 points of fire damage per round for the duration. A successful Saving Throw vs. Spells negates half damage and the secondary effects.~
+When the shadow adept casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The shadow adept's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the shadow adept. All targets within range take 1d4+10% of their maximum hit points in fire damage and have their Luck reduced by two points for 2 rounds + 1 round per level to a maximum of 10 rounds at 9th level, additionally, they take 2 points of fire damage per round for the duration. A successful Saving Throw vs. Spells negates the maximum hit points damage and the secondary effects.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) AddSpecialAbility("c0sa112")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1081,11 +1081,11 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: Neg. 
 
-This spell works in the exact same manner as Charm Person, with one difference: There is no Saving Throw bonus. Dire Charm affects any single person it is cast upon. The term person includes any bipedal human, demihuman, or humanoid of man-size or smaller, such as brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be charmed, but an ogre could not. The person is allowed a Saving Throw vs. Spell to negate the effect.
+This spell works in the exact same manner as Charm Person, with one difference: There is no Saving Throw bonus. Beguile affects any single person it is cast upon. The term person includes any bipedal human, demihuman, or humanoid of man-size or smaller, such as brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be charmed, but an ogre could not. The person is allowed a Saving Throw vs. Spell to negate the effect.
 
 If the spell's recipient fails <PRO_HISHER> Saving Throw, <PRO_HESHE> regards the caster as a trusted friend and ally to be heeded and protected. The caster may give <PRO_HIMHER> orders, and the charmed individual will carry them out as quickly as possible.
 
-If the caster harms - or attempts to harm - the charmed person by some overt action, or if a Dispel Magic spell is cast upon the charmed person, the Dire Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject has full memory of the events that took place while <PRO_HESHE> was charmed. Also note that you cannot have a charmed creature leave the area where <PRO_HESHE> is charmed.
+If the caster harms - or attempts to harm - the charmed person by some overt action, or if a Dispel Magic spell is cast upon the charmed person, the Beguile spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject has full memory of the events that took place while <PRO_HESHE> was charmed. Also note that you cannot have a charmed creature leave the area where <PRO_HESHE> is charmed.
 
 The saving throw penalty increases by -1 for every 5 caster levels.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","LOCALS",-1) AddSpecialAbility("C0SA305")~ + NEXT
@@ -1144,7 +1144,7 @@ END
 
 IF ~~ 3.9
 SAY ~Shadow Spear
-(Evocation - Shadow Weave)
+(Invocation/Evocation - Shadow Weave)
 
 Level: 3
 Range: 70 ft.
@@ -1153,7 +1153,7 @@ Casting Time: 5
 Area of Effect: Path of spear
 Saving Throw: Neg.
 
-Upon casting this spell, a spear made of shadowstuff forms in the caster's hands, which can be thrown once towards a target of the caster's choosing. The spear pierces through all targets in its path, dispelling all of the spell protections of 5th level and lower affecting it. This includes the following spells: Minor Spell Deflection, Minor Globe of Invulnerability, Spell Immunity, and Minor Spell Turning. If no such spells protect the targets, the spear instead deals 5d6 and inflicts an additional effect dependent on the caster's level.
+Upon casting this spell, a spear made of shadowstuff forms in the caster's hands, which can be thrown once towards a target of the caster's choosing. The spear may be launched by any target the caster is able to attack, dispelling all of the spell protections of 5th level and lower affecting it. This includes the following spells: Minor Spell Deflection, Minor Globe of Invulnerability, Spell Immunity, and Minor Spell Turning. If no such spells protect the targets, the spear instead deals 5d6 magic damage and inflicts an additional effect dependent on the caster's level.
 
 5th level and below: Reduces targets' Armor Class by two points for five rounds
 8th-10th level: Reduces targets' saving throws and THAC0 by 1 point for five rounds
@@ -1161,7 +1161,7 @@ Upon casting this spell, a spear made of shadowstuff forms in the caster's hands
 14th-16th level: Drains two levels from targets for one turn
 17th level and above: Instantly kills targets
 
-Targets may make a Saving Throw vs. Death to avoid all secondary effects.~
+The spear is not affected by Magic Resistance. Targets may make a Saving Throw vs. Death (-1 per spear upgrade) to avoid all secondary effects.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","LOCALS",-1) AddSpecialAbility("C0SA309")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1236,7 +1236,7 @@ END
 
 IF ~~ 4.2
 SAY ~Fireshield (Shadow) 
-(Evocation, Alteration - Shadow Weave)
+(Invocation/Evocation, Alteration - Shadow Weave)
 
 Level: 4
 Range: 0
@@ -1245,7 +1245,7 @@ Casting Time: 4
 Area of Effect: The caster 
 Saving Throw: None 
 
-The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 1d6+2 cold damage and loses one point of THAC0 and armor class for 6 rounds.~
+The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 1d8+2 damage (half cold, half magic) and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) AddSpecialAbility("C0SA401")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1450,7 +1450,7 @@ Casting Time: 5
 Area of Effect: Special
 Saving Throw: 1/2
 
-When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outward in a cone 5 ft. long and 1 ft. in diameter per level of the caster. It drains heat and causes 1d4+1 points of damage per level of the caster. For example, a 10th-level shadow adept would cast a cone of cold 10 ft. in diameter and 50 ft. in length, causing 10d4+10 points of damage. Targets who fail their saving throw are also slowed and take 1d6 extra cold damage per round for 4 rounds.~
+When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outwards of 30 ft. in a 90' cone in front of the caster. It drains heat and causes 1d4 cold damage plus 1% of all targets' maximum hit points in damage per level of the caster. For example, a 10th-level shadow adept would deal 10d4 (Save vs. Spell at -2 for half) plus 10% maximum hit points in cold damage. Targets who fail their saving throw are also slowed and take 1d6 extra cold damage per round for 2 rounds + 1 round per 4 caster levels.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","LOCALS",-1) AddSpecialAbility("C0SA501")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1802,7 +1802,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 plus 20% of the target's maximum hit points as piercing damage. If the target fails a Saving Throw vs. Spells at -6, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
+This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they suffer an additional 20% of their maximum hit points as piercing damage and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","LOCALS",-1) AddSpecialAbility("C0SA609")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2012,7 +2012,7 @@ Casting Time: 1 round
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-When the shadow adept casts Possess, <PRO_HESHE> attempts to forcibly take control of one sentient creature within <PRO_HISHER> visual range. The target must make as Saving Throw vs. Spells at -7 or become directly controlled by the caster. The shadow adept loses control of <PRO_HISHER> body but may see through the eyes of <PRO_HISHER> target and use spells and abilities available to them. Possess may not be dispelled and the target only regains control over their own body once the duration has ended or if the caster chooses to relinquish control of <PRO_HISHER> own volition.
+When the shadow adept casts Possess, <PRO_HESHE> attempts to forcibly take control of one creature within <PRO_HISHER> visual range. The target must make as Saving Throw vs. Spells at -7 or become directly controlled by the caster. The shadow adept loses control of <PRO_HISHER> body but may see through the eyes of <PRO_HISHER> target and use spells and abilities available to them. Additionally, the possessed target's Strength, Dexterity and Constitution are increased to 25 while they are possessed. Possess may not be dispelled and the target only regains control over their own body once the duration has ended or if the caster chooses to relinquish control of <PRO_HISHER> own volition.
 
 Once the duration expires, the vertigo and shock of suddenly regaining control causes the target to suffer 5d10 non-lethal damage and fall unconscious for 5 rounds (no save).~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) AddSpecialAbility("C0SA709")~ + NEXT
@@ -2096,9 +2096,9 @@ Casting Time: 8
 Area of Effect: 30-ft. radius
 Saving Throw: 1/2
 
-This spell summons a shower of negative energy upon a targeted location, inflicting 1d4 magic and cold damage per level of the caster as well as draining one level and one point of strength for each instance of damage dealt. Affected creatures are allowed a Saving Throw vs. Spell to avoid the cold damage and loss of levels (but not strength). Effects last for 1 turn.
+This spell summons a shower of negative energy upon a targeted location, inflicting 1d4 cold damage per level plus 20% of their maximum hit points in damage (+2% per caster level after 16th level) over two rounds as well as draining one level and one point of strength for each instance of damage dealt. Affected creatures are allowed a Saving Throw vs. Spell to avoid the cold damage and loss of levels (but not strength). Effects last for 1 turn.
 
-The negastorm lasts for 2 rounds and does not affect allies.~
+The negastorm lasts for 2 rounds and does not affect allies. If an enemy enters the negastorm after the first round, they only suffer half of the effects.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) AddSpecialAbility("C0SA801")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2205,9 +2205,9 @@ Range: 0
 Duration: 1 round/4 levels
 Casting Time: 6
 Area of Effect: The caster
-Saving Throw: None
+Saving Throw: Neg.
 
-This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius must make a Save vs. Death or suffer 10% of their maximum hit points as magic damage, transferring it to the caster, as well as lose one level permanently.~
+This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius will suffer 10% of their maximum hit points in damage, transferring the same amount to the caster, as well as losing one level permanently if they fail a Save vs. Death at -2.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) AddSpecialAbility("C0SA807")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END

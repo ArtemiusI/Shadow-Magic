@@ -197,7 +197,7 @@ RESPONSE #100
 ChangeEnemyAlly(Myself,ALLY)
 CreateVisualEffectObject("c0cloud1",Myself)
 SetSequence(SEQ_DIE)
-DisplayString(Myself,~Death~)
+DisplayString(Myself,~^0xFFD3D3D3Death^-~)
 DropInventory()
 SetGlobal("C0SAFamiliarDead","GLOBAL",1)
 RemoveFamiliar()

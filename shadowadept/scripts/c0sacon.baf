@@ -5,7 +5,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),1,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 1~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 1^-~)
 	DestroySelf()
 END
 
@@ -14,7 +14,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),2,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 2~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 2^-~)
 	DestroySelf()
 END
 
@@ -23,7 +23,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),3,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 3~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 3^-~)
 	DestroySelf()
 END
 
@@ -32,7 +32,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),4,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 4~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 4^-~)
 	DestroySelf()
 END
 
@@ -41,7 +41,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),5,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 5~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 5^-~)
 	DestroySelf()
 END
 
@@ -50,7 +50,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),6,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 6~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 6^-~)
 	DestroySelf()
 END
 
@@ -59,7 +59,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),7,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 7~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 7^-~)
 	DestroySelf()
 END
 
@@ -68,7 +68,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),8,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 8~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 8^-~)
 	DestroySelf()
 END
 
@@ -77,7 +77,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),9,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 9~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 9^-~)
 	DestroySelf()
 END
 
@@ -86,7 +86,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),10,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 10~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 10^-~)
 	DestroySelf()
 END
 
@@ -95,7 +95,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),11,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 11~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 11^-~)
 	DestroySelf()
 END
 
@@ -104,7 +104,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),12,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 12~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 12^-~)
 	DestroySelf()
 END
 
@@ -113,7 +113,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),13,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 13~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 13^-~)
 	DestroySelf()
 END
 
@@ -122,7 +122,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),14,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 14~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 14^-~)
 	DestroySelf()
 END
 
@@ -131,7 +131,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),15,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 15~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 15^-~)
 	DestroySelf()
 END
 
@@ -140,7 +140,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),16,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 16~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 16^-~)
 	DestroySelf()
 END
 
@@ -149,7 +149,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),17,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 17~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 17^-~)
 	DestroySelf()
 END
 
@@ -158,7 +158,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),18,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 18~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 18^-~)
 	DestroySelf()
 END
 
@@ -167,7 +167,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),19,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 19~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 19^-~)
 	DestroySelf()
 END
 
@@ -176,7 +176,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),20,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 20~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 20^-~)
 	DestroySelf()
 END
 
@@ -185,7 +185,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),21,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 21~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 21^-~)
 	DestroySelf()
 END
 
@@ -194,7 +194,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),22,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 22~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 22^-~)
 	DestroySelf()
 END
 
@@ -203,7 +203,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),23,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 23~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 23^-~)
 	DestroySelf()
 END
 
@@ -212,7 +212,7 @@ IF
 	CheckStat(Lastsummonerof(Myself),24,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 24~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 24^-~)
 	DestroySelf()
 END
 
@@ -221,6 +221,6 @@ IF
 	CheckStat(Lastsummonerof(Myself),25,CON)
 THEN
 RESPONSE #100
-	DisplayString(Lastsummonerof(Myself),~Remaining Constitution: 25~)
+	DisplayString(Lastsummonerof(Myself),~^0xFFC76777Remaining Constitution: 25^-~)
 	DestroySelf()
 END

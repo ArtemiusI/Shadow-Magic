@@ -2,6 +2,31 @@
 //////////////SPLPROT.2DA///////////////
 ////////////////////////////////////////
 
+/*
+		INTELLIGENCE						WISDOM										CHARISMA
+		1-2:	-5 casting speed penalty	1: -50% spell duration, 50% spell failure	1-2: -5 penalty to all Saving Throws
+		3-4:	-4 casting speed penalty	2: -45% spell duration, 45% spell failure	3-4: -4 penalty to all Saving Throws
+		5-6:	-3 casting speed penalty	3: -40% spell duration, 40% spell failure	5-6: -3 penalty to all Saving Throws
+		7-8:	-2 casting speed penalty	4: -35% spell duration, 35% spell failure	7-8: -2 penalty to all Saving Throws
+		9-10:	-1 casting speed penalty	5: -30% spell duration, 30% spell failure	9-10: -1 penalty to all Saving Throws
+		11-16:	Nothing						6: -25% spell duration, 25% spell failure	11-15: Nothing
+		18:		+1 caster level bonus		7: -20% spell duration, 20% spell failure	16: +1 to all Saving Throws
+		19:		+1 casting speed bonus		8: -15% spell duration, 15% spell failure	17: +5% Non-Physical Damage
+		20:		+1 caster level bonus		9: -10% spell duration, 10% spell failure	18: +1 to all Saving Throws
+		21:		+1 casting speed bonus		10: -5% spell duration, 5% spell failure	19: +10% Non-Physical Damage
+		22:		+1 caster level bonus		11-15: Nothing								20: +1 to all Saving Throws
+		23:		+1 casting speed bonus		16: +5% spell duration						21: +15% Non-Physical Damage
+		24:		+1 caster level bonus		17: +10% spell duration						22: +1 to all Saving Throws
+		25:		+1 casting speed bonus		18: +15% spell duration						23: +20% Non-Physical Damage
+											19: +20% spell duration						24: +1 to all Saving Throws
+											20: +25% spell duration						25: +25% Non-Physical Damage
+											21: +30% spell duration
+											22: +35% spell duration
+											23: +40% spell duration
+											24: +45% spell duration
+											25: +50% spell duration		
+*/
+
 // INTELLIGENCE
 APPEND ~splprot.2da~ ~C0SAINT%TAB%38%TAB%-1%TAB%1~
 COPY_EXISTING ~splprot.2da~ ~override~
@@ -85,7 +110,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon1.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-1 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-1 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon2.spl~ ~override~
@@ -95,7 +120,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon2.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-2 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon3.spl~ ~override~
@@ -105,7 +130,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon3.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-3 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-3 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon4.spl~ ~override~
@@ -115,7 +140,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon4.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-4 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon5.spl~ ~override~
@@ -125,7 +150,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon5.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-5 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-5 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon6.spl~ ~override~
@@ -135,7 +160,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon6.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-6 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon7.spl~ ~override~
@@ -145,7 +170,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon7.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-7 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-7 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon8.spl~ ~override~
@@ -155,7 +180,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon8.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-8 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon9.spl~ ~override~
@@ -165,7 +190,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacon9.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-9 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-9 penalty to Constitution^-~)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon0.spl~ ~override~
@@ -175,19 +200,11 @@ COPY ~%MOD_FOLDER%/spells/c0sacon0.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-10 penalty to Constitution~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 penalty to Constitution^-~)
 END
 COMPILE ~%MOD_FOLDER%/scripts/c0sacon.baf~
 
 COPY ~%MOD_FOLDER%/spells/C0SA207.spl~ ~override~
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 139
-	  target = 1
-	  timing = 4
-	  duration = 60
-	  parameter1 = RESOLVE_STR_REF (~Constitution Restored~)
-END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -209,16 +226,25 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
-
-COPY ~%MOD_FOLDER%/spells/C0SA407.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA207a.spl~ ~override~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
-	  target = 1
+	  target = 2
 	  timing = 4
 	  duration = 60
 	  parameter1 = RESOLVE_STR_REF (~Constitution Restored~)
 END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  duration = 0
+	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
+END
+
+COPY ~%MOD_FOLDER%/spells/C0SA407.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -240,16 +266,25 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
-
-COPY ~%MOD_FOLDER%/spells/C0SA706.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0SA407a.spl~ ~override~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
-	  target = 1
+	  target = 2
 	  timing = 4
 	  duration = 60
 	  parameter1 = RESOLVE_STR_REF (~Constitution Restored~)
 END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  duration = 0
+	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
+END
+
+COPY ~%MOD_FOLDER%/spells/C0SA706.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -271,6 +306,23 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+COPY ~%MOD_FOLDER%/spells/C0SA706a.spl~ ~override~
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 139
+	  target = 2
+	  timing = 4
+	  duration = 60
+	  parameter1 = RESOLVE_STR_REF (~Constitution Restored~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  duration = 0
+	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
+END
 
       PRINT ~Resource: Constitution drain on cast~
       END
@@ -283,7 +335,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-2 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
   LPF ALTER_EFFECT
@@ -292,7 +344,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-4 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
   LPF ALTER_EFFECT
@@ -301,7 +353,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-6 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
   LPF ALTER_EFFECT
@@ -310,7 +362,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-8 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
   LPF ALTER_EFFECT
@@ -319,7 +371,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-10 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
   LPF ALTER_EFFECT
@@ -328,7 +380,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-12 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
   LPF ALTER_EFFECT
@@ -337,7 +389,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-14 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
   LPF ALTER_EFFECT
@@ -346,7 +398,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-16 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
   LPF ALTER_EFFECT
@@ -355,7 +407,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-18 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Current Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
   LPF ALTER_EFFECT
@@ -364,7 +416,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-20 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Current Hit Points^-~)
 END
 
 COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
@@ -451,7 +503,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-2 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
   LPF ALTER_EFFECT
@@ -469,7 +521,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-4 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
   LPF ALTER_EFFECT
@@ -487,7 +539,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-6 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
   LPF ALTER_EFFECT
@@ -505,7 +557,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-8 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
   LPF ALTER_EFFECT
@@ -523,7 +575,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-10 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
   LPF ALTER_EFFECT
@@ -541,7 +593,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-12 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
   LPF ALTER_EFFECT
@@ -559,7 +611,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-14 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
   LPF ALTER_EFFECT
@@ -577,7 +629,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-16 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
   LPF ALTER_EFFECT
@@ -595,7 +647,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-18 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Maximum Hit Points^-~)
 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
   LPF ALTER_EFFECT
@@ -613,7 +665,7 @@ END
       check_headers = 1
       match_opcode = 139 // display string
       match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~-20 Hit Points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Maximum Hit Points^-~)
 END
 
 COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
@@ -891,6 +943,42 @@ COPY_EXISTING ~C0SACON0.SPL~ ~OVERRIDE~
 		  resource = EVAL ~C0SACON0~
 	END
 
+COPY_EXISTING ~C0SA207.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 2
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = C0SA207
+	END
+	
+COPY_EXISTING ~C0SA407.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 2
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = C0SA407
+	END
+	
+COPY_EXISTING ~C0SA706.SPL~ ~OVERRIDE~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 324
+		  insert_point = 0
+		  target = 2
+		  duration = 0
+		  parameter2 = 1
+		STR_VAR
+		  resource = C0SA706
+	END
+	
 // PROJECTILES
 
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj01.PRO~ ~SM Flying Skull~
@@ -935,6 +1023,7 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0cflame.PRO~ ~SM Cursed Flames~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0blizza.PRO~ ~SM Blizzard~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0oblivi.PRO~ ~SM Oblivion Pull~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0pandem.PRO~ ~SM Pandemonium~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0scomet.PRO~ ~SM Shadow Comet~
 
 COPY_EXISTING ~c0proj08.pro~ ~override~
 WRITE_SHORT 0x21A (IDS_OF_SYMBOL (~projectl~ ~c0pro08a~)) + 1
@@ -3137,7 +3226,23 @@ Saving Throw: None
 This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a Save vs. Spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely if they are attacked.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA112.spl~ ~override~
-SAY NAME1 ~Shadow Rope~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			parameter1 = RESOLVE_STR_REF (~Cursed~)
+			savingthrow = 1
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			insert_point = 2
+			opcode = 139
+			target = 2
+			timing = 1
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in damage^-~)
+			power = 1
+			savingthrow = 1
+			resist_dispel = 1
+	END
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -3156,7 +3261,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-When the shadow adept casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The shadow adept's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the shadow adept. All targets within range take 1d4+2 fire damage and have their Luck reduced by two points for 2 rounds + 1 round per level to a maximum of 10 rounds at 9th level, additionally, they take 2 points of fire damage per round for the duration. A successful Saving Throw vs. Spells negates half damage and the secondary effects.~
+When the shadow adept casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The shadow adept's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the shadow adept. All targets within range take 1d4+10% of their maximum hit points in fire damage and have their Luck reduced by two points for 2 rounds + 1 round per level to a maximum of 10 rounds at 9th level, additionally, they take 2 points of fire damage per round for the duration. A successful Saving Throw vs. Spells negates the maximum hit points damage and the secondary effects.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA201.spl~ ~override~
 SAY NAME1 ~Dark Mirage~
@@ -3278,7 +3383,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA209.spl~ ~override~
 		INT_VAR
 		  opcode = 324
 		  insert_point = 0
-		  target = 1
+		  target = 2
 		  duration = 0
 		  parameter2 = 1
 		STR_VAR
@@ -3489,11 +3594,11 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: Neg. 
 
-This spell works in the exact same manner as Charm Person, with one difference: There is no Saving Throw bonus. Dire Charm affects any single person it is cast upon. The term person includes any bipedal human, demihuman, or humanoid of man-size or smaller, such as brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be charmed, but an ogre could not. The person is allowed a Saving Throw vs. Spell to negate the effect.
+This spell works in the exact same manner as Charm Person, with one difference: There is no Saving Throw bonus. Beguile affects any single person it is cast upon. The term person includes any bipedal human, demihuman, or humanoid of man-size or smaller, such as brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be charmed, but an ogre could not. The person is allowed a Saving Throw vs. Spell to negate the effect.
 
 If the spell's recipient fails <PRO_HISHER> Saving Throw, <PRO_HESHE> regards the caster as a trusted friend and ally to be heeded and protected. The caster may give <PRO_HIMHER> orders, and the charmed individual will carry them out as quickly as possible.
 
-If the caster harms - or attempts to harm - the charmed person by some overt action, or if a Dispel Magic spell is cast upon the charmed person, the Dire Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject has full memory of the events that took place while <PRO_HESHE> was charmed. Also note that you cannot have a charmed creature leave the area where <PRO_HESHE> is charmed.
+If the caster harms - or attempts to harm - the charmed person by some overt action, or if a Dispel Magic spell is cast upon the charmed person, the Beguile spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject has full memory of the events that took place while <PRO_HESHE> was charmed. Also note that you cannot have a charmed creature leave the area where <PRO_HESHE> is charmed.
 
 The saving throw penalty increases by -1 for every 5 caster levels.~
 
@@ -3515,6 +3620,7 @@ This spell creates several small globes of shadowy matter, two for each experien
 COPY ~%MOD_FOLDER%/spells/c0meteor.itm~ ~override~
 SAY NAME1 ~Shadow Comets~
 SAY NAME2 ~Shadow Comets~
+WRITE_SHORT 0x9C ~%c0scomet%~
 
 COPY ~%MOD_FOLDER%/spells/C0SA307.spl~ ~override~
 SAY NAME1 ~Shadow Binding~
@@ -3567,7 +3673,7 @@ Casting Time: 5
 Area of Effect: Path of spear
 Saving Throw: Neg.
 
-Upon casting this spell, a spear made of shadowstuff forms in the caster's hands, which can be thrown once towards a target of the caster's choosing. The spear pierces through all targets in its path, dispelling all of the spell protections of 5th level and lower affecting it. This includes the following spells: Minor Spell Deflection, Minor Globe of Invulnerability, Spell Immunity, and Minor Spell Turning. If no such spells protect the targets, the spear instead deals 5d6 and inflicts an additional effect dependent on the caster's level.
+Upon casting this spell, a spear made of shadowstuff forms in the caster's hands, which can be thrown once towards a target of the caster's choosing. The spear may be launched by any target the caster is able to attack, dispelling all of the spell protections of 5th level and lower affecting it. This includes the following spells: Minor Spell Deflection, Minor Globe of Invulnerability, Spell Immunity, and Minor Spell Turning. If no such spells protect the targets, the spear instead deals 5d6 magic damage and inflicts an additional effect dependent on the caster's level.
 
 5th level and below: Reduces targets' Armor Class by two points for five rounds
 8th-10th level: Reduces targets' saving throws and THAC0 by 1 point for five rounds
@@ -3575,7 +3681,7 @@ Upon casting this spell, a spear made of shadowstuff forms in the caster's hands
 14th-16th level: Drains two levels from targets for one turn
 17th level and above: Instantly kills targets
 
-Targets may make a Saving Throw vs. Death to avoid all secondary effects.~
+The spear is not affected by Magic Resistance. Targets may make a Saving Throw vs. Death (-1 per spear upgrade) to avoid all secondary effects.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa309a.itm~ ~override~
 SAY NAME1 ~Shadow Spear~
@@ -3662,7 +3768,7 @@ Casting Time: 4
 Area of Effect: The caster 
 Saving Throw: None 
 
-The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 1d8+2 cold damage and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
+The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 1d8+2 damage (half cold, half magic) and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
 
 COPY ~%MOD_FOLDER%/spells/C0SA402.spl~ ~override~
 SAY NAME1 ~Shadeskin~
@@ -3921,6 +4027,13 @@ Saving Throw: 1/2
 With this spell, the shadow adept creates a wall of black fire, dealing 4d6 damage (half fire, half magic) to all creatures who pass through it (Save vs. Spells at -4 for half) and reduces their Armor Class by -4 for one round. Creatures cannot take damage more than once per round.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA412.spl~ ~override~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 138
+		  insert_point = 1
+		  target = 1
+		  parameter2 = 10
+	END
 SAY NAME1 ~Pain Mirror~
 SAY NAME2 ~Pain Mirror~
 SAY UNIDENTIFIED_DESC ~Pain Mirror
@@ -3934,8 +4047,88 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When the caster is struck with an attack, <PRO_HESHE> takes no damage and drains 1d4 hit points per level from the attacker instead. It only works for one attack, and the effects are not cumulative (you cannot have more than one mirror erected). If the spell is not triggered, it lasts for 1 turn.~
-
+COPY ~%MOD_FOLDER%/spells/C0SA412a.spl~ ~override~
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+		  opcode = 138
+		  insert_point = 1
+		  target = 1
+		  parameter2 = 10
+	END
+	
 COPY ~%MOD_FOLDER%/spells/C0SA501.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 0
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 9% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 1
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 2
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 3
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 4
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 5
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 6
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 7
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 8
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 9
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 10
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in damage^-~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			header = 11
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in damage^-~)
+	END
 SAY NAME1 ~Cone of Bitter Cold~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -3954,7 +4147,13 @@ Casting Time: 5
 Area of Effect: Special
 Saving Throw: 1/2
 
-When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outward in a cone 5 ft. long and 1 ft. in diameter per level of the caster. It drains heat and causes 1d4+1 points of damage per level of the caster. For example, a 10th-level shadow adept would cast a cone of cold 10 ft. in diameter and 50 ft. in length, causing 10d4+10 points of damage (Save vs. Spell at -2 for half). Targets who fail their saving throw are also slowed and take 1d6 extra cold damage per round for 4 rounds.~
+When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outwards of 30 ft. in a 90' cone in front of the caster. It drains heat and causes 1d4 cold damage plus 1% of all targets' maximum hit points in damage per level of the caster. For example, a 10th-level shadow adept would deal 10d4 (Save vs. Spell at -2 for half) plus 10% maximum hit points in cold damage. Targets who fail their saving throw are also slowed and take 1d6 extra cold damage per round for 2 rounds + 1 round per 4 caster levels.~
+COPY ~%MOD_FOLDER%/spells/C0SA501a.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			parameter1 = RESOLVE_STR_REF (~Slowed~)
+	END
 
 COPY ~%MOD_FOLDER%/spells/C0SA502.spl~ ~override~
 SAY NAME1 ~Shadow Assault~
@@ -3976,6 +4175,102 @@ Additionally, the caster's movement rate is doubled, allowing for a quick retrea
 Note: After making an attack, the shadow adept is no longer completely invisible. Opponents can target the shadow adept.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 0
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 19%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 1
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 20%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 2
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 21%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 3
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 22%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 4
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 23%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 5
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 24%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 6
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 25%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 7
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 26%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 8
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 27%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 9
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 28%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 10
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 29%~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+      header = 11
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 30%~)
+  END
 SAY NAME1 ~Breaching Dark~
 SAY NAME2 ~Breaching Dark~
 SAY UNIDENTIFIED_DESC ~Breaching Dark
@@ -4245,23 +4540,13 @@ When this spell is cast, an area roughly 30 feet in radius around the caster wil
 The spells that are affected by this are: Reflected Image, Invisibility, Blur, Mirror Image, Ghost Armor, Invisibility Sphere, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project Image, and Mass Invisibility.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = C0SA508
-	END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
       header = 0
- parameter1 = RESOLVE_STR_REF (~9% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 9% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4269,7 +4554,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 1
- parameter1 = RESOLVE_STR_REF (~10% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4277,7 +4562,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 2
- parameter1 = RESOLVE_STR_REF (~11% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4285,7 +4570,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 3
- parameter1 = RESOLVE_STR_REF (~12% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4293,7 +4578,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 4
- parameter1 = RESOLVE_STR_REF (~13% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4301,7 +4586,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 5
- parameter1 = RESOLVE_STR_REF (~14% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4309,7 +4594,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 6
- parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4317,7 +4602,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 7
- parameter1 = RESOLVE_STR_REF (~16% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4325,7 +4610,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 8
- parameter1 = RESOLVE_STR_REF (~17% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4333,7 +4618,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 9
- parameter1 = RESOLVE_STR_REF (~18% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4341,7 +4626,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 10
- parameter1 = RESOLVE_STR_REF (~19% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -4349,7 +4634,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 11
- parameter1 = RESOLVE_STR_REF (~20% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in damage^-~)
   END
 SAY NAME1 ~Nightshade~
 READ_LONG 0x64 "abil_off"
@@ -4668,6 +4953,11 @@ When this spell is cast at another creature, a thin purple ray is shot out. Upon
 Targets slain by this spell will be raised as a wraith under the caster's allegiance for 5 turns.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA609.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in damage^-~)
+	END
 SAY NAME1 ~Black Rose~
 SAY NAME2 ~Black Rose~
 SAY UNIDENTIFIED_DESC ~Black Rose
@@ -4680,14 +4970,14 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 plus 20% of the target's maximum hit points as piercing damage. If the target fails a Saving Throw vs. Spells at -6, they become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
+This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they lose an additional 20% of their maximum hit points and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA610.spl~ ~override~
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 		  opcode = 324
 		  insert_point = 0
-		  target = 1
+		  target = 2
 		  duration = 0
 		  parameter2 = 1
 		STR_VAR
@@ -4936,7 +5226,7 @@ Casting Time: 1 round
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-When the shadow adept casts Possess, <PRO_HESHE> attempts to forcibly take control of one creature within <PRO_HISHER> visual range. The target must make as Saving Throw vs. Spells at -7 or become directly controlled by the caster. The shadow adept loses control of <PRO_HISHER> body but may see through the eyes of <PRO_HISHER> target and use spells and abilities available to them. Possess may not be dispelled and the target only regains control over their own body once the duration has ended or if the caster chooses to relinquish control of <PRO_HISHER> own volition.
+When the shadow adept casts Possess, <PRO_HESHE> attempts to forcibly take control of one creature within <PRO_HISHER> visual range. The target must make as Saving Throw vs. Spells at -7 or become directly controlled by the caster. The shadow adept loses control of <PRO_HISHER> body but may see through the eyes of <PRO_HISHER> target and use spells and abilities available to them. Additionally, the possessed target's Strength, Dexterity and Constitution are increased to 25 while they are possessed. Possess may not be dispelled and the target only regains control over their own body once the duration has ended or if the caster chooses to relinquish control of <PRO_HISHER> own volition.
 
 Once the duration expires, the vertigo and shock of suddenly regaining control causes the target to suffer 5d10 non-lethal damage and fall unconscious for 5 rounds (no save).~
 
@@ -4946,6 +5236,13 @@ SAY NAME2 ~End Possession~
 SAY UNIDENTIFIED_DESC ~End Possession
 
 Use this ability to end Possession. The possessed target will suffer 5d10 non-lethal damage and fall unconscious for 5 rounds.~
+
+COPY ~%MOD_FOLDER%/spells/c0sa709b.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			parameter1 = RESOLVE_STR_REF (~Possessed~)
+	END
 
 COPY ~%MOD_FOLDER%/spells/C0SA710.spl~ ~override~
 SAY NAME1 ~Malefic Bomb~
@@ -5023,6 +5320,133 @@ WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sarain%~
 END
 
 COPY ~%MOD_FOLDER%/spells/C0SA801.spl~ ~override~
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 1
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 2
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 3
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 4
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 5
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 6
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 7
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 8
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 9
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 10
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in damage^-~)
+END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+	  insert_point = 3
+      opcode = 139
+	  target = 2
+	  timing = 1
+	  power = 8
+	  header = 11
+	  resist_dispel = 1
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in damage^-~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 139
+	  match_savingthrow = 1
+	  parameter1 = RESOLVE_STR_REF (~One Level Drained~)
+END
 SAY NAME1 ~Negastorm~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -5041,9 +5465,9 @@ Casting Time: 8
 Area of Effect: 30-ft. radius
 Saving Throw: 1/2
 
-This spell summons a shower of negative energy upon a targeted location, inflicting 1d4 magic and cold damage per level of the caster as well as draining one level and one point of strength for each instance of damage dealt. Affected creatures are allowed a Saving Throw vs. Spell to avoid the cold damage and loss of levels (but not strength). Effects last for 1 turn.
+This spell summons a shower of negative energy upon a targeted location, inflicting 1d4 cold damage per level plus 20% of their maximum hit points in damage (+2% per caster level after 16th level) over two rounds as well as draining one level and one point of strength for each instance of damage dealt. Affected creatures are allowed a Saving Throw vs. Spell to avoid the cold damage and loss of levels (but not strength). Effects last for 1 turn.
 
-The negastorm lasts for 2 rounds and does not affect allies.~
+The negastorm lasts for 2 rounds and does not affect allies. If an enemy enters the negastorm after the first round, they only suffer half of the effects.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA802.spl~ ~override~
 SAY NAME1 ~Annulment~
@@ -5180,9 +5604,26 @@ Range: 0
 Duration: 1 round/4 levels
 Casting Time: 6
 Area of Effect: The caster
-Saving Throw: None
+Saving Throw: Neg.
 
-This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius must make a Save vs. Death or suffer 10% of their maximum hit points as magic damage, transferring it to the caster, as well as lose one level permanently.~
+This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius will suffer 10% of their maximum hit points in damage, transferring the same amount to the caster, as well as losing one level permanently if they fail a Save vs. Death at -2.~
+COPY ~%MOD_FOLDER%/spells/c0sa807b.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+	  match_parameter2 = 1
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in damage^-~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+	  match_parameter2 = 0
+ parameter1 = RESOLVE_STR_REF (~One Level Drained~)
+  END
 
 COPY ~%MOD_FOLDER%/spells/c0sa808.spl~ ~override~
 SAY NAME1 ~Shadow's Refuge~
@@ -5232,7 +5673,7 @@ Casting Time: 1 round
 Area of Effect: 20-ft. radius
 Saving Throw: None
 
-This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies within 20' in range for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster loses 10% of <PRO_HISHER> hit points (Save vs. Death to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
+This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies within 20' in range for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster loses 10% of <PRO_HISHER> hit points (Save vs. Death at -4 to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
 
 COPY ~%MOD_FOLDER%/spells/c0s810a.spl~ ~override~
 SAY NAME1 ~End Dark Passage~
@@ -5240,7 +5681,14 @@ SAY NAME2 ~End Dark Passage~
 SAY UNIDENTIFIED_DESC ~End Dark Passage
 
 Use this ability to break the Dark Passage. The shadow adept will be stunned for 2 rounds unless a Save vs. Death at -2 is made.~
-
+COPY ~%MOD_FOLDER%/spells/c0sa810b.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in damage^-~)
+  END
 COPY ~%MOD_FOLDER%/spells/c0sa810c.spl~ ~override~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -5264,6 +5712,19 @@ Saving Throw: Special
 
 A duplicate of the target is created with this spell. The duplicate is almost identical to the target, making it a very powerful ally. It is created at 60% of the target's level and has all the spells and abilities that the target would have at that level. It also has 60% of the target's Hit Points and is fully under the caster's control. Enemies can make a Saving Throw vs. Spells at -3 to avoid the spell's effect.~
 
+COPY_EXISTING ~mislead.spl~ ~override~
+LPF ADD_SPELL_EFFECT
+	INT_VAR
+		check_globals = 1
+		check_headers = 1
+		opcode = 177
+		target = 1
+		timing = 1
+		parameter1 = 12
+		parameter2 = 6
+	STR_VAR
+		resource = c0misled
+END
 COPY_EXISTING ~simulacr.spl~ ~override~
 LPF ADD_SPELL_EFFECT
 	INT_VAR
@@ -5370,7 +5831,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa904.spl~ ~override~
 		INT_VAR
 		  opcode = 324
 		  insert_point = 0
-		  target = 1
+		  target = 2
 		  duration = 0
 		  parameter2 = 1
 		STR_VAR
@@ -5389,6 +5850,13 @@ Area of Effect: 1 creature
 Saving Throw: None 
 
 The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A Saving Throw vs. Death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target.~
+COPY ~%MOD_FOLDER%/spells/c0sa904a.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 139
+			parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+	END
+SAY NAME1 ~Enervation~
 
 COPY ~%MOD_FOLDER%/spells/c0sa905.spl~ ~override~
 SAY NAME1 ~Black Blade of Disaster~
@@ -5406,7 +5874,6 @@ Saving Throw: None
 This spell enables the caster to create a black, blade-shaped planar rift about three feet long. It jumps into the caster's hand and is used as a normal sword, remaining there for the duration of the spell. The caster is considered to be proficient to the point of Grand Mastery in this weapon. The sword acts as a +5 weapon and deals 2-24 damage to its victims. Also, every time it hits a target, the victim must make a Save vs. Death at +4 or be disintegrated. There is also a 10% chance with every hit that the sword drains 4 levels from the target and heals the wielder 20 Hit Points.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa906.spl~ ~override~
-SAY NAME1 ~Negastorm~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
@@ -5434,7 +5901,7 @@ SAY NAME1 ~Death Mark~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in damage^-~)
   END
 SAY NAME2 ~Death Mark~
 SAY UNIDENTIFIED_DESC ~Death Mark
@@ -5455,7 +5922,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa907a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~15% hit points~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa907b.spl~ ~override~
   LPF ALTER_EFFECT
@@ -5463,7 +5930,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa907b.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~15% hit points~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa907c.spl~ ~override~
   LPF ALTER_EFFECT
@@ -5471,7 +5938,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa907c.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~15% hit points~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa907d.spl~ ~override~
   LPF ALTER_EFFECT
@@ -5479,7 +5946,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa907d.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~15% hit points~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa907e.spl~ ~override~
   LPF ALTER_EFFECT
@@ -5487,7 +5954,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa907e.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~15% hit points~)
   END
 
 COPY ~%MOD_FOLDER%/spells/c0sa908.spl~ ~override~
@@ -5577,7 +6044,23 @@ COPY ~%MOD_FOLDER%/spells/c0sahla2.spl~ ~override~
       check_globals = 1
       check_headers = 1
 	  match_opcode = 139
-	  match_parameter1 = 40979
+	  match_parameter2 = 0
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 30% of maximum hit points in damage^-~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 139
+	  match_parameter2 = 1
+	  parameter1 = RESOLVE_STR_REF (~Blinded~)
+  END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 139
+	  match_parameter2 = 2
 	  parameter1 = RESOLVE_STR_REF (~Four Levels Drained~)
   END
   LPF ALTER_EFFECT
@@ -5585,7 +6068,7 @@ COPY ~%MOD_FOLDER%/spells/c0sahla2.spl~ ~override~
       check_globals = 1
       check_headers = 1
 	  match_opcode = 139
-	  match_parameter1 = 40968
+	  match_parameter2 = 3
 	  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
   END
 SAY NAME1 ~Shadow Dragon Breath~
@@ -5606,7 +6089,7 @@ Casting Time: 1
 Area of Effect: Special
 Saving Throw: Neg.
 
-The shadow adept releases a deadly breath of negative energy causing blindness, dealing 8d8 magic damage and draining six levels from all targets hit by the blast. Targets may Save vs. Breath at -6 to take half damage and lose only 2 levels.~
+The shadow adept releases a deadly breath of negative energy causing blindness, dealing 4d4 unmitigated magic damage + 30% maximum hit points in damage and draining six levels from all targets hit by the blast. Targets may Save vs. Breath at -6 to avoid the maximum hit point damage and lose only 2 levels.~
 
 COPY ~%MOD_FOLDER%/spells/c0sahla3.spl~ ~override~
 SAY NAME1 ~Summon Nightwalker~
@@ -5701,7 +6184,7 @@ COPY ~%MOD_FOLDER%/spells/c0sahla6.spl~ ~override~
 SAY NAME1 ~Wrath of Darkness~
 SAY NAME2 ~Wrath of Darkness~
 SAY UNIDENTIFIED_DESC ~Wrath of Darkness 
-The shadow adept infuses the power of the Shadow Weave into <PRO_HISHER> very body, gaining +2 to Strength and Constitution, regeneration of one hit point per 3 seconds and one bonus attack per round.
+The shadow adept infuses the power of the Shadow Weave into <PRO_HISHER> very body, gaining +2 to Strength and Constitution, regeneration of one hit point per 3 seconds, +4 to THAC0 and one bonus attack per round.
 
 Only one of either Disciple of Darkness or Wrath of Darkness may be chosen.~
 
