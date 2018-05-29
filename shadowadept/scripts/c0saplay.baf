@@ -66,11 +66,32 @@ END
 // First Memory
 
 IF
-	Delay(15)
-	Global("C0SAFirstMemory","LOCALS",0)
+	Delay(1)
+	!Class(Myself,SORCERER)
+	Global("C0SAFirstMemory","LOCALS",1)
 THEN
   RESPONSE #100
-	SetGlobal("C0SAFirstMemory","LOCALS",1)
+	SetGlobal("C0SAFirstMemory","LOCALS",2)
+	DisplayStringNoName(Myself,~You now have an opportunity to memorize your newly learned spells. Unpause the game when you are ready.~ [EFF_P05])
+	PauseGame()
+END
+
+IF
+	Delay(1)
+	Class(Myself,SORCERER)
+	Global("C0SAFirstMemory","LOCALS",1)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAFirstMemory","LOCALS",3)
+	ApplySpellRES("c0samemo",Myself)
+END
+
+IF
+	Delay(1)
+	Global("C0SAFirstMemory","LOCALS",2)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAFirstMemory","LOCALS",3)
 	ApplySpellRES("c0samemo",Myself)
 END
 
@@ -120,5 +141,1065 @@ THEN
 	ChangeStat(Myself,SAVEVSBREATH,-1,ADD)
 	ChangeStat(Myself,SAVEVSSPELL,-1,ADD)
 	DisplayStringHead(Myself,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
+	Continue()
+END
+
+///////////////////////////
+///RELEARN ERASED SPELLS///
+///////////////////////////
+
+// LEVEL 1
+IF 
+	Class(Myself,MAGE_ALL)
+	!HaveKnownSpellRES("SPWI110")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI110")
+	Continue()
+END
+IF 
+	Class(Myself,BARD_ALL)
+	Kit(Myself,C0SABARD)
+	LevelGT(Myself,1)
+	!HaveKnownSpellRES("SPWI110")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI110")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA101","LOCALS",1)
+	!HaveKnownSpellRES("C0SA101")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA101")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA102","LOCALS",1)
+	!HaveKnownSpellRES("C0SA102")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA102")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA103","LOCALS",1)
+	!HaveKnownSpellRES("C0SA103")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA103")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA104","LOCALS",1)
+	!HaveKnownSpellRES("C0SA104")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA104")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA105","LOCALS",1)
+	!HaveKnownSpellRES("C0SA105")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA105")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA106","LOCALS",1)
+	!HaveKnownSpellRES("C0SA106")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA106")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA107","LOCALS",1)
+	!HaveKnownSpellRES("C0SA107")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA107")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA108","LOCALS",1)
+	!HaveKnownSpellRES("C0SA108")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA108")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA109","LOCALS",1)
+	!HaveKnownSpellRES("C0SA109")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA109")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA110","LOCALS",1)
+	!HaveKnownSpellRES("C0SA110")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA110")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA111","LOCALS",1)
+	!HaveKnownSpellRES("C0SA111")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA111")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA112","LOCALS",1)
+	!HaveKnownSpellRES("C0SA112")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA112")
+	Continue()
+END
+
+// LEVEL 2
+IF 
+	ActionListEmpty()
+	Global("C0SA201","LOCALS",1)
+	!HaveKnownSpellRES("C0SA201")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA201")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA202","LOCALS",1)
+	!HaveKnownSpellRES("C0SA202")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA202")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA203","LOCALS",1)
+	!HaveKnownSpellRES("C0SA203")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA203")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA204","LOCALS",1)
+	!HaveKnownSpellRES("C0SA204")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA204")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA205","LOCALS",1)
+	!HaveKnownSpellRES("C0SA205")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA205")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA206","LOCALS",1)
+	!HaveKnownSpellRES("C0SA206")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA206")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA207","LOCALS",1)
+	!HaveKnownSpellRES("C0SA207")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA207")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA208","LOCALS",1)
+	!HaveKnownSpellRES("C0SA208")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA208")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA209","LOCALS",1)
+	!HaveKnownSpellRES("C0SA209")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA209")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA210","LOCALS",1)
+	!HaveKnownSpellRES("C0SA210")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA210")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA211","LOCALS",1)
+	!HaveKnownSpellRES("C0SA211")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA211")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA212","LOCALS",1)
+	!HaveKnownSpellRES("C0SA212")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA212")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA213","LOCALS",1)
+	!HaveKnownSpellRES("C0SA213")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA213")
+	Continue()
+END
+
+// LEVEL 3
+IF 
+	ActionListEmpty()
+	Global("C0SA301","LOCALS",1)
+	!HaveKnownSpellRES("C0SA301")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA301")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA302","LOCALS",1)
+	!HaveKnownSpellRES("C0SA302")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA302")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA303","LOCALS",1)
+	!HaveKnownSpellRES("C0SA303")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA303")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA304","LOCALS",1)
+	!HaveKnownSpellRES("C0SA304")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA304")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA305","LOCALS",1)
+	!HaveKnownSpellRES("C0SA305")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA305")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA306","LOCALS",1)
+	!HaveKnownSpellRES("C0SA306")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA306")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA307","LOCALS",1)
+	!HaveKnownSpellRES("C0SA307")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA307")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA308","LOCALS",1)
+	!HaveKnownSpellRES("C0SA308")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA308")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA309","LOCALS",1)
+	!HaveKnownSpellRES("C0SA309")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA309")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA310","LOCALS",1)
+	!HaveKnownSpellRES("C0SA310")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA310")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA311","LOCALS",1)
+	!HaveKnownSpellRES("C0SA311")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA311")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA312","LOCALS",1)
+	!HaveKnownSpellRES("C0SA312")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA312")
+	Continue()
+END
+
+// LEVEL 4
+IF 
+	Class(Myself,MAGE_ALL)
+	!Class(Myself,SORCERER)
+	ClassLevelGT(Myself,WIZARD,6)
+	!HaveKnownSpellRES("SPWI420")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI420")
+	Continue()
+END
+IF 
+	Class(Myself,SORCERER)
+	ClassLevelGT(Myself,WIZARD,7)
+	!HaveKnownSpellRES("SPWI420")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI420")
+	Continue()
+END
+IF 
+	Class(Myself,BARD_ALL)
+	Kit(Myself,C0SABARD)
+	LevelGT(Myself,9)
+	!HaveKnownSpellRES("SPWI420")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI420")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA401","LOCALS",1)
+	!HaveKnownSpellRES("C0SA401")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA401")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA402","LOCALS",1)
+	!HaveKnownSpellRES("C0SA402")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA402")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA403","LOCALS",1)
+	!HaveKnownSpellRES("C0SA403")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA403")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA404","LOCALS",1)
+	!HaveKnownSpellRES("C0SA404")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA404")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA405","LOCALS",1)
+	!HaveKnownSpellRES("C0SA405")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA405")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA406","LOCALS",1)
+	!HaveKnownSpellRES("C0SA406")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA406")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA407","LOCALS",1)
+	!HaveKnownSpellRES("C0SA407")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA407")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA408","LOCALS",1)
+	!HaveKnownSpellRES("C0SA408")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA408")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA409","LOCALS",1)
+	!HaveKnownSpellRES("C0SA409")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA409")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA410","LOCALS",1)
+	!HaveKnownSpellRES("C0SA410")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA410")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA411","LOCALS",1)
+	!HaveKnownSpellRES("C0SA411")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA411")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA412","LOCALS",1)
+	!HaveKnownSpellRES("C0SA412")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA412")
+	Continue()
+END
+
+// LEVEL 5
+IF 
+	ActionListEmpty()
+	Global("C0SA501","LOCALS",1)
+	!HaveKnownSpellRES("C0SA501")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA501")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA502","LOCALS",1)
+	!HaveKnownSpellRES("C0SA502")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA502")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA503","LOCALS",1)
+	!HaveKnownSpellRES("C0SA503")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA503")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA504","LOCALS",1)
+	!HaveKnownSpellRES("C0SA504")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA504")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA505","LOCALS",1)
+	!HaveKnownSpellRES("C0SA505")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA505")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA506","LOCALS",1)
+	!HaveKnownSpellRES("C0SA506")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA506")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA507","LOCALS",1)
+	!HaveKnownSpellRES("C0SA507")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA507")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA508","LOCALS",1)
+	!HaveKnownSpellRES("C0SA508")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA508")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA509","LOCALS",1)
+	!HaveKnownSpellRES("C0SA509")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA509")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA510","LOCALS",1)
+	!HaveKnownSpellRES("C0SA510")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA510")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA511","LOCALS",1)
+	!HaveKnownSpellRES("C0SA511")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA511")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA512","LOCALS",1)
+	!HaveKnownSpellRES("C0SA512")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA512")
+	Continue()
+END
+
+// LEVEL 6
+IF 
+	Class(Myself,MAGE_ALL)
+	ClassLevelGT(Myself,WIZARD,11)
+	!HaveKnownSpellRES("SPWI617")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI617")
+	Continue()
+END
+IF 
+	Class(Myself,BARD_ALL)
+	Kit(Myself,C0SABARD)
+	LevelGT(Myself,15)
+	!HaveKnownSpellRES("SPWI617")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI617")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA601","LOCALS",1)
+	!HaveKnownSpellRES("C0SA601")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA601")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA602","LOCALS",1)
+	!HaveKnownSpellRES("C0SA602")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA602")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA603","LOCALS",1)
+	!HaveKnownSpellRES("C0SA603")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA603")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA604","LOCALS",1)
+	!HaveKnownSpellRES("C0SA604")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA604")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA605","LOCALS",1)
+	!HaveKnownSpellRES("C0SA605")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA605")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA606","LOCALS",1)
+	!HaveKnownSpellRES("C0SA606")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA606")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA607","LOCALS",1)
+	!HaveKnownSpellRES("C0SA607")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA607")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA608","LOCALS",1)
+	!HaveKnownSpellRES("C0SA608")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA608")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA609","LOCALS",1)
+	!HaveKnownSpellRES("C0SA609")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA609")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA610","LOCALS",1)
+	!HaveKnownSpellRES("C0SA610")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA610")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA611","LOCALS",1)
+	!HaveKnownSpellRES("C0SA611")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA611")
+	Continue()
+END
+
+// LEVEL 7
+IF 
+	Class(Myself,MAGE_ALL)
+	ClassLevelGT(Myself,WIZARD,13)
+	!HaveKnownSpellRES("SPWI710")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI710")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA701","LOCALS",1)
+	!HaveKnownSpellRES("C0SA701")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA701")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA702","LOCALS",1)
+	!HaveKnownSpellRES("C0SA702")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA702")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA703","LOCALS",1)
+	!HaveKnownSpellRES("C0SA703")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA703")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA704","LOCALS",1)
+	!HaveKnownSpellRES("C0SA704")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA704")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA705","LOCALS",1)
+	!HaveKnownSpellRES("C0SA705")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA705")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA706","LOCALS",1)
+	!HaveKnownSpellRES("C0SA706")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA706")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA707","LOCALS",1)
+	!HaveKnownSpellRES("C0SA707")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA707")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA708","LOCALS",1)
+	!HaveKnownSpellRES("C0SA708")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA708")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA709","LOCALS",1)
+	!HaveKnownSpellRES("C0SA709")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA709")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA710","LOCALS",1)
+	!HaveKnownSpellRES("C0SA710")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA710")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA711","LOCALS",1)
+	!HaveKnownSpellRES("C0SA711")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA711")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA712","LOCALS",1)
+	!HaveKnownSpellRES("C0SA712")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA712")
+	Continue()
+END
+
+// LEVEL 8
+IF 
+	Class(Myself,MAGE_ALL)
+	ClassLevelGT(Myself,WIZARD,15)
+	!HaveKnownSpellRES("SPWI809")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI809")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA801","LOCALS",1)
+	!HaveKnownSpellRES("C0SA801")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA801")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA802","LOCALS",1)
+	!HaveKnownSpellRES("C0SA802")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA802")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA803","LOCALS",1)
+	!HaveKnownSpellRES("C0SA803")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA803")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA804","LOCALS",1)
+	!HaveKnownSpellRES("C0SA804")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA804")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA805","LOCALS",1)
+	!HaveKnownSpellRES("C0SA805")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA805")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA806","LOCALS",1)
+	!HaveKnownSpellRES("C0SA806")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA806")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA807","LOCALS",1)
+	!HaveKnownSpellRES("C0SA807")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA807")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA808","LOCALS",1)
+	!HaveKnownSpellRES("C0SA808")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA808")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA809","LOCALS",1)
+	!HaveKnownSpellRES("C0SA809")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA809")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA810","LOCALS",1)
+	!HaveKnownSpellRES("C0SA810")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA810")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA811","LOCALS",1)
+	!HaveKnownSpellRES("C0SA811")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA811")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA812","LOCALS",1)
+	!HaveKnownSpellRES("C0SA812")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA812")
+	Continue()
+END
+
+// LEVEL 9
+IF 
+	Class(Myself,MAGE_ALL)
+	ClassLevelGT(Myself,WIZARD,17)
+	!HaveKnownSpellRES("SPWI908")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI908")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA901","LOCALS",1)
+	!HaveKnownSpellRES("C0SA901")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA901")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA902","LOCALS",1)
+	!HaveKnownSpellRES("C0SA902")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA902")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA903","LOCALS",1)
+	!HaveKnownSpellRES("C0SA903")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA903")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA904","LOCALS",1)
+	!HaveKnownSpellRES("C0SA904")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA904")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA905","LOCALS",1)
+	!HaveKnownSpellRES("C0SA905")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA905")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA906","LOCALS",1)
+	!HaveKnownSpellRES("C0SA906")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA906")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA907","LOCALS",1)
+	!HaveKnownSpellRES("C0SA907")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA907")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA908","LOCALS",1)
+	!HaveKnownSpellRES("C0SA908")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA908")
+	Continue()
+END
+IF 
+	ActionListEmpty()
+	Global("C0SA909","LOCALS",1)
+	!HaveKnownSpellRES("C0SA909")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA909")
 	Continue()
 END

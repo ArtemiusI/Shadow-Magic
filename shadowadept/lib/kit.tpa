@@ -203,7 +203,7 @@ ADD_KIT ~C0SASOR2~
  ~C0SASOR2                  	0       0       0       0       0       0~
 
  // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
+ ~%MOD_FOLDER%/2da/c0sadep2.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
  ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
