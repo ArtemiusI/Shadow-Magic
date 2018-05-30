@@ -39,8 +39,8 @@ END
 + ~Global("Background","LOCALS",0)~ + ~Tell me about yourself, Yin'rou.~ DO ~SetGlobal("Background","LOCALS",1)~ + a3.4
 ++ ~Return to your home plane for now. I will call for you when you're needed.~ + a3.1
 ++ ~You wouldn't happen to have any advice, would you?~ + a3.2
-+ ~Global("DisableFamiliarAI","GLOBAL",0)~ + ~I want you to stop hiding while out of combat.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",1)~ + a3.5
-+ ~Global("DisableFamiliarAI","GLOBAL",1)~ + ~I want you to hide in shadows while out of combat.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",0)~ + a3.6
++ ~Global("DisableFamiliarAI","LOCALS",0)~ + ~I want you to stop hiding while out of combat.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",1)~ + a3.5
++ ~Global("DisableFamiliarAI","LOCALS",1)~ + ~I want you to hide in shadows while out of combat.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",0)~ + a3.6
 ++ ~How are you? Is everything alright?~ + a3.3
 ++ ~Nothing right now. Let's get moving.~ + a3.0
 
@@ -168,8 +168,8 @@ END
 ++ ~Return to your home plane for now. I will call for you when you're needed.~ + b3.1
 ++ ~You wouldn't happen to have any advice, would you?~ + b3.2
 ++ ~How are you? Is everything alright?~ + b3.3
-+ ~Global("DisableFamiliarAI","GLOBAL",0)~ + ~I want you to stop singing while in combat.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",1)~ + b3.5
-+ ~Global("DisableFamiliarAI","GLOBAL",1)~ + ~I want you to sing while of combat.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",0)~ + b3.5
++ ~Global("DisableFamiliarAI","LOCALS",0)~ + ~I want you to stop singing while in combat.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",1)~ + b3.5
++ ~Global("DisableFamiliarAI","LOCALS",1)~ + ~I want you to sing while of combat.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",0)~ + b3.5
 ++ ~Nothing right now. Let's get moving.~ + b3.0
 
 CHAIN C0SAFAM b3.0
@@ -285,8 +285,8 @@ END
 ++ ~Return to your home plane for now. I will call for you when you're needed.~ + c3.1
 ++ ~You wouldn't happen to have any advice, would you?~ + c3.2
 ++ ~How are you? Is everything alright?~ + c3.3
-+ ~Global("DisableFamiliarAI","GLOBAL",0)~ + ~I want you to stop searching for traps.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",1)~ + c3.6
-+ ~Global("DisableFamiliarAI","GLOBAL",1)~ + ~I want you to search for traps.~ DO ~SetGlobal("DisableFamiliarAI","GLOBAL",0)~ + c3.6
++ ~Global("DisableFamiliarAI","LOCALS",0)~ + ~I want you to stop searching for traps.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",1)~ + c3.6
++ ~Global("DisableFamiliarAI","LOCALS",1)~ + ~I want you to search for traps.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",0)~ + c3.6
 ++ ~Give me anything you have pickpocketed, will you?~ + c3.4
 ++ ~Nothing right now. Let's get moving.~ + c3.0
 

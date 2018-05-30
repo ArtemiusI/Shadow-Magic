@@ -138,6 +138,30 @@ THEN
 END
 
 IF
+  See(Nearestenemyof(Myself))
+  HasItem("C0SApot1",Myself)
+  Global("DrinkEbonshade","LOCALS",0)
+THEN
+  RESPONSE #100
+	UseItem("C0SApot1",Myself)
+	SetGlobalTimer("C0DrinkPotion","LOCALS",ONE_TURN)
+    SetGlobal("DrinkEbonshade","LOCALS",1)
+	Continue()
+END
+
+IF
+  Allegiance(Myself,ENEMY)
+  See(Nearestenemyof(Myself))
+  !ClassLevelGT(Myself,WIZARD,15)
+  HasItem("C0SApot1",Myself)
+  GlobalTimerExpired("C0DrinkPotion","LOCALS")
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,~*quaffs a potion*~)
+	UseItem("C0SApot1",Myself)
+	SetGlobalTimer("C0DrinkPotion","LOCALS",ONE_TURN)
+END
+IF
   Global("OH_Active","LOCALS",1)
   Global("OH_Cntg","LOCALS",0)
   ClassLevelGT(Myself,WIZARD,11)
@@ -12478,32 +12502,6 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("OH_Heal","LOCALS",1)
-END
-
-IF
-  See(Nearestenemyof(Myself))
-  !ClassLevelGT(Myself,WIZARD,15)
-  HasItem("C0SApot1",Myself)
-  Global("DrinkEbonshade","LOCALS",0)
-THEN
-  RESPONSE #100
-	UseItem("C0SApot1",Myself)
-	SetGlobalTimer("C0DrinkPotion","LOCALS",ONE_TURN)
-    SetGlobal("DrinkEbonshade","LOCALS",1)
-	Continue()
-END
-
-IF
-  Allegiance(Myself,ENEMY)
-  See(Nearestenemyof(Myself))
-  !ClassLevelGT(Myself,WIZARD,15)
-  HasItem("C0SApot1",Myself)
-  GlobalTimerExpired("C0DrinkPotion","LOCALS")
-THEN
-  RESPONSE #100
-	DisplayStringHead(Myself,~*quaffs a potion*~)
-	UseItem("C0SApot1",Myself)
-	SetGlobalTimer("C0DrinkPotion","LOCALS",ONE_TURN)
 END
 
 IF

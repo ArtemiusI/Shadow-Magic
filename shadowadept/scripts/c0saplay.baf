@@ -643,6 +643,15 @@ THEN
 	AddSpecialAbility("C0SA412")
 	Continue()
 END
+IF 
+	ActionListEmpty()
+	Global("C0SA412","LOCALS",1)
+	!HaveKnownSpellRES("C0SA413")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA413")
+	Continue()
+END
 
 // LEVEL 5
 IF 

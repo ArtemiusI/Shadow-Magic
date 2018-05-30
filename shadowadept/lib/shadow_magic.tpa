@@ -205,14 +205,6 @@ END
 COMPILE ~%MOD_FOLDER%/scripts/c0sacon.baf~
 
 COPY ~%MOD_FOLDER%/spells/C0SA207.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 206 // display string
-      match_parameter1 = 1
- parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-  END
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
@@ -243,16 +235,41 @@ END
 	  duration = 0
 	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
 END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA207
+  END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA407
+  END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA706
+  END
 
 COPY ~%MOD_FOLDER%/spells/C0SA407.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 206 // display string
-      match_parameter1 = 1
- parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-  END
 SAY NAME1 ~Drain Vitality~
 SAY NAME2 ~Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Drain Vitality
@@ -283,16 +300,41 @@ END
 	  duration = 0
 	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
 END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA207
+  END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA407
+  END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA706
+  END
 
 COPY ~%MOD_FOLDER%/spells/C0SA706.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 206 // display string
-      match_parameter1 = 1
- parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-  END
 SAY NAME1 ~Greater Drain Vitality~
 SAY NAME2 ~Greater Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
@@ -323,6 +365,39 @@ END
 	  duration = 0
 	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
 END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA207
+  END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA407
+  END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 206 // display string
+	  target = 2
+	  timing = 0
+	  duration = 60
+	  resist_dispel = 2
+	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
+	STR_VAR
+	  resource = C0SA706
+  END
 
       PRINT ~Resource: Constitution drain on cast~
       END
@@ -3308,7 +3383,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-The recipient of this spell gains extraordinary luck for the next hour, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
+The recipient of this spell gains extraordinary luck for the next hour, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage dealt towards the target is reduced by 1, while the target's damage dice are increased by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. Bonuses increase by the original amount for every five caster levels after 3rd level up to 23rd level. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA204.spl~ ~override~
 SAY NAME1 ~Power Word: Sleep~
@@ -4056,6 +4131,35 @@ COPY ~%MOD_FOLDER%/spells/C0SA412a.spl~ ~override~
 		  parameter2 = 10
 	END
 	
+COPY ~%MOD_FOLDER%/spells/C0SA413.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+		  match_opcode = 139
+		  match_parameter1 = 14773
+		  parameter1 = RESOLVE_STR_REF (~Invisible~)
+	END
+	LPF ALTER_EFFECT
+		INT_VAR
+		  match_opcode = 139
+		  match_parameter1 = 14777
+		  parameter1 = RESOLVE_STR_REF (~Non-detected~)
+	END
+SAY NAME1 ~Greater Shadowfade~
+SAY NAME2 ~Greater Shadowfade~
+SAY UNIDENTIFIED_DESC ~Greater Shadowfade
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 4
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces – a shimmering – allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus. Additionally, for as long as the caster is at least partially invisible, <PRO_HESHE> is healed for 2d6 hit points per round for the duration.
+
+Note: After making an attack, the caster is no longer completely invisible. Opponents can target the caster. The caster is treated as Non-Detected for the duration.~
+	
 COPY ~%MOD_FOLDER%/spells/C0SA501.spl~ ~override~
 	LPF ALTER_EFFECT
 		INT_VAR
@@ -4180,6 +4284,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 0
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 19%~)
   END
@@ -4188,6 +4293,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 1
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 20%~)
   END
@@ -4196,6 +4302,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 2
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 21%~)
   END
@@ -4204,6 +4311,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 3
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 22%~)
   END
@@ -4212,6 +4320,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 4
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 23%~)
   END
@@ -4220,6 +4329,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 5
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 24%~)
   END
@@ -4228,6 +4338,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 6
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 25%~)
   END
@@ -4236,6 +4347,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 7
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 26%~)
   END
@@ -4244,6 +4356,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 8
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 27%~)
   END
@@ -4252,6 +4365,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 9
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 28%~)
   END
@@ -4260,6 +4374,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 10
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 29%~)
   END
@@ -4268,6 +4383,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA503.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
+	  match_parameter2 = 0
       header = 11
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 30%~)
   END
@@ -4948,7 +5064,7 @@ Casting Time: 6
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-When this spell is cast at another creature, a thin purple ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell at -2 or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.
+When this spell is cast at another creature, a thin purple ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell at -2 or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying. If the target survives the process, they still take 6d6 magic damage.
 
 Targets slain by this spell will be raised as a wraith under the caster's allegiance for 5 turns.~
 
@@ -5903,6 +6019,16 @@ SAY NAME1 ~Death Mark~
       match_opcode = 139 // display string
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in damage^-~)
   END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      opcode = 139 // display string
+	  target = 2
+	  timing = 1
+	  parameter1 = RESOLVE_STR_REF (~Cursed~)
+	  savingthrow = 4
+	  savebonus = 0 - 8
+	  resist_dispel = 1
+  END
 SAY NAME2 ~Death Mark~
 SAY UNIDENTIFIED_DESC ~Death Mark
 (Necromancy – Shadow Weave) 
@@ -5914,7 +6040,7 @@ Casting Time: 9
 Area of Effect: 1 creature
 Saving Throw: Special 
 
-This horrific spell marks a specific target with a curse that dooms them to an inevitable end. The victim suffers 15% of their maximum hit points in damage on the first round with no save. On the next round, they must make another Saving Throw vs. Death at -5 or suffer the same amount of damage, then on the next round, make another saving throw at -4, and so on until a save modifier of zero. The curse remains indefinitely until the target is either killed, the curse is dispelled or resisted, or a successful save is made.~
+This horrific spell marks a specific target with a curse that dooms them to an inevitable end. The victim suffers 15% of their maximum hit points in damage on the first round with no save. On the next round, they must make another Saving Throw vs. Death at -8 or suffer the same amount of damage, then on the next round, make another saving throw at -7, and so on until a save modifier of zero. The curse remains indefinitely until the target is either killed, the curse is dispelled or resisted, or a successful save is made.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa907a.spl~ ~override~
   LPF ALTER_EFFECT
@@ -5922,39 +6048,63 @@ COPY ~%MOD_FOLDER%/spells/c0sa907a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% hit points~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in damage^-~)
   END
-COPY ~%MOD_FOLDER%/spells/c0sa907b.spl~ ~override~
+COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907b.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% hit points~)
+      match_savingthrow = 4 // display string
+	  savebonus = 0 - 6
+	STR_VAR
+	  resource = c0sa907c
   END
-COPY ~%MOD_FOLDER%/spells/c0sa907c.spl~ ~override~
+COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907c.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% hit points~)
+      match_savingthrow = 4 // display string
+	  savebonus = 0 - 5
+	STR_VAR
+	  resource = c0sa907d
   END
-COPY ~%MOD_FOLDER%/spells/c0sa907d.spl~ ~override~
+COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907d.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% hit points~)
+      match_savingthrow = 4 // display string
+	  savebonus = 0 - 4
+	STR_VAR
+	  resource = c0sa907e
   END
-COPY ~%MOD_FOLDER%/spells/c0sa907e.spl~ ~override~
+COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907e.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% hit points~)
+      match_savingthrow = 4 // display string
+	  savebonus = 0 - 3
+	STR_VAR
+	  resource = c0sa907f
+  END
+COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907f.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_savingthrow = 4 // display string
+	  savebonus = 0 - 2
+	STR_VAR
+	  resource = c0sa907g
+  END
+COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907g.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_savingthrow = 4 // display string
+	  savebonus = 0 - 1
+	STR_VAR
+	  resource = c0sa907h
+  END
+COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907h.spl~
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_savingthrow = 4 // display string
+	  savebonus = 0
+	STR_VAR
+	  resource = c0sa907h
   END
 
 COPY ~%MOD_FOLDER%/spells/c0sa908.spl~ ~override~
@@ -6013,9 +6163,7 @@ Casting Time: 9
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.
-
-This spell is not affected by Magic Resistance.~
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.This spell is not affected by Magic Resistance. Creatures immune to fire are unaffected.~
 
 COPY ~%MOD_FOLDER%/spells/c0sahla1.spl~ ~override~
 SAY NAME1 ~Relentless Assault~

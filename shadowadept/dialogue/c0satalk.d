@@ -350,7 +350,7 @@ OR(12)
 ClassLevelGT(Myself,WIZARD,6)
 ClassLevelGT(Myself,ROGUE,9)
 GlobalGT("C0SALv4","LOCALS",0)
-OR(12)
+OR(13)
 !HaveKnownSpellRES("c0sa401")
 !HaveKnownSpellRES("c0sa402")
 !HaveKnownSpellRES("c0sa403")
@@ -362,7 +362,8 @@ OR(12)
 !HaveKnownSpellRES("c0sa409")
 !HaveKnownSpellRES("c0sa410")
 !HaveKnownSpellRES("c0sa411")
-!HaveKnownSpellRES("c0sa412")~ + ~4th level~ + level4
+!HaveKnownSpellRES("c0sa412")
+!HaveKnownSpellRES("c0sa413")~ + ~4th level~ + level4
 + ~OR(2)
 ClassLevelGT(Myself,WIZARD,8)
 ClassLevelGT(Myself,ROGUE,12)
@@ -513,6 +514,7 @@ SAY ~Choose one 4th level spell:~
 + ~!HaveKnownSpellRES("c0sa410")~ + ~Black Ooze~ + 4.11
 + ~!HaveKnownSpellRES("c0sa411")~ + ~Wall of Black Flame~ + 4.12
 + ~!HaveKnownSpellRES("c0sa412")~ + ~Pain Mirror~ + 4.13
++ ~!HaveKnownSpellRES("c0sa413")~ + ~Greater Shadowfade~ + 4.14
 END
 
 IF ~~ level5
@@ -834,7 +836,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-The recipient of this spell gains extraordinary luck for the next hour, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
+The recipient of this spell gains extraordinary luck for the next hour, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage dealt towards the target is reduced by 1, while the target's damage dice are increased by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. Bonuses increase by the original amount for every five caster levels after 3rd level up to 23rd level. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","LOCALS",-1) SetGlobal("C0SA203","LOCALS",1) AddSpecialAbility("C0SA203")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1422,6 +1424,24 @@ When the caster is struck with an attack, <PRO_HESHE> takes no damage and drains
 ++ ~Return to spell selection.~ + learn
 END
 
+IF ~~ 4.14
+SAY ~Greater Shadowfade
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 4
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces – a shimmering – allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus. Additionally, for as long as the caster is at least partially invisible, <PRO_HESHE> is healed for 2d6 hit points per round for the duration.
+
+Note: After making an attack, the caster is no longer completely invisible. Opponents can target the caster. The caster is treated as Non-Detected for the duration.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) SetGlobal("C0SA413","LOCALS",1) AddSpecialAbility("C0SA413")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
 IF ~~ 5.1
 SAY ~Cone of Bitter Cold
 (Invocation/Evocation – Shadow Weave)
@@ -1747,7 +1767,7 @@ Casting Time: 6
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-When this spell is cast at another creature, a thin purple ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell at -2 or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.
+When this spell is cast at another creature, a thin purple ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell at -2 or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying. If the target survives the process, they still take 6d6 magic damage.
 
 Targets slain by this spell will be raised as a wraith under the caster's allegiance for 5 turns.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","LOCALS",-1) SetGlobal("C0SA608","LOCALS",1) AddSpecialAbility("C0SA608")~ + NEXT
@@ -2181,10 +2201,10 @@ Level: 8
 Range: Party
 Duration: Special
 Casting Time: 1 round
-Area of Effect: 20-ft
+Area of Effect: 20-ft. radius
 Saving Throw: None
 
-This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies within 20' in range for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster suffers 1d6 points of magic damage (Save vs. Death to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
+This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies within 20' in range for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster loses 10% of <PRO_HISHER> hit points (Save vs. Death at -4 to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) SetGlobal("C0SA810","LOCALS",1) AddSpecialAbility("C0SA810")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2280,7 +2300,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of four levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below.~
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A Saving Throw vs. Death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA904","LOCALS",1) AddSpecialAbility("C0SA904")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2328,7 +2348,7 @@ Casting Time: 9
 Area of Effect: 1 creature
 Saving Throw: Special 
 
-This horrific spell marks a specific target with a curse that dooms them to an inevitable end. The victim suffers 15% of their maximum hit points in damage on the first round with no save. On the next round, they must make another Saving Throw vs. Death at -5 or suffer the same amount of damage, then on the next round, make another saving throw at -4, and so on until a save modifier of zero. The curse remains indefinitely until the target is either killed, the curse is dispelled or resisted, or a successful save is made.~
+This horrific spell marks a specific target with a curse that dooms them to an inevitable end. The victim suffers 15% of their maximum hit points in damage on the first round with no save. On the next round, they must make another Saving Throw vs. Death at -8 or suffer the same amount of damage, then on the next round, make another saving throw at -7, and so on until a save modifier of zero. The curse remains indefinitely until the target is either killed, the curse is dispelled or resisted, or a successful save is made.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA907","LOCALS",1) AddSpecialAbility("C0SA907")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2360,7 +2380,7 @@ Casting Time: 9
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell. This spell is not affected by Magic Resistance. Creatures immune to fire are unaffected. Creatures immune to fire are unaffected.~
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell. This spell is not affected by Magic Resistance. Creatures immune to fire are unaffected.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA909","LOCALS",1) AddSpecialAbility("C0SA909")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
