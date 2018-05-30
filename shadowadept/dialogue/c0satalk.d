@@ -480,6 +480,7 @@ SAY ~Choose one 2nd level spell:~
 + ~!HaveKnownSpellRES("c0sa210")~ + ~Sigil of Vulnerability~ + 2.10
 + ~!HaveKnownSpellRES("c0sa211")~ + ~Shadow Walk~ + 2.11
 + ~!HaveKnownSpellRES("c0sa212")~ + ~Hallucinate~ + 2.12
++ ~!HaveKnownSpellRES("c0sa213")~ + ~Shadowfade~ + 2.13
 END
 
 IF ~~ level3
@@ -592,7 +593,7 @@ END
 
 IF ~~ 1.1
 SAY ~Shadow Missile
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 1
 Range: Visual range of the caster
@@ -608,7 +609,7 @@ END
 
 IF ~~ 1.2
 SAY ~Sigil of Despair
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 1
 Range: 25 ft.
@@ -624,7 +625,7 @@ END
 
 IF ~~ 1.3
 SAY ~Blinding Darkness
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 1
 Range: 40 ft.
@@ -640,7 +641,7 @@ END
 
 IF ~~ 1.4
 SAY ~Deep Slumber
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 1
 Range: Visual range of the caster
@@ -658,7 +659,7 @@ END
 
 IF ~~ 1.5
 SAY ~Bittercold Touch
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 1
 Range: 0
@@ -674,7 +675,7 @@ END
 
 IF ~~ 1.6
 SAY ~Essence Drain
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 1
 Range: 30 ft.
@@ -692,7 +693,7 @@ END
 
 IF ~~ 1.7
 SAY ~Shadow Veil
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 1
 Range: 0
@@ -710,7 +711,7 @@ END
 
 IF ~~ 1.8
 SAY ~Curse
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 1
 Range: Sight
@@ -726,7 +727,7 @@ END
 
 IF ~~ 1.9
 SAY ~Shadow Rope
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 1
 Range: Visual range of the caster
@@ -742,7 +743,7 @@ END
 
 IF ~~ 1.10
 SAY ~Decoy
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 1
 Range: Visual range of caster
@@ -758,7 +759,7 @@ END
 
 IF ~~ 1.11
 SAY ~Mesmerize
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 1
 Range: Visual range of caster
@@ -774,7 +775,7 @@ END
 
 IF ~~ 1.12
 SAY ~Cursed Flames
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 1
 Range: 5 ft.
@@ -790,7 +791,7 @@ END
 
 IF ~~ 2.1
 SAY ~Dark Mirage
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 2
 Range: 0
@@ -806,7 +807,7 @@ END
 
 IF ~~ 2.2
 SAY ~Night Terrors
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 2
 Range: 40 ft.
@@ -824,7 +825,7 @@ END
 
 IF ~~ 2.3
 SAY ~Dark Fortune
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 2
 Range: 15 ft.
@@ -840,7 +841,7 @@ END
 
 IF ~~ 2.4
 SAY ~Power Word, Sleep
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 2
 Range: 90 ft.
@@ -858,7 +859,7 @@ END
 
 IF ~~ 2.5
 SAY ~Dread Silence
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 2
 Range: Visual range of the caster
@@ -874,7 +875,7 @@ END
 
 IF ~~ 2.6
 SAY ~Ghostly Visage
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 2
 Range: Self
@@ -890,7 +891,7 @@ END
 
 IF ~~ 2.7
 SAY ~Lesser Drain Vitality
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 2
 Range: Touch
@@ -906,7 +907,7 @@ END
 
 IF ~~ 2.8
 SAY ~Black Mist
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 2
 Range: 90 ft.
@@ -922,7 +923,7 @@ END
 
 IF ~~ 2.9
 SAY ~Negative Energy Ray
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 2
 Range: 15 ft.
@@ -938,7 +939,7 @@ END
 
 IF ~~ 2.10
 SAY ~Sigil of Vulnerability
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 2
 Range: 30 ft.
@@ -954,7 +955,7 @@ END
 
 IF ~~ 2.11
 SAY ~Shadow Walk
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 2
 Range: 0
@@ -970,7 +971,7 @@ END
 
 IF ~~ 2.12
 SAY ~Hallucinate
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 2
 Range: Visual range of the caster
@@ -986,7 +987,7 @@ END
 
 IF ~~ 2.13
 SAY ~Shadowfade
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 2
 Range: Touch 
@@ -1004,7 +1005,7 @@ END
 
 IF ~~ 3.1
 SAY ~Blackfire Arrow
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 3
 Range: 60 ft.
@@ -1020,7 +1021,7 @@ END
 
 IF ~~ 3.2
 SAY ~Shadowblast
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 3
 Range: 40 ft.
@@ -1038,7 +1039,7 @@ END
 
 IF ~~ 3.3
 SAY ~Inertia
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 3
 Range: 25 ft.
@@ -1054,7 +1055,7 @@ END
 
 IF ~~ 3.4
 SAY ~Lifedrinker Touch
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 3
 Range: Touch
@@ -1072,7 +1073,7 @@ END
 
 IF ~~ 3.5
 SAY ~Beguile
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 3
 Range: 60 ft.
@@ -1094,7 +1095,7 @@ END
 
 IF ~~ 3.6
 SAY ~Shadow Comets
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 3
 Range: 0
@@ -1110,7 +1111,7 @@ END
 
 IF ~~ 3.7
 SAY ~Shadow Binding
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 3
 Range: 35 ft.
@@ -1128,7 +1129,7 @@ END
 
 IF ~~ 3.8
 SAY ~Impose
-(Evocation - Shadow Weave)
+(Evocation – Shadow Weave)
 
 Level: 3
 Range: 30 ft.
@@ -1144,7 +1145,7 @@ END
 
 IF ~~ 3.9
 SAY ~Shadow Spear
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 3
 Range: 70 ft.
@@ -1168,7 +1169,7 @@ END
 
 IF ~~ 3.10
 SAY ~Cursed Earth
-(Conjuration - Shadow Weave)
+(Conjuration – Shadow Weave)
 
 Level: 3
 Range: 90 ft.
@@ -1184,7 +1185,7 @@ END
 
 IF ~~ 3.11
 SAY ~Expunge Magic
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 3
 Range: 40 ft.
@@ -1202,7 +1203,7 @@ END
 
 IF ~~ 3.12
 SAY ~Void Edge
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 3
 Range: Self
@@ -1218,7 +1219,7 @@ END
 
 IF ~~ 4.2
 SAY ~Fireshield (Shadow) 
-(Invocation/Evocation, Alteration - Shadow Weave)
+(Invocation/Evocation, Alteration – Shadow Weave)
 
 Level: 4
 Range: 0
@@ -1234,7 +1235,7 @@ END
 
 IF ~~ 4.3
 SAY ~Shadeskin
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 4
 Range: 0
@@ -1252,7 +1253,7 @@ END
 
 IF ~~ 4.4
 SAY ~Sigil of Misfortune
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 4
 Range: 50 ft.
@@ -1268,7 +1269,7 @@ END
 
 IF ~~ 4.5
 SAY ~Summon Shadow
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 Level: 4
 Range: Long
 Duration: 2 hours
@@ -1292,7 +1293,7 @@ END
 
 IF ~~ 4.6
 SAY ~Shar's Blessing
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 4
 Range: 0
@@ -1310,7 +1311,7 @@ END
 
 IF ~~ 4.7
 SAY ~Phantasmal Killer
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 4
 Range: Visual range of the caster
@@ -1326,7 +1327,7 @@ END
 
 IF ~~ 4.8
 SAY ~Drain Vitality
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 4
 Range: Touch
@@ -1342,7 +1343,7 @@ END
 
 IF ~~ 4.9
 SAY ~Dread Whispers
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 4
 Range: 30 ft.
@@ -1358,7 +1359,7 @@ END
 
 IF ~~ 4.10
 SAY ~Negative Immunity
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 4
 Range: Touch
@@ -1374,7 +1375,7 @@ END
 
 IF ~~ 4.11
 SAY ~Black Ooze
-(Conjuration - Shadow Weave)
+(Conjuration – Shadow Weave)
 
 Level; 4
 Range: Visual range of the caster
@@ -1390,7 +1391,7 @@ END
 
 IF ~~ 4.12
 SAY ~Wall of Black Flame
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 4
 School: Evocation
@@ -1407,7 +1408,7 @@ END
 
 IF ~~ 4.13
 SAY ~Pain Mirror
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level; 4
 Range: Visual range of the caster
@@ -1423,7 +1424,7 @@ END
 
 IF ~~ 5.1
 SAY ~Cone of Bitter Cold
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 5
 Range: 0
@@ -1439,7 +1440,7 @@ END
 
 IF ~~ 5.2
 SAY ~Shadow Assault
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 5
 Range: 0
@@ -1459,7 +1460,7 @@ END
 
 IF ~~ 5.3
 SAY ~Breaching Dark
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 5
 Range: 40 ft.
@@ -1475,7 +1476,7 @@ END
 
 IF ~~ 5.4
 SAY ~Shadow Blade
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 5
 Range: 0
@@ -1491,7 +1492,7 @@ END
 
 IF ~~ 5.5
 SAY ~Sigil of Madness
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 5
 Range: 35 ft.
@@ -1507,7 +1508,7 @@ END
 
 IF ~~ 5.6
 SAY ~Shar's Memory Drain
-(Enchantment - Shadow Weave)
+(Enchantment – Shadow Weave)
 
 Level: 5
 Range: 40 ft.
@@ -1523,7 +1524,7 @@ END
 
 IF ~~ 5.7
 SAY ~Unmask
-(Divination - Shadow Weave)
+(Divination – Shadow Weave)
 
 Level: 5
 Range: 0
@@ -1541,7 +1542,7 @@ END
 
 IF ~~ 5.8
 SAY ~Nightshade
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 5
 Range: 90 ft.
@@ -1557,7 +1558,7 @@ END
 
 IF ~~ 5.9
 SAY ~Shadow Chain
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 5
 Range: Visual range of the caster
@@ -1573,7 +1574,7 @@ END
 
 IF ~~ 5.10
 SAY ~Void Blast
-(Evocation - Shadow Weave)
+(Evocation – Shadow Weave)
 
 Level: 5
 Range: 90 ft.
@@ -1589,7 +1590,7 @@ END
 
 IF ~~ 5.11
 SAY ~Shadow Screen
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 5
 Range: 0
@@ -1623,7 +1624,7 @@ END
 
 IF ~~ 6.2
 SAY ~Shar's Shield
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 6
 Range: 0
@@ -1639,7 +1640,7 @@ END
 
 IF ~~ 6.3
 SAY ~Twin Mislead
-(Illusion/Phantasm - Shadow Weave)
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 6
 Range: 0
@@ -1657,7 +1658,7 @@ END
 
 IF ~~ 6.4
 SAY ~Protection From Weave-forged Weapons
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 6
 Range: 0
@@ -1673,7 +1674,7 @@ END
 
 IF ~~ 6.5
 SAY ~Power Word, Silence
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 6
 Range: 90 ft.
@@ -1689,7 +1690,7 @@ END
 
 IF ~~ 6.6
 SAY ~Black Lightning 
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 6
 Range: 40 ft.
@@ -1705,7 +1706,7 @@ END
 
 IF ~~ 6.7
 SAY ~Shatter Weave
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 6
 Range: 40 ft.
@@ -1721,7 +1722,7 @@ END
 
 IF ~~ 6.8
 SAY ~Umbral Blades
-(Evocation - Shadow Weave)
+(Evocation – Shadow Weave)
 
 Level: 6 
 Range: Self
@@ -1737,7 +1738,7 @@ END
 
 IF ~~ 6.9
 SAY ~Disintegrate
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 6
 Range: Visual range of the caster
@@ -1755,7 +1756,7 @@ END
 
 IF ~~ 6.10
 SAY ~Black Rose
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 6
 Range: Visual range of the caster
@@ -1771,7 +1772,7 @@ END
 
 IF ~~ 6.11
 SAY ~Negative Energy Burst
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 6
 Range: 30 ft.
@@ -1787,7 +1788,7 @@ END
 
 IF ~~ 6.12
 SAY ~Devour Dream
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 6
 Range: Touch
@@ -1805,7 +1806,7 @@ END
 
 IF ~~ 7.2
 SAY ~Black Ray of Destruction
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 7
 Range: 40 ft.
@@ -1821,7 +1822,7 @@ END
 
 IF ~~ 7.3
 SAY ~Shadowspray
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 7
 Range: 60 ft.
@@ -1845,7 +1846,7 @@ END
 
 IF ~~ 7.4
 SAY ~Power Word, Stun
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 7
 Range: Visual range of the caster 
@@ -1866,7 +1867,7 @@ END
 
 IF ~~ 7.5
 SAY ~Sword of the Night
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 7
 Range: 0
@@ -1882,7 +1883,7 @@ END
 
 IF ~~ 7.6
 SAY ~Shadowplague
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 Level: 7
 Range: Long
 Duration: 6 rounds
@@ -1899,7 +1900,7 @@ END
 
 IF ~~ 7.7
 SAY ~Greater Drain Vitality
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 7
 Range: Touch
@@ -1915,7 +1916,7 @@ END
 
 IF ~~ 7.8
 SAY ~Vengeful Shade
-(Necromancy - Shadow Weave)
+(Necromancy – Shadow Weave)
 
 Level: 7
 Range: Touch
@@ -1931,7 +1932,7 @@ END
 
 IF ~~ 7.9
 SAY ~Nightmare
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 7
 Range: Visual range of the caster
@@ -1947,7 +1948,7 @@ END
 
 IF ~~ 7.10
 SAY ~Possess
-(Enchantment/Charm - Shadow Weave)
+(Enchantment/Charm – Shadow Weave)
 
 Level: 7
 Range: Visual range of the caster
@@ -1965,7 +1966,7 @@ END
 
 IF ~~ 7.11
 SAY ~Malefic Bomb
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 7
 Range: 50 ft.
@@ -1981,7 +1982,7 @@ END
 
 IF ~~ 7.12
 SAY ~Shadow Gate
-(Conjuration - Shadow Weave)
+(Conjuration – Shadow Weave)
 
 Level: 7
 Range: Visual range of the caster
@@ -1999,7 +2000,7 @@ END
 
 IF ~~ 7.13
 SAY ~Nightfall
-(Evocation - Shadow Weave) 
+(Evocation – Shadow Weave) 
 
 Level: 7
 Range: Visual range of the caster 
@@ -2015,7 +2016,7 @@ END
 
 IF ~~ 8.2
 SAY ~Negastorm
-(Necromancy - Shadow Weave) 
+(Necromancy – Shadow Weave) 
 
 Level: 8
 Range: Visual range of the caster 
@@ -2033,7 +2034,7 @@ END
 
 IF ~~ 8.3
 SAY ~Annulment
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 8
 Range: Touch
@@ -2049,7 +2050,7 @@ END
 
 IF ~~ 8.4
 SAY ~Shadow Prison
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 8
 Range: Touch 
@@ -2076,7 +2077,7 @@ END
 
 IF ~~ 8.5
 SAY ~Power Word, Blind
-(Conjuration/Summoning - Shadow Weave)
+(Conjuration/Summoning – Shadow Weave)
 
 Level: 8
 Range: Visual range of the caster
@@ -2092,7 +2093,7 @@ END
 
 IF ~~ 8.6
 SAY ~Shadow Shield
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 8
 Range: 0
@@ -2108,7 +2109,7 @@ END
 
 IF ~~ 8.7
 SAY ~Blackfire Fury
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 8
 Range: 0
@@ -2126,7 +2127,7 @@ END
 
 IF ~~ 8.8
 SAY ~Shar's Mantle
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 8
 Range: 0
@@ -2142,7 +2143,7 @@ END
 
 IF ~~ 8.9
 SAY ~Shadow's Refuge
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 8
 Range: 0
@@ -2158,7 +2159,7 @@ END
 
 IF ~~ 8.10
 SAY ~Dark Premonition
-(Divination - Shadow Weave)
+(Divination – Shadow Weave)
 
 Level: 8
 Range: Self
@@ -2174,7 +2175,7 @@ END
 
 IF ~~ 8.11
 SAY ~Dark Passage
-(Evocation - Shadow Weave)
+(Evocation – Shadow Weave)
 
 Level: 8
 Range: Party
@@ -2190,7 +2191,7 @@ END
 
 IF ~~ 8.12
 SAY ~Invoke Reflection
-(Illusion/Phantasm - Shadow Weave) 
+(Illusion/Phantasm – Shadow Weave) 
 
 Level: 8
 Range: Visual range of the caster
@@ -2206,7 +2207,7 @@ END
 
 IF ~~ 8.13
 SAY ~Merciless Blizzard
-(Invocation/Evocation - Shadow Weave) 
+(Invocation/Evocation – Shadow Weave) 
 
 Level: 8
 Range: Visual range of the caster
@@ -2222,7 +2223,7 @@ END
 
 IF ~~ 9.2
 SAY ~Darkbolt
-(Invocation/Evocation - Shadow Weave) 
+(Invocation/Evocation – Shadow Weave) 
 
 Level: 9
 Range: Visual range of the caster
@@ -2238,7 +2239,7 @@ END
 
 IF ~~ 9.3
 SAY ~Umbral Stasis
-(Alteration - Shadow Weave)
+(Alteration – Shadow Weave)
 
 Level: 9
 Range: 0
@@ -2254,7 +2255,7 @@ END
 
 IF ~~ 9.4
 SAY ~Nightsinger's Tithe
-(Conjuration/Summoning - Shadow Weave) 
+(Conjuration/Summoning – Shadow Weave) 
 
 Level: 9
 Range: Visual range of the caster 
@@ -2270,7 +2271,7 @@ END
 
 IF ~~ 9.5
 SAY ~Enervation
-(Necromancy - Shadow Weave) 
+(Necromancy – Shadow Weave) 
 
 Level: 9
 Range: Touch
@@ -2286,7 +2287,7 @@ END
 
 IF ~~ 9.6
 SAY ~Black Blade of Disaster
-(Invocation/Evocation - Shadow Weave) 
+(Invocation/Evocation – Shadow Weave) 
 
 Level: 9
 Range: 0
@@ -2302,7 +2303,7 @@ END
 
 IF ~~ 9.7
 SAY ~Weird
-(Illusion/Phantasm - Shadow Weave) 
+(Illusion/Phantasm – Shadow Weave) 
 
 Level: 9
 Range: 0
@@ -2318,7 +2319,7 @@ END
 
 IF ~~ 9.8
 SAY ~Death Mark
-(Necromancy - Shadow Weave) 
+(Necromancy – Shadow Weave) 
 
 Level: 9
 Range: 0
@@ -2334,7 +2335,7 @@ END
 
 IF ~~ 9.9
 SAY ~Oblivion Pull
-(Abjuration - Shadow Weave)
+(Abjuration – Shadow Weave)
 
 Level: 9
 Range: 30 ft.
@@ -2350,7 +2351,7 @@ END
 
 IF ~~ 9.10
 SAY ~Fiery Pandemonium
-(Invocation/Evocation - Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 9
 Range: 270 ft.
