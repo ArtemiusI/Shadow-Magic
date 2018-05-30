@@ -112,7 +112,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -130,7 +129,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -148,7 +146,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -164,7 +161,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -885,7 +881,6 @@ IF
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
   StateCheck(Nearestenemyof(Myself),STATE_SLEEPING)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -900,7 +895,6 @@ IF
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
   StateCheck(Nearestenemyof(Myself),STATE_SLEEPING)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -915,7 +909,6 @@ IF
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
   !StateCheck(Nearestenemyof(Myself),STATE_SLEEPING)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -929,7 +922,6 @@ IF
   HaveSpellRES("C0SA710")
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -943,7 +935,6 @@ IF
   HaveSpellRES("C0SA610")
   See(Nearestenemyof(Myself))
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1178,7 +1169,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1194,7 +1184,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1209,7 +1198,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1224,7 +1212,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1240,7 +1227,6 @@ IF
   HPLT(Nearestenemyof(Myself),61)
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1255,7 +1241,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1270,7 +1255,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1287,7 +1271,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1303,7 +1286,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1322,7 +1304,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1338,7 +1319,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
@@ -1354,7 +1334,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1369,7 +1348,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -3954,9 +3932,7 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  NextTriggerObject(Nearestenemyof(Myself))
   Range(NearestAllyOf(Myself),15)
-  NextTriggerObject(Nearestenemyof(Myself))
   !Range(NearestEnemyOf(Myself),15)
 THEN
   RESPONSE #100
