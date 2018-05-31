@@ -2724,81 +2724,108 @@ END
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis3.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 55
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+	  match_opcode = 60
 	  parameter1 = 45
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis4.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 60
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+	  match_opcode = 60
 	  parameter1 = 40
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis5.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 65
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+	  match_opcode = 60
 	  parameter1 = 35
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis6.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 70
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+	  match_opcode = 60
 	  parameter1 = 30
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis7.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 75
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+	  match_opcode = 60
 	  parameter1 = 25
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis8.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 80
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 60
 	  parameter1 = 20
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis9.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 85
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 60
 	  parameter1 = 15
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawis0.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 90
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 60
 	  parameter1 = 10
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sawis2.spl~ ~override/c0sawisa.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter1 = 50
+	  match_opcode = 99
+	  parameter1 = 95
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 60
 	  parameter1 = 5
 END
 

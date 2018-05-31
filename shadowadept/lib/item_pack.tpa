@@ -1472,3 +1472,98 @@ STATISTICS:
 Special: Learn one 9th level Shadow Weave spell.
 
 Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0salea1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Shadovar Armor~
+SAY NAME2 ~Shadovar Armor~
+SAY DESC ~This suit of dark-colored leather armor is tattered and worn from use, but provides some measure of protection regardless. Its unusual lightness and flexibility allows the user to cast spells without hindrance while wearing it.
+
+STATISTICS:
+
+Equipped abilities:
+– Hide In Shadows: +10%
+– Spellcasting is not disabled
+
+Armor Class: 5 (3 vs. slashing, 7 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+COPY ~%MOD_FOLDER%/itempack/c0saxbo1.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Dark Enforcer +2~
+SAY NAME2 ~Dark Enforcer +2~
+SAY DESC ~Weapons such as these are usually given to Shadovar enforcers working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
+
+STATISTICS:
+
+Combat abilities:
+– 10% chance per hit to cast Shadowfade on the wielder
+– On a critical hit, cast Drain Vitality on the target
+
+Equipped abilities:
+– Wielded as though specialized (++) in crossbows
+
+THAC0: +2
+Damage: +2 (missile)
+Speed Factor: 3
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 8 Strength
+
+Weight: 5~
+
+COPY ~%MOD_FOLDER%/itempack/c0saxbo2.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Dark Enforcer +5~
+SAY NAME2 ~Dark Enforcer +5~
+SAY DESC ~Weapons such as these are usually given to Shadovar enforcers working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
+
+STATISTICS:
+
+Combat abilities:
+– 25% chance per hit to cast Shadowfade on the wielder
+– On a critical hit, cast Greater Drain Vitality on the target
+
+Equipped abilities:
+– Wielded as though with grandmastery (+++++) in crossbows
+
+THAC0: +2
+Damage: +2 (missile)
+Speed Factor: 3
+Proficiency Type: Crossbow
+Type: Two-handed
+Requires:
+ 8 Strength
+
+Weight: 5~

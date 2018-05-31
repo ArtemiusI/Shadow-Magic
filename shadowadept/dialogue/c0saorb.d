@@ -4,7 +4,12 @@ IF ~OR(2)
 Class(Lastsummonerof(Myself),MAGE_ALL)
 Class(Lastsummonerof(Myself),BARD_ALL)~ a
 SAY ~Strands of magical power strike against the inner surface of the orb. You suddenly feel an overwhelming surge of negative emotions - anger, despair, fear, loss - and you realize that the magic desires a living host. It offers power - but at a price. You will wield the magical energy of the Shadow Weave, but your connection to the Weave will be severed forever.~ [C0BLANK]
-+ ~CheckStatGT(Lastsummonerof(Myself),11,CON)
++ ~InPartySlot(Myself,0)
+CheckStatGT(Lastsummonerof(Myself),11,CON)
+CheckStatGT(Lastsummonerof(Myself),8,INT)
+CheckStatGT(Lastsummonerof(Myself),8,CHR)~ + ~Shatter the orb, allowing the magic to enter your body.~ DO ~ChangeAIScript("C0SAPLAY",DEFAULT) TakePartyItem("c0saorb") DestroyItem("c0saorb")~ + a2
++ ~!InPartySlot(Myself,0)
+CheckStatGT(Lastsummonerof(Myself),11,CON)
 CheckStatGT(Lastsummonerof(Myself),8,INT)
 CheckStatGT(Lastsummonerof(Myself),8,CHR)~ + ~Shatter the orb, allowing the magic to enter your body.~ DO ~TakePartyItem("c0saorb") DestroyItem("c0saorb")~ + a2
 + ~OR(3)
