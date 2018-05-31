@@ -12,6 +12,15 @@ THEN
 END
 
 IF
+	Global("C0SA_PLOT","GLOBAL",102)
+	Range(Player1,20)
+	Delay(2)
+THEN
+  RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF
 	AttackedBy([PC],DEFAULT)
 	Global("Attacked","LOCALS",0)
 THEN

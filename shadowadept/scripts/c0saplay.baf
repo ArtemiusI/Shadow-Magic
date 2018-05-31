@@ -1,7 +1,6 @@
 // Kit
 
 IF
-  Specifics(Myself,12)
   Kit(Myself,C0SADEP2)
   ActionListEmpty()
 THEN
@@ -23,7 +22,6 @@ THEN
 END
 
 IF
-  Specifics(Myself,12)
   Kit(Myself,C0SASOR2)
   ActionListEmpty()
 THEN
@@ -45,7 +43,6 @@ THEN
 END
 
 IF
-  Specifics(Myself,12)
   Kit(Myself,C0SABAR2)
   ActionListEmpty()
 THEN
