@@ -66,7 +66,12 @@ COMPILE ~%MOD_FOLDER%/scripts/c0saplay.baf~
 
 COMPILE ~%MOD_FOLDER%/scripts/c0satalk.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0saorb.baf~
+ACTION_IF NOT GAME_IS ~iwdee~ THEN BEGIN
 COMPILE ~%MOD_FOLDER%/scripts/c0sasumm.baf~
+END
+ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+COMPILE ~%MOD_FOLDER%/scripts/iwdee/c0sasumm.baf~
+END
 COMPILE ~%MOD_FOLDER%/scripts/c0devsha.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0nighth.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sa711.baf~

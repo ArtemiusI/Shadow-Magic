@@ -1513,7 +1513,7 @@ COPY ~%MOD_FOLDER%/itempack/c0saxbo1.itm~ ~override~
 END
 SAY NAME1 ~Dark Enforcer +2~
 SAY NAME2 ~Dark Enforcer +2~
-SAY DESC ~Weapons such as these are usually given to Shadovar enforcers working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
+SAY DESC ~Weapons such as these are usually given to Shadovar agents working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
 
 STATISTICS:
 
@@ -1547,7 +1547,7 @@ COPY ~%MOD_FOLDER%/itempack/c0saxbo2.itm~ ~override~
 END
 SAY NAME1 ~Dark Enforcer +5~
 SAY NAME2 ~Dark Enforcer +5~
-SAY DESC ~Weapons such as these are usually given to Shadovar enforcers working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
+SAY DESC ~Weapons such as these are usually given to Shadovar agents working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
 
 STATISTICS:
 
