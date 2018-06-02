@@ -66,7 +66,7 @@ SAY NAME1 ~Shapeshift: Shade Form~
 SAY UNIDENTIFIED_DESC ~Shapeshift: Shade Form
 After having consumed the Shade Lord, you have gained the ability to transform into a shadowy being with its powers. While transformed, the caster gains a +4 bonus to Intelligence, Wisdom and Charisma, and <PRO_HESHE> can cast Shadow Weave spells without needing to make a saving throw to avoid losing Constitution.
 
-Additionally, <PRO_HISHER> physical and magic resistance is set to 20% and <PRO_HESHE> becomes immune to fear, hold, poison, sleep, stun, confusion, petrification, domination, level drain, cold damage and all normal weapons. However, because maintaining this form is extremely taxing, it can only be maintained for a short time and the caster will incur a large fatigue penalty when <PRO_HESHE> transforms back to their normal form. As the caster's level increases, the fatigue penalty is decreased.
+Additionally, <PRO_HISHER> physical and magic resistance is set to 20% and <PRO_HESHE> becomes immune to fear, hold, poison, sleep, stun, confusion, petrification, domination, level drain, cold damage and all normal weapons. However, because maintaining this form is extremely taxing, it can only be maintained for a short time and the caster will incur a large fatigue penalty when <PRO_HESHE> transforms back to <PRO_HISHER> normal form. As the caster's level increases, the fatigue penalty is reduced.
 
 Duration: 1 round/level~
 
