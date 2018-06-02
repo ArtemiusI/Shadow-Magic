@@ -5434,6 +5434,7 @@ SAY NAME2 ~Shadow Gate~
 WRITE_ASCII 0x248 ~c0sa711~ #8
 
 COPY ~%MOD_FOLDER%/spells/c0sa712.spl~ ~override~
+SAY NAME1 ~Nightfall~
 SAY UNIDENTIFIED_DESC ~Nightfall
 (Invocation/Evocation – Shadow Weave) 
 
@@ -5454,7 +5455,6 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sarain%~
 END
 COPY ~%MOD_FOLDER%/spells/c0sa712b.spl~ ~override~
-SAY NAME1 ~Nightfall~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
 SET "delta" = 0

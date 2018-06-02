@@ -1,0 +1,76 @@
+OUTER_SET shad_lcase = RESOLVE_STR_REF(~shadow~)
+OUTER_SET shad_ucase = RESOLVE_STR_REF(~Shadow~)
+APPEND ~racetext.2da~ ~SHADOW   132        %shad_lcase%       -1         %shad_ucase%          -1~ UNLESS ~SHADOW~
+
+COPY ~%MOD_FOLDER%/portraits/C0SHADEL.BMP~ ~OVERRIDE~
+
+PRINT ~Please choose one of the following:
+[1] Hardcore version (Level 18, casts up to 9th level spells)
+[2] Standard version (Level 14, casts up to 7th level spells)
+[3] No modification (Adds special ability only)~
+
+OUTER_SPRINT ~shadelord~ ~placeholder_value~
+OUTER_WHILE (!(IS_AN_INT ~shadelord~) OR (~shadelord~ > 0x5) OR (~shadelord~ < 0x1)) BEGIN
+  PRINT ~Please select 1, 2 or 3 and press Enter.~
+  ACTION_READLN ~shadelord~
+END
+      ACTION_IF ("shadelord" = 1) THEN BEGIN
+COPY ~%MOD_FOLDER%/creatures/shadel.cre~ ~override~
+SAY NAME1 ~Shade Lord~
+SAY NAME2 ~Shade Lord~
+  WRITE_ASCII 0X34 ~C0~ #8   //small portrait
+ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~
+THEN BEGIN
+  PRINT ~Crossmod: Adding Foundling's Shadow Summoning I Scroll~
+COPY_EXISTING ~shadel.cre~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN
+    ADD_CRE_ITEM ~l#fsps2~ #1 #0 #0 ~NONE~ ~inv~
+  END
+BUT_ONLY_IF_IT_CHANGES
+END
+END
+      ACTION_IF ("shadelord" = 2) THEN BEGIN
+COPY ~%MOD_FOLDER%/creatures/shade2.cre~ ~override/shadel.cre~
+SAY NAME1 ~Shade Lord~
+SAY NAME2 ~Shade Lord~
+ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~
+THEN BEGIN
+  PRINT ~Crossmod: Adding Foundling's Shadow Summoning I Scroll~
+COPY_EXISTING ~shadel.cre~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN
+    ADD_CRE_ITEM ~l#fsps2~ #1 #0 #0 ~NONE~ ~inv~
+  END
+BUT_ONLY_IF_IT_CHANGES
+END
+END
+      ACTION_IF ("shadelord" = 3) THEN BEGIN
+END
+
+COMPILE ~%MOD_FOLDER%/dialogue/shadel.d~
+COMPILE ~%MOD_FOLDER%/scripts/c0cut30a.baf~
+
+COPY_EXISTING ~ar1404.bcs~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+     REPLACE_TEXTUALLY ~Global("ShadowLordDead","GLOBAL",0)~ ~Global("ShadowLordDead","GLOBAL",0)
+	 !Global("C0SAShadeLordKilled","GLOBAL",1)~
+	 END
+BUT_ONLY  
+EXTEND_BOTTOM ~AR1404.BCS~ ~%MOD_FOLDER%/scripts/AR1404.BAF~
+
+COPY ~%MOD_FOLDER%/spells/bams/c0sa3b.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0sa3.itm~ ~override~
+SAY NAME1 ~Shade Touch~
+SAY NAME2 ~Shade Touch~
+COPY ~%MOD_FOLDER%/spells/c0sa3.spl~ ~override~
+SAY NAME1 ~Shapeshift: Shade Form~
+SAY UNIDENTIFIED_DESC ~Shapeshift: Shade Form
+After having consumed the Shade Lord, you have gained the ability to transform into a shadowy being with its powers. While transformed, the caster gains a +4 bonus to Intelligence, Wisdom and Charisma, and <PRO_HESHE> can cast Shadow Weave spells without needing to make a saving throw to avoid losing Constitution.
+
+Additionally, <PRO_HISHER> physical and magic resistance is set to 20% and <PRO_HESHE> becomes immune to fear, hold, poison, sleep, stun, confusion, petrification, domination, level drain, cold damage and all normal weapons. However, because maintaining this form is extremely taxing, it can only be maintained for a short time and the caster will incur a large fatigue penalty when <PRO_HESHE> transforms back to their normal form. As the caster's level increases, the fatigue penalty is decreased.
+
+Duration: 1 round/level~
+
+COPY ~%MOD_FOLDER%/spells/c0sa3a.spl~ ~override~
+SAY NAME1 ~Shapeshift: Natural Form~
+SAY UNIDENTIFIED_DESC ~Shapeshift: Natural Form
+This ability causes the character to return to <PRO_HISHER> natural shape and incur a fatigue penalty.~

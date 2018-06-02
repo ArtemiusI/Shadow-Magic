@@ -18,6 +18,16 @@ THEN RESPONSE #100
 END
 
 IF
+  AttackedBy("shawol01",DEFAULT)
+  Global("AttackedByShadeWolf","LOCALS",0)
+  Alignment(Myself,MASK_LAWFUL)
+  Delay(1)
+THEN RESPONSE #100
+  SetGlobal("AttackedByShadeWolf","LOCALS",1)
+  DisplayStringHead(Myself,~"You *dare* to bare your fangs at me, whelp?"~)
+END
+
+IF
   Global("Revival","LOCALS",1)
   Alignment(Myself,MASK_LAWFUL)
   RandomNum(3,1)
@@ -286,7 +296,6 @@ ChangeStat(Myself,RESISTCRUSHING,10,ADD)
 ChangeStat(Myself,RESISTPIERCING,10,ADD)
 ChangeStat(Myself,RESISTMISSILE,10,ADD)
 ChangeStat(Myself,STEALTH,20,ADD)
-
 ApplySpellRES("c0famlv3",Myself)
 AddSpecialAbility("c0sfam13")
 END

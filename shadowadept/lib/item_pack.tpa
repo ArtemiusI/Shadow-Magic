@@ -125,6 +125,64 @@ REMOVE_CRE_ITEM ~sw2h02~
 ADD_CRE_ITEM ~c0sas2h1~ #0 #0 #0 ~NONE~ ~weapon1~
 END
 
+COPY ~%MOD_FOLDER%/itempack/c0sas2h2.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
+Shade Warrior
+Shadow Enforcer
+Nightsinger~)
+END
+LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 326
+      match_parameter2 = 0
+	  parameter2 = %C0SAS2H1%
+END
+SAY NAME1 ~Two-handed Sword~
+SAY NAME2 ~Dark Dreamer +4~
+SAY UNIDENTIFIED_DESC ~The two-handed sword is a derivative of the long sword. Weaponsmiths have always looked for ways to improve existing weapons, and in an effort to improve the long sword, the blade was lengthened. Eventually, the handle had to be extended and two hands became necessary to properly swing the sword. The primary function of two-handed swords is cleaving mounted knights and breaking up pike formations.
+
+STATISTICS:
+
+Damage: 2D6
+Damage type: slashing
+Weight: 8
+Speed Factor: 10
+Proficiency Type: Two-Handed Sword
+Type: 2-handed
+Requires: 14 Strength~
+SAY DESC ~This dark steel two-handed sword appears to be nothing more than a well-balanced weapon in the hands of a regular warrior, but when wielded by a user of Shadow Magic it seems to come to life. Its blade has the ability to compel anyone cut to fall into a magically induced sleep, then hungrily devours the victim's dreams to restore the wielder's memory. The holy symbol in the sword's pommel suggests that it once belonged to followers of Shar, goddess of night and loss.
+
+STATISTICS:
+
+Combat Effects:
+– 50% chance that hit target must save vs. spells at -2 or be put to sleep for 2 rounds
+– Dream Eater: Attacks against sleeping targets deal 1d10 magic damage and restore one of the wielder's lost spells of up to 4th level
+
+Equipped Effects:
+– Saves vs. Enchantment: +5
+– Hit Points: -10
+
+THAC0: +4
+Damage: 1d10+4, +1d6 magic damage
+Damage type: slashing
+Speed Factor: 8
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 10~
+
 COPY ~%MOD_FOLDER%/itempack/c0saamu1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR

@@ -53,6 +53,8 @@ EXTEND_TOP ~ar1402.bcs~ ~%MOD_FOLDER%/familiars/scripts/ar1402.baf~
 EXTEND_TOP ~ar1404.bcs~ ~%MOD_FOLDER%/familiars/scripts/ar1404.baf~
 EXTEND_TOP ~spshadom.bcs~ ~%MOD_FOLDER%/familiars/scripts/spshadow.baf~
 EXTEND_TOP ~spshadow.bcs~ ~%MOD_FOLDER%/familiars/scripts/spshadow.baf~
+COPY_EXISTING ~shawol01.cre~ ~override~
+WRITE_ASCII 0x280 ~shawol01~ #32 // death variable
 END
 
 COMPILE ~%MOD_FOLDER%/scripts/c0safam.baf~

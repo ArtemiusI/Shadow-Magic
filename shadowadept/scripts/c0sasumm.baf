@@ -5674,17 +5674,6 @@ THEN
 END
 
 IF
-  Range(Nearestenemyof(Myself),5)
-  See(Nearestenemyof(Myself))
-  HaveSpellRES("spsd02")
-THEN
-  RESPONSE #100
-	SpellRES("spsd02",Myself)
-	SmallWait(5)
-	RunAwayFrom(Nearestenemyof(Myself),10)
-END
-
-IF
   See(NearestEnemyOf(Myself))
   Range(Nearestenemyof(Myself),5)
 THEN

@@ -129,7 +129,7 @@ THEN BEGIN
   PRINT ~Adding crossmod compatibility between Foundling and Shadow Magic~
   COMPILE ~%MOD_FOLDER%/dialogue/npc/foundling.d~
 COPY_EXISTING ~L#Fou.cre~ ~override~
-WRITE_SHORT 0x274 12
+WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHARRAN~))
 COPY_EXISTING ~L#Fou25.cre~ ~override~
-WRITE_SHORT 0x274 12
+WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHARRAN~))
 END

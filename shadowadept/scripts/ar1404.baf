@@ -1,0 +1,13 @@
+IF
+  Dead("SHADEL")
+  Dead("SHALT01")
+  Dead("RNGSHA02")
+  CombatCounter(0)
+  Global("ShadowLordDead","GLOBAL",0)
+  Global("C0SAShadeLordKilled","GLOBAL",1)
+THEN
+  RESPONSE #100
+    ClearAllActions()
+    StartCutSceneMode()
+    StartCutScene("C0CUT30A")
+END
