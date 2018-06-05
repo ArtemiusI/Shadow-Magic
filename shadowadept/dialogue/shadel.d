@@ -1,17 +1,17 @@
 EXTEND_TOP SHADEL 3 
-+ ~Specifics(Myself,12)~ + ~You are not the only one who controls the shadows, creature. As I see it, you shall be the one to be submit to *me*.~ EXTERN SHADEL shadel.1
-++ ~Come and be destroyed, then.~ DO ~ActionOverride("rngsha02",Enemy())
++ ~Specifics(Player1,12)~ + ~You are not the only one who controls the shadows, creature. As I see it, you shall be the one to be submit to *me*.~ EXTERN SHADEL shadel.1
++ ~Specifics(Player1,12)~ + ~Come and be destroyed, then.~ DO ~ActionOverride("rngsha02",Enemy())
 Enemy()~ EXIT
 END
 
 EXTEND_TOP SHADEL 4 
-+ ~Specifics(Myself,12)~ + ~You are nothing compared to the shadows that whisper in my mind. I do not fear you.~ EXTERN SHADEL 6
-+ ~Specifics(Myself,12)~ + ~A mere broodling such as yourself has no place speaking to me as though you were my equal.~ EXTERN SHADEL 6
++ ~Specifics(Player1,12)~ + ~You are nothing compared to the shadows that whisper in my mind. I do not fear you.~ EXTERN SHADEL 6
++ ~Specifics(Player1,12)~ + ~A mere broodling such as yourself has no place speaking to me as though you were my equal.~ EXTERN SHADEL 6
 END
 
 EXTEND_TOP SHADEL 7
-+ ~Specifics(Myself,12)~ + ~You are not the only one who controls the shadows, creature. As I see it, you shall be the one to be submit to *me*.~ EXTERN SHADEL shadel.1
-++ ~Come and be destroyed, then.~ DO ~ActionOverride("rngsha02",Enemy())
++ ~Specifics(Player1,12)~ + ~You are not the only one who controls the shadows, creature. As I see it, you shall be the one to be submit to *me*.~ EXTERN SHADEL shadel.1
++ ~Specifics(Player1,12)~ + ~Come and be destroyed, then.~ DO ~ActionOverride("rngsha02",Enemy())
 Enemy()~ EXIT
 END
 

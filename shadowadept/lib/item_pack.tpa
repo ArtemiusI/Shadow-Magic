@@ -492,15 +492,6 @@ COPY ~%MOD_FOLDER%/itempack/c0sarng2.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sarn2a.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sarn2b.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sarng2.itm~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 177 // display string
-      match_parameter1 = 0
- parameter1 = 12
- parameter2 = 6
-  END
 SAY NAME1 ~Ring~
 SAY NAME2 ~Ring of Shadowkin~
 SAY DESC ~This ring appears to be made of a smoky-grey material with a surface which is constantly shifting with movements that resemble flowing water. When worn, the wearer becomes partially translucent, resembling a shadow.
@@ -511,8 +502,8 @@ Charge abilities:
 – Charm Spectral Undead for 5 turns three times per day (Save vs. Spell negates)
 
 Equipped abilities:
-– Armor Class: +1, +3 vs. spectral undead
-– Saving Throws: +1, +3 vs. spectral undead
+– Armor Class: +1, +3 vs. Spectral Undead
+– Saving Throws: +1, +3 vs. Spectral Undead
 – Charisma: +1 (Shadow Adepts)
 
 Weight: 0~
@@ -1558,20 +1549,11 @@ Requires:
 
 Weight: 2~
 
+COPY ~%MOD_FOLDER%/itempack/c0saxbo1.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0saxbo1.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 12
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept~)
-END
 SAY NAME1 ~Dark Enforcer +2~
 SAY NAME2 ~Dark Enforcer +2~
-SAY DESC ~Weapons such as these are usually given to Shadovar agents working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
+SAY DESC ~Weapons such as these are commonly issued to Shadovar agents working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
 
 STATISTICS:
 
@@ -1580,7 +1562,7 @@ Combat abilities:
 – On a critical hit, cast Drain Vitality on the target
 
 Equipped abilities:
-– Wielded as though specialized (++) in crossbows
+– Wielded as though wielder is specialized (++) in crossbows (Shadow Adepts)
 
 THAC0: +2
 Damage: +2 (missile)
@@ -1592,20 +1574,11 @@ Requires:
 
 Weight: 5~
 
+COPY ~%MOD_FOLDER%/itempack/c0saxbo2.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0saxbo2.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 12
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept~)
-END
 SAY NAME1 ~Dark Enforcer +5~
 SAY NAME2 ~Dark Enforcer +5~
-SAY DESC ~Weapons such as these are usually given to Shadovar agents working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
+SAY DESC ~Weapons such as these are commonly issued to Shadovar agents working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
 
 STATISTICS:
 
@@ -1614,10 +1587,10 @@ Combat abilities:
 – On a critical hit, cast Greater Drain Vitality on the target
 
 Equipped abilities:
-– Wielded as though with grandmastery (+++++) in crossbows
+– Wielded as though wielder has grandmastery (+++++) in crossbows (Shadow Adepts)
 
-THAC0: +2
-Damage: +2 (missile)
+THAC0: +5
+Damage: +5 (missile)
 Speed Factor: 3
 Proficiency Type: Crossbow
 Type: Two-handed

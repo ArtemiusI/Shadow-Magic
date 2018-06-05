@@ -9,6 +9,7 @@ THEN RESPONSE #100
   DisplayStringHead("c0safam",~*growl* "At last, a worthy opponent!"~)
   Wait(4)
   DisplayStringHead("c0safam",~"Come then, wyrm! Your blood shall taste the sweetest!"~)
+  Continue()
 END
 
 IF
@@ -20,6 +21,7 @@ THEN RESPONSE #100
   Wait(2)
   SetGlobal("C0SAFamiliarThaxInterjection","AR1402",1)
   DisplayStringHead("c0safam",~"Brave you are, massster... I ssshall do my utmossst to aid!"~)
+  Continue()
 END
 
 IF
@@ -31,6 +33,7 @@ THEN RESPONSE #100
   Wait(2)
   SetGlobal("C0SAFamiliarThaxInterjection","AR1402",1)
   DisplayStringHead("c0safam",~"Agh, have you got a deathwish, boss?!"~)
+  Continue()
 END
 
 IF
@@ -42,6 +45,7 @@ THEN RESPONSE #100
   Wait(2)
   SetGlobal("C0SAFamiliarThaxInterjection","AR1402",2)
   DisplayStringHead("c0safam",~"A fine hunt, summoner. Savor the taste of hard-earned victory."~)
+  Continue()
 END
 
 IF
@@ -53,6 +57,7 @@ THEN RESPONSE #100
   Wait(2)
   SetGlobal("C0SAFamiliarThaxInterjection","AR1402",2)
   DisplayStringHead("c0safam",~"Mossst impressive, massster..."~)
+  Continue()
 END
 
 IF
@@ -64,4 +69,5 @@ THEN RESPONSE #100
   Wait(2)
   SetGlobal("C0SAFamiliarThaxInterjection","AR1402",2)
   DisplayStringHead("c0safam",~"Whoa, what a monster... but we showed him who's boss, eh, boss?"~)
+  Continue()
 END
