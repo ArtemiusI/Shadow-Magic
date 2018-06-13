@@ -85,7 +85,7 @@ IF
 THEN
   RESPONSE #100
 	SetGlobal("C0SAFirstMemory","LOCALS",3)
-	ApplySpellRES("c0samemo",Myself)
+	Rest()
 END
 
 IF
@@ -95,7 +95,7 @@ IF
 THEN
   RESPONSE #100
 	SetGlobal("C0SAFirstMemory","LOCALS",3)
-	ApplySpellRES("c0samemo",Myself)
+	Rest()
 END
 
 // Familiar

@@ -34,7 +34,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Rrgh... I will not fall so pitifully a second time."~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
@@ -44,7 +44,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Yin'rou will never die!"~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
@@ -54,7 +54,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"So long as we are bound, death has no hold on me, summoner."~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
@@ -64,7 +64,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"There isss no end to my exissstence..."~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
@@ -74,7 +74,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"My deepessst apologiesss, massster..."~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
@@ -84,7 +84,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"I return..."~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
@@ -94,7 +94,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Well, that never gets any more pleasant. Let's not have that happen again, 'kay boss?"~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
@@ -104,7 +104,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Oof, I'll be feeling that one for days to come..."~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
@@ -114,7 +114,7 @@ IF
 THEN RESPONSE #100
   SetGlobal("Revival","LOCALS",0)
   DisplayStringHead(Myself,~"Hope you weren't too worried, boss."~)
-  ApplySpellRES("c0safamr",Myself)
+  Rest()
 END
 
 IF
