@@ -4800,27 +4800,28 @@ Saving Throw: 1/2
 When this spell is cast, the target suffers damage equal to 2% of their maximum hit points per level of the caster up to a maximum of 40%. The target may make a Saving Throw vs. Death at -2 to take half damage.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA509.spl~ ~override~
-SAY NAME1 ~Shadow Chain~
-SAY NAME2 ~Shadow Chain~
-SAY UNIDENTIFIED_DESC ~Shadow Chain
-(Conjuration/Summoning – Shadow Weave)
+SAY NAME1 ~Shadow Will~
+SAY NAME2 ~Shadow Will~
+SAY UNIDENTIFIED_DESC ~Shadow Will
+(Enchantment/Charm – Shadow Weave)
 
 Level: 5
-Range: Visual range of the caster
-Duration: Special
-Casting Time: 1
-Area of Effect: 30 ft. radius
-Saving Throw: None
+Range: 40 ft.
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
 
-This spell creates several shadowy threads which wraps itself around all enemies in a 30 ft. radius from the center of the caster's targeted location. and pulls them towards the caster. It deals no damage, but targets become immobilized for the duration and are unable to attack or use spells for one round.~
+Shadow Will causes the subject's intellect to degenerate into that of a simple beast of burden unless a Saving Throw vs. Spell is made with a -4 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon <PRO_HIMHER>. Additionally, if the spell succeeds, the caster receives a portion of the target's mental capacity, gaining a non-cumulative +2 bonus to Intelligence and Wisdom for two turns.~
 
-COPY ~%MOD_FOLDER%/spells/C0SA509a.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
-END
+COPY ~%MOD_FOLDER%/spells/C0SA509A.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+	  parameter1 = RESOLVE_STR_REF (~Temporary Intelligence and Wisdom Bonus~)
+  END
 
 COPY ~%MOD_FOLDER%/spells/C0SA510.spl~ ~override~
 SAY NAME1 ~Void Blast~
@@ -4841,7 +4842,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a Save vs. Spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds.~
+With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a Save vs. Spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds. Summoned creatures struck by the blast are permanently banished with no saving throw.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA510A.spl~ ~override~
   LPF ALTER_EFFECT

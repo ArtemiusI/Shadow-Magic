@@ -527,7 +527,7 @@ SAY ~Choose one 5th level spell:~
 + ~!HaveKnownSpellRES("c0sa506")~ + ~Shar's Memory Drain~ + 5.6
 + ~!HaveKnownSpellRES("c0sa507")~ + ~Unmask~ + 5.7
 + ~!HaveKnownSpellRES("c0sa508")~ + ~Nightshade~ + 5.8
-+ ~!HaveKnownSpellRES("c0sa509")~ + ~Shadow Chain~ + 5.9
++ ~!HaveKnownSpellRES("c0sa509")~ + ~Shadow Will~ + 5.9
 + ~!HaveKnownSpellRES("c0sa510")~ + ~Void Blast~ + 5.10
 + ~!HaveKnownSpellRES("c0sa511")~ + ~Shadow Screen~ + 5.11
 + ~!HaveKnownSpellRES("c0sa512")~ + ~Summon Nighthaunt~ + 5.12
@@ -1577,24 +1577,24 @@ When this spell is cast, the target suffers damage equal to 2% of their maximum 
 END
 
 IF ~~ 5.9
-SAY ~Shadow Chain
-(Conjuration/Summoning – Shadow Weave)
+SAY ~Shadow Will
+(Enchantment/Charm – Shadow Weave)
 
 Level: 5
-Range: Visual range of the caster
-Duration: Special
-Casting Time: 1
-Area of Effect: 30 ft. radius
-Saving Throw: None
+Range: 40 ft.
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
 
-This spell creates several shadowy threads which wraps itself around all enemies in a 30 ft. radius from the center of the caster's targeted location. and pulls them towards the caster. It deals no damage, but targets become disoriented once they arrive and are unable to attack or use spells for 1 round.~
+Shadow Will causes the subject's intellect to degenerate into that of a simple beast of burden unless a Saving Throw vs. Spell is made with a -4 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon <PRO_HIMHER>. Additionally, if the spell succeeds, the caster receives a portion of the target's mental capacity, gaining a non-cumulative +2 bonus to Intelligence and Wisdom for two turns.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","LOCALS",-1) SetGlobal("C0SA509","LOCALS",1) AddSpecialAbility("C0SA509")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 
 IF ~~ 5.10
 SAY ~Void Blast
-(Evocation – Shadow Weave)
+(Invocation/Evocation – Shadow Weave)
 
 Level: 5
 Range: 90 ft.
@@ -1603,7 +1603,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a Save vs. Spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds.~
+With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a Save vs. Spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds. Summoned creatures struck by the blast are permanently banished with no saving throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","LOCALS",-1) SetGlobal("C0SA510","LOCALS",1) AddSpecialAbility("C0SA510")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
