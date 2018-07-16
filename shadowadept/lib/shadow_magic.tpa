@@ -2923,7 +2923,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacha2.spl~ ~override/c0sacha2.spl~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 325
-	  target = 1
+	  target = 2
 	  timing = 9
 	  parameter1 = 0 - 5
 END
@@ -2931,7 +2931,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacha2.spl~ ~override/c0sacha3.spl~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 325
-	  target = 1
+	  target = 2
 	  timing = 9
 	  parameter1 = 0 - 4
 END
@@ -2939,7 +2939,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacha2.spl~ ~override/c0sacha4.spl~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 325
-	  target = 1
+	  target = 2
 	  timing = 9
 	  parameter1 = 0 - 3
 END
@@ -2947,7 +2947,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacha2.spl~ ~override/c0sacha5.spl~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 325
-	  target = 1
+	  target = 2
 	  timing = 9
 	  parameter1 = 0 - 2
 END
@@ -2955,7 +2955,7 @@ COPY ~%MOD_FOLDER%/spells/c0sacha2.spl~ ~override/c0sacha6.spl~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 325
-	  target = 1
+	  target = 2
 	  timing = 9
 	  parameter1 = 0 - 1
 END
@@ -2963,6 +2963,8 @@ COPY ~%MOD_FOLDER%/spells/c0sacha2.spl~ ~override/c0sacha7.spl~
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 325
+	  target = 2
+	  timing = 9
 	  parameter1 = 1
 END
 COPY_EXISTING ~c0sacha7.spl~ ~override/c0sacha8.spl~
@@ -3786,26 +3788,61 @@ Upon casting this spell, a spear made of shadowstuff forms in the caster's hands
 The spear is not affected by Magic Resistance. Targets may make a Saving Throw vs. Death (-1 per spear upgrade) to avoid all secondary effects.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa309a.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string\
+ parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
+ END
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
 COPY ~%MOD_FOLDER%/spells/c0sa309b.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string\
+ parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
+ END
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
 COPY ~%MOD_FOLDER%/spells/c0sa309c.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string\
+ parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
+ END
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
 COPY ~%MOD_FOLDER%/spells/c0sa309d.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string\
+ parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
+ END
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
 
 COPY ~%MOD_FOLDER%/spells/c0sa309e.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string\
+ parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
+ END
 SAY NAME1 ~Shadow Spear~
 SAY NAME2 ~Shadow Spear~
 WRITE_SHORT 0x9C ~%c0sasper%~
@@ -4925,6 +4962,15 @@ SAY NAME2 ~Nighthaunt~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~c0nighth~ #8
   WRITE_ASCII 0x280 ~c0nighth~  #32
+  
+COPY ~%MOD_FOLDER%/spells/c0nvamp1.cre~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string\
+ parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+ END
 
 COPY ~%MOD_FOLDER%/spells/C0SA601.spl~ ~override~
 SAY NAME1 ~Shar's Shield~

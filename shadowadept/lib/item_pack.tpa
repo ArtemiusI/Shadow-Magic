@@ -439,7 +439,7 @@ SAY DESC ~This bottle contains a mysterious black-colored liquid which gives off
 
 STATISTICS:
 
-Special: Protects from Constitution loss by casting Shadow Weave spells
+Special: Protects against Constitution loss from casting Shadow Weave spells
 Duration: 1 turn
 
 Weight: 1~
@@ -597,88 +597,6 @@ Requires:
  11 Strength
 
 Weight: 7~
-
-COPY ~%MOD_FOLDER%/itempack/c0sas1h3.itm~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
-  END
-SAY NAME1 ~Scimitar~
-SAY NAME2 ~Soulbane +4~
-SAY UNIDENTIFIED_DESC ~The long, curved, single-edged blade is characteristic of both the saber and the scimitar, even though their origins lie in different parts of Faerûn. Whereas the saber was intended chiefly for horsemen, mainly due to its versatility, the scimitar has a heavier oriental influence. The "shamshir," as it was originally called, is larger, more highly curved, and tapered to an elongated, sharp point. This makes the weapon slightly slower but more effective and deadly in combat.
-
-STATISTICS:
-
-Damage: 1d8 (slashing)
-Speed Factor: 5
-Proficiency Type: Scimitar/Wakizashi/Ninjatō
-Type: One-handed
-Requires:
- 10 Strength
-
-Weight: 4~
-SAY DESC ~This scimitar was the signature weapon of Septimus Victus, a Shadovar warrior. Its wicked edge is complemented by life-draining magic that permanently weakens anyone it cuts.
-
-STATISTICS:
-
-Combat abilities:
-– Each hit reduces target's save vs. death modifier by one point for five turns
-– Each hit drains two levels on a failed save vs. death at -2
-
-Equipped abilities:
-– Magic Resistance: +25%
-
-THAC0: +4
-Damage: 1d8+6, +2 magic
-Damage type: slashing
-Speed Factor: 1
-Proficiency Type: Scimitar/Wakizashi/Ninjatō
-Type: One-handed
-Requires:
- 10 Strength
-
-Weight: 1~
-
-COPY ~%MOD_FOLDER%/itempack/c0sas1h4.spl~ ~override~
-COPY ~%MOD_FOLDER%/itempack/c0sas1h4.itm~ ~override~
-SAY NAME1 ~Katana~
-SAY NAME2 ~Weaveshear +2~
-SAY UNIDENTIFIED_DESC ~The katana is a single-edged, slightly curved sword that ends with a chisel point. The katana is perhaps one of the finest swords ever made, the steps to its creation a long and secret process that is more art form than anything else. This blade is an important facet of Kara-Turan culture. To touch or wield a samurai's katana is to insult the samurai and to incite his wrath. For a gaijin, or foreigner, to own such a blade is a rare occurrence. Either the gaijin is a greatly honored friend of an important minister, or the gaijin has murdered a samurai.
-
-STATISTICS:
-
-Damage: 1d10 (slashing)
-Speed Factor: 4
-Proficiency Type: Katana
-Type: One-handed
-Requires:
- 6 Strength
-
-Weight: 6~
-SAY DESC ~This blade was the signature weapon of the ogre mage Shadruk, who by all accounts forged it from a wound in the Weave. Whether such a thing is true is debatable, but the blade's disruptive powers lend some credibility to the claim.
-
-STATISTICS:
-
-Combat abilities:
-– Each hit inflicts a cumulative 5% chance of spell failure (no save)
-– On a critical hit, drain two wizard spells of up to 6th level and restores two of the wielder's wizard spells
-
-Equipped abilities:
-– Magic Resistance: +5%
-
-THAC0: +2
-Damage: 1d10+2 (slashing)
-Speed Factor: 2
-Proficiency Type: Katana
-Type: One-handed
-Requires:
- 6 Strength
-
-Weight: 4~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawand.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sawand.spl~ ~override~
@@ -1115,6 +1033,7 @@ Charge abilities (three times per day):
 
 Weight: 3~
 
+ACTION_IF FILE_EXISTS_IN_GAME ~CHAN09.ITM~ THEN BEGIN
 COPY ~%MOD_FOLDER%/itempack/c0sacha1.itm~ ~override/chan09.itm~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
@@ -1152,6 +1071,7 @@ Requires:
  8 Strength
 
 Weight: 5~
+END
 
 COPY ~%MOD_FOLDER%/itempack/c0samas1.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0samas2.eff~ ~override~
@@ -1219,6 +1139,7 @@ COPY_EXISTING ~demilich.cre~ ~override~
 ADD_CRE_ITEM ~c0sanos1~ #0 #0 #0 ~NONE~ ~inv~
 END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~leat19.itm~ THEN BEGIN
 COPY ~%MOD_FOLDER%/itempack/leat19a.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19b.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19c.eff~ ~override~
@@ -1238,6 +1159,7 @@ Requires:
  6 Strength
 
 Weight: 10~
+END
 
 COMPILE ~%MOD_FOLDER%/dialogue/c0sascrl.d~
 
@@ -1521,80 +1443,3 @@ STATISTICS:
 Special: Learn one 9th level Shadow Weave spell.
 
 Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0salea1.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 12
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept~)
-END
-SAY NAME1 ~Shadovar Armor~
-SAY NAME2 ~Shadovar Armor~
-SAY DESC ~This suit of dark-colored leather armor is tattered and worn from use, but provides some measure of protection regardless. Its unusual lightness and flexibility allows the user to cast spells without hindrance while wearing it.
-
-STATISTICS:
-
-Equipped abilities:
-– Hide In Shadows: +10%
-– Spellcasting is not disabled
-
-Armor Class: 5 (3 vs. slashing, 7 vs. piercing and missile)
-Requires:
- 6 Strength
-
-Weight: 2~
-
-COPY ~%MOD_FOLDER%/itempack/c0saxbo1.eff~ ~override~
-COPY ~%MOD_FOLDER%/itempack/c0saxbo1.itm~ ~override~
-SAY NAME1 ~Dark Enforcer +2~
-SAY NAME2 ~Dark Enforcer +2~
-SAY DESC ~Weapons such as these are commonly issued to Shadovar agents working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
-
-STATISTICS:
-
-Combat abilities:
-– 10% chance per hit to cast Shadowfade on the wielder
-– On a critical hit, cast Drain Vitality on the target
-
-Equipped abilities:
-– Wielded as though wielder is specialized (++) in crossbows (Shadow Adepts)
-
-THAC0: +2
-Damage: +2 (missile)
-Speed Factor: 3
-Proficiency Type: Crossbow
-Type: Two-handed
-Requires:
- 8 Strength
-
-Weight: 5~
-
-COPY ~%MOD_FOLDER%/itempack/c0saxbo2.eff~ ~override~
-COPY ~%MOD_FOLDER%/itempack/c0saxbo2.itm~ ~override~
-SAY NAME1 ~Dark Enforcer +5~
-SAY NAME2 ~Dark Enforcer +5~
-SAY DESC ~Weapons such as these are commonly issued to Shadovar agents working for the high-ranking mages of Thultanthar. Over the years, however, many have been taken from their rightful owners, whether alive or dead, and sold in underground black markets.
-
-STATISTICS:
-
-Combat abilities:
-– 25% chance per hit to cast Shadowfade on the wielder
-– On a critical hit, cast Greater Drain Vitality on the target
-
-Equipped abilities:
-– Wielded as though wielder has grandmastery (+++++) in crossbows (Shadow Adepts)
-
-THAC0: +5
-Damage: +5 (missile)
-Speed Factor: 3
-Proficiency Type: Crossbow
-Type: Two-handed
-Requires:
- 8 Strength
-
-Weight: 5~
