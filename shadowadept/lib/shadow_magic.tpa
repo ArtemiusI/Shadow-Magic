@@ -4963,7 +4963,7 @@ SAY NAME2 ~Nighthaunt~
   WRITE_ASCII 0x248 ~c0nighth~ #8
   WRITE_ASCII 0x280 ~c0nighth~  #32
   
-COPY ~%MOD_FOLDER%/spells/c0nvamp1.cre~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0nvamp1.itm~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
