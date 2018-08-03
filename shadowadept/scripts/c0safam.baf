@@ -141,8 +141,7 @@ IF
   RandomNum(3,3)
 THEN RESPONSE #100
   SetGlobal("Summoned","LOCALS",0)
-  PlaySound("WWOLF03")
-  DisplayStringHead(Myself,~*howl*~)
+  DisplayStringHead(Myself,~*howl*~ [WWOLF03])
 END
 
 IF

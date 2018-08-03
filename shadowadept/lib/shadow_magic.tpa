@@ -1087,6 +1087,7 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj22.PRO~ ~SM Nightshade~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj23.PRO~ ~SM Night Knives 3~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj24.PRO~ ~SM Void Blast~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj25.PRO~ ~SM Blackfire Ruin~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj26.PRO~ ~SM Shadow Glyph~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0negeb.PRO~ ~SM Negative Burst~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0weird.PRO~ ~SM Weird~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0night2.PRO~ ~SM Night Knives 2~
@@ -5509,6 +5510,37 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sarain%~
 END
 
+COPY ~%MOD_FOLDER%/spells/c0sa713.spl~ ~override~
+SAY NAME1 ~Dark Renewal~
+SAY UNIDENTIFIED_DESC ~Dark Renewal
+(Necromancy – Shadow Weave) 
+
+Level: 7
+Sphere: Healing 
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This powerful spell calls upon the energies of the Shadow Weave to wipe away disease and injury in the creature who receives the benefits of the spell. It completely cures all disease and blindness in the recipient and heals all points of damage suffered due to wounds or injury. It also dispels a Feeblemind spell and cures those mental disorders caused by spells or injury to the brain. Naturally, the effects can be negated by later wounds, injuries, and diseases.
+
+Additionally, if this spell is cast upon a dead party member, it will restore them to life, but the caster is permanently drained of four levels which may only be recovered via a Restoration spell.~
+
+COPY ~%MOD_FOLDER%/spells/c0sa714.spl~ ~override~
+SAY NAME1 ~Death Touch~
+SAY UNIDENTIFIED_DESC ~Death Touch
+(Necromancy)
+
+Level: 7
+Range: Touch
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+After casting this spell, the shadow adept touches the target creature with a> hand charged with necrotic energy. If the target fails a Save vs. Death at -4, the touch will reduce them to 1 Hit Point. The amount of damage dealt by this spell is added to the caster's Hit Points, but will not heal <PRO_HIMHER> past <PRO_HISHER> maximum.~
+
 COPY ~%MOD_FOLDER%/spells/C0SA801.spl~ ~override~
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -5952,6 +5984,77 @@ This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of
 
 This spell is not affected by Magic Resistance. Creatures that are immune to cold are unaffected by the blizzard.~
 
+COPY ~%MOD_FOLDER%/spells/c0sa814.spl~ ~override~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj26%~
+END
+SAY NAME1 ~Sacred Shadow~
+SAY NAME2 ~Sacred Shadow~
+SAY UNIDENTIFIED_DESC ~Sacred Shadow
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 8
+Range: 90 ft.
+Duration: Special
+Casting Time: 9
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This powerful spell inscribes a blessed symbol upon the targeted location, which remains there until any creature comes too close, at which point it will explode, causing all enemies within the area to make a Save vs. Spell at a -4 penalty or become silenced and deal 50% reduced damage for 1 turn. Allies within the area gain a +50% bonus to damage for the duration.~
+COPY ~%MOD_FOLDER%/spells/c0sa814a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+ parameter1 = RESOLVE_STR_REF (~Silenced~)
+  END
+  
+COPY ~%MOD_FOLDER%/spells/c0sa814z.spl~ ~override~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj26%~
+END
+SAY NAME1 ~Sacred Shadow~
+SAY NAME2 ~Sacred Shadow~
+SAY UNIDENTIFIED_DESC ~Sacred Shadow
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 8
+Range: 90 ft.
+Duration: Special
+Casting Time: 9
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This powerful spell inscribes a blessed symbol upon the targeted location, which remains there until any creature comes too close, at which point it will explode, causing all enemies within the area to make a Save vs. Spell at a -4 penalty or become silenced and deal 50% reduced damage for 1 turn. Allies within the area gain a +50% bonus to damage for the duration.~
+
+COPY ~%MOD_FOLDER%/spells/c0sa815.spl~ ~override~
+READ_LONG 0x64 "abil_off"
+READ_SHORT 0x68 "abil_num"
+SET "delta" = 0
+FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj26%~
+END
+SAY NAME1 ~Curse of Oblivion~
+SAY NAME2 ~Curse of Oblivion~
+SAY UNIDENTIFIED_DESC ~Curse of Oblivion
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 8
+Range: 90 ft.
+Duration: Special
+Casting Time: 9
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This powerful spell inscribes a cursed symbol upon the targeted location, which remains there until any creature comes too close, at which point it will explode, causing all those within the area to make a Save vs. Spell at a -4 penalty or have their morale and senses crippled, affecting them with fear, blindness, silence, slow and deafness (75% chance to miscast magic) for 1 turn.~
+
 COPY ~%MOD_FOLDER%/spells/c0sa901.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
@@ -6239,6 +6342,49 @@ Saving Throw: None
 
 When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.This spell is not affected by Magic Resistance. Creatures immune to fire are unaffected.~
 
+COPY ~%MOD_FOLDER%/spells/c0sa910.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+	  match_opcode = 206
+	  match_parameter2 = 0
+	  parameter1 = RESOLVE_STR_REF (~You may not summon another dragon until eight hours have passed.~)
+  END
+SAY NAME1 ~Shadowcall~
+SAY UNIDENTIFIED_DESC ~Shadowcall
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 9
+Range: 30 ft.
+Duration: 8 hours
+Casting Time: 9
+Area of Effect: Special 
+Saving Throw: None 
+
+By means of this powerful spell, the shadow adept calls upon a mighty shadow dragon from the Plane of Shadow to assist <PRO_HIMHER> in combat. The shadow dragon will fight as the summoner's ally, but cannot be directly controlled. Only one dragon may be summoned every eight hours.~
+
+COPY ~%MOD_FOLDER%/spells/c0shadra.cre~ ~override~
+SAY NAME1 ~Shadow Dragon~
+SAY NAME2 ~Shadow Dragon~
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
+  WRITE_ASCII 0x248 ~c0shadra~ #8
+  WRITE_ASCII 0x280 ~c0shadra~  #32
+
+COPY ~%MOD_FOLDER%/spells/c0sa911.spl~ ~override~
+SAY NAME1 ~Shadowsight~
+SAY UNIDENTIFIED_DESC ~Shadowsight
+(Divination – Shadow Weave)
+
+Level: 9
+Range: 30 ft.
+Duration: Permanent
+Casting Time: 10
+Area of Effect: Self 
+Saving Throw: None 
+
+When this powerful spell is cast, the shadow adept peers into the endless depths of the Shadow Weave, drawing upon its power to completely restore <PRO_HISHER> used arcane spells. However, for each use of this spell, the caster incurs a cumulative fatigue penalty and a -4 penalty to all Saving Throws for eight hours.~
+
 COPY ~%MOD_FOLDER%/spells/c0sahla1.spl~ ~override~
 SAY NAME1 ~Relentless Assault~
 SAY NAME2 ~Relentless Assault~
@@ -6254,7 +6400,7 @@ Saving Throw: None
 
 Relentless Assault essentially erases the pause between casting spells. When cast, the shadow can begin casting a new spell the instant <PRO_HESHE> is finished casting <PRO_HISHER> current spell. The effect lasts for 2 rounds.
 
-If the shadow adept's hit points fall below 25% of <PRO_HISHER> maximum during the spell's lifetime, the remaining duration is reset to 2 rounds (only once per cast).~
+If the shadow adept kills a creature during the spell's lifetime, the remaining duration is reset to 2 rounds (only once per cast).~
 
 COPY ~%MOD_FOLDER%/spells/c0saalac.spl~ ~override~
 SAY NAME1 ~Relentless Assault: Second Wind~

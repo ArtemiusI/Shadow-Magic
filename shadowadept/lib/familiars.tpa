@@ -41,7 +41,7 @@ SAY NAME2 ~Call Shadow Familiar~
 SAY UNIDENTIFIED_DESC ~Call Shadow Familiar
 This spell summons the shadow adept's bound shadow familiar from their home plane.~
 
-ACTION_IF NOT GAME_IS ~bg2ee~
+ACTION_IF GAME_IS ~bgee~
 THEN BEGIN
 COMPILE ~%MOD_FOLDER%/dialogue/bg1/c0safam.d~
 END
@@ -55,6 +55,22 @@ EXTEND_TOP ~spshadom.bcs~ ~%MOD_FOLDER%/familiars/scripts/spshadow.baf~
 EXTEND_TOP ~spshadow.bcs~ ~%MOD_FOLDER%/familiars/scripts/spshadow.baf~
 COPY_EXISTING ~shawol01.cre~ ~override~
 WRITE_ASCII 0x280 ~shawol01~ #32 // death variable
+END
+
+ACTION_IF GAME_IS ~eet~
+THEN BEGIN
+COMPILE ~%MOD_FOLDER%/dialogue/eet/c0safam.d~
+EXTEND_TOP ~ar1402.bcs~ ~%MOD_FOLDER%/familiars/scripts/ar1402.baf~
+EXTEND_TOP ~ar1404.bcs~ ~%MOD_FOLDER%/familiars/scripts/ar1404.baf~
+EXTEND_TOP ~spshadom.bcs~ ~%MOD_FOLDER%/familiars/scripts/spshadow.baf~
+EXTEND_TOP ~spshadow.bcs~ ~%MOD_FOLDER%/familiars/scripts/spshadow.baf~
+COPY_EXISTING ~shawol01.cre~ ~override~
+WRITE_ASCII 0x280 ~shawol01~ #32 // death variable
+END
+
+ACTION_IF GAME_IS ~iwdee~
+THEN BEGIN
+COMPILE ~%MOD_FOLDER%/dialogue/iwd/c0safam.d~
 END
 
 COMPILE ~%MOD_FOLDER%/scripts/c0safam.baf~

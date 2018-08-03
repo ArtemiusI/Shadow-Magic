@@ -98,6 +98,25 @@ THEN
 	Rest()
 END
 
+// Missing Spells
+IF
+	Specifics(Myself,12)
+	OR(9)
+	GlobalGT("C0SALv1","LOCALS",0)
+	GlobalGT("C0SALv2","LOCALS",0)
+	GlobalGT("C0SALv3","LOCALS",0)
+	GlobalGT("C0SALv4","LOCALS",0)
+	GlobalGT("C0SALv5","LOCALS",0)
+	GlobalGT("C0SALv6","LOCALS",0)
+	GlobalGT("C0SALv7","LOCALS",0)
+	GlobalGT("C0SALv8","LOCALS",0)
+	GlobalGT("C0SALv9","LOCALS",0)
+	!Global("C0SABOOK","LOCALS",1)
+THEN
+  RESPONSE #100
+	ActionOverride(LastSummonerOf(Myself),StartDialogOverride("c0satalk",Myself))
+END
+
 // Familiar
 
 IF
@@ -1163,7 +1182,20 @@ IF
 	Specifics(Myself,12)
 	ActionListEmpty()
 	Global("C0SA806","LOCALS",1)
+	OR(2)
 	!HaveKnownSpellRES("C0SA806")
+	!HaveKnownSpellRES("C0SA813")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("C0SA806")
+	Continue()
+END
+IF 
+	Specifics(Myself,12)
+	ActionListEmpty()
+	Global("C0SA806","LOCALS",1)
+	Global("C0BlackfireRuin","LOCALS",3)
+	!HaveKnownSpellRES("C0SA813")
 THEN
   RESPONSE #100
 	AddSpecialAbility("C0SA806")
@@ -1330,4 +1362,44 @@ THEN
   RESPONSE #100
 	AddSpecialAbility("C0SA909")
 	Continue()
+END
+
+IF
+  Global("C0EBONSHADEDEADMAGIC","GLOBAL",1)
+  Global("C0SASPF","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    ReallyForceSpellDeadRES("C0SASPF",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("C0EBONSHADEDEADMAGIC","GLOBAL",0)
+  Global("C0SASPF","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    ReallyForceSpellDeadRES("C0SASPF2",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("C0DISABLESHADOWSTEP","GLOBAL",1)
+  Global("C0SASHN","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    ReallyForceSpellDeadRES("C0SASHN",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("C0DISABLESHADOWSTEP","GLOBAL",0)
+  Global("C0SASHN","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    ReallyForceSpellDeadRES("C0SASHN2",Myself)
+    SetInterrupt(TRUE)
 END

@@ -439,16 +439,7 @@ OR(9)
 !HaveKnownSpellRES("c0sa907")
 !HaveKnownSpellRES("c0sa908")
 !HaveKnownSpellRES("c0sa909")~ + ~9th level~ + level9
-IF ~~ DO ~SetGlobal("C0SALv1","LOCALS",0)
-SetGlobal("C0SALv2","LOCALS",0)
-SetGlobal("C0SALv3","LOCALS",0)
-SetGlobal("C0SALv4","LOCALS",0)
-SetGlobal("C0SALv5","LOCALS",0)
-SetGlobal("C0SALv6","LOCALS",0)
-SetGlobal("C0SALv7","LOCALS",0)
-SetGlobal("C0SALv8","LOCALS",0)
-SetGlobal("C0SALv9","LOCALS",0)
-ClearAllActions()~ EXIT
+IF ~~ DO ~ClearAllActions()~ EXIT
 END
 
 IF ~~ level1
@@ -2397,8 +2388,7 @@ IF ~OR(9)
 !Global("C0SALv6","LOCALS",0)
 !Global("C0SALv7","LOCALS",0)
 !Global("C0SALv8","LOCALS",0)
-!Global("C0SALv9","LOCALS",0)~ DO ~StartCutsceneMode()
-StartDialogOverride("c0satalk",Myself)~ EXIT
+!Global("C0SALv9","LOCALS",0)~ DO ~StartDialogOverride("c0satalk",Myself)~ EXIT
 IF ~Global("C0SAFirstMemory","LOCALS",0)
 Global("C0SALv1","LOCALS",0)
 Global("C0SALv2","LOCALS",0)

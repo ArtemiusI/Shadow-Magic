@@ -2,24 +2,9 @@
 
 IF
   OnCreation()
-  Detect(Lastsummonerof(Myself))
-  !Global("C0SABOOK","GLOBAL",1)
-THEN
-  RESPONSE #100
-	SetGlobal("Start","LOCALS",1)
-END
-
-IF
-  Global("Start","LOCALS",1)
+  InMyArea(Lastsummonerof(Myself))
 THEN
   RESPONSE #100
     ActionOverride(LastSummonerOf(Myself),StartDialogOverride("c0satalk",Myself))
 	DestroySelf()
 END
-
-IF
-	Global("C0SABOOK","GLOBAL",1)
-THEN
-  RESPONSE #100
-  DestroySelf()
- END
