@@ -51,6 +51,18 @@ END
 /////////SCRIPTS////////////////////////
 ////////////////////////////////////////
 
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
+END
+
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcutgl2.bcs~ THEN BEGIN
 COMPILE ~%MOD_FOLDER%/dialogue/soddial.d~
 COMPILE ~%MOD_FOLDER%/scripts/c0cutgl2.baf~

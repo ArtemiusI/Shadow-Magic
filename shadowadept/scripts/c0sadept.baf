@@ -10,6 +10,37 @@ THEN
 END
 
 IF
+  InMyArea(Myself)
+  AreaType(OUTDOOR)
+  TimeGT(DAWN_START)
+  TimeLT(DUSK_END)
+  Global("C0SADaytimePenalty","LOCALS",0)
+THEN
+	RESPONSE #100
+    SetInterrupt(FALSE)
+	SetGlobal("C0SADaytimePenalty","LOCALS",1)
+    ApplySpellRES("C0SADAY3",Myself)
+    SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+  InMyArea(Myself)
+  OR(3)
+  !AreaType(OUTDOOR)
+  !TimeGT(DAWN_START)
+  !TimeLT(DUSK_END)
+  Global("C0SADaytimePenalty","LOCALS",1)
+THEN
+	RESPONSE #100
+    SetInterrupt(FALSE)
+	SetGlobal("C0SADaytimePenalty","LOCALS",0)
+    ApplySpellRES("C0SADAY4",Myself)
+    SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
   !See(Nearestenemyof(Myself))
   OR(5)
     Global("OH_Active","LOCALS",0)

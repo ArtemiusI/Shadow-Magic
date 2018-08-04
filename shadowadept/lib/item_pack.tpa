@@ -531,6 +531,13 @@ Weight: 0~
 
 COPY ~%MOD_FOLDER%/itempack/c0sarn3a.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sarn3b.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+ parameter1 = RESOLVE_STR_REF (~Healed~)
+  END
 COPY ~%MOD_FOLDER%/itempack/c0sarn3c.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sarng3.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sarng3.itm~ ~override~
@@ -553,6 +560,40 @@ STATISTICS:
 Equipped abilities:
 – Bless
 – Wearer is healed for 1d6 hit points every time <PRO_HESHE> casts a Shadow Weave spell.
+
+Weight: 0~
+
+COPY ~%MOD_FOLDER%/itempack/c0sarn4a.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarn4b.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+ parameter1 = RESOLVE_STR_REF (~Saving Throws Lowered~)
+  END
+COPY ~%MOD_FOLDER%/itempack/c0sarn4c.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarng4.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sarng4.itm~ ~override~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY NAME1 ~Ring~
+SAY NAME2 ~Dread Black Ring~
+SAY DESC ~This pitch black metal ring radiates an powerful aura of Shadow Weave magic. When worn by a shadow adept, it greatly empowers them by causing their spells to greatly weaken their victims, making them susceptible to a continued onslaught of magical attacks. When worn by anyone other than a shadow adept, however, they find themselves overwhelmed by disgust and feel compelled to remove it as quickly as possible.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +5%
+– Wearer's offensive Shadow Weave spells incur a Saving Throw penalty of -1 for 3 rounds on the target (applies after spell effects)
 
 Weight: 0~
 
@@ -753,7 +794,7 @@ END
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~15% of maximum hit points lost~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage from <DAMAGER>^-~)
   END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Nightshade~
