@@ -1,0 +1,49 @@
+IF
+	Global("C02SAZAALSPAWN","MYAREA",0)
+	Global("C02SASpectacle","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C02SAZAALSPAWN","MYAREA",1)
+	CreateCreature("c02samag",[1038.344],W)
+END
+
+IF
+	Dead("C02SACHI")
+	!Dead("C02SAMAG")
+	InMyArea("C02SAMAG")
+	Global("C02SASpectacle","GLOBAL",1)
+	CombatCounter(0)
+THEN
+  RESPONSE #100
+	Wait(2)
+	ActionOverride("C02SAMAG",StartDialogueNoSet([PC])
+END
+
+IF
+	CheckSpellState("C02SAMAG",SPECTACLES_QUEST)
+	IsActive("C02SAMAG")
+	!HasItemEquiped("bdmisc01",Player1)
+	!HasItemEquiped("bdmisc01",Player2)
+	!HasItemEquiped("bdmisc01",Player3)
+	!HasItemEquiped("bdmisc01",Player4)
+	!HasItemEquiped("bdmisc01",Player5)
+	!HasItemEquiped("bdmisc01",Player6)
+THEN
+	RESPONSE #100
+		Deactivate("C02SAMAG")
+END
+
+IF
+	CheckSpellState("C02SAMAG",SPECTACLES_QUEST)
+	!IsActive("C02SAMAG")
+	OR(6)
+		HasItemEquiped("bdmisc01",Player1)
+		HasItemEquiped("bdmisc01",Player2)
+		HasItemEquiped("bdmisc01",Player3)
+		HasItemEquiped("bdmisc01",Player4)
+		HasItemEquiped("bdmisc01",Player5)
+		HasItemEquiped("bdmisc01",Player6)
+THEN
+	RESPONSE #100
+		Activate("C02SAMAG")
+END

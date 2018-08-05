@@ -213,13 +213,13 @@ Requires:
 Weight: 4~
 
 
-COMPILE ~shadowadept/dialogue/c0sakryn.d~
-COMPILE ~shadowadept/dialogue/c0samage.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0sakryn.d~
+COMPILE ~%MOD_FOLDER%/dialogue/c0samage.d~
 COMPILE ~%MOD_FOLDER%/dialogue/bg1dial.d~
 
-COMPILE ~shadowadept/scripts/c0sadept.baf~
-COMPILE ~shadowadept/scripts/c0sakryn.baf~
-COMPILE ~shadowadept/scripts/c0satele.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sadept.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sakryn.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0satele.baf~
 
 COPY ~%MOD_FOLDER%/items/c0sasto1.sto~ ~override~
 SAY 0xc ~Darkflame Enclave~
@@ -229,20 +229,41 @@ SAY 0xc ~Darkflame Enclave~
 
 ACTION_IF GAME_IS ~bgee~
 THEN BEGIN
-EXTEND_TOP ~ar2300.bcs~ ~shadowadept/scripts/ar2300.baf~
-EXTEND_TOP ~ar0900.bcs~ ~shadowadept/scripts/ar0900.baf~
-EXTEND_TOP ~ar2615.bcs~ ~shadowadept/scripts/ar2615.baf~
-EXTEND_TOP ~ar3802.bcs~ ~shadowadept/scripts/ar3802.baf~
-EXTEND_TOP ~ar3901.bcs~ ~shadowadept/scripts/ar3901.baf~
-EXTEND_TOP ~ar5001.bcs~ ~shadowadept/scripts/ar5001.baf~
+EXTEND_TOP ~ar2300.bcs~ ~%MOD_FOLDER%/scripts/ar2300.baf~
+EXTEND_TOP ~ar0900.bcs~ ~%MOD_FOLDER%/scripts/ar0900.baf~
+EXTEND_TOP ~ar2615.bcs~ ~%MOD_FOLDER%/scripts/ar2615.baf~
+EXTEND_TOP ~ar3802.bcs~ ~%MOD_FOLDER%/scripts/ar3802.baf~
+EXTEND_TOP ~ar3901.bcs~ ~%MOD_FOLDER%/scripts/ar3901.baf~
+EXTEND_TOP ~ar5001.bcs~ ~%MOD_FOLDER%/scripts/ar5001.baf~
 END
 
 ACTION_IF GAME_IS ~eet~
 THEN BEGIN
-EXTEND_TOP ~bg2300.bcs~ ~shadowadept/scripts/ar2300.baf~
-EXTEND_TOP ~bg0900.bcs~ ~shadowadept/scripts/ar0900.baf~
-EXTEND_TOP ~bg2615.bcs~ ~shadowadept/scripts/ar2615.baf~
-EXTEND_TOP ~bg3802.bcs~ ~shadowadept/scripts/ar3802.baf~
-EXTEND_TOP ~bg3901.bcs~ ~shadowadept/scripts/ar3901.baf~
-EXTEND_TOP ~bg5001.bcs~ ~shadowadept/scripts/ar5001.baf~
+EXTEND_TOP ~bg2300.bcs~ ~%MOD_FOLDER%/scripts/ar2300.baf~
+EXTEND_TOP ~bg0900.bcs~ ~%MOD_FOLDER%/scripts/ar0900.baf~
+EXTEND_TOP ~bg2615.bcs~ ~%MOD_FOLDER%/scripts/ar2615.baf~
+EXTEND_TOP ~bg3802.bcs~ ~%MOD_FOLDER%/scripts/ar3802.baf~
+EXTEND_TOP ~bg3901.bcs~ ~%MOD_FOLDER%/scripts/ar3901.baf~
+EXTEND_TOP ~bg5001.bcs~ ~%MOD_FOLDER%/scripts/ar5001.baf~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~
+THEN BEGIN
+EXTEND_TOP ~bd0113.bcs~ ~%MOD_FOLDER%/scripts/bd0113.baf~
+EXTEND_TOP ~bd3000.bcs~ ~%MOD_FOLDER%/scripts/bd3000.baf~
+EXTEND_TOP ~bdcut42.bcs~ ~%MOD_FOLDER%/scripts/bdcut42.baf~
+COMPILE ~%MOD_FOLDER%/dialogue/c02samag.d~
+COMPILE ~%MOD_FOLDER%/scripts/c02samag.baf~
+COPY ~%MOD_FOLDER%/creatures/c02samag.cre~ ~override~
+WRITE_ASCII 0x2cc ~c02samag~  #8  // dialogue
+WRITE_ASCII 0x280 ~c02samag~ #32 // death variable
+SAY NAME1 ~Kaladan Za'al~
+SAY NAME2 ~Kaladan Za'al~
+
+COPY ~%MOD_FOLDER%/creatures/c02sachi.cre~ ~override~
+WRITE_ASCII 0x280 ~c02sachi~ #32 // death variable
+SAY NAME1 ~Shadow Chimera~
+SAY NAME2 ~Shadow Chimera~
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_CHIMERA~))
+
 END

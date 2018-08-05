@@ -66,7 +66,8 @@ COPY ~%MOD_FOLDER%/SPELLS/C0SADAY3.SPL~ ~OVERRIDE~
       INT_VAR
 	    opcode = 142
 	    target = 2
-		timing = 9
+		timing = 0
+		duration = 1
         parameter2 = (icon_index + 1)
       END
 

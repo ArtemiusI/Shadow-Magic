@@ -1,28 +1,13 @@
 IF
+  InMyArea(Player1)
   AreaType(OUTDOOR)
   TimeGT(DAWN_START)
   TimeLT(DUSK_END)
-  Global("C0SADaytimePenalty","GLOBAL",0)
+  Delay(1)
 THEN
 	RESPONSE #100
     SetInterrupt(FALSE)
-	SetGlobal("C0SADaytimePenalty","GLOBAL",1)
     ReallyForceSpellDeadRES("C0SADAY",Player1)
-    SetInterrupt(TRUE)
-	Continue()
-END
-
-IF
-  OR(3)
-  !AreaType(OUTDOOR)
-  !TimeGT(DAWN_START)
-  !TimeLT(DUSK_END)
-  Global("C0SADaytimePenalty","GLOBAL",1)
-THEN
-	RESPONSE #100
-    SetInterrupt(FALSE)
-	SetGlobal("C0SADaytimePenalty","GLOBAL",0)
-    ReallyForceSpellDeadRES("C0SADAY2",Player1)
     SetInterrupt(TRUE)
 	Continue()
 END

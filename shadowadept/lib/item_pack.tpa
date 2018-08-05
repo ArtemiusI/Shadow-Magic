@@ -323,7 +323,7 @@ Weight: 4~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~ribald3.sto~ THEN BEGIN
 COPY_EXISTING ~ribald3.sto~ ~override~
-ADD_STORE_ITEM ~c0sasta1~ #0 #0 #0 ~IDENTIFIED~ #6
+ADD_STORE_ITEM ~c0sasta1~ #0 #0 #0 ~IDENTIFIED~ #1
 END
 
 ADD_PROJECTILE ~%MOD_FOLDER%/itempack/c0sadagg.pro~
@@ -618,6 +618,32 @@ Equipped abilities:
 – Save vs. Illusion: +2
 – Save vs. Necromancy: +2
 – Save vs. Alteration: +2
+
+Weight: 1~
+
+COPY ~%MOD_FOLDER%/itempack/c0saclc2.itm~ ~override~
+SAY NAME1 ~Cloak~
+SAY NAME2 ~Night's Veil~
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      opcode = 319
+	  target = 1
+	  timing = 2
+	  parameter1 = 12
+	  parameter2 = 6
+	  power = 1
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
+END
+SAY UNIDENTIFIED_DESC ~The cloak can be made in every possible shape with just about every type of fabric. The most common forms are a circular piece of fabric with a hole in the center for the head, and fabric draped from neck, connected by a chain, brooch, cord, or pins.~
+SAY DESC ~This thick cloak is perpetually cold to the touch, and always pitch black even when exposed under the sun's rays. When its cowl is raised, the enchantments within its fabrics causes everything around the wearer to appear faded.
+
+STATISTICS:
+
+Equipped abilities:
+– Protects against the negative effects of daylight
+– Armor Class: +2
+– Saving Throws: +2
+– Hide in Shadows: +20%
 
 Weight: 1~
 

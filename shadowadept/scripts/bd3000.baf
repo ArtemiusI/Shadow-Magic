@@ -1,0 +1,32 @@
+IF
+	!Dead("C02SAMAG")
+	Global("C02SASpectacle","GLOBAL",3)
+	Global("C02SPAWNZAAL","bd3000",0)
+	!GlobalGT("bd_plot","global",394)
+THEN
+  RESPONSE #100
+	SetGlobal("C02SPAWNZAAL","bd3000",1)
+	SetGlobal("C02SASpectacle","GLOBAL",3)
+    CreateCreature("c02samag",[2133.1486],NE)
+	ChangeSpecifics("c02samag",12)
+	ActionOverride("c02samag",ChangeAIScript("c02samag",OVERRIDE))
+	ActionOverride("c02samag",ChangeAIScript("bdasc",CLASS))
+	ActionOverride("c02samag",DestroyItem("bdmisc1b"))
+	ActionOverride("c02samag",DestroyItem("bdspectq"))
+	ActionOverride("c02samag",DestroyItem("c0sawan6"))
+	ActionOverride("c02samag",EquipMostDamagingMelee())
+	ActionOverride("c02samag",ChangeAIScript("C02SAMAG",OVERRIDE))
+	ActionOverride("c02samag",ChangeAIScript("BDASC",OVERRIDE))
+	ActionOverride("c02samag",ChangeAIScript("BDMAGE01",OVERRIDE))
+	ActionOverride("c02samag",ChangeAIScript("C0SADEPT",DEFAULT))
+END
+
+IF
+	!Dead("C02SAMAG")
+	Global("C02SPAWNZAAL","bd3000",1)
+	GlobalGT("bd_plot","global",394)
+THEN
+  RESPONSE #100
+	SetGlobal("C02SPAWNZAAL","bd3000",2)
+	ActionOverride("c02samag",DestroySelf())
+END
