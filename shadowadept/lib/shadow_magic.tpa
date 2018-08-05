@@ -27,39 +27,42 @@
 											25: +50% spell duration		
 */
 
-// Initializing user-defined status icons for shot abilities (EE-only)
-ACTION_IF (GAME_IS ~bgee bg2ee iwdee eet~) BEGIN
-  COPY_EXISTING ~STATDESC.2DA~ ~override~
-    SET icon_index = 82
-    COUNT_2DA_COLS numCols
-    PATCH_IF (numCols > 2) BEGIN
-      READ_2DA_ENTRIES_NOW ~tbl_items~ numCols
-      FOR (row = 0; row < tbl_items; ++row) BEGIN
-        READ_2DA_ENTRY_FORMER ~tbl_items~ row 0 cur_idx
-        PATCH_IF (cur_idx > icon_index) BEGIN
-          SET icon_index = cur_idx
-        END
-      END
-      PATCH_IF (icon_index > 82) BEGIN
-        // Note: Adding rows in reverse order since 2DA functions don't update max. rows internally
-        DEFINE_ASSOCIATIVE_ARRAY icon_defs BEGIN 
-          1000 => ~c0saic01~
-        END
-        SET cur_index = icon_index + 1
-        PHP_EACH icon_defs AS ref => icn_name BEGIN
-          SET cur_strref = RESOLVE_STR_REF((AT ref))
-          TEXT_SPRINT icon_row ~%cur_index%        %cur_strref%          %icn_name%~
-          INSERT_2DA_ROW tbl_items numCols ~%icon_row%~
-          SET cur_index -= 1
-        END
-        INNER_ACTION BEGIN
-          COPY ~%MOD_FOLDER%/spells/bams/c0saic01.bam~ ~override~
-        END
-      END
-    END
-END ELSE BEGIN
-  OUTER_SET icon_index = 82
+// ICONS
+
+DEFINE_ACTION_FUNCTION cd_new_portrait_icon
+  INT_VAR string = 0
+  STR_VAR bam_file = "****"
+  RET     icon
+  BEGIN
+
+  COPY_EXISTING ~statdesc.2da~ ~override~
+    COUNT_2DA_ROWS 3 count
+    READ_2DA_ENTRY (count - 1) 0 3 icon
+    SET icon += 1
+
+  APPEND ~statdesc.2da~ ~%icon% %string% %bam_file%~ UNLESS ~%bam_file%~
+
 END
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Weakened~) STR_VAR bam_file = c0saic01 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Constitution Lowered~) STR_VAR bam_file = c0saic02 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Void Edge~) STR_VAR bam_file = c0saic03 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Fire Shield (Shadow)~) STR_VAR bam_file = c0saic04 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadeskin~) STR_VAR bam_file = c0saic05 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Blessing~) STR_VAR bam_file = c0saic06 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Negative Immunity~) STR_VAR bam_file = c0saic07 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Pain Mirror~) STR_VAR bam_file = c0saic08 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Shield~) STR_VAR bam_file = c0saic09 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Umbral Blades~) STR_VAR bam_file = c0saic10 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Vengeful Shade~) STR_VAR bam_file = c0saic11 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Possession~) STR_VAR bam_file = c0saic12 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Annulment~) STR_VAR bam_file = c0saic13 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadow Shield~) STR_VAR bam_file = c0saic14 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Mantle~) STR_VAR bam_file = c0saic15 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadow's Refuge~) STR_VAR bam_file = c0saic16 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Dark Premonition~) STR_VAR bam_file = c0saic17 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Dark Passage~) STR_VAR bam_file = c0saic18 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Sacred Shadow~) STR_VAR bam_file = c0saic19 RET icon END
 
 COPY ~%MOD_FOLDER%/SPELLS/C0SADAY3.SPL~ ~OVERRIDE~
       LPF ADD_SPELL_EFFECT
@@ -68,7 +71,7 @@ COPY ~%MOD_FOLDER%/SPELLS/C0SADAY3.SPL~ ~OVERRIDE~
 	    target = 2
 		timing = 0
 		duration = 1
-        parameter2 = (icon_index + 1)
+        parameter2 = (icon - 18)
       END
 
 STRING_SET ~INTELLIGENCE: Intelligence measures a character's memory, reasoning, and learning ability. It is the prime requisite of the Mage.
@@ -241,6 +244,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon1.spl~ ~override~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-1 penalty to Constitution^-~)
 END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
+END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon2.spl~ ~override~
   LPF ALTER_EFFECT
@@ -250,6 +260,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon2.spl~ ~override~
       match_opcode = 139 // display string
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 penalty to Constitution^-~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon3.spl~ ~override~
@@ -261,6 +278,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon3.spl~ ~override~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-3 penalty to Constitution^-~)
 END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
+END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon4.spl~ ~override~
   LPF ALTER_EFFECT
@@ -270,6 +294,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon4.spl~ ~override~
       match_opcode = 139 // display string
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 penalty to Constitution^-~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon5.spl~ ~override~
@@ -281,6 +312,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon5.spl~ ~override~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-5 penalty to Constitution^-~)
 END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
+END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon6.spl~ ~override~
   LPF ALTER_EFFECT
@@ -290,6 +328,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon6.spl~ ~override~
       match_opcode = 139 // display string
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 penalty to Constitution^-~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon7.spl~ ~override~
@@ -301,6 +346,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon7.spl~ ~override~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-7 penalty to Constitution^-~)
 END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
+END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon8.spl~ ~override~
   LPF ALTER_EFFECT
@@ -310,6 +362,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon8.spl~ ~override~
       match_opcode = 139 // display string
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 penalty to Constitution^-~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon9.spl~ ~override~
@@ -321,6 +380,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon9.spl~ ~override~
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-9 penalty to Constitution^-~)
 END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
+END
 
 COPY ~%MOD_FOLDER%/spells/c0sacon0.spl~ ~override~
   LPF ALTER_EFFECT
@@ -330,6 +396,13 @@ COPY ~%MOD_FOLDER%/spells/c0sacon0.spl~ ~override~
       match_opcode = 139 // display string
       match_parameter1 = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 penalty to Constitution^-~)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
 END
 COMPILE ~%MOD_FOLDER%/scripts/c0sacon.baf~
 
@@ -348,6 +421,13 @@ Saving Throw: None
 
 This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 COPY ~%MOD_FOLDER%/spells/C0SA207a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
@@ -413,6 +493,13 @@ Saving Throw: None
 
 This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 COPY ~%MOD_FOLDER%/spells/C0SA407a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
@@ -478,6 +565,13 @@ Saving Throw: None
 
 This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 COPY ~%MOD_FOLDER%/spells/C0SA706a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
+END
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
@@ -4101,6 +4195,13 @@ A Expunge Magic spell removes magical effects upon anyone within the area. This 
 Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA312.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 16)
+END
 SAY NAME1 ~Void Edge~
 SAY NAME2 ~Void Edge~
 SAY UNIDENTIFIED_DESC ~Void Edge
@@ -4116,6 +4217,13 @@ Saving Throw: None
 Upon casting this spell, the shadow adept imbues <PRO_HISHER> next melee attack with shadow magic, providing it with a +5 enchantment bonus and the ability to drain 2 hit points per level as magic damage.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA401.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 15)
+END
 SAY NAME1 ~Fire Shield (Shadow)~
 SAY NAME2 ~Fire Shield (Shadow)~
 SAY UNIDENTIFIED_DESC ~Fireshield (Shadow) 
@@ -4131,6 +4239,13 @@ Saving Throw: None
 The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 1d8+2 damage (half cold, half magic) and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
 
 COPY ~%MOD_FOLDER%/spells/C0SA402.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 14)
+END
 SAY NAME1 ~Shadeskin~
 SAY NAME2 ~Shadeskin~
 SAY UNIDENTIFIED_DESC ~Shadeskin
@@ -4229,6 +4344,13 @@ SAY NAME2 ~Wraith~
   WRITE_ASCII 0x280 ~c0wraith~  #32
 
 COPY ~%MOD_FOLDER%/spells/C0SA405.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 13)
+END
 SAY NAME1 ~Shar's Blessing~
 SAY NAME2 ~Shar's Blessing~
 SAY UNIDENTIFIED_DESC ~Shar's Blessing
@@ -4282,6 +4404,13 @@ Saving Throw: None
 Dread Whispers causes all enemies within range to become afflicted by an ominous chorus of voices infesting their mind. The voices are distracting, causing 50% spell failure on targets. In addition, at the beginning of every round after the first, the target must make a Save vs. Spell at -6 or lose morale, running in panic for 1 round.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA409.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 12)
+END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -4387,6 +4516,13 @@ Saving Throw: 1/2
 With this spell, the shadow adept creates a wall of black fire, dealing 4d6 damage (half fire, half magic) to all creatures who pass through it (Save vs. Spells at -4 for half) and reduces their Armor Class by -4 for one round. Creatures cannot take damage more than once per round.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA412.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 11)
+END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 		  opcode = 138
@@ -5194,6 +5330,13 @@ COPY ~%MOD_FOLDER%/spells/c0nvamp1.itm~ ~override~
  END
 
 COPY ~%MOD_FOLDER%/spells/C0SA601.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 10)
+END
 SAY NAME1 ~Shar's Shield~
 SAY NAME2 ~Shar's Shield~
 SAY UNIDENTIFIED_DESC ~Shar's Shield
@@ -5326,6 +5469,13 @@ Saving Throw: 1/2
 When this spell is cast upon a target creature there will be two major effects. The first is that it will dispel one spell protection of 8th level or lower from the creature. This will always dispel the highest level of spell protection on the target first. If the target has two or more protections tied for the highest level, the choice will be random. The second effect of the spell is that the creature's magic resistance is temporary nullified. The resistance remains lowered for 2 rounds, and this effect cannot be negated in any way. Additionally, mages will take 10d4 magic damage and suffer from a 50% chance of spell failure for 2 rounds. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's magic resistance, if any, does not affect this spell.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA607.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 9)
+END
 SAY NAME1 ~Umbral Blades~
 SAY NAME2 ~Umbral Blades~
 SAY UNIDENTIFIED_DESC ~Umbral Blades
@@ -5572,6 +5722,13 @@ COPY ~%MOD_FOLDER%/spells/c0sa707a.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 8)
+END
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
       match_opcode = 139 // display string
 	  multi_match = 1
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 5 rounds~)
@@ -5649,6 +5806,13 @@ SAY UNIDENTIFIED_DESC ~End Possession
 Use this ability to end Possession. The possessed target will suffer 5d10 non-lethal damage and fall unconscious for 5 rounds.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa709b.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 7)
+END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
@@ -5912,6 +6076,13 @@ This spell summons a shower of negative energy upon a targeted location, inflict
 The negastorm lasts for 2 rounds and does not affect allies. If an enemy enters the negastorm after the first round, they only suffer half of the effects.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA802.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 6)
+END
 SAY NAME1 ~Annulment~
 SAY NAME2 ~Annulment~
 SAY UNIDENTIFIED_DESC ~Annulment
@@ -5968,6 +6139,13 @@ Saving Throw: None
 When a Power Word, Blind spell is cast, one or more creatures within the area of effect become sightless. The spellcaster selects one creature as the target center, and the effect spreads outward from the center, affecting all within a 10-ft. radius. This lasts for 6 rounds or until dispelled. All of the effects of blindness apply to the victims, such as a penalty to hit and to AC. The visibility range of the afflicted character is also decreased. This spell is not effected by magic resistance.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa805.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 5)
+END
 SAY NAME1 ~Shadow Shield~
 SAY NAME2 ~Shadow Shield~
 SAY UNIDENTIFIED_DESC ~Shadow Shield
@@ -6036,6 +6214,13 @@ SAY NAME2 ~Blackfire Vessel~
   WRITE_ASCII 0x280 ~c0shadfi~  #32
 
 COPY ~%MOD_FOLDER%/spells/c0sa807.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 4)
+END
 SAY NAME1 ~Shar's Mantle~
 SAY NAME2 ~Shar's Mantle~
 SAY UNIDENTIFIED_DESC ~Shar's Mantle
@@ -6068,6 +6253,13 @@ COPY ~%MOD_FOLDER%/spells/c0sa807b.spl~ ~override~
   END
 
 COPY ~%MOD_FOLDER%/spells/c0sa808.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 3)
+END
 SAY NAME1 ~Shadow's Refuge~
 SAY NAME2 ~Shadow's Refuge~
 SAY UNIDENTIFIED_DESC ~Shadow's Refuge
@@ -6088,6 +6280,13 @@ COPY ~%MOD_FOLDER%/spells/c0s808a.spl~ ~override~
 SAY NAME1 ~Shadow's Refuge: Return~
 
 COPY ~%MOD_FOLDER%/spells/c0sa809.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 2)
+END
 SAY NAME1 ~Dark Premonition~
 SAY NAME2 ~Dark Premonition~
 SAY UNIDENTIFIED_DESC ~Dark Premonition
@@ -6137,6 +6336,14 @@ READ_SHORT 0x68 "abil_num"
 SET "delta" = 0
 FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
+END
+COPY ~%MOD_FOLDER%/spells/c0sa810d.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon - 17)
 END
 
 COPY ~%MOD_FOLDER%/spells/C0SA811.spl~ ~override~
@@ -6232,6 +6439,14 @@ COPY ~%MOD_FOLDER%/spells/c0sa814a.spl~ ~override~
       match_opcode = 139 // display string
  parameter1 = RESOLVE_STR_REF (~Silenced~)
   END
+COPY ~%MOD_FOLDER%/spells/c0sa814b.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 142 // display string
+ parameter2 = (icon)
+END
   
 COPY ~%MOD_FOLDER%/spells/c0sa814z.spl~ ~override~
 READ_LONG 0x64 "abil_off"
