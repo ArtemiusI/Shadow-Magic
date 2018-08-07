@@ -3657,7 +3657,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA112.spl~ ~override~
 			opcode = 139
 			target = 2
 			timing = 1
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
 			power = 1
 			savingthrow = 1
 			resist_dispel = 1
@@ -3792,7 +3792,7 @@ Level: 2
 Range: 90 ft.
 Duration: 1 turn
 Casting Time: 2
-Area of Effect: 30' radius
+Area of Effect: 50' radius
 Saving Throw: Neg.
 
 When this spell is cast, a thick shadowy mist spreads across the area selected by the caster. Any creatures caught within the mist must make a Save vs. Spells at -2 at the beginning of each round or become blinded for that round, receiving a -4 penalty to their Armor Class and attack rolls and greatly reducing their vision range. Those who make successful Saving Throws can leave the mist without suffering any ill effects, although those remaining in the mist must continue to save each round. A Dispel Magic will remove the blindness on a particular character, but if they remain in the mist, then they are still subject to its effects.~
@@ -4586,73 +4586,73 @@ COPY ~%MOD_FOLDER%/spells/C0SA501.spl~ ~override~
 		INT_VAR
 			match_opcode = 139
 			header = 0
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 9% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 9% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 1
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 2
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 3
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 4
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 5
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 6
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 7
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 8
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 9
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 10
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage^-~)
 	END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
 			header = 11
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage^-~)
 	END
 SAY NAME1 ~Cone of Bitter Cold~
 READ_LONG 0x64 "abil_off"
@@ -5083,7 +5083,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 9% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 9% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5091,7 +5091,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 1
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5099,7 +5099,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 2
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5107,7 +5107,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 3
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5115,7 +5115,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 4
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5123,7 +5123,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 5
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5131,7 +5131,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 6
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5139,7 +5139,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 7
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5147,7 +5147,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 8
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5155,7 +5155,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 9
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5163,7 +5163,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 10
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -5171,7 +5171,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA508.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
       header = 11
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage^-~)
   END
 SAY NAME1 ~Nightshade~
 READ_LONG 0x64 "abil_off"
@@ -5517,7 +5517,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA609.spl~ ~override~
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage from <DAMAGER>^-~)
+			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage^-~)
 	END
 SAY NAME1 ~Black Rose~
 SAY NAME2 ~Black Rose~
@@ -5730,7 +5730,7 @@ END
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-	  multi_match = 1
+	  match_parameter2 = 1
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 5 rounds~)
   END
   LPF ALTER_EFFECT
@@ -5738,7 +5738,7 @@ END
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-	  multi_match = 1
+	  match_parameter2 = 2
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 4 rounds~)
   END
   LPF ALTER_EFFECT
@@ -5746,7 +5746,7 @@ END
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-	  multi_match = 1
+	  match_parameter2 = 3
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 3 rounds~)
   END
   LPF ALTER_EFFECT
@@ -5754,7 +5754,7 @@ END
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-	  multi_match = 1
+	  match_parameter2 = 4
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 2 rounds~)
   END
   LPF ALTER_EFFECT
@@ -5762,7 +5762,7 @@ END
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
-	  multi_match = 1
+	  match_parameter2 = 5
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 1 round~)
   END
 
@@ -5874,7 +5874,7 @@ Level: 7
 Range: Self
 Duration: 6 rounds
 Casting Time: 8
-Area of Effect: 30-ft. radius
+Area of Effect: 50-ft. radius
 Saving Throw: None
 
 This spell creates a rainfall of shadowstuff centered on the caster for six rounds. Enemy creatures suffer 1d6 magical damage for every round that they remain within the rainfall and suffer a cumulative penalty of -1 to Armor Class and all Saving Throws for one turn. Non-hostile creatures are healed for 2d6 hit points every round instead.~
@@ -5935,7 +5935,7 @@ COPY ~%MOD_FOLDER%/spells/C0SA801.spl~ ~override~
 	  power = 8
 	  header = 1
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -5946,7 +5946,7 @@ END
 	  power = 8
 	  header = 2
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -5957,7 +5957,7 @@ END
 	  power = 8
 	  header = 3
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -5968,7 +5968,7 @@ END
 	  power = 8
 	  header = 4
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -5979,7 +5979,7 @@ END
 	  power = 8
 	  header = 5
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -5990,7 +5990,7 @@ END
 	  power = 8
 	  header = 6
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -6001,7 +6001,7 @@ END
 	  power = 8
 	  header = 7
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -6012,7 +6012,7 @@ END
 	  power = 8
 	  header = 8
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -6023,7 +6023,7 @@ END
 	  power = 8
 	  header = 9
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -6034,7 +6034,7 @@ END
 	  power = 8
 	  header = 10
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage^-~)
 END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -6045,7 +6045,7 @@ END
 	  power = 8
 	  header = 11
 	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage^-~)
 END
   LPF ALTER_EFFECT
     INT_VAR
@@ -6241,7 +6241,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa807b.spl~ ~override~
       check_headers = 1
       match_opcode = 139 // display string
 	  match_parameter2 = 1
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
@@ -6328,7 +6328,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa810b.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
   END
 COPY ~%MOD_FOLDER%/spells/c0sa810c.spl~ ~override~
 READ_LONG 0x64 "abil_off"
@@ -6629,7 +6629,7 @@ SAY NAME1 ~Death Mark~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
   END
   LPF ADD_SPELL_EFFECT
     INT_VAR
@@ -6660,7 +6660,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa907a.spl~ ~override~
       check_globals = 1
       check_headers = 1
       match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage from <DAMAGER>^-~)
+ parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
   END
 COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907b.spl~
   LPF ALTER_EFFECT
@@ -6848,7 +6848,7 @@ COPY ~%MOD_FOLDER%/spells/c0sahla2.spl~ ~override~
       check_headers = 1
 	  match_opcode = 139
 	  match_parameter2 = 0
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 30% of maximum hit points in shadow damage from <DAMAGER>^-~)
+	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 30% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR

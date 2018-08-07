@@ -20,6 +20,7 @@ AUTO_TRA ~%MOD_FOLDER%/languages/%s~
 LANGUAGE ~English~
          ~English~
 		 ~%MOD_FOLDER%/languages/english/setup.tra~
+VERSION ~1.9.24~
 
 BEGIN ~Shadow Magic: Main Component~
 
