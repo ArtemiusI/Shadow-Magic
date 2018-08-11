@@ -1182,9 +1182,8 @@ IF
 	Specifics(Myself,12)
 	ActionListEmpty()
 	Global("C0SA806","LOCALS",1)
-	OR(2)
 	!HaveKnownSpellRES("C0SA806")
-	HaveKnownSpellRES("C0SA813")
+	!HaveKnownSpellRES("C0SA813")
 THEN
   RESPONSE #100
 	AddSpecialAbility("C0SA806")
@@ -1198,7 +1197,7 @@ IF
 	!HaveKnownSpellRES("C0SA813")
 THEN
   RESPONSE #100
-	AddSpecialAbility("C0SA806")
+	AddSpecialAbility("C0SA813")
 	Continue()
 END
 IF 
