@@ -1,7 +1,7 @@
 2DA V1.0
 ****
            ResRef     Type       
-TRAP1      c0sa101    3          
-TRAP2      c0sa103    3          
-TRAP3      c0sa107    3          
-TRAP4      c0sa110    3          
+TRAP1      c0sm101    3          
+TRAP2      c0sm103    3          
+TRAP3      c0sm107    3          
+TRAP4      c0sm110    3          

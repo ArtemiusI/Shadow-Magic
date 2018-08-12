@@ -76,7 +76,7 @@ LIFE-DRAIN: Shadow monks channel the power of the Shadow Plane into their fists,
 
 – 3rd level: May use the Shadow Pool ability.
 
-SHADOW POOL: Shadow monks wield the power of the Shadow Plane and can manipulate it in order to cast a limited amount of Shadow Magic. The shadow monk must first spend one round drawing energy from the Shadow Weave then cast the spell. The shadow monk's concentration may be disrupted during the channeling or the casting time.
+SHADOW POOL: Shadow monks wield the power of the Shadow Plane and can manipulate it in order to cast a limited amount of Shadow Magic. The shadow monk must first spend one round drawing energy from the Shadow Weave then cast the spell. The shadow monk's concentration may be disrupted during the channeling or the casting time. The channeling time decreases as the shadow monk increases in level.
 
 Level 1 (3rd, 6th, 9th, 12th levels): Shadow Missile, Blinding Darkness, Shadow Veil, Decoy
 Level 2 (7th, 10th, 13th, 16th levels): Dark Mirage, Black Mist, Ghostly Visage, Shadow Walk
@@ -113,6 +113,198 @@ APPEND ~backstab.2da~ ~C0SMONK 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 4
 APPEND ~sneakatt.2da~ ~C0SMONK 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4~
 APPEND ~crippstr.2da~ ~C0SMONK 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4~
 
+COPY_EXISTING ~c0sa101.spl~ ~override/c0sm101.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa103.spl~ ~override/c0sm103.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa107.spl~ ~override/c0sm107.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa110.spl~ ~override/c0sm110.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa201.spl~ ~override/c0sm201.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa206.spl~ ~override/c0sm206.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa208.spl~ ~override/c0sm208.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa211.spl~ ~override/c0sm211.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa302.spl~ ~override/c0sm302.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa304.spl~ ~override/c0sm304.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa306.spl~ ~override/c0sm306.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa308.spl~ ~override/c0sm308.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa401.spl~ ~override/c0sm401.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa402.spl~ ~override/c0sm402.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa404.spl~ ~override/c0sm404.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
+COPY_EXISTING ~c0sa405.spl~ ~override/c0sm405.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+SET "num_abil" = ("%num_abil%" - 1)
+END
+
 COPY ~%MOD_FOLDER%/shadowmonk/C0SMNKAB.spl~ ~override~
 COPY ~%MOD_FOLDER%/shadowmonk/C0SMDRN.eff~ ~override~
 COPY ~%MOD_FOLDER%/shadowmonk/C0SMDRN2.spl~ ~override~
@@ -126,6 +318,7 @@ COPY ~%MOD_FOLDER%/shadowmonk/C0SMDRN2.spl~ ~override~
   END
 
 COPY ~%MOD_FOLDER%/shadowmonk/C0MNKHLA.bam~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk/C0MNKHLB.bam~ ~override~
 COPY ~%MOD_FOLDER%/shadowmonk/C0MNKHLA.spl~ ~override~
 SAY NAME1 ~One With Shadows~
 SAY NAME2 ~One With Shadows~
@@ -168,21 +361,18 @@ SAY UNIDENTIFIED_DESC ~Shadow Pool IV
 
 The shadow monk channels the power of the Shadow Weave to cast one of the following 4th level Shadow Weave spells: Fireshield (Shadow), Shadeskin, Summon Shadow, Shar's Blessing.~
 
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK5.spl~ ~override~
-SAY NAME1 ~Shadow Door~
-SAY NAME2 ~Shadow Door~
-SAY UNIDENTIFIED_DESC ~Shadow Door
-Shadow Door
-(Illusion/Phantasm)
-
-Level: 5
-Range: 0
-Duration: 9 rounds + 1 round/level after 9th
-Casting Time: 2
-Area of Effect: The caster
-Saving Throw: None
-
-By means of this spell, the shadow monk creates the illusion of a door. The illusion also permits the shadow monk to appear to step through this "door" and disappear. In reality, <PRO_HESHE> has darted aside and can flee, totally invisible (as per the Improved Invisibility spell), for the spell's duration. A True Seeing spell, a Gem of Seeing, or similar magical means can reveal the shadow monk.~
+COPY_EXISTING ~spwi505.spl~ ~override/C0SMONK5.spl~
+WRITE_SHORT 0x1C 4 
+WRITE_LONG 0x34 1 
+READ_LONG 0x64 "offset_abil"
+READ_SHORT 0x68 "num_abil"
+READ_ASCII ("%offset_abil%" + 0x04) "bam" 
+WRITE_EVALUATED_ASCII 0x3A "%bam%" 
+WHILE (0 < "%num_abil%")
+BEGIN
+WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4 
+SET "num_abil" = ("%num_abil%" - 1)
+END
 
 COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK6.bam~ ~override~
 COPY ~%MOD_FOLDER%/shadowmonk/C0SMSP6A.eff~ ~override~

@@ -10,7 +10,7 @@ THEN
 	ActionOverride("c0safam",AddFamiliar())
 	ActionOverride("c0safam",CreateVisualEffectObject("c0black2",Myself))
 	ActionOverride("c0safam",CreateVisualEffectObject("c0cloud1",Myself))
-	ActionOverride("c0safam",SetSequence(SEQ_AWAKE))
+	ActionOverride("c0safam",SetSequence(1))
 	ActionOverride("c0safam",SetGlobal("Revival","LOCALS",1))
 	ActionOverride("c0safam",ClearAllActions())
 END
