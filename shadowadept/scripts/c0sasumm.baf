@@ -1169,7 +1169,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1255,7 +1254,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1286,7 +1284,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1300,11 +1297,9 @@ IF
   HaveSpellRES("C0SA712")
   OR(2)
   HPPercentLT(Myself,60)
-  HPPercentLT(NearestAllyOf(Myself),60)
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -1319,7 +1314,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  Range(NearestAllyOf(Myself),13)
 THEN
   RESPONSE #100
     SetGlobalTimer("OH_CAST","locals",ONE_ROUND)
@@ -3932,7 +3926,6 @@ IF
   See(Nearestenemyof(Myself))
   !Range(Nearestenemyof(Myself),0)
   !StateCheck(Nearestenemyof(Myself),STATE_REALLY_DEAD)
-  Range(NearestAllyOf(Myself),15)
   !Range(NearestEnemyOf(Myself),15)
 THEN
   RESPONSE #100

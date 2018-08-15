@@ -89,7 +89,7 @@ EXTEND_BOTTOM ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/c0saplay.baf~
 
 COMPILE ~%MOD_FOLDER%/scripts/c0satalk.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0saorb.baf~
-//COMPILE ~%MOD_FOLDER%/scripts/c0sasumm.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sasumm.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0devsha.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0nighth.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sa711.baf~
