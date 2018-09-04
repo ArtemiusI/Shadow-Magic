@@ -28,7 +28,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sarng1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -67,7 +67,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sas2h1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
@@ -131,7 +131,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sas2h2.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
@@ -189,7 +189,7 @@ COPY ~%MOD_FOLDER%/itempack/c0saamu1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -251,7 +251,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sarob1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -284,7 +284,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sasta1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -336,7 +336,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sadag1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -385,7 +385,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sas1h1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
@@ -444,7 +444,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sapot1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -475,7 +475,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sadar1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -546,7 +546,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sarng3.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -580,7 +580,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sarng4.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -629,7 +629,7 @@ SAY NAME2 ~Night's Veil~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -659,7 +659,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sas1h2.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Fighter / Shadow Adept
@@ -722,7 +722,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sawan1.itm~ ~override~
 		opcode = 177
 		target = 1
 		duration = 0
-		parameter1 = 12
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 		parameter2 = 6
 	STR_VAR
 		resource = C0SAWAND
@@ -759,7 +759,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sawan2.itm~ ~override~
 		opcode = 177
 		target = 1
 		duration = 0
-		parameter1 = 12
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 		parameter2 = 6
 	STR_VAR
 		resource = C0SAWAND
@@ -806,7 +806,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sawan3.itm~ ~override~
 		opcode = 177
 		target = 1
 		duration = 0
-		parameter1 = 12
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 		parameter2 = 6
 	STR_VAR
 		resource = C0SAWAND
@@ -848,7 +848,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sawan4.itm~ ~override~
 		opcode = 177
 		target = 1
 		duration = 0
-		parameter1 = 12
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 		parameter2 = 6
 	STR_VAR
 		resource = C0SAWAND
@@ -885,7 +885,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sawan5.itm~ ~override~
 		opcode = 177
 		target = 1
 		duration = 0
-		parameter1 = 12
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 		parameter2 = 6
 	STR_VAR
 		resource = C0SAWAND
@@ -933,7 +933,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sawan6.itm~ ~override~
 		opcode = 177
 		target = 1
 		duration = 0
-		parameter1 = 12
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 		parameter2 = 6
 	STR_VAR
 		resource = C0SAWAND
@@ -966,7 +966,7 @@ COPY ~%MOD_FOLDER%/itempack/c0saboo1.itm~ ~override~
       check_headers = 1
       match_opcode = 177 // display string
       match_parameter1 = 0
- parameter1 = 12
+ parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
  parameter2 = 6
   END
 SAY NAME1 ~Boots~
@@ -992,7 +992,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sabel1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -1025,7 +1025,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sasta2.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -1061,7 +1061,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sarob2.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -1085,7 +1085,7 @@ COPY ~%MOD_FOLDER%/itempack/c0saiou1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -1108,7 +1108,7 @@ COPY ~%MOD_FOLDER%/itempack/c0samis1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -1130,7 +1130,7 @@ COPY ~%MOD_FOLDER%/itempack/c0samis2.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Nightsinger~)
@@ -1155,7 +1155,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sacha1.itm~ ~override/chan09.itm~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -1211,7 +1211,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sanos1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -1259,6 +1259,13 @@ COPY ~%MOD_FOLDER%/itempack/leat19a.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19b.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19c.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19.itm~ ~override~
+  LPF ALTER_EFFECT
+	INT_VAR
+		insert_point = 0
+		match_opcode = 177
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+		parameter2 = 6
+END
 SAY DESC ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer immunity to level drain, but while worn by a shadow adept, it greatly empowers them, allowing them to use their magic with less risk.
 
 STATISTICS:
@@ -1295,7 +1302,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
@@ -1325,7 +1332,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr2.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
@@ -1355,7 +1362,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr3.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
@@ -1385,7 +1392,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr4.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
@@ -1415,7 +1422,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr5.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
@@ -1445,7 +1452,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr6.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
@@ -1475,7 +1482,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr7.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
@@ -1505,7 +1512,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr8.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
@@ -1535,7 +1542,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sascr9.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)

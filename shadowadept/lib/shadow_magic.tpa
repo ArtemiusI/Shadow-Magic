@@ -1,3 +1,75 @@
+DEFINE_ACTION_FUNCTION d5_resolve_specific INT_VAR index=0 delete=0 STR_VAR new_specific_id = ~blah~ RET new_specific_ind BEGIN
+ OUTER_SET min_new=1
+ COPY_EXISTING ~specific.ids~ override
+  new_specific_ind=0
+  found=0
+  READ_2DA_ENTRIES_NOW stats 2
+  FOR (row=1;row<stats;row+=1) BEGIN
+    READ_2DA_ENTRY_FORMER stats row 0 ind
+    READ_2DA_ENTRY_FORMER stats row 1 str
+    SET $stat("%row%") = ind
+    PATCH_IF index BEGIN
+      PATCH_IF ind=index BEGIN
+        REMOVE_2DA_ROW row 2
+        found=1
+        PATCH_IF delete=0 BEGIN
+          INSERT_2DA_ROW row 2 ~%index% %new_specific_id%~
+        END
+        row=stats
+      END
+    END ELSE BEGIN
+      PATCH_IF ~%str%~ STRING_EQUAL_CASE ~%new_specific_id%~ BEGIN
+        new_specific_ind=ind
+        found=1
+     /* row=stats */ // don't stop looking, the same ID may be assigned to a greater index, which takes priority when compiling
+      END
+    END
+  END
+  PATCH_IF found=0 BEGIN
+    new_specific_ind=min_new
+    PHP_EACH stat AS row => ind BEGIN
+      PATCH_IF found=0 && (row+1 < stats) BEGIN // not at the end of file
+        next_row = row+1
+        next_ind = EVAL $stat("%next_row%")
+        PATCH_IF index BEGIN
+          PATCH_IF index<next_ind && index>ind BEGIN
+            INSERT_2DA_ROW next_row 2 ~%index% %new_specific_id%~
+            found=1
+          END
+        END ELSE BEGIN
+          PATCH_IF new_specific_ind<next_ind BEGIN
+            PATCH_IF ind<new_specific_ind BEGIN
+              INSERT_2DA_ROW next_row 2 ~%new_specific_ind% %new_specific_id%~
+              found=1
+            END ELSE BEGIN
+              new_specific_ind+=1
+              PATCH_IF new_specific_ind<next_ind BEGIN
+                INSERT_2DA_ROW next_row 2 ~%new_specific_ind% %new_specific_id%~
+                found=1
+              END
+            END
+          END
+        END
+      END ELSE BEGIN // at the end of file
+        PATCH_IF found=0 BEGIN
+          PATCH_IF index BEGIN
+            INSERT_2DA_ROW stats 2 ~%index% %new_specific_id%~
+          END ELSE BEGIN
+            PATCH_IF new_specific_ind>ind BEGIN
+              INSERT_2DA_ROW stats 2 ~%new_specific_ind% %new_specific_id%~
+            END ELSE BEGIN
+              new_specific_ind+=1
+              INSERT_2DA_ROW stats 2 ~%new_specific_ind% %new_specific_id%~
+            END
+          END
+        END
+      END
+    END // PHP_EACH
+  END
+END
+
+LAF d5_resolve_specific STR_VAR new_specific_id = ~SHADOW_ADEPT~ RET new_specific_ind END
+
 ////////////////////////////////////////
 //////////////SPLPROT.2DA///////////////
 ////////////////////////////////////////
@@ -63,6 +135,13 @@ LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadow's Refuge~) STR
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Dark Premonition~) STR_VAR bam_file = c0saic17 RET icon END
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Dark Passage~) STR_VAR bam_file = c0saic18 RET icon END
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Sacred Shadow~) STR_VAR bam_file = c0saic19 RET icon END
+
+COPY ~%MOD_FOLDER%/SPELLS/C0SADAY.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT
+	INT_VAR
+		match_opcode = 177
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+END
 
 COPY ~%MOD_FOLDER%/SPELLS/C0SADAY3.SPL~ ~OVERRIDE~
       LPF ADD_SPELL_EFFECT
@@ -3868,14 +3947,6 @@ Saving Throw: None
 This spell transports the caster to any place within the visual range of the caster. When the spell is cast, the shadow adept makes a brief planar jaunt into the Plane of Shadow and exits at a different location, making it seem as though <PRO_HESHE> has teleported. The caster is also briefly invisible for the travel duration, cancelling spells targeted at <PRO_HIMHER> unless the spellcaster can see through invisibility.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA212.spl~ ~override~
-LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 215
-      savingthrow = 1
-	  resist_dispel = 1
-END
 SAY NAME1 ~Hallucinate~
 SAY NAME2 ~Hallucinate~
 SAY UNIDENTIFIED_DESC ~Hallucinate
@@ -4321,6 +4392,7 @@ SAY NAME2 ~Devil Shade~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~c0devsha~ #8
   WRITE_ASCII 0x280 ~c0devsha~  #32
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/c0shadsu.cre~ ~override~
 SAY NAME1 ~Shadow~
@@ -4328,6 +4400,7 @@ SAY NAME2 ~Shadow~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~~ #8
   WRITE_ASCII 0x280 ~c0shadow~  #32
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/c0shadfi.cre~ ~override~
 SAY NAME1 ~Shadow Fiend~
@@ -4335,6 +4408,7 @@ SAY NAME2 ~Shadow Fiend~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~~ #8
   WRITE_ASCII 0x280 ~c0shadfi~  #32
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/c0wraith.cre~ ~override~
 SAY NAME1 ~Wraith~
@@ -4342,6 +4416,7 @@ SAY NAME2 ~Wraith~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~~ #8
   WRITE_ASCII 0x280 ~c0wraith~  #32
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/C0SA405.spl~ ~override~
   LPF ALTER_EFFECT
@@ -5319,6 +5394,7 @@ SAY NAME2 ~Nighthaunt~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~c0nighth~ #8
   WRITE_ASCII 0x280 ~c0nighth~  #32
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
   
 COPY ~%MOD_FOLDER%/spells/c0nvamp1.itm~ ~override~
   LPF ALTER_EFFECT
@@ -5662,6 +5738,7 @@ Note that if a creature is weakened so that its Hit Points are below its usual m
 COPY ~%MOD_FOLDER%/spells/c0morsw.cre~ ~override~
 SAY NAME1 ~Magical Sword~
 SAY NAME2 ~Magical Sword~
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/C0SA704.spl~ ~override~
 SAY NAME1 ~Sword of the Night~
@@ -5864,6 +5941,7 @@ COPY ~%MOD_FOLDER%/spells/c0sa711.cre~ ~override~
 SAY NAME1 ~Shadow Gate~
 SAY NAME2 ~Shadow Gate~
 WRITE_ASCII 0x248 ~c0sa711~ #8
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/c0sa712.spl~ ~override~
 SAY NAME1 ~Nightfall~
@@ -6206,12 +6284,14 @@ SAY NAME2 ~Blackfire Vessel~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~c0devsha~ #8
   WRITE_ASCII 0x280 ~c0devsha~  #32
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/c0blacks.cre~ ~override~
 SAY NAME1 ~Blackfire Vessel~
 SAY NAME2 ~Blackfire Vessel~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0shadfi~  #32
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/c0sa807.spl~ ~override~
   LPF ALTER_EFFECT
@@ -6369,7 +6449,7 @@ LPF ADD_SPELL_EFFECT
 		opcode = 177
 		target = 1
 		timing = 1
-		parameter1 = 12
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 		parameter2 = 6
 	STR_VAR
 		resource = c0misled
@@ -6382,7 +6462,7 @@ LPF ADD_SPELL_EFFECT
 		opcode = 177
 		target = 1
 		timing = 1
-		parameter1 = 12
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 		parameter2 = 6
 	STR_VAR
 		resource = c0simula
@@ -6805,6 +6885,7 @@ SAY NAME2 ~Shadow Dragon~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~c0shadra~ #8
   WRITE_ASCII 0x280 ~c0shadra~  #32
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/c0sa911.spl~ ~override~
 SAY NAME1 ~Shadowsight~
@@ -6915,6 +6996,7 @@ SAY NAME2 ~Nightwalker~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0nightw~  #32
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_NIGHTWALKER~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/spells/c0sahla4.spl~ ~override~
 SAY NAME1 ~Shapeshift: Shadow Dragon Scion~

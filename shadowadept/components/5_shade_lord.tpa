@@ -18,7 +18,9 @@ END
 COPY ~%MOD_FOLDER%/creatures/shadel.cre~ ~override~
 SAY NAME1 ~Shade Lord~
 SAY NAME2 ~Shade Lord~
-  WRITE_ASCII 0X34 ~C0~ #8   //small portrait
+  WRITE_ASCII 0X34 ~C0SHADEL~ #8   //small portrait
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~
 THEN BEGIN
   PRINT ~Crossmod: Adding Foundling's Shadow Summoning I Scroll~
@@ -33,6 +35,9 @@ END
 COPY ~%MOD_FOLDER%/creatures/shade2.cre~ ~override/shadel.cre~
 SAY NAME1 ~Shade Lord~
 SAY NAME2 ~Shade Lord~
+  WRITE_ASCII 0X34 ~C0SHADEL~ #8   //small portrait
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~
 THEN BEGIN
   PRINT ~Crossmod: Adding Foundling's Shadow Summoning I Scroll~

@@ -1,11 +1,11 @@
 IF
 	OR(6)
-	Specifics(Player1,12)
-	Specifics(Player2,12)
-	Specifics(Player3,12)
-	Specifics(Player4,12)
-	Specifics(Player5,12)
-	Specifics(Player6,12)
+	Specifics(Player1,SHADOW_ADEPT)
+	Specifics(Player2,SHADOW_ADEPT)
+	Specifics(Player3,SHADOW_ADEPT)
+	Specifics(Player4,SHADOW_ADEPT)
+	Specifics(Player5,SHADOW_ADEPT)
+	Specifics(Player6,SHADOW_ADEPT)
 	Global("C0SARingSpawn","AR0602",0)
 THEN
   RESPONSE #100

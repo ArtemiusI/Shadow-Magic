@@ -94,6 +94,13 @@ COMPILE ~%MOD_FOLDER%/scripts/c0devsha.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0nighth.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sa711.baf~
 
+COPY_EXISTING ~c0sadep.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+	  match_opcode = 72
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+  END
+
 COPY ~%MOD_FOLDER%/Items/c0sabook.bam~ ~override~
 COPY ~%MOD_FOLDER%/Items/c0sabook.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
@@ -101,7 +108,7 @@ COPY ~%MOD_FOLDER%/Items/c0sabook.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (@1)
@@ -150,7 +157,7 @@ THEN BEGIN
   PRINT ~Adding crossmod compatibility between Foundling and Shadow Magic~
   COMPILE ~%MOD_FOLDER%/dialogue/npc/foundling.d~
 COPY_EXISTING ~L#Fou.cre~ ~override~
-WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHARRAN~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 COPY_EXISTING ~L#Fou25.cre~ ~override~
-WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHARRAN~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 END

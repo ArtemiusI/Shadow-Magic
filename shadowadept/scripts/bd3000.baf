@@ -8,7 +8,7 @@ THEN
 	SetGlobal("C02SPAWNZAAL","bd3000",1)
 	SetGlobal("C02SASpectacle","GLOBAL",3)
     CreateCreature("c02samag",[2133.1486],NE)
-	ChangeSpecifics("c02samag",12)
+	ChangeSpecifics("c02samag",SHADOW_ADEPT)
 	ActionOverride("c02samag",ChangeAIScript("c02samag",OVERRIDE))
 	ActionOverride("c02samag",ChangeAIScript("bdasc",CLASS))
 	ActionOverride("c02samag",DestroyItem("bdmisc1b"))

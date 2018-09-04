@@ -11,6 +11,8 @@ WRITE_ASCII 0x280 ~c0sakryn~ #32 // death variable
 SAY NAME1 ~Kryn Darkflame~
 SAY NAME2 ~Kryn Darkflame~
 WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/creatures/c0samag1.cre~ ~override~
 WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
@@ -19,6 +21,8 @@ WRITE_ASCII 0x2cc ~c0samag1~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag1~ #32 // death variable
 SAY NAME1 ~Xarius the Black~
 SAY NAME2 ~Xarius the Black~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/itempack/c0samag1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
@@ -26,7 +30,7 @@ COPY ~%MOD_FOLDER%/itempack/c0samag1.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -59,6 +63,8 @@ WRITE_ASCII 0x2cc ~c0samag2~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag2~ #32 // death variable
 SAY NAME1 ~Chang Yu'ke~
 SAY NAME2 ~Chang Yu'ke~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/itempack/c0samag2.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
@@ -66,7 +72,7 @@ COPY ~%MOD_FOLDER%/itempack/c0samag2.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -99,6 +105,8 @@ WRITE_ASCII 0x2cc ~c0samag3~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag3~ #32 // death variable
 SAY NAME1 ~Mak'kai~
 SAY NAME2 ~Mak'kai~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/itempack/c0samag3.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
@@ -106,7 +114,7 @@ COPY ~%MOD_FOLDER%/itempack/c0samag3.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -139,6 +147,8 @@ WRITE_ASCII 0x2cc ~c0samag4~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag4~ #32 // death variable
 SAY NAME1 ~Nym Phaundal~
 SAY NAME2 ~Nym Phaundal~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/itempack/c0samag4.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
@@ -146,7 +156,7 @@ COPY ~%MOD_FOLDER%/itempack/c0samag4.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -179,6 +189,8 @@ WRITE_ASCII 0x2cc ~c0samag5~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag5~ #32 // death variable
 SAY NAME1 ~Ivette Cold-Whisper~
 SAY NAME2 ~Ivette Cold-Whisper~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/itempack/c0samag5.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
@@ -186,7 +198,7 @@ COPY ~%MOD_FOLDER%/itempack/c0samag5.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = 12
+	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
@@ -259,11 +271,14 @@ WRITE_ASCII 0x2cc ~c02samag~  #8  // dialogue
 WRITE_ASCII 0x280 ~c02samag~ #32 // death variable
 SAY NAME1 ~Kaladan Za'al~
 SAY NAME2 ~Kaladan Za'al~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/creatures/c02sachi.cre~ ~override~
 WRITE_ASCII 0x280 ~c02sachi~ #32 // death variable
 SAY NAME1 ~Shadow Chimera~
 SAY NAME2 ~Shadow Chimera~
 WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_CHIMERA~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 END

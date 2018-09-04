@@ -1,5 +1,5 @@
 EXTEND_TOP L#FOU 49
-+ ~Specifics(Player1,12)~ + ~I may not have been to the Plane of Shadow, but as a shadow adept, I know it well.~ EXTERN L#FOU a1
++ ~Specifics(Player1,SHADOW_ADEPT)~ + ~I may not have been to the Plane of Shadow, but as a shadow adept, I know it well.~ EXTERN L#FOU a1
 END
 
 CHAIN L#FOU a1
@@ -7,7 +7,7 @@ CHAIN L#FOU a1
 EXTERN L#FOU 54
 
 EXTEND_TOP L#FOUJ 131
-+ ~Specifics(Player1,12)~ + ~Not all of us, but I *am* a shadow adept, you know.~ EXTERN L#FOUJ a2
++ ~Specifics(Player1,SHADOW_ADEPT)~ + ~Not all of us, but I *am* a shadow adept, you know.~ EXTERN L#FOUJ a2
 END
 
 CHAIN L#FOUJ a2
@@ -15,7 +15,7 @@ CHAIN L#FOUJ a2
 EXTERN L#FOUJ 135
 
 EXTEND_TOP L#FOUJ 141
-+ ~Specifics(Player1,12)
++ ~Specifics(Player1,SHADOW_ADEPT)
 !Class(Player1,SORCERER)
 OR(2)
 Class(Player1,MAGE_ALL)
@@ -23,7 +23,7 @@ Class(Player1,BARD_ALL)~ + ~My magic originated from a magical rift that I found
 END
 
 EXTEND_TOP L#FOUJ 141
-+ ~Specifics(Player1,12)
++ ~Specifics(Player1,SHADOW_ADEPT)
 Class(Player1,SORCERER)~ + ~From what I understand, I've always wielded the Shadow Weave. I've heard such powers are blessing from Shar.~ EXTERN L#FOUJ a2.1
 END
 
@@ -34,7 +34,7 @@ CHAIN L#FOUJ a2.1
 EXTERN L#FOUJ 148
 
 EXTEND_TOP L#FOUJ 150
-+ ~Specifics(Player1,12)~ + ~My magic is not so different from yours. Why would I distrust you?~ EXTERN L#FOUJ a2.2
++ ~Specifics(Player1,SHADOW_ADEPT)~ + ~My magic is not so different from yours. Why would I distrust you?~ EXTERN L#FOUJ a2.2
 END
 
 CHAIN L#FOUJ a2.2

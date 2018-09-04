@@ -5,7 +5,7 @@ CHAIN IF WEIGHT #-1 ~Global("C02SASpectacle","GLOBAL",0)
 ~Kal'shaas a'thar! My friend, your planar intervention could not have been more timely. Another second and that beast would've...~
 = ~Aah... never mind. Too good to be true after all. Erm... I don't suppose you'd be willing to offer a hand?~
 DO ~CreateCreatureObjectEffect("c02sachi","c0darkbo","c02samag")
-ChangeSpecifics(Myself,12)
+ChangeSpecifics(Myself,SHADOW_ADEPT)
 ChangeAIScript("C02SAMAG",OVERRIDE)
 ChangeAIScript("C0SADEPT",DEFAULT)
 ChangeEnemyAlly(Myself,GOODBUTBLUE)
@@ -37,16 +37,16 @@ CHAIN C02SAMAG ZAAL-AFTER-2
 = ~Now that I am here and still alive, however, I should reward you for your rescue. Unfortunately, I tend to avoid taking more than I need during my planar travels, so that may be a problem... hmm... whatever shall I...~
 DO ~GiveItem("c0sawan6",LastTalkedToBy)~
 = ~Ah, yes, I still have this wand. It still has a good amount of uses left in it. Quite useful, but I don't need to use it often. They are common where I'm from, but I doubt you'll find any of its like here.~
-= IF ~Specifics(LastTalkedToBy,12)~ THEN ~Hmm... and I just noticed that you have some skill in the Shadow Art. In that case, you can take my cloak as well. You should be able to make use of it. I have a spare one back home... I think.~
+= IF ~Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN ~Hmm... and I just noticed that you have some skill in the Shadow Art. In that case, you can take my cloak as well. You should be able to make use of it. I have a spare one back home... I think.~
 DO ~GiveItem("c0saclc2",LastTalkedToBy)~
-= IF ~!Specifics(LastTalkedToBy,12)
+= IF ~!Specifics(LastTalkedToBy,SHADOW_ADEPT)
 OR(6)
-Specifics(Player1,12)
-Specifics(Player2,12)
-Specifics(Player3,12)
-Specifics(Player4,12)
-Specifics(Player5,12)
-Specifics(Player6,12)~ THEN ~Hmm... and I just noticed that you have someone versed in the Shadow Art. In that case, you can take my cloak as well. You should be able to make use of it. I have a spare one back home... I think.~
+Specifics(Player1,SHADOW_ADEPT)
+Specifics(Player2,SHADOW_ADEPT)
+Specifics(Player3,SHADOW_ADEPT)
+Specifics(Player4,SHADOW_ADEPT)
+Specifics(Player5,SHADOW_ADEPT)
+Specifics(Player6,SHADOW_ADEPT)~ THEN ~Hmm... and I just noticed that you have someone versed in the Shadow Art. In that case, you can take my cloak as well. You should be able to make use of it. I have a spare one back home... I think.~
 DO ~GiveItem("c0saclc2",LastTalkedToBy)~
 = ~I hope that is enough for you. Now, I think I shall take this opportunity to explore this little part of the Prime. It has been quite a while since the last time I was here.~
 END
@@ -100,18 +100,18 @@ CHAIN C02SAMAG ZAAL-COALITION-GEM
 = ~Well, I won't waste your time with speculation. That is a shadow gem, a magical locus that has absorbed enough of the Shadow Weave's energies to take upon a physical form. Very powerful, and invaluable for users of the Shadow Art.~
 END
 + ~OR(6)
-Specifics(Player1,12)
-Specifics(Player2,12)
-Specifics(Player3,12)
-Specifics(Player4,12)
-Specifics(Player5,12)
-Specifics(Player6,12)~ + ~And what can be done with it?~ + ZAAL-COALITION-GEM-1
-+ ~!Specifics(Player1,12)
-!Specifics(Player2,12)
-!Specifics(Player3,12)
-!Specifics(Player4,12)
-!Specifics(Player5,12)
-!Specifics(Player6,12)~ + ~And what can be done with it?~ + ZAAL-COALITION-GEM-2
+Specifics(Player1,SHADOW_ADEPT)
+Specifics(Player2,SHADOW_ADEPT)
+Specifics(Player3,SHADOW_ADEPT)
+Specifics(Player4,SHADOW_ADEPT)
+Specifics(Player5,SHADOW_ADEPT)
+Specifics(Player6,SHADOW_ADEPT)~ + ~And what can be done with it?~ + ZAAL-COALITION-GEM-1
++ ~!Specifics(Player1,SHADOW_ADEPT)
+!Specifics(Player2,SHADOW_ADEPT)
+!Specifics(Player3,SHADOW_ADEPT)
+!Specifics(Player4,SHADOW_ADEPT)
+!Specifics(Player5,SHADOW_ADEPT)
+!Specifics(Player6,SHADOW_ADEPT)~ + ~And what can be done with it?~ + ZAAL-COALITION-GEM-2
 
 CHAIN C02SAMAG ZAAL-COALITION-GEM-1
 ~Such gems need a certain... touch to shape into anything useful. I doubt there is anyone native to this plane that is capable of making anything out of this material. My skills in craftmsanship are far from spectacular, but there is still something I can do...~

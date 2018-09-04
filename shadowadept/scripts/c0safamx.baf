@@ -13,6 +13,7 @@ THEN
 	ActionOverride("c0safam",SetSequence(1))
 	ActionOverride("c0safam",SetGlobal("Revival","LOCALS",1))
 	ActionOverride("c0safam",ClearAllActions())
+	Continue()
 END
 
 IF
@@ -28,4 +29,5 @@ THEN
 	ActionOverride("c0safam",SetGlobal("Summoned","LOCALS",1))
 	ActionOverride("c0safam",ClearAllActions())
 	SetGlobal("C0SACallFamiliar","GLOBAL",0)
+	Continue()
 END

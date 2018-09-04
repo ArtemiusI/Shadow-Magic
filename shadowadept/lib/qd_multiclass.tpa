@@ -866,7 +866,7 @@ DEFINE_ACTION_FUNCTION qd_multiclass
 										WRITE_EVALUATED_ASCII 0x30 ~%abil_new%~
 										SET col_length = STRING_LENGTH ~%col%~
 									ACTION_IF (%col_length% = 1) BEGIN 
-									COPY ~%mc_dir%/QD_MC_GA.eff~ ~override/QD_MC@0%col%.eff~
+									COPY ~%mc_dir%/QD_MC_AP.eff~ ~override/QD_MC@0%col%.eff~
 										WRITE_EVALUATED_ASCII 0x30 ~QD_MC#0%col%~
 										COPY_EXISTING ~override/QD_MC%base_class%0%col%.spl~ ~override~ 
 											LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~%abil_new%#~ END  
@@ -874,7 +874,7 @@ DEFINE_ACTION_FUNCTION qd_multiclass
 											LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~QD_MC@0%col%~ END
 									END 
 									ACTION_IF (%col_length% = 2) BEGIN
-									COPY ~%mc_dir%/QD_MC_GA.eff~ ~override/QD_MC@%col%.eff~
+									COPY ~%mc_dir%/QD_MC_AP.eff~ ~override/QD_MC@%col%.eff~
 										WRITE_EVALUATED_ASCII 0x30 ~QD_MC#%col%~
 										COPY_EXISTING ~override/QD_MC%base_class%%col%.spl~ ~override~ 
 											LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = %kit_code% parameter2 = 9 STR_VAR resource = EVAL ~%abil_new%#~ END  
