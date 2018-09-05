@@ -2388,7 +2388,7 @@ IF ~OR(9)
 !Global("C0SALv6","LOCALS",0)
 !Global("C0SALv7","LOCALS",0)
 !Global("C0SALv8","LOCALS",0)
-!Global("C0SALv9","LOCALS",0)~ DO ~StartDialogOverride("c0satalk",Myself)~ EXIT
+!Global("C0SALv9","LOCALS",0)~ DO ~ClearAllActions() StartDialogOverride("c0satalk",Myself)~ EXIT
 IF ~Global("C0SAFirstMemory","LOCALS",0)
 Global("C0SALv1","LOCALS",0)
 Global("C0SALv2","LOCALS",0)
