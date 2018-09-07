@@ -338,7 +338,7 @@ ADD_KIT ~C0SABAR2~
  ~C0SABAR2                 	0       0       0       0       0		0~
 
  // appended to ALIGNMNT.2da
- ~C0SABAR2                  	0       0       0       0       1	1       0       1       0~
+ ~C0SABAR2                  	0       1       0       0       1	1       0       1       0~
 
  // appended to DUALCLAS.2da
  ~C0SABAR2                  	0       0       0       0       0       0~

@@ -30,7 +30,6 @@ THEN
 	ActionOverride(Player1,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player1)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -50,7 +49,6 @@ THEN
 	ActionOverride(Player2,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player2)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -70,7 +68,6 @@ THEN
 	ActionOverride(Player3,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player3)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -90,7 +87,6 @@ THEN
 	ActionOverride(Player4,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player4)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -110,7 +106,6 @@ THEN
 	ActionOverride(Player5,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player5)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -130,7 +125,6 @@ THEN
 	ActionOverride(Player6,AddKit(C0SADEPT))
 	ApplySpellRES("c0erase2",Player6)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -150,7 +144,6 @@ THEN
 	ActionOverride(Player1,AddKit(C0SASORC))
 	ApplySpellRES("c0erase2",Player1)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -170,7 +163,6 @@ THEN
 	ActionOverride(Player2,AddKit(C0SASORC))
 	ApplySpellRES("c0erase2",Player2)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -190,7 +182,6 @@ THEN
 	ActionOverride(Player3,AddKit(C0SASORC))
 	ApplySpellRES("c0erase2",Player3)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -210,7 +201,6 @@ THEN
 	ActionOverride(Player4,AddKit(C0SASORC))
 	ApplySpellRES("c0erase2",Player4)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -230,7 +220,6 @@ THEN
 	ActionOverride(Player5,AddKit(C0SASORC))
 	ApplySpellRES("c0erase2",Player5)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -250,7 +239,6 @@ THEN
 	ActionOverride(Player6,AddKit(C0SASORC))
 	ApplySpellRES("c0erase2",Player6)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -270,7 +258,6 @@ THEN
 	ActionOverride(Player1,AddKit(C0SABARD))
 	ApplySpellRES("c0erase2",Player1)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -290,7 +277,6 @@ THEN
 	ActionOverride(Player2,AddKit(C0SABARD))
 	ApplySpellRES("c0erase2",Player2)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -310,7 +296,6 @@ THEN
 	ActionOverride(Player3,AddKit(C0SABARD))
 	ApplySpellRES("c0erase2",Player3)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -330,7 +315,6 @@ THEN
 	ActionOverride(Player4,AddKit(C0SABARD))
 	ApplySpellRES("c0erase2",Player4)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -350,7 +334,6 @@ THEN
 	ActionOverride(Player5,AddKit(C0SABARD))
 	ApplySpellRES("c0erase2",Player5)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 IF
@@ -370,7 +353,6 @@ THEN
 	ActionOverride(Player6,AddKit(C0SABARD))
 	ApplySpellRES("c0erase2",Player6)
 	SetInterrupt(TRUE)
-	Continue()
 END
 
 // First Memory
@@ -385,7 +367,6 @@ THEN
 	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
 	DisplayStringNoName(Player1,~You now have an opportunity to memorize your newly learned spells. Unpause the game when you are ready.~ [EFF_P05])
 	ActionOverride(Player1,PauseGame())
-	Continue()
 END
 
 IF
@@ -397,7 +378,6 @@ THEN
   RESPONSE #100
 	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",3))
 	ActionOverride(Player1,Rest())
-	Continue()
 END
 
 IF
@@ -408,7 +388,6 @@ THEN
   RESPONSE #100
 	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",3))
 	ActionOverride(Player1,Rest())
-	Continue()
 END
 
 // Missing Spells
@@ -428,7 +407,6 @@ IF
 THEN
   RESPONSE #100
 	ActionOverride(Player1,StartDialogOverride("c0satalk",Myself))
-	Continue()
 END
 
 IF
@@ -465,7 +443,6 @@ IF
 THEN
   RESPONSE #100
 	ActionOverride(Player3,StartDialogOverride("c0satalk",Myself))
-	Continue()
 END
 
 IF
@@ -484,7 +461,6 @@ IF
 THEN
   RESPONSE #100
 	ActionOverride(Player4,StartDialogOverride("c0satalk",Myself))
-	Continue()
 END
 
 IF
@@ -503,7 +479,6 @@ IF
 THEN
   RESPONSE #100
 	ActionOverride(Player5,StartDialogOverride("c0satalk",Myself))
-	Continue()
 END
 
 IF
@@ -522,34 +497,29 @@ IF
 THEN
   RESPONSE #100
 	ActionOverride(Player6,StartDialogOverride("c0satalk",Myself))
-	Continue()
 END
 
 // Familiar
 
 IF
-	InPartySlot(Player1,0)
 	Specifics(Player1,SHADOW_ADEPT)
 	ClassLevelGT(Player1,WIZARD,5)
 	Global("C0SASummonFamiliar","GLOBAL",0)
 THEN
   RESPONSE #100
-	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
 	ActionOverride(Player1,AddSpecialAbility("c0safam1"))
-	Continue()
+	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
 END
 
 IF
-	InPartySlot(Player1,0)
 	Specifics(Player1,SHADOW_ADEPT)
 	Class(Player1,BARD_ALL)
 	LevelGT(Player1,7)
 	Global("C0SASummonFamiliar","GLOBAL",0)
 THEN
   RESPONSE #100
-	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
 	ActionOverride(Player1,AddSpecialAbility("c0safam1"))
-	Continue()
+	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
 END
 
 // Nightsinger's Tithe
@@ -561,14 +531,7 @@ THEN
   RESPONSE #100
 	ActionOverride(Player1,SetGlobal("C0NightsingerTithe","LOCALS",1))
 	ApplySpellRES("C0SA903B",Player1)
-	ChangeStat(Player1,CON,2,ADD)
-	ChangeStat(Player1,SAVEVSDEATH,-1,ADD)
-	ChangeStat(Player1,SAVEVSWANDS,-1,ADD)
-	ChangeStat(Player1,SAVEVSPOLY,-1,ADD)
-	ChangeStat(Player1,SAVEVSBREATH,-1,ADD)
-	ChangeStat(Player1,SAVEVSSPELL,-1,ADD)
 	DisplayStringHead(Player1,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-	Continue()
 END
 
 IF
@@ -578,14 +541,7 @@ THEN
   RESPONSE #100
 	ActionOverride(Player2,SetGlobal("C0NightsingerTithe","LOCALS",1))
 	ApplySpellRES("C0SA903B",Player2)
-	ChangeStat(Player2,CON,2,ADD)
-	ChangeStat(Player2,SAVEVSDEATH,-1,ADD)
-	ChangeStat(Player2,SAVEVSWANDS,-1,ADD)
-	ChangeStat(Player2,SAVEVSPOLY,-1,ADD)
-	ChangeStat(Player2,SAVEVSBREATH,-1,ADD)
-	ChangeStat(Player2,SAVEVSSPELL,-1,ADD)
 	DisplayStringHead(Player2,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-	Continue()
 END
 
 IF
@@ -595,14 +551,7 @@ THEN
   RESPONSE #100
 	ActionOverride(Player3,SetGlobal("C0NightsingerTithe","LOCALS",1))
 	ApplySpellRES("C0SA903B",Player3)
-	ChangeStat(Player3,CON,2,ADD)
-	ChangeStat(Player3,SAVEVSDEATH,-1,ADD)
-	ChangeStat(Player3,SAVEVSWANDS,-1,ADD)
-	ChangeStat(Player3,SAVEVSPOLY,-1,ADD)
-	ChangeStat(Player3,SAVEVSBREATH,-1,ADD)
-	ChangeStat(Player3,SAVEVSSPELL,-1,ADD)
 	DisplayStringHead(Player3,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-	Continue()
 END
 
 IF
@@ -612,14 +561,7 @@ THEN
   RESPONSE #100
 	ActionOverride(Player4,SetGlobal("C0NightsingerTithe","LOCALS",1))
 	ApplySpellRES("C0SA903B",Player4)
-	ChangeStat(Player4,CON,2,ADD)
-	ChangeStat(Player4,SAVEVSDEATH,-1,ADD)
-	ChangeStat(Player4,SAVEVSWANDS,-1,ADD)
-	ChangeStat(Player4,SAVEVSPOLY,-1,ADD)
-	ChangeStat(Player4,SAVEVSBREATH,-1,ADD)
-	ChangeStat(Player4,SAVEVSSPELL,-1,ADD)
 	DisplayStringHead(Player4,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-	Continue()
 END
 
 IF
@@ -629,14 +571,7 @@ THEN
   RESPONSE #100
 	ActionOverride(Player5,SetGlobal("C0NightsingerTithe","LOCALS",1))
 	ApplySpellRES("C0SA903B",Player5)
-	ChangeStat(Player5,CON,2,ADD)
-	ChangeStat(Player5,SAVEVSDEATH,-1,ADD)
-	ChangeStat(Player5,SAVEVSWANDS,-1,ADD)
-	ChangeStat(Player5,SAVEVSPOLY,-1,ADD)
-	ChangeStat(Player5,SAVEVSBREATH,-1,ADD)
-	ChangeStat(Player5,SAVEVSSPELL,-1,ADD)
 	DisplayStringHead(Player5,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-	Continue()
 END
 
 IF
@@ -646,12 +581,5 @@ THEN
   RESPONSE #100
 	ActionOverride(Player6,SetGlobal("C0NightsingerTithe","LOCALS",1))
 	ApplySpellRES("C0SA903B",Player6)
-	ChangeStat(Player6,CON,2,ADD)
-	ChangeStat(Player6,SAVEVSDEATH,-1,ADD)
-	ChangeStat(Player6,SAVEVSWANDS,-1,ADD)
-	ChangeStat(Player6,SAVEVSPOLY,-1,ADD)
-	ChangeStat(Player6,SAVEVSBREATH,-1,ADD)
-	ChangeStat(Player6,SAVEVSSPELL,-1,ADD)
 	DisplayStringHead(Player6,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-	Continue()
 END
