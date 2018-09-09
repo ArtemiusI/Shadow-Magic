@@ -301,7 +301,7 @@ LAF fl#add_kit_ee
 When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
   STR_VAR
     kit_name = C0SABARD
-	hpclass = ~HPDD~
+	hpclass = ~HPROG~
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END

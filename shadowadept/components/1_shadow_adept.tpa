@@ -63,7 +63,7 @@ EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/bdbaldur.baf~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
