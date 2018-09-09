@@ -5,6 +5,9 @@ COPY ~%MOD_FOLDER%/portraits~ ~override~
 COPY ~%MOD_FOLDER%/spells~ ~override~
 COPY ~%MOD_FOLDER%/spells/bams~ ~override~
 
+// SPECIFICS value SHADOW_ADEPT
+LAF ADD_IDS_ENTRY INT_VAR preferredValue = 100 STR_VAR idsFile = "specific.ids" identifier = "SHADOW_ADEPT" RET value END
+
 ////////////////////////////////////////
 ///////////////ANIMATIONS///////////////
 ////////////////////////////////////////

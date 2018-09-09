@@ -146,7 +146,7 @@ CHAIN C0SAFAM YINROU-BG1-3-2l
 EXIT
 
 CHAIN C0SAFAM YINROU-BG1-3-2m
-~The wolf bares his fangs in a wicked grin. "The Shining Lady believes that being right will lead her to victory. She is wrong on both accounts."~
+~The wolf bares his fangs in a wicked grin. "The Shining Lady believes that she is right, and that being right will lead her to victory. She is wrong on both accounts."~
 EXIT
 
 CHAIN C0SAFAM YINROU-BG1-3-2n

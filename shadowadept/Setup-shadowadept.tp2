@@ -26,8 +26,6 @@ BEGIN ~Shadow Magic: Main Component~
 
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 
-// SHADOW MONK - requires Shadow Magic component
-
 BEGIN ~Shadow Magic: Shadow Monk monk kit~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
