@@ -121,6 +121,7 @@ WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
 SAY NAME1 ~Nyx~
 SAY NAME2 ~Nyx~
 WRITE_ASCII 0X34 ~C0Nyx~ #8   //small portrait
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_MEPHIT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 ////////////////////////////////////////
@@ -130,14 +131,17 @@ WRITE_ASCII 0X34 ~C0Nyx~ #8   //small portrait
 COPY ~shadowadept/familiars/c0saatk1.itm~ ~override~
 SAY NAME1 ~Spectral Drain~
 SAY NAME2 ~Spectral Drain~
+SAY DESC ~Ka'shai can drain the life energies of his target, dealing 1d4+1 (+1 per 5 levels) magic damage, healing Ka'Shai for the same amount.~
 
 COPY ~shadowadept/familiars/c0saatk2.itm~ ~override~
 SAY NAME1 ~Spectral Touch~
 SAY NAME2 ~Spectral Touch~
+SAY DESC ~Ka'Shai's negative energy-infused touch strikes as a +4 weapon and deals 2d5+2 crushing damage, and on a failed Saving Throw vs. Death at -2 (-1 additional penalty per 5 levels) deals 3d6 magic damage and drains one point of Strength (two at level 15, three at level 25) for one hour.~
 
 COPY ~shadowadept/familiars/c0saatk3.itm~ ~override~
 SAY NAME1 ~Spectral Fang~
 SAY NAME2 ~Spectral Fang~
+SAY DESC ~Yin'rou's fangs are infused with the energies of the Plane of Shadow, striking as +4 weapons and have a 10% chance (25% chance at level 10 and additional +25% chance per 5 levels thereafter) to deal 2d6 additional cold damage and drain two levels from its target.~
 COPY ~shadowadept/familiars/c0saatk3.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
@@ -151,6 +155,7 @@ COPY ~shadowadept/familiars/c0saatk3.spl~ ~override~
 COPY ~shadowadept/familiars/c0saatk4.itm~ ~override~
 SAY NAME1 ~Spectral Shiv~
 SAY NAME2 ~Spectral Shiv~
+SAY DESC ~Nyx's shiv strikes as a +4 weapon and is coated with a powerful toxin which has a 50% chance to poison its target on a failed Saving Throw vs. Death (-1 additional penalty per 5 levels), dealing one damage per second for six seconds.~
 
 COPY_EXISTING ~c0sa107.spl~ ~override/c0sfam01.spl~
 WRITE_SHORT 0x1C 4 

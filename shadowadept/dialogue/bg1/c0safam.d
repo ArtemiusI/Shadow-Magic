@@ -356,8 +356,8 @@ END
 ++ ~Return to your home plane for now. I will call for you when you're needed.~ + NYX-BG1-3-1
 ++ ~You wouldn't happen to have any advice, would you?~ + NYX-BG1-3-2
 ++ ~Give me anything you have pickpocketed, will you?~ + NYX-BG1-3-4
-+ ~Global("DisableFamiliarAI","LOCALS",0)~ + ~I want you to stop searching for traps.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",1)~ + NYX-BG1-3-5
-+ ~Global("DisableFamiliarAI","LOCALS",1)~ + ~I want you to search for traps.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",0)~ + NYX-BG1-3-5
++ ~Global("DisableFamiliarAI","LOCALS",0)~ + ~I want you to stop searching for traps.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",1)~ + NYX-BG1-3-6
++ ~Global("DisableFamiliarAI","LOCALS",1)~ + ~I want you to search for traps.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",0)~ + NYX-BG1-3-6
 ++ ~Nothing right now. Let's get moving.~ + NYX-BG1-3-0
 
 CHAIN C0SAFAM NYX-BG1-3-0

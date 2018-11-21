@@ -81,10 +81,8 @@ ACTION_IF (NOT GAME_IS_BGEE) BEGIN
   CLEAR_IDS_MAP
 
   COPY ~%MOD_FOLDER%/animations/c0mg/7xxx.ini~ ~override/%hexNumber%.ini~
+  COPY ~%MOD_FOLDER%/animations/c0mg/c0samagp.bmp~ ~override~
 
-  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/c0mg~ ~^.+\.bam$~ BEGIN
-    COPY ~%BASH_FOR_FILESPEC%~ ~override~
-  END
 END
 
 // Nightwalker
@@ -119,6 +117,7 @@ ACTION_IF (NOT GAME_IS_BGEE) BEGIN
   CLEAR_IDS_MAP
 
   COPY ~%MOD_FOLDER%/animations/c0wo/exxx.ini~ ~override/%hexNumber%.ini~
+  COPY ~%MOD_FOLDER%/animations/c0wo/c0sawolp.bmp~ ~override~
 
   ACTION_BASH_FOR ~%MOD_FOLDER%/animations/c0wo~ ~^.+\.bam$~ BEGIN
     COPY ~%BASH_FOR_FILESPEC%~ ~override~
@@ -142,4 +141,20 @@ ACTION_IF (NOT GAME_IS_BGEE) BEGIN
   ACTION_BASH_FOR ~%MOD_FOLDER%/animations/c0ch~ ~^.+\.bam$~ BEGIN
     COPY ~%BASH_FOR_FILESPEC%~ ~override~
   END
+END
+
+// Shadow Mephit
+
+ACTION_IF (NOT GAME_IS_BGEE) BEGIN
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7000 slotMax = 0x7999 RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~ // No free creature animation slot found.
+  END
+
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% C0_SHADOW_MEPHIT~ UNLESS ~C0_SHADOW_MEPHIT~
+  CLEAR_IDS_MAP
+
+  COPY ~%MOD_FOLDER%/animations/c0me/7xxx.ini~ ~override/%hexNumber%.ini~
+  COPY ~%MOD_FOLDER%/animations/c0me/c0saimpp.bmp~ ~override~
 END
