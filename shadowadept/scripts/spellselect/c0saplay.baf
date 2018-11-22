@@ -1,0 +1,153 @@
+///////////////////////////
+///RELEARN ERASED SPELLS///
+///////////////////////////
+
+// IDENTIFY
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,MAGE_ALL)
+	!HaveKnownSpellRES("SPWI110")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI110")
+	Continue()
+END
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,BARD_ALL)
+	Kit(Myself,C0SABARD)
+	LevelGT(Myself,1)
+	!HaveKnownSpellRES("SPWI110")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI110")
+	Continue()
+END
+
+// MINOR SEQUENCER
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,MAGE_ALL)
+	!Class(Myself,SORCERER)
+	ClassLevelGT(Myself,WIZARD,6)
+	!HaveKnownSpellRES("SPWI420")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI420")
+	Continue()
+END
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,SORCERER)
+	ClassLevelGT(Myself,WIZARD,7)
+	!HaveKnownSpellRES("SPWI420")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI420")
+	Continue()
+END
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,BARD_ALL)
+	Kit(Myself,C0SABARD)
+	LevelGT(Myself,9)
+	!HaveKnownSpellRES("SPWI420")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI420")
+	Continue()
+END
+// CONTINGENCY
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,MAGE_ALL)
+	ClassLevelGT(Myself,WIZARD,11)
+	!HaveKnownSpellRES("SPWI617")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI617")
+	Continue()
+END
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,BARD_ALL)
+	Kit(Myself,C0SABARD)
+	LevelGT(Myself,15)
+	!HaveKnownSpellRES("SPWI617")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI617")
+	Continue()
+END
+// SPELL SEQUENCER
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,MAGE_ALL)
+	ClassLevelGT(Myself,WIZARD,13)
+	!HaveKnownSpellRES("SPWI710")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI710")
+	Continue()
+END
+// SPELL TRIGGER
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,MAGE_ALL)
+	ClassLevelGT(Myself,WIZARD,15)
+	!HaveKnownSpellRES("SPWI809")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI809")
+	Continue()
+END
+// CHAIN CONTINGENCY
+IF 
+	Specifics(Myself,SHADOW_ADEPT)
+	Class(Myself,MAGE_ALL)
+	ClassLevelGT(Myself,WIZARD,17)
+	!HaveKnownSpellRES("SPWI908")
+THEN
+  RESPONSE #100
+	AddSpecialAbility("SPWI908")
+	Continue()
+END
+IF
+  Global("C0EBONSHADEDEADMAGIC","GLOBAL",1)
+  Global("C0SASPF","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    ReallyForceSpellDeadRES("C0SASPF",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("C0EBONSHADEDEADMAGIC","GLOBAL",0)
+  Global("C0SASPF","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    ReallyForceSpellDeadRES("C0SASPF2",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("C0DISABLESHADOWSTEP","GLOBAL",1)
+  Global("C0SASHN","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    ReallyForceSpellDeadRES("C0SASHN",Myself)
+    SetInterrupt(TRUE)
+END
+
+IF
+  Global("C0DISABLESHADOWSTEP","GLOBAL",0)
+  Global("C0SASHN","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    ReallyForceSpellDeadRES("C0SASHN2",Myself)
+    SetInterrupt(TRUE)
+END

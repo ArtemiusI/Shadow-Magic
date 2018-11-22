@@ -972,70 +972,13 @@ THEN
 	ApplySpellRES("c0erase2",Player6)
 	SetInterrupt(TRUE)
 END
-
-// First Memory
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	Delay(1)
-	!Class(Player1,SORCERER)
-	!Class(Player1,BARD)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",1))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
-	DisplayStringNoName(Player1,~You now have an opportunity to memorize your newly learned spells. Unpause the game when you are ready.~ [EFF_P05])
-	ActionOverride(Player1,PauseGame())
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	Delay(1)
-	Class(Player1,BARD)
-	LevelGT(Player1,1)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",1))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
-	DisplayStringNoName(Player1,~You now have an opportunity to memorize your newly learned spells. Unpause the game when you are ready.~ [EFF_P05])
-	ActionOverride(Player1,PauseGame())
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	Delay(1)
-	Class(Player1,BARD)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",1))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",3))
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	Delay(1)
-	Class(Player1,SORCERER)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",1))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",3))
-	ActionOverride(Player1,Rest())
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	Delay(1)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",2))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",3))
-	ActionOverride(Player1,Rest())
-END
-
 // Missing Spells
+
 IF
 	TriggerOverride(Player1,ActionListEmpty())
 	Specifics(Player1,SHADOW_ADEPT)
+	Class(Player1,MAGE_ALL)
+	!Class(Player1,SORCERER)
 	OR(9)
 	TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
@@ -1046,15 +989,97 @@ IF
 	TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
 	TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
 	TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
-	!Global("C0SABOOK","LOCALS",1)
+	!TriggerOverride(Player1,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player1,Global("C0SAHLAB","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player1,StartDialogOverride("c0satalk",Myself))
+	ActionOverride(Player1,ApplySpellRES("C0SALSW",Myself))
 END
-
 IF
 	TriggerOverride(Player1,ActionListEmpty())
+	Specifics(Player1,SHADOW_ADEPT)
+	Class(Player1,MAGE_ALL)
+	!Class(Player1,SORCERER)
+	OR(9)
+	TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player1,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0SALHW",Myself))
+END
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Specifics(Player1,SHADOW_ADEPT)
+	Class(Player1,SORCERER)
+	OR(9)
+	TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player1,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0SALSS",Myself))
+END
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Specifics(Player1,SHADOW_ADEPT)
+	Class(Player1,SORCERER)
+	OR(9)
+	TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player1,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0SALHS",Myself))
+END
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	Specifics(Player1,SHADOW_ADEPT)
+	Class(Player1,BARD)
+	OR(9)
+	TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player1,Global("C0SABOOK","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("C0SALSB",Myself))
+END
+IF
+	TriggerOverride(Player2,ActionListEmpty())
 	Specifics(Player2,SHADOW_ADEPT)
+	Class(Player2,MAGE_ALL)
+	!Class(Player2,SORCERER)
 	OR(9)
 	TriggerOverride(Player2,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player2,GlobalGT("C0SALv2","LOCALS",0))
@@ -1065,15 +1090,97 @@ IF
 	TriggerOverride(Player2,GlobalGT("C0SALv7","LOCALS",0))
 	TriggerOverride(Player2,GlobalGT("C0SALv8","LOCALS",0))
 	TriggerOverride(Player2,GlobalGT("C0SALv9","LOCALS",0))
-	!Global("C0SABOOK","LOCALS",1)
+	!TriggerOverride(Player2,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player2,Global("C0SAHLAB","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player2,StartDialogOverride("c0satalk",Myself))
+	ActionOverride(Player2,ApplySpellRES("C0SALSW",Myself))
 END
-
 IF
-	TriggerOverride(Player1,ActionListEmpty())
+	TriggerOverride(Player2,ActionListEmpty())
+	Specifics(Player2,SHADOW_ADEPT)
+	Class(Player2,MAGE_ALL)
+	!Class(Player2,SORCERER)
+	OR(9)
+	TriggerOverride(Player2,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player2,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player2,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0SALHW",Myself))
+END
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Specifics(Player2,SHADOW_ADEPT)
+	Class(Player2,SORCERER)
+	OR(9)
+	TriggerOverride(Player2,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player2,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player2,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0SALSS",Myself))
+END
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Specifics(Player2,SHADOW_ADEPT)
+	Class(Player2,SORCERER)
+	OR(9)
+	TriggerOverride(Player2,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player2,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player2,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0SALHS",Myself))
+END
+IF
+	TriggerOverride(Player2,ActionListEmpty())
+	Specifics(Player2,SHADOW_ADEPT)
+	Class(Player2,BARD)
+	OR(9)
+	TriggerOverride(Player2,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player2,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player2,Global("C0SABOOK","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player2,ApplySpellRES("C0SALSB",Myself))
+END
+IF
+	TriggerOverride(Player3,ActionListEmpty())
 	Specifics(Player3,SHADOW_ADEPT)
+	Class(Player3,MAGE_ALL)
+	!Class(Player3,SORCERER)
 	OR(9)
 	TriggerOverride(Player3,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player3,GlobalGT("C0SALv2","LOCALS",0))
@@ -1084,15 +1191,97 @@ IF
 	TriggerOverride(Player3,GlobalGT("C0SALv7","LOCALS",0))
 	TriggerOverride(Player3,GlobalGT("C0SALv8","LOCALS",0))
 	TriggerOverride(Player3,GlobalGT("C0SALv9","LOCALS",0))
-	!Global("C0SABOOK","LOCALS",1)
+	!TriggerOverride(Player3,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player3,Global("C0SAHLAB","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player3,StartDialogOverride("c0satalk",Myself))
+	ActionOverride(Player3,ApplySpellRES("C0SALSW",Myself))
 END
-
 IF
-	TriggerOverride(Player1,ActionListEmpty())
+	TriggerOverride(Player3,ActionListEmpty())
+	Specifics(Player3,SHADOW_ADEPT)
+	Class(Player3,MAGE_ALL)
+	!Class(Player3,SORCERER)
+	OR(9)
+	TriggerOverride(Player3,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player3,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player3,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0SALHW",Myself))
+END
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Specifics(Player3,SHADOW_ADEPT)
+	Class(Player3,SORCERER)
+	OR(9)
+	TriggerOverride(Player3,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player3,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player3,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0SALSS",Myself))
+END
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Specifics(Player3,SHADOW_ADEPT)
+	Class(Player3,SORCERER)
+	OR(9)
+	TriggerOverride(Player3,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player3,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player3,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0SALHS",Myself))
+END
+IF
+	TriggerOverride(Player3,ActionListEmpty())
+	Specifics(Player3,SHADOW_ADEPT)
+	Class(Player3,BARD)
+	OR(9)
+	TriggerOverride(Player3,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player3,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player3,Global("C0SABOOK","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player3,ApplySpellRES("C0SALSB",Myself))
+END
+IF
+	TriggerOverride(Player4,ActionListEmpty())
 	Specifics(Player4,SHADOW_ADEPT)
+	Class(Player4,MAGE_ALL)
+	!Class(Player4,SORCERER)
 	OR(9)
 	TriggerOverride(Player4,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player4,GlobalGT("C0SALv2","LOCALS",0))
@@ -1103,15 +1292,97 @@ IF
 	TriggerOverride(Player4,GlobalGT("C0SALv7","LOCALS",0))
 	TriggerOverride(Player4,GlobalGT("C0SALv8","LOCALS",0))
 	TriggerOverride(Player4,GlobalGT("C0SALv9","LOCALS",0))
-	!Global("C0SABOOK","LOCALS",1)
+	!TriggerOverride(Player4,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player4,Global("C0SAHLAB","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player4,StartDialogOverride("c0satalk",Myself))
+	ActionOverride(Player4,ApplySpellRES("C0SALSW",Myself))
 END
-
 IF
-	TriggerOverride(Player1,ActionListEmpty())
+	TriggerOverride(Player4,ActionListEmpty())
+	Specifics(Player4,SHADOW_ADEPT)
+	Class(Player4,MAGE_ALL)
+	!Class(Player4,SORCERER)
+	OR(9)
+	TriggerOverride(Player4,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player4,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player4,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0SALHW",Myself))
+END
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Specifics(Player4,SHADOW_ADEPT)
+	Class(Player4,SORCERER)
+	OR(9)
+	TriggerOverride(Player4,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player4,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player4,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0SALSS",Myself))
+END
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Specifics(Player4,SHADOW_ADEPT)
+	Class(Player4,SORCERER)
+	OR(9)
+	TriggerOverride(Player4,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player4,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player4,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0SALHS",Myself))
+END
+IF
+	TriggerOverride(Player4,ActionListEmpty())
+	Specifics(Player4,SHADOW_ADEPT)
+	Class(Player4,BARD)
+	OR(9)
+	TriggerOverride(Player4,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player4,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player4,Global("C0SABOOK","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player4,ApplySpellRES("C0SALSB",Myself))
+END
+IF
+	TriggerOverride(Player5,ActionListEmpty())
 	Specifics(Player5,SHADOW_ADEPT)
+	Class(Player5,MAGE_ALL)
+	!Class(Player5,SORCERER)
 	OR(9)
 	TriggerOverride(Player5,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player5,GlobalGT("C0SALv2","LOCALS",0))
@@ -1122,15 +1393,97 @@ IF
 	TriggerOverride(Player5,GlobalGT("C0SALv7","LOCALS",0))
 	TriggerOverride(Player5,GlobalGT("C0SALv8","LOCALS",0))
 	TriggerOverride(Player5,GlobalGT("C0SALv9","LOCALS",0))
-	!Global("C0SABOOK","LOCALS",1)
+	!TriggerOverride(Player5,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player5,Global("C0SAHLAB","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player5,StartDialogOverride("c0satalk",Myself))
+	ActionOverride(Player5,ApplySpellRES("C0SALSW",Myself))
 END
-
 IF
-	TriggerOverride(Player1,ActionListEmpty())
+	TriggerOverride(Player5,ActionListEmpty())
+	Specifics(Player5,SHADOW_ADEPT)
+	Class(Player5,MAGE_ALL)
+	!Class(Player5,SORCERER)
+	OR(9)
+	TriggerOverride(Player5,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player5,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player5,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0SALHW",Myself))
+END
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Specifics(Player5,SHADOW_ADEPT)
+	Class(Player5,SORCERER)
+	OR(9)
+	TriggerOverride(Player5,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player5,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player5,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0SALSS",Myself))
+END
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Specifics(Player5,SHADOW_ADEPT)
+	Class(Player5,SORCERER)
+	OR(9)
+	TriggerOverride(Player5,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player5,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player5,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0SALHS",Myself))
+END
+IF
+	TriggerOverride(Player5,ActionListEmpty())
+	Specifics(Player5,SHADOW_ADEPT)
+	Class(Player5,BARD)
+	OR(9)
+	TriggerOverride(Player5,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player5,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player5,Global("C0SABOOK","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player5,ApplySpellRES("C0SALSB",Myself))
+END
+IF
+	TriggerOverride(Player6,ActionListEmpty())
 	Specifics(Player6,SHADOW_ADEPT)
+	Class(Player6,MAGE_ALL)
+	!Class(Player6,SORCERER)
 	OR(9)
 	TriggerOverride(Player6,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player6,GlobalGT("C0SALv2","LOCALS",0))
@@ -1141,10 +1494,195 @@ IF
 	TriggerOverride(Player6,GlobalGT("C0SALv7","LOCALS",0))
 	TriggerOverride(Player6,GlobalGT("C0SALv8","LOCALS",0))
 	TriggerOverride(Player6,GlobalGT("C0SALv9","LOCALS",0))
-	!Global("C0SABOOK","LOCALS",1)
+	!TriggerOverride(Player6,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player6,Global("C0SAHLAB","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Player6,StartDialogOverride("c0satalk",Myself))
+	ActionOverride(Player6,ApplySpellRES("C0SALSW",Myself))
+END
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Specifics(Player6,SHADOW_ADEPT)
+	Class(Player6,MAGE_ALL)
+	!Class(Player6,SORCERER)
+	OR(9)
+	TriggerOverride(Player6,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player6,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player6,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0SALHW",Myself))
+END
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Specifics(Player6,SHADOW_ADEPT)
+	Class(Player6,SORCERER)
+	OR(9)
+	TriggerOverride(Player6,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player6,Global("C0SABOOK","LOCALS",1))
+	!TriggerOverride(Player6,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0SALSS",Myself))
+END
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Specifics(Player6,SHADOW_ADEPT)
+	Class(Player6,SORCERER)
+	OR(9)
+	TriggerOverride(Player6,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player6,Global("C0SABOOK","LOCALS",1))
+	TriggerOverride(Player6,Global("C0SAHLAB","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0SALHS",Myself))
+END
+IF
+	TriggerOverride(Player6,ActionListEmpty())
+	Specifics(Player6,SHADOW_ADEPT)
+	Class(Player6,BARD)
+	OR(9)
+	TriggerOverride(Player6,GlobalGT("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,GlobalGT("C0SALv9","LOCALS",0))
+	!TriggerOverride(Player6,Global("C0SABOOK","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player6,ApplySpellRES("C0SALSB",Myself))
+END
+
+// First Memory
+
+IF
+	Specifics(Player1,SHADOW_ADEPT)
+	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	Delay(1)
+	!Class(Player1,SORCERER)
+	!Class(Player1,BARD)
+	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",0))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",1))
+	DisplayStringNoName(Player1,~You now have an opportunity to memorize your newly learned spells. Unpause the game when you are ready.~ [EFF_P05])
+	ActionOverride(Player1,PauseGame())
+END
+
+IF
+	Specifics(Player1,SHADOW_ADEPT)
+	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	Delay(1)
+	Class(Player1,BARD)
+	LevelGT(Player1,1)
+	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",0))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",1))
+	DisplayStringNoName(Player1,~You now have an opportunity to memorize your newly learned spells. Unpause the game when you are ready.~ [EFF_P05])
+	ActionOverride(Player1,PauseGame())
+END
+
+IF
+	Specifics(Player1,SHADOW_ADEPT)
+	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	Delay(1)
+	Class(Player1,BARD)
+	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",0))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
+END
+
+IF
+	Specifics(Player1,SHADOW_ADEPT)
+	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	Delay(1)
+	Class(Player1,SORCERER)
+	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",0))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
+	ActionOverride(Player1,Rest())
+END
+
+IF
+	Specifics(Player1,SHADOW_ADEPT)
+	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
+	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
+	Delay(1)
+	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",1))
+THEN
+  RESPONSE #100
+	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
+	ActionOverride(Player1,Rest())
 END
 
 // Familiar
