@@ -3890,6 +3890,11 @@ Saving Throw: Neg.
 The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA213.spl~ ~override~
+LPF ALTER_EFFECT
+	INT_VAR
+		match_opcode = 177
+		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -5612,7 +5617,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: None
 
-When this spell is cast, it dispels one spell protection of any level affecting the target creature. The spells affected by the Black Ray of Destruction are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. Additionally, this spell creates a small dead magic zone around the target, preventing the target from casting spells for 5 rounds. The target's Magic Resistance, if any, does not affect this spell.~
+When this spell is cast, it dispels one spell protection of any level affecting the target creature. The spells affected by the Black Ray of Destruction are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. Additionally, this spell creates a small dead magic zone around the target, preventing the target from casting spells for 2 rounds. The target's Magic Resistance, if any, does not affect this spell.~
 
 COPY ~%MOD_FOLDER%/spells/C0SA702.spl~ ~override~
 SAY NAME1 ~Shadowspray~
@@ -6417,7 +6422,7 @@ Saving Throw: 1/2
 
 This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round.
 
-This spell is not affected by Magic Resistance. Creatures that are immune to cold are unaffected by the blizzard.~
+This spell is not affected by Magic Resistance.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa814.spl~ ~override~
 READ_LONG 0x64 "abil_off"
@@ -6783,7 +6788,9 @@ Casting Time: 9
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.This spell is not affected by Magic Resistance. Creatures immune to fire are unaffected.~
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.
+
+This spell is not affected by Magic Resistance.~
 
 COPY ~%MOD_FOLDER%/spells/c0sa910.spl~ ~override~
   LPF ALTER_EFFECT
