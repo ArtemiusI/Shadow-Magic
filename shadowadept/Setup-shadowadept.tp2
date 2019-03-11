@@ -1,6 +1,6 @@
 BACKUP ~shadowadept/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.9.38~
+VERSION ~1.9.39~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -32,8 +32,6 @@ BEGIN ~Shadow Magic: Shadow Monk monk kit~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/2_shadow_monk.tpa~
-
-// SHADOW MAGIC: QUESTS AND ENCOUNTERS
 
 BEGIN ~Shadow Magic: Quests and Encounters (BG:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
@@ -100,4 +98,35 @@ OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell 
 LAF	CREATE_SEQUENCER_MENU
 	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
 	STR_VAR	spelltable = ~C0SALSB~ resref = ~C0SALSB~	icon = ~c0sahlbb~	title	action
+END
+
+COPY_EXISTING ~C0SALSW.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSW~
+END
+COPY_EXISTING ~C0SALHW.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALHW~
+END
+COPY_EXISTING ~C0SALSS.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSS~
+END
+COPY_EXISTING ~C0SALHS.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALHS~
+END
+COPY_EXISTING ~C0SALSB.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSB~
+END
+COPY_EXISTING ~C0SALSWD.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
+END
+COPY_EXISTING ~C0SALHWD.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
+END
+COPY_EXISTING ~C0SALSSD.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
+END
+COPY_EXISTING ~C0SALHSD.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
+END
+COPY_EXISTING ~C0SALSBD.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
 END

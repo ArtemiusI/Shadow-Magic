@@ -116,6 +116,8 @@
 	//	CREATE	EFF	~(anything)~	WRITE_LONG	0x10	256	WRITE_LONG	0x2c	100	WRITE_ASCII	0x30	~SPELL_RES~	WRITE_LONG	0x60	1	WRITE_ASCIIE	0x94	~%resref%~
 	//	--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sainvi.PRO~ ~SM Hidden Projectile~
+	
 	DEFINE_ACTION_FUNCTION	SETUP_SEQUENCER_MENU	BEGIN
 		OUTER_SET	version = 52	OUTER_SET	current = 0
 		ACTION_IF FILE_EXISTS_IN_GAME ~M_SQTOOL.LUA~	BEGIN
@@ -454,14 +456,14 @@
 				CREATE	SPL	~%resref%~
 					WRITE_LONG	NAME1	name	WRITE_LONG	UNIDENTIFIED_DESC	desc	WRITE_LONG	0x18	0x0201c000
 					WRITE_LONG	0x34	1	WRITE_SHORT	0x1c	4	WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28
-					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = 1	target = 7	min_level = 1	STR_VAR	icon	END
+					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1	target = 7	min_level = 1	STR_VAR	icon	END
 					LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
 					LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 172	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
 					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 258	target = 1	STR_VAR	resource =	EVAL ~%resref%X~	END
 					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	parameter2 = 2	target = 1	timing = 1	STR_VAR	resource =	EVAL ~%resref%G~	END
 				CREATE	SPL	~%resref%G~
 					WRITE_LONG	0x34	1	WRITE_SHORT	0x1c	4	WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28
-					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = 1	target = 7	min_level = 1	STR_VAR	icon	END
+					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1	target = 7	min_level = 1	STR_VAR	icon	END
 					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 321	target = 1	STR_VAR	resource =	EVAL ~%resref%X~	END
 					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	target = 9	parameter2 = 2	STR_VAR	resource =	EVAL ~%resref%X~	END
 					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 146	target = 9	parameter2 = 1	STR_VAR	resource =	EVAL ~%resref%D~	END
@@ -482,7 +484,7 @@
 				CREATE	SPL	~%resref%~
 					WRITE_LONG	NAME1	name	WRITE_LONG	UNIDENTIFIED_DESC	desc	WRITE_LONG	0x18	0x0201c000
 					WRITE_LONG	0x34	1	WRITE_SHORT	0x1c	4	WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28
-					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = 1	target = 7	min_level = 1	STR_VAR	icon	END
+					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1	target = 7	min_level = 1	STR_VAR	icon	END
 					LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
 					LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 172	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
 					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 258	target = 1	STR_VAR	resource =	EVAL ~%resref%X~	END
@@ -491,7 +493,7 @@
 					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 146	target = 9	parameter2 = 1	STR_VAR	resource =	EVAL ~%resref%D~	END
 			END
 			CREATE	SPL	~%resref%D~	WRITE_LONG	0x34	1	WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28	WRITE_SHORT	0x98	47
-					LPF	ALTER_SPELL_HEADER	INT_VAR	projectile = 1 END
+					LPF	ALTER_SPELL_HEADER	INT_VAR	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1 END
 				LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 258	target = 2	STR_VAR	resource =	EVAL ~%resref%X~	END
 			CREATE	EFF	~%resref%X~	WRITE_LONG	0x10	257	WRITE_LONG	0x1c	9	WRITE_LONG	0x20	1	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x94	~%resref%X~
 			COPY_EXISTING	~HIDESPL.2DA~	override
@@ -520,7 +522,7 @@
 							PATCH_IF	!FILE_EXISTS_IN_GAME	~%DEST_FILE%~	BEGIN
 								SAY NAME1 #-1
 								WRITE_ASCII 0x10  	~~ #8
-								WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = 1	END	LPF	DELETE_EFFECT	END
+								WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1	END	LPF	DELETE_EFFECT	END
 								PATCH_IF	global != 1 BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	END
 								PATCH_IF	global = 1	BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1	parameter1 = 1	timing = 9	STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	END
 								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~%prefix%LV%i%~	END
@@ -561,7 +563,7 @@
 							ACTION_IF	FILE_EXISTS_IN_GAME	~%spell_res%.spl~	BEGIN
 								COPY_EXISTING	~%spell_res%.spl~	~override\%spell_res%%postfix%.spl~
 									PATCH_IF	!FILE_EXISTS_IN_GAME	~%spell_res%%postfix%.spl~	BEGIN
-										WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = 1	END	LPF	DELETE_EFFECT	END
+										WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1	END	LPF	DELETE_EFFECT	END
 										PATCH_IF	global != 1 BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%spell_res%~	END	END
 										PATCH_IF	global = 1	BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1	parameter1 = 1	timing = 9	STR_VAR	resource = EVAL ~%spell_res%~	END	END
 									END
