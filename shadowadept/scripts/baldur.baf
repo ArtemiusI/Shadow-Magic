@@ -1108,6 +1108,8 @@ END
 // Familiar
 
 IF
+	TriggerOverride(Player1,ActionListEmpty())
+	!TriggerOverride(Player1,HaveKnownSpellRES("C0SAFAM1"))
 	Specifics(Player1,SHADOW_ADEPT)
 	ClassLevelGT(Player1,WIZARD,5)
 	Global("C0SASummonFamiliar","GLOBAL",0)
@@ -1118,6 +1120,19 @@ THEN
 END
 
 IF
+	TriggerOverride(Player1,ActionListEmpty())
+	TriggerOverride(Player1,HaveKnownSpellRES("C0SAFAM1"))
+	Specifics(Player1,SHADOW_ADEPT)
+	ClassLevelGT(Player1,WIZARD,5)
+	Global("C0SASummonFamiliar","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
+END
+
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	!TriggerOverride(Player1,HaveKnownSpellRES("C0SAFAM1"))
 	Specifics(Player1,SHADOW_ADEPT)
 	Class(Player1,BARD_ALL)
 	LevelGT(Player1,7)
@@ -1125,6 +1140,18 @@ IF
 THEN
   RESPONSE #100
 	ActionOverride(Player1,AddSpecialAbility("c0safam1"))
+	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
+END
+
+IF
+	TriggerOverride(Player1,ActionListEmpty())
+	TriggerOverride(Player1,HaveKnownSpellRES("C0SAFAM1"))
+	Specifics(Player1,SHADOW_ADEPT)
+	Class(Player1,BARD_ALL)
+	LevelGT(Player1,7)
+	Global("C0SASummonFamiliar","GLOBAL",0)
+THEN
+  RESPONSE #100
 	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
 END
 

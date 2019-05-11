@@ -44,7 +44,7 @@ STATISTICS:
 Weight: 0~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~ar0602.bcs~ THEN BEGIN
-EXTEND_TOP ~ar0602.bcs~ ~%MOD_FOLDER%/scripts/ar0602.baf~
+EXTEND_BOTTOM ~ar0602.bcs~ ~%MOD_FOLDER%/scripts/ar0602.baf~
 END
 
 // Dark Dreamer +2

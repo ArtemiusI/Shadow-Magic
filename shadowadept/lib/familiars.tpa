@@ -158,7 +158,7 @@ SAY NAME2 ~Spectral Shiv~
 SAY DESC ~Nyx's shiv strikes as a +4 weapon and is coated with a powerful toxin which has a 50% chance to poison its target on a failed Saving Throw vs. Death (-1 additional penalty per 5 levels), dealing one damage per second for six seconds.~
 
 COPY_EXISTING ~c0sa107.spl~ ~override/c0sfam01.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -170,7 +170,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa109.spl~ ~override/c0sfam02.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -182,7 +182,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa103.spl~ ~override/c0sfam03.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -194,7 +194,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa108.spl~ ~override/c0sfam04.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -206,7 +206,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa110.spl~ ~override/c0sfam05.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -218,7 +218,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa111.spl~ ~override/c0sfam06.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -230,7 +230,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa201.spl~ ~override/c0sfam07.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -242,7 +242,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa202.spl~ ~override/c0sfam08.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -254,7 +254,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa203.spl~ ~override/c0sfam09.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -266,7 +266,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa204.spl~ ~override/c0sfam10.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -278,7 +278,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa206.spl~ ~override/c0sfam11.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -290,7 +290,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa208.spl~ ~override/c0sfam12.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -302,7 +302,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa304.spl~ ~override/c0sfam13.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -314,7 +314,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa305.spl~ ~override/c0sfam14.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -326,7 +326,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa306.spl~ ~override/c0sfam15.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -338,7 +338,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa405.spl~ ~override/c0sfam16.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -350,7 +350,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa403.spl~ ~override/c0sfam17.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -362,7 +362,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa410.spl~ ~override/c0sfam18.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -374,7 +374,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa502.spl~ ~override/c0sfam19.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -386,7 +386,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa510.spl~ ~override/c0sfam20.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -398,7 +398,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa506.spl~ ~override/c0sfam21.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -410,7 +410,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa603.spl~ ~override/c0sfam22.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -422,7 +422,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa605.spl~ ~override/c0sfam23.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -434,7 +434,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa609.spl~ ~override/c0sfam24.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -446,7 +446,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa708.spl~ ~override/c0sfam25.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -458,7 +458,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa711.spl~ ~override/c0sfam26.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"
@@ -470,7 +470,7 @@ SET "num_abil" = ("%num_abil%" - 1)
 END
 
 COPY_EXISTING ~c0sa806.spl~ ~override/c0sfam27.spl~
-WRITE_SHORT 0x1C 4 
+WRITE_SHORT 0x1C 3 
 WRITE_LONG 0x34 1 
 READ_LONG 0x64 "offset_abil"
 READ_SHORT 0x68 "num_abil"

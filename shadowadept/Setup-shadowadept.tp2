@@ -1,6 +1,6 @@
 BACKUP ~shadowadept/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.9.39~
+VERSION ~1.9.4~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -26,8 +26,6 @@ BEGIN ~Shadow Magic: Main Component~
 
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 
-// SHADOW MONK - requires Shadow Magic component
-
 BEGIN ~Shadow Magic: Shadow Monk monk kit~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
@@ -38,6 +36,12 @@ BEGIN ~Shadow Magic: Quests and Encounters (BG:EE)~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/3_quests.tpa~
+
+BEGIN ~Shadow Magic: Quests and Encounters (BG2:EE)~
+  REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
+
+INCLUDE ~%MOD_FOLDER%/bg2_quest/4_quests_bg2.tpa~
 
 BEGIN ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
@@ -119,14 +123,14 @@ COPY_EXISTING ~C0SALSWD.SPL~ ~OVERRIDE~
 LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
 END
 COPY_EXISTING ~C0SALHWD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALHW~
 END
 COPY_EXISTING ~C0SALSSD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSS~
 END
 COPY_EXISTING ~C0SALHSD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALHS~
 END
 COPY_EXISTING ~C0SALSBD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSB~
 END
