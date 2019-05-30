@@ -43,7 +43,7 @@ This spell summons the shadow adept's bound shadow familiar from their home plan
 
 ACTION_IF GAME_IS ~bgee~
 THEN BEGIN
-COMPILE ~%MOD_FOLDER%/dialogue/bg1/c0safam.d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogue/bg1/c0safam.d~
 END
 
 ACTION_IF GAME_IS ~bg2ee~

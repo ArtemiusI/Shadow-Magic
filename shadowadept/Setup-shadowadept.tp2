@@ -37,12 +37,6 @@ BEGIN ~Shadow Magic: Quests and Encounters (BG:EE)~
 
 INCLUDE ~%MOD_FOLDER%/components/3_quests.tpa~
 
-BEGIN ~Shadow Magic: Quests and Encounters (BG2:EE)~
-  REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
-  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
-
-INCLUDE ~%MOD_FOLDER%/bg2_quest/4_quests_bg2.tpa~
-
 BEGIN ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
@@ -50,6 +44,7 @@ BEGIN ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
 INCLUDE ~%MOD_FOLDER%/components/5_shade_lord.tpa~
 
 BEGIN ~Shadow Magic: BETA Spell Learning System~
+  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 COPY ~%MOD_FOLDER%/2da/spellselect~ ~override~
 COMPILE ~%MOD_FOLDER%/dialogue/spellselect/c0sascrl.d~
