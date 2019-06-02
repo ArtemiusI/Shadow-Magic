@@ -13,22 +13,22 @@ LAF ADD_IDS_ENTRY INT_VAR preferredValue = 100 STR_VAR idsFile = "specific.ids" 
 		5-6:	-3 casting speed penalty	3: -40% spell duration, 40% spell failure	5-6: -3 penalty to all Saving Throws
 		7-8:	-2 casting speed penalty	4: -35% spell duration, 35% spell failure	7-8: -2 penalty to all Saving Throws
 		9-10:	-1 casting speed penalty	5: -30% spell duration, 30% spell failure	9-10: -1 penalty to all Saving Throws
-		11-15:	Nothing						6: -25% spell duration, 25% spell failure	11-15: Nothing
-		16:		+1 caster level bonus		7: -20% spell duration, 20% spell failure	16: +1 to all Saving Throws
-		17:		+1 casting speed bonus		8: -15% spell duration, 15% spell failure	17: +5% Non-Physical Damage
-		18:		+1 caster level bonus		9: -10% spell duration, 10% spell failure	18: +1 to all Saving Throws
-		19:		+1 casting speed bonus		10: -5% spell duration, 5% spell failure	19: +10% Non-Physical Damage
-		20:		+1 caster level bonus		11-15: Nothing								20: +1 to all Saving Throws
-		21:		+1 casting speed bonus		16: +5% spell duration						21: +15% Non-Physical Damage
-		22:		+1 caster level bonus		17: +10% spell duration						22: +1 to all Saving Throws
-		23:		+1 casting speed bonus		18: +15% spell duration						23: +20% Non-Physical Damage
-		24:									19: +20% spell duration						24: +1 to all Saving Throws
-											20: +25% spell duration						25: +25% Non-Physical Damage
-											21: +30% spell duration
+		11-16:	Nothing						6: -25% spell duration, 25% spell failure	11-16: Nothing
+		17:		+1 1,2nd level spellslot	7: -20% spell duration, 20% spell failure	17: +1 to Luck Modifier
+		18:		+1 3rd level spellslot		8: -15% spell duration, 15% spell failure	18: +5% Non-Physical Damage
+		19:		+1 1,2,3rd level spellslot	9: -10% spell duration, 10% spell failure	19: +1 to all Saving Throws
+		20:		+1 4,5th level spellslot	10: -5% spell duration, 5% spell failure	20: +10% Non-Physical Damage
+		21:		+1 5,6th level spellslot	11-16: Nothing								21: +1 to all Saving Throws
+		22:		+1 6,7th level spellslot	17:	+10% spell duration						22: +15% Non-Physical Damage
+		23:		+1 7,8th level spellslot	18: +15% spell duration						23: +1 to all Saving Throws
+		24:		+1 9th level spellslot		19: +20% spell duration						24: +20% Non-Physical Damage
+		25:		+1 9th level spellslot		20: +25% spell duration						25: +1 to all Saving Throws
+											21: +30% spell duration						
 											22: +35% spell duration
 											23: +40% spell duration
 											24: +45% spell duration
-											25: +50% spell duration		
+											25: +50% spell duration
+											
 */
 // INTELLIGENCE
 APPEND ~splprot.2da~ ~C0SAINT%TAB%38%TAB%-1%TAB%1~
@@ -41,7 +41,7 @@ COPY_EXISTING ~splprot.2da~ ~override~
 	    SET C0SAINT = %row%
 	  END
 	END
-
+	
 // WISDOM
 APPEND ~splprot.2da~ ~C0SAWIS%TAB%39%TAB%-1%TAB%1~
 COPY_EXISTING ~splprot.2da~ ~override~
@@ -223,8 +223,20 @@ END
 COPY_EXISTING_REGEXP GLOB ~SPWI.*.SPL$~ ~override~
   READ_SHORT	0x1c spell_type
   PATCH_IF (spell_type = 1) BEGIN
-    WRITE_BYTE    0X21 (THIS BOR 0b00001000)
+    WRITE_BYTE    0x20 (THIS BOR 0b00100000)
       END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 1 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BLADE~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 7 cols 0b00004000
+	  END
+	END
 BUT_ONLY_IF_IT_CHANGES
 
 // ICONS
@@ -281,91 +293,6 @@ COPY_EXISTING ~C0SADAY2.SPL~ ~OVERRIDE~
 		duration = 1
         parameter2 = (icon - 18)
       END
-
-STRING_SET ~INTELLIGENCE: Intelligence measures a character's memory, reasoning, and learning ability. It is the prime requisite of the Mage.
-
-Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of <PRO_HISHER> class.
-
-Minimum: <MINIMUM>
-Maximum: <MAXIMUM>~ ~INTELLIGENCE: Intelligence measures a character's memory, reasoning, and learning ability. It is the prime requisite of the Mage.
-
-Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of <PRO_HISHER> class.
-
-Minimum: <MINIMUM>
-Maximum: <MAXIMUM>
-
-For Shadow Adepts, Shadow Disciples and Nightsingers:
-  1-2 INT: -5 penalty to Casting Speed
-  3-4 INT: -4 penalty to Casting Speed
-  5-6 INT: -3 penalty to Casting Speed
-  7-8 INT: -2 penalty to Casting Speed
-  9-10 INT: -1 penalty to Casting Speed
-  11-15 INT: Nothing
-  16 INT: +1 Casting Level
-  17 INT: +1 Casting Level, +1 Casting Speed
-  18 INT: +2 Casting Level, +1 Casting Speed
-  19 INT: +2 Casting Level, +2 Casting Speed
-  20 INT: +3 Casting Level, +2 Casting Speed
-  21 INT: +3 Casting Level, +3 Casting Speed
-  22 INT: +4 Casting Level, +3 Casting Speed
-  23 INT: +4 Casting Level, +4 Casting Speed
-  24 INT: +5 Casting Level, +4 Casting Speed
-  25 INT: +5 Casting Level, +5 Casting Speed~
-STRING_SET ~WISDOM: Wisdom measures a character's enlightenment, judgment, and common sense. It is the prime requisite of priests.
-
-Minimum: <MINIMUM>
-Maximum: <MAXIMUM>~ ~WISDOM: Wisdom measures a character's enlightenment, judgment, and common sense. It is the prime requisite of priests.
-
-Minimum: <MINIMUM>
-Maximum: <MAXIMUM>
-
-For Shadow Adepts, Shadow Disciples and Nightsingers:
-  1 WIS: -50% Spell Duration, 50% Spell Failure
-  2 WIS: -45% Spell Duration, 45% Spell Failure
-  3 WIS: -40% Spell Duration, 40% Spell Failure
-  4 WIS: -35% Spell Duration, 35% Spell Failure
-  5 WIS: -30% Spell Duration, 30% Spell Failure
-  6 WIS: -25% Spell Duration, 25% Spell Failure
-  7 WIS: -20% Spell Duration, 20% Spell Failure
-  8 WIS: -15% Spell Duration, 15% Spell Failure
-  9 WIS: -10% Spell Duration, 10% Spell Failure
-  10 WIS: -5% Spell Duration, 5% Spell Failure
-  11-15 WIS: Nothing
-  16 WIS: +5% Spell Duration
-  17 WIS: +10% Spell Duration
-  18 WIS: +15% Spell Duration
-  19 WIS: +20% Spell Duration
-  20 WIS: +25% Spell Duration
-  21 WIS: +30% Spell Duration
-  22 WIS: +35% Spell Duration
-  23 WIS: +40% Spell Duration
-  24 WIS: +45% Spell Duration
-  25 WIS: +50% Spell Duration~
-STRING_SET ~CHARISMA: Charisma measures a character's persuasiveness, personal magnetism, and ability to lead. This ability is important to the Druid, Bard, and Paladin.
-
-Minimum: <MINIMUM>
-Maximum: <MAXIMUM>~ ~CHARISMA: Charisma measures a character's persuasiveness, personal magnetism, and ability to lead. This ability is important to the Druid, Bard, and Paladin.
-
-Minimum: <MINIMUM>
-Maximum: <MAXIMUM>
-
-For Shadow Adepts, Shadow Disciples and Nightsingers:
-  1-2 CHA: -5 penalty to Saving Throws
-  3-4 CHA: -4 penalty to Saving Throws
-  5-6 CHA: -3 penalty to Saving Throws
-  7-8 CHA: -2 penalty to Saving Throws
-  9-10 CHA: -1 penalty to Saving Throws
-  11-15 CHA: Nothing
-  16 CHA: +1 Saving Throws
-  17 CHA: +1 Saving Throws, +5% Elemental Resistance
-  18 CHA: +2 Saving Throws, +5% Elemental Resistance
-  19 CHA: +2 Saving Throws, +10% Elemental Resistance
-  20 CHA: +3 Saving Throws, +10% Elemental Resistance
-  21 CHA: +3 Saving Throws, +15% Elemental Resistance
-  22 CHA: +4 Saving Throws, +15% Elemental Resistance
-  23 CHA: +4 Saving Throws, +20% Elemental Resistance
-  24 CHA: +5 Saving Throws, +20% Elemental Resistance
-  25 CHA: +5 Saving Throws, +25% Elemental Resistance~
 
 ////////////////////////////////////////
 /////////////////SPELLS/////////////////
@@ -3328,109 +3255,53 @@ COPY_EXISTING ~c0saint1.spl~ ~override~
 	  parameter2 = %C0SAINT%
 END
 
-COPY_EXISTING ~c0sainta.spl~ ~override/c0saint7.spl~
+COPY_EXISTING ~c0saint7.spl~ ~override/c0saint8.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 191
-	  parameter1 = 1
+      match_opcode = 42
+	  parameter2 = 4
 END
 
-COPY_EXISTING ~c0saintb.spl~ ~override/c0saint8.spl~
-
-COPY_EXISTING ~c0saintb.spl~ ~override/c0saint9.spl~
+COPY_EXISTING ~c0saint7.spl~ ~override/c0saint9.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 191
-	  parameter1 = 2
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 189
-	  parameter1 = 1
+      match_opcode = 42
+	  parameter2 = 7
 END
 
-COPY_EXISTING ~c0saintb.spl~ ~override/c0saint0.spl~
+COPY_EXISTING ~c0saint7.spl~ ~override/c0sainta.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 191
-	  parameter1 = 2
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 189
-	  parameter1 = 2
+      match_opcode = 42
+	  parameter2 = 24
 END
 
-COPY_EXISTING ~c0saintb.spl~ ~override/c0sainta.spl~
+COPY_EXISTING ~c0saint7.spl~ ~override/c0saintb.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 191
-	  parameter1 = 3
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 189
-	  parameter1 = 2
+      match_opcode = 42
+	  parameter2 = 56
 END
 
-COPY_EXISTING ~c0saintb.spl~ ~override/c0saintb.spl~
+COPY_EXISTING ~c0saint7.spl~ ~override/c0saintc.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 191
-	  parameter1 = 3
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 189
-	  parameter1 = 3
+      match_opcode = 42
+	  parameter2 = 96
 END
 
-COPY_EXISTING ~c0saintb.spl~ ~override/c0saintc.spl~
+COPY_EXISTING ~c0saint7.spl~ ~override/c0saintd.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 191
-	  parameter1 = 4
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 189
-	  parameter1 = 3
+      match_opcode = 42
+	  parameter2 = 192
 END
 
-COPY_EXISTING ~c0saintb.spl~ ~override/c0saintd.spl~
+COPY_EXISTING ~c0saint7.spl~ ~override/c0sainte.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 191
-	  parameter1 = 4
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 189
-	  parameter1 = 4
-END
-
-COPY_EXISTING ~c0saintb.spl~ ~override/c0sainte.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 191
-	  parameter1 = 5
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 189
-	  parameter1 = 4
-END
-
-COPY_EXISTING ~c0saintb.spl~ ~override/c0saintf.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 191
-	  parameter1 = 5
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 189
-	  parameter1 = 5
+      match_opcode = 42
+	  parameter2 = 256
 END
 
 COPY_EXISTING ~c0sawis1.spl~ ~override~
