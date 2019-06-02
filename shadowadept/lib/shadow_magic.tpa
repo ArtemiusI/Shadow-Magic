@@ -1,3 +1,7 @@
+
+// SPECIFICS value SHADOW_ADEPT
+LAF ADD_IDS_ENTRY INT_VAR preferredValue = 100 STR_VAR idsFile = "specific.ids" identifier = "SHADOW_ADEPT" RET value END
+
 ////////////////////////////////////////
 //////////////SPLPROT.2DA///////////////
 ////////////////////////////////////////
@@ -142,7 +146,87 @@ ACTION_PHP_EACH	DMG_ARRAY AS one => two	BEGIN
 	LAF	ADD_SPLPROT	INT_VAR	stat = two	value = 128	relation = 	4	RET	max = new_row	END
 	LAF	ADD_SPLPROT	INT_VAR	stat = 260	value = min	relation = 	max	RET	EVAL ~%one%~ = new_row	END
 END
-	
+
+// SCROLLS
+
+ OUTER_SET nscrl_specific = %value%
+
+ OUTER_SET scroll_count = 0
+ OUTER_SPRINT $use_scrolls(~%scroll_count%~) ~scroll~
+ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_BYTE     0x2f current ELSE 0
+  READ_BYTE     0x2b current2 ELSE 0
+  READ_LONG 0x64 headoffset  ELSE 0
+  READ_SHORT 0x68 headcount  ELSE 0
+  READ_LONG 0x6a effectsoffset  ELSE 0
+  haslearn = 0
+  hascast = 0
+//	  PATCH_IF (headcount = 2) BEGIN
+    FOR (headcyc = 0; headcyc < headcount ; headcyc = headcyc + 1) BEGIN
+      thishead = 0
+      READ_SHORT (headoffset + (headcyc * 0x38) + 0x1e) effcount  ELSE 0
+      READ_SHORT (headoffset + (headcyc * 0x38) + 0x20) effectsindex  ELSE 0
+      FOR (effcyc = 0; effcyc < effcount; effcyc = effcyc + 1) BEGIN
+        READ_SHORT (effectsoffset + (effectsindex + effcyc)* 0x30) opcode ELSE 0
+        PATCH_IF (opcode = 0x93) AND (thishead = 0) BEGIN
+          READ_ASCII (effectsoffset + 0x14 + (effectsindex + effcyc)* 0x30) resref_learn  ELSE 0
+          INNER_PATCH_FILE ~%resref_learn%.spl~ BEGIN
+            READ_SHORT 0x1c type
+          END
+          PATCH_IF (type = 1) BEGIN // spell scroll
+            thishead = 1
+            haslearn = 1
+          END
+        END // PATCH_IF... (opcode = learn spell)
+        PATCH_IF ((opcode = 0x92) OR (opcode = 0x94)) AND (thishead = 0) BEGIN
+          READ_ASCII (effectsoffset + 0x14 + (effectsindex + effcyc)* 0x30) resref_cast  ELSE 0
+          INNER_PATCH_FILE ~%resref_cast%.spl~ BEGIN
+            READ_SHORT 0x1c type
+          END
+          PATCH_IF (type = 1) OR (type = 2) BEGIN // spell scroll
+            thishead = 1
+            hascast = 1
+          END
+        END // PATCH_IF (opcode = cast spell)
+      END // FOR... effect_cycle
+    END // FOR... header cycle
+//  END // PATCH_IF... have exactly 2 headers
+  PATCH_IF (haslearn = 1) AND (hascast = 1) /*AND (~%resref_cast%~ STRING_EQUAL_CASE ~%resref_learn%~) */BEGIN
+	SPRINT $use_scrolls(~%scroll_count%~) ~%SOURCE_RES%~
+	SET ++scroll_count
+  END
+ BUT_ONLY
+ ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%scroll%.itm~ BEGIN
+	PRINT ~%scroll% is a wizard scroll~
+	COPY_EXISTING ~%scroll%.itm~ ~override~
+	  WRITE_BYTE 0x1f (THIS BAND 0b11110111)
+	  WRITE_BYTE 0x20 (THIS BAND 0b10111111)
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %nscrl_specific% timing = 2 END
+	BUT_ONLY
+  END
+ END
+ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_SHORT	0x1c item_type
+  PATCH_IF (item_type = 35) BEGIN
+	READ_BYTE 0x20 thief_use
+	PATCH_IF (%thief_use% BAND 0b01000000) = 0b01000000 BEGIN
+	  WRITE_BYTE 0x1f (THIS BAND 0b11110111)
+	  WRITE_BYTE 0x20 (THIS BAND 0b10111111)
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %nscrl_specific% timing = 2 END
+	END
+  END
+ BUT_ONLY
+ 
+ 
+//Updating Spells and Scrolls 
+COPY_EXISTING_REGEXP GLOB ~SPWI.*.SPL$~ ~override~
+  READ_SHORT	0x1c spell_type
+  PATCH_IF (spell_type = 1) BEGIN
+    WRITE_BYTE    0X21 (THIS BOR 0b00001000)
+      END
+BUT_ONLY_IF_IT_CHANGES
+
 // ICONS
 
 DEFINE_ACTION_FUNCTION cd_new_portrait_icon
@@ -1404,6 +1488,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal11.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal1a%
@@ -1414,6 +1500,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal12.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal1b%
@@ -1424,6 +1512,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal13.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal1c%
@@ -1434,6 +1524,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal14.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal1d%
@@ -1444,6 +1536,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal15.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal1e%
@@ -1454,6 +1548,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal16.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal1f%
@@ -1464,6 +1560,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal21.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal2a%
@@ -1474,6 +1572,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal22.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal2b%
@@ -1484,6 +1584,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal23.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal2c%
@@ -1494,6 +1596,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal24.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal2d%
@@ -1504,6 +1608,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal25.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal2e%
@@ -1514,6 +1620,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal26.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal2f%
@@ -1524,6 +1632,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal31.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal3a%
@@ -1534,6 +1644,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal32.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal3b%
@@ -1544,6 +1656,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal33.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal3c%
@@ -1554,6 +1668,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal34.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal3d%
@@ -1564,6 +1680,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal35.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal3e%
@@ -1574,6 +1692,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal36.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal3f%
@@ -1584,6 +1704,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal41.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal4a%
@@ -1594,6 +1716,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal42.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal4b%
@@ -1604,6 +1728,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal43.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal4c%
@@ -1614,6 +1740,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal44.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal4d%
@@ -1624,6 +1752,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal45.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal4e%
@@ -1634,6 +1764,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal46.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal4f%
@@ -1644,6 +1776,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal51.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal5a%
@@ -1654,6 +1788,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal52.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal5b%
@@ -1664,6 +1800,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal53.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal5c%
@@ -1674,6 +1812,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal54.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal5d%
@@ -1684,6 +1824,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal55.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal5e%
@@ -1694,6 +1836,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal56.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal5f%
@@ -1704,6 +1848,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal61.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal6a%
@@ -1714,6 +1860,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal62.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal6b%
@@ -1724,6 +1872,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal63.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal6c%
@@ -1734,6 +1884,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal64.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal6d%
@@ -1744,6 +1896,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal65.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal6e%
@@ -1754,6 +1908,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal66.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal6f%
@@ -1764,6 +1920,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal71.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal7a%
@@ -1774,6 +1932,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal72.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal7b%
@@ -1784,6 +1944,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal73.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal7c%
@@ -1794,6 +1956,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal74.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal7d%
@@ -1804,6 +1968,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal75.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal7e%
@@ -1814,6 +1980,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal76.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal7f%
@@ -1824,6 +1992,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal81.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal8a%
@@ -1834,6 +2004,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal82.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal8b%
@@ -1844,6 +2016,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal83.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal8c%
@@ -1854,6 +2028,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal84.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal8d%
@@ -1864,6 +2040,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal85.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal8e%
@@ -1874,6 +2052,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal86.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal8f%
@@ -1884,6 +2064,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal91.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal9a%
@@ -1894,6 +2076,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal92.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal9b%
@@ -1904,6 +2088,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal93.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal9c%
@@ -1914,6 +2100,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal94.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal9d%
@@ -1924,6 +2112,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal95.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal9e%
@@ -1934,6 +2124,8 @@ COPY_EXISTING ~c0sal11.spl~ ~override/c0sal96.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 206
 	STR_VAR
 	  resource = %c0sal9f%
@@ -1944,6 +2136,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv1%
@@ -1952,6 +2146,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal11%
@@ -1962,6 +2158,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv1%
@@ -1970,6 +2168,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal12%
@@ -1980,6 +2180,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv1%
@@ -1988,6 +2190,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal13%
@@ -1998,6 +2202,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv1%
@@ -2006,6 +2212,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal14%
@@ -2016,6 +2224,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv1%
@@ -2024,6 +2234,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal15%
@@ -2034,6 +2246,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv1%
@@ -2042,6 +2256,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal16%
@@ -2052,6 +2268,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv2%
@@ -2060,6 +2278,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal21%
@@ -2070,6 +2290,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv2%
@@ -2078,6 +2300,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal22%
@@ -2088,6 +2312,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv2%
@@ -2096,6 +2322,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal23%
@@ -2106,6 +2334,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv2%
@@ -2114,6 +2344,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal24%
@@ -2124,6 +2356,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv2%
@@ -2132,6 +2366,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal25%
@@ -2142,6 +2378,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv2%
@@ -2150,6 +2388,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal26%
@@ -2160,6 +2400,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv3%
@@ -2168,6 +2410,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal31%
@@ -2178,6 +2422,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv3%
@@ -2186,6 +2432,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal32%
@@ -2196,6 +2444,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv3%
@@ -2204,6 +2454,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal33%
@@ -2214,6 +2466,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv3%
@@ -2222,6 +2476,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal34%
@@ -2232,6 +2488,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv3%
@@ -2240,6 +2498,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal35%
@@ -2250,6 +2510,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv3%
@@ -2258,6 +2520,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal36%
@@ -2268,6 +2532,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv4%
@@ -2276,6 +2542,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal41%
@@ -2286,6 +2554,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv4%
@@ -2294,6 +2564,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal42%
@@ -2304,6 +2576,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv4%
@@ -2312,6 +2586,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal43%
@@ -2322,6 +2598,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv4%
@@ -2330,6 +2608,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal44%
@@ -2340,6 +2620,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv4%
@@ -2348,6 +2630,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal45%
@@ -2358,6 +2642,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv4%
@@ -2366,6 +2652,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal46%
@@ -2376,6 +2664,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv5%
@@ -2384,6 +2674,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal51%
@@ -2394,6 +2686,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv5%
@@ -2402,6 +2696,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal52%
@@ -2412,6 +2708,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv5%
@@ -2420,6 +2718,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal53%
@@ -2430,6 +2730,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv5%
@@ -2438,6 +2740,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal54%
@@ -2448,6 +2752,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv5%
@@ -2456,6 +2762,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal55%
@@ -2466,6 +2774,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv5%
@@ -2474,6 +2784,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal56%
@@ -2484,6 +2796,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv6%
@@ -2492,6 +2806,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal61%
@@ -2502,6 +2818,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv6%
@@ -2510,6 +2828,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal62%
@@ -2520,6 +2840,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv6%
@@ -2528,6 +2850,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal63%
@@ -2538,6 +2862,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv6%
@@ -2546,6 +2872,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal64%
@@ -2556,6 +2884,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv6%
@@ -2564,6 +2894,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal65%
@@ -2574,6 +2906,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv6%
@@ -2582,6 +2916,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal66%
@@ -2592,6 +2928,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv7%
@@ -2600,6 +2938,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal71%
@@ -2610,6 +2950,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv7%
@@ -2618,6 +2960,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal72%
@@ -2628,6 +2972,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv7%
@@ -2636,6 +2982,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal73%
@@ -2646,6 +2994,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv7%
@@ -2654,6 +3004,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal74%
@@ -2664,6 +3016,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv7%
@@ -2672,6 +3026,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal75%
@@ -2682,6 +3038,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv7%
@@ -2690,6 +3048,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal76%
@@ -2700,6 +3060,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv8%
@@ -2708,6 +3070,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal81%
@@ -2718,6 +3082,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv8%
@@ -2726,6 +3092,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal82%
@@ -2736,6 +3104,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv8%
@@ -2744,6 +3114,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal83%
@@ -2754,6 +3126,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv8%
@@ -2762,6 +3136,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal84%
@@ -2772,6 +3148,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv8%
@@ -2780,6 +3158,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal85%
@@ -2790,6 +3170,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv8%
@@ -2798,6 +3180,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal86%
@@ -2808,6 +3192,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9a.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv9%
@@ -2816,6 +3202,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal91%
@@ -2826,6 +3214,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9b.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv9%
@@ -2834,6 +3224,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal92%
@@ -2844,6 +3236,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9c.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv9%
@@ -2852,6 +3246,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal93%
@@ -2862,6 +3258,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9d.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv9%
@@ -2870,6 +3268,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal94%
@@ -2880,6 +3280,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9e.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv9%
@@ -2888,6 +3290,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal95%
@@ -2898,6 +3302,8 @@ COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9f.spl~
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 309
 	STR_VAR
 	  resource = %c0salv9%
@@ -2906,6 +3312,8 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
+	  timing = 4
+	  duration = 1
       match_opcode = 146
 	STR_VAR
 	  resource = %c0sal96%

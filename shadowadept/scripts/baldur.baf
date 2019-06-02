@@ -1,4 +1,4 @@
-// Kit
+/*// Kit
 
 IF
   Kit(Player1,C0SADEP2)
@@ -911,6 +911,7 @@ THEN
 	ApplySpellRES("c0erase2",Player6)
 	SetInterrupt(TRUE)
 END
+*/
 
 // First Memory
 

@@ -32,10 +32,10 @@ ADD_KIT ~C0SADEPT~
  ~%MOD_FOLDER%/2da/C0SADEPT.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~~
+ ~K_M_H K_M_E K_M_HE K_M_HL K_M_G K_M_D K_M_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00003FC0     1~
+ ~0x08000000     1~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA~
@@ -60,7 +60,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-
+/*
 ADD_KIT ~C0SADEP2~
 
  // appended to CLASWEAP.2da
@@ -91,7 +91,7 @@ ADD_KIT ~C0SADEP2~
  ~%MOD_FOLDER%/2da/c0sadep2.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_M_H K_M_E K_M_HE K_M_HL K_M_G K_M_D K_M_HO~
+ ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
  ~0x00004000     1~
@@ -119,7 +119,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-
+*/
 ADD_KIT ~C0SASORC~
 
  // appended to CLASWEAP.2da
@@ -150,10 +150,10 @@ ADD_KIT ~C0SASORC~
  ~%MOD_FOLDER%/2da/C0SADEP3.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~~
+ ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00003FC0     19~
+ ~0x08000000     19~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA~
@@ -178,7 +178,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-
+/*
 ADD_KIT ~C0SASOR2~
 
  // appended to CLASWEAP.2da
@@ -235,7 +235,7 @@ LAF fl#add_kit_ee
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-
+*/
 ADD_KIT ~C0SABARD~
 
  // appended to CLASWEAP.2da
@@ -277,10 +277,10 @@ ADD_KIT ~C0SABARD~
  ~%MOD_FOLDER%/2da/C0SABARD.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~~
+ ~K_B_H K_B_E K_B_HE K_B_HL K_B_G K_B_D K_B_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00003FC0     5~
+ ~0x08000000     5~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA2~
@@ -305,7 +305,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-
+/*
 ADD_KIT ~C0SABAR2~
 
  // appended to CLASWEAP.2da
@@ -375,7 +375,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-
+*/
 COPY ~%MOD_FOLDER%/spells/c0sahlac.spl~ ~override~
 SAY NAME1 ~Light's Requiem~
 SAY NAME2 ~Light's Requiem~
@@ -434,10 +434,10 @@ ADD_KIT ~C0SAMT~
  ~%MOD_FOLDER%/2da/blankclab.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~~
+ ~K_MT_H K_MT_E K_MT_HE K_MT_HL K_MT_G K_MT_D K_MT_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00003FC0     13~
+ ~0x08000000     13~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAMT~
@@ -469,7 +469,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+/*
 ADD_KIT ~C0SAMT2~
 
  // appended to CLASWEAP.2da
@@ -547,7 +547,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+*/
 ////////////////////////////
 /////CLERIC/SHADOW ADEPT////
 ////////////////////////////
@@ -594,10 +594,10 @@ ADD_KIT ~C0SACM~
  ~%MOD_FOLDER%/2da/blankclab.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~~
+  ~K_CM_H K_CM_E K_CM_HE K_CM_HL K_CM_G K_CM_D K_CM_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00003FC0     14~
+ ~0x08000000     14~
 
  // HLA table to use; see LUABBR.2da
  ~C0SACM~
@@ -629,7 +629,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+/*
 ADD_KIT ~C0SACM2~
 
  // appended to CLASWEAP.2da
@@ -707,7 +707,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+*/
 ////////////////////////////
 ////FIGHTER/SHADOW ADEPT////
 ////////////////////////////
@@ -754,10 +754,10 @@ ADD_KIT ~C0SAFM~
  ~%MOD_FOLDER%/2da/blankclab.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~~
+ ~K_FM_H K_FM_E K_FM_HE K_FM_HL K_FM_G K_FM_D K_FM_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00003FC0     7~
+ ~0x08000000     7~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFM~
@@ -789,7 +789,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+/*
 ADD_KIT ~C0SAFM2~
 
  // appended to CLASWEAP.2da
@@ -867,7 +867,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+*/
 //////////////////////////////
 //FIGHTER/SHADOW ADEPT/THIEF//
 //////////////////////////////
@@ -914,10 +914,10 @@ ADD_KIT ~C0SAFMT~
  ~%MOD_FOLDER%/2da/blankclab.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~~
+ ~K_FMT_H K_FMT_E K_FMT_HE K_FMT_HL K_FMT_G K_FMT_D K_FMT_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00003FC0     10~
+ ~0x08000000     10~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFT~
@@ -949,7 +949,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+/*
 ADD_KIT ~C0SAFMT2~
 
  // appended to CLASWEAP.2da
@@ -1027,7 +1027,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+*/
 //////////////////////////////
 //FIGHTER/SHADOWADEPT/CLERIC//
 //////////////////////////////
@@ -1074,10 +1074,10 @@ ADD_KIT ~C0SAFMC~
  ~%MOD_FOLDER%/2da/blankclab.2da~
 
  // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~~
+ ~K_FMC_H K_FMC_E K_FMC_HE K_FMC_HL K_FMC_G K_FMC_D K_FMC_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00003FC0     17~
+ ~0x08000000     17~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFC~
@@ -1109,7 +1109,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-
+/*
 ADD_KIT ~C0SAFMC2~
 
  // appended to CLASWEAP.2da
@@ -1187,3 +1187,4 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
+*/
