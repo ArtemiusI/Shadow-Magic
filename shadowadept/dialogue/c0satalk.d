@@ -522,6 +522,7 @@ SAY ~Choose one 5th level spell:~
 + ~!HaveKnownSpellRES("c0sa510")~ + ~Void Blast~ + 5.10
 + ~!HaveKnownSpellRES("c0sa511")~ + ~Shadow Screen~ + 5.11
 + ~!HaveKnownSpellRES("c0sa512")~ + ~Summon Nighthaunt~ + 5.12
++ ~!HaveKnownSpellRES("c0sa513")~ + ~Mass Lesser Drain Vitality~ + 5.13
 END
 
 IF ~~ level6
@@ -553,6 +554,7 @@ SAY ~Choose one 7th level spell:~
 + ~!HaveKnownSpellRES("c0sa710")~ + ~Malefic Bomb~ + 7.11
 + ~!HaveKnownSpellRES("c0sa711")~ + ~Shadow Gate~ + 7.12
 + ~!HaveKnownSpellRES("c0sa712")~ + ~Nightfall~ + 7.13
++ ~!HaveKnownSpellRES("c0sa713")~ + ~Mass Drain Vitality~ + 7.14
 END
 
 IF ~~ level8
@@ -582,6 +584,7 @@ SAY ~Choose one 9th level spell:~
 + ~!HaveKnownSpellRES("c0sa907")~ + ~Death Mark~ + 9.8
 + ~!HaveKnownSpellRES("c0sa908")~ + ~Oblivion Pull~ + 9.9
 + ~!HaveKnownSpellRES("c0sa909")~ + ~Fiery Pandemonium~ + 9.10
++ ~!HaveKnownSpellRES("c0sa910")~ + ~Mass Greater Drain Vitality~ + 9.11
 END
 
 IF ~~ 1.1
@@ -1633,6 +1636,22 @@ The nighthaunt is fully under the control of the caster for the duration of the 
 ++ ~Return to spell selection.~ + learn
 END
 
+IF ~~ 5.13
+SAY ~Mass Lesser Drain Vitality
+(Conjuration/Summoning)
+
+Level: 5
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","LOCALS",-1) SetGlobal("C0SA513","LOCALS",1) AddSpecialAbility("C0SA513")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
 IF ~~ 6.2
 SAY ~Shar's Shield
 (Abjuration – Shadow Weave)
@@ -2025,6 +2044,22 @@ This spell creates a rainfall of shadowstuff on the target location for six roun
 ++ ~Return to spell selection.~ + learn
 END
 
+IF ~~ 7.14
+SAY ~Mass Drain Vitality
+(Conjuration/Summoning)
+
+Level: 7
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) SetGlobal("C0SA713","LOCALS",1) AddSpecialAbility("C0SA713")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
 IF ~~ 8.2
 SAY ~Negastorm
 (Necromancy – Shadow Weave) 
@@ -2373,6 +2408,22 @@ Saving Throw: None
 
 When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell. This spell is not affected by Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA909","LOCALS",1) AddSpecialAbility("C0SA909")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
+IF ~~ 9.11
+SAY ~Mass Greater Drain Vitality
+(Conjuration/Summoning)
+
+Level: 9
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA910","LOCALS",1) AddSpecialAbility("C0SA910")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 

@@ -538,6 +538,21 @@ END
 	  resource = C0SA706
   END
 
+COPY_EXISTING ~C0SA513.spl~ ~override~
+SAY NAME1 ~Mass Lesser Drain Vitality~
+SAY NAME2 ~Mass Lesser Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Lesser Drain Vitality
+(Conjuration/Summoning)
+
+Level: 5
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+
 COPY_EXISTING ~C0SA407.spl~ ~override~
 SAY NAME1 ~Drain Vitality~
 SAY NAME2 ~Drain Vitality~
@@ -610,6 +625,21 @@ END
 	  resource = C0SA706
   END
 
+COPY_EXISTING ~C0SA714.spl~ ~override~
+SAY NAME1 ~Mass Drain Vitality~
+SAY NAME2 ~Mass Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
+(Conjuration/Summoning)
+
+Level: 7
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+
 COPY_EXISTING ~C0SA706.spl~ ~override~
 SAY NAME1 ~Greater Drain Vitality~
 SAY NAME2 ~Greater Drain Vitality~
@@ -681,6 +711,21 @@ END
 	STR_VAR
 	  resource = C0SA706
   END
+
+COPY_EXISTING ~C0SA910.spl~ ~override~
+SAY NAME1 ~Mass Greater Drain Vitality~
+SAY NAME2 ~Mass Greater Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Greater Drain Vitality
+(Conjuration/Summoning)
+
+Level: 9
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Greater Drain Vitality spell upon every enemy creature within the area of effect, draining eight points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 
       PRINT ~Resource: Constitution drain on cast~
       END
@@ -778,7 +823,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
 END
 
 COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -786,6 +831,23 @@ COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
       match_opcode = 12 // display string
 	  duration = 0
 END
+COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
+COPY_EXISTING ~C0SA207.spl~ ~override~
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
@@ -799,14 +861,23 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA407.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+
+COPY_EXISTING ~C0SA513.spl~ ~override~
+SAY NAME1 ~Mass Lesser Drain Vitality~
+SAY NAME2 ~Mass Lesser Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Lesser Drain Vitality
+(Conjuration/Summoning)
+
+Level: 5
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA407.spl~ ~override~
 SAY NAME1 ~Drain Vitality~
 SAY NAME2 ~Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Drain Vitality
@@ -820,14 +891,23 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA706.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+
+COPY_EXISTING ~C0SA713.spl~ ~override~
+SAY NAME1 ~Mass Drain Vitality~
+SAY NAME2 ~Mass Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
+(Conjuration/Summoning)
+
+Level: 7
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA706.spl~ ~override~
 SAY NAME1 ~Greater Drain Vitality~
 SAY NAME2 ~Greater Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
@@ -841,6 +921,22 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA910.spl~ ~override~
+SAY NAME1 ~Mass Greater Drain Vitality~
+SAY NAME2 ~Mass Greater Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Greater Drain Vitality
+(Conjuration/Summoning)
+
+Level: 9
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
       PRINT ~Resource: Drain Current Hit Points on cast~
       END
       ACTION_IF ("hpcost" = 3) THEN BEGIN
@@ -1027,7 +1123,10 @@ END
 END
 
 COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
+COPY_EXISTING ~C0SA207.spl~ ~override~
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
@@ -1041,7 +1140,23 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA407.spl~ ~override~
+
+COPY_EXISTING ~C0SA513.spl~ ~override~
+SAY NAME1 ~Mass Lesser Drain Vitality~
+SAY NAME2 ~Mass Lesser Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Lesser Drain Vitality
+(Conjuration/Summoning)
+
+Level: 5
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining two hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA407.spl~ ~override~
 SAY NAME1 ~Drain Vitality~
 SAY NAME2 ~Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Drain Vitality
@@ -1055,7 +1170,23 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA706.spl~ ~override~
+
+COPY_EXISTING ~C0SA713.spl~ ~override~
+SAY NAME1 ~Mass Drain Vitality~
+SAY NAME2 ~Mass Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
+(Conjuration/Summoning)
+
+Level: 7
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA706.spl~ ~override~
 SAY NAME1 ~Greater Drain Vitality~
 SAY NAME2 ~Greater Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
@@ -1069,6 +1200,22 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA910.spl~ ~override~
+SAY NAME1 ~Mass Greater Drain Vitality~
+SAY NAME2 ~Mass Greater Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Greater Drain Vitality
+(Conjuration/Summoning)
+
+Level: 9
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining six hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
       PRINT ~Resource: Drain Maximum Hit Points on cast~
       END
       ACTION_IF ("hpcost" = 4) THEN BEGIN
@@ -1124,7 +1271,7 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
 	  opcode_to_delete = %-1%
 END
 
-COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
+COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1132,6 +1279,23 @@ COPY ~%MOD_FOLDER%/alt-spell/C0SA207.spl~ ~override~
       match_opcode = 12 // display string
 	  duration = 0
 END
+COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
+COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 12 // display string
+	  duration = 0
+END
+COPY_EXISTING ~C0SA207.spl~ ~override~
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
@@ -1145,14 +1309,23 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA407.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+
+COPY_EXISTING ~C0SA513.spl~ ~override~
+SAY NAME1 ~Mass Lesser Drain Vitality~
+SAY NAME2 ~Mass Lesser Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Lesser Drain Vitality
+(Conjuration/Summoning)
+
+Level: 5
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA407.spl~ ~override~
 SAY NAME1 ~Drain Vitality~
 SAY NAME2 ~Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Drain Vitality
@@ -1166,14 +1339,23 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-COPY ~%MOD_FOLDER%/alt-spell/C0SA706.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+
+COPY_EXISTING ~C0SA713.spl~ ~override~
+SAY NAME1 ~Mass Drain Vitality~
+SAY NAME2 ~Mass Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
+(Conjuration/Summoning)
+
+Level: 7
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA706.spl~ ~override~
 SAY NAME1 ~Greater Drain Vitality~
 SAY NAME2 ~Greater Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
@@ -1187,6 +1369,22 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
+COPY_EXISTING ~C0SA910.spl~ ~override~
+SAY NAME1 ~Mass Greater Drain Vitality~
+SAY NAME2 ~Mass Greater Drain Vitality~
+SAY UNIDENTIFIED_DESC ~Mass Greater Drain Vitality
+(Conjuration/Summoning)
+
+Level: 9
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+
       PRINT ~Resource: No Cost~
       END
 	  
@@ -4257,7 +4455,7 @@ COPY_EXISTING ~C0SA213a.spl~ ~override~
       match_opcode = 139 // display string
  parameter1 = RESOLVE_STR_REF (~Healed~)
 END
- 
+
 COPY_EXISTING ~C0SA301.spl~ ~override~
 SAY NAME1 ~Blackfire Arrow~
 READ_LONG 0x64 "abil_off"
@@ -4377,7 +4575,7 @@ SAY NAME2 ~Shadow Comets~
 WRITE_SHORT 0x9C ~%c0scomet%~
 
 COPY_EXISTING ~C0SA307.spl~ ~override~
-SAY NAME2 ~Shadow Binding~
+SAY NAME1 ~Shadow Binding~
 SAY UNIDENTIFIED_DESC ~Shadow Binding
 (Enchantment/Charm – Shadow Weave)
 
@@ -7196,7 +7394,7 @@ When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon 
 
 This spell is not affected by Magic Resistance, but creatures that are immune to fire are unaffected.~
 
-COPY_EXISTING ~c0sa910.spl~ ~override~
+COPY_EXISTING ~c0sa911.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -7226,7 +7424,7 @@ SAY NAME2 ~Shadow Dragon~
   WRITE_ASCII 0x280 ~c0shadra~  #32
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
-COPY_EXISTING ~c0sa911.spl~ ~override~
+COPY_EXISTING ~c0sa912.spl~ ~override~
 SAY NAME1 ~Shadowsight~
 SAY UNIDENTIFIED_DESC ~Shadowsight
 (Divination – Shadow Weave)
