@@ -11,971 +11,11 @@ THEN
 	Continue()
 END
 
-// Kit
-
-IF
-  Kit(Player1,C0SADEP2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player1,AddKit(C0SADEPT))
-	ApplySpellRES("c0erase2",Player1)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player2,C0SADEP2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player2,AddKit(C0SADEPT))
-	ApplySpellRES("c0erase2",Player2)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player3,C0SADEP2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player3,AddKit(C0SADEPT))
-	ApplySpellRES("c0erase2",Player3)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player4,C0SADEP2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player4,AddKit(C0SADEPT))
-	ApplySpellRES("c0erase2",Player4)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player5,C0SADEP2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player5,AddKit(C0SADEPT))
-	ApplySpellRES("c0erase2",Player5)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player6,C0SADEP2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player6,AddKit(C0SADEPT))
-	ApplySpellRES("c0erase2",Player6)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player1,C0SASOR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player1,AddKit(C0SASORC))
-	ApplySpellRES("c0erase2",Player1)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player2,C0SASOR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player2,AddKit(C0SASORC))
-	ApplySpellRES("c0erase2",Player2)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player3,C0SASOR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player3,AddKit(C0SASORC))
-	ApplySpellRES("c0erase2",Player3)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player4,C0SASOR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player4,AddKit(C0SASORC))
-	ApplySpellRES("c0erase2",Player4)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player5,C0SASOR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player5,AddKit(C0SASORC))
-	ApplySpellRES("c0erase2",Player5)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player6,C0SASOR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player6,AddKit(C0SASORC))
-	ApplySpellRES("c0erase2",Player6)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player1,C0SABAR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player1,AddKit(C0SABARD))
-	ApplySpellRES("c0erase2",Player1)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player2,C0SABAR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player2,AddKit(C0SABARD))
-	ApplySpellRES("c0erase2",Player2)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player3,C0SABAR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player3,AddKit(C0SABARD))
-	ApplySpellRES("c0erase2",Player3)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player4,C0SABAR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player4,AddKit(C0SABARD))
-	ApplySpellRES("c0erase2",Player4)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player5,C0SABAR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player5,AddKit(C0SABARD))
-	ApplySpellRES("c0erase2",Player5)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player6,C0SABAR2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player6,AddKit(C0SABARD))
-	ApplySpellRES("c0erase2",Player6)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player1,C0SAMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player1,AddKit(C0SAMT))
-	ApplySpellRES("c0erase2",Player1)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player2,C0SAMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player2,AddKit(C0SAMT))
-	ApplySpellRES("c0erase2",Player2)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player3,C0SAMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player3,AddKit(C0SAMT))
-	ApplySpellRES("c0erase2",Player3)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player4,C0SAMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player4,AddKit(C0SAMT))
-	ApplySpellRES("c0erase2",Player4)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player5,C0SAMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player5,AddKit(C0SAMT))
-	ApplySpellRES("c0erase2",Player5)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player6,C0SAMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player6,AddKit(C0SAMT))
-	ApplySpellRES("c0erase2",Player6)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player1,C0SACM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player1,AddKit(C0SACM))
-	ApplySpellRES("c0erase2",Player1)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player2,C0SACM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player2,AddKit(C0SACM))
-	ApplySpellRES("c0erase2",Player2)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player3,C0SACM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player3,AddKit(C0SACM))
-	ApplySpellRES("c0erase2",Player3)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player4,C0SACM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player4,AddKit(C0SACM))
-	ApplySpellRES("c0erase2",Player4)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player5,C0SACM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player5,AddKit(C0SACM))
-	ApplySpellRES("c0erase2",Player5)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player6,C0SACM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player6,AddKit(C0SACM))
-	ApplySpellRES("c0erase2",Player6)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player1,C0SAFM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player1,AddKit(C0SAFM))
-	ApplySpellRES("c0erase2",Player1)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player2,C0SAFM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player2,AddKit(C0SAFM))
-	ApplySpellRES("c0erase2",Player2)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player3,C0SAFM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player3,AddKit(C0SAFM))
-	ApplySpellRES("c0erase2",Player3)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player4,C0SAFM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player4,AddKit(C0SAFM))
-	ApplySpellRES("c0erase2",Player4)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player5,C0SAFM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player5,AddKit(C0SAFM))
-	ApplySpellRES("c0erase2",Player5)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player6,C0SAFM2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player6,AddKit(C0SAFM))
-	ApplySpellRES("c0erase2",Player6)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player1,C0SAFMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player1,AddKit(C0SAFMT))
-	ApplySpellRES("c0erase2",Player1)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player2,C0SAFMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player2,AddKit(C0SAFMT))
-	ApplySpellRES("c0erase2",Player2)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player3,C0SAFMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player3,AddKit(C0SAFMT))
-	ApplySpellRES("c0erase2",Player3)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player4,C0SAFMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player4,AddKit(C0SAFMT))
-	ApplySpellRES("c0erase2",Player4)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player5,C0SAFMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player5,AddKit(C0SAFMT))
-	ApplySpellRES("c0erase2",Player5)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player6,C0SAFMT2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player6,AddKit(C0SAFMT))
-	ApplySpellRES("c0erase2",Player6)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player1,C0SAFMC2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player1,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player1,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player1,AddKit(C0SAFMC))
-	ApplySpellRES("c0erase2",Player1)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player2,C0SAFMC2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player2,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player2,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player2,AddKit(C0SAFMC))
-	ApplySpellRES("c0erase2",Player2)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player3,C0SAFMC2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player3,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player3,AddKit(C0SAFMC))
-	ApplySpellRES("c0erase2",Player3)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player4,C0SAFMC2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player4,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player4,AddKit(C0SAFMC))
-	ApplySpellRES("c0erase2",Player4)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player5,C0SAFMC2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player5,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player5,AddKit(C0SAFMC))
-	ApplySpellRES("c0erase2",Player5)
-	SetInterrupt(TRUE)
-END
-
-IF
-  Kit(Player6,C0SAFMC2)
-  GlobalGT("bd_plot","global",0)
-THEN
-  RESPONSE #100
-	SetInterrupt(FALSE)
-	ActionOverride(Player6,SetGlobal("C0SALV1","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV2","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV3","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV4","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV5","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV6","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV7","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV8","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("C0SALV9","LOCALS",0))
-	ActionOverride(Player6,AddKit(C0SAFMC))
-	ApplySpellRES("c0erase2",Player6)
-	SetInterrupt(TRUE)
-END
 // Missing Spells
 
 IF
 	TriggerOverride(Player1,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player1,SHADOW_ADEPT)
 	Class(Player1,MAGE_ALL)
 	!Class(Player1,SORCERER)
@@ -997,6 +37,7 @@ THEN
 END
 IF
 	TriggerOverride(Player1,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player1,SHADOW_ADEPT)
 	Class(Player1,MAGE_ALL)
 	!Class(Player1,SORCERER)
@@ -1018,6 +59,7 @@ THEN
 END
 IF
 	TriggerOverride(Player1,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player1,SHADOW_ADEPT)
 	Class(Player1,SORCERER)
 	OR(9)
@@ -1038,6 +80,7 @@ THEN
 END
 IF
 	TriggerOverride(Player1,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player1,SHADOW_ADEPT)
 	Class(Player1,SORCERER)
 	OR(9)
@@ -1058,6 +101,7 @@ THEN
 END
 IF
 	TriggerOverride(Player1,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player1,SHADOW_ADEPT)
 	Class(Player1,BARD)
 	OR(9)
@@ -1077,6 +121,7 @@ THEN
 END
 IF
 	TriggerOverride(Player2,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player2,SHADOW_ADEPT)
 	Class(Player2,MAGE_ALL)
 	!Class(Player2,SORCERER)
@@ -1098,6 +143,7 @@ THEN
 END
 IF
 	TriggerOverride(Player2,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player2,SHADOW_ADEPT)
 	Class(Player2,MAGE_ALL)
 	!Class(Player2,SORCERER)
@@ -1119,6 +165,7 @@ THEN
 END
 IF
 	TriggerOverride(Player2,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player2,SHADOW_ADEPT)
 	Class(Player2,SORCERER)
 	OR(9)
@@ -1139,6 +186,7 @@ THEN
 END
 IF
 	TriggerOverride(Player2,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player2,SHADOW_ADEPT)
 	Class(Player2,SORCERER)
 	OR(9)
@@ -1159,6 +207,7 @@ THEN
 END
 IF
 	TriggerOverride(Player2,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player2,SHADOW_ADEPT)
 	Class(Player2,BARD)
 	OR(9)
@@ -1178,6 +227,7 @@ THEN
 END
 IF
 	TriggerOverride(Player3,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player3,SHADOW_ADEPT)
 	Class(Player3,MAGE_ALL)
 	!Class(Player3,SORCERER)
@@ -1199,6 +249,7 @@ THEN
 END
 IF
 	TriggerOverride(Player3,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player3,SHADOW_ADEPT)
 	Class(Player3,MAGE_ALL)
 	!Class(Player3,SORCERER)
@@ -1220,6 +271,7 @@ THEN
 END
 IF
 	TriggerOverride(Player3,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player3,SHADOW_ADEPT)
 	Class(Player3,SORCERER)
 	OR(9)
@@ -1240,6 +292,7 @@ THEN
 END
 IF
 	TriggerOverride(Player3,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player3,SHADOW_ADEPT)
 	Class(Player3,SORCERER)
 	OR(9)
@@ -1260,6 +313,7 @@ THEN
 END
 IF
 	TriggerOverride(Player3,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player3,SHADOW_ADEPT)
 	Class(Player3,BARD)
 	OR(9)
@@ -1279,6 +333,7 @@ THEN
 END
 IF
 	TriggerOverride(Player4,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player4,SHADOW_ADEPT)
 	Class(Player4,MAGE_ALL)
 	!Class(Player4,SORCERER)
@@ -1300,6 +355,7 @@ THEN
 END
 IF
 	TriggerOverride(Player4,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player4,SHADOW_ADEPT)
 	Class(Player4,MAGE_ALL)
 	!Class(Player4,SORCERER)
@@ -1321,6 +377,7 @@ THEN
 END
 IF
 	TriggerOverride(Player4,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player4,SHADOW_ADEPT)
 	Class(Player4,SORCERER)
 	OR(9)
@@ -1341,6 +398,7 @@ THEN
 END
 IF
 	TriggerOverride(Player4,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player4,SHADOW_ADEPT)
 	Class(Player4,SORCERER)
 	OR(9)
@@ -1361,6 +419,7 @@ THEN
 END
 IF
 	TriggerOverride(Player4,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player4,SHADOW_ADEPT)
 	Class(Player4,BARD)
 	OR(9)
@@ -1380,6 +439,7 @@ THEN
 END
 IF
 	TriggerOverride(Player5,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player5,SHADOW_ADEPT)
 	Class(Player5,MAGE_ALL)
 	!Class(Player5,SORCERER)
@@ -1401,6 +461,7 @@ THEN
 END
 IF
 	TriggerOverride(Player5,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player5,SHADOW_ADEPT)
 	Class(Player5,MAGE_ALL)
 	!Class(Player5,SORCERER)
@@ -1422,6 +483,7 @@ THEN
 END
 IF
 	TriggerOverride(Player5,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player5,SHADOW_ADEPT)
 	Class(Player5,SORCERER)
 	OR(9)
@@ -1442,6 +504,7 @@ THEN
 END
 IF
 	TriggerOverride(Player5,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player5,SHADOW_ADEPT)
 	Class(Player5,SORCERER)
 	OR(9)
@@ -1462,6 +525,7 @@ THEN
 END
 IF
 	TriggerOverride(Player5,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player5,SHADOW_ADEPT)
 	Class(Player5,BARD)
 	OR(9)
@@ -1481,6 +545,7 @@ THEN
 END
 IF
 	TriggerOverride(Player6,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player6,SHADOW_ADEPT)
 	Class(Player6,MAGE_ALL)
 	!Class(Player6,SORCERER)
@@ -1502,6 +567,7 @@ THEN
 END
 IF
 	TriggerOverride(Player6,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player6,SHADOW_ADEPT)
 	Class(Player6,MAGE_ALL)
 	!Class(Player6,SORCERER)
@@ -1523,6 +589,7 @@ THEN
 END
 IF
 	TriggerOverride(Player6,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player6,SHADOW_ADEPT)
 	Class(Player6,SORCERER)
 	OR(9)
@@ -1543,6 +610,7 @@ THEN
 END
 IF
 	TriggerOverride(Player6,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player6,SHADOW_ADEPT)
 	Class(Player6,SORCERER)
 	OR(9)
@@ -1563,6 +631,7 @@ THEN
 END
 IF
 	TriggerOverride(Player6,ActionListEmpty())
+	GlobalGT("bd_plot","global",0)
 	Specifics(Player6,SHADOW_ADEPT)
 	Class(Player6,BARD)
 	OR(9)
@@ -1579,193 +648,4 @@ IF
 THEN
   RESPONSE #100
 	ActionOverride(Player6,ApplySpellRES("C0SALSB",Myself))
-END
-
-// First Memory
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
-	Delay(1)
-	!Class(Player1,SORCERER)
-	!Class(Player1,BARD)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",1))
-	DisplayStringNoName(Player1,~You now have an opportunity to memorize your newly learned spells. Unpause the game when you are ready.~ [EFF_P05])
-	ActionOverride(Player1,PauseGame())
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
-	Delay(1)
-	Class(Player1,BARD)
-	LevelGT(Player1,1)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",1))
-	DisplayStringNoName(Player1,~You now have an opportunity to memorize your newly learned spells. Unpause the game when you are ready.~ [EFF_P05])
-	ActionOverride(Player1,PauseGame())
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
-	Delay(1)
-	Class(Player1,BARD)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
-	Delay(1)
-	Class(Player1,SORCERER)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
-	ActionOverride(Player1,Rest())
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	!TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv3","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv4","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv5","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv6","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv7","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv8","LOCALS",0))
-	!TriggerOverride(Player1,GlobalGT("C0SALv9","LOCALS",0))
-	Delay(1)
-	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",1))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0SAFirstMemory","LOCALS",2))
-	ActionOverride(Player1,Rest())
-END
-
-// Familiar
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	ClassLevelGT(Player1,WIZARD,5)
-	Global("C0SASummonFamiliar","GLOBAL",0)
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,AddSpecialAbility("c0safam1"))
-	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
-END
-
-IF
-	Specifics(Player1,SHADOW_ADEPT)
-	Class(Player1,BARD_ALL)
-	LevelGT(Player1,7)
-	Global("C0SASummonFamiliar","GLOBAL",0)
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,AddSpecialAbility("c0safam1"))
-	SetGlobal("C0SASummonFamiliar","GLOBAL",1)
-END
-
-// Nightsinger's Tithe
-
-IF
-  TriggerOverride(Player1,GlobalGT("C0SA903","LOCALS",49))
-  TriggerOverride(Player1,Global("C0NightsingerTithe","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player1,SetGlobal("C0NightsingerTithe","LOCALS",1))
-	ApplySpellRES("C0SA903B",Player1)
-	DisplayStringHead(Player1,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-END
-
-IF
-  TriggerOverride(Player2,GlobalGT("C0SA903","LOCALS",49))
-  TriggerOverride(Player2,Global("C0NightsingerTithe","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player2,SetGlobal("C0NightsingerTithe","LOCALS",1))
-	ApplySpellRES("C0SA903B",Player2)
-	DisplayStringHead(Player2,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-END
-
-IF
-  TriggerOverride(Player3,GlobalGT("C0SA903","LOCALS",49))
-  TriggerOverride(Player3,Global("C0NightsingerTithe","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player3,SetGlobal("C0NightsingerTithe","LOCALS",1))
-	ApplySpellRES("C0SA903B",Player3)
-	DisplayStringHead(Player3,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-END
-
-IF
-  TriggerOverride(Player4,GlobalGT("C0SA903","LOCALS",49))
-  TriggerOverride(Player4,Global("C0NightsingerTithe","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player4,SetGlobal("C0NightsingerTithe","LOCALS",1))
-	ApplySpellRES("C0SA903B",Player4)
-	DisplayStringHead(Player4,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-END
-
-IF
-  TriggerOverride(Player5,GlobalGT("C0SA903","LOCALS",49))
-  TriggerOverride(Player5,Global("C0NightsingerTithe","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player5,SetGlobal("C0NightsingerTithe","LOCALS",1))
-	ApplySpellRES("C0SA903B",Player5)
-	DisplayStringHead(Player5,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
-END
-
-IF
-  TriggerOverride(Player6,GlobalGT("C0SA903","LOCALS",49))
-  TriggerOverride(Player6,Global("C0NightsingerTithe","LOCALS",0))
-THEN
-  RESPONSE #100
-	ActionOverride(Player6,SetGlobal("C0NightsingerTithe","LOCALS",1))
-	ApplySpellRES("C0SA903B",Player6)
-	DisplayStringHead(Player6,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
 END

@@ -1,6 +1,6 @@
 BACKUP ~shadowadept/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.96a~
+VERSION ~1.96b~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -26,8 +26,6 @@ BEGIN ~Shadow Magic: Main Component~
 
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 
-// SHADOW MONK - requires Shadow Magic component
-
 BEGIN ~Shadow Magic: Shadow Monk monk kit~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
@@ -44,90 +42,3 @@ BEGIN ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/5_shade_lord.tpa~
-
-BEGIN ~Shadow Magic: BETA Spell Learning System~
-  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
-
-COPY ~%MOD_FOLDER%/2da/spellselect~ ~override~
-COMPILE ~%MOD_FOLDER%/dialogue/spellselect/c0sascrl.d~
-COMPILE ~%MOD_FOLDER%/dialogue/spellselect/c0satalk.d~
-COMPILE ~%MOD_FOLDER%/scripts/spellselect/c0saplay.baf~
-EXTEND_BOTTOM ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/spellselect/c0saplay.baf~
-
-ACTION_IF MOD_IS_INSTALLED ~SETUP-RR.TP2~ ~6~ THEN BEGIN
-COPY ~%MOD_FOLDER%/2DA/SPELLSELECT/OTHER/C0SALSB-RR.2DA~ ~OVERRIDE/C0SALSB.2DA~
-END
-
-ACTION_IF MOD_IS_INSTALLED ~SETUP-CDTWEAKS.TP2~ ~2270~ THEN BEGIN
-COPY ~%MOD_FOLDER%/2DA/SPELLSELECT/OTHER/C0SALSB-CD.2DA~ ~OVERRIDE/C0SALSB.2DA~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/spellselect/baldur.baf~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/spellselect/bdbaldur.baf~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/spellselect/baldur.baf~
-END
-
-INCLUDE	~%MOD_FOLDER%/lib/SA_SEQUENCER_MENU.TPA~
-OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
-LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALSW~ resref = ~C0SALSW~	icon = ~c0sahlbb~	title	action
-END
-OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
-LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALHW~ resref = ~C0SALHW~	icon = ~c0sahlbb~	title	action
-END
-OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
-LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALSS~ resref = ~C0SALSS~	icon = ~c0sahlbb~	title	action
-END
-OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
-LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALHS~ resref = ~C0SALHS~	icon = ~c0sahlbb~	title	action
-END
-OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
-LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALSB~ resref = ~C0SALSB~	icon = ~c0sahlbb~	title	action
-END
-
-COPY_EXISTING ~C0SALSW.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSW~
-END
-COPY_EXISTING ~C0SALHW.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALHW~
-END
-COPY_EXISTING ~C0SALSS.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSS~
-END
-COPY_EXISTING ~C0SALHS.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALHS~
-END
-COPY_EXISTING ~C0SALSB.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSB~
-END
-COPY_EXISTING ~C0SALSWD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
-END
-COPY_EXISTING ~C0SALHWD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALHW~
-END
-COPY_EXISTING ~C0SALSSD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSS~
-END
-COPY_EXISTING ~C0SALHSD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALHS~
-END
-COPY_EXISTING ~C0SALSBD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSB~
-END

@@ -1,6 +1,5 @@
-
 // SPECIFICS value SHADOW_ADEPT
-LAF ADD_IDS_ENTRY INT_VAR preferredValue = 100 STR_VAR idsFile = "specific.ids" identifier = "SHADOW_ADEPT" RET value END
+LAF ADD_IDS_ENTRY INT_VAR minValue = 200 maxValue = 255 preferredValue = 200 STR_VAR idsFile = "specific.ids" identifier = "SHADOW_ADEPT" RET value END
 
 ////////////////////////////////////////
 //////////////SPLPROT.2DA///////////////
