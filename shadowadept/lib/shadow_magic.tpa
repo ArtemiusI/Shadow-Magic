@@ -6477,7 +6477,7 @@ FOR (index = 0; index < abil_num; index = index + 1) BEGIN
 WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sarain%~
 END
 
-COPY_EXISTING ~c0sa713.spl~ ~override~
+COPY_EXISTING ~c0sa714.spl~ ~override~
 SAY NAME1 ~Dark Renewal~
 SAY UNIDENTIFIED_DESC ~Dark Renewal
 (Necromancy – Shadow Weave) 
@@ -6494,7 +6494,7 @@ This powerful spell calls upon the energies of the Shadow Weave to wipe away dis
 
 Additionally, if this spell is cast upon a dead party member, it will restore them to life, but the caster is permanently drained of four levels which may only be recovered via a Restoration spell.~
 
-COPY_EXISTING ~c0sa714.spl~ ~override~
+COPY_EXISTING ~c0sa715.spl~ ~override~
 SAY NAME1 ~Death Touch~
 SAY UNIDENTIFIED_DESC ~Death Touch
 (Necromancy)
