@@ -35,7 +35,7 @@ ADD_KIT ~C0SADEPT~
  ~K_M_H K_M_E K_M_HE K_M_HL K_M_G K_M_D K_M_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00200000     1~
+ ~0x00400000     1~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA~
@@ -153,7 +153,7 @@ ADD_KIT ~C0SASORC~
  ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00200000     19~
+ ~0x00400000     19~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA~
@@ -280,7 +280,7 @@ ADD_KIT ~C0SABARD~
  ~K_B_H K_B_E K_B_HE K_B_HL K_B_G K_B_D K_B_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00200000     5~
+ ~0x00400000     5~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA2~
@@ -437,7 +437,7 @@ ADD_KIT ~C0SAMT~
  ~K_MT_H K_MT_E K_MT_HE K_MT_HL K_MT_G K_MT_D K_MT_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00200000     13~
+ ~0x00400000     13~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAMT~
@@ -597,7 +597,7 @@ ADD_KIT ~C0SACM~
   ~K_CM_H K_CM_E K_CM_HE K_CM_HL K_CM_G K_CM_D K_CM_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00200000     14~
+ ~0x00400000     14~
 
  // HLA table to use; see LUABBR.2da
  ~C0SACM~
@@ -757,7 +757,7 @@ ADD_KIT ~C0SAFM~
  ~K_FM_H K_FM_E K_FM_HE K_FM_HL K_FM_G K_FM_D K_FM_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00200000     7~
+ ~0x00400000     7~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFM~
@@ -917,7 +917,7 @@ ADD_KIT ~C0SAFMT~
  ~K_FMT_H K_FMT_E K_FMT_HE K_FMT_HL K_FMT_G K_FMT_D K_FMT_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00200000     10~
+ ~0x00400000     10~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFT~
@@ -1077,7 +1077,7 @@ ADD_KIT ~C0SAFMC~
  ~K_FMC_H K_FMC_E K_FMC_HE K_FMC_HL K_FMC_G K_FMC_D K_FMC_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00200000     17~
+ ~0x00400000     17~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFC~

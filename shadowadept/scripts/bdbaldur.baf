@@ -1,16 +1,3 @@
-IF
-  AreaType(OUTDOOR)
-  TimeGT(DAWN_START)
-  TimeLT(DUSK_END)
-  Delay(1)
-THEN
-	RESPONSE #100
-    SetInterrupt(FALSE)
-    ReallyForceSpellDeadRES("C0SADAY",Player1)
-    SetInterrupt(TRUE)
-	Continue()
-END
-
 // First Memory
 
 IF

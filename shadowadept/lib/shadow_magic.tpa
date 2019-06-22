@@ -207,7 +207,7 @@ END
 COPY_EXISTING_REGEXP GLOB ~SPWI.*.SPL$~ ~override~
   READ_SHORT	0x1c spell_type
   PATCH_IF (spell_type = 1) BEGIN
-    WRITE_BYTE    0x20 (THIS BOR 0b00100000)
+    WRITE_BYTE    0x20 (THIS BOR 0b01000000)
       END
 BUT_ONLY_IF_IT_CHANGES
 
@@ -216,7 +216,7 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
 	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
 	  READ_2DA_ENTRY_FORMER rows row 1 ~text~ // read column value
-	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BLADE~ BEGIN
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~JESTER~ BEGIN
 	    SET patch_row = %row%
 		SET_2DA_ENTRY (%patch_row%) 7 cols 0b00004000
 	  END
@@ -625,7 +625,7 @@ END
 	  resource = C0SA706
   END
 
-COPY_EXISTING ~C0SA714.spl~ ~override~
+COPY_EXISTING ~C0SA713.spl~ ~override~
 SAY NAME1 ~Mass Drain Vitality~
 SAY NAME2 ~Mass Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
@@ -1499,42 +1499,6 @@ COPY_EXISTING ~C0SACON0.SPL~ ~OVERRIDE~
 		  resource = EVAL ~C0SACON0~
 	END
 
-COPY_EXISTING ~C0SA207.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 2
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = C0SA207
-	END
-	
-COPY_EXISTING ~C0SA407.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 2
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = C0SA407
-	END
-	
-COPY_EXISTING ~C0SA706.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 2
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = C0SA706
-	END
-	
 // PROJECTILES
 
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj01.PRO~ ~SM Flying Skull~
@@ -3734,11 +3698,9 @@ COPY_EXISTING ~c0sacha2.spl~ ~override/c0sacha6.spl~
 	  parameter1 = 0 - 1
 END
 COPY_EXISTING ~c0sacha2.spl~ ~override/c0sacha7.spl~
-  LPF ADD_SPELL_EFFECT
+  LPF ALTER_EFFECT
     INT_VAR
-      opcode = 325
-	  target = 2
-	  timing = 9
+      match_opcode = 325
 	  parameter1 = 1
 END
 COPY_EXISTING ~c0sacha7.spl~ ~override/c0sacha8.spl~
@@ -4334,16 +4296,6 @@ Saving Throw: Neg.
 When this spell is cast, a thick shadowy mist spreads across the area selected by the caster. Any creatures caught within the mist must make a Save vs. Spells at -2 at the beginning of each round or become blinded for that round, receiving a -4 penalty to their Armor Class and attack rolls and greatly reducing their vision range. Those who make successful Saving Throws can leave the mist without suffering any ill effects, although those remaining in the mist must continue to save each round. A Dispel Magic will remove the blindness on a particular character, but if they remain in the mist, then they are still subject to its effects.~
 
 COPY_EXISTING ~C0SA209.spl~ ~override~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 2
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = C0SA209
-	END
 SAY NAME1 ~Negative Energy Ray~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
@@ -5103,14 +5055,6 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When the caster is struck with an attack, <PRO_HESHE> takes no damage and drains 1d4 hit points per level from the attacker instead. It only works for one attack, and the effects are not cumulative (you cannot have more than one mirror erected). If the spell is not triggered, it lasts for 1 turn.~
-COPY_EXISTING ~C0SA412a.spl~ ~override~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 138
-		  insert_point = 1
-		  target = 1
-		  parameter2 = 10
-	END
 	
 COPY_EXISTING ~C0SA413.spl~ ~override~
 	LPF ALTER_EFFECT
@@ -6105,16 +6049,6 @@ Saving Throw: 1/2
 This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they lose an additional 20% of their maximum hit points and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 
 COPY_EXISTING ~C0SA610.spl~ ~override~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 2
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = C0SA610
-	END
 SAY NAME1 ~Disintegrate~
 READ_LONG 0x64 "abil_off"
 READ_SHORT 0x68 "abil_num"
