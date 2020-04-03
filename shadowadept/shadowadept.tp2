@@ -1,11 +1,12 @@
 BACKUP ~shadowadept/backup~
-AUTHOR ~Artemius_I~
-VERSION ~1.98a~
+AUTHOR ~The Artisan~
+VERSION ~2.0~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
   INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/qd_multiclass.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
   ACTION_IF (GAME_IS ~eet~) BEGIN
     OUTER_SET bg2_chapter = 12
   END ELSE BEGIN
@@ -34,8 +35,6 @@ INCLUDE ~%MOD_FOLDER%/components/2_shadow_monk.tpa~
 BEGIN ~Shadow Magic: Quests and Encounters (BG:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
-
-INCLUDE ~%MOD_FOLDER%/components/3_quests.tpa~
 
 BEGIN ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~

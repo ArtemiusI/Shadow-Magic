@@ -1,4 +1,39 @@
 IF
+	HotKey(K)
+	Alignment(Myself,MASK_LAWFUL)
+THEN
+RESPONSE #100
+	SetName(~Yin'rou~)
+	SetPlayerSound(Myself, ~~ [VWOLF03],BATTLE_CRY1)
+	SetPlayerSound(Myself, ~~ [VWOLF04],BATTLE_CRY2)
+	SetPlayerSound(Myself, ~~ [VWOLF05],ATTACK1)
+	SetPlayerSound(Myself, ~~ [VWOLF06],ATTACK2)
+	SetPlayerSound(Myself, ~~ [VWOLF08],DAMAGE)
+	SetPlayerSound(Myself, ~~ [VWOLF09],DYING)
+	SetPlayerSound(Myself, ~~ [VWOLF01],SELECT_COMMON1)
+	SetPlayerSound(Myself, ~~ [VWOLF02],SELECT_COMMON2)
+	Polymorph(C0_SHADOW_WOLF)
+END
+
+IF
+	HotKey(K)
+	Alignment(Myself,MASK_LCNEUTRAL)
+THEN
+RESPONSE #100
+	SetName(~Ka'Shai~)
+	Polymorph(SHADOW_SMALL)
+END
+
+IF
+	HotKey(K)
+	Alignment(Myself,MASK_CHAOTIC)
+THEN
+RESPONSE #100
+	SetName(~Nyx~)
+	Polymorph(C0_SHADOW_MEPHIT)
+END
+
+IF
   Global("C0SAFamiliarSummoned", "GLOBAL", 0)
 THEN RESPONSE #100
   SetGlobal("C0SAFamiliarSummoned","GLOBAL",1)

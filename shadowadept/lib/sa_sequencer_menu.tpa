@@ -522,6 +522,7 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sainvi.PRO~ ~SM Hidden Project
 							PATCH_IF	!FILE_EXISTS_IN_GAME	~%DEST_FILE%~	BEGIN
 								SAY NAME1 #-1
 								WRITE_ASCII 0x10  	~~ #8
+								WRITE_SHORT 0x1C 0
 								WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1	END	LPF	DELETE_EFFECT	END
 								PATCH_IF	global != 1 BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	END
 								PATCH_IF	global = 1	BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1	parameter1 = 1	timing = 9	STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	END
@@ -563,7 +564,9 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sainvi.PRO~ ~SM Hidden Project
 							ACTION_IF	FILE_EXISTS_IN_GAME	~%spell_res%.spl~	BEGIN
 								COPY_EXISTING	~%spell_res%.spl~	~override\%spell_res%%postfix%.spl~
 									PATCH_IF	!FILE_EXISTS_IN_GAME	~%spell_res%%postfix%.spl~	BEGIN
-										WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1	END	LPF	DELETE_EFFECT	END
+										SAY NAME1 #-1
+										WRITE_ASCII	0x10 ~~ #8 WRITE_LONG	0x18	0	 WRITE_BYTE 0x22 0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = (IDS_OF_SYMBOL (~projectl~ ~c0sainvi~)) + 1	END
+										LPF	DELETE_EFFECT	END
 										PATCH_IF	global != 1 BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%spell_res%~	END	END
 										PATCH_IF	global = 1	BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1	parameter1 = 1	timing = 9	STR_VAR	resource = EVAL ~%spell_res%~	END	END
 									END

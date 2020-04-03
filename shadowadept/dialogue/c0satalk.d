@@ -585,6 +585,7 @@ SAY ~Choose one 9th level spell:~
 + ~!HaveKnownSpellRES("c0sa908")~ + ~Oblivion Pull~ + 9.9
 + ~!HaveKnownSpellRES("c0sa909")~ + ~Fiery Pandemonium~ + 9.10
 + ~!HaveKnownSpellRES("c0sa910")~ + ~Mass Greater Drain Vitality~ + 9.11
++ ~!HaveKnownSpellRES("c0sa910")~ + ~Dark Meteor~ + 9.12
 END
 
 IF ~~ 1.1
@@ -2423,6 +2424,24 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect.~
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA910","LOCALS",1) AddSpecialAbility("C0SA910")~ + NEXT
+++ ~Return to spell selection.~ + learn
+END
+
+IF ~~ 9.12
+SAY ~Dark Meteor
+(Invocation/Evocation – Shadow Weave)
+
+Level: 9
+Range: 270 ft.
+Duration: 8 rounds
+Casting Time: 9
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+Only the most desperate of Shadow Adepts dare to call upon this dangerous spell. The caster calls upon a gigantic, meteoric mass of shadowstuff from the Plane of Shadow and drops it upon the target location. Any creature with less than 12 Hit Die are killed instantly with no Saving Throw, while other creatures must make a Saving Throw vs. Breath or die. The meteor deals 5d10 fire damage, 5d10 cold damage, 5d10 electrical damage and 5d10 magic damage to any survivors, knocks them unconscious for 1 round, and reduces their Saving Throws and Luck by -10 for 8 rounds. The strain of channelling this spell, however, causes the caster to suffer 75% of their maximum hit points in damage.
+
+This spell is not affected by Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA910","LOCALS",1) AddSpecialAbility("C0SA910")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END

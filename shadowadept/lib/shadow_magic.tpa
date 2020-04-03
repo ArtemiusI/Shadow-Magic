@@ -146,6 +146,21 @@ ACTION_PHP_EACH	DMG_ARRAY AS one => two	BEGIN
 	LAF	ADD_SPLPROT	INT_VAR	stat = 260	value = min	relation = 	max	RET	EVAL ~%one%~ = new_row	END
 END
 
+ACTION_DEFINE_ASSOCIATIVE_ARRAY	DMG_ARRAY2	BEGIN
+	~ACID2~		=>	17
+	~COLD2~		=>	15
+	~ELEC2~		=>	16
+	~FIRE2~		=>	14
+	~MAGIC2~		=>	73
+	~MFIRE2~		=>	19
+	~MCOLD2~		=>	20
+END
+ACTION_PHP_EACH	DMG_ARRAY2 AS one => two	BEGIN
+	LAF	ADD_SPLPROT	INT_VAR	stat = two	value = 0	relation = 	2	RET	min = new_row	END
+	LAF	ADD_SPLPROT	INT_VAR	stat = two	value = 128	relation = 	4	RET	max = new_row	END
+	LAF	ADD_SPLPROT	INT_VAR	stat = 260	value = min	relation = 	max	RET	EVAL ~%one%~ = new_row	END
+END
+
 // SCROLLS
 
  OUTER_SET nscrl_specific = %value%
@@ -240,25 +255,25 @@ DEFINE_ACTION_FUNCTION cd_new_portrait_icon
 
 END
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Weakened~) STR_VAR bam_file = c0saic01 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Constitution Lowered~) STR_VAR bam_file = c0saic02 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Void Edge~) STR_VAR bam_file = c0saic03 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Fire Shield (Shadow)~) STR_VAR bam_file = c0saic04 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadeskin~) STR_VAR bam_file = c0saic05 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Blessing~) STR_VAR bam_file = c0saic06 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Negative Immunity~) STR_VAR bam_file = c0saic07 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Pain Mirror~) STR_VAR bam_file = c0saic08 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Shield~) STR_VAR bam_file = c0saic09 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Umbral Blades~) STR_VAR bam_file = c0saic10 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Vengeful Shade~) STR_VAR bam_file = c0saic11 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Possession~) STR_VAR bam_file = c0saic12 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Annulment~) STR_VAR bam_file = c0saic13 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadow Shield~) STR_VAR bam_file = c0saic14 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Mantle~) STR_VAR bam_file = c0saic15 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadow's Refuge~) STR_VAR bam_file = c0saic16 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Dark Premonition~) STR_VAR bam_file = c0saic17 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Dark Passage~) STR_VAR bam_file = c0saic18 RET icon END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Sacred Shadow~) STR_VAR bam_file = c0saic19 RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Daylight Weakness~) STR_VAR bam_file = c0saic01 RET c0saic01 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Constitution Lowered~) STR_VAR bam_file = c0saic02 RET c0saic02 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Void Edge~) STR_VAR bam_file = c0saic03 RET c0saic03 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Fire Shield (Shadow)~) STR_VAR bam_file = c0saic04 RET c0saic04 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadeskin~) STR_VAR bam_file = c0saic05 RET c0saic05 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Blessing~) STR_VAR bam_file = c0saic06 RET c0saic06 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Negative Immunity~) STR_VAR bam_file = c0saic07 RET c0saic07 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Pain Mirror~) STR_VAR bam_file = c0saic08 RET c0saic08 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Shield~) STR_VAR bam_file = c0saic09 RET c0saic09 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Umbral Blades~) STR_VAR bam_file = c0saic10 RET c0saic10 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Vengeful Shade~) STR_VAR bam_file = c0saic11 RET c0saic11 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Possession~) STR_VAR bam_file = c0saic12 RET c0saic12 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Annulment~) STR_VAR bam_file = c0saic13 RET c0saic13 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadow Shield~) STR_VAR bam_file = c0saic14 RET c0saic14 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shar's Mantle~) STR_VAR bam_file = c0saic15 RET c0saic15 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Shadow's Refuge~) STR_VAR bam_file = c0saic16 RET c0saic16 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Dark Premonition~) STR_VAR bam_file = c0saic17 RET c0saic17 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Dark Passage~) STR_VAR bam_file = c0saic18 RET c0saic18 = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~Sacred Shadow~) STR_VAR bam_file = c0saic19 RET c0saic19 = icon END
 
 COPY_EXISTING ~C0SADAY.SPL~ ~OVERRIDE~
 LPF ALTER_EFFECT
@@ -274,8 +289,8 @@ COPY_EXISTING ~C0SADAY2.SPL~ ~OVERRIDE~
 	    opcode = 142
 	    target = 2
 		timing = 0
-		duration = 1
-        parameter2 = (icon - 18)
+		duration = 2
+        parameter2 = c0saic01
       END
 
 ////////////////////////////////////////
@@ -296,177 +311,48 @@ END
       ACTION_IF ("hpcost" = 1) THEN BEGIN
 LOAD_TRA ~%MOD_FOLDER%/languages/english/setup.tra~
 COPY_EXISTING ~c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-1 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-1 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon2.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon3.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-3 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-3 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon4.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon5.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-5 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-5 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon6.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon7.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-7 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-7 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon8.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon9.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-9 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-9 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 
 COPY_EXISTING ~c0sacon0.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 penalty to Constitution^-~)
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 penalty to Constitution^-~) END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
 COMPILE ~%MOD_FOLDER%/scripts/c0sacon.baf~
 
 COPY_EXISTING ~C0SA207.spl~ ~override~
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
 SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
@@ -481,62 +367,15 @@ Saving Throw: None
 
 This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 COPY_EXISTING ~C0SA207a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 139
-	  target = 2
-	  timing = 4
-	  duration = 60
-	  parameter1 = RESOLVE_STR_REF (~Constitution Restored~)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 139
-	  target = 2
-	  timing = 1
-	  duration = 0
-	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA207
-  END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA407
-  END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA706
-  END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
 
 COPY_EXISTING ~C0SA513.spl~ ~override~
 SAY NAME1 ~Mass Lesser Drain Vitality~
@@ -568,62 +407,15 @@ Saving Throw: None
 
 This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 COPY_EXISTING ~C0SA407a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 139
-	  target = 2
-	  timing = 4
-	  duration = 60
-	  parameter1 = RESOLVE_STR_REF (~Constitution Restored~)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 139
-	  target = 2
-	  timing = 1
-	  duration = 0
-	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA207
-  END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA407
-  END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA706
-  END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
 
 COPY_EXISTING ~C0SA713.spl~ ~override~
 SAY NAME1 ~Mass Drain Vitality~
@@ -655,62 +447,15 @@ Saving Throw: None
 
 This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
 COPY_EXISTING ~C0SA706a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 139
-	  target = 2
-	  timing = 4
-	  duration = 60
-	  parameter1 = RESOLVE_STR_REF (~Constitution Restored~)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 139
-	  target = 2
-	  timing = 1
-	  duration = 0
-	  parameter1 = RESOLVE_STR_REF (~Constitution Drained~)
-END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA207
-  END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA407
-  END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 206 // display string
-	  target = 2
-	  timing = 0
-	  duration = 60
-	  resist_dispel = 2
-	  parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~)
-	STR_VAR
-	  resource = C0SA706
-  END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
 
 COPY_EXISTING ~C0SA910.spl~ ~override~
 SAY NAME1 ~Mass Greater Drain Vitality~
@@ -732,121 +477,33 @@ This spell inflicts the effects of the Greater Drain Vitality spell upon every e
       ACTION_IF ("hpcost" = 2) THEN BEGIN
 LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-2.tra~
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Current Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Current Hit Points^-~) END
 
 COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
 COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
 COPY_EXISTING ~C0SA207.spl~ ~override~
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
@@ -942,185 +599,35 @@ This spell inflicts the effects of the Drain Vitality spell upon every enemy cre
       ACTION_IF ("hpcost" = 3) THEN BEGIN
 LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-3.tra~
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Maximum Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 17 // display string
-	  opcode = 18
-      timing = 0
-	  duration = 36
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 139 // display string
-      match_parameter1 = 0
- parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Maximum Hit Points^-~)
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Maximum Hit Points^-~) END
 
 COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
 COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
@@ -1221,80 +728,32 @@ This spell inflicts the effects of the Drain Vitality spell upon every enemy cre
       ACTION_IF ("hpcost" = 4) THEN BEGIN
 LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-4.tra~
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF DELETE_SPELL_EFFECT
-      INT_VAR
-	  opcode_to_delete = %-1%
-END
+  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
 
 COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 12 // display string
-	  duration = 0
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
 COPY_EXISTING ~C0SA207.spl~ ~override~
 SAY NAME1 ~Lesser Drain Vitality~
 SAY NAME2 ~Lesser Drain Vitality~
@@ -1389,115 +848,25 @@ This spell inflicts the effects of the Drain Vitality spell upon every enemy cre
       END
 	  
 COPY_EXISTING ~C0SACON1.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON1~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON1~ END	  
 COPY_EXISTING ~C0SACON2.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON2~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON2~ END
 COPY_EXISTING ~C0SACON3.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON3~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON3~ END
 COPY_EXISTING ~C0SACON4.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON4~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON4~ END
 COPY_EXISTING ~C0SACON5.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON5~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON5~ END
 COPY_EXISTING ~C0SACON6.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON6~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON6~ END
 COPY_EXISTING ~C0SACON7.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON7~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON7~ END
 COPY_EXISTING ~C0SACON8.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON8~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON8~ END
 COPY_EXISTING ~C0SACON9.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON9~
-	END	  
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON9~ END
 COPY_EXISTING ~C0SACON0.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-		  opcode = 324
-		  insert_point = 0
-		  target = 1
-		  duration = 0
-		  parameter2 = 1
-		STR_VAR
-		  resource = EVAL ~C0SACON0~
-	END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON0~ END
 
 // PROJECTILES
 
@@ -1507,7 +876,7 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2c.PRO~ ~SM Magic Missile 
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2b.PRO~ ~SM Magic Missile 3~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2a.PRO~ ~SM Magic Missile 4~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj02.PRO~ ~SM Magic Missile 5~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj03.PRO~ ~SM Sparkle~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj03.PRO~ ~SM Sleep~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj04.PRO~ ~SM Flame Arrow~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj05.PRO~ ~SM Purple Fireball~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj06.PRO~ ~SM Red Ray~
@@ -1533,6 +902,7 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj23.PRO~ ~SM Night Knives 3
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj24.PRO~ ~SM Void Blast~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj25.PRO~ ~SM Blackfire Ruin~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj26.PRO~ ~SM Shadow Glyph~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj27.PRO~ ~SM Malefic Bomb~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0negeb.PRO~ ~SM Negative Burst~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0weird.PRO~ ~SM Weird~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0night2.PRO~ ~SM Night Knives 2~
@@ -1544,7 +914,10 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0cflame.PRO~ ~SM Cursed Flames~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0blizza.PRO~ ~SM Blizzard~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0oblivi.PRO~ ~SM Oblivion Pull~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0pandem.PRO~ ~SM Pandemonium~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0dbreat.PRO~ ~SM Dragon Breath~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0scomet.PRO~ ~SM Shadow Comet~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0meteor.PRO~ ~SM Dark Meteor~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa8061.PRO~ ~SM Blackfireball~
 
 COPY_EXISTING ~c0proj08.pro~ ~override~
 WRITE_SHORT 0x21A (IDS_OF_SYMBOL (~projectl~ ~c0pro08a~)) + 1
@@ -1556,2016 +929,327 @@ WRITE_SHORT 0x21A (IDS_OF_SYMBOL (~projectl~ ~c0pro10a~)) + 1
 //////////SPELLS////////////////////////
 ////////////////////////////////////////
 
+COPY_EXISTING ~c0saname.eff~ ~override~
+WRITE_LONG 0x1c RESOLVE_STR_REF (~Shadow Adept~)
+
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal11.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal1a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal1a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal12.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal1b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal1b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal13.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal1c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal1c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal14.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal1d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal1d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal15.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal1e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal1e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal16.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal1f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal1f% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal21.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal2a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal2a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal22.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal2b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal2b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal23.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal2c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal2c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal24.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal2d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal2d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal25.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal2e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal2e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal26.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal2f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal2f% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal31.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal3a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal3a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal32.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal3b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal3b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal33.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal3c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal3c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal34.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal3d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal3d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal35.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal3e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal3e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal36.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal3f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal3f% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal41.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal4a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal4a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal42.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal4b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal4b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal43.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal4c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal4c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal44.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal4d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal4d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal45.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal4e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal4e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal46.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal4f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal4f% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal51.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal5a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal5a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal52.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal5b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal5b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal53.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal5c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal5c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal54.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal5d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal5d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal55.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal5e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal5e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal56.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal5f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal5f% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal61.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal6a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal6a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal62.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal6b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal6b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal63.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal6c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal6c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal64.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal6d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal6d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal65.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal6e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal6e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal66.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal6f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal6f% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal71.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal7a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal7a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal72.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal7b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal7b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal73.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal7c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal7c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal74.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal7d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal7d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal75.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal7e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal7e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal76.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal7f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal7f% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal81.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal8a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal8a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal82.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal8b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal8b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal83.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal8c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal8c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal84.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal8d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal8d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal85.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal8e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal8e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal86.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal8f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal8f% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal91.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal9a%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal9a% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal92.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal9b%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal9b% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal93.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal9c%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal9c% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal94.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal9d%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal9d% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal95.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal9e%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal9e% END
 COPY_EXISTING ~c0sal11.spl~ ~override/c0sal96.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 206
-	STR_VAR
-	  resource = %c0sal9f%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 206 STR_VAR resource = %c0sal9f% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv1%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal11%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv1% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal11% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv1%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal12%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv1% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal12% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv1%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal13%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv1% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal13% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv1%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal14%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv1% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal14% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv1%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal15%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv1% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal15% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal1f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv1%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal16%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv1% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal16% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv2%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal21%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv2% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal21% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv2%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal22%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv2% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal22% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv2%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal23%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv2% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal23% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv2%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal24%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv2% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal24% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv2%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal25%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv2% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal25% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal2f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv2%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal26%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv2% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal26% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv3%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal31%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv3% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal31% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv3%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal32%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv3% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal32% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv3%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal33%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv3% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal33% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv3%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal34%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv3% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal34% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv3%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal35%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv3% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal35% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal3f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv3%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal36%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv3% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal36% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv4%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal41%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv4% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal41% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv4%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal42%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv4% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal42% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv4%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal43%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv4% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal43% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv4%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal44%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv4% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal44% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv4%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal45%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv4% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal45% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal4f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv4%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal46%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv4% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal46% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv5%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal51%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv5% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal51% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv5%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal52%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv5% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal52% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv5%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal53%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv5% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal53% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv5%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal54%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv5% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal54% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv5%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal55%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv5% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal55% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal5f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv5%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal56%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv5% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal56% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv6%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal61%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv6% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal61% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv6%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal62%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv6% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal62% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv6%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal63%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv6% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal63% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv6%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal64%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv6% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal64% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv6%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal65%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv6% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal65% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal6f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv6%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal66%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv6% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal66% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv7%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal71%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv7% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal71% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv7%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal72%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv7% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal72% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv7%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal73%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv7% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal73% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv7%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal74%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv7% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal74% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv7%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal75%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv7% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal75% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal7f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv7%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal76%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv7% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal76% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv8%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal81%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv8% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal81% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv8%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal82%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv8% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal82% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv8%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal83%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv8% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal83% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv8%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal84%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv8% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal84% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv8%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal85%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv8% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal85% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal8f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv8%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal86%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv8% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal86% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9a.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv9%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal91%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv9% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal91% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9b.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv9%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal92%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv9% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal92% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9c.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv9%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal93%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv9% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal93% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9d.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv9%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal94%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv9% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal94% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9e.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv9%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal95%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv9% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal95% END
 COPY_EXISTING ~c0sal1.spl~ ~override/c0sal9f.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 309
-	STR_VAR
-	  resource = %c0salv9%
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-	  timing = 4
-	  duration = 1
-      match_opcode = 146
-	STR_VAR
-	  resource = %c0sal96%
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 309 STR_VAR resource = %c0salv9% END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 timing = 4 duration = 1 match_opcode = 146 STR_VAR resource = %c0sal96% END
 
 COPY_EXISTING ~c0saint1.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter2 = 131
-	  parameter2 = %C0SAINT%
-END
-
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_parameter2 = 131 parameter2 = %C0SAINT% END
 COPY_EXISTING ~c0saint7.spl~ ~override/c0saint8.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 42
-	  parameter2 = 4
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 42 parameter2 = 4 END
 COPY_EXISTING ~c0saint7.spl~ ~override/c0saint9.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 42
-	  parameter2 = 7
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 42 parameter2 = 7 END
 COPY_EXISTING ~c0saint7.spl~ ~override/c0sainta.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 42
-	  parameter2 = 24
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 42 parameter2 = 24 END
 COPY_EXISTING ~c0saint7.spl~ ~override/c0saintb.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 42
-	  parameter2 = 56
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 42 parameter2 = 56 END
 COPY_EXISTING ~c0saint7.spl~ ~override/c0saintc.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 42
-	  parameter2 = 96
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 42 parameter2 = 96 END
 COPY_EXISTING ~c0saint7.spl~ ~override/c0saintd.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 42
-	  parameter2 = 192
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 42 parameter2 = 192 END
 COPY_EXISTING ~c0saint7.spl~ ~override/c0sainte.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 42
-	  parameter2 = 256
-END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 42 parameter2 = 256 END
 
 COPY_EXISTING ~c0sawis1.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_parameter2 = 131
-	  parameter2 = %C0SAWIS%
-END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_parameter2 = 131 parameter2 = %C0SAWIS% END
 
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawis3.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 55
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 60
-	  parameter1 = 45
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 55 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 45 END
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawis4.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 60
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 60
-	  parameter1 = 40
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 60 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 40 END
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawis5.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 65
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 60
-	  parameter1 = 35
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 65 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 35 END
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawis6.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 70
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 60
-	  parameter1 = 30
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 70 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 30 END
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawis7.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 75
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 60
-	  parameter1 = 25
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 75 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 25 END
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawis8.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 80
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 60
-	  parameter1 = 20
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 80 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 20 END
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawis9.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 85
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 60
-	  parameter1 = 15
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 85 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 15 END
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawis0.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 90
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 60
-	  parameter1 = 10
-END
-
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 90 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 10 END
 COPY_EXISTING ~c0sawis2.spl~ ~override/c0sawisa.spl~
-  LPF ALTER_EFFECT
-    INT_VAR
-	  match_opcode = 99
-	  parameter1 = 95
-END
-  LPF ALTER_EFFECT
-    INT_VAR
-      match_opcode = 60
-	  parameter1 = 5
-END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 99 parameter1 = 95 END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 60 parameter1 = 5 END
 
 COPY_EXISTING ~c0sawisb.spl~ ~override~
 COPY_EXISTING ~c0sawisb.spl~ ~override/c0sawisc.spl~
@@ -3658,50 +1342,24 @@ COPY_EXISTING ~c0sacha1.spl~ ~override~
 	  parameter2 = %C0SACHA%
 END
 COPY_EXISTING ~c0sacha2.spl~ ~override/c0sacha2.spl~
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 325
-	  target = 2
-	  timing = 9
-	  parameter1 = 0 - 5
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 325 target = 2 timing = 9 parameter1 = 0 - 5
 END
 COPY_EXISTING ~c0sacha2.spl~ ~override/c0sacha3.spl~
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 325
-	  target = 2
-	  timing = 9
-	  parameter1 = 0 - 4
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 325 target = 2 timing = 9 parameter1 = 0 - 4
 END
 COPY_EXISTING ~c0sacha2.spl~ ~override/c0sacha4.spl~
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 325
-	  target = 2
-	  timing = 9
-	  parameter1 = 0 - 3
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 325 target = 2 timing = 9 parameter1 = 0 - 3
 END
 COPY_EXISTING ~c0sacha2.spl~ ~override/c0sacha5.spl~
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 325
-	  target = 2
-	  timing = 9
-	  parameter1 = 0 - 2
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 325 target = 2 timing = 9 parameter1 = 0 - 2
 END
 COPY_EXISTING ~c0sacha2.spl~ ~override/c0sacha6.spl~
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 325
-	  target = 2
-	  timing = 9
-	  parameter1 = 0 - 1
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 325 target = 2 timing = 9 parameter1 = 0 - 1
 END
 COPY_EXISTING ~c0sacha2.spl~ ~override/c0sacha7.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 325
-	  parameter1 = 1
+      match_opcode = 325 parameter1 = 1
 END
 COPY_EXISTING ~c0sacha7.spl~ ~override/c0sacha8.spl~
 	LPF ADD_SPELL_EFFECT
@@ -3742,130 +1400,106 @@ COPY_EXISTING ~c0sacha7.spl~ ~override/c0sacha8.spl~
 COPY_EXISTING ~c0sacha8.spl~ ~override/c0sacha9.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 325
-	  parameter1 = 2
+      match_opcode = 325 parameter1 = 2
 END
 COPY_EXISTING ~c0sacha9.spl~ ~override/c0sacha0.spl~
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 27
-	  parameter1 = 10
+	  match_opcode = 27 parameter1 = 10
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 28
-	  parameter1 = 10
+	  match_opcode = 28 parameter1 = 10
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 29
-	  parameter1 = 10
+	  match_opcode = 29 parameter1 = 10
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 30
-	  parameter1 = 10
+	  match_opcode = 30 parameter1 = 10
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 31
-	  parameter1 = 10
+	  match_opcode = 31 parameter1 = 10
 END
 COPY_EXISTING ~c0sacha0.spl~ ~override/c0sachaa.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 325
-	  parameter1 = 3
+      match_opcode = 325 parameter1 = 3
 END
 COPY_EXISTING ~c0sachaa.spl~ ~override/c0sachab.spl~
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 27
-	  parameter1 = 15
+	  match_opcode = 27 parameter1 = 15
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 28
-	  parameter1 = 15
+	  match_opcode = 28 parameter1 = 15
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 29
-	  parameter1 = 15
+	  match_opcode = 29 parameter1 = 15
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 30
-	  parameter1 = 15
+	  match_opcode = 30 parameter1 = 15
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 31
-	  parameter1 = 15
+	  match_opcode = 31 parameter1 = 15
 END
 COPY_EXISTING ~c0sachab.spl~ ~override/c0sachac.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 325
-	  parameter1 = 4
+      match_opcode = 325 parameter1 = 4
 END
 COPY_EXISTING ~c0sachac.spl~ ~override/c0sachad.spl~
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 27
-	  parameter1 = 20
+	  match_opcode = 27 parameter1 = 20
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 28
-	  parameter1 = 20
+	  match_opcode = 28 parameter1 = 20
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 29
-	  parameter1 = 20
+	  match_opcode = 29 parameter1 = 20
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 30
-	  parameter1 = 20
+	  match_opcode = 30 parameter1 = 20
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 31
-	  parameter1 = 20
+	  match_opcode = 31 parameter1 = 20
 END
 COPY_EXISTING ~c0sachad.spl~ ~override/c0sachae.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_opcode = 325
-	  parameter1 = 5
+      match_opcode = 325 parameter1 = 5
 END
 COPY_EXISTING ~c0sachae.spl~ ~override/c0sachaf.spl~
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 27
-	  parameter1 = 25
+	  match_opcode = 27 parameter1 = 25
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 28
-	  parameter1 = 25
+	  match_opcode = 28 parameter1 = 25
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 29
-	  parameter1 = 25
+	  match_opcode = 29 parameter1 = 25
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 30
-	  parameter1 = 25
+	  match_opcode = 30 parameter1 = 25
 END
   LPF ALTER_EFFECT
     INT_VAR
-	  match_opcode = 31
-	  parameter1 = 25
+	  match_opcode = 31 parameter1 = 25
 END
 
 COPY_EXISTING ~c0sacon.cre~ ~override~
@@ -3922,23 +1556,21 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The shadow adept launches a missile of energy that unerringly strikes the target for 1d4 magic damage (+1 cold) and reduces the target's THAC0 by 1 for 3 rounds. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+5 damage and -5 THAC0) at level 9.~
+The shadow adept launches a missile of energy that unerringly strikes the target for 1d4 magic damage (+2 magic cold damage). An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+10 damage) at level 9.~
 
 COPY_EXISTING ~C0SA102.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj01
+END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Doomed~)
 END
 SAY NAME1 ~Sigil of Despair~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj01%~
-END
 SAY NAME2 ~Sigil of Despair~
 SAY UNIDENTIFIED_DESC ~Sigil of Despair
 (Alteration – Shadow Weave)
@@ -3950,7 +1582,7 @@ Casting Time: 9
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell causes a feeling of doom to overwhelm the target. For the duration of the spell, the target receives a -2 penalty to all <PRO_HISHER> rolls, including THAC0 and Saving Throws. Additionally, the target suffers a -1 penalty to all statistics. There is no Saving Throw for this spell, and it is not affected by Magic Resistance.~
+This spell causes a feeling of doom to overwhelm the target. For the duration of the spell, the target receives a -2 penalty to all <PRO_HISHER> rolls, including THAC0 and Saving Throws. Additionally, the target suffers a -10% penalty to all damage dealt for the duration. There is no Saving Throw for this spell, and it is not affected by Magic Resistance.~
 
 COPY_EXISTING ~C0SA103.spl~ ~override~
 SAY NAME1 ~Blinding Darkness~
@@ -3969,11 +1601,9 @@ This 1st-level spell temporarily blinds its target. A Saving Throw at -2 penalty
 
 COPY_EXISTING ~C0SA104.spl~ ~override~
 SAY NAME1 ~Deep Slumber~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj03%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj03
 END
 SAY NAME2 ~Deep Slumber~
 SAY UNIDENTIFIED_DESC ~Deep Slumber
@@ -4010,7 +1640,7 @@ LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Chilled~)
   END
 
@@ -4032,14 +1662,10 @@ With this spell, the shadow adept drains the life force from a target and adds i
 If the target is slain, the amount of health gained by the caster is doubled.~
 
 COPY_EXISTING ~C0SA106b.spl~ ~override~
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
       check_globals = 1
       check_headers = 1
-      opcode = 139 // display string
-	  target = 1
-	  timing = 1
-	  parameter1 = RESOLVE_STR_REF (~Essence Drain Bonus Doubled~)
+      opcode = 139 target = 1 timing = 1 parameter1 = RESOLVE_STR_REF (~Essence Drain Bonus Doubled~)
   END
 
 COPY_EXISTING ~C0SA107.spl~ ~override~
@@ -4076,11 +1702,9 @@ When the Curse spell is uttered, the caster lowers the morale of enemy creatures
 
 COPY_EXISTING ~C0SA109.spl~ ~override~
 SAY NAME1 ~Shadow Rope~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj15
 END
 SAY NAME2 ~Shadow Rope~
 SAY UNIDENTIFIED_DESC ~Shadow Rope
@@ -4115,7 +1739,7 @@ COPY_EXISTING ~C0SA111.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Mesmerized~)
   END
 SAY NAME1 ~Mesmerize~
@@ -4160,11 +1784,9 @@ COPY_EXISTING ~C0SA112.spl~ ~override~
 			savingthrow = 1
 			resist_dispel = 1
 	END
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0cflame%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0cflame
 END
 SAY NAME1 ~Cursed Flames~
 SAY NAME2 ~Cursed Flames~
@@ -4208,9 +1830,7 @@ Casting Time: 2
 Area of Effect: 30-ft. radius
 Saving Throw: Neg.
 
-All enemies within the area of effect when this spell is cast must Save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.
-
-From 14th level onwards, this spell gains the effects of the 6th level wizard spell Death Spell: creatures below 8 Hit Dice and all summoned creatures will die instantly from overwhelming fear. (no saving throw)~
+All enemies within the area of effect when this spell is cast must Save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.~
 
 COPY_EXISTING ~C0SA203.spl~ ~override~
 SAY NAME1 ~Dark Fortune~
@@ -4276,11 +1896,9 @@ The caster is surrounded by a ghostly nimbus of light that grants 10% resistance
 
 COPY_EXISTING ~C0SA208.spl~ ~override~
 SAY NAME1 ~Black Mist~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj16%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj16
 END
 SAY NAME2 ~Black Mist~
 SAY UNIDENTIFIED_DESC ~Black Mist
@@ -4297,11 +1915,9 @@ When this spell is cast, a thick shadowy mist spreads across the area selected b
 
 COPY_EXISTING ~C0SA209.spl~ ~override~
 SAY NAME1 ~Negative Energy Ray~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj06%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj06
 END
 SAY NAME2 ~Negative Energy Ray~
 SAY UNIDENTIFIED_DESC ~Negative Energy Ray
@@ -4317,19 +1933,19 @@ Saving Throw: None
 Upon casting this spell, a black ray appears at the caster's fingertips and bursts out towards one target of the caster's choice. That target will be hit by the ray for 3d6 points of magical damage and suffers a -1 penalty to Armor Class, THAC0 and damage for 1 turn. The ray strikes a second time halfway through its duration, dealing the same amount of damage and applying a second instance of penalties. The caster may move while the spell is in effect. There is no saving throw against this spell's effects.~
 
 COPY_EXISTING ~C0SA210.spl~ ~override~
-SAY NAME1 ~Sigil of Vulnerability~
-SAY NAME2 ~Sigil of Vulnerability~
-SAY UNIDENTIFIED_DESC ~Sigil of Vulnerability
+SAY NAME1 ~Sigil of Mortality~
+SAY NAME2 ~Sigil of Mortality~
+SAY UNIDENTIFIED_DESC ~Sigil of Mortality
 (Enchantment/Charm – Shadow Weave)
 
 Level: 2
 Range: 30 ft.
-Duration: 1 round/level
+Duration: 1 turn
 Casting Time: 1 round
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-This spell curses the target creature with mortality. For as long as the curse is in effect, the target loses 1% resistance to physical damage per level of the caster and is unable to be healed by any magical means. A Saving Throw vs. Spells negates the effect.~
+This spell curses the target creature with mortality. For as long as the curse is in effect, the target loses their base physical resistance, if any, and incurs an additional -20% penalty to physical resistance for the duration. Additionally, the target is unable to be healed through any means, whether magical or otherwise. There is no Saving Throw for the effect, and it ignores Magic Resistance.~
 
 ACTION_IF GAME_IS ~bgee~
 THEN BEGIN
@@ -4380,7 +1996,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Invisible~)
 END
 SAY NAME1 ~Shadowfade~
@@ -4404,17 +2020,15 @@ COPY_EXISTING ~C0SA213a.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Healed~)
 END
 
 COPY_EXISTING ~C0SA301.spl~ ~override~
 SAY NAME1 ~Blackfire Arrow~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj04%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj04
 END
 SAY NAME2 ~Blackfire Arrow~
 SAY UNIDENTIFIED_DESC ~Blackfire Arrow
@@ -4431,11 +2045,9 @@ This spell enables the caster to hurl coldfire bolts at multiple opponents withi
 
 COPY_EXISTING ~C0SA302.spl~ ~override~
 SAY NAME1 ~Shadowblast~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj05%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj05
 END
 SAY NAME2 ~Shadowblast~
 SAY UNIDENTIFIED_DESC ~Shadowblast
@@ -4448,9 +2060,9 @@ Casting Time: 3
 Area of Effect: 30-ft. radius
 Saving Throw: 1/2 
 
-The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d3 points of cold damage and 1d3 points of magic damage for every level of the caster (to a maximum of 10d6) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw (-1 penalty per 5 levels) avoid the direct blast taking no magic damage or stat loss.
+The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d3 points of magic cold damage and 1d3 points of magic damage for every level of the caster (to a maximum of 10d6) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw (-1 penalty per 5 levels) avoid the direct blast taking no magic damage or stat loss.
 
-From 10th level onwards, targets damaged by Shadowblast lose 20% resistance to cold and magic damage for 1 turn.~
+From 10th level onwards, targets damaged by Shadowblast suffer a -20% penalty to all damage dealt for 1 turn.~
 
 COPY_EXISTING ~C0SA303.spl~ ~override~
 SAY NAME1 ~Inertia~
@@ -4585,7 +2197,7 @@ COPY_EXISTING ~c0sa309a.itm~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string\
+      match_opcode = 139
  parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
  END
 SAY NAME1 ~Shadow Spear~
@@ -4597,7 +2209,7 @@ COPY_EXISTING ~c0sa309b.itm~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string\
+      match_opcode = 139
  parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
  END
 SAY NAME1 ~Shadow Spear~
@@ -4609,7 +2221,7 @@ COPY_EXISTING ~c0sa309c.itm~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string\
+      match_opcode = 139
  parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
  END
 SAY NAME1 ~Shadow Spear~
@@ -4621,7 +2233,7 @@ COPY_EXISTING ~c0sa309d.itm~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string\
+      match_opcode = 139
  parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
  END
 SAY NAME1 ~Shadow Spear~
@@ -4633,7 +2245,7 @@ COPY_EXISTING ~c0sa309e.itm~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string\
+      match_opcode = 139
  parameter1 = RESOLVE_STR_REF (~Spell Protections Removed~)
  END
 SAY NAME1 ~Shadow Spear~
@@ -4683,12 +2295,7 @@ A Expunge Magic spell removes magical effects upon anyone within the area. This 
 Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
 
 COPY_EXISTING ~C0SA312.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 16)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic03
 END
 SAY NAME1 ~Void Edge~
 SAY NAME2 ~Void Edge~
@@ -4705,12 +2312,7 @@ Saving Throw: None
 Upon casting this spell, the shadow adept imbues <PRO_HISHER> next melee attack with shadow magic, providing it with a +5 enchantment bonus and the ability to drain 2 hit points per level as magic damage.~
 
 COPY_EXISTING ~C0SA401.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 15)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic04
 END
 SAY NAME1 ~Fire Shield (Shadow)~
 SAY NAME2 ~Fire Shield (Shadow)~
@@ -4724,16 +2326,10 @@ Casting Time: 4
 Area of Effect: The caster 
 Saving Throw: None 
 
-The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 1d8+2 damage (half cold, half magic) and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
+The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 2d4+2 damage (half magic cold, half magic) and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
 
 COPY_EXISTING ~C0SA402.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 14)
-END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 218 special = c0saic05 END
 SAY NAME1 ~Shadeskin~
 SAY NAME2 ~Shadeskin~
 SAY UNIDENTIFIED_DESC ~Shadeskin
@@ -4760,7 +2356,7 @@ COPY_EXISTING ~C0SA403.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       match_parameter1 = 44916
  parameter1 = RESOLVE_STR_REF (~Saving Throws Lowered~)
  END
@@ -4794,18 +2390,32 @@ Saving Throw: None
 
 By means of this spell, the caster summons a number of shadows, undead monsters which serve the mage under any conditions. The type and number of creatures that appear depend upon the level of the shadow adept casting the spell.
 
-7th: 3 shadows
-9th: 3 shadow fiends
-12th+ : 3 wraiths
-16th+ : 2 wraiths, 1 devil shade
+7th: 3 Shadows
+9th: 3 Shadow Fiends
+12th+ : 3 Wraiths
+16th+ : 1 Shadow of the Void
 
 The undead creatures will remain under the shadow adept's control until they are slain or the spell duration expires.
 
 NOTE: Due to being creatures of the Plane of Shadow, shadows are weakened in natural daylight.~
 
+COPY_EXISTING ~c0sasum1.itm~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+		  match_opcode = 139
+		  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+	END
+
+COPY_EXISTING ~c0sasum3.itm~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+		  match_opcode = 139
+		  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+	END
+
 COPY_EXISTING ~c0devsha.cre~ ~override~
-SAY NAME1 ~Devil Shade~
-SAY NAME2 ~Devil Shade~
+SAY NAME1 ~Shadow of the Void~
+SAY NAME2 ~Shadow of the Void~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~c0devsha~ #8
   WRITE_ASCII 0x280 ~c0devsha~  #32
@@ -4836,12 +2446,7 @@ SAY NAME2 ~Wraith~
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY_EXISTING ~C0SA405.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 13)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic06
 END
 SAY NAME1 ~Shar's Blessing~
 SAY NAME2 ~Shar's Blessing~
@@ -4860,12 +2465,9 @@ Through this spell, the caster draws upon energy from the Plane of Shadow to imb
 From 14th level onwards, the caster's attacks per round are doubled instead.~
 
 COPY_EXISTING ~C0SA406.spl~ ~override~
-SAY NAME1 ~Phantasmal Killer~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj13%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj13
 END
 SAY NAME2 ~Phantasmal Killer~
 SAY UNIDENTIFIED_DESC ~Phantasmal Killer
@@ -4896,19 +2498,13 @@ Saving Throw: None
 Dread Whispers causes all enemies within range to become afflicted by an ominous chorus of voices infesting their mind. The voices are distracting, causing 50% spell failure on targets. In addition, at the beginning of every round after the first, the target must make a Save vs. Spell at -6 or lose morale, running in panic for 1 round.~
 
 COPY_EXISTING ~C0SA409.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 12)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic07
 END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
-	  match_opcode = 267
-	  parameter1 = RESOLVE_STR_REF (~One Level Drained~)
+	  match_opcode = 267 parameter1 = RESOLVE_STR_REF (~One Level Drained~)
     STR_VAR
 	  match_resource = 1
   END
@@ -4916,8 +2512,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-	  match_opcode = 267
-	  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+	  match_opcode = 267 parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
     STR_VAR
 	  match_resource = 2
   END
@@ -4925,8 +2520,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-	  match_opcode = 267
-	  parameter1 = RESOLVE_STR_REF (~Three Levels Drained~)
+	  match_opcode = 267 parameter1 = RESOLVE_STR_REF (~Three Levels Drained~)
     STR_VAR
 	  match_resource = 3
   END
@@ -4934,8 +2528,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-	  match_opcode = 267
-	  parameter1 = RESOLVE_STR_REF (~Four Levels Drained~)
+	  match_opcode = 267 parameter1 = RESOLVE_STR_REF (~Four Levels Drained~)
     STR_VAR
 	  match_resource = 4
   END
@@ -4943,8 +2536,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-	  match_opcode = 267
-	  parameter1 = RESOLVE_STR_REF (~Five Levels Drained~)
+	  match_opcode = 267 parameter1 = RESOLVE_STR_REF (~Five Levels Drained~)
     STR_VAR
 	  match_resource = 5
   END
@@ -4974,11 +2566,9 @@ COPY_EXISTING ~C0SA410.spl~ ~override~
 				resource = EVAL ~%SOURCE_RES%~
 		END
 SAY NAME1 ~Black Ooze~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj14%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj14
 END
 SAY NAME2 ~Black Ooze~
 SAY UNIDENTIFIED_DESC ~Black Ooze
@@ -5007,11 +2597,9 @@ COPY_EXISTING ~C0SA411.spl~ ~override~
 				resource = EVAL ~%SOURCE_RES%~
 		END
 SAY NAME1 ~Wall of Black Flame~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sawall%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0sawall
 END
 SAY NAME2 ~Wall of Black Flame~
 SAY UNIDENTIFIED_DESC ~Wall of Black Flame
@@ -5028,12 +2616,7 @@ Saving Throw: 1/2
 With this spell, the shadow adept creates a wall of black fire, dealing 4d6 damage (half fire, half magic) to all creatures who pass through it (Save vs. Spells at -4 for half) and reduces their Armor Class by -4 for one round. Creatures cannot take damage more than once per round.~
 
 COPY_EXISTING ~C0SA412.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 11)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic08
 END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
@@ -5091,89 +2674,15 @@ COPY_EXISTING ~C0SA501.spl~ ~override~
 				insert_point = 0
 				opcode = 324
 				target = 2
-				parameter2 = COLD
+				parameter2 = MCOLD
 				duration = 1
 			STR_VAR
 				resource = EVAL ~%SOURCE_RES%~
 		END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 0
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 9% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 1
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 2
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 3
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 4
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 5
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 6
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 7
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 8
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 9
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 10
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage^-~)
-	END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			header = 11
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage^-~)
-	END
 SAY NAME1 ~Cone of Bitter Cold~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj07%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj07
 END
 SAY NAME2 ~Cone of Bitter Cold~
 SAY UNIDENTIFIED_DESC ~Cone of Bitter Cold
@@ -5186,7 +2695,7 @@ Casting Time: 5
 Area of Effect: Special
 Saving Throw: 1/2
 
-When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outwards of 30 ft. in a 90' cone in front of the caster. It drains heat and causes 1d4 cold damage plus 1% of all targets' maximum hit points in damage per level of the caster. For example, a 10th-level shadow adept would deal 10d4 (Save vs. Spell at -2 for half) plus 10% maximum hit points in cold damage. Targets who fail their saving throw are also slowed and take 1d6 extra cold damage per round for 2 rounds + 1 round per 4 caster levels.~
+When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outwards of 30 ft. in a 90' cone in front of the caster. It drains heat and causes 1d6 magic cold damage. For example, a 10th-level shadow adept would deal 10d6 (Save vs. Spell at -2 for half) magic cold damage. Targets who fail their saving throw are also slowed and take 1d6 extra magic cold damage per round for 2 rounds + 1 round per 4 caster levels.~
 COPY_EXISTING ~C0SA501a.spl~ ~override~
 	LPF ALTER_EFFECT
 		INT_VAR
@@ -5218,7 +2727,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 0
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 19%~)
@@ -5227,7 +2736,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 1
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 20%~)
@@ -5236,7 +2745,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 2
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 21%~)
@@ -5245,7 +2754,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 3
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 22%~)
@@ -5254,7 +2763,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 4
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 23%~)
@@ -5263,7 +2772,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 5
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 24%~)
@@ -5272,7 +2781,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 6
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 25%~)
@@ -5281,7 +2790,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 7
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 26%~)
@@ -5290,7 +2799,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 8
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 27%~)
@@ -5299,7 +2808,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 9
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 28%~)
@@ -5308,7 +2817,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 10
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 29%~)
@@ -5317,7 +2826,7 @@ COPY_EXISTING ~C0SA503.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
       header = 11
  parameter1 = RESOLVE_STR_REF (~Magic Resistance Lowered by 30%~)
@@ -5543,6 +3052,28 @@ Type: One-handed
 Weight: 3~
 SAY 0xD6 ~Shadow Adepts~
 
+COPY_EXISTING_REGEXP ~.*\.ITM~ OVERRIDE
+	LPF CLONE_EFFECT
+		INT_VAR
+		match_opcode = 296
+		silent = 1
+		STR_VAR
+		match_resource = SPCONFUS
+		resource = C0CONFUS
+	END
+	BUT_ONLY
+
+COPY_EXISTING_REGEXP ~.*\.SPL~ OVERRIDE
+	LPF CLONE_EFFECT
+		INT_VAR
+		match_opcode = 296
+		silent = 1
+		STR_VAR
+		match_resource = SPCONFUS
+		resource = C0CONFUS
+	END
+	BUT_ONLY
+
 COPY_EXISTING ~C0SA505.spl~ ~override~
 SAY NAME1 ~Sigil of Madness~
 SAY NAME2 ~Sigil of Madness~
@@ -5595,7 +3126,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 0
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 9% of maximum hit points in shadow damage^-~)
   END
@@ -5603,7 +3134,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 1
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
   END
@@ -5611,7 +3142,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 2
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage^-~)
   END
@@ -5619,7 +3150,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 3
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage^-~)
   END
@@ -5627,7 +3158,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 4
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage^-~)
   END
@@ -5635,7 +3166,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 5
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage^-~)
   END
@@ -5643,7 +3174,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 6
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
   END
@@ -5651,7 +3182,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 7
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage^-~)
   END
@@ -5659,7 +3190,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 8
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage^-~)
   END
@@ -5667,7 +3198,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 9
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage^-~)
   END
@@ -5675,7 +3206,7 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 10
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage^-~)
   END
@@ -5683,16 +3214,14 @@ COPY_EXISTING ~C0SA508.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       header = 11
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage^-~)
   END
 SAY NAME1 ~Nightshade~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj22%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj22
 END
 SAY NAME2 ~Nightshade~
 SAY UNIDENTIFIED_DESC ~Nightshade
@@ -5727,17 +3256,14 @@ COPY_EXISTING ~C0SA509A.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
-	  parameter1 = RESOLVE_STR_REF (~Temporary Intelligence and Wisdom Bonus~)
+      match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Temporary Intelligence and Wisdom Bonus~)
   END
 
 COPY_EXISTING ~C0SA510.spl~ ~override~
 SAY NAME1 ~Void Blast~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj24%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj24
 END
 SAY NAME2 ~Void Blast~
 SAY UNIDENTIFIED_DESC ~Void Blast
@@ -5757,7 +3283,7 @@ COPY_EXISTING ~C0SA510A.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
@@ -5766,7 +3292,7 @@ COPY_EXISTING ~C0SA510B.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
@@ -5775,7 +3301,7 @@ COPY_EXISTING ~C0SA510C.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
 
@@ -5784,7 +3310,7 @@ COPY_EXISTING ~C0SA510D.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Banished~)
   END
   
@@ -5793,7 +3319,7 @@ COPY_EXISTING ~C0SA511.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Protected by Shadow Screen~)
   END
 SAY NAME1 ~Shadow Screen~
@@ -5840,17 +3366,12 @@ COPY_EXISTING ~c0nvamp1.itm~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string\
+      match_opcode = 139
  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
  END
 
 COPY_EXISTING ~C0SA601.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 10)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic09
 END
 SAY NAME1 ~Shar's Shield~
 SAY NAME2 ~Shar's Shield~
@@ -5873,7 +3394,7 @@ COPY_EXISTING ~C0SA602.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       match_parameter1 = 60481
  parameter1 = RESOLVE_STR_REF (~Misled~)
  END
@@ -5898,7 +3419,7 @@ COPY_EXISTING ~C0SA602a.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       match_parameter1 = 60481
  parameter1 = RESOLVE_STR_REF (~Misled~)
  END
@@ -5908,7 +3429,7 @@ COPY_EXISTING ~C0SA603.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
       match_parameter1 = 7609
  parameter1 = RESOLVE_STR_REF (~Protected from Magical Weapons~)
  END
@@ -5943,11 +3464,9 @@ In using this spell, the shadow adept points at an individual and utters the Pow
 
 COPY_EXISTING ~C0SA605.spl~ ~override~
 SAY NAME1 ~Black Lightning~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj08%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj08
 END
 SAY NAME2 ~Black Lightning~
 SAY UNIDENTIFIED_DESC ~Black Lightning 
@@ -5964,13 +3483,6 @@ When the shadow adept casts Black Lightning, arcs of electrical energy burst fro
 
 COPY_EXISTING ~C0SA606.spl~ ~override~
 SAY NAME1 ~Shatter Weave~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj17%~
-END
-SAY NAME2 ~Shatter Weave~
 SAY UNIDENTIFIED_DESC ~Shatter Weave
 (Invocation/Evocation – Shadow Weave)
 
@@ -5984,12 +3496,7 @@ Saving Throw: 1/2
 When this spell is cast upon a target creature there will be two major effects. The first is that it will dispel one spell protection of 8th level or lower from the creature. This will always dispel the highest level of spell protection on the target first. If the target has two or more protections tied for the highest level, the choice will be random. The second effect of the spell is that the creature's magic resistance is temporary nullified. The resistance remains lowered for 2 rounds, and this effect cannot be negated in any way. Additionally, mages will take 10d4 magic damage and suffer from a 50% chance of spell failure for 2 rounds. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's magic resistance, if any, does not affect this spell.~
 
 COPY_EXISTING ~C0SA607.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 9)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic10
 END
 SAY NAME1 ~Umbral Blades~
 SAY NAME2 ~Umbral Blades~
@@ -6007,11 +3514,9 @@ The shadow adept employs this spell to set up a ring of circling, razor sharp bl
 
 COPY_EXISTING ~C0SA608.spl~ ~override~
 SAY NAME1 ~Disintegrate~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj19%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj19
 END
 SAY NAME2 ~Disintegrate~
 SAY UNIDENTIFIED_DESC ~Disintegrate
@@ -6026,7 +3531,7 @@ Saving Throw: Neg.
 
 When this spell is cast at another creature, a thin purple ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell at -2 or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying. If the target survives the process, they still take 6d6 magic damage.
 
-Targets slain by this spell will be raised as a wraith under the caster's allegiance for 5 turns.~
+Targets slain by this spell will be raised as a wraith under the caster's control for 5 turns.~
 
 COPY_EXISTING ~C0SA609.spl~ ~override~
 	LPF ALTER_EFFECT
@@ -6049,12 +3554,9 @@ Saving Throw: 1/2
 This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they lose an additional 20% of their maximum hit points and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
 
 COPY_EXISTING ~C0SA610.spl~ ~override~
-SAY NAME1 ~Disintegrate~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0negeb%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0negeb
 END
 SAY NAME1 ~Negative Energy Burst~
 SAY NAME2 ~Negative Energy Burst~
@@ -6068,7 +3570,7 @@ Casting Time: 6
 Area of Effect: 20 ft. radius
 Saving Throw: None
 
-Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius take 6d6 magical damage and suffer a -3 penalty to Armor Class, THAC0 and damage for 1 turn. There is no saving throw against this spell's effects.~
+Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius take 6d6 magical damage and suffer a -3 penalty to Armor Class, THAC0 and damage for 1 turn. Creatures with less than 8 Hit Dice and any summoned creatures are instantly killed. There is no saving throw against this spell's effects.~
 
 COPY_EXISTING ~C0SA611.spl~ ~override~
   LPF ALTER_EFFECT
@@ -6096,11 +3598,9 @@ Devour Dream cannot recall 6th-level or greater spells.~
 
 COPY_EXISTING ~C0SA701.spl~ ~override~
 SAY NAME1 ~Black Ray of Destruction~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj17%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj17
 END
 SAY NAME2 ~Black Ray of Destruction~
 SAY UNIDENTIFIED_DESC ~Black Ray of Destruction
@@ -6117,11 +3617,9 @@ When this spell is cast, it dispels one spell protection of any level affecting 
 
 COPY_EXISTING ~C0SA702.spl~ ~override~
 SAY NAME1 ~Shadowspray~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj09%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj09
 END
 SAY NAME2 ~Shadowspray~
 SAY UNIDENTIFIED_DESC ~Shadowspray
@@ -6186,11 +3684,9 @@ Upon casting this spell, the shadow adept brings into being a shimmering, sword-
 
 COPY_EXISTING ~C0SA705.spl~ ~override~
 SAY NAME1 ~Shadowplague~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj10%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj10
 END
 SAY NAME2 ~Shadowplague~
 SAY UNIDENTIFIED_DESC ~Shadowplague
@@ -6224,18 +3720,13 @@ Saving Throw: None
 This powerful and dangerous spell has the power to temporarily revive dead allies. For 1 turn, the target ally is resurrected with full hit points and dramatically increased power - the resurrected ally is hasted for the duration, Strength and Dexterity are set to 25, base AC is set to -6 and target gains immunity to all mind-affecting spells. The target deals maximum damage for the duration of the spell and their casting speed is increased by 4. However, this spell does not truly resurrect the target - once the spell has expired, the target dies again, regardless of their current hit points.~
 
 COPY_EXISTING ~c0sa707a.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 8)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic11
 END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 1
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 5 rounds~)
   END
@@ -6243,7 +3734,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 2
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 4 rounds~)
   END
@@ -6251,7 +3742,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 3
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 3 rounds~)
   END
@@ -6259,7 +3750,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 4
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 2 rounds~)
   END
@@ -6267,7 +3758,7 @@ END
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 5
  parameter1 = RESOLVE_STR_REF (~Vengeful Shade expires in 1 round~)
   END
@@ -6312,12 +3803,7 @@ SAY UNIDENTIFIED_DESC ~End Possession
 Use this ability to end Possession. The possessed target will suffer 5d10 non-lethal damage and fall unconscious for 5 rounds.~
 
 COPY_EXISTING ~c0sa709b.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 7)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic12
 END
 	LPF ALTER_EFFECT
 		INT_VAR
@@ -6326,24 +3812,11 @@ END
 	END
 
 COPY_EXISTING ~C0SA710.spl~ ~override~
-		LPF	ADD_SPELL_EFFECT
-			INT_VAR
-				insert_point = 0
-				opcode = 324
-				target = 2
-				parameter2 = MAGIC
-				duration = 1
-			STR_VAR
-				resource = EVAL ~%SOURCE_RES%~
-		END
-SAY NAME1 ~Malefic Bomb~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj20%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj20
 END
-SAY NAME2 ~Malefic Bomb~
+SAY NAME1 ~Malefic Bomb~
 SAY UNIDENTIFIED_DESC ~Malefic Bomb
 (Invocation/Evocation – Shadow Weave)
 
@@ -6354,10 +3827,18 @@ Casting Time: 6
 Area of Effect: 10 ft. radius
 Saving Throw: 1/2
 
-The shadow adept launches a mass of volatile shadowstuff towards a target location, dealing 8d6 magic damage in a 20 ft. radius (Save vs. Death at -2 for half). All enemies that fail the save will, after 1 round, spontaneously explode with another Malefic Bomb dealing 4d6 damage in a 20 ft. radius (Save vs. Death for half), afflicting all enemies that fail the save with another Malefic Bomb dealing 2d6 damage in a 20 ft. radius.~
+The shadow adept launches a mass of volatile shadowstuff towards a target location, dealing 8d6 magic cold damage in a 20 ft. radius (Save vs. Death at -2 for half). All afflicted enemies will, after 1 round, spontaneously explode with another Malefic Bomb dealing 4d6 damage in a 20 ft. radius (Save vs. Death for half), afflicting all enemies with another Malefic Bomb dealing 2d6 damage in a 20 ft. radius.~
 
 COPY_EXISTING ~C0SA710a.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj27
+END
 COPY_EXISTING ~C0SA710b.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj27
+END
 
 COPY_EXISTING ~C0SA711.spl~ ~override~
 SAY NAME1 ~Shadow Gate~
@@ -6372,7 +3853,7 @@ Casting Time: 1 round
 Area of Effect: Special
 Saving Throw: None
 
-This spell conjures a one-way portal linked to the Plane of Shadow at the caster's targeted location for 8 rounds. For each round that the portal is active, a creature of the Plane of Shadow has a chance of emerging. These creatures are allied with the caster. There is a 40% chance of spawning a Shadow Fiend, a 40% chance of spawning a Wraith, a 10% chance of spawning a Devil Shade and a 5% chance of spawning a Nightwalker each turn. The Shadow Gate may be targeted and destroyed by enemies, though it is immune to elemental damage as well as weapons of +1 enchantment and below.
+This spell conjures a one-way portal linked to the Plane of Shadow at the caster's targeted location for 8 rounds. For each round that the portal is active, a creature of the Plane of Shadow has a chance of emerging. These creatures are allied with the caster. There is a 50% chance of spawning a Shadow, a 20% chance of spawning a Shadow Fiend, a 20% chance of spawning a Wraith and a 10% chance of spawning a Shadow of the Void each turn. The Shadow Gate may be targeted and destroyed by enemies, though it is immune to elemental damage as well as weapons of +1 enchantment and below.
 
 Creatures summoned by this spell remain for 1 turn.~
 
@@ -6397,18 +3878,14 @@ Saving Throw: None
 This spell creates a rainfall of shadowstuff centered on the caster for six rounds. Enemy creatures suffer 1d6 magical damage for every round that they remain within the rainfall and suffer a cumulative penalty of -1 to Armor Class and all Saving Throws for one turn. Non-hostile creatures are healed for 2d6 hit points every round instead.~
 
 COPY_EXISTING ~c0sa712a.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sarain%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0sarain
 END
 COPY_EXISTING ~c0sa712b.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0sarain%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0sarain
 END
 
 COPY_EXISTING ~c0sa714.spl~ ~override~
@@ -6453,139 +3930,92 @@ COPY_EXISTING ~C0SA801.spl~ ~override~
 			STR_VAR
 				resource = EVAL ~%SOURCE_RES%~
 		END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 1
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 2
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 11% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 3
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 12% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 4
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 13% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 5
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 14% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 6
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 7
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 16% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 8
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 17% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 9
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 18% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 10
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 19% of maximum hit points in shadow damage^-~)
 END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
+  LPF ADD_SPELL_EFFECT INT_VAR
 	  insert_point = 3
-      opcode = 139
-	  target = 2
-	  timing = 1
+      opcode = 139 target = 2 timing = 1
 	  power = 8
 	  header = 11
-	  resist_dispel = 1
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage^-~)
+	  resist_dispel = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 20% of maximum hit points in shadow damage^-~)
 END
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 139
-	  match_savingthrow = 1
-	  parameter1 = RESOLVE_STR_REF (~One Level Drained~)
+	  match_savingthrow = 1 parameter1 = RESOLVE_STR_REF (~One Level Drained~)
 END
 SAY NAME1 ~Negastorm~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj11%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj11
 END
 SAY NAME2 ~Negastorm~
 SAY UNIDENTIFIED_DESC ~Negastorm
@@ -6603,12 +4033,7 @@ This spell summons a shower of negative energy upon a targeted location, inflict
 The negastorm lasts for 2 rounds and does not affect allies. If an enemy enters the negastorm after the first round, they only suffer half of the effects.~
 
 COPY_EXISTING ~C0SA802.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 6)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic13
 END
 SAY NAME1 ~Annulment~
 SAY NAME2 ~Annulment~
@@ -6666,12 +4091,7 @@ Saving Throw: None
 When a Power Word, Blind spell is cast, one or more creatures within the area of effect become sightless. The spellcaster selects one creature as the target center, and the effect spreads outward from the center, affecting all within a 10-ft. radius. This lasts for 6 rounds or until dispelled. All of the effects of blindness apply to the victims, such as a penalty to hit and to AC. The visibility range of the afflicted character is also decreased. This spell is not effected by magic resistance.~
 
 COPY_EXISTING ~c0sa805.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 5)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic14
 END
 SAY NAME1 ~Shadow Shield~
 SAY NAME2 ~Shadow Shield~
@@ -6700,16 +4120,42 @@ Casting Time: 8
 Area of Effect: The caster
 Saving Throw: 1/2
 
-The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 fire damage (Save vs. Spells for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
+The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 magical fire damage (Save vs. Spells for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
 
-If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a devil shade under the caster's allegiance for one turn before becoming assimilated into the Shadow Plane.~
+If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel under the caster's allegiance for one turn before becoming assimilated into the Shadow Plane.~
+
+COPY_EXISTING ~c0sa806a.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0sa8061
+END
+		LPF	ADD_SPELL_EFFECT
+			INT_VAR
+				insert_point = 0
+				opcode = 326
+				target = 2
+				parameter2 = MFIRE2
+				duration = 1
+			STR_VAR
+				resource = C0SALRES
+		END
+
+COPY_EXISTING ~c0sa806b.spl~ ~override~
+		LPF	ADD_SPELL_EFFECT
+			INT_VAR
+				insert_point = 0
+				opcode = 326
+				target = 2
+				parameter2 = MFIRE2
+				duration = 1
+			STR_VAR
+				resource = C0SALRES
+		END
 
 COPY_EXISTING ~c0sa813.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj25%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj25
 END
 SAY NAME1 ~Blackfire Ruin~
 SAY NAME2 ~Blackfire Ruin~
@@ -6723,17 +4169,9 @@ Casting Time: 8
 Area of Effect: 20-ft. radius
 Saving Throw: 1/2
 
-This powerful spell is the upgraded version of Blackfire Fury. The shadow adept conjures a rift from the Shadow Plane beneath their own feet, which unleashes shadow fire in a 20' radius centered on them dealing 10d10 fire damage (Save vs. Spells at -4 for half damage) to all enemies within range. This damage is not mitigated by fire resistance and ignores magic resistance.
+This powerful spell is the upgraded version of Blackfire Fury. The shadow adept conjures a rift from the Shadow Plane beneath their own feet, which unleashes shadow fire in a 20' radius centered on them dealing 10d10 magical fire damage (Save vs. Spells at -4 for half damage) to all enemies within range. This damage is not mitigated by fire resistance and ignores magic resistance.
 
-If a creature is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel under the caster's allegiance for one turn before becoming assimilated into the Shadow Plane.~
-
-COPY_EXISTING ~c0blackf.cre~ ~override~
-SAY NAME1 ~Blackfire Vessel~
-SAY NAME2 ~Blackfire Vessel~
-  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
-  WRITE_ASCII 0x248 ~c0devsha~ #8
-  WRITE_ASCII 0x280 ~c0devsha~  #32
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+If a creature is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel, which immediately charges towards the nearest enemy and explodes on a successful attack, dealing 5d6 unmitigated fire damage to all enemies within a 5-ft. radius before becoming assimilated into the Shadow Plane.~
 
 COPY_EXISTING ~c0blacks.cre~ ~override~
 SAY NAME1 ~Blackfire Vessel~
@@ -6743,12 +4181,7 @@ SAY NAME2 ~Blackfire Vessel~
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY_EXISTING ~c0sa807.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 4)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic15
 END
 SAY NAME1 ~Shar's Mantle~
 SAY NAME2 ~Shar's Mantle~
@@ -6768,7 +4201,7 @@ COPY_EXISTING ~c0sa807b.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 1
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
   END
@@ -6776,18 +4209,13 @@ COPY_EXISTING ~c0sa807b.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
 	  match_parameter2 = 0
  parameter1 = RESOLVE_STR_REF (~One Level Drained~)
   END
 
 COPY_EXISTING ~c0sa808.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 3)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic16
 END
 SAY NAME1 ~Shadow's Refuge~
 SAY NAME2 ~Shadow's Refuge~
@@ -6809,12 +4237,7 @@ COPY_EXISTING ~c0s808a.spl~ ~override~
 SAY NAME1 ~Shadow's Refuge: Return~
 
 COPY_EXISTING ~c0sa809.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 2)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic17
 END
 SAY NAME1 ~Dark Premonition~
 SAY NAME2 ~Dark Premonition~
@@ -6856,23 +4279,16 @@ COPY_EXISTING ~c0sa810b.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
   END
 COPY_EXISTING ~c0sa810c.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj15%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj15
 END
 COPY_EXISTING ~c0sa810d.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon - 17)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic18
 END
 
 COPY_EXISTING ~C0SA811.spl~ ~override~
@@ -6923,16 +4339,14 @@ COPY_EXISTING ~C0SA812.spl~ ~override~
 				insert_point = 0
 				opcode = 324
 				target = 2
-				parameter2 = COLD
+				parameter2 = MCOLD
 				duration = 1
 			STR_VAR
 				resource = EVAL ~%SOURCE_RES%~
 		END
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0blizza%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0blizza
 END
 SAY NAME1 ~Merciless Blizzard~
 SAY NAME2 ~Merciless Blizzard~
@@ -6946,16 +4360,14 @@ Casting Time: 8
 Area of Effect: 30-ft. radius cloud 
 Saving Throw: 1/2
 
-This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round.
+This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 magical cold damage per round and become slowed for two rounds. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round.
 
-This spell is not affected by Magic Resistance, but creatures that are immune to cold are unaffected.~
+This spell is not affected by Magic Resistance, but creatures immune to cold are unaffected.~
 
 COPY_EXISTING ~c0sa814.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj26%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj26
 END
 SAY NAME1 ~Sacred Shadow~
 SAY NAME2 ~Sacred Shadow~
@@ -6975,24 +4387,17 @@ COPY_EXISTING ~c0sa814a.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Silenced~)
   END
 COPY_EXISTING ~c0sa814b.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 142 // display string
- parameter2 = (icon)
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic19
 END
   
 COPY_EXISTING ~c0sa814z.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj26%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj26
 END
 SAY NAME1 ~Sacred Shadow~
 SAY NAME2 ~Sacred Shadow~
@@ -7009,11 +4414,9 @@ Saving Throw: Neg.
 This powerful spell inscribes a blessed symbol upon the targeted location, which remains there until any creature comes too close, at which point it will explode, causing all enemies within the area to make a Save vs. Spell at a -4 penalty or become silenced and deal 50% reduced damage for 1 turn. Allies within the area gain a +50% bonus to damage for the duration.~
 
 COPY_EXISTING ~c0sa815.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj26%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj26
 END
 SAY NAME1 ~Curse of Oblivion~
 SAY NAME2 ~Curse of Oblivion~
@@ -7034,15 +4437,13 @@ COPY_EXISTING ~c0sa901.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
- parameter1 = RESOLVE_STR_REF (~Maximum Hit Points reduced to half~)
+      match_opcode = 139 
+ parameter1 = RESOLVE_STR_REF (~Magic Resistance Nullfied~)
   END
 SAY NAME1 ~Darkbolt~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj12%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0proj12
 END
 SAY NAME2 ~Darkbolt~
 SAY UNIDENTIFIED_DESC ~Darkbolt
@@ -7050,14 +4451,12 @@ SAY UNIDENTIFIED_DESC ~Darkbolt
 
 Level: 9
 Range: Visual range of the caster
-Duration: 5 rounds
+Duration: 1 turn
 Casting Time: 0
 Area of Effect: 1 creature
 Saving Throw: Special 
 
-This spell fires a bolt of necrotic energy which rends the soul of its target. Targets who fail a Save vs. Death at -2 have their maximum hit points cut in half for five rounds. Even if the target makes its save, they take 5d6+10 magic damage and their magic resistance, if any, is nullified for five rounds. If the bolt kills its target, the caster temporarily gains a 50% bonus to their maximum hit points for 1 turn and regains two spells of 8th level or below.
-
-This spell is not affected by Magic Resistance.~
+This spell strikes down the target with a bolt of pure dark energy which shreds all magical defenses, dealing 15d10+10 (Save vs. Spells at -4 for half) magic damage and removing the effects of magical protections including Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. The target's Magic Resistance, which does not affect this spell, is also nullified for one turn.~
 
 COPY_EXISTING ~c0sa902.spl~ ~override~
 SAY NAME1 ~Umbral Stasis~
@@ -7141,11 +4540,9 @@ Saving Throw: None
 This spell enables the caster to create a black, blade-shaped planar rift about three feet long. It jumps into the caster's hand and is used as a normal sword, remaining there for the duration of the spell. The caster is considered to be proficient to the point of Grand Mastery in this weapon. The sword acts as a +5 weapon and deals 2-24 damage to its victims. Also, every time it hits a target, the victim must make a Save vs. Death at +4 or be disintegrated. There is also a 10% chance with every hit that the sword drains 4 levels from the target and heals the wielder 20 Hit Points.~
 
 COPY_EXISTING ~c0sa906.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0weird%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0weird
 END
 SAY NAME1 ~Weird~
 SAY NAME2 ~Weird~
@@ -7167,15 +4564,10 @@ SAY NAME1 ~Death Mark~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
   END
-  LPF ADD_SPELL_EFFECT
-    INT_VAR
-      opcode = 139 // display string
-	  target = 2
-	  timing = 1
-	  parameter1 = RESOLVE_STR_REF (~Cursed~)
+  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 parameter1 = RESOLVE_STR_REF (~Cursed~)
 	  savingthrow = 4
 	  savebonus = 0 - 8
 	  resist_dispel = 1
@@ -7198,13 +4590,13 @@ COPY_EXISTING ~c0sa907a.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 15% of maximum hit points in shadow damage^-~)
   END
 COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907b.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_savingthrow = 4 // display string
+      match_savingthrow = 4 
 	  savebonus = 0 - 6
 	STR_VAR
 	  resource = c0sa907c
@@ -7212,7 +4604,7 @@ COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907b.spl~
 COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907c.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_savingthrow = 4 // display string
+      match_savingthrow = 4 
 	  savebonus = 0 - 5
 	STR_VAR
 	  resource = c0sa907d
@@ -7220,7 +4612,7 @@ COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907c.spl~
 COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907d.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_savingthrow = 4 // display string
+      match_savingthrow = 4 
 	  savebonus = 0 - 4
 	STR_VAR
 	  resource = c0sa907e
@@ -7228,7 +4620,7 @@ COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907d.spl~
 COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907e.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_savingthrow = 4 // display string
+      match_savingthrow = 4 
 	  savebonus = 0 - 3
 	STR_VAR
 	  resource = c0sa907f
@@ -7236,7 +4628,7 @@ COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907e.spl~
 COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907f.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_savingthrow = 4 // display string
+      match_savingthrow = 4 
 	  savebonus = 0 - 2
 	STR_VAR
 	  resource = c0sa907g
@@ -7244,7 +4636,7 @@ COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907f.spl~
 COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907g.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_savingthrow = 4 // display string
+      match_savingthrow = 4 
 	  savebonus = 0 - 1
 	STR_VAR
 	  resource = c0sa907h
@@ -7252,24 +4644,22 @@ COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907g.spl~
 COPY_EXISTING ~c0sa907a.spl~ ~override/c0sa907h.spl~
   LPF ALTER_EFFECT
     INT_VAR
-      match_savingthrow = 4 // display string
+      match_savingthrow = 4 
 	  savebonus = 0
 	STR_VAR
 	  resource = c0sa907h
   END
 
 COPY_EXISTING ~c0sa908.spl~ ~override~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0oblivi%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0oblivi
 END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Imprisoned~)
   END
 SAY NAME1 ~Oblivion Pull~
@@ -7291,27 +4681,15 @@ COPY_EXISTING ~c0sa908a.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Imprisoned~)
   END
 
 COPY_EXISTING ~c0sa909.spl~ ~override~
-		LPF	ADD_SPELL_EFFECT
-			INT_VAR
-				insert_point = 0
-				opcode = 324
-				target = 2
-				parameter2 = FIRE
-				duration = 1
-			STR_VAR
-				resource = EVAL ~%SOURCE_RES%~
-		END
 SAY NAME1 ~Fiery Pandemonium~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0pandem%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0pandem
 END
 SAY NAME2 ~Fiery Pandemonium~
 SAY UNIDENTIFIED_DESC ~Fiery Pandemonium
@@ -7324,18 +4702,37 @@ Casting Time: 9
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 magical fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.
 
-This spell is not affected by Magic Resistance, but creatures that are immune to fire are unaffected.~
+This spell is not affected by Magic Resistance.~
 
 COPY_EXISTING ~c0sa911.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0meteor
+END
+SAY NAME1 ~Dark Meteor~
+SAY UNIDENTIFIED_DESC ~Dark Meteor
+(Invocation/Evocation – Shadow Weave)
+
+Level: 9
+Range: 270 ft.
+Duration: 8 rounds
+Casting Time: 9
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+Only the most desperate of Shadow Adepts dare to call upon this dangerous spell. The caster calls upon a gigantic, meteoric mass of shadowstuff from the Plane of Shadow and drops it upon the target location. Any creature with less than 12 Hit Die are killed instantly with no Saving Throw, while other creatures must make a Saving Throw vs. Breath or die. The meteor deals 5d10 fire damage, 5d10 cold damage, 5d10 electrical damage and 5d10 magic damage to any survivors, knocks them unconscious for 1 round, and reduces their Saving Throws and Luck by -10 for 8 rounds. The strain of channelling this spell, however, causes the caster to suffer 75% of their maximum hit points in damage.
+
+This spell is not affected by Magic Resistance.~
+
+COPY_EXISTING ~c0sa912.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
 	  match_opcode = 206
-	  match_parameter2 = 0
-	  parameter1 = RESOLVE_STR_REF (~You may not summon another dragon until eight hours have passed.~)
+	  match_parameter2 = 0 parameter1 = RESOLVE_STR_REF (~You may not summon another dragon until eight hours have passed.~)
   END
 SAY NAME1 ~Shadowcall~
 SAY UNIDENTIFIED_DESC ~Shadowcall
@@ -7358,7 +4755,7 @@ SAY NAME2 ~Shadow Dragon~
   WRITE_ASCII 0x280 ~c0shadra~  #32
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
-COPY_EXISTING ~c0sa912.spl~ ~override~
+COPY_EXISTING ~c0sa913.spl~ ~override~
 SAY NAME1 ~Shadowsight~
 SAY UNIDENTIFIED_DESC ~Shadowsight
 (Divination – Shadow Weave)
@@ -7370,7 +4767,7 @@ Casting Time: 10
 Area of Effect: Self 
 Saving Throw: None 
 
-When this powerful spell is cast, the shadow adept peers into the endless depths of the Shadow Weave, drawing upon its power to completely restore <PRO_HISHER> used arcane spells. However, for each use of this spell, the caster incurs a cumulative fatigue penalty and a -4 penalty to all Saving Throws for eight hours.~
+When this powerful spell is cast, the shadow adept peers into the endless depths of the Shadow Weave, drawing upon its power to completely restore <PRO_HISHER> used arcane spells. The strain of casting this spell, however, causes the caster to suffer 90% of their maximum hit points in damage.~
 
 COPY_EXISTING ~c0sahla1.spl~ ~override~
 SAY NAME1 ~Relentless Assault~
@@ -7385,7 +4782,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: None
 
-Relentless Assault essentially erases the pause between casting spells. When cast, the shadow can begin casting a new spell the instant <PRO_HESHE> is finished casting <PRO_HISHER> current spell. The effect lasts for 2 rounds.
+Relentless Assault essentially erases the pause between casting spells. When cast, the shadow adept can begin casting a new spell the instant <PRO_HESHE> is finished casting <PRO_HISHER> current spell. The effect lasts for 2 rounds.
 
 If the shadow adept kills a creature during the spell's lifetime, the remaining duration is reset to 2 rounds (only once per cast).~
 
@@ -7399,39 +4796,33 @@ COPY_EXISTING ~c0sahla2.spl~ ~override~
       check_globals = 1
       check_headers = 1
 	  match_opcode = 139
-	  match_parameter2 = 0
-	  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 30% of maximum hit points in shadow damage^-~)
+	  match_parameter2 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 30% of maximum hit points in shadow damage^-~)
   END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
 	  match_opcode = 139
-	  match_parameter2 = 1
-	  parameter1 = RESOLVE_STR_REF (~Blinded~)
+	  match_parameter2 = 1 parameter1 = RESOLVE_STR_REF (~Blinded~)
   END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
 	  match_opcode = 139
-	  match_parameter2 = 2
-	  parameter1 = RESOLVE_STR_REF (~Four Levels Drained~)
+	  match_parameter2 = 2 parameter1 = RESOLVE_STR_REF (~Four Levels Drained~)
   END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
       check_headers = 1
 	  match_opcode = 139
-	  match_parameter2 = 3
-	  parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
+	  match_parameter2 = 3 parameter1 = RESOLVE_STR_REF (~Two Levels Drained~)
   END
 SAY NAME1 ~Shadow Dragon Breath~
-READ_LONG 0x64 "abil_off"
-READ_SHORT 0x68 "abil_num"
-SET "delta" = 0
-FOR (index = 0; index < abil_num; index = index + 1) BEGIN
-WRITE_SHORT (%abil_off% + (0x28 * %index%) + 0x26) ~%c0proj09%~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0dbreat
 END
 SAY NAME2 ~Shadow Dragon Breath~
 SAY UNIDENTIFIED_DESC ~Shadow Dragon Breath
@@ -7506,7 +4897,7 @@ COPY_EXISTING ~c0sahlaa.spl~ ~override~
     INT_VAR
       check_globals = 1
       check_headers = 1
-      match_opcode = 139 // display string
+      match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Night Knives Created~)
 END
 SAY NAME1 ~Night Knives~

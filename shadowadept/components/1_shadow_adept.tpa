@@ -54,6 +54,23 @@ ACTION_IF GAME_IS ~IWDEE~ THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/lib/ids_iwdee.tpa~
 END
 
+///////////////////////////
+/////MORENTHERENE PATCH////
+///////////////////////////
+
+ACTION_IF GAME_INCLUDES ~sod~
+THEN BEGIN
+LAF ALTER_SCRIPT_BLOCK
+      STR_VAR script=BD7210
+              match=~Global("BD_GREEN_DRAGON_AWAKE","GLOBAL",0)~
+			  swap_out=~OR(3)~
+			  swap_in=~OR(2)~
+			  swap_out1=~SpellCastInnateRES("",[GOODCUTOFF])
+			  THEN~
+			  swap_in1=~THEN~
+END
+END
+
 ////////////////////////////////////////
 /////////SCRIPTS////////////////////////
 ////////////////////////////////////////
@@ -155,6 +172,7 @@ END
 ///////////////////////////
 /////BETA SPELL SYSTEM/////
 ///////////////////////////
+ACTION_IF NOT GAME_IS ~IWDEE~ THEN BEGIN
 PRINT ~Install BETA Spell Learning System?
 [1] Yes
 [2] No~
@@ -168,4 +186,5 @@ END
 	  INCLUDE ~%MOD_FOLDER%/LIB/SPELLSYSTEM.TPA~
 END
       ACTION_IF ("spellsystem" = 2) THEN BEGIN
+END
 END

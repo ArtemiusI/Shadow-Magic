@@ -1,5 +1,5 @@
 COPY ~%MOD_FOLDER%/itempack/bams~ ~override~
-
+/*
 // PVRZ-based bams
 
 ACTION_FOR_EACH bamFile IN ~c0samasc.bam~ BEGIN
@@ -15,7 +15,7 @@ ACTION_FOR_EACH bamFile IN ~c0samasc.bam~ BEGIN
       END
     END
 END
-
+*/
 ////////////////////////////////////////
 /////////ITEMS//////////////////////////
 ////////////////////////////////////////
@@ -1187,7 +1187,7 @@ Requires:
 
 Weight: 5~
 END
-
+/*
 COPY ~%MOD_FOLDER%/itempack/c0samas1.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0samas2.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0samas3.eff~ ~override~
@@ -1202,7 +1202,7 @@ Equipped abilities:
 – Intelligence, Wisdom, Charisma: +1 (Sharrans)
 – Immunity to blindness, charm, confusion, domination, and hold
 
-Weight: 1~
+Weight: 1~*/
 
 COPY ~%MOD_FOLDER%/itempack/c0sanos1.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sanos1.itm~ ~override~

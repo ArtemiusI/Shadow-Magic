@@ -27,57 +27,109 @@ END
 INCLUDE	~%MOD_FOLDER%/lib/SA_SEQUENCER_MENU.TPA~
 OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
 LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALSW~ resref = ~C0SALSW~	icon = ~c0sahlbb~	title	action
+	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = 0 - 1	desc = 0 - 1	global = 2
+	STR_VAR	spelltable = ~C0SALSW~ spelllist = ~C0SASP~ resref = ~C0SALSW~	icon = ~c0sahlbb~	title	action
 END
 OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
 LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALHW~ resref = ~C0SALHW~	icon = ~c0sahlbb~	title	action
+	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = 0 - 1	desc = 0 - 1	global = 2
+	STR_VAR	spelltable = ~C0SALHW~ spelllist = ~C0SASP~ resref = ~C0SALHW~	icon = ~c0sahlbb~	title	action
 END
 OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
 LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALSS~ resref = ~C0SALSS~	icon = ~c0sahlbb~	title	action
+	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = 0 - 1	desc = 0 - 1	global = 2
+	STR_VAR	spelltable = ~C0SALSS~ spelllist = ~C0SASP~ resref = ~C0SALSS~	icon = ~c0sahlbb~	title	action
 END
 OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
 LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALHS~ resref = ~C0SALHS~	icon = ~c0sahlbb~	title	action
+	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = 0 - 1	desc = 0 - 1	global = 2
+	STR_VAR	spelltable = ~C0SALHS~ spelllist = ~C0SASP~ resref = ~C0SALHS~	icon = ~c0sahlbb~	title	action
 END
 OUTER_SPRINT	title ~Shadow Magic Selection~	OUTER_SPRINT	action ~Select a Spell to Learn~
 LAF	CREATE_SEQUENCER_MENU
-	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = RESOLVE_STR_REF	(~Shadow Magic Selection~)	desc = RESOLVE_STR_REF	(~Shadow Magic Selection~)	global = 2
-	STR_VAR	spelltable = ~C0SALSB~ resref = ~C0SALSB~	icon = ~c0sahlbb~	title	action
+	INT_VAR	class = 1	maxlevel = 9	exclude = 0x00004000	tip = RESOLVE_STR_REF	(~Select a spell to learn from the provided lists. The total number of spells allowed for the given spell level is shown below. An 'X' symbol means that the requirements have not been fulfilled.~)	name = 0 - 1	desc = 0 - 1	global = 2
+	STR_VAR	spelltable = ~C0SALSB~ spelllist = ~C0SASP~ resref = ~C0SALSB~	icon = ~c0sahlbb~	title	action
 END
 
+ACTION_FOR_EACH lv1 IN C0SA101L C0SA102L C0SA103L C0SA104L C0SA105L C0SA106L C0SA107L C0SA108L C0SA109L C0SA110L C0SA111L C0SA112L BEGIN
+COPY_EXISTING ~%lv1%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV1~	END
+END
+
+ACTION_FOR_EACH lv2 IN C0SA201L C0SA202L C0SA203L C0SA204L C0SA205L C0SA206L C0SA207L C0SA208L C0SA209L C0SA210L C0SA211L C0SA212L C0SA213L BEGIN
+COPY_EXISTING ~%lv2%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV2~	END
+END
+
+ACTION_FOR_EACH lv3 IN C0SA301L C0SA302L C0SA303L C0SA304L C0SA305L C0SA306L C0SA307L C0SA308L C0SA309L C0SA310L C0SA311L C0SA312L BEGIN
+COPY_EXISTING ~%lv3%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV3~	END
+END
+
+ACTION_FOR_EACH lv4 IN C0SA401L C0SA402L C0SA403L C0SA404L C0SA405L C0SA406L C0SA407L C0SA408L C0SA409L C0SA410L C0SA411L C0SA412L C0SA413L BEGIN
+COPY_EXISTING ~%lv4%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV4~	END
+END
+
+ACTION_FOR_EACH lv5 IN C0SA501L C0SA502L C0SA503L C0SA504L C0SA505L C0SA506L C0SA507L C0SA508L C0SA509L C0SA510L C0SA511L C0SA512L C0SA513L BEGIN
+COPY_EXISTING ~%lv5%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV5~	END
+END
+
+ACTION_FOR_EACH lv6 IN C0SA601L C0SA602L C0SA603L C0SA604L C0SA605L C0SA606L C0SA607L C0SA608L C0SA609L C0SA610L C0SA611L BEGIN
+COPY_EXISTING ~%lv6%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV6~	END
+END
+
+ACTION_FOR_EACH lv7 IN C0SA701L C0SA702L C0SA703L C0SA704L C0SA705L C0SA706L C0SA707L C0SA708L C0SA709L C0SA710L C0SA711L C0SA712L C0SA713L BEGIN
+COPY_EXISTING ~%lv7%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV7~	END
+END
+
+ACTION_FOR_EACH lv8 IN C0SA801L C0SA802L C0SA803L C0SA804L C0SA805L C0SA806L C0SA807L C0SA808L C0SA809L C0SA810L C0SA811L C0SA812L BEGIN
+COPY_EXISTING ~%lv8%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV8~	END
+END
+
+ACTION_FOR_EACH lv9 IN C0SA901L C0SA902L C0SA903L C0SA904L C0SA905L C0SA906L C0SA907L C0SA908L C0SA909L C0SA910L BEGIN
+COPY_EXISTING ~%lv9%.spl~ ~override~
+	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1 timing = 1 parameter1 = 0 - 1 parameter2 = 1	STR_VAR	resource = EVAL ~C0SALV9~	END
+END
+
+COPY_EXISTING ~C0SALS.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) STR_VAR match_resource = ~C0SALSW~ END
+LPF ALTER_EFFECT INT_VAR parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~) STR_VAR match_resource = ~C0SALSS~ END
+LPF ALTER_EFFECT INT_VAR parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~) STR_VAR match_resource = ~C0SALSB~ END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~) END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~) END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~) END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~) END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~) END
+COPY_EXISTING ~C0SALH.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) STR_VAR match_resource = ~C0SALHW~ END
+LPF ALTER_EFFECT INT_VAR parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~) STR_VAR match_resource = ~C0SALHS~ END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~) END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~) END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~) END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~) END
+LPF CLONE_EFFECT INT_VAR match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~) parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~) END
 COPY_EXISTING ~C0SALSW.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSW~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSW~ END
 COPY_EXISTING ~C0SALHW.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALHW~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALHW~ END
 COPY_EXISTING ~C0SALSS.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSS~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSS~ END
 COPY_EXISTING ~C0SALHS.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALHS~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALHS~ END
 COPY_EXISTING ~C0SALSB.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSB~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 206 target = 1 duration = 2 STR_VAR resource = ~C0SALSB~ END
 COPY_EXISTING ~C0SALSWD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSW~ END
 COPY_EXISTING ~C0SALHWD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALHW~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALHW~ END
 COPY_EXISTING ~C0SALSSD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSS~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSS~ END
 COPY_EXISTING ~C0SALHSD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALHS~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALHS~ END
 COPY_EXISTING ~C0SALSBD.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSB~
-END
+LPF ADD_SPELL_EFFECT INT_VAR	opcode = 266 target = 2 STR_VAR resource = ~C0SALSB~ END

@@ -1,0 +1,428 @@
+/*
+IF
+	Global("BDAI_DISABLE_DEFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	HaveSpellRES("C0SA201")
+	See(NearestEnemyOf(Myself))
+	!CheckStatGT(Myself,0,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(NearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(SecondNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(ThirdNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(FourthNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(SixthNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(SeventhNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(EighthNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(NinthNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT(TenthNearestEnemyOf(Myself),0,TRUE_SIGHT)
+	!CheckStatGT([EVILCUTOFF.0.PLANATAR],0,TRUE_SIGHT)
+	!CheckStatGT([EVILCUTOFF.0.DARKPLANATAR],0,TRUE_SIGHT)
+	!CheckStat(Myself,1,PUPPETTYPE)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA201",Myself)
+END
+
+IF
+	Global("BDAI_DISABLE_DEFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("C0SA409",Myself)
+	OR(5)
+		Range([EVILCUTOFF.0.0.WIGHT],30)
+		Range([EVILCUTOFF.0.0.WRAITH],30)
+		Range([EVILCUTOFF.0.0.SPECTRE],30)
+		Range([EVILCUTOFF.0.VAMPIRE],30)
+		Range([EVILCUTOFF.0.0.SHADOW_DRAGON],30)
+	See([PC])
+	CheckStatGT(LastSeenBy(Myself),0,LEVELDRAIN)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!CheckSpellState(LastSeenBy(Myself),LATHANDER_BOON)
+	CheckStat(LastSeenBy(Myself),0,LEVEL_DRAIN_IMMUNITY)
+	!HasItemEquiped("AMUL21",LastSeenBy(Myself))  // Amulet of Power
+	!HasItemEquipedReal("BLUN25",LastSeenBy(Myself))  // Mace of Disruption +2
+	!HasItemEquipedReal("HAMM10",LastSeenBy(Myself))  // Runehammer +4
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!HasItemEquipedReal("SW1H69",LastSeenBy(Myself))  // Spectral Brand +5
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA409",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_DEFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("C0SA409",Myself)
+	OR(5)
+		Range([EVILCUTOFF.0.0.WIGHT],30)
+		Range([EVILCUTOFF.0.0.WRAITH],30)
+		Range([EVILCUTOFF.0.0.SPECTRE],30)
+		Range([EVILCUTOFF.0.VAMPIRE],30)
+		Range([EVILCUTOFF.0.0.SHADOW_DRAGON],30)
+	See(SecondNearest([PC]))
+	CheckStatGT(LastSeenBy(Myself),0,LEVELDRAIN)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!CheckSpellState(LastSeenBy(Myself),LATHANDER_BOON)
+	CheckStat(LastSeenBy(Myself),0,LEVEL_DRAIN_IMMUNITY)
+	!HasItemEquiped("AMUL21",LastSeenBy(Myself))  // Amulet of Power
+	!HasItemEquipedReal("BLUN25",LastSeenBy(Myself))  // Mace of Disruption +2
+	!HasItemEquipedReal("HAMM10",LastSeenBy(Myself))  // Runehammer +4
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!HasItemEquipedReal("SW1H69",LastSeenBy(Myself))  // Spectral Brand +5
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA409",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_DEFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	!GlobalTimerNotExpired("BD_Cast","LOCALS")
+	HaveSpellRES("C0SA409",Myself)
+	OR(5)
+		Range([EVILCUTOFF.0.0.WIGHT],30)
+		Range([EVILCUTOFF.0.0.WRAITH],30)
+		Range([EVILCUTOFF.0.0.SPECTRE],30)
+		Range([EVILCUTOFF.0.VAMPIRE],30)
+		Range([EVILCUTOFF.0.0.SHADOW_DRAGON],30)
+	See(ThirdNearest([PC]))
+	CheckStatGT(LastSeenBy(Myself),0,LEVELDRAIN)
+	!StateCheck(LastSeenBy(Myself),STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+	CheckStat(LastSeenBy(Myself),0,MINORGLOBE)
+	!Kit(LastSeenBy(Myself),UNDEADHUNTER)
+	!CheckSpellState(LastSeenBy(Myself),LATHANDER_BOON)
+	CheckStat(LastSeenBy(Myself),0,LEVEL_DRAIN_IMMUNITY)
+	!HasItemEquiped("AMUL21",LastSeenBy(Myself))  // Amulet of Power
+	!HasItemEquipedReal("BLUN25",LastSeenBy(Myself))  // Mace of Disruption +2
+	!HasItemEquipedReal("HAMM10",LastSeenBy(Myself))  // Runehammer +4
+	!HasItemEquipedReal("HAMM11",LastSeenBy(Myself))  // Runehammer +5
+	!HasItemEquipedReal("SW1H69",LastSeenBy(Myself))  // Spectral Brand +5
+	CheckStatLT(Myself,50,SPELLFAILUREPRIEST)
+	!StateCheck(Myself,STATE_SILENCED)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA409",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA503",Myself)
+	See([EVILCUTOFF])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),5)
+	OR(5)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
+		CheckSpellState(LastSeenBy(Myself),MANTLE)
+		CheckSpellState(LastSeenBy(Myself),IMPROVED_MANTLE)
+		CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA503",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA503",Myself)
+	See(SecondNearest([EVILCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),5)
+	OR(5)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
+		CheckSpellState(LastSeenBy(Myself),MANTLE)
+		CheckSpellState(LastSeenBy(Myself),IMPROVED_MANTLE)
+		CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA503",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA503",Myself)
+	See(ThirdNearest([EVILCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),5)
+	OR(5)
+		CheckStatGT(LastSeenBy(Myself),0,STONESKINS)
+		CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_MAGICAL_WEAPONS)
+		CheckSpellState(LastSeenBy(Myself),MANTLE)
+		CheckSpellState(LastSeenBy(Myself),IMPROVED_MANTLE)
+		CheckSpellState(LastSeenBy(Myself),ABSOLUTE_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA503",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA701")
+	See([EVILCUTOFF])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),7)
+	OR(6)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+		CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA701",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA701")
+	See(SecondNearest([EVILCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),7)
+	OR(6)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+		CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA701",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA701")
+	See(ThirdNearest([EVILCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),7)
+	OR(6)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TRAP)
+		CheckStatGT(LastSeenBy(Myself),0,MINORGLOBE)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA701",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA606")
+	See([EVILCUTOFF])
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),6)
+	OR(5)
+		CheckStat(LastSeenBy(Myself),1,MINORGLOBE)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA606",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA606")
+	See(SecondNearest([EVILCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),6)
+	OR(5)
+		CheckStat(LastSeenBy(Myself),1,MINORGLOBE)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA606",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+
+IF
+	Global("BDAI_DISABLE_OFFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	HaveSpellRES("C0SA606")
+	See(ThirdNearest([EVILCUTOFF]))
+	!StateCheck(LastSeenBy(Myself),STATE_NOT_TARGETABLE)
+	!ImmuneToSpellLevel(LastSeenBy(Myself),6)
+	OR(5)
+		CheckStat(LastSeenBy(Myself),1,MINORGLOBE)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_DEFLECTION)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_TURNING)
+		CheckStatGT(LastSeenBy(Myself),0,CLERIC_SHIELD_OF_THE_ARCHONS)
+		CheckStatGT(LastSeenBy(Myself),0,WIZARD_SPELL_IMMUNITY)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA606",LastSeenBy(Myself))
+		SetInterrupt(TRUE)
+END
+*/
+
+IF
+	Global("BDAI_DISABLE_DEFENSIVE","LOCALS",0)
+	ActionListEmpty()
+	IfValidForPartyDialogue(Myself)
+	OR(2)
+		!GlobalTimerNotExpired("BD_Cast","LOCALS")
+		CheckStatGT(Myself,0,AURACLEANSING)
+	CheckStatLT(Myself,1,STONESKINS)
+	HaveSpellRES("C0SA402")
+	CheckStatLT(Myself,50,SPELLFAILUREMAGE)
+	Global("BDAI_NO_ARCANE","LOCALS",0)
+	!CheckStatGT(Myself,0,CLERIC_INSECT_PLAGUE)
+	!StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+		SpellRES("C0SA402",Myself)
+END

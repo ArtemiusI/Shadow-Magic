@@ -1,6 +1,15 @@
 // First Memory
 
 IF
+	TriggerOverride(Player6,Global("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv9","LOCALS",0))
 	Specifics(Player1,SHADOW_ADEPT)
 	Delay(1)
 	!Class(Player1,SORCERER)
@@ -14,6 +23,15 @@ THEN
 END
 
 IF
+	TriggerOverride(Player6,Global("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv9","LOCALS",0))
 	Specifics(Player1,SHADOW_ADEPT)
 	Delay(1)
 	Class(Player1,BARD)
@@ -27,6 +45,15 @@ THEN
 END
 
 IF
+	TriggerOverride(Player6,Global("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv9","LOCALS",0))
 	Specifics(Player1,SHADOW_ADEPT)
 	Delay(1)
 	Class(Player1,BARD)
@@ -37,6 +64,15 @@ THEN
 END
 
 IF
+	TriggerOverride(Player6,Global("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv9","LOCALS",0))
 	Specifics(Player1,SHADOW_ADEPT)
 	Delay(1)
 	Class(Player1,SORCERER)
@@ -48,6 +84,15 @@ THEN
 END
 
 IF
+	TriggerOverride(Player6,Global("C0SALv1","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv2","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv3","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv4","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv5","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv6","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv7","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv8","LOCALS",0))
+	TriggerOverride(Player6,Global("C0SALv9","LOCALS",0))
 	Specifics(Player1,SHADOW_ADEPT)
 	Delay(1)
 	TriggerOverride(Player1,Global("C0SAFirstMemory","LOCALS",2))
