@@ -172,7 +172,6 @@ END
 ///////////////////////////
 /////BETA SPELL SYSTEM/////
 ///////////////////////////
-ACTION_IF NOT GAME_IS ~IWDEE~ THEN BEGIN
 PRINT ~Install BETA Spell Learning System?
 [1] Yes
 [2] No~
@@ -186,5 +185,4 @@ END
 	  INCLUDE ~%MOD_FOLDER%/LIB/SPELLSYSTEM.TPA~
 END
       ACTION_IF ("spellsystem" = 2) THEN BEGIN
-END
 END

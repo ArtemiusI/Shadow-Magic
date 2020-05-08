@@ -297,577 +297,6 @@ COPY_EXISTING ~C0SADAY2.SPL~ ~OVERRIDE~
 /////////////////SPELLS/////////////////
 ////////////////////////////////////////
 
-PRINT ~Please choose one of the following:
-[1] Constitution drain on cast
-[2] Drain Current Hit Points on cast
-[3] Drain Maximum Hit Points on cast
-[4] No Cost~
-
-OUTER_SPRINT ~hpcost~ ~placeholder_value~
-OUTER_WHILE (!(IS_AN_INT ~hpcost~) OR (~hpcost~ > 0x5) OR (~hpcost~ < 0x1)) BEGIN
-  PRINT ~Please select 1, 2, 3 or 4 and press Enter.~
-  ACTION_READLN ~hpcost~
-END
-      ACTION_IF ("hpcost" = 1) THEN BEGIN
-LOAD_TRA ~%MOD_FOLDER%/languages/english/setup.tra~
-COPY_EXISTING ~c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-1 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon2.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon3.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-3 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon4.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon5.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-5 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon6.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon7.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-7 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon8.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon9.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-9 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon0.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-COMPILE ~%MOD_FOLDER%/scripts/c0sacon.baf~
-
-COPY_EXISTING ~C0SA207.spl~ ~override~
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
-SAY NAME1 ~Lesser Drain Vitality~
-SAY NAME2 ~Lesser Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 2
-Range: Touch
-Duration: 1 turn
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
-COPY_EXISTING ~C0SA207a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
-
-COPY_EXISTING ~C0SA513.spl~ ~override~
-SAY NAME1 ~Mass Lesser Drain Vitality~
-SAY NAME2 ~Mass Lesser Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Lesser Drain Vitality
-(Conjuration/Summoning)
-
-Level: 5
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
-
-COPY_EXISTING ~C0SA407.spl~ ~override~
-SAY NAME1 ~Drain Vitality~
-SAY NAME2 ~Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 4
-Range: Touch
-Duration: 1 turn
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
-COPY_EXISTING ~C0SA407a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
-
-COPY_EXISTING ~C0SA713.spl~ ~override~
-SAY NAME1 ~Mass Drain Vitality~
-SAY NAME2 ~Mass Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
-(Conjuration/Summoning)
-
-Level: 7
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
-
-COPY_EXISTING ~C0SA706.spl~ ~override~
-SAY NAME1 ~Greater Drain Vitality~
-SAY NAME2 ~Greater Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 7
-Range: Touch
-Duration: 1 turn
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
-COPY_EXISTING ~C0SA706a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
-
-COPY_EXISTING ~C0SA910.spl~ ~override~
-SAY NAME1 ~Mass Greater Drain Vitality~
-SAY NAME2 ~Mass Greater Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Greater Drain Vitality
-(Conjuration/Summoning)
-
-Level: 9
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Greater Drain Vitality spell upon every enemy creature within the area of effect, draining eight points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
-
-      PRINT ~Resource: Constitution drain on cast~
-      END
-      ACTION_IF ("hpcost" = 2) THEN BEGIN
-LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-2.tra~
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Current Hit Points^-~) END
-
-COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
-COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY_EXISTING ~C0SA207.spl~ ~override~
-SAY NAME1 ~Lesser Drain Vitality~
-SAY NAME2 ~Lesser Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 2
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA513.spl~ ~override~
-SAY NAME1 ~Mass Lesser Drain Vitality~
-SAY NAME2 ~Mass Lesser Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Lesser Drain Vitality
-(Conjuration/Summoning)
-
-Level: 5
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA407.spl~ ~override~
-SAY NAME1 ~Drain Vitality~
-SAY NAME2 ~Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 4
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA713.spl~ ~override~
-SAY NAME1 ~Mass Drain Vitality~
-SAY NAME2 ~Mass Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
-(Conjuration/Summoning)
-
-Level: 7
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA706.spl~ ~override~
-SAY NAME1 ~Greater Drain Vitality~
-SAY NAME2 ~Greater Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 7
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA910.spl~ ~override~
-SAY NAME1 ~Mass Greater Drain Vitality~
-SAY NAME2 ~Mass Greater Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Greater Drain Vitality
-(Conjuration/Summoning)
-
-Level: 9
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-      PRINT ~Resource: Drain Current Hit Points on cast~
-      END
-      ACTION_IF ("hpcost" = 3) THEN BEGIN
-LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-3.tra~
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Maximum Hit Points^-~) END
-
-COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
-COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
-COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
-COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
-COPY_EXISTING ~C0SA207.spl~ ~override~
-SAY NAME1 ~Lesser Drain Vitality~
-SAY NAME2 ~Lesser Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 2
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA513.spl~ ~override~
-SAY NAME1 ~Mass Lesser Drain Vitality~
-SAY NAME2 ~Mass Lesser Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Lesser Drain Vitality
-(Conjuration/Summoning)
-
-Level: 5
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining two hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA407.spl~ ~override~
-SAY NAME1 ~Drain Vitality~
-SAY NAME2 ~Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 4
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA713.spl~ ~override~
-SAY NAME1 ~Mass Drain Vitality~
-SAY NAME2 ~Mass Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
-(Conjuration/Summoning)
-
-Level: 7
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA706.spl~ ~override~
-SAY NAME1 ~Greater Drain Vitality~
-SAY NAME2 ~Greater Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 7
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA910.spl~ ~override~
-SAY NAME1 ~Mass Greater Drain Vitality~
-SAY NAME2 ~Mass Greater Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Greater Drain Vitality
-(Conjuration/Summoning)
-
-Level: 9
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining six hit points per level from the target as magic damage (Save vs. Death at -2 for half) and increase <PRO_HISHER> maximum hit points by the amount drained. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-      PRINT ~Resource: Drain Maximum Hit Points on cast~
-      END
-      ACTION_IF ("hpcost" = 4) THEN BEGIN
-LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-4.tra~
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-
-COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY_EXISTING ~C0SA207.spl~ ~override~
-SAY NAME1 ~Lesser Drain Vitality~
-SAY NAME2 ~Lesser Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Lesser Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 2
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA513.spl~ ~override~
-SAY NAME1 ~Mass Lesser Drain Vitality~
-SAY NAME2 ~Mass Lesser Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Lesser Drain Vitality
-(Conjuration/Summoning)
-
-Level: 5
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA407.spl~ ~override~
-SAY NAME1 ~Drain Vitality~
-SAY NAME2 ~Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 4
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA713.spl~ ~override~
-SAY NAME1 ~Mass Drain Vitality~
-SAY NAME2 ~Mass Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Drain Vitality
-(Conjuration/Summoning)
-
-Level: 7
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA706.spl~ ~override~
-SAY NAME1 ~Greater Drain Vitality~
-SAY NAME2 ~Greater Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Greater Drain Vitality
-(Necromancy – Shadow Weave)
-
-Level: 7
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: None
-
-This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-COPY_EXISTING ~C0SA910.spl~ ~override~
-SAY NAME1 ~Mass Greater Drain Vitality~
-SAY NAME2 ~Mass Greater Drain Vitality~
-SAY UNIDENTIFIED_DESC ~Mass Greater Drain Vitality
-(Conjuration/Summoning)
-
-Level: 9
-Range: Area centered on caster
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
-
-      PRINT ~Resource: No Cost~
-      END
-	  
-COPY_EXISTING ~C0SACON1.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON1~ END	  
-COPY_EXISTING ~C0SACON2.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON2~ END
-COPY_EXISTING ~C0SACON3.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON3~ END
-COPY_EXISTING ~C0SACON4.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON4~ END
-COPY_EXISTING ~C0SACON5.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON5~ END
-COPY_EXISTING ~C0SACON6.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON6~ END
-COPY_EXISTING ~C0SACON7.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON7~ END
-COPY_EXISTING ~C0SACON8.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON8~ END
-COPY_EXISTING ~C0SACON9.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON9~ END
-COPY_EXISTING ~C0SACON0.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON0~ END
-
 // PROJECTILES
 
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj01.PRO~ ~SM Flying Skull~
@@ -917,6 +346,7 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0pandem.PRO~ ~SM Pandemonium~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0dbreat.PRO~ ~SM Dragon Breath~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0scomet.PRO~ ~SM Shadow Comet~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0meteor.PRO~ ~SM Dark Meteor~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa8021.PRO~ ~SM Anullment~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa8061.PRO~ ~SM Blackfireball~
 
 COPY_EXISTING ~c0proj08.pro~ ~override~
@@ -1556,7 +986,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The shadow adept launches a missile of energy that unerringly strikes the target for 1d4 magic damage (+2 magic cold damage). An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+10 damage) at level 9.~
+The shadow adept launches a missile of energy that unerringly strikes the target for 1d4 magic damage (+2 magic cold damage, magic fire damage vs. undead). An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+10 damage) at level 9.~
 
 COPY_EXISTING ~C0SA102.spl~ ~override~
   LPF ALTER_SPELL_HEADER
@@ -2060,7 +1490,7 @@ Casting Time: 3
 Area of Effect: 30-ft. radius
 Saving Throw: 1/2 
 
-The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d3 points of magic cold damage and 1d3 points of magic damage for every level of the caster (to a maximum of 10d6) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw (-1 penalty per 5 levels) avoid the direct blast taking no magic damage or stat loss.
+The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d3 points of magic cold damage (undead creatures suffer magic fire damage instead) and 1d3 points of magic damage for every level of the caster (to a maximum of 10d6) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw (-1 penalty per 5 levels) avoid the direct blast taking no magic damage or stat loss.
 
 From 10th level onwards, targets damaged by Shadowblast suffer a -20% penalty to all damage dealt for 1 turn.~
 
@@ -2469,7 +1899,7 @@ COPY_EXISTING ~C0SA406.spl~ ~override~
 	INT_VAR
 		projectile = c0proj13
 END
-SAY NAME2 ~Phantasmal Killer~
+SAY NAME1 ~Phantasmal Killer~
 SAY UNIDENTIFIED_DESC ~Phantasmal Killer
 (Illusion/Phantasm – Shadow Weave)
 
@@ -4010,7 +3440,7 @@ END
   LPF ALTER_EFFECT
     INT_VAR
       match_opcode = 139
-	  match_savingthrow = 1 parameter1 = RESOLVE_STR_REF (~One Level Drained~)
+	  match_savingthrow = 16777217 parameter1 = RESOLVE_STR_REF (~One Level Drained~)
 END
 SAY NAME1 ~Negastorm~
   LPF ALTER_SPELL_HEADER
@@ -4033,6 +3463,10 @@ This spell summons a shower of negative energy upon a targeted location, inflict
 The negastorm lasts for 2 rounds and does not affect allies. If an enemy enters the negastorm after the first round, they only suffer half of the effects.~
 
 COPY_EXISTING ~C0SA802.spl~ ~override~
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0sa8021
+END
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic13
 END
 SAY NAME1 ~Annulment~
@@ -4042,12 +3476,12 @@ SAY UNIDENTIFIED_DESC ~Annulment
 
 Level: 8
 Range: Touch
-Duration: 1 round/level
+Duration: 5 rounds
 Casting Time: 8
-Area of Effect: 1 creature
+Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When the spell is cast, it confers 75% immunity against all energy attacks - such as fire, cold, acid, magic, and electricity, whether from magical or non-magical sources - such as spells, weapons, wands, breath weapons, etc. The target also becomes immune to all spells of 6th level and below, both beneficial and harmful, cast by others. This excludes any physical attacks and spell-created weapons, such as Enchanted Weapon and Spiritual Hammer. In other words, any physical damage, such as piercing, crushing, or slashing will get through. This effect lasts for the duration of the spell or until dispelled.~
+When this spell is cast, a malignant wave of energy assaults tbe magical defenses of all creatures within a 15-ft. radius, completely nullfying the Magic Resistance of all creatures for 5 rounds and removing one spell protection of any level, then dispelling any effects on all affected creatures. Additionally, all creatures in the initial area of effect are unable to cast any spells for one round.~
 
 COPY_EXISTING ~c0sa803.spl~ ~override~
 SAY NAME1 ~Shadow Prison~
@@ -4120,7 +3554,7 @@ Casting Time: 8
 Area of Effect: The caster
 Saving Throw: 1/2
 
-The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 magical fire damage (Save vs. Spells for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
+The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 magical fire damage (Save vs. Spells at -4 for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
 
 If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel under the caster's allegiance for one turn before becoming assimilated into the Shadow Plane.~
 

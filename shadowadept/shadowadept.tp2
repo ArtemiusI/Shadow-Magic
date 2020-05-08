@@ -1,6 +1,6 @@
 BACKUP ~shadowadept/backup~
-AUTHOR ~The Artisan~
-VERSION ~2.0~
+AUTHOR ~Artemius_I~
+VERSION ~2.01~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
