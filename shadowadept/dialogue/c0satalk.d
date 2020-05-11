@@ -1,291 +1,7 @@
 // Shadow Adept - learn spell
 
 BEGIN C0SATALK
-/*
-// Extra Level 1 Spell
 
-IF ~!Class(Myself,SORCERER) CheckStat(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA1
-SAY ~\[16 CHARISMA\] Your above-average charisma has allowed you to bargain with the Shadow Weave for an extra level 1 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~!Class(Myself,SORCERER) CheckStatGT(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA2
-SAY ~\[17+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for two extra level 1 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",2) IncrementGlobal("C0SALv1","LOCALS",2) StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~!Class(Myself,SORCERER) CheckStatGT(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",1)~ EXTRA3
-SAY ~\[17+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 1 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 2 Spell
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,2)
-ClassLevelGT(Myself,ROGUE,3) CheckStat(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA4
-SAY ~\[17 CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,2)
-ClassLevelGT(Myself,ROGUE,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA5
-SAY ~\[18+ CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for two extra level 2 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",2) IncrementGlobal("C0SALv2","LOCALS",2)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,2)
-ClassLevelGT(Myself,ROGUE,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",1)~ EXTRA6
-SAY ~\[18+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 3 Spell
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,4)
-ClassLevelGT(Myself,ROGUE,6) CheckStat(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA7
-SAY ~\[18 CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for an extra level 3 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,4)
-ClassLevelGT(Myself,ROGUE,6) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA8
-SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",2) IncrementGlobal("C0SALv3","LOCALS",2)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,4)
-ClassLevelGT(Myself,ROGUE,6) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",1)~ EXTRA9
-SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 4 Spell
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,6)
-ClassLevelGT(Myself,ROGUE,9) CheckStat(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA10
-SAY ~\[19 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 4 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,6)
-ClassLevelGT(Myself,ROGUE,9) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA11
-SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",2) IncrementGlobal("C0SALv4","LOCALS",2)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,6)
-ClassLevelGT(Myself,ROGUE,9) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",1)~ EXTRA12
-SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","LOCALS",2)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 5 Spell
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,8)
-ClassLevelGT(Myself,ROGUE,12) CheckStatGT(Myself,20,CHR) Global("C0SAExtraLevel5Spell","LOCALS",0)~ EXTRA13
-SAY ~\[21 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 5 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel5Spell","LOCALS",1) IncrementGlobal("C0SALv5","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 6 Spell
-
-IF ~!Class(Myself,SORCERER) 
-OR(2)
-ClassLevelGT(Myself,WIZARD,11)
-ClassLevelGT(Myself,ROGUE,15) CheckStatGT(Myself,21,CHR) Global("C0SAExtraLevel6Spell","LOCALS",0)~ EXTRA14
-SAY ~\[22 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 6 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel6Spell","LOCALS",1) IncrementGlobal("C0SALv6","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 7 Spell
-
-IF ~!Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,13) CheckStatGT(Myself,22,CHR) Global("C0SAExtraLevel7Spell","LOCALS",0)~ EXTRA15
-SAY ~\[23 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 7 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel7Spell","LOCALS",1) IncrementGlobal("C0SALv7","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 8 Spell
-
-IF ~!Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,15) CheckStatGT(Myself,23,CHR) Global("C0SAExtraLevel8Spell","LOCALS",0)~ EXTRA16
-SAY ~\[24 CHARISMA\] Your deific charisma has allowed you to bargain with the Shadow Weave for an extra level 8 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel8Spell","LOCALS",1) IncrementGlobal("C0SALv8","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 9 Spell
-
-IF ~!Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,17) CheckStatGT(Myself,24,CHR) Global("C0SAExtraLevel9Spell","LOCALS",0)~ EXTRA17
-SAY ~\[25 CHARISMA\] Your deific charisma has allowed you to bargain with the Shadow Weave for an extra level 9 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel9Spell","LOCALS",1) IncrementGlobal("C0SALv9","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 1 Spell
-
-IF ~Class(Myself,SORCERER) CheckStat(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA1
-SAY ~\[16 CHARISMA\] Your above-average charisma has allowed you to bargain with the Shadow Weave for an extra level 1 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~Class(Myself,SORCERER) CheckStatGT(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",0)~ EXTRA2
-SAY ~\[17+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for two extra level 1 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",2) IncrementGlobal("C0SALv1","LOCALS",2) StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~Class(Myself,SORCERER) CheckStatGT(Myself,16,CHR) Global("C0SAExtraLevel1Spell","LOCALS",1)~ EXTRA3
-SAY ~\[17+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 1 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel1Spell","LOCALS",1) IncrementGlobal("C0SALv1","LOCALS",1) StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 2 Spell
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,3) CheckStat(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA4
-SAY ~\[17 CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~Class(Myself,SORCERER)
-ClassLevelGT(Myself,WIZARD,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",0)~ EXTRA5
-SAY ~\[18+ CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for two extra level 2 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",2) IncrementGlobal("C0SALv2","LOCALS",2)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,3) CheckStatGT(Myself,17,CHR) Global("C0SAExtraLevel2Spell","LOCALS",1)~ EXTRA6
-SAY ~\[18+ CHARISMA\] Your high charisma has allowed you to bargain with the Shadow Weave for an extra level 2 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel2Spell","LOCALS",1) IncrementGlobal("C0SALv2","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 3 Spell
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,5) CheckStat(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA7
-SAY ~\[18 CHARISMA\] Your great charisma has allowed you to bargain with the Shadow Weave for an extra level 3 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,5) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",0)~ EXTRA8
-SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",2) IncrementGlobal("C0SALv3","LOCALS",2)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,5) CheckStatGT(Myself,18,CHR) Global("C0SAExtraLevel3Spell","LOCALS",1)~ EXTRA9
-SAY ~\[19+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 3 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel3Spell","LOCALS",1) IncrementGlobal("C0SALv3","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 4 Spell
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,7) CheckStat(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA10
-SAY ~\[19 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 4 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,7) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",0)~ EXTRA11
-SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",2) IncrementGlobal("C0SALv4","LOCALS",2)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,7) CheckStatGT(Myself,19,CHR) Global("C0SAExtraLevel4Spell","LOCALS",1)~ EXTRA12
-SAY ~\[20+ CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for two extra level 4 spells.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel4Spell","LOCALS",1) IncrementGlobal("C0SALv4","LOCALS",2)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 5 Spell
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,9) CheckStatGT(Myself,20,CHR) Global("C0SAExtraLevel5Spell","LOCALS",0)~ EXTRA13
-SAY ~\[21 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 5 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel5Spell","LOCALS",1) IncrementGlobal("C0SALv5","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 6 Spell
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,11) CheckStatGT(Myself,21,CHR) Global("C0SAExtraLevel6Spell","LOCALS",0)~ EXTRA14
-SAY ~\[22 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 6 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel6Spell","LOCALS",1) IncrementGlobal("C0SALv6","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 7 Spell
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,13) CheckStatGT(Myself,22,CHR) Global("C0SAExtraLevel7Spell","LOCALS",0)~ EXTRA15
-SAY ~\[23 CHARISMA\] Your exceptional charisma has allowed you to bargain with the Shadow Weave for an extra level 7 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel7Spell","LOCALS",1) IncrementGlobal("C0SALv7","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 8 Spell
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,15) CheckStatGT(Myself,23,CHR) Global("C0SAExtraLevel8Spell","LOCALS",0)~ EXTRA16
-SAY ~\[24 CHARISMA\] Your deific charisma has allowed you to bargain with the Shadow Weave for an extra level 8 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel8Spell","LOCALS",1) IncrementGlobal("C0SALv8","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-
-// Extra Level 9 Spell
-
-IF ~Class(Myself,SORCERER) 
-ClassLevelGT(Myself,WIZARD,17) CheckStatGT(Myself,24,CHR) Global("C0SAExtraLevel9Spell","LOCALS",0)~ EXTRA17
-SAY ~\[25 CHARISMA\] Your deific charisma has allowed you to bargain with the Shadow Weave for an extra level 9 spell.~ [C0BLANK]
-IF ~~ DO ~IncrementGlobal("C0SAExtraLevel9Spell","LOCALS",1) IncrementGlobal("C0SALv9","LOCALS",1)
-StartDialogOverride("c0satalk",Myself)~ EXIT
-END
-*/
 IF ~OR(9)
 !Global("C0SALv1","LOCALS",0)
 !Global("C0SALv2","LOCALS",0)
@@ -439,7 +155,16 @@ OR(9)
 !HaveKnownSpellRES("c0sa907")
 !HaveKnownSpellRES("c0sa908")
 !HaveKnownSpellRES("c0sa909")~ + ~9th level~ + level9
-IF ~~ DO ~ClearAllActions()~ EXIT
+IF ~~ DO ~SetGlobal("C0SALv1","LOCALS",0)
+SetGlobal("C0SALv2","LOCALS",0)
+SetGlobal("C0SALv3","LOCALS",0)
+SetGlobal("C0SALv4","LOCALS",0)
+SetGlobal("C0SALv5","LOCALS",0)
+SetGlobal("C0SALv6","LOCALS",0)
+SetGlobal("C0SALv7","LOCALS",0)
+SetGlobal("C0SALv8","LOCALS",0)
+SetGlobal("C0SALv9","LOCALS",0)
+ClearAllActions()~ EXIT
 END
 
 IF ~~ level1
@@ -451,11 +176,11 @@ SAY ~Choose one 1st level spell:~
 + ~!HaveKnownSpellRES("c0sa105")~ + ~Bittercold Touch~ + 1.5
 + ~!HaveKnownSpellRES("c0sa106")~ + ~Essence Drain~ + 1.6
 + ~!HaveKnownSpellRES("c0sa107")~ + ~Shadow Veil~ + 1.7
-+ ~!HaveKnownSpellRES("c0sa108")~ + ~Curse~ + 1.8
++ ~!HaveKnownSpellRES("c0sa108")~ + ~Nocturna's Hush~ + 1.8
 + ~!HaveKnownSpellRES("c0sa109")~ + ~Shadow Rope~ + 1.9
 + ~!HaveKnownSpellRES("c0sa110")~ + ~Decoy~ + 1.10
 + ~!HaveKnownSpellRES("c0sa111")~ + ~Mesmerize~ + 1.11
-+ ~!HaveKnownSpellRES("c0sa112")~ + ~Cursed Flames~ + 1.12
++ ~!HaveKnownSpellRES("c0sa112")~ + ~Ebonfruit~ + 1.12
 END
 
 IF ~~ level2
@@ -464,12 +189,12 @@ SAY ~Choose one 2nd level spell:~
 + ~!HaveKnownSpellRES("c0sa202")~ + ~Night Terrors~ + 2.2
 + ~!HaveKnownSpellRES("c0sa203")~ + ~Dark Fortune~ + 2.3
 + ~!HaveKnownSpellRES("c0sa204")~ + ~Power Word: Sleep~ + 2.4
-+ ~!HaveKnownSpellRES("c0sa205")~ + ~Dread Silence~ + 2.5
++ ~!HaveKnownSpellRES("c0sa205")~ + ~Cursed Flames~ + 2.5
 + ~!HaveKnownSpellRES("c0sa206")~ + ~Ghostly Visage~ + 2.6
 + ~!HaveKnownSpellRES("c0sa207")~ + ~Lesser Drain Vitality~ + 2.7
 + ~!HaveKnownSpellRES("c0sa208")~ + ~Black Mist~ + 2.8
 + ~!HaveKnownSpellRES("c0sa209")~ + ~Negative Energy Ray~ + 2.9
-+ ~!HaveKnownSpellRES("c0sa210")~ + ~Sigil of Vulnerability~ + 2.10
++ ~!HaveKnownSpellRES("c0sa210")~ + ~Sigil of Mortality~ + 2.10
 + ~!HaveKnownSpellRES("c0sa211")~ + ~Shadow Walk~ + 2.11
 + ~!HaveKnownSpellRES("c0sa212")~ + ~Hallucinate~ + 2.12
 + ~!HaveKnownSpellRES("c0sa213")~ + ~Shadowfade~ + 2.13
@@ -477,7 +202,7 @@ END
 
 IF ~~ level3
 SAY ~Choose one 3rd level spell:~
-+ ~!HaveKnownSpellRES("c0sa301")~ + ~Blackfire Arrow~ + 3.1
++ ~!HaveKnownSpellRES("c0sa301")~ + ~Phantom Arrow~ + 3.1
 + ~!HaveKnownSpellRES("c0sa302")~ + ~Shadowblast~ + 3.2
 + ~!HaveKnownSpellRES("c0sa303")~ + ~Inertia~ + 3.3
 + ~!HaveKnownSpellRES("c0sa304")~ + ~Lifedrinker Touch~ + 3.4
@@ -487,7 +212,7 @@ SAY ~Choose one 3rd level spell:~
 + ~!HaveKnownSpellRES("c0sa308")~ + ~Impose~ + 3.8
 + ~!HaveKnownSpellRES("c0sa309")~ + ~Shadow Spear~ + 3.9
 + ~!HaveKnownSpellRES("c0sa310")~ + ~Cursed Earth~ + 3.10
-+ ~!HaveKnownSpellRES("c0sa311")~ + ~Expunge Magic~ + 3.11
++ ~!HaveKnownSpellRES("c0sa311")~ + ~Sunder Magic~ + 3.11
 + ~!HaveKnownSpellRES("c0sa312")~ + ~Void Edge~ + 3.12
 END
 
@@ -599,7 +324,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The shadow adept launches a missile of energy that unerringly strikes the target for 1d4 magic damage (+1 cold) and reduces the target's THAC0 by 1 for 3 rounds. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+5 damage and -5 THAC0) at level 9.~
+The shadow adept launches a missile of energy that unerringly strikes the target for 1d2 magic damage (+1 magic cold damage, magic fire damage vs. undead). Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) incur an additional 3 points of magic damage and must make a Saving Throw vs. Spells or be confused for 3 rounds. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+10 damage) at level 9.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) SetGlobal("C0SA101","LOCALS",1) AddSpecialAbility("c0sa101")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -615,7 +340,7 @@ Casting Time: 9
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell causes a feeling of doom to overwhelm the target. For the duration of the spell, the target receives a -2 penalty to all <PRO_HISHER> rolls, including THAC0 and Saving Throws. Additionally, the target suffers a -1 penalty to all statistics. There is no Saving Throw for this spell, and it is not affected by Magic Resistance.~
+This spell causes a feeling of doom to overwhelm the target. For the duration of the spell, the target receives a -2 penalty to all <PRO_HISHER> rolls, including THAC0 and Saving Throws. Additionally, the target suffers a -10% penalty to all damage dealt for the duration. There is no Saving Throw for this spell, and it is not affected by Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) SetGlobal("C0SA102","LOCALS",1) AddSpecialAbility("c0sa102")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -681,9 +406,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-With this spell, the shadow adept drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 2 points of magical damage + 2 points per 2 levels of the caster to a maximum of 10 total at 9th level while the shadow adept gains an equal amount of Hit Points. If the shadow adept goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses any extra Hit Points after 1 turn.
-
-If the target is slain, the amount of health gained by the caster is doubled.~
+With this spell, the shadow adept drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 2 points of magical damage + 2 points per 2 levels of the caster to a maximum of 10 total at 9th level while the shadow adept gains an equal amount of Hit Points. If the shadow adept goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses any extra Hit Points after 1 turn. Additionally, if this spell is cast on a target who is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), an additional 12% of the target's maximum hit points is dealt as unmitigated damage.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) SetGlobal("C0SA106","LOCALS",1) AddSpecialAbility("c0sa106")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -707,17 +430,17 @@ Additionally, whenever the caster suffers damage while the shadow veil is active
 END
 
 IF ~~ 1.8
-SAY ~Curse
-(Conjuration/Summoning – Shadow Weave)
+SAY ~Nocturna's Hush
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 1
-Range: Sight
-Duration: 1 turn
-Casting Time: 1 round
-Area of Effect: 30 ft. radius
-Saving Throw: None
+Range: Visual range of the caster
+Duration: 5 rounds
+Casting Time: 6
+Area of Effect: 5-ft. radius centered on target
+Saving Throw: Neg.
 
-When the Curse spell is uttered, the caster lowers the morale of enemy creatures and penalizes their saving throws and attack rolls by -1. At the instant the spell is completed, it affects all creatures in a 30 ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not. This spell is not affected by Magic Resistance.~
+When Nocturna's Hush is cast, the target and all creatures within 5 feet are silenced on a failed Saving Throw vs. Spells at a -2 penalty, preventing them from speaking or casting spells for 5 rounds. If any targets afflicted with Nocturna's Hush are already silenced, they are instead slowed for the same duration with no save.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) SetGlobal("C0SA108","LOCALS",1) AddSpecialAbility("c0sa108")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -733,7 +456,9 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell creates a shadowy thread which wraps itself around the caster's target and pulls them towards the caster. It deals no damage, but the target is immobilized for the duration and is unable to attack or use spells for one round.~
+This spell creates a shadowy thread which wraps itself around the caster's target and pulls them towards the caster. It deals no damage, but the target is immobilized for the duration and is unable to attack or use spells for one round.
+
+Enemies who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) suffer 6 magic damage and transfer it to the caster.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) SetGlobal("C0SA109","LOCALS",1) AddSpecialAbility("c0sa109")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -771,17 +496,22 @@ This spell inflicts an enchantment upon a target creature of the shadow adept's 
 END
 
 IF ~~ 1.12
-SAY ~Cursed Flames
+SAY ~Ebonfruit
 (Alteration – Shadow Weave)
 
 Level: 1
-Range: 5 ft.
-Duration: Special
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: 1/2
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
 
-When the shadow adept casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The shadow adept's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the shadow adept. All targets within range take 1d4+10% of their maximum hit points in fire damage and have their Luck reduced by two points for 2 rounds + 1 round per level to a maximum of 10 rounds at 9th level, additionally, they take 2 points of fire damage per round for the duration. A successful Saving Throw vs. Spells negates the maximum hit points damage and the secondary effects.~
+The shadow adept produces 5 pitch-black berries that <PRO_HESHE> can carry with <PRO_HIMHER>. Each berry has random chance of causing one of the following effects:
+
+– Restore 1d6 hit points
+– +1 bonus to Strength for 1 turn
+– Invisibility for 5 rounds
+– +2 bonus to Luck (if imbiber is a Shadow Adept) or 1 poison damage per round for 1 turn (if imbiber is not)~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv1","LOCALS",-1) SetGlobal("C0SA112","LOCALS",1) AddSpecialAbility("c0sa112")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -815,7 +545,7 @@ Saving Throw: Neg.
 
 All enemies within the area of effect when this spell is cast must Save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.
 
-At 12th level, this spell gains the effects of the 6th level wizard spell Death Spell: creatures below 8 Hit Dice and all summoned creatures will die instantly from overwhelming fear. (no saving throw)~
+Targets that are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 12 magic damage, which are transferred to the caster.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","LOCALS",-1) SetGlobal("C0SA202","LOCALS",1) AddSpecialAbility("C0SA202")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -855,17 +585,17 @@ At 10th level, creatures above 20 Hit Points are put to sleep for 2 rounds.~
 END
 
 IF ~~ 2.5
-SAY ~Dread Silence
+SAY ~Cursed Flames
 (Alteration – Shadow Weave)
 
-Level: 2
-Range: Visual range of the caster
-Duration: 2 rounds/level
-Casting Time: 5
-Area of Effect: 15-ft. radius sphere
-Saving Throw: Neg. 
+Level: 1
+Range: 5 ft.
+Duration: Special
+Casting Time: 
+Area of Effect: 1 creature
+Saving Throw: Special
 
-Upon casting this spell, complete silence prevails in the affected area. All sound is stopped: Conversation is impossible and spells cannot be cast. Each creature in the area must make a Saving Throw vs. Spell with a -5 penalty; if the save is failed then they are silenced for the duration of the spell. Note that this spell does not continue to affect the area after being cast; only those in the area at the time of the casting are affected by the silence. Only the caster is immune to the spell's effects - both allies and enemies can be affected.~
+When the shadow adept casts this spell, <PRO_HESHE> ignites a targeted creature through force of will with corrupting flames. The flames deal 1d8 fire damage and 1 poison damage each round, and for the duration of the spell, the target is treated as though diseased and is slowed, incurring a -4 penalty to THAC0 and Armor Class. The initial flames last for 3 rounds, after which the target must make a Saving Throw vs. Death or be ignited for a further 3 rounds. Therefore, the flames have the potential to continue indefinitely so long as the target does not make a successful Saving Throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","LOCALS",-1) SetGlobal("C0SA205","LOCALS",1) AddSpecialAbility("C0SA205")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -897,7 +627,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","LOCALS",-1) SetGlobal("C0SA207","LOCALS",1) AddSpecialAbility("C0SA207")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -935,17 +665,17 @@ Upon casting this spell, a black ray appears at the caster's fingertips and burs
 END
 
 IF ~~ 2.10
-SAY ~Sigil of Vulnerability
+SAY ~Sigil of Mortality
 (Enchantment/Charm – Shadow Weave)
 
 Level: 2
 Range: 30 ft.
-Duration: 1 round/level
+Duration: 1 turn
 Casting Time: 1 round
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-This spell curses the target creature with mortality. For as long as the curse is in effect, the target loses 1% resistance to physical damage per level of the caster and is unable to be healed by any magical means. A Saving Throw vs. Spells negates the effect.~
+This spell curses the target creature with mortality. For as long as the curse is in effect, the target loses their base physical resistance, if any, and incurs an additional -20% penalty to physical resistance for the duration. Additionally, the target is unable to be healed through any means, whether magical or otherwise. There is no Saving Throw for the effect, and it ignores Magic Resistance.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","LOCALS",-1) SetGlobal("C0SA210","LOCALS",1) AddSpecialAbility("C0SA210")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -977,7 +707,9 @@ Casting Time: 5
 Area of Effect: 1 person or mammal 
 Saving Throw: Neg.
 
-The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.~
+The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.
+
+Targets that are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 16 magic damage, which are transferred to the caster.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv2","LOCALS",-1) SetGlobal("C0SA212","LOCALS",1) AddSpecialAbility("C0SA212")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1001,17 +733,17 @@ Additionally, if the target is either a shadow adept or a native of the Shadow P
 END
 
 IF ~~ 3.1
-SAY ~Blackfire Arrow
-(Conjuration/Summoning – Shadow Weave)
+SAY ~Phantom Arrow
+(Illusion/Phantasm, Enchantment/Charm – Shadow Weave)
 
 Level: 3
 Range: 60 ft.
-Duration: Instant
+Duration: 3 rounds
 Casting Time: 3
 Area of Effect: Special
-Saving Throw: 1/2
+Saving Throw: Neg.
 
-This spell enables the caster to hurl coldfire bolts at multiple opponents within range. Each bolt inflicts 1d6 points of cold damage plus 4d6 points of fire damage. Only half of the fire damage is inflicted if the creature struck saves vs. Spell. The caster receives one bolt every 5 levels beyond the 5th (2 bolts at 10th level, 3 at 15th level, etc.). Each arrow may be targeted individually towards any chosen target.~
+This spell launches an illusory arrow that affects the target's senses to such an extent that they perceive the damage dealt as real, losing 15% of their maximum hit points in unmitigated damage. However, as they are not physically injured, their lost hit points are restored after 3 rounds as the illusion wears off. However, if the afflicted target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), the damage dealt is permanent instead. Two arrows are launched from 12th level onwards, three at 19th level, and four at 26th level. The target may make a Saving Throw vs. Spells at -3 to disbelieve the illusion, though a separate save must be made for each individual arrow.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","LOCALS",-1) SetGlobal("C0SA301","LOCALS",1) AddSpecialAbility("C0SA301")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1027,9 +759,9 @@ Casting Time: 3
 Area of Effect: 30-ft. radius
 Saving Throw: 1/2 
 
-The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d3 points of cold damage and 1d3 points of magic damage for every level of the caster (to a maximum of 10d6) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw avoid the direct blast taking no magic damage or stat loss.
+The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d2 points of magic cold damage (undead creatures suffer magic fire damage instead) and 1d2 points of magic damage for every level of the caster (to a maximum of 10d2 of each) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw (-1 penalty per 5 levels) avoid the direct blast taking no magic damage or stat loss. Targets damaged by Shadowblast also suffer a -20% penalty to all damage dealt for 1 turn.
 
-From 10th level onwards, targets damaged by Shadowblast lose 20% resistance to cold and magic damage for 1 turn.~
+Against targets that are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), Shadowblast inflicts three times as much damage.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","LOCALS",-1) SetGlobal("C0SA302","LOCALS",1) AddSpecialAbility("C0SA302")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1175,13 +907,13 @@ Casting Time: 4
 Area of Effect: 30' radius
 Saving Throw: Neg.
 
-This spell creates a zone of blackened, poisonous earth within a 30' radius. All creatures standing within the area have their movement rate halved and suffer 2d4 poison damage each round if they fail a Saving Throw vs. Death.~
+This spell creates a zone of blackened, poisonous earth within a 30' radius. All creatures standing within the area must make a Saving Throw vs. Death at -4 each round or become poisoned, suffering 2 poison damage per round for 3 rounds, and have their movement rate halved.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","LOCALS",-1) SetGlobal("C0SA310","LOCALS",1) AddSpecialAbility("C0SA310")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 
 IF ~~ 3.11
-SAY ~Expunge Magic
+SAY ~Sunder Magic
 (Abjuration – Shadow Weave)
 
 Level: 3
@@ -1191,7 +923,7 @@ Casting Time: 5
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-A Expunge Magic spell removes magical effects upon anyone within the area. This includes effects given from spells, potions and certain magical items such as wands. It does not, however, affect enchanted magical items or spell protections such as Spell Turning and Spell Deflection. The chance of the dispel succeeding is determined by the effective level of the caster and the level of the magic being dispelled (Expunge Magic is cast as though at 1.5x the caster's actual level). The base chance of successfully dispelling is 50%. For every level that the caster of the Expunge Magic is above the original caster, <PRO_HISHER> chance of success increases by 5%. For every level that the caster of Expunge Magic is below the original caster, <PRO_HISHER> chance of success decreases by 10%. However, despite the difference in levels, there is always at least a 5% chance of success or failure. Thus, if a caster is 10 levels higher than the magic <PRO_HESHE> is trying to dispel, there is only a 5% chance of failure. Similarly if the caster is 4 levels lower than the magic <PRO_HESHE> is trying to dispel, there is only a 10% chance of success. Intuitively, this spell is almost useless if the target is 5 or more levels higher than the caster.
+A Sunder Magic spell removes magical effects upon anyone within the area. This includes effects given from spells, potions and certain magical items such as wands. It does not, however, affect enchanted magical items or spell protections such as Spell Turning and Spell Deflection. The chance of the dispel succeeding is determined by the effective level of the caster and the level of the magic being dispelled (Sunder Magic is cast as though at 1.5x the caster's actual level). The base chance of successfully dispelling is 50%. For every level that the caster of the Sunder Magic is above the original caster, <PRO_HISHER> chance of success increases by 5%. For every level that the caster of Sunder Magic is below the original caster, <PRO_HISHER> chance of success decreases by 10%. However, despite the difference in levels, there is always at least a 5% chance of success or failure. Thus, if a caster is 10 levels higher than the magic <PRO_HESHE> is trying to dispel, there is only a 5% chance of failure. Similarly if the caster is 4 levels lower than the magic <PRO_HESHE> is trying to dispel, there is only a 10% chance of success. Intuitively, this spell is almost useless if the target is 5 or more levels higher than the caster.
 
 Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv3","LOCALS",-1) SetGlobal("C0SA311","LOCALS",1) AddSpecialAbility("C0SA311")~ + NEXT
@@ -1225,7 +957,7 @@ Casting Time: 4
 Area of Effect: The caster 
 Saving Throw: None 
 
-The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 1d8+2 damage (half cold, half magic) and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
+The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 2d4+2 damage (half magic cold, half magic) and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) SetGlobal("C0SA401","LOCALS",1) AddSpecialAbility("C0SA401")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1276,10 +1008,10 @@ Saving Throw: None
 
 By means of this spell, the caster summons a number of shadows, undead monsters which serve the mage under any conditions. The type and number of creatures that appear depend upon the level of the shadow adept casting the spell.
 
-7th: 3 shadows
-9th: 3 shadow fiends
-12th+ : 3 wraiths
-16th+ : 2 wraiths, 1 devil shade
+7th: 3 Shadows
+9th: 3 Shadow Fiends
+12th+ : 3 Wraiths
+16th+ : 1 Shadow of the Void
 
 The undead creatures will remain under the shadow adept's control until they are slain or the spell duration expires.
 
@@ -1317,7 +1049,9 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Special
 
-The caster creates a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a Save vs. Spells to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.~
+The caster creates a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a Save vs. Spells to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.
+
+If the target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), they are only allowed to make a Saving Throw vs. Death.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) SetGlobal("C0SA406","LOCALS",1) AddSpecialAbility("C0SA406")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1333,7 +1067,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv4","LOCALS",-1) SetGlobal("C0SA407","LOCALS",1) AddSpecialAbility("C0SA407")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1516,7 +1250,7 @@ Casting Time: 4
 Area of Effect: 30-ft. radius
 Saving Throw: Special
 
-The effects of this spell are identical to the 5th-level spell Chaos in all respects, except this spell ignores magic resistance. The victims wander around as if in a daze, sometimes wandering away, sometimes attacking either friend or foe. If the victim is 4th level or lower, <PRO_HESHE> does not receive a Saving Throw vs. the effects. However, if the victim is 5th level or higher, <PRO_HESHE> receives a Save vs. Spell with a -4 penalty. The spell lasts for the duration or until a successful Dispel Magic is cast.~
+The effects of this spell are identical to the 5th-level spell Chaos in all respects, except this spell ignores magic resistance. The victims wander around as if in a daze, sometimes wandering away, sometimes attacking either friend or foe. If the victim is 4th level or lower, <PRO_HESHE> does not receive a Saving Throw vs. the effects. However, if the victim is 5th level or higher, <PRO_HESHE> receives a Save vs. Spell with a -4 penalty. The spell lasts for the duration or until a successful Dispel Magic is cast. Additionally, targets who are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 25 magic damage and are permanently drained of 2 levels.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","LOCALS",-1) SetGlobal("C0SA505","LOCALS",1) AddSpecialAbility("C0SA505")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1648,7 +1382,7 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect.~
+This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv5","LOCALS",-1) SetGlobal("C0SA513","LOCALS",1) AddSpecialAbility("C0SA513")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1796,7 +1530,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they suffer an additional 20% of their maximum hit points as piercing damage and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
+This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they lose an additional 20% of their maximum hit points and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) , they take an additional 35 magic damage, which is transferred to the caster, and are drained of four levels.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","LOCALS",-1) SetGlobal("C0SA609","LOCALS",1) AddSpecialAbility("C0SA609")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1812,7 +1546,7 @@ Casting Time: 6
 Area of Effect: 20 ft. radius
 Saving Throw: None
 
-Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius take 6d6 magical damage and suffer a -3 penalty to Armor Class, THAC0 and damage for 1 turn. There is no saving throw against this spell's effects.~
+Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius take 6d6 magical damage and suffer a -3 penalty to Armor Class, THAC0 and damage for 1 turn. Creatures with less than 8 Hit Dice and any summoned creatures are instantly killed. There is no saving throw against this spell's effects.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","LOCALS",-1) SetGlobal("C0SA610","LOCALS",1) AddSpecialAbility("C0SA610")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1825,10 +1559,10 @@ Level: 6
 Range: Touch
 Duration: Instant
 Casting Time: 2
-Area of Effect: 1 creature
+Area of Effect: 15-ft. radius centerd on caster
 Saving Throw: None
 
-This spell may only affect sleeping targets. Upon casting the spell, the shadow adept consumes the target's thoughts, dealing 10d8 magical damage and restoring up to five of the caster's previously cast spells. The target is always woken up after the effects of this spell.
+This spell may only affect sleeping targets. Upon casting the spell, the shadow adept consumes the thoughts of all creatures within 15 feet of <PRO_HIMHER>, dealing 10d8 magical damage and restoring up to three of the caster's previously cast spells per affected target. The target is always woken up after the effects of this spell.
 
 Devour Dream cannot recall 6th-level or greater spells.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv6","LOCALS",-1) SetGlobal("C0SA611","LOCALS",1) AddSpecialAbility("C0SA611")~ + NEXT
@@ -1940,7 +1674,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) SetGlobal("C0SA706","LOCALS",1) AddSpecialAbility("C0SA706")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -1969,10 +1703,10 @@ Level: 7
 Range: Visual range of the caster
 Duration: 5 rounds
 Casting Time: 1 
-Area of Effect: 1 creature
+Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-Nightmare is both a deadly weapon and a horrific torture device. When the shadow adept casts this spell, <PRO_HESHE> causes one creature to fall into a deep sleep and become tormented with terrible nightmares. For each round that the target remains asleep, they must make a Save vs. Spell at -4 to wake up from the nightmare. If the save is failed, they must make a Save vs. Death at -2 or lose 10% of their hit points. Once 5 rounds have passed, the victim awakens from their nightmare without needing a save.~
+Nightmare is both a deadly weapon and a horrific torture device. When the shadow adept casts this spell, <PRO_HESHE> causes all creatures within a 15-ft. radius to fall into a deep sleep and become tormented with terrible nightmares. For each round that the target remains asleep, they must make a Save vs. Spell at -4 to wake up from the nightmare. If the save is failed, they must make a Save vs. Death at -2 or lose 10% of their hit points. Once 5 rounds have passed, the victim awakens from their nightmare without needing a save.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) SetGlobal("C0SA708","LOCALS",1) AddSpecialAbility("C0SA708")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2006,7 +1740,7 @@ Casting Time: 6
 Area of Effect: 10 ft. radius
 Saving Throw: 1/2
 
-The shadow adept launches a mass of volatile shadowstuff towards a target location, dealing 8d6 magic damage in a 20 ft. radius (Save vs. Death at -2 for half). All enemies that fail the save will, after 1 round, spontaneously explode with another Malefic Bomb dealing 4d6 damage in a 20 ft. radius (Save vs. Death for half), afflicting all enemies that fail the save with another Malefic Bomb dealing 2d6 damage in a 20 ft. radius.~
+The shadow adept launches a mass of volatile shadowstuff towards a target location, dealing 8d6 magic cold damage in a 20 ft. radius (Save vs. Death at -2 for half). All afflicted enemies will, after 1 round, spontaneously explode with another Malefic Bomb dealing 4d6 damage in a 20 ft. radius (Save vs. Death for half), afflicting all enemies with another Malefic Bomb dealing 2d6 damage in a 20 ft. radius.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) SetGlobal("C0SA710","LOCALS",1) AddSpecialAbility("C0SA710")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2022,7 +1756,7 @@ Casting Time: 1 round
 Area of Effect: Special
 Saving Throw: None
 
-This spell conjures a one-way portal linked to the Plane of Shadow at the caster's targeted location for 8 rounds. For each round that the portal is active, a creature of the Plane of Shadow has a chance of emerging. These creatures are allied with the caster. There is a 40% chance of spawning a Shadow Fiend, a 40% chance of spawning a Wraith, a 10% chance of spawning a Devil Shade and a 5% chance of spawning a Nightwalker each turn. The Shadow Gate may be targeted and destroyed by enemies, though it is immune to elemental damage as well as weapons of +1 enchantment and below.
+This spell conjures a one-way portal linked to the Plane of Shadow at the caster's targeted location for 8 rounds. For each round that the portal is active, a creature of the Plane of Shadow has a chance of emerging. These creatures are allied with the caster. There is a 50% chance of spawning a Shadow, a 20% chance of spawning a Shadow Fiend, a 20% chance of spawning a Wraith and a 10% chance of spawning a Shadow of the Void each turn. The Shadow Gate may be targeted and destroyed by enemies, though it is immune to elemental damage as well as weapons of +1 enchantment and below.
 
 Creatures summoned by this spell remain for 1 turn.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) SetGlobal("C0SA711","LOCALS",1) AddSpecialAbility("C0SA711")~ + NEXT
@@ -2056,7 +1790,7 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect.~
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv7","LOCALS",-1) SetGlobal("C0SA713","LOCALS",1) AddSpecialAbility("C0SA713")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2085,12 +1819,12 @@ SAY ~Annulment
 
 Level: 8
 Range: Touch
-Duration: 1 round/level
+Duration: 5 rounds
 Casting Time: 8
-Area of Effect: 1 creature
+Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When the spell is cast, it confers 75% immunity against all energy attacks - such as fire, cold, acid, magic, and electricity, whether from magical or non-magical sources - such as spells, weapons, wands, breath weapons, etc. The target also becomes immune to all spells of 6th level and below, both beneficial and harmful, cast by others. This excludes any physical attacks and spell-created weapons, such as Enchanted Weapon and Spiritual Hammer. In other words, any physical damage, such as piercing, crushing, or slashing will get through. This effect lasts for the duration of the spell or until dispelled.~
+When this spell is cast, a malignant wave of energy assaults tbe magical defenses of all creatures within a 15-ft. radius, completely nullfying the Magic Resistance of all creatures for 5 rounds and removing one spell protection of any level, then dispelling any effects on all affected creatures. Additionally, all creatures in the initial area of effect are unable to cast any spells for one round.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) SetGlobal("C0SA802","LOCALS",1) AddSpecialAbility("C0SA802")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2160,14 +1894,14 @@ SAY ~Blackfire Fury
 
 Level: 8
 Range: 0
-Duration: 5 turns
+Duration: 1 turn
 Casting Time: 8
 Area of Effect: The caster
 Saving Throw: 1/2
 
-The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes shadow fire after a short delay dealing 10d10 fire damage (Save vs. Spells at at -4 for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
+The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 magical fire damage (Save vs. Spells at -4 for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
 
-If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a devil shade under the caster's allegiance for 5 turns before becoming assimilated into the Shadow Plane.~
+If a creature is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel, which immediately charges towards the nearest enemy and explodes on a successful attack, dealing 5d6 unmitigated fire damage to all enemies within a 5-ft. radius before becoming assimilated into the Shadow Plane.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) SetGlobal("C0SA806","LOCALS",1) AddSpecialAbility("C0SA806")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2263,7 +1997,9 @@ Casting Time: 8
 Area of Effect: 30-ft. radius cloud 
 Saving Throw: 1/2
 
-This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 cold damage per round and become slowed for two rounds. Targets who remain within the blizzard suffer a cumulative -20% penalty to cold resistance for one turn. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round. This spell is not affected by Magic Resistance.~
+This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 6d4 magical cold damage per round and become slowed for two rounds. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round.
+
+This spell is not affected by Magic Resistance, but creatures immune to cold are unaffected.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv8","LOCALS",-1) SetGlobal("C0SA812","LOCALS",1) AddSpecialAbility("C0SA812")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2274,12 +2010,12 @@ SAY ~Darkbolt
 
 Level: 9
 Range: Visual range of the caster
-Duration: 5 rounds
+Duration: 1 turn
 Casting Time: 0
 Area of Effect: 1 creature
 Saving Throw: Special 
 
-This spell fires a bolt of necrotic energy which rends the soul of its target. Targets who fail a Save vs. Death at -2 have their maximum hit points cut in half for five rounds. Even if the target makes its save, they take 5d6+10 magic damage and their magic resistance, if any, is nullified for five rounds. If the bolt kills its target, the caster temporarily gains a 50% bonus to their maximum hit points for 1 turn and regains two spells of 8th level or below. This spell is not affected by Magic Resistance.~
+This spell strikes down the target with a bolt of pure dark energy which shreds all magical defenses, dealing 15d10+10 (Save vs. Spells at -4 for half) magic damage and removing the effects of magical protections including Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. The target's Magic Resistance, which does not affect this spell, is also nullified for one turn.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA901","LOCALS",1) AddSpecialAbility("C0SA901")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2311,7 +2047,9 @@ Casting Time: 1
 Area of Effect: 1 creature 
 Saving Throw: None
 
-When Nightsinger's Tithe is uttered, one creature within the spell range is slain. The target must have 60 or fewer current Hit Points, otherwise the spell has no effect. There is no Saving Throw. Creatures slain by this spell have their souls sent to the Plane of Shadow as a sacrifice to Shar. There is an 50% chance that killing a target with this spell will permanently bestow 1 bonus hit point to the caster. Once 50 enemies have been slain with this spell, the shadow adept permanently gains +2 to Constitution, +1 to all saves and -1 casting time, and further castings of this spell will no longer grant hit points.~
+When Nightsinger's Tithe is uttered, one creature within the spell range is slain. The target must have 60 or fewer current Hit Points, otherwise the spell has no effect. There is no Saving Throw. Creatures slain by this spell have their souls sent to the Plane of Shadow as a sacrifice to Shar. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), they take 120 magic damage.
+
+There is an 50% chance that killing a target with this spell will permanently bestow 1 bonus hit point to the caster. Once 50 enemies have been slain with this spell, the shadow adept permanently gains +2 to Constitution, +1 to all saves and -1 casting time, and further castings of this spell will no longer grant hit points.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA903","LOCALS",1) AddSpecialAbility("C0SA903")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2327,7 +2065,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A Saving Throw vs. Death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target.~
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A Saving Throw vs. Death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) are not allowed a Saving Throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA904","LOCALS",1) AddSpecialAbility("C0SA904")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2359,7 +2097,9 @@ Casting Time: 8
 Area of Effect: Special
 Saving Throw: Special
 
-You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a Save vs. Spells at -4 to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.~
+You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a Save vs. Spells at -4 to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.
+
+If the target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), they are only allowed to make a Saving Throw vs. Death.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA906","LOCALS",1) AddSpecialAbility("C0SA906")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2423,7 +2163,7 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect.~
+This spell inflicts the effects of the Greater Drain Vitality spell upon every enemy creature within the area of effect, draining eight points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 ++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA910","LOCALS",1) AddSpecialAbility("C0SA910")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
@@ -2442,7 +2182,7 @@ Saving Throw: None
 Only the most desperate of Shadow Adepts dare to call upon this dangerous spell. The caster calls upon a gigantic, meteoric mass of shadowstuff from the Plane of Shadow and drops it upon the target location. Any creature with less than 12 Hit Die are killed instantly with no Saving Throw, while other creatures must make a Saving Throw vs. Breath or die. The meteor deals 5d10 fire damage, 5d10 cold damage, 5d10 electrical damage and 5d10 magic damage to any survivors, knocks them unconscious for 1 round, and reduces their Saving Throws and Luck by -10 for 8 rounds. The strain of channelling this spell, however, causes the caster to suffer 75% of their maximum hit points in damage.
 
 This spell is not affected by Magic Resistance.~
-++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA910","LOCALS",1) AddSpecialAbility("C0SA910")~ + NEXT
+++ ~Learn spell.~ DO ~IncrementGlobal("C0SALv9","LOCALS",-1) SetGlobal("C0SA911","LOCALS",1) AddSpecialAbility("C0SA911")~ + NEXT
 ++ ~Return to spell selection.~ + learn
 END
 

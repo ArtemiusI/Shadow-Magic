@@ -50,8 +50,85 @@ COPY_EXISTING ~c0sacon9.spl~ ~override~
 COPY_EXISTING ~c0sacon0.spl~ ~override~
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 penalty to Constitution^-~) END
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-COMPILE ~%MOD_FOLDER%/scripts/c0sacon.baf~
 
+COPY_EXISTING ~c0saco01.spl~ ~override~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 1^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco02.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 2^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco03.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 3^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco04.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 4^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco05.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 5^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco06.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 6^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco07.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 7^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco08.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 8^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco09.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 9^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco10.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 10^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco11.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 11^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco12.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 12^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco13.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 13^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco14.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 14^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco15.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 15^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco16.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 16^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco17.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 17^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco18.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 18^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco19.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 19^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco20.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 20^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco21.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 21^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco22.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 22^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco23.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 23^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco24.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 24^-~) END
+COPY_EXISTING ~c0saco01.spl~ ~override/c0saco25.spl~
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 25^-~) END
+
+COPY_EXISTING ~c0sacons.spl~ ~override~
+  LPF ALTER_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 parameter1 = 1 parameter2 = %C0SACON% END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 1 parameter1 = 2 match_parameter2 = %C0SACON% STR_VAR resource = c0saco02 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 2 parameter1 = 3 match_parameter2 = %C0SACON% STR_VAR resource = c0saco03 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 3 parameter1 = 4 match_parameter2 = %C0SACON% STR_VAR resource = c0saco04 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 4 parameter1 = 5 match_parameter2 = %C0SACON% STR_VAR resource = c0saco05 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 5 parameter1 = 6 match_parameter2 = %C0SACON% STR_VAR resource = c0saco06 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 6 parameter1 = 7 match_parameter2 = %C0SACON% STR_VAR resource = c0saco07 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 7 parameter1 = 8 match_parameter2 = %C0SACON% STR_VAR resource = c0saco08 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 8 parameter1 = 9 match_parameter2 = %C0SACON% STR_VAR resource = c0saco09 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 9 parameter1 = 10 match_parameter2 = %C0SACON% STR_VAR resource = c0saco10 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 10 parameter1 = 11 match_parameter2 = %C0SACON% STR_VAR resource = c0saco11 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 11 parameter1 = 12 match_parameter2 = %C0SACON% STR_VAR resource = c0saco12 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 12 parameter1 = 13 match_parameter2 = %C0SACON% STR_VAR resource = c0saco13 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 13 parameter1 = 14 match_parameter2 = %C0SACON% STR_VAR resource = c0saco14 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 14 parameter1 = 15 match_parameter2 = %C0SACON% STR_VAR resource = c0saco15 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 15 parameter1 = 16 match_parameter2 = %C0SACON% STR_VAR resource = c0saco16 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 16 parameter1 = 17 match_parameter2 = %C0SACON% STR_VAR resource = c0saco17 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 17 parameter1 = 18 match_parameter2 = %C0SACON% STR_VAR resource = c0saco18 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 18 parameter1 = 19 match_parameter2 = %C0SACON% STR_VAR resource = c0saco19 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 19 parameter1 = 20 match_parameter2 = %C0SACON% STR_VAR resource = c0saco20 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 20 parameter1 = 21 match_parameter2 = %C0SACON% STR_VAR resource = c0saco21 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 21 parameter1 = 22 match_parameter2 = %C0SACON% STR_VAR resource = c0saco22 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 22 parameter1 = 23 match_parameter2 = %C0SACON% STR_VAR resource = c0saco23 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 23 parameter1 = 24 match_parameter2 = %C0SACON% STR_VAR resource = c0saco24 END
+  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 24 parameter1 = 25 match_parameter2 = %C0SACON% STR_VAR resource = c0saco25 END
+  
 COPY_EXISTING ~C0SA207.spl~ ~override~
   LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
 SAY NAME1 @12
@@ -131,8 +208,14 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Current Hit Points^-~) END
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Current Hit Points^-~) END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon#.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 326
+			parameter2 = C0CURHP
+	END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon_.spl~ ~override~
 
-COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
 COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
 COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
@@ -218,8 +301,15 @@ COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
 COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Maximum Hit Points^-~) END
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon#.spl~ ~override~
+	LPF ALTER_EFFECT
+		INT_VAR
+			match_opcode = 326
+			parameter2 = C0CURHP
+	END
+	
+COPY ~%MOD_FOLDER%/alt-spell/c0sacon_.spl~ ~override~
 
-COMPILE ~%MOD_FOLDER%/alt-spell/c0sacon.baf~
 COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
 COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
 COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~

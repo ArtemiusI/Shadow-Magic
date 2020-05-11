@@ -445,7 +445,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @14 = ~Mass Lesser Drain Vitality~
 @15 = ~Mass Lesser Drain Vitality
 (Conjuration/Summoning)
@@ -457,7 +457,7 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @16 = ~Drain Vitality~
 @17 = ~Drain Vitality
 (Necromancy – Shadow Weave)
@@ -469,7 +469,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @18 = ~Mass Drain Vitality~
 @19 = ~Mass Drain Vitality
 (Conjuration/Summoning)
@@ -481,7 +481,7 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @20 = ~Greater Drain Vitality~
 @21 = ~Greater Drain Vitality
 (Necromancy – Shadow Weave)
@@ -493,7 +493,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @22 = ~Mass Greater Drain Vitality~
 @23 = ~Mass Greater Drain Vitality
 (Conjuration/Summoning)
@@ -505,4 +505,4 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Greater Drain Vitality spell upon every enemy creature within the area of effect, draining eight points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn.~
+This spell inflicts the effects of the Greater Drain Vitality spell upon every enemy creature within the area of effect, draining eight points of Constitution from each target for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~

@@ -429,7 +429,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+This spell allows the shadow adept to drain two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @14 = ~Mass Lesser Drain Vitality~
 @15 = ~Mass Lesser Drain Vitality
 (Conjuration/Summoning)
@@ -441,7 +441,7 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @16 = ~Drain Vitality~
 @17 = ~Drain Vitality
 (Necromancy – Shadow Weave)
@@ -453,7 +453,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+This spell allows the shadow adept to drain four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @18 = ~Mass Drain Vitality~
 @19 = ~Mass Drain Vitality
 (Conjuration/Summoning)
@@ -465,7 +465,7 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @20 = ~Greater Drain Vitality~
 @21 = ~Greater Drain Vitality
 (Necromancy – Shadow Weave)
@@ -477,7 +477,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+This spell allows the shadow adept to drain six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
 @22 = ~Mass Greater Drain Vitality~
 @23 = ~Mass Greater Drain Vitality
 (Conjuration/Summoning)
@@ -489,4 +489,4 @@ Casting Time: 5
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells.~
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining six hit points per level from the target as magic damage (Save vs. Death at -2 for half), healing <PRO_HIMHER>self for the same amount. Drain Vitality (and its variants) does not cost hit points as other spells. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~

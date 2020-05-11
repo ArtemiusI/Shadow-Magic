@@ -29,6 +29,36 @@ LAF ADD_IDS_ENTRY INT_VAR minValue = 200 maxValue = 255 preferredValue = 200 STR
 											25: +50% spell duration
 											
 */
+ACTION_IF FILE_EXISTS_IN_GAME ~#bonecir.spl~ THEN BEGIN
+COPY_EXISTING ~#bonecir.spl~ ~override~
+	WRITE_BYTE 0x3 0x20
+END
+
+// CURRENT HP CHECK
+APPEND ~splprot.2da~ ~C0CURHP%TAB%0%TAB%-1%TAB%0~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0CURHP~ BEGIN
+	    SET C0CURHP = %row%
+	  END
+	END
+	
+// CONSTITUTION
+APPEND ~splprot.2da~ ~C0SACON%TAB%41%TAB%-1%TAB%1~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SACON~ BEGIN
+	    SET C0SACON = %row%
+	  END
+	END
+	
+	
 // INTELLIGENCE
 APPEND ~splprot.2da~ ~C0SAINT%TAB%38%TAB%-1%TAB%1~
 COPY_EXISTING ~splprot.2da~ ~override~
@@ -76,17 +106,6 @@ COPY_EXISTING ~splprot.2da~ ~override~
 	    SET C0SASTONE = %row%
 	  END
 	END
-
-APPEND ~splprot.2da~ ~C0SA611%TAB%0x111%TAB%0x00000001%TAB%8~
-COPY_EXISTING ~splprot.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SA611~ BEGIN
-	    SET C0SA611 = %row%
-	  END
-	END
 	
 APPEND ~splprot.2da~ ~C0SADAY%TAB%0x106%TAB%1%TAB%9~
 COPY_EXISTING ~splprot.2da~ ~override~
@@ -99,6 +118,14 @@ COPY_EXISTING ~splprot.2da~ ~override~
 	  END
 	END
 
+APPEND ~STATE.IDS~ // HELD, SLEEP, SILENCE, POISON, DISEASE, SLOW, BLIND
+  ~0x000D5021 C0_PHYSICAL_INCAPACITATION~
+  UNLESS ~C0_PHYSICAL_INCAPACITATION~
+  
+APPEND ~STATE.IDS~ // STUN, PANIC, BERSERK, CHARM, FEEBLEMIND, CONFUSED
+  ~0x8010200E C0_MENTAL_INCAPACITATION~
+  UNLESS ~C0_MENTAL_INCAPACITATION~
+  
 // Resistances
 DEFINE_ACTION_FUNCTION	ADD_SPLPROT	INT_VAR	stat = 0	value = 0	relation = 0	RET	new_row		BEGIN
 	ACTION_IF	(stat > 278)	BEGIN	WARN	~SPLPROT.2DA - Stat out of Bounds.~	END
@@ -306,7 +333,6 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2b.PRO~ ~SM Magic Missile 
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj2a.PRO~ ~SM Magic Missile 4~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj02.PRO~ ~SM Magic Missile 5~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj03.PRO~ ~SM Sleep~
-ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj04.PRO~ ~SM Flame Arrow~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj05.PRO~ ~SM Purple Fireball~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj06.PRO~ ~SM Red Ray~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0proj07.PRO~ ~SM Cone of Cold~
@@ -348,6 +374,14 @@ ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0scomet.PRO~ ~SM Shadow Comet~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0meteor.PRO~ ~SM Dark Meteor~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa8021.PRO~ ~SM Anullment~
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa8061.PRO~ ~SM Blackfireball~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa1061.PRO~ ~SM Essence Drain~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa1081.PRO~ ~SM Nocturna's Hush~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa3011.PRO~ ~SM Phantom Arrow 1~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/projectiles/c0sa3012.PRO~ ~SM Phantom Arrow 2~
+COPY_EXISTING ~c0sa3012.PRO~ ~OVERRIDE/c0sa3013.PRO~
+COPY_EXISTING ~c0sa3012.PRO~ ~OVERRIDE/c0sa3014.PRO~
+ADD_PROJECTILE ~OVERRIDE/c0sa3013.PRO~ ~SM Phantom Arrow 3~
+ADD_PROJECTILE ~OVERRIDE/c0sa3014.PRO~ ~SM Phantom Arrow 4~
 
 COPY_EXISTING ~c0proj08.pro~ ~override~
 WRITE_SHORT 0x21A (IDS_OF_SYMBOL (~projectl~ ~c0pro08a~)) + 1
@@ -932,10 +966,6 @@ END
 	  match_opcode = 31 parameter1 = 25
 END
 
-COPY_EXISTING ~c0sacon.cre~ ~override~
-  WRITE_ASCII 0x248 ~c0sacon~ #8
-  WRITE_ASCII 0x280 ~c0sacon~  #32
-
 COPY_EXISTING ~C0SA1.spl~ ~override~
 SAY NAME1 ~Shield of Shadows~
 SAY NAME2 ~Shield of Shadows~
@@ -949,6 +979,7 @@ SAY UNIDENTIFIED_DESC ~Shadow Double
 The shadow adept creates a copy of himself out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.~
 
 COPY_EXISTING ~C0SA101.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_PHYSICAL_INCAPACITATION~) END
   LPF ALTER_SPELL_HEADER
 	INT_VAR
 		header = 1
@@ -975,7 +1006,6 @@ END
 		projectile = c0proj02
 END
 SAY NAME1 ~Shadow Missile~
-SAY NAME2 ~Shadow Missile~
 SAY UNIDENTIFIED_DESC ~Shadow Missile
 (Invocation/Evocation – Shadow Weave)
 
@@ -986,7 +1016,10 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The shadow adept launches a missile of energy that unerringly strikes the target for 1d4 magic damage (+2 magic cold damage, magic fire damage vs. undead). An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+10 damage) at level 9.~
+The shadow adept launches a missile of energy that unerringly strikes the target for 1d2 magic damage (+1 magic cold damage, magic fire damage vs. undead). Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) incur an additional 3 points of magic damage and must make a Saving Throw vs. Spells or be confused for 3 rounds. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+10 damage) at level 9.~
+
+COPY_EXISTING ~C0SA101C.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Confused~) END
 
 COPY_EXISTING ~C0SA102.spl~ ~override~
   LPF ALTER_SPELL_HEADER
@@ -1075,6 +1108,11 @@ LPF ALTER_EFFECT
   END
 
 COPY_EXISTING ~C0SA106.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_PHYSICAL_INCAPACITATION~) END
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0sa1061
+END
 SAY NAME1 ~Essence Drain~
 SAY NAME2 ~Essence Drain~
 SAY UNIDENTIFIED_DESC ~Essence Drain
@@ -1087,15 +1125,13 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-With this spell, the shadow adept drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 2 points of magical damage + 2 points per 2 levels of the caster to a maximum of 10 total at 9th level while the shadow adept gains an equal amount of Hit Points. If the shadow adept goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses any extra Hit Points after 1 turn.
+With this spell, the shadow adept drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 2 points of magical damage + 2 points per 2 levels of the caster to a maximum of 10 total at 9th level while the shadow adept gains an equal amount of Hit Points. If the shadow adept goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses any extra Hit Points after 1 turn. Additionally, if this spell is cast on a target who is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), an additional 12% of the target's maximum hit points is dealt as unmitigated damage.~
 
-If the target is slain, the amount of health gained by the caster is doubled.~
-
-COPY_EXISTING ~C0SA106b.spl~ ~override~
+COPY_EXISTING ~C0SA106A.spl~ ~override~
   LPF ADD_SPELL_EFFECT INT_VAR
       check_globals = 1
       check_headers = 1
-      opcode = 139 target = 1 timing = 1 parameter1 = RESOLVE_STR_REF (~Essence Drain Bonus Doubled~)
+      opcode = 139 target = 1 timing = 1 parameter1 = RESOLVE_STR_REF (~^0xFFC76777Additional 12% Maximum Hit Points Drained~)
   END
 
 COPY_EXISTING ~C0SA107.spl~ ~override~
@@ -1116,19 +1152,28 @@ By means of this spell, the shadow adept creates a magical field of force that s
 Additionally, whenever the caster suffers damage while the shadow veil is active, <PRO_HESHE> has a 5% (+5% per ten caster levels) chance to turn invisible for 2 rounds.~
 
 COPY_EXISTING ~C0SA108.spl~ ~override~
-SAY NAME1 ~Curse~
-SAY NAME2 ~Curse~
-SAY UNIDENTIFIED_DESC ~Curse
-(Conjuration/Summoning – Shadow Weave)
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		projectile = c0sa1081
+END
+SAY NAME1 ~Nocturna's Hush~
+SAY UNIDENTIFIED_DESC ~Nocturna's Hush
+(Illusion/Phantasm – Shadow Weave)
 
 Level: 1
-Range: Sight
-Duration: 1 turn
-Casting Time: 1 round
-Area of Effect: 30 ft. radius
-Saving Throw: None
+Range: Visual range of the caster
+Duration: 5 rounds
+Casting Time: 6
+Area of Effect: 5-ft. radius centered on target
+Saving Throw: Neg.
 
-When the Curse spell is uttered, the caster lowers the morale of enemy creatures and penalizes their saving throws and attack rolls by -1. At the instant the spell is completed, it affects all creatures in a 30 ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not. This spell is not affected by Magic Resistance.~
+When Nocturna's Hush is cast, the target and all creatures within 5 feet are silenced on a failed Saving Throw vs. Spells at a -2 penalty, preventing them from speaking or casting spells for 5 rounds. If any targets afflicted with Nocturna's Hush are already silenced, they are instead slowed for the same duration with no save.~
+
+COPY_EXISTING ~C0SA108a.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Silence~) END
+
+COPY_EXISTING ~C0SA108b.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Slowed~) END
 
 COPY_EXISTING ~C0SA109.spl~ ~override~
 SAY NAME1 ~Shadow Rope~
@@ -1136,7 +1181,6 @@ SAY NAME1 ~Shadow Rope~
 	INT_VAR
 		projectile = c0proj15
 END
-SAY NAME2 ~Shadow Rope~
 SAY UNIDENTIFIED_DESC ~Shadow Rope
 (Conjuration/Summoning – Shadow Weave)
 
@@ -1147,7 +1191,16 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell creates a shadowy thread which wraps itself around the caster's target and pulls them towards the caster. It deals no damage, but the target is immobilized for the duration and is unable to attack or use spells for one round.~
+This spell creates a shadowy thread which wraps itself around the caster's target and pulls them towards the caster. It deals no damage, but the target is immobilized for the duration and is unable to attack or use spells for one round.
+
+Enemies who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) suffer 6 magic damage and transfer it to the caster.~
+
+COPY_EXISTING ~C0SA109a.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 326
+	  parameter2 = IDS_OF_SYMBOL (~STATE~ ~C0_PHYSICAL_INCAPACITATION~)
+END
 
 COPY_EXISTING ~C0SA110.spl~ ~override~
 SAY NAME1 ~Decoy~
@@ -1187,50 +1240,39 @@ Saving Throw: None
 This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a Save vs. Spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely if they are attacked.~
 
 COPY_EXISTING ~C0SA112.spl~ ~override~
-		LPF	ADD_SPELL_EFFECT
-			INT_VAR
-				insert_point = 0
-				opcode = 324
-				target = 2
-				parameter2 = FIRE
-				duration = 1
-			STR_VAR
-				resource = EVAL ~%SOURCE_RES%~
-		END
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 139
-			parameter1 = RESOLVE_STR_REF (~Cursed~)
-			savingthrow = 1
-	END
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-			insert_point = 2
-			opcode = 139
-			target = 2
-			timing = 1
-			parameter1 = RESOLVE_STR_REF (~^0xFFC76777Takes 10% of maximum hit points in shadow damage^-~)
-			power = 1
-			savingthrow = 1
-			resist_dispel = 1
-	END
-  LPF ALTER_SPELL_HEADER
-	INT_VAR
-		projectile = c0cflame
-END
-SAY NAME1 ~Cursed Flames~
-SAY NAME2 ~Cursed Flames~
-SAY UNIDENTIFIED_DESC ~Cursed Flames
+SAY NAME1 ~Ebonfruit~
+SAY UNIDENTIFIED_DESC ~Ebonfruit
 (Alteration – Shadow Weave)
 
 Level: 1
-Range: 5 ft.
-Duration: Special
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: 1/2
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
 
-When the shadow adept casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The shadow adept's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the shadow adept. All targets within range take 1d4+10% of their maximum hit points in fire damage and have their Luck reduced by two points for 2 rounds + 1 round per level to a maximum of 10 rounds at 9th level, additionally, they take 2 points of fire damage per round for the duration. A successful Saving Throw vs. Spells negates the maximum hit points damage and the secondary effects.~
+The shadow adept produces 5 pitch-black berries that <PRO_HESHE> can carry with <PRO_HIMHER>. Each berry has random chance of causing one of the following effects:
+
+– Restore 1d6 hit points
+– +1 bonus to Strength for 1 turn
+– Invisibility for 5 rounds
+– +2 bonus to Luck (if imbiber is a Shadow Adept) or 1 poison damage per round for 1 turn (if imbiber is not)~
+
+COPY_EXISTING ~C0SA112.itm~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) match_parameter2 = 106 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) match_parameter2 = 116 END
+SAY NAME2 ~Ebonfruit~
+SAY DESC ~Created by the Ebonfruit spell, these pitch-black berries harvested from the Plane of Shadow will cause a random effect when eaten.
+
+STATISTICS:
+
+Special:
+– Restore 1d6 hit points
+– +1 bonus to Strength for 1 turn
+– Invisibility for 5 rounds
+– +2 bonus to Luck (if imbiber is a Shadow Adept) or 1 poison damage per round for 1 turn (if imbiber is not)
+
+Weight: 0~
 
 COPY_EXISTING ~C0SA201.spl~ ~override~
 SAY NAME1 ~Dark Mirage~
@@ -1248,6 +1290,7 @@ Saving Throw: None
 When Dark Mirage is cast, the shadow adept causes the outline of <PRO_HISHER> form to become blurred, shifting and wavering. This distortion causes all missile and melee attacks against the caster to be made with a -3 penalty. The shadow adept also gains a +1 bonus to all of <PRO_HISHER> Saving Throws. Additionally, the caster causes from 2 to 8 exact duplicates of <PRO_HIMHER>self to come into being around <PRO_HIMHER>. These images do exactly what the shadow adept does. Since the spell causes a blurring and slight distortion when cast, it is impossible for opponents to be certain which are the illusions and which is the actual shadow adept. When an image is struck by a melee or missile attack—magical or otherwise—it disappears, but any other existing images remain intact until they are struck. However, it is important to note that this will not protect the caster against every attack, as it is possible for an enemy to choose the real caster amongst all the images.~
 
 COPY_EXISTING ~C0SA202.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_MENTAL_INCAPACITATION~) END
 SAY NAME1 ~Night Terrors~
 SAY NAME2 ~Night Terrors~
 SAY UNIDENTIFIED_DESC ~Night Terrors
@@ -1260,7 +1303,9 @@ Casting Time: 2
 Area of Effect: 30-ft. radius
 Saving Throw: Neg.
 
-All enemies within the area of effect when this spell is cast must Save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.~
+All enemies within the area of effect when this spell is cast must Save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.
+
+Targets that are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 12 magic damage, which are transferred to the caster.~
 
 COPY_EXISTING ~C0SA203.spl~ ~override~
 SAY NAME1 ~Dark Fortune~
@@ -1295,19 +1340,19 @@ When a shadow adept calls upon a Power Word, Sleep spell, <PRO_HESHE> causes a c
 At 10th level, creatures above 20 Hit Points are put to sleep for 2 rounds. This spell is not affected by Magic Resistance.~
 
 COPY_EXISTING ~C0SA205.spl~ ~override~
-SAY NAME1 ~Dread Silence~
-SAY NAME2 ~Dread Silence~
-SAY UNIDENTIFIED_DESC ~Dread Silence
+SAY NAME1 ~Cursed Flames~
+SAY NAME2 ~Cursed Flames~
+SAY UNIDENTIFIED_DESC ~Cursed Flames
 (Alteration – Shadow Weave)
 
-Level: 2
-Range: Visual range of the caster
-Duration: 2 rounds/level
-Casting Time: 5
-Area of Effect: 15-ft. radius sphere
-Saving Throw: Neg. 
+Level: 1
+Range: 5 ft.
+Duration: Special
+Casting Time: 
+Area of Effect: 1 creature
+Saving Throw: Special
 
-Upon casting this spell, complete silence prevails in the affected area. All sound is stopped: Conversation is impossible and spells cannot be cast. Each creature in the area must make a Saving Throw vs. Spell with a -5 penalty; if the save is failed then they are silenced for the duration of the spell. Note that this spell does not continue to affect the area after being cast; only those in the area at the time of the casting are affected by the silence. Only the caster is immune to the spell's effects - both allies and enemies can be affected.~
+When the shadow adept casts this spell, <PRO_HESHE> ignites a targeted creature through force of will with corrupting flames. The flames deal 1d8 fire damage and 1 poison damage each round, and for the duration of the spell, the target is treated as though diseased and is slowed, incurring a -4 penalty to THAC0 and Armor Class. The initial flames last for 3 rounds, after which the target must make a Saving Throw vs. Death or be ignited for a further 3 rounds. Therefore, the flames have the potential to continue indefinitely so long as the target does not make a successful Saving Throw.~
 
 COPY_EXISTING ~C0SA206.spl~ ~override~
 SAY NAME1 ~Ghostly Visage~
@@ -1414,7 +1459,9 @@ Casting Time: 5
 Area of Effect: 1 person or mammal 
 Saving Throw: Neg.
 
-The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.~
+The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.
+
+Targets that are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 16 magic damage, which are transferred to the caster.~
 
 COPY_EXISTING ~C0SA213.spl~ ~override~
 LPF ALTER_EFFECT
@@ -1455,23 +1502,46 @@ COPY_EXISTING ~C0SA213a.spl~ ~override~
 END
 
 COPY_EXISTING ~C0SA301.spl~ ~override~
-SAY NAME1 ~Blackfire Arrow~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_MENTAL_INCAPACITATION~) END
+SAY NAME1 ~Phantom Arrow~
   LPF ALTER_SPELL_HEADER
 	INT_VAR
-		projectile = c0proj04
+		header = 1
+		projectile = c0sa3011
 END
-SAY NAME2 ~Blackfire Arrow~
-SAY UNIDENTIFIED_DESC ~Blackfire Arrow
-(Conjuration/Summoning – Shadow Weave)
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		header = 2
+		projectile = c0sa3012
+END
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		header = 3
+		projectile = c0sa3013
+END
+  LPF ALTER_SPELL_HEADER
+	INT_VAR
+		header = 4
+		projectile = c0sa3014
+END
+SAY NAME2 ~Phantom Arrow~
+SAY UNIDENTIFIED_DESC ~Phantom Arrow
+(Illusion/Phantasm, Enchantment/Charm – Shadow Weave)
 
 Level: 3
 Range: 60 ft.
-Duration: Instant
+Duration: 3 rounds
 Casting Time: 3
 Area of Effect: Special
-Saving Throw: 1/2
+Saving Throw: Neg.
 
-This spell enables the caster to hurl coldfire bolts at multiple opponents within range. Each bolt inflicts 1d6 points of cold damage plus 4d6 points of fire damage. Only half of the fire damage is inflicted if the creature struck saves vs. Spell. The caster receives one bolt every 5 levels beyond the 5th (2 bolts at 10th level, 3 at 15th level, etc.). Each arrow may be targeted individually towards any chosen target.~
+This spell launches an illusory arrow that affects the target's senses to such an extent that they perceive the damage dealt as real, losing 15% of their maximum hit points in unmitigated damage. However, as they are not physically injured, their lost hit points are restored after 3 rounds as the illusion wears off. However, if the afflicted target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), the damage dealt is permanent instead. Two arrows are launched from 12th level onwards, three at 19th level, and four at 26th level. The target may make a Saving Throw vs. Spells at -3 to disbelieve the illusion, though a separate save must be made for each individual arrow.~
+
+COPY_EXISTING ~C0SA301a.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Temporary 15% Hit Points Loss~) END
+
+COPY_EXISTING ~C0SA301b.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~15% Hit Points Loss~) END
 
 COPY_EXISTING ~C0SA302.spl~ ~override~
 SAY NAME1 ~Shadowblast~
@@ -1490,9 +1560,14 @@ Casting Time: 3
 Area of Effect: 30-ft. radius
 Saving Throw: 1/2 
 
-The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d3 points of magic cold damage (undead creatures suffer magic fire damage instead) and 1d3 points of magic damage for every level of the caster (to a maximum of 10d6) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw (-1 penalty per 5 levels) avoid the direct blast taking no magic damage or stat loss.
+The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d2 points of magic cold damage (undead creatures suffer magic fire damage instead) and 1d2 points of magic damage for every level of the caster (to a maximum of 10d2 of each) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw (-1 penalty per 5 levels) avoid the direct blast taking no magic damage or stat loss. Targets damaged by Shadowblast also suffer a -20% penalty to all damage dealt for 1 turn.
 
-From 10th level onwards, targets damaged by Shadowblast suffer a -20% penalty to all damage dealt for 1 turn.~
+Against targets that are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), Shadowblast inflicts three times as much damage.~
+
+COPY_EXISTING ~C0SA302c.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_PHYSICAL_INCAPACITATION~) END
+COPY_EXISTING ~C0SA302d.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_PHYSICAL_INCAPACITATION~) END
 
 COPY_EXISTING ~C0SA303.spl~ ~override~
 SAY NAME1 ~Inertia~
@@ -1705,12 +1780,12 @@ Casting Time: 4
 Area of Effect: 30' radius
 Saving Throw: Neg.
 
-This spell creates a zone of blackened, poisonous earth within a 30' radius. All creatures standing within the area must make a Saving Throw vs. Death at -4 each round or suffer 2d4 poison damage and have their movement rate halved.~
+This spell creates a zone of blackened, poisonous earth within a 30' radius. All creatures standing within the area must make a Saving Throw vs. Death at -4 each round or become poisoned, suffering 2 poison damage per round for 3 rounds, and have their movement rate halved.~
 
 COPY_EXISTING ~c0sa311.spl~ ~override~
-SAY NAME1 ~Expunge Magic~
-SAY NAME2 ~Expunge Magic~
-SAY UNIDENTIFIED_DESC ~Expunge Magic
+SAY NAME1 ~Sunder Magic~
+SAY NAME2 ~Sunder Magic~
+SAY UNIDENTIFIED_DESC ~Sunder Magic
 (Abjuration – Shadow Weave)
 
 Level: 3
@@ -1720,7 +1795,7 @@ Casting Time: 5
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
-A Expunge Magic spell removes magical effects upon anyone within the area. This includes effects given from spells, potions and certain magical items such as wands. It does not, however, affect enchanted magical items or spell protections such as Spell Turning and Spell Deflection. The chance of the dispel succeeding is determined by the effective level of the caster and the level of the magic being dispelled (Expunge Magic is cast as though at 1.5x the caster's actual level). The base chance of successfully dispelling is 50%. For every level that the caster of the Expunge Magic is above the original caster, <PRO_HISHER> chance of success increases by 5%. For every level that the caster of Expunge Magic is below the original caster, <PRO_HISHER> chance of success decreases by 10%. However, despite the difference in levels, there is always at least a 5% chance of success or failure. Thus, if a caster is 10 levels higher than the magic <PRO_HESHE> is trying to dispel, there is only a 5% chance of failure. Similarly if the caster is 4 levels lower than the magic <PRO_HESHE> is trying to dispel, there is only a 10% chance of success. Intuitively, this spell is almost useless if the target is 5 or more levels higher than the caster.
+A Sunder Magic spell removes magical effects upon anyone within the area. This includes effects given from spells, potions and certain magical items such as wands. It does not, however, affect enchanted magical items or spell protections such as Spell Turning and Spell Deflection. The chance of the dispel succeeding is determined by the effective level of the caster and the level of the magic being dispelled (Sunder Magic is cast as though at 1.5x the caster's actual level). The base chance of successfully dispelling is 50%. For every level that the caster of the Sunder Magic is above the original caster, <PRO_HISHER> chance of success increases by 5%. For every level that the caster of Sunder Magic is below the original caster, <PRO_HISHER> chance of success decreases by 10%. However, despite the difference in levels, there is always at least a 5% chance of success or failure. Thus, if a caster is 10 levels higher than the magic <PRO_HESHE> is trying to dispel, there is only a 5% chance of failure. Similarly if the caster is 4 levels lower than the magic <PRO_HESHE> is trying to dispel, there is only a 10% chance of success. Intuitively, this spell is almost useless if the target is 5 or more levels higher than the caster.
 
 Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
 
@@ -1782,6 +1857,10 @@ COPY_EXISTING ~C0SA402.eff~ ~override~
 COPY_EXISTING ~C0SA402b.spl~ ~override~
 
 COPY_EXISTING ~C0SA403.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      resist_dispel = 3
+ END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -1895,6 +1974,7 @@ Through this spell, the caster draws upon energy from the Plane of Shadow to imb
 From 14th level onwards, the caster's attacks per round are doubled instead.~
 
 COPY_EXISTING ~C0SA406.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_MENTAL_INCAPACITATION~) END
   LPF ALTER_SPELL_HEADER
 	INT_VAR
 		projectile = c0proj13
@@ -1910,7 +1990,9 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Special
 
-The caster creates a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a Save vs. Spells to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.~
+The caster creates a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a Save vs. Spells to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.
+
+If the target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), they are only allowed to make a Saving Throw vs. Death.~
 
 COPY_EXISTING ~C0SA408.spl~ ~override~
 SAY NAME1 ~Dread Whispers~
@@ -2505,6 +2587,7 @@ COPY_EXISTING_REGEXP ~.*\.SPL~ OVERRIDE
 	BUT_ONLY
 
 COPY_EXISTING ~C0SA505.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_MENTAL_INCAPACITATION~) END
 SAY NAME1 ~Sigil of Madness~
 SAY NAME2 ~Sigil of Madness~
 SAY UNIDENTIFIED_DESC ~Sigil of Madness
@@ -2517,7 +2600,10 @@ Casting Time: 4
 Area of Effect: 30-ft. radius
 Saving Throw: Special
 
-The effects of this spell are identical to the 5th-level spell Chaos in all respects, except this spell ignores magic resistance. The victims wander around as if in a daze, sometimes wandering away, sometimes attacking either friend or foe. If the victim is 4th level or lower, <PRO_HESHE> does not receive a Saving Throw vs. the effects. However, if the victim is 5th level or higher, <PRO_HESHE> receives a Save vs. Spell with a -4 penalty. The spell lasts for the duration or until a successful Dispel Magic is cast.~
+The effects of this spell are identical to the 5th-level spell Chaos in all respects, except this spell ignores magic resistance. The victims wander around as if in a daze, sometimes wandering away, sometimes attacking either friend or foe. If the victim is 4th level or lower, <PRO_HESHE> does not receive a Saving Throw vs. the effects. However, if the victim is 5th level or higher, <PRO_HESHE> receives a Save vs. Spell with a -4 penalty. The spell lasts for the duration or until a successful Dispel Magic is cast. Additionally, targets who are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 25 magic damage and are permanently drained of 2 levels.~
+
+COPY_EXISTING ~C0SA505a.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Two Levels Drained~) END
 
 COPY_EXISTING ~C0SA506.spl~ ~override~
 SAY NAME1 ~Shar's Memory Drain~
@@ -2964,6 +3050,7 @@ When this spell is cast at another creature, a thin purple ray is shot out. Upon
 Targets slain by this spell will be raised as a wraith under the caster's control for 5 turns.~
 
 COPY_EXISTING ~C0SA609.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_PHYSICAL_INCAPACITATION~) END
 	LPF ALTER_EFFECT
 		INT_VAR
 			match_opcode = 139
@@ -2981,7 +3068,10 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they lose an additional 20% of their maximum hit points and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes.~
+This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they lose an additional 20% of their maximum hit points and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) , they take an additional 35 magic damage, which is transferred to the caster, and are drained of four levels.~
+
+COPY_EXISTING ~C0SA609C.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Four Levels Drained~) END
 
 COPY_EXISTING ~C0SA610.spl~ ~override~
   LPF ALTER_SPELL_HEADER
@@ -3003,13 +3093,6 @@ Saving Throw: None
 Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius take 6d6 magical damage and suffer a -3 penalty to Armor Class, THAC0 and damage for 1 turn. Creatures with less than 8 Hit Dice and any summoned creatures are instantly killed. There is no saving throw against this spell's effects.~
 
 COPY_EXISTING ~C0SA611.spl~ ~override~
-  LPF ALTER_EFFECT
-    INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 326
-	  parameter2 = %C0SA611%
-END
 SAY NAME1 ~Devour Dream~
 SAY NAME2 ~Devour Dream~
 SAY UNIDENTIFIED_DESC ~Devour Dream
@@ -3019,10 +3102,10 @@ Level: 6
 Range: Touch
 Duration: Instant
 Casting Time: 2
-Area of Effect: 1 creature
+Area of Effect: 15-ft. radius centerd on caster
 Saving Throw: None
 
-This spell may only affect sleeping targets. Upon casting the spell, the shadow adept consumes the target's thoughts, dealing 10d8 magical damage and restoring up to five of the caster's previously cast spells. The target is always woken up after the effects of this spell.
+This spell may only affect sleeping targets. Upon casting the spell, the shadow adept consumes the thoughts of all creatures within 15 feet of <PRO_HIMHER>, dealing 10d8 magical damage and restoring up to three of the caster's previously cast spells per affected target. The target is always woken up after the effects of this spell.
 
 Devour Dream cannot recall 6th-level or greater spells.~
 
@@ -3203,10 +3286,10 @@ Level: 7
 Range: Visual range of the caster
 Duration: 5 rounds
 Casting Time: 1 
-Area of Effect: 1 creature
+Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
-Nightmare is both a deadly weapon and a horrific torture device. When the shadow adept casts this spell, <PRO_HESHE> causes one creature to fall into a deep sleep and become tormented with terrible nightmares. For each round that the target remains asleep, they must make a Save vs. Spell at -4 to wake up from the nightmare. If the save is failed, they must make a Save vs. Death at -2 or lose 10% of their hit points. Once 5 rounds have passed, the victim awakens from their nightmare without needing a save.~
+Nightmare is both a deadly weapon and a horrific torture device. When the shadow adept casts this spell, <PRO_HESHE> causes all creatures within a 15-ft. radius to fall into a deep sleep and become tormented with terrible nightmares. For each round that the target remains asleep, they must make a Save vs. Spell at -4 to wake up from the nightmare. If the save is failed, they must make a Save vs. Death at -2 or lose 10% of their hit points. Once 5 rounds have passed, the victim awakens from their nightmare without needing a save.~
 
 COPY_EXISTING ~c0sa709.spl~ ~override~
 SAY NAME1 ~Possess~
@@ -3469,6 +3552,8 @@ COPY_EXISTING ~C0SA802.spl~ ~override~
 END
   LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic13
 END
+  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (~Annulled Effects~)
+END
 SAY NAME1 ~Annulment~
 SAY NAME2 ~Annulment~
 SAY UNIDENTIFIED_DESC ~Annulment
@@ -3556,7 +3641,7 @@ Saving Throw: 1/2
 
 The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 magical fire damage (Save vs. Spells at -4 for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
 
-If the target is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel under the caster's allegiance for one turn before becoming assimilated into the Shadow Plane.~
+If a creature is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel, which immediately charges towards the nearest enemy and explodes on a successful attack, dealing 5d6 unmitigated fire damage to all enemies within a 5-ft. radius before becoming assimilated into the Shadow Plane.~
 
 COPY_EXISTING ~c0sa806a.spl~ ~override~
   LPF ALTER_SPELL_HEADER
@@ -3794,7 +3879,7 @@ Casting Time: 8
 Area of Effect: 30-ft. radius cloud 
 Saving Throw: 1/2
 
-This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 10d4 magical cold damage per round and become slowed for two rounds. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round.
+This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 6d4 magical cold damage per round and become slowed for two rounds. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round.
 
 This spell is not affected by Magic Resistance, but creatures immune to cold are unaffected.~
 
@@ -3908,6 +3993,7 @@ Saving Throw: None
 This powerful spell causes the shadow adept to partially shift to the Plane of Shadow at the exact same point as he was, creating an effect identical to the Time Stop spell. The caster may move freely for 3 rounds in terms of time in the Plane of Shadow while time stands still in the Prime Material Plane. Additionally, the shadow adept's casting speed is increased by 4 and <PRO_HISHER> movement rate is doubled for the duration of the spell.~
 
 COPY_EXISTING ~c0sa903.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_PHYSICAL_INCAPACITATION~) END
 SAY NAME1 ~Nightsinger's Tithe~
 SAY NAME2 ~Nightsinger's Tithe~
 SAY UNIDENTIFIED_DESC ~Nightsinger's Tithe
@@ -3920,13 +4006,16 @@ Casting Time: 1
 Area of Effect: 1 creature 
 Saving Throw: None
 
-When Nightsinger's Tithe is uttered, one creature within the spell range is slain. The target must have 60 or fewer current Hit Points, otherwise the spell has no effect. There is no Saving Throw. Creatures slain by this spell have their souls sent to the Plane of Shadow as a sacrifice to Shar. There is an 50% chance that killing a target with this spell will permanently bestow 1 bonus hit point to the caster. Once 50 enemies have been slain with this spell, the shadow adept permanently gains +2 to Constitution, +1 to all saves and -1 casting time, and further castings of this spell will no longer grant hit points.~
+When Nightsinger's Tithe is uttered, one creature within the spell range is slain. The target must have 60 or fewer current Hit Points, otherwise the spell has no effect. There is no Saving Throw. Creatures slain by this spell have their souls sent to the Plane of Shadow as a sacrifice to Shar. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), they take 120 magic damage.
+
+There is an 50% chance that killing a target with this spell will permanently bestow 1 bonus hit point to the caster. Once 50 enemies have been slain with this spell, the shadow adept permanently gains +2 to Constitution, +1 to all saves and -1 casting time, and further castings of this spell will no longer grant hit points.~
 
 COPY_EXISTING ~c0sa903b.spl~ ~override~
 SAY NAME1 ~Nightsinger's Boon~
 SAY NAME2 ~Nightsinger's Boon~
 
 COPY_EXISTING ~c0sa904.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_PHYSICAL_INCAPACITATION~) END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 		  opcode = 324
@@ -3949,7 +4038,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A Saving Throw vs. Death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target.~
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A Saving Throw vs. Death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) are not allowed a Saving Throw.~
 COPY_EXISTING ~c0sa904a.spl~ ~override~
 	LPF ALTER_EFFECT
 		INT_VAR
@@ -3974,6 +4063,7 @@ Saving Throw: None
 This spell enables the caster to create a black, blade-shaped planar rift about three feet long. It jumps into the caster's hand and is used as a normal sword, remaining there for the duration of the spell. The caster is considered to be proficient to the point of Grand Mastery in this weapon. The sword acts as a +5 weapon and deals 2-24 damage to its victims. Also, every time it hits a target, the victim must make a Save vs. Death at +4 or be disintegrated. There is also a 10% chance with every hit that the sword drains 4 levels from the target and heals the wielder 20 Hit Points.~
 
 COPY_EXISTING ~c0sa906.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~STATE~ ~C0_MENTAL_INCAPACITATION~) END
   LPF ALTER_SPELL_HEADER
 	INT_VAR
 		projectile = c0weird
@@ -3990,7 +4080,9 @@ Casting Time: 8
 Area of Effect: Special
 Saving Throw: Special
 
-You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a Save vs. Spells at -4 to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.~
+You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a Save vs. Spells at -4 to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.
+
+If the target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), they are only allowed to make a Saving Throw vs. Death.~
 
 COPY_EXISTING ~c0sa907.spl~ ~override~
 SAY NAME1 ~Death Mark~
