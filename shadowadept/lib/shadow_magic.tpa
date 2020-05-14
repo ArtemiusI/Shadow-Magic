@@ -306,7 +306,6 @@ COPY_EXISTING ~C0SADAY.SPL~ ~OVERRIDE~
 LPF ALTER_EFFECT
 	INT_VAR
 		match_opcode = 324
-		match_parameter2 = 0
 		parameter2 = EVAL ~C0SADAY~
 END
 
@@ -1251,7 +1250,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-The shadow adept produces 5 pitch-black berries that <PRO_HESHE> can carry with <PRO_HIMHER>. Each berry has random chance of causing one of the following effects:
+The shadow adept produces 5 pitch-black berries that <PRO_HESHE> can carry with <PRO_HIMHER>. Each berry has a random chance of causing one of the following effects:
 
 – Restore 1d6 hit points
 – +1 bonus to Strength for 1 turn
@@ -1261,6 +1260,7 @@ The shadow adept produces 5 pitch-black berries that <PRO_HESHE> can carry with 
 COPY_EXISTING ~C0SA112.itm~ ~override~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) match_parameter2 = 106 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) match_parameter2 = 116 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 138 parameter1 = RESOLVE_STR_REF (~*gulp*~) END
 SAY NAME2 ~Ebonfruit~
 SAY DESC ~Created by the Ebonfruit spell, these pitch-black berries harvested from the Plane of Shadow will cause a random effect when eaten.
 
@@ -1345,10 +1345,10 @@ SAY NAME2 ~Cursed Flames~
 SAY UNIDENTIFIED_DESC ~Cursed Flames
 (Alteration – Shadow Weave)
 
-Level: 1
-Range: 5 ft.
+Level: 2
+Range: Visual range
 Duration: Special
-Casting Time: 
+Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Special
 

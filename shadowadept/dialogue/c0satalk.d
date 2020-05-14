@@ -506,7 +506,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-The shadow adept produces 5 pitch-black berries that <PRO_HESHE> can carry with <PRO_HIMHER>. Each berry has random chance of causing one of the following effects:
+The shadow adept produces 5 pitch-black berries that <PRO_HESHE> can carry with <PRO_HIMHER>. Each berry has a random chance of causing one of the following effects:
 
 – Restore 1d6 hit points
 – +1 bonus to Strength for 1 turn
@@ -588,10 +588,10 @@ IF ~~ 2.5
 SAY ~Cursed Flames
 (Alteration – Shadow Weave)
 
-Level: 1
-Range: 5 ft.
+Level: 2
+Range: Visual range
 Duration: Special
-Casting Time: 
+Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Special
 
