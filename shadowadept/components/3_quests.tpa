@@ -2,6 +2,7 @@
 /////////CREATURES//////////////////////
 ////////////////////////////////////////
 
+COPY ~%MOD_FOLDER%/items/c0sainvu.itm~ ~override~
 COPY ~%MOD_FOLDER%/items/c0unisha.itm~ ~override~
 
 COPY ~%MOD_FOLDER%/creatures/c0sakryn.cre~ ~override~
@@ -15,12 +16,12 @@ WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/creatures/c0samag1.cre~ ~override~
-WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x248 ~~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samag1~  #8  // dialogue
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag1~ #32 // death variable
-SAY NAME1 ~Xarius the Black~
-SAY NAME2 ~Xarius the Black~
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
@@ -57,12 +58,12 @@ Requires:
 Weight: 4~
 
 COPY ~%MOD_FOLDER%/creatures/c0samag2.cre~ ~override~
-WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x248 ~~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samag2~  #8  // dialogue
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag2~ #32 // death variable
-SAY NAME1 ~Chang Yu'ke~
-SAY NAME2 ~Chang Yu'ke~
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
@@ -78,7 +79,7 @@ COPY ~%MOD_FOLDER%/itempack/c0samag2.itm~ ~override~
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Quarterstaff~
-SAY NAME2 ~Staff of Chang Yu'ke~
+SAY NAME2 ~Staff of Chang Yu'lien~
 SAY UNIDENTIFIED_DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.~
 SAY DESC ~The simplest and humblest of staff weapons, the quarterstaff is a length of wood ranging six to nine feet in length. High quality quarterstaves are made of stout oak and are shod with metal at both ends. The quarterstaff must be wielded with both hands.
 
@@ -99,12 +100,12 @@ Requires:
 Weight: 4~
 
 COPY ~%MOD_FOLDER%/creatures/c0samag3.cre~ ~override~
-WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x248 ~~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samag3~  #8  // dialogue
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag3~ #32 // death variable
-SAY NAME1 ~Mak'kai~
-SAY NAME2 ~Mak'kai~
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
@@ -141,12 +142,12 @@ Requires:
 Weight: 4~
 
 COPY ~%MOD_FOLDER%/creatures/c0samag4.cre~ ~override~
-WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x248 ~~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samag4~  #8  // dialogue
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag4~ #32 // death variable
-SAY NAME1 ~Nym Phaundal~
-SAY NAME2 ~Nym Phaundal~
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
@@ -183,12 +184,12 @@ Requires:
 Weight: 4~
 
 COPY ~%MOD_FOLDER%/creatures/c0samag5.cre~ ~override~
-WRITE_ASCII 0x248 ~shoutdlg~  #8  // override
+WRITE_ASCII 0x248 ~~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samag5~  #8  // dialogue
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
 WRITE_ASCII 0x280 ~c0samag5~ #32 // death variable
-SAY NAME1 ~Ivette Cold-Whisper~
-SAY NAME2 ~Ivette Cold-Whisper~
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
@@ -226,9 +227,17 @@ Weight: 4~
 
 
 COMPILE ~%MOD_FOLDER%/dialogue/c0sakryn.d~
-COMPILE ~%MOD_FOLDER%/dialogue/c0samage.d~
+
+OUTER_SET shadow_mage_name1 = RESOLVE_STR_REF (~Xarius the Black~)
+OUTER_SET shadow_mage_name2 = RESOLVE_STR_REF (~Chang Yu'lien~)
+OUTER_SET shadow_mage_name3 = RESOLVE_STR_REF (~Mak'kai~)
+OUTER_SET shadow_mage_name4 = RESOLVE_STR_REF (~Nym Phaundal~)
+OUTER_SET shadow_mage_name5 = RESOLVE_STR_REF (~Ivette Cold-Whisper~)
+
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0samage.d~
 COMPILE ~%MOD_FOLDER%/dialogue/bg1dial.d~
 
+COMPILE ~%MOD_FOLDER%/scripts/c0sahart.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sadept.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sakryn.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0satele.baf~
@@ -239,24 +248,17 @@ SAY 0xc ~Darkflame Enclave~
 COPY ~%MOD_FOLDER%/items/c0sasto2.sto~ ~override~
 SAY 0xc ~Darkflame Enclave~
 
+COPY ~%MOD_FOLDER%/items/c0sasto3.sto~ ~override~
+SAY 0xc ~Kaladan Za'al~
+
 ACTION_IF GAME_IS ~bgee~
 THEN BEGIN
-EXTEND_TOP ~ar2300.bcs~ ~%MOD_FOLDER%/scripts/ar2300.baf~
-EXTEND_TOP ~ar0900.bcs~ ~%MOD_FOLDER%/scripts/ar0900.baf~
-EXTEND_TOP ~ar2615.bcs~ ~%MOD_FOLDER%/scripts/ar2615.baf~
-EXTEND_TOP ~ar3802.bcs~ ~%MOD_FOLDER%/scripts/ar3802.baf~
-EXTEND_TOP ~ar3901.bcs~ ~%MOD_FOLDER%/scripts/ar3901.baf~
-EXTEND_TOP ~ar5001.bcs~ ~%MOD_FOLDER%/scripts/ar5001.baf~
+OUTER_TEXT_SPRINT area_map_bgee "AR"
 END
 
 ACTION_IF GAME_IS ~eet~
 THEN BEGIN
-EXTEND_TOP ~bg2300.bcs~ ~%MOD_FOLDER%/scripts/ar2300.baf~
-EXTEND_TOP ~bg0900.bcs~ ~%MOD_FOLDER%/scripts/ar0900.baf~
-EXTEND_TOP ~bg2615.bcs~ ~%MOD_FOLDER%/scripts/ar2615.baf~
-EXTEND_TOP ~bg3802.bcs~ ~%MOD_FOLDER%/scripts/ar3802.baf~
-EXTEND_TOP ~bg3901.bcs~ ~%MOD_FOLDER%/scripts/ar3901.baf~
-EXTEND_TOP ~bg5001.bcs~ ~%MOD_FOLDER%/scripts/ar5001.baf~
+OUTER_TEXT_SPRINT area_map_bgee "BG"
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~

@@ -84,7 +84,7 @@ NumTimesTalkedTo(0)~ THEN C02SAMAG ZAAL-COALITION
 = ~Also, I have taken the time to acquire some special wares from my home plane that may interest you. There may be something that you will find useful.~
 END
 + ~PartyHasItem("ohrgem01")~ + ~I would like you to take a look at this gem. There's something strange about it.~ + ZAAL-COALITION-GEM
-++ ~May I take a look at what you have?~ DO ~StartStore("c0sasto2",LastTalkedToBy(Myself))~ EXIT
+++ ~May I take a look at what you have?~ DO ~StartStore("c0sasto3",LastTalkedToBy(Myself))~ EXIT
 ++ ~Farewell.~ EXIT
 
 CHAIN IF WEIGHT #-1 ~AreaCheck("bd3000")
@@ -92,7 +92,7 @@ CHAIN IF WEIGHT #-1 ~AreaCheck("bd3000")
 ~Is there anything else you need?~
 END
 + ~PartyHasItem("ohrgem01")~ + ~I would like you to take a look at this gem. There's something strange about it.~ + ZAAL-COALITION-GEM
-++ ~May I take a look at what you have?~ DO ~StartStore("c0sasto2",LastTalkedToBy(Myself))~ EXIT
+++ ~May I take a look at what you have?~ DO ~StartStore("c0sasto3",LastTalkedToBy(Myself))~ EXIT
 ++ ~Farewell.~ EXIT
 
 CHAIN C02SAMAG ZAAL-COALITION-GEM

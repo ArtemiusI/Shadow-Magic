@@ -64,6 +64,8 @@ END
 
 CHAIN C0SAKRYN a1.9
 ~My thanks. There are five apprentices to search for: Xarius, Chang, Mak'kai, Nym and Ivette. Though I doubt their names will be of much use to you, given they will be too mad to acknowledge them. I fear I could not tell you where they might be.~
+= ~They are not native to this world, however, and thus will likely find comfort in places of darkness. And they are capable of hiding in-between the Material and Shadow Plane, which would render them impossible to detect. I will gift you with a brand containing my magic. It will render their shadows visible to you, and give you the power to draw them out.~
+= ~I feel 'twould be appropriate to warn you in advance—my apprentices are talented shadowweavers, each and every one. Even in their fragile states, or perhaps owing to them, they will likely use their magic to resist.~
 = ~Should you find any of them, however, alive or dead... I will reward you for the deed. If it must come to their deaths, then their wizard staves, branded with their sigils, will suffice as evidence.~
 = ~Farewell. I hope you will return with favorable news.~
 EXIT
@@ -71,6 +73,7 @@ EXIT
 CHAIN IF ~!Global("C0KrynTalk","GLOBAL",0)~ THEN C0SAKRYN b
 ~I see you have returned. What might I do for you this time?~
 END
++ ~Global("C0SAFoundHeart","GLOBAL",1)~ + ~I found a strange essence that responded to the brand you gave me.~ DO ~SetGlobal("C0SAFoundHeart","GLOBAL",2)~ + HEART
 + ~Global("TalkMakkai","LOCALS",1) Global("TalkSlaves","LOCALS",0)~ + ~Mak'kai mentioned that your apprentices are slaves. Is that true?~ DO ~SetGlobal("TalkSlaves","LOCALS",1)~ + slaves
 + ~Global("TalkMakkai","LOCALS",1) Global("TalkEbonshade","LOCALS",0)~ + ~What is the ebonshade madness?~ DO ~SetGlobal("TalkEbonshade","LOCALS",1)~ + ebonshade
 + ~!Global("C0SAQuest1","GLOBAL",1)~ + ~Tell me of your purpose for being here.~ + a1.7
@@ -99,6 +102,7 @@ Specifics(Player6,SHADOW_ADEPT)~ + ~I would like to see your special stock.~ + b
 CHAIN C0SAKRYN b.1
 ~Is there anything else you require?~
 END
++ ~Global("C0SAFoundHeart","GLOBAL",1)~ + ~I found a strange essence that responded to the brand you gave me.~ DO ~SetGlobal("C0SAFoundHeart","GLOBAL",2)~ + HEART
 + ~Global("TalkMakkai","LOCALS",1) Global("TalkSlaves","LOCALS",0)~ + ~Mak'kai mentioned that your apprentices are slaves. Is that true?~ DO ~SetGlobal("TalkSlaves","LOCALS",1)~ + slaves
 + ~Global("TalkMakkai","LOCALS",1) Global("TalkEbonshade","LOCALS",0)~ + ~What is the ebonshade madness?~ DO ~SetGlobal("TalkEbonshade","LOCALS",1)~ + ebonshade
 + ~!Global("C0SAQuest1","GLOBAL",1)~ + ~Tell me of your purpose for being here.~ + a1.7
@@ -123,6 +127,17 @@ Specifics(Player4,SHADOW_ADEPT)
 Specifics(Player5,SHADOW_ADEPT)
 Specifics(Player6,SHADOW_ADEPT)~ + ~I would like to see your special stock.~ + b3
 ++ ~Nothing for now.~ + b0
+
+CHAIN C0SAKRYN HEART
+~An essence? Hmm... was it, perhaps, a crystalline object, beating like a heart?~
+END
+++ ~Yes, it did.~ + HEART-1
+
+CHAIN C0SAKRYN HEART-1
+~I see. Then I suspect it is a 'cache' of sorts, left behind by shadowcasters in this plane to hide magical objects, usually rare scrolls and the like. I have seen a few of its like in this plane.~
+= ~Only one attuned to their particular magic should normally be able to detect these caches, but it appears my brand has given you the ability to reveal them and potentially draw them back into this plane.~
+= ~I would be wary of doing so, however. Most arcanists are cautious enough to leave protections behind. Perhaps a magical trap, or summons that attack anyone but their master. But if you are able to overcome their protections, you may find items of value.~
+EXTERN C0SAKRYN b.1
 
 CHAIN C0SAKRYN makkai
 ~Indeed? That is... impressive. Once the ebonshade madness has consumed the imbiber, it is difficult, if not impossible, to ever regain one's coherency. The fact that Mak'kai was able to remain sane enough for his final moments is a testament to his ability.~
@@ -196,11 +211,56 @@ Specifics(Player6,SHADOW_ADEPT)~ + ~Your apprentice was using Shadow Weave magic
 
 CHAIN C0SAKRYN b1.2
 ~You have my gratitude for your efforts. I pray you may find the rest of my apprentices.~
-DO ~Addexperienceparty(1000)~
-EXIT
+END
+IF ~RandomNum(2,1)
+OR(6)
+Specifics(Player1,SHADOW_ADEPT)
+Specifics(Player2,SHADOW_ADEPT)
+Specifics(Player3,SHADOW_ADEPT)
+Specifics(Player4,SHADOW_ADEPT)
+Specifics(Player5,SHADOW_ADEPT)
+Specifics(Player6,SHADOW_ADEPT)~ DO ~GiveItemCreate("c0sarn09",Lasttalkedtoby(Myself),1,0,0)
+GiveItemCreate("c0sarn03",Lasttalkedtoby(Myself),1,0,0)
+GiveItemCreate("c0sarn05",Lasttalkedtoby(Myself),1,0,0)
+GiveItemCreate("c0sarn07",Lasttalkedtoby(Myself),1,0,0)
+Addexperienceparty(1000)~ EXIT
+IF ~RandomNum(2,2)
+OR(6)
+Specifics(Player1,SHADOW_ADEPT)
+Specifics(Player2,SHADOW_ADEPT)
+Specifics(Player3,SHADOW_ADEPT)
+Specifics(Player4,SHADOW_ADEPT)
+Specifics(Player5,SHADOW_ADEPT)
+Specifics(Player6,SHADOW_ADEPT)~ DO ~GiveItemCreate("c0sarn09",Lasttalkedtoby(Myself),1,0,0)
+GiveItemCreate("c0sarn04",Lasttalkedtoby(Myself),1,0,0)
+GiveItemCreate("c0sarn06",Lasttalkedtoby(Myself),1,0,0)
+GiveItemCreate("c0sarn08",Lasttalkedtoby(Myself),1,0,0)
+Addexperienceparty(1000)~ EXIT
+IF ~!Specifics(Player1,SHADOW_ADEPT)
+!Specifics(Player2,SHADOW_ADEPT)
+!Specifics(Player3,SHADOW_ADEPT)
+!Specifics(Player4,SHADOW_ADEPT)
+!Specifics(Player5,SHADOW_ADEPT)
+!Specifics(Player6,SHADOW_ADEPT)~ DO ~Addexperienceparty(1000)~ EXIT
 
 CHAIN C0SAKRYN b1.3
 ~You have found all five of my apprentices. *sigh* 'Tis unfortunate that the madness had taken them beyond any chance of recovery, and now their souls will become one with the Shadow Weave. Perhaps I should have sought them out myself after all...~
+DO ~AddStoreItem("c0sasto2","c0salea2",1,1)
+AddStoreItem("c0sasto2","c0sacha2",1,1)
+AddStoreItem("c0sasto2","c0sabel1",1,1)
+AddStoreItem("c0sasto2","c0sa501a",1,1)
+AddStoreItem("c0sasto2","c0sa502a",1,1)
+AddStoreItem("c0sasto2","c0sa503a",1,1)
+AddStoreItem("c0sasto2","c0sa504a",1,1)
+AddStoreItem("c0sasto2","c0sa505a",1,1)
+AddStoreItem("c0sasto2","c0sa506a",1,1)
+AddStoreItem("c0sasto2","c0sa507a",1,1)
+AddStoreItem("c0sasto2","c0sa508a",1,1)
+AddStoreItem("c0sasto2","c0sa509a",1,1)
+AddStoreItem("c0sasto2","c0sa510a",1,1)
+AddStoreItem("c0sasto2","c0sa511a",1,1)
+AddStoreItem("c0sasto2","c0sa512a",1,1)
+AddStoreItem("c0sasto2","c0sa513a",1,1)~
 = ~Regardless, I appreciate your assistance in this matter. Take this as a token of my gratitude.~
 END
 IF ~OR(6)
@@ -211,8 +271,8 @@ Specifics(Player4,SHADOW_ADEPT)
 Specifics(Player5,SHADOW_ADEPT)
 Specifics(Player6,SHADOW_ADEPT)~ DO ~SetGlobal("C0KrynTalk","GLOBAL",3)
 GiveItemCreate("c0saamu2",Lasttalkedtoby(Myself),1,0,0)
-GiveItemCreate("c0sascr3",Lasttalkedtoby(Myself),1,0,0)
-GiveItemCreate("c0sascr4",Lasttalkedtoby(Myself),1,0,0)
+GiveItemCreate("c0sarn09",Lasttalkedtoby(Myself),1,0,0)
+GiveItemCreate("c0sarn10",Lasttalkedtoby(Myself),1,0,0)
 Addexperienceparty(10000)~ EXIT
 IF ~!Specifics(Player1,SHADOW_ADEPT)
 !Specifics(Player2,SHADOW_ADEPT)

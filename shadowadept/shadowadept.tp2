@@ -1,7 +1,8 @@
 BACKUP ~shadowadept/backup~
 AUTHOR ~Artemius_I~
-VERSION ~2.21~
+VERSION ~3.0~
 ALWAYS
+  INCLUDE ~%MOD_FOLDER%/lib/ClassSpellTool.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
   INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
@@ -12,6 +13,14 @@ ALWAYS
   END ELSE BEGIN
     OUTER_SET bg2_chapter = 0
   END
+  ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
+  OUTER_SPRINT "bg1_eet_symbol" AR
+  END
+
+  ACTION_IF GAME_IS ~EET~ THEN BEGIN
+  OUTER_SPRINT "bg1_eet_symbol" BG
+  END
+  
   OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
     OUTER_SET bg2_chapter = bg2_chapter + 1
     OUTER_SPRINT name_source ~bg2_chapter_%i%~
@@ -25,21 +34,56 @@ LANGUAGE ~English~
 
 BEGIN ~Shadow Magic: Main Component~
 
+BEGIN ~Drain Constitution on Cast~
+REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
+FORCED_SUBCOMPONENT ~Shadow Magic: Resource Costs~
+OUTER_SET hpcost = 1
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/crossmod.tpa~
+
+BEGIN ~Drain Maximum Hit Points on Cast~
+REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
+FORCED_SUBCOMPONENT ~Shadow Magic: Resource Costs~
+OUTER_SET hpcost = 2
+INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/crossmod.tpa~
+
+BEGIN ~Drain Current Hit Points on Cast~
+REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
+FORCED_SUBCOMPONENT ~Shadow Magic: Resource Costs~
+OUTER_SET hpcost = 3
+INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/crossmod.tpa~
+
+BEGIN ~No Resource Cost~
+REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
+FORCED_SUBCOMPONENT ~Shadow Magic: Resource Costs~
+OUTER_SET hpcost = 4
+INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/crossmod.tpa~
 
 BEGIN ~Shadow Magic: Shadow Monk monk kit~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/2_shadow_monk.tpa~
 
-BEGIN ~Shadow Magic: Quests and Encounters (BG:EE)~
-  REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
-  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
-
-INCLUDE ~%MOD_FOLDER%/components/3_quests.tpa~
-
-BEGIN ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
+BEGIN ~Hardcore Difficulty: Casts up to 9th level spells~
+SUBCOMPONENT ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
+OUTER_SET shade_lord_difficulty = 1
+INCLUDE ~%MOD_FOLDER%/components/5_shade_lord.tpa~
 
+BEGIN ~Standard Difficulty: Casts up to 7th level spells~
+SUBCOMPONENT ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
+  REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
+OUTER_SET shade_lord_difficulty = 2
+INCLUDE ~%MOD_FOLDER%/components/5_shade_lord.tpa~
+
+BEGIN ~Add Bonus Special Ability Only~
+SUBCOMPONENT ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
+  REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+  REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
+OUTER_SET shade_lord_difficulty = 2
 INCLUDE ~%MOD_FOLDER%/components/5_shade_lord.tpa~

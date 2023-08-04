@@ -1,0 +1,8 @@
+IF
+	Global("C0SAQuest1","GLOBAL",1)
+	Global("C0SAHeartSpawn","MYAREA",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SAHeartSpawn","MYAREA",1)
+	CreateCreature("C0SAHART",[824.882],S)
+END

@@ -20,6 +20,63 @@ END
 /////////ITEMS//////////////////////////
 ////////////////////////////////////////
 
+// Shadowskin +2
+
+COPY ~%MOD_FOLDER%/itempack/c0saluck.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0salea2.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0salea2.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 177 // display string
+ parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+ match_parameter2 = 6
+  END
+SAY NAME1 ~Studded Leather Armor~
+SAY NAME2 ~Shadowskin +2~
+SAY DESC ~Crafted from the tanned hide of a nightwalker, this pitch-black armor appears to drain away any light that shines upon it. One cannot help but shake the feeling, however, that the armor feels 'alive' when worn, always shifting slightly against the wearer's skin. Fortunately, however, it seems to favor those it deems 'familiar', granting an uncanny degree of good fortune.
+
+STATISTICS:
+
+Equipped abilities:
+– Hide in Shadows: +50%
+– Luck: +2 (Shadow Adepts)
+
+Armor Class: 5 (3 vs. slashing, 4 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+// The Onyx Mail +3
+
+COPY ~%MOD_FOLDER%/itempack/c0sacha2.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sacha2.itm~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      match_opcode = 177 // display string
+ parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+ match_parameter2 = 6
+  END
+SAY NAME1 ~Chain Mail~
+SAY NAME2 ~The Onyx Mail +3~
+SAY DESC ~Worn by shade warriors serving as enforcers of the mage-towers of Thultanthar, these suits of black armor are designed to provide adequate protection while supplementing arcane abilities.
+
+STATISTICS:
+
+Equipped abilities:
+– Casting Speed: +1 (Shadow Adepts)
+– Spellcasting is not disabled
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+Requires:
+ 6 Strength
+
+Weight: 8~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ar0602.bcs~ THEN BEGIN
+EXTEND_BOTTOM ~ar0602.bcs~ ~%MOD_FOLDER%/scripts/bg2/ar0602.baf~
+END
+
 // Ring of Black Light
 
 COPY ~%MOD_FOLDER%/itempack/c0sarng1.itm~ ~override~
@@ -41,11 +98,11 @@ STATISTICS:
 – Constitution: +1
 – Save vs. Death: +4
 
+Requires:
+  15 Wisdom
+
 Weight: 0~
 
-ACTION_IF FILE_EXISTS_IN_GAME ~ar0602.bcs~ THEN BEGIN
-EXTEND_BOTTOM ~ar0602.bcs~ ~%MOD_FOLDER%/scripts/ar0602.baf~
-END
 
 // Dark Dreamer +2
 
@@ -116,6 +173,7 @@ Proficiency Type: Two-handed Sword
 Type: Two-handed
 Requires:
  14 Strength
+ 16 Intelligence
 
 Weight: 10~
 
@@ -180,6 +238,7 @@ Proficiency Type: Two-handed Sword
 Type: Two-handed
 Requires:
  14 Strength
+ 16 Intelligence
 
 Weight: 10~
 
@@ -202,8 +261,11 @@ STATISTICS:
 
 Equipped abilities:
 – Hit Points: -15
-– Can memorize one extra wizard spell of 1st to 4th level
-– Protects the wearer against Constitution loss from using 1st–4th level Shadow Weave spells
+– Can memorize one extra wizard spell of 1st to 5th level
+– Protects the wearer against Constitution loss from using 1st–5th level Shadow Weave spells
+
+Requires:
+  17 Charisma
 
 Weight: 1~
 
@@ -317,14 +379,11 @@ Damage type: crushing
 Speed Factor: 4
 Proficiency Type: Quarterstaff
 Type: 2-handed
-Requires: 5 Strength
+Requires:
+  5 Strength
+  17 Intelligence
 
 Weight: 4~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~ribald3.sto~ THEN BEGIN
-COPY_EXISTING ~ribald3.sto~ ~override~
-ADD_STORE_ITEM ~c0sasta1~ #0 #0 #0 ~IDENTIFIED~ #1
-END
 
 ADD_PROJECTILE ~%MOD_FOLDER%/itempack/c0sadagg.pro~
 COPY ~%MOD_FOLDER%/itempack/c0sadag1.spl~ ~override~
@@ -362,6 +421,7 @@ Combat abilities:
 – Returns to the wielder's hand when thrown
 – When thrown, there is a 10% chance that the wielder will be teleported into melee range of the target and turn invisible for five rounds.
 – On a successful backstab, casts Blinding Darkness on target and restores one 1st level spell to the wielder's memory.
+– Each melee attack drains 1 hit point and transfers it to the wielder
 
 Equipped abilities:
 – Hit Points: -5
@@ -374,6 +434,7 @@ Proficiency Type: Dagger
 Type: One-handed
 Requires:
  3 Strength
+ 17 Dexterity
 
 Weight: 1~
 WRITE_SHORT 0x9C ~%c0sadagg%~
@@ -429,15 +490,12 @@ Proficiency Type: Long Sword
 Type: One-handed
 Requires:
  6 Strength
+ 18 Charisma
 
 Weight: 2~
 
-ACTION_IF FILE_EXISTS_IN_GAME ~uddrow23.sto~ THEN BEGIN
-COPY_EXISTING ~uddrow23.sto~ ~override~
-ADD_STORE_ITEM ~c0sas1h1~ #0 #0 #0 ~IDENTIFIED~ #6
-END
-
 COPY ~%MOD_FOLDER%/itempack/c0sapot1.spl~ ~override~
+COPY ~%MOD_FOLDER%/itempack/c0sapotv.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sapot1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
@@ -450,7 +508,7 @@ COPY ~%MOD_FOLDER%/itempack/c0sapot1.itm~ ~override~
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Potion~
-SAY NAME2 ~Shar's Infusion~
+SAY NAME2 ~Ebonshade Infusion~
 SAY UNIDENTIFIED_DESC ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion.
 
 STATISTICS:
@@ -460,7 +518,7 @@ SAY DESC ~This bottle contains a mysterious black-colored liquid which gives off
 
 STATISTICS:
 
-Special: Protects against Constitution loss from casting Shadow Weave spells
+Special: The imbiber becomes immune to the negative effects of using Shadow Magic, and gain increased casting speed of 2 and casting level of 4 for the duration. However, after the effects have worn off, they become stunned for two rounds.
 Duration: 1 turn
 
 Weight: 1~
@@ -507,6 +565,9 @@ Speed Factor: 0
 Proficiency Type: Dart
 Type: One-handed
 
+Requires:
+ 17 Charisma
+
 Weight: 0~
 
 COPY ~%MOD_FOLDER%/itempack/c0sarng2.eff~ ~override~
@@ -526,6 +587,9 @@ Equipped abilities:
 – Armor Class: +1, +3 vs. Spectral Undead
 – Saving Throws: +1, +3 vs. Spectral Undead
 – Charisma: +1 (Shadow Adepts)
+
+Requires:
+ 16 Wisdom
 
 Weight: 0~
 
@@ -561,6 +625,9 @@ Equipped abilities:
 – Bless
 – Wearer is healed for 2d6 hit points every time <PRO_HESHE> casts a Shadow Weave spell.
 
+Requires:
+  18 Wisdom
+
 Weight: 0~
 
 COPY ~%MOD_FOLDER%/itempack/c0sarn4a.spl~ ~override~
@@ -594,6 +661,10 @@ STATISTICS:
 Equipped abilities:
 – Magic Resistance: +5%
 – Wearer's offensive Shadow Weave spells incur a Saving Throw penalty of -1 for 3 rounds on the target (applies after spell effects)
+
+Requires:
+ 16 Constitution
+ 17 Charisma
 
 Weight: 0~
 
@@ -1272,286 +1343,3 @@ Requires:
 
 Weight: 10~
 END
-
-COMPILE ~%MOD_FOLDER%/dialogue/c0sascrl.d~
-
-OUTER_SET readscroll = RESOLVE_STR_REF (~Read Scroll~)
-APPEND ~ITEMDIAL.2da~ ~C0SASCR1    %readscroll%    C0SASCR1
-C0SASCR2    %readscroll%    C0SASCR2
-C0SASCR3    %readscroll%    C0SASCR3
-C0SASCR4    %readscroll%    C0SASCR4
-C0SASCR5    %readscroll%    C0SASCR5
-C0SASCR6    %readscroll%    C0SASCR6
-C0SASCR7    %readscroll%    C0SASCR7
-C0SASCR8    %readscroll%    C0SASCR8
-C0SASCR9    %readscroll%    C0SASCR9~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr1.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll I~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 1st level Shadow Weave spell.
-
-Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr2.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll II~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 2nd level Shadow Weave spell.
-
-Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr3.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll III~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 3rd level Shadow Weave spell.
-
-Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr4.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll IV~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 4th level Shadow Weave spell.
-
-Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr5.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll V~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 5th level Shadow Weave spell.
-
-Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr6.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll VI~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 6th level Shadow Weave spell.
-
-Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr7.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll VII~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 7th level Shadow Weave spell.
-
-Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr8.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll VIII~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 8th level Shadow Weave spell.
-
-Weight: 0~
-
-COPY ~%MOD_FOLDER%/itempack/c0sascr9.itm~ ~override~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept (not Shadow Disciple)~)
-END
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = 19
-	  parameter2 = 5
-	  power = 0
-END
-SAY NAME1 ~Scroll~
-SAY NAME2 ~Shadow Scroll IX~
-SAY DESC ~This spell scroll contains incantations that would be indecipherable to anyone not versed in the art of Shadow Magic. Upon studying it, a shadow adept may learn an extra spell at the expense of the scroll.
-
-STATISTICS:
-
-Special: Learn one 9th level Shadow Weave spell.
-
-Weight: 0~

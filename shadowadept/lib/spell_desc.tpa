@@ -1,0 +1,1793 @@
+OUTER_SPRINT SA_SPELL_101_NAME ~Shadow Missile~
+OUTER_SPRINT SA_SPELL_101_DESC ~Shadow Missile
+(Invocation/Evocation – Shadow Weave)
+
+Level: 1
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None 
+
+The shadow adept launches a missile of energy that unerringly strikes the target for 1d3+1 unmitigated magic cold damage. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), an additional +3 damage is dealt. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+10 damage) at level 9.~
+
+OUTER_SPRINT SA_SPELL_102_NAME ~Sigil of Despair~
+OUTER_SPRINT SA_SPELL_102_DESC ~Sigil of Despair
+(Alteration – Shadow Weave)
+
+Level: 1
+Range: 25 ft.
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell causes a feeling of doom to overwhelm the target. For the duration of the spell, the target receives a -2 penalty to all <PRO_HISHER> rolls, including THAC0 and Saving Throws. Additionally, the target suffers a -10% penalty to all damage dealt for the duration. There is no Saving Throw for this spell, and it is not affected by Magic Resistance.~
+
+OUTER_SPRINT SA_SPELL_103_NAME ~Blinding Darkness~
+OUTER_SPRINT SA_SPELL_103_DESC ~Blinding Darkness
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 1
+Range: 40 ft.
+Duration: 2 hours
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This 1st-level spell temporarily blinds its target. A Saving Throw at -2 penalty is allowed and, if successful, there are no harmful effects. If a victim is blinded, <PRO_HESHE> receives a -4 penalty to <PRO_HISHER> attack rolls and Armor Class.~
+
+OUTER_SPRINT SA_SPELL_104_NAME ~Deep Slumber~
+OUTER_SPRINT SA_SPELL_104_DESC ~Deep Slumber
+(Enchantment/Charm – Shadow Weave)
+
+Level: 1
+Range: Visual range of the caster
+Duration: 5 rounds/level 
+Casting Time: 1 
+Area of Effect: 30-ft. radius
+Saving Throw: Neg.
+
+When a shadow adept casts Deep Slumber, <PRO_HESHE> causes a comatose slumber to come upon one or more enemies (other than undead and certain other creatures specifically excluded from the spell's effects). All creatures to be affected by Deep Slumber must be within a 30-ft. radius. Creatures in the area of effect must make a Saving Throw vs. Death with a -3 penalty or fall asleep. Monsters with 5 Hit Dice or more are unaffected. Attacks against sleeping opponents never miss.
+
+At 9th level, targets above 4 Hit Dice may be affected though with no saving throw penalty.~
+
+OUTER_SPRINT SA_SPELL_105_NAME ~Bittercold Touch~
+OUTER_SPRINT SA_SPELL_105_DESC ~Bittercold Touch
+(Necromancy – Shadow Weave)
+
+Level: 1
+Range: 0
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: The creature
+Saving Throw: Neg.
+
+When the caster completes this spell, <PRO_HISHER> hand sucks in all light. This energy attacks the life force of any living creature upon which the shadow adept makes a successful melee attack (+4 bonus to hit). (Nonliving creatures such as golems and undead are unaffected by this spell.) The creature is punched for 1d2 fist damage (Strength bonuses apply) and must make a Saving Throw vs. Spell or suffer 1d8 points of cold damage and become Chilled for 3 rounds. Chilled creatures suffer a -2 penalty to Armor Class and THAC0 and move at half of their normal rate. Non-living creatures, such as undead or constructs, must instead make a Saving Throw vs. Spell at -2 or suffer 1d10 magic damage and do not become Chilled.~
+
+OUTER_SPRINT SA_SPELL_106_NAME ~Essence Drain~
+OUTER_SPRINT SA_SPELL_106_DESC ~Essence Drain
+(Necromancy – Shadow Weave)
+
+Level: 1
+Range: 30 ft.
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+With this spell, the shadow adept drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 2 points of magical damage + 2 points per 2 levels of the caster to a maximum of 10 total at 9th level while the shadow adept gains an equal amount of Hit Points. If the shadow adept goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses any extra Hit Points after 1 turn. Additionally, if this spell is cast on a target who is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), an additional 12% of their maximum hit points is drained as unmitigated damage.~
+
+OUTER_SPRINT SA_SPELL_107_NAME ~Shadow Veil~
+OUTER_SPRINT SA_SPELL_107_DESC ~Shadow Veil
+(Abjuration – Shadow Weave)
+
+Level: 1
+Range: 0
+Duration: 9 hours
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+By means of this spell, the shadow adept creates a magical field of force that serves as armor, increasing the caster's armor class by 1 point per 3 levels of the caster up to a maximum of +4 at level 13. It is cumulative with Dexterity bonuses to Armor Class. The veil is invisible, does not hinder movement, adds no weight or encumbrance, and doesn't prevent spellcasting. It lasts until successfully dispelled or until its duration expires.
+
+Additionally, whenever the caster suffers damage while the shadow veil is active, <PRO_HESHE> has a 5% (+5% per ten caster levels) chance to turn invisible for 2 rounds.~
+
+OUTER_SPRINT SA_SPELL_108_NAME ~Nocturna's Hush~
+OUTER_SPRINT SA_SPELL_108_DESC ~Nocturna's Hush
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 1
+Range: Visual range of the caster
+Duration: 5 rounds
+Casting Time: 6
+Area of Effect: 5-ft. radius centered on target
+Saving Throw: Neg.
+
+When Nocturna's Hush is cast, the target and all creatures within 5 feet are silenced on a failed Saving Throw vs. Spells at a -2 penalty, preventing them from speaking or casting spells for 5 rounds. If any targets afflicted with Nocturna's Hush are already silenced, they are instead slowed for the same duration with no save.~
+
+OUTER_SPRINT SA_SPELL_109_NAME ~Shadow Rope~
+OUTER_SPRINT SA_SPELL_109_DESC ~Shadow Rope
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 1
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell creates a shadowy thread which wraps itself around the caster's target and pulls them towards the caster. It deals no damage, but the target is immobilized for the duration and is unable to attack or use spells for one round.
+
+Enemies who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) suffer 6 magic damage and transfer it to the caster.~
+
+OUTER_SPRINT SA_SPELL_110_NAME ~Decoy~
+OUTER_SPRINT SA_SPELL_110_DESC ~Decoy
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 1
+Range: Visual range of caster
+Duration: 1 round
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell briefly conjures a projection of the caster next to <PRO_HIMHER> while turning <PRO_HIMHER> invisible for 1 round.~
+
+OUTER_SPRINT SA_SPELL_111_NAME ~Mesmerize~
+OUTER_SPRINT SA_SPELL_111_DESC ~Mesmerize
+(Enchantment/Charm – Shadow Weave)
+
+Level: 1
+Range: Visual range of caster
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell inflicts an enchantment upon a target creature of the shadow adept's choice. If the target fails a Save vs. Spells at -4, they are pacified for one turn, ceasing all action and remaining still for the duration. The target also suffers a -6 penalty to Armor Class due to being too mentally unfocused to actively dodge attacks. However, the target will break free of its enchantment prematurely if they are attacked.~
+
+OUTER_SPRINT SA_SPELL_112_NAME ~Ebonfruit~
+OUTER_SPRINT SA_SPELL_112_DESC ~Ebonfruit
+(Alteration – Shadow Weave)
+
+Level: 1
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+The shadow adept produces 5 pitch-black berries that <PRO_HESHE> can carry with <PRO_HIMHER>. Each berry has a random chance of causing one of the following effects:
+
+– Restore 1d6 hit points
+– +1 bonus to Strength for 1 turn
+– Invisibility for 5 rounds
+– +2 bonus to Luck (if imbiber is a Shadow Adept) or 1 poison damage per round for 1 turn (if imbiber is not)~
+
+OUTER_SPRINT SA_SPELL_113_NAME ~Shar's Compulsion~
+OUTER_SPRINT SA_SPELL_113_DESC ~Shar's Compulsion
+(Enchantment – Shadow Weave)
+
+Level: 1
+Range: Self
+Duration: 1 hour
+Casting Time: 6
+Area of Effect: Special
+Saving Throw: None
+
+The shadow adept shrouds <PRO_HIMHER>self with a shadowy glamour, granting them a +4 bonus to Charisma. This bonus is doubled when not under sunlight.~
+
+OUTER_SPRINT SA_SPELL_201_NAME ~Dark Mirage~
+OUTER_SPRINT SA_SPELL_201_DESC ~Dark Mirage
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 2
+Range: 0
+Duration: 1 hour
+Casting Time: 2
+Area of Effect: The caster
+Saving Throw: None
+
+When Dark Mirage is cast, the shadow adept causes the outline of <PRO_HISHER> form to become blurred, shifting and wavering. This distortion causes all missile and melee attacks against the caster to be made with a -3 penalty. The shadow adept also gains a +1 bonus to all of <PRO_HISHER> Saving Throws. Additionally, the caster causes from 2 to 8 exact duplicates of <PRO_HIMHER>self to come into being around <PRO_HIMHER>. These images do exactly what the shadow adept does. Since the spell causes a blurring and slight distortion when cast, it is impossible for opponents to be certain which are the illusions and which is the actual shadow adept. When an image is struck by a melee or missile attack—magical or otherwise—it disappears, but any other existing images remain intact until they are struck. However, it is important to note that this will not protect the caster against every attack, as it is possible for an enemy to choose the real caster amongst all the images.~
+
+OUTER_SPRINT SA_SPELL_202_NAME ~Night Terrors~
+OUTER_SPRINT SA_SPELL_202_DESC ~Night Terrors
+(Necromancy – Shadow Weave)
+
+Level: 2
+Range: 40 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 30-ft. radius
+Saving Throw: Neg.
+
+All enemies within the area of effect when this spell is cast must Save vs. Spell at -2 or flee in terror. Certain creatures are immune to the effects of fear, including all undead.
+
+Targets that are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 12 magic damage, which are transferred to the caster.~
+
+OUTER_SPRINT SA_SPELL_203_NAME ~Dark Fortune~
+OUTER_SPRINT SA_SPELL_203_DESC ~Dark Fortune
+(Enchantment/Charm – Shadow Weave)
+
+Level: 2
+Range: 15 ft.
+Duration: 1 hour
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The recipient of this spell gains extraordinary luck for the next hour, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage dealt towards the target is reduced by 1, while the target's damage dice are increased by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. Bonuses increase by the original amount for every five caster levels after 3rd level up to 23rd level. This spell also makes the target immune to effects that reduce luck, such as Doom or Greater Malison.~
+
+OUTER_SPRINT SA_SPELL_204_NAME ~Power Word, Sleep~
+OUTER_SPRINT SA_SPELL_204_DESC ~Power Word, Sleep
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 2
+Range: 90 ft.
+Duration: 5 rounds
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+When a shadow adept calls upon a Power Word, Sleep spell, <PRO_HESHE> causes a comatose slumber to come upon 1 creature (other than undead and certain other creatures specifically excluded from the spell's effects). The creature targeted must have less than 20 Hit Points and gets no Saving Throw. Magically sleeping opponents can be attacked with substantial bonuses. The Sleep effect will last for 5 rounds. This spell has no effect on creatures with more than 20 Hit Points.
+
+At 10th level, creatures above 20 Hit Points are put to sleep for 2 rounds. This spell is not affected by Magic Resistance.~
+
+OUTER_SPRINT SA_SPELL_205_NAME ~Cursed Flames~
+OUTER_SPRINT SA_SPELL_205_DESC ~Cursed Flames
+(Alteration – Shadow Weave)
+
+Level: 2
+Range: Visual range
+Duration: Special
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+When the shadow adept casts this spell, <PRO_HESHE> ignites a targeted creature through force of will with corrupting flames. The flames deal 1d8 fire damage and 1 poison damage each round, and for the duration of the spell, the target is treated as though diseased and is slowed, incurring a -4 penalty to THAC0 and Armor Class. The initial flames last for 3 rounds, after which the target must make a Saving Throw vs. Death or be ignited for a further 3 rounds. Therefore, the flames have the potential to continue indefinitely so long as the target does not make a successful Saving Throw.~
+
+OUTER_SPRINT SA_SPELL_206_NAME ~Ghostly Visage~
+OUTER_SPRINT SA_SPELL_206_DESC ~Ghostly Visage
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 2
+Range: Self
+Duration: 1 turn/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The caster is surrounded by a ghostly nimbus of light that grants 10% resistance to physical damage and prevents all level 1 spells from affecting <PRO_HIMHER>.~
+
+OUTER_SPRINT SA_SPELL_207_NAME ~Lesser Drain Vitality~
+OUTER_SPRINT SA_SPELL_207_DESC ~Lesser Drain Vitality
+(Necromancy – Shadow Weave)
+
+Level: 2
+Range: Touch
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell allows the shadow adept to drain two points of Constitution from a single target, increasing the caster's own for 1 turn. Lesser Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
+
+OUTER_SPRINT SA_SPELL_208_NAME ~Black Mist~
+OUTER_SPRINT SA_SPELL_208_DESC ~Black Mist
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 2
+Range: 90 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 50' radius
+Saving Throw: Neg.
+
+When this spell is cast, a thick shadowy mist spreads across the area selected by the caster. Any creatures caught within the mist must make a Save vs. Spells at -2 at the beginning of each round or become blinded for that round, receiving a -4 penalty to their Armor Class and attack rolls and greatly reducing their vision range. Those who make successful Saving Throws can leave the mist without suffering any ill effects, although those remaining in the mist must continue to save each round. A Dispel Magic will remove the blindness on a particular character, but if they remain in the mist, then they are still subject to its effects.~
+
+OUTER_SPRINT SA_SPELL_209_NAME ~Negative Energy Ray~
+OUTER_SPRINT SA_SPELL_209_DESC ~Negative Energy Ray
+(Necromancy – Shadow Weave)
+
+Level: 2
+Range: 15 ft.
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+Upon casting this spell, a black ray appears at the caster's fingertips and bursts out towards one target of the caster's choice. That target will be hit by the ray for 3d6 points of magical damage and suffers a -1 penalty to Armor Class, THAC0 and damage for 1 turn. The ray strikes a second time halfway through its duration, dealing the same amount of damage and applying a second instance of penalties. The caster may move while the spell is in effect. There is no saving throw against this spell's effects.~
+
+OUTER_SPRINT SA_SPELL_210_NAME ~Sigil of Mortality~
+OUTER_SPRINT SA_SPELL_210_DESC ~Sigil of Mortality
+(Enchantment/Charm – Shadow Weave)
+
+Level: 2
+Range: 30 ft.
+Duration: 1 turn
+Casting Time: 1 round
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell curses the target creature with mortality. For as long as the curse is in effect, the target loses their base physical resistance, if any, and incurs an additional -20% penalty to physical resistance for the duration. Additionally, the target is unable to be healed through any means, whether magical or otherwise. There is no Saving Throw for the effect, and it ignores Magic Resistance.~
+
+OUTER_SPRINT SA_SPELL_211_NAME ~Shadow Walk~
+OUTER_SPRINT SA_SPELL_211_DESC ~Shadow Walk
+(Alteration – Shadow Weave)
+
+Level: 2
+Range: 0
+Duration: Instant
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+This spell transports the caster to any place within the visual range of the caster. When the spell is cast, the shadow adept makes a brief planar jaunt into the Plane of Shadow and exits at a different location, making it seem as though <PRO_HESHE> has teleported. The caster is also briefly invisible for the travel duration, cancelling spells targeted at <PRO_HIMHER> unless the spellcaster can see through invisibility.~
+
+OUTER_SPRINT SA_SPELL_212_NAME ~Hallucinate~
+OUTER_SPRINT SA_SPELL_212_DESC ~Hallucinate
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 2
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 5 
+Area of Effect: 1 person or mammal 
+Saving Throw: Neg.
+
+The target of this spell must make a Saving Throw vs. Spell or come under its effects. When under the effects of the Hallucinate spell, the victim experiences a disruption of their senses causing them to perceive something that is not actually there, causing them to randomly wander, attack the nearest person, or stand confused.
+
+Targets that are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 16 magic damage, which are transferred to the caster.~
+
+OUTER_SPRINT SA_SPELL_213_NAME ~Shadowfade~
+OUTER_SPRINT SA_SPELL_213_DESC ~Shadowfade
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 2
+Range: Touch 
+Duration: Special 
+Casting Time: 2 
+Area of Effect: 1 creature 
+Saving Throw: None 
+
+This spell causes the creature touched to vanish from sight and be undetectable by normal vision or even infravision. Of course, the invisible creature is not magically silenced, and certain other conditions can render the creature detectable. Even allies cannot see the invisible creature or its gear, unless these allies can normally see invisible things or employ magic to do so. Items dropped or put down by the invisible creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. The spell remains in effect until it is magically broken or dispelled, until the recipient attacks any creature, or until 24 hours have passed. The caster cannot perform any actions that manipulate the environment around <PRO_HIMHER>, such as opening doors, disarming a trap, or opening a chest. The caster can, however, cast defensive spells on <PRO_HIMHER>self and fellow party members. And if <PRO_HESHE> attacks, <PRO_HESHE> immediately becomes visible, although the invisibility enables <PRO_HIMHER> to attack first.
+
+Additionally, if the target is either a shadow adept or a native of the Shadow Plane, they are healed for 1d6 hit points (+1d6 per five caster levels).~
+
+OUTER_SPRINT SA_SPELL_214_NAME ~Deceive Alignment~
+OUTER_SPRINT SA_SPELL_214_DESC ~Deceive Alignment
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 2
+Range: Self
+Duration: 8 hours
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+Using this spell, the shadow adept may choose to temporarily change to any alignment of their choice for eight hours. For all intents and purposes, the caster is treated as though they are of the selected alignment to determine reactions, spell effects and item restrictions. Any alignment-detecting magic will also detect the caster as being of their false alignment. After eight hours, the caster's alignment is reverted to normal.~
+
+OUTER_SPRINT SA_SPELL_301_NAME ~Phantom Arrow~
+OUTER_SPRINT SA_SPELL_301_DESC ~Phantom Arrow
+(Illusion/Phantasm, Enchantment/Charm – Shadow Weave)
+
+Level: 3
+Range: 60 ft.
+Duration: 3 rounds
+Casting Time: 3
+Area of Effect: Special
+Saving Throw: Neg.
+
+This spell launches an illusory arrow that affects the target's senses to such an extent that they perceive the damage dealt as real, losing 15% of their maximum hit points in unmitigated damage. However, as they are not physically injured, their lost hit points are restored after 3 rounds as the illusion wears off. However, if the afflicted target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), the damage dealt is permanent instead. Two arrows are launched from 12th level onwards, three at 19th level, and four at 26th level. The target may make a Saving Throw vs. Spells at -3 to disbelieve the illusion, though a separate save must be made for each individual arrow.~
+
+OUTER_SPRINT SA_SPELL_302_NAME ~Shadowblast~
+OUTER_SPRINT SA_SPELL_302_DESC ~Shadowblast
+(Invocation/Evocation – Shadow Weave)
+
+Level: 3
+Range: 40 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 30-ft. radius
+Saving Throw: 1/2 
+
+The shadow adept launches an unstable mass of shadowstuff which explodes, dealing 1d2 points of magic cold damage (undead creatures suffer magic fire damage instead) and 1d2 points of magic damage for every level of the caster (to a maximum of 10d2 of each) and penalizes their saving throws and attack rolls by -1 per 10 levels of the caster (-2 at 10th level, -3 at 20th level, etc.) for 1 turn. Creatures who pass their saving throw (-1 penalty per 5 levels) avoid the direct blast taking no magic damage or stat loss. Targets damaged by Shadowblast also suffer a -20% penalty to all damage dealt for 1 turn.
+
+Against targets that are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), Shadowblast inflicts three times as much damage.~
+
+OUTER_SPRINT SA_SPELL_303_NAME ~Inertia~
+OUTER_SPRINT SA_SPELL_303_DESC ~Inertia
+(Alteration – Shadow Weave)
+
+Level: 3
+Range: 25 ft.
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 30-ft. radius
+Saving Throw: Neg.
+
+This spell causes creatures to move and attack at half of their normal rates. It negates Haste, but does not otherwise affect magically hasted or slowed creatures. Slowed creatures have an Armor Class and attack penalty of -4. Creatures save at -4 vs. Spell. Targets must also make an initial Save vs. Spells or be slowed to a halt, becoming held for 1 round.~
+
+OUTER_SPRINT SA_SPELL_304_NAME ~Lifedrinker Touch~
+OUTER_SPRINT SA_SPELL_304_DESC ~Lifedrinker Touch
+(Necromancy – Shadow Weave)
+
+Level: 3
+Range: Touch
+Duration: Instant 
+Casting Time: 3 
+Area of Effect: 1 creature
+Saving Throw: None 
+
+When this spell is cast, the target loses 1d6 Hit Points for every 2 caster levels, to a maximum drain of 6d6 for a 12th-level caster. In addition, the target transfers 3 points of either Strength, Dexterity or Constitution to the caster. The Hit Points are added to the caster's current Hit Points, with any Hit Points over the caster's normal maximum treated as temporary additional Hit Points. The temporary Hit Points and statistics last for 1 hour.
+
+Note: This spell may not be cast multiple times to radically increase the caster's Hit Points. The caster must wait for the first Lifedrinker Touch spell to run its course before casting another.~
+
+OUTER_SPRINT SA_SPELL_305_NAME ~Beguile~
+OUTER_SPRINT SA_SPELL_305_DESC ~Beguile
+(Enchantment/Charm – Shadow Weave)
+
+Level: 3
+Range: 60 ft.
+Duration: 5 rounds
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Neg. 
+
+This spell works in the exact same manner as Charm Person, with one difference: There is no Saving Throw bonus. Beguile affects any single person it is cast upon. The term person includes any bipedal human, demihuman, or humanoid of man-size or smaller, such as brownies, dryads, dwarves, elves, gnolls, gnomes, goblins, half-elves, halflings, half-orcs, hobgoblins, humans, kobolds, lizard men, nixies, orcs, pixies, sprites, troglodytes, and others. Thus, a 10th-level fighter could be charmed, but an ogre could not. The person is allowed a Saving Throw vs. Spell to negate the effect.
+
+If the spell's recipient fails <PRO_HISHER> Saving Throw, <PRO_HESHE> regards the caster as a trusted friend and ally to be heeded and protected. The caster may give <PRO_HIMHER> orders, and the charmed individual will carry them out as quickly as possible.
+
+If the caster harms - or attempts to harm - the charmed person by some overt action, or if a Dispel Magic spell is cast upon the charmed person, the Beguile spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject has full memory of the events that took place while <PRO_HESHE> was charmed. Also note that you cannot have a charmed creature leave the area where <PRO_HESHE> is charmed.
+
+The saving throw penalty increases by -1 for every 5 caster levels.~
+
+OUTER_SPRINT SA_SPELL_306_NAME ~Shadow Comets~
+OUTER_SPRINT SA_SPELL_306_DESC ~Shadow Comets
+(Invocation/Evocation – Shadow Weave)
+
+Level: 3
+Range: 0
+Duration: Special
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates several small globes of shadowy matter, two for each experience level of the shadow adept, which are held in <PRO_HISHER> hands in place of <PRO_HISHER> usual weapons. The meteors can be hurled at targets up to 270 feet away and are treated as missiles with a +5 bonus to the attack rolls. Each meteor bursts into a 1-ft. diameter sphere upon impact, inflicting 1d4+3 points of damage plus an additional 3 points of cold damage to any creature struck. The shadow adept may hurl up to five missiles per round.~
+
+OUTER_SPRINT SA_SPELL_307_NAME ~Shadow Binding~
+OUTER_SPRINT SA_SPELL_307_DESC ~Shadow Binding
+(Enchantment/Charm – Shadow Weave)
+
+Level: 3
+Range: 35 ft.
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Neg. 
+
+This spell holds one creature of any type rigidly immobile and in place for one turn, unless a Saving Throw vs. Spell is made with a -4 penalty. Those who succeed on their Saving Throws are totally unaffected by the spell.
+
+Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subject's condition due to wounds, diseases, or poison.~
+
+OUTER_SPRINT SA_SPELL_308_NAME ~Impose~
+OUTER_SPRINT SA_SPELL_308_DESC ~Impose
+(Invocation/Evocation – Shadow Weave)
+
+Level: 3
+Range: 30 ft.
+Duration: 1 round
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell launches a blast of invisible force towards a target, dealing 3d6 crushing damage and knocking them away from the caster as well as stunning them for 1 round. There is no saving throw.~
+
+OUTER_SPRINT SA_SPELL_309_NAME ~Shadow Spear~
+OUTER_SPRINT SA_SPELL_309_DESC ~Shadow Spear
+(Invocation/Evocation – Shadow Weave)
+
+Level: 3
+Range: 70 ft.
+Duration: Special
+Casting Time: 5
+Area of Effect: Path of spear
+Saving Throw: Neg.
+
+Upon casting this spell, a spear made of shadowstuff forms in the caster's hands, which can be thrown once towards a target of the caster's choosing. The spear may be launched by any target the caster is able to attack, dispelling all of the spell protections of 5th level and lower affecting it. This includes the following spells: Minor Spell Deflection, Minor Globe of Invulnerability, Spell Immunity, and Minor Spell Turning. If no such spells protect the targets, the spear instead deals 5d6 magic damage and inflicts an additional effect dependent on the caster's level.
+
+5th level and below: Reduces targets' Armor Class by two points for five rounds
+8th-10th level: Reduces targets' saving throws and THAC0 by 1 point for five rounds
+11th-13th level: Halves targets' Dexterity for one turn
+14th-16th level: Drains two levels from targets for one turn
+17th level and above: Instantly kills targets
+
+The spear is not affected by Magic Resistance. Targets may make a Saving Throw vs. Death (-1 per spear upgrade) to avoid all secondary effects.~
+
+OUTER_SPRINT SA_SPELL_310_NAME ~Cursed Earth~
+OUTER_SPRINT SA_SPELL_310_DESC ~Cursed Earth
+(Conjuration – Shadow Weave)
+
+Level: 3
+Range: 90 ft.
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: 30' radius
+Saving Throw: Neg.
+
+This spell creates a zone of blackened, poisonous earth within a 30' radius. All creatures standing within the area must make a Saving Throw vs. Death at -4 each round or become poisoned, suffering 2 poison damage per round for 3 rounds, and have their movement rate halved.~
+
+OUTER_SPRINT SA_SPELL_311_NAME ~Sunder Magic~
+OUTER_SPRINT SA_SPELL_311_DESC ~Sunder Magic
+(Abjuration – Shadow Weave)
+
+Level: 3
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+A Sunder Magic spell removes magical effects upon anyone within the area. This includes effects given from spells, potions and certain magical items such as wands. It does not, however, affect enchanted magical items or spell protections such as Spell Turning and Spell Deflection. The chance of the dispel succeeding is determined by the effective level of the caster and the level of the magic being dispelled (Sunder Magic is cast as though at 1.5x the caster's actual level). The base chance of successfully dispelling is 50%. For every level that the caster of the Sunder Magic is above the original caster, <PRO_HISHER> chance of success increases by 5%. For every level that the caster of Sunder Magic is below the original caster, <PRO_HISHER> chance of success decreases by 10%. However, despite the difference in levels, there is always at least a 5% chance of success or failure. Thus, if a caster is 10 levels higher than the magic <PRO_HESHE> is trying to dispel, there is only a 5% chance of failure. Similarly if the caster is 4 levels lower than the magic <PRO_HESHE> is trying to dispel, there is only a 10% chance of success. Intuitively, this spell is almost useless if the target is 5 or more levels higher than the caster.
+
+Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
+
+OUTER_SPRINT SA_SPELL_312_NAME ~Void Edge~
+OUTER_SPRINT SA_SPELL_312_DESC ~Void Edge
+(Invocation/Evocation – Shadow Weave)
+
+Level: 3
+Range: Self
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: Self
+Saving Throw: None
+
+Upon casting this spell, the shadow adept imbues <PRO_HISHER> next melee attack with shadow magic, providing it with a +5 enchantment bonus and the ability to drain 2 hit points per level as magic damage.~
+
+OUTER_SPRINT SA_SPELL_401_NAME ~Fireshield (Shadow)~
+OUTER_SPRINT SA_SPELL_401_DESC ~Fireshield (Shadow) 
+(Invocation/Evocation, Alteration – Shadow Weave)
+
+Level: 4
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 4 
+Area of Effect: The caster 
+Saving Throw: None 
+
+The shadow fireshield protects the user from cold damage by surrounding the caster with a shield of black flame. This shield not only grants the user 50% resistance to cold, but also protects the caster from attacks made within a 5-ft. radius around the caster. An opponent that hits the caster with any weapons or spells within this radius suffers 2d4+2 damage (half magic cold, half magic) and reduces the attacker's THAC0 by one point for 6 rounds (cumulative).~
+
+OUTER_SPRINT SA_SPELL_402_NAME ~Shadeskin~
+OUTER_SPRINT SA_SPELL_402_DESC ~Shadeskin
+(Alteration – Shadow Weave)
+
+Level: 4
+Range: 0
+Duration: 12 hours
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None 
+
+When a shadow adept casts this powerful spell upon <PRO_HIMHER>self, an outer skin of shadowstuff will move up from the ground, completely covering <PRO_HIMHER>. This skin is of course magical and will hinder the shadow adept in no way. The effect of this is to protect the shadow adept from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting. For example, a 10th-level shadow adept would receive 5 skins while a 20th-level shadow adept would receive 10. For each skin the shadow adept possesses, the spell will stop one attack, so a 10th-level shadow adept would be protected from the first 5 attacks made against <PRO_HIMHER>, but the 6th would affect <PRO_HIMHER> normally. The skins will remain on the shadow adept until <PRO_HESHE> is affected by a Dispel Magic, all of the skins are removed due to physical attacks, or the spell duration expires. It is important to note that this will not protect the shadow adept from any magical attacks, such as Fireball.
+
+Additionally, so long as at least one layer of Shadeskin is active, the shadow adept gains 25% resistance to acid, cold, fire, electrical and magic damage.~
+
+OUTER_SPRINT SA_SPELL_403_NAME ~Sigil of Misfortune~
+OUTER_SPRINT SA_SPELL_403_DESC ~Sigil of Misfortune
+(Enchantment/Charm – Shadow Weave)
+
+Level: 4
+Range: 50 ft.
+Duration: 2 rounds/level
+Casting Time: 4
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+The spell allows the caster to adversely affect all the Saving Throws of <PRO_HISHER> enemies. The effect is applied to all hostile creatures within the area of effect. Opponents under the influence of this spell make all Saving Throws and attack rolls at a penalty of -4.
+
+This spell is not affected by Magic Resistance.~
+
+OUTER_SPRINT SA_SPELL_404_NAME ~Summon Shadow~
+OUTER_SPRINT SA_SPELL_404_DESC ~Summon Shadow
+(Necromancy – Shadow Weave)
+Level: 4
+Range: Long
+Duration: 2 hours
+Casting Time: 1 round
+Area of Effect: Special
+Saving Throw: None
+
+By means of this spell, the caster summons a number of shadows, undead monsters which serve the mage under any conditions. The type and number of creatures that appear depend upon the level of the shadow adept casting the spell.
+
+7th: 3 Shadows
+9th: 3 Shadow Fiends
+12th+ : 3 Wraiths
+16th+ : 1 Shadow of the Void
+
+The undead creatures will remain under the shadow adept's control until they are slain or the spell duration expires.
+
+NOTE: Due to being creatures of the Plane of Shadow, shadows are weakened in natural daylight.~
+
+OUTER_SPRINT SA_SPELL_405_NAME ~Shar's Blessing~
+OUTER_SPRINT SA_SPELL_405_DESC ~Shar's Blessing
+(Invocation/Evocation – Shadow Weave)
+
+Level: 4
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: One target
+Saving Throw: None
+
+Through this spell, the caster draws upon energy from the Plane of Shadow to imbue a single target with the strength and skill of a Fighter of the same level. The shadow adept's Strength score is increased by four points, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HESHE> gains one extra attack per round and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled. However, for the duration of the spell, the target incurs a penalty of 4 to their casting speed, and takes 3% of their maximum hit points in damage each round.
+
+From 14th level onwards, the caster's attacks per round are doubled instead.~
+
+OUTER_SPRINT SA_SPELL_406_NAME ~Phantasmal Killer~
+OUTER_SPRINT SA_SPELL_406_DESC ~Phantasmal Killer
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 4
+Range: Visual range of the caster
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+The caster creates a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. The target first gets a Save vs. Spells to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at +2 or die from fear. Even if the second save is successful, the subject takes 3d6 points of damage.
+
+If the target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), they are only allowed to make a Saving Throw vs. Death.~
+
+OUTER_SPRINT SA_SPELL_407_NAME ~Drain Vitality~
+OUTER_SPRINT SA_SPELL_407_DESC ~Drain Vitality
+(Necromancy – Shadow Weave)
+
+Level: 4
+Range: Touch
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell allows the shadow adept to drain four points of Constitution from a single target, increasing the caster's own for 1 turn. Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
+
+OUTER_SPRINT SA_SPELL_408_NAME ~Dread Whispers~
+OUTER_SPRINT SA_SPELL_408_DESC ~Dread Whispers
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 4
+Range: 30 ft.
+Duration: 5 rounds
+Casting Time: 9
+Area of Effect: 30 ft. radius
+Saving Throw: None
+
+Dread Whispers causes all enemies within range to become afflicted by an ominous chorus of voices infesting their mind. The voices are distracting, causing 50% spell failure on targets. In addition, at the beginning of every round after the first, the target must make a Save vs. Spell at -6 or lose morale, running in panic for 1 round.~
+
+OUTER_SPRINT SA_SPELL_409_NAME ~Negative Immunity~
+OUTER_SPRINT SA_SPELL_409_DESC ~Negative Immunity
+(Abjuration – Shadow Weave)
+
+Level: 4
+Range: Touch
+Duration: 1 turn/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throws: None
+
+This spell grants the target immunity to blindness, fear, sleep, confusion and level drain for 1 turn per level of the caster.~
+
+OUTER_SPRINT SA_SPELL_410_NAME ~Black Ooze~
+OUTER_SPRINT SA_SPELL_410_DESC ~Black Ooze
+(Conjuration – Shadow Weave)
+
+Level; 4
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 1 creature and any enemy within 7.5 ft.
+Saving Throw: 1/2
+
+With this spell, the shadow adept conjures a glob of shadowy, vaporous ooze from the Plane of Shadow and drops it on the target, dealing 6d6 acid damage to them and any nearby targets, holding them for 1 round (no save) then slowing them and reducing their magic resistance by 20% for 1 turn. Targets who make a Saving Throw vs. Death at -2 take half damage and avoid the secondary effects.
+
+This spell is unaffected by Magic Resistance, but creatures that are immune to acid are unaffected.~
+
+OUTER_SPRINT SA_SPELL_411_NAME ~Wall of Black Flame~
+OUTER_SPRINT SA_SPELL_411_DESC ~Wall of Black Flame
+(Invocation/Evocation – Shadow Weave)
+
+Level: 4
+School: Evocation
+Range: Long
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 10'
+Saving Throw: 1/2
+
+With this spell, the shadow adept creates a wall of black fire, dealing 4d6 damage (half fire, half magic) to all creatures who pass through it (Save vs. Spells at -4 for half) and reduces their Armor Class by -4 for one round. Creatures cannot take damage more than once per round.~
+
+OUTER_SPRINT SA_SPELL_412_NAME ~Pain Mirror~
+OUTER_SPRINT SA_SPELL_412_DESC ~Pain Mirror
+(Necromancy – Shadow Weave)
+
+Level; 4
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
+
+When the caster is struck with an attack, <PRO_HESHE> takes no damage and drains 1d4 hit points per level from the attacker instead. It only works for one attack, and the effects are not cumulative (you cannot have more than one mirror erected). If the spell is not triggered, it lasts for 1 turn.~
+
+OUTER_SPRINT SA_SPELL_413_NAME ~Greater Shadowfade~
+OUTER_SPRINT SA_SPELL_413_DESC ~Greater Shadowfade
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 4
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces – a shimmering – allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus. Additionally, for as long as the caster is at least partially invisible, <PRO_HESHE> is healed for 2d6 hit points per round for the duration.
+
+Note: After making an attack, the caster is no longer completely invisible. Opponents can target the caster. The caster is treated as Non-Detected for the duration.~
+
+OUTER_SPRINT SA_SPELL_414_NAME ~Shadow Conjuration~
+OUTER_SPRINT SA_SPELL_414_DESC ~Shadow Conjuration
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 4
+Range: Special
+Duration: Special
+Casting Time: 1
+Area of Effect: Special
+Saving Throw: Special
+
+Using this spell, the shadow adept draws upon power from the Plane of Shadow to cast a shadow variant of one mage spell among a randomly selected set. The sets are as following:
+
+1st Set: Magic Missile, Melf's Acid Arrow, Ghost Armor, Shadow Monsters.
+2nd Set: Chromatic Orb, Mirror Image, Fireball, Shadow Monsters.
+3rd Set: Magic Missile, Web, Monster Summoning I, Shadow Monsters.
+4th Set: Chromatic Orb, Glitterdust, Wraithform, Shadow Monsters.
+5th Set: Magic Missile, Stinking Cloud, Flame Arrow, Shadow Monsters.
+
+The chosen spell is functionally identical to one cast by a regular mage of the same level.~
+
+OUTER_SPRINT SA_SPELL_501_NAME ~Cone of Bitter Cold~
+OUTER_SPRINT SA_SPELL_501_DESC ~Cone of Bitter Cold
+(Invocation/Evocation – Shadow Weave)
+
+Level: 5
+Range: 0
+Duration: Instant
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: 1/2
+
+When this spell is cast, it generates a cone-shaped area of freezing ice originating at the shadow adept's hand and extending outwards of 30 ft. in a 90' cone in front of the caster. It drains heat and causes 1d6 magic cold damage. For example, a 10th-level shadow adept would deal 10d6 (Save vs. Spell at -2 for half) magic cold damage. Targets who fail their saving throw are also slowed and take 1d6 extra magic cold damage per round for 2 rounds + 1 round per 4 caster levels.~
+
+OUTER_SPRINT SA_SPELL_502_NAME ~Shadow Assault~
+OUTER_SPRINT SA_SPELL_502_DESC ~Shadow Assault
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 5
+Range: 0
+Duration: 9 rounds + 1 round/level after 9th
+Casting Time: 2
+Area of Effect: The caster
+Saving Throw: None
+
+This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces - a shimmering - allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus. For the duration of the spell, the shadow adept is also able to backstab with a x2 multiplier, increased to x3 at level 14 and x4 at level 21.
+
+Additionally, the caster's movement rate is doubled, allowing for a quick retreat from battle if necessary.
+
+Note: After making an attack, the shadow adept is no longer completely invisible. Opponents can target the shadow adept.~
+
+OUTER_SPRINT SA_SPELL_503_NAME ~Breaching Dark~
+OUTER_SPRINT SA_SPELL_503_DESC ~Breaching Dark
+(Abjuration – Shadow Weave)
+
+Level: 5
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast at a creature, it breaches and dispels all of the specific and combat protections on the target creature. Here is a complete list of all the specific protection spells that are dispelled by Breach: Shield, Protection Circle, Resist Fear, Protection From Fire/Cold, Fireshield, Protection From Acid, Protection From Electricity, Protection From Magic Energy, Protection From The Elements, and Protection From Energy. The combat protection spells dispelled by Breach are Protection From Normal Missiles, Protection From Normal Weapons, Protection From Magical Weapons, Stoneskin, Iron Skins, Armor, Ghost Armor, Spirit Armor, Absolute Immunity, Mantle, and Improved Mantle. The target's Magic Resistance, if any, does not affect this spell. Additionally, this spell also lower's the opponent's magic resistance by 10% + 1% per level of the caster.~
+
+OUTER_SPRINT SA_SPELL_504_NAME ~Shadow Blade~
+OUTER_SPRINT SA_SPELL_504_DESC ~Shadow Blade
+(Invocation/Evocation – Shadow Weave)
+
+Level: 5
+Range: 0
+Duration: 2 turns
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell creates a translucent, shadow-like, weightless area of shadowstuff extending from the fingers of one of the caster's hands. The silent, blade-shaped construct's cutting edges inflict damage just as those of a real sword do. The Shadow Sword's power increases with the caster's level, upgrading once every 7 caster levels.
+
+Shadow Sword +3:
+ - 5% chance to cast Essence Drain on hit
+ - 2% chance to cast Shadow Binding on hit
+ - Cold Resistance: +50%
+ - Wielded as though Specialized in long swords
+
+THAC0: +3
+Damage: 1d8+3, 3 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Shadow Sword +4:
+ - 5% chance to cast Essence Drain on hit
+ - 5% chance to cast Shadow Binding on hit
+ - 2% chance to cast Nightshade on hit
+ - 1 extra attack per round
+ - Cold Resistance: +50%
+ - Wielded as though Mastery with long swords
+
+THAC0: +4
+Damage: 1d8+4, 4 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Shadow Sword +5:
+ - 10% chance to cast Essence Drain on hit
+ - 5% chance to cast Shadow Binding on hit
+ - 5% chance to cast Nightshade on hit
+ - 1 extra attack per round
+ - Cold Resistance: +75%
+ - Wielded as though High Mastery with long swords
+
+THAC0: +5
+Damage: 1d8+5, 5 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Shadow Sword +6:
+ - 20% chance to cast Essence Drain on hit
+ - 10% chance to cast Shadow Binding on hit
+ - 10% chance to cast Nightshade on hit
+ - 2% chance to cast Death Mark on hit
+ - 1 extra attack per round
+ - Cold Resistance: +100%
+ - Wielded as though Grand Mastery with long swords
+
+THAC0: +6
+Damage: 1d8+6, 6 cold (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed~
+
+OUTER_SPRINT SA_SPELL_505_NAME ~Sigil of Madness~
+OUTER_SPRINT SA_SPELL_505_DESC ~Sigil of Madness
+(Enchantment/Charm – Shadow Weave)
+
+Level: 5
+Range: 35 ft.
+Duration: 5 rounds + 1 round/6 levels
+Casting Time: 4
+Area of Effect: 30-ft. radius
+Saving Throw: Special
+
+The effects of this spell are identical to the 5th-level spell Chaos in all respects, except this spell ignores magic resistance. The victims wander around as if in a daze, sometimes wandering away, sometimes attacking either friend or foe. If the victim is 4th level or lower, <PRO_HESHE> does not receive a Saving Throw vs. the effects. However, if the victim is 5th level or higher, <PRO_HESHE> receives a Save vs. Spell with a -4 penalty. The spell lasts for the duration or until a successful Dispel Magic is cast. Additionally, targets who are mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused) incur 25 magic damage and are permanently drained of 2 levels.~
+
+OUTER_SPRINT SA_SPELL_506_NAME ~Shar's Memory Drain~
+OUTER_SPRINT SA_SPELL_506_DESC ~Shar's Memory Drain
+(Enchantment – Shadow Weave)
+
+Level: 5
+Range: 40 ft.
+Duration: 5 rounds
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+This powerful spell erases a portion of the target's memory, weakening them. All saving throws are reduced by 2 and arcane casters lose two memorized spells and have their casting time increased by 2. After 5 rounds, the target must make a Save vs. Spells at -4 or suffer the same effects a second time.~
+
+OUTER_SPRINT SA_SPELL_507_NAME ~Unmask~
+OUTER_SPRINT SA_SPELL_507_DESC ~Unmask
+(Divination – Shadow Weave)
+
+Level: 5
+Range: 0
+Duration: Instant
+Casting Time: 5
+Area of Effect: 235-ft. radius
+Saving Throw: None
+
+When this spell is cast, an area roughly 30 feet in radius around the caster will be affected. All hostile illusion/phantasm spells in this area will be dispelled and all traps are revealed. This spell only affects one's enemies.
+
+The spells that are affected by this are: Reflected Image, Invisibility, Blur, Mirror Image, Ghost Armor, Invisibility Sphere, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project Image, and Mass Invisibility.~
+
+OUTER_SPRINT SA_SPELL_508_NAME ~Nightshade~
+OUTER_SPRINT SA_SPELL_508_DESC ~Nightshade
+(Necromancy – Shadow Weave)
+
+Level: 5
+Range: 90 ft.
+Duration: Permanent
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+When this spell is cast, the target suffers damage equal to 2% of their maximum hit points per level of the caster up to a maximum of 40%. The target may make a Saving Throw vs. Death at -2 to take half damage.~
+
+OUTER_SPRINT SA_SPELL_509_NAME ~Shadow Will~
+OUTER_SPRINT SA_SPELL_509_DESC ~Shadow Will
+(Enchantment/Charm – Shadow Weave)
+
+Level: 5
+Range: 40 ft.
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+Shadow Will causes the subject's intellect to degenerate into that of a simple beast of burden unless a Saving Throw vs. Spell is made with a -4 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon <PRO_HIMHER>. Additionally, if the spell succeeds, the caster receives a portion of the target's mental capacity, gaining a non-cumulative +2 bonus to Intelligence and Wisdom for two turns.~
+
+OUTER_SPRINT SA_SPELL_510_NAME ~Void Blast~
+OUTER_SPRINT SA_SPELL_510_DESC ~Void Blast
+(Invocation/Evocation – Shadow Weave)
+
+Level: 5
+Range: 90 ft.
+Duration: 1d4 rounds
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+With this spell, the shadow adept launches a bolt of energy at a targeted creature. The target takes 2d6 magical damage, and if it fails a Save vs. Spells at -2, is banished to a pocket realm for 1d4 rounds and upon returning takes another 2d6 magical damage and is stunned for 2 rounds. Summoned creatures struck by the blast are permanently banished with no saving throw.~
+
+OUTER_SPRINT SA_SPELL_511_NAME ~Shadow Screen~
+OUTER_SPRINT SA_SPELL_511_DESC ~Shadow Screen
+(Abjuration – Shadow Weave)
+
+Level: 5
+Range: 0
+Duration: 2 hours
+Casting Time: 8
+Area of Effect: The caster
+Saving Throw: None
+
+When this spell is cast, the shadow adept is protected from the next magical attack against <PRO_HIMHER>. The spells from which the shadow adept is protected are Dispel/Remove Magic, Spell Thrust, Secret Word, Breach, Lower Resistance, Pierce Magic, Ruby Ray, Khelben's Warding Whip, Pierce Shield, and Spellstrike. If one of these spells is cast at the shadow adept, this spell activates and absorbs the attack. However, this only works once and this spell is consumed in the process. Otherwise, it will last for its duration.~
+
+OUTER_SPRINT SA_SPELL_512_NAME ~Summon Nighthaunt~
+OUTER_SPRINT SA_SPELL_512_DESC ~Summon Nighthaunt
+(Conjuration/Summoning)
+
+Level: 5
+Range: 45 ft.
+Duration: 1 turn + 1 round/level
+Casting Time: 8
+Area of Effect: Special
+Saving Throw: None
+
+This spell conjures forth a nighthaunt, an undead monster from the Shadow Plane. Nighthaunts are deadly creatures that emit an aura of desecration, reducing the THAC0 and damage of all nearby living creatures by two points while increasing THAC0 and damage of all undead creatures by two points. Its natural weapon is capable of draining two levels on hit and strikes as a +4 weapon. However, nighthaunts are greatly weakened in natural daylight. From 14th level onwards, two nighthaunts are summoned instead.
+
+The nighthaunt is fully under the control of the caster for the duration of the spell and will follow all of <PRO_HISHER> orders until the duration has expired.~
+
+OUTER_SPRINT SA_SPELL_513_NAME ~Mass Lesser Drain Vitality~
+OUTER_SPRINT SA_SPELL_513_DESC ~Mass Lesser Drain Vitality
+(Necromancy – Shadow Weave)
+
+Level: 5
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+This spell inflicts the effects of the Lesser Drain Vitality spell upon every enemy creature within the area of effect, draining two points of Constitution from each target for 1 turn. Mass Lesser Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
+
+OUTER_SPRINT SA_SPELL_601_NAME ~Shar's Shield~
+OUTER_SPRINT SA_SPELL_601_DESC ~Shar's Shield
+(Abjuration – Shadow Weave)
+
+Level: 6
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: 5-ft. radius sphere
+Saving Throw: None
+
+This spell creates an immobile, faintly shimmering magical sphere around the caster that prevents any 1st-, 2nd-, 3rd-, or 4th-level spell effects from penetrating (i.e., the area of effect of any such spells does not include the area of the Globe of Invulnerability). This includes innate abilities and effects from devices. However, any type of spell can be cast out of the magical sphere, and these pass from the caster of the globe to their subject without affecting the globe. 5th- and higher level spells are not affected by the globe, and magical attacks of 5th-level or higher, such as Spellstrike and Pierce Magic, can bring it down.
+
+Additionally, the shadow adept gains 20% magic resistance as long as the globe is up.~
+
+OUTER_SPRINT SA_SPELL_602_NAME ~Twin Mislead~
+OUTER_SPRINT SA_SPELL_602_DESC ~Twin Mislead
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 6
+Range: 0
+Duration: 1 round/level
+Casting Time: 1
+Area of Effect: Special
+Saving Throw: None
+
+When this spell is cast, the shadow adept is affected by an Improved Invisibility spell and is teleported a few feet away from <PRO_HISHER> original position. Meanwhile, an exact image of the caster is created where <PRO_HESHE> used to be, with exactly the same Hit Points as the caster. The image cannot perform any actions at all, such as attacking or casting spells. It can, however, move around and act as a decoy for the invisible shadow adept. The image will remain under control of the caster until reduced to 0 Hit Points, or until affected by a Dispel Magic or a spell that reveals illusions, such as True Sight.
+
+After 3 rounds have passed, a second decoy is spontaneously created, regardless of whether or not the first has been destroyed.~
+
+OUTER_SPRINT SA_SPELL_603_NAME ~Protection From Weave-forged Weapons~
+OUTER_SPRINT SA_SPELL_603_DESC ~Protection From Weave-forged Weapons
+(Abjuration – Shadow Weave)
+
+Level: 6
+Range: 0
+Duration: 4 rounds
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None 
+
+When the spell is cast, it confers complete invulnerability to all magical weapons created using Weave magic. This includes weapons that are blessed or enchanted. The attacks of powerful monsters are also considered magical weapons. This spell cannot be cast on anyone who is protected from normal weapons as well as anyone protected by Mantle, Improved Mantle, or Absolute Immunity. Due to the nature of this spell, with the short casting time and duration, it is mainly used to buy the shadow adept a few rounds in the thick of combat. This effect lasts for the duration of the spell or until dispelled.~
+
+OUTER_SPRINT SA_SPELL_604_NAME ~Power Word, Silence~
+OUTER_SPRINT SA_SPELL_604_DESC ~Power Word, Silence
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 6
+Range: 90 ft.
+Duration: 7 rounds
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+In using this spell, the shadow adept points at an individual and utters the Power Word. For the next 7 rounds, that creature cannot make any sound. This silence completely foils any spells that require verbal components. The only ways to counter this spell are either a Dispel Magic or a Vocalize spell. There is no Saving Throw and the spell ignores magic resistance.~
+
+OUTER_SPRINT SA_SPELL_605_NAME ~Black Lightning~
+OUTER_SPRINT SA_SPELL_605_DESC ~Black Lightning 
+(Invocation/Evocation – Shadow Weave)
+
+Level: 6
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: Special 
+Saving Throw: 1/2 
+
+When the shadow adept casts Black Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical and fire damage. The lightning causes 1d6 points of damage for every 2 levels of the caster and causes targets to go berserk for 3 rounds. If the target of the lightning saves vs. Spell, they avoid berserking and only half damage is inflicted. Thus, a 12th-level shadow adept will cause 6d6 (half electrical, half fire) damage to a victim (3d6 electrical if the victim makes <PRO_HISHER> Saving Throw vs. Spell).~
+
+OUTER_SPRINT SA_SPELL_606_NAME ~Shatter Weave~
+OUTER_SPRINT SA_SPELL_606_DESC ~Shatter Weave
+(Invocation/Evocation – Shadow Weave)
+
+Level: 6
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2 
+
+When this spell is cast upon a target creature there will be two major effects. The first is that it will dispel one spell protection of 8th level or lower from the creature. This will always dispel the highest level of spell protection on the target first. If the target has two or more protections tied for the highest level, the choice will be random. The second effect of the spell is that the creature's magic resistance is temporary nullified. The resistance remains lowered for 2 rounds, and this effect cannot be negated in any way. Additionally, mages will take 10d4 magic damage and suffer from a 50% chance of spell failure for 2 rounds. Spells affected by Pierce Magic are Minor Spell Deflection, Minor Spell Turning, Spell Deflection, Spell Turning, Minor Globe of Invulnerability, Spell Immunity, and Globe of Invulnerability. The target's magic resistance, if any, does not affect this spell.~
+
+OUTER_SPRINT SA_SPELL_607_NAME ~Umbral Blades~
+OUTER_SPRINT SA_SPELL_607_DESC ~Umbral Blades
+(Invocation/Evocation – Shadow Weave)
+
+Level: 6 
+Range: Self
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: Special
+
+The shadow adept employs this spell to set up a ring of circling, razor sharp blades. These whirl and flash around the caster, providing a bonus of 4 Armor Class against melee weapons and dealing damage to enemies in range every round. Any creature attempting to pass through the blades will suffer 6d8 points of damage and lose 1 point of Strength for 1 turn. Creatures within the area of the barrier when it is invoked are entitled to a Saving Throw vs. Spell to negate the damage. The barrier remains for 1 turn.~
+
+OUTER_SPRINT SA_SPELL_608_NAME ~Disintegrate~
+OUTER_SPRINT SA_SPELL_608_DESC ~Disintegrate
+(Alteration – Shadow Weave)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+When this spell is cast at another creature, a thin purple ray is shot out. Upon contact with the ray, the creature must make a Saving Throw vs. Spell at -2 or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying. If the target survives the process, they still take 6d6 magic damage.
+
+Targets slain by this spell will be raised as a wraith under the caster's control for 5 turns.~
+
+OUTER_SPRINT SA_SPELL_609_NAME ~Black Rose~
+OUTER_SPRINT SA_SPELL_609_DESC ~Black Rose
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 6
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+This spell conjures a thorned, magical rose that wraps itself around the caster's chosen target, dealing 6d6 piercing damage. If the target fails a Saving Throw vs. Spells at -6, they lose an additional 20% of their maximum hit points and become entangled for 1 turn, receiving a -2 penalty to Armor Class, THAC0 and casting time. Additionally, the target must make another Save vs. Spells every round or suffer an additional 2d6 piercing damage until the rose vanishes. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) , they take an additional 35 magic damage, which is transferred to the caster, and are drained of four levels.~
+
+OUTER_SPRINT SA_SPELL_610_NAME ~Negative Energy Burst~
+OUTER_SPRINT SA_SPELL_610_DESC ~Negative Energy Burst
+(Necromancy – Shadow Weave)
+
+Level: 6
+Range: 30 ft.
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: 20 ft. radius
+Saving Throw: None
+
+Upon casting this spell, a burst of negative energy engulfs the area targeted by the caster. All enemies within the radius take 6d6 magical damage and suffer a -3 penalty to Armor Class, THAC0 and damage for 1 turn. Creatures with less than 8 Hit Dice and any summoned creatures are instantly killed. There is no saving throw against this spell's effects.~
+
+OUTER_SPRINT SA_SPELL_611_NAME ~Devour Dream~
+OUTER_SPRINT SA_SPELL_611_DESC ~Devour Dream
+(Enchantment/Charm – Shadow Weave)
+
+Level: 6
+Range: Touch
+Duration: Instant
+Casting Time: 2
+Area of Effect: 15-ft. radius centerd on caster
+Saving Throw: None
+
+This spell may only affect sleeping targets. Upon casting the spell, the shadow adept consumes the thoughts of all creatures within 15 feet of <PRO_HIMHER>, dealing 10d8 magical damage and restoring up to three of the caster's previously cast spells per affected target. The target is always woken up after the effects of this spell.
+
+Devour Dream cannot recall 6th-level or greater spells.~
+
+OUTER_SPRINT SA_SPELL_701_NAME ~Black Ray of Destruction~
+OUTER_SPRINT SA_SPELL_701_DESC ~Black Ray of Destruction
+(Alteration – Shadow Weave)
+
+Level: 7
+Range: 40 ft.
+Duration: Instant
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, it dispels one spell protection of any level affecting the target creature. The spells affected by the Black Ray of Destruction are Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. This will always remove the highest-level spell protection affecting the target; if more than one same-level protection is active on the target simultaneously, one of them will be randomly chosen and dispelled. Additionally, this spell creates a small dead magic zone around the target, preventing the target from casting spells for 2 rounds. The target's Magic Resistance, if any, does not affect this spell.~
+
+OUTER_SPRINT SA_SPELL_702_NAME ~Shadowspray~
+OUTER_SPRINT SA_SPELL_702_DESC ~Shadowspray
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 7
+Range: 60 ft.
+Duration: Instant
+Casting Time: 4
+Area of Effect: 70-ft.-long cone 
+Saving Throw: Special
+
+When casting this spell, the shadow adept unleashes a wave of shadow fire from <PRO_HISHER> hand. Any creature with fewer than 8 Hit Dice struck by a wave is blinded for 5 rounds, regardless of any other effect. Additionally, the fire is chaotic in nature, and may cause random effects as per the Prismatic Spray spell:
+
+  - Inflicts 20 points of damage; Save vs. Spell for half.
+  - Inflicts 40 points of damage; Save vs. Spell for half.
+  - Inflicts 80 points of damage; Save vs. Spell for half.
+  - Save vs. Poison or die; survivors take 20 points of poison damage.
+  - Save vs. Petrification or be turned to stone.
+  - Save vs. Wand or be feebleminded.
+  - Save vs. Spell or be disintegrated.~
+
+OUTER_SPRINT SA_SPELL_703_NAME ~Power Word, Stun~
+OUTER_SPRINT SA_SPELL_703_DESC ~Power Word, Stun
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 7
+Range: Visual range of the caster 
+Duration: Special
+Casting Time: 1 
+Area of Effect: 1 creature 
+Saving Throw: None
+
+When a Power Word, Stun spell is uttered, any creature of the Mage's choice within visual range is stunned for the duration depending on its current Hit Points: 
+ 1 to 29 Hit Points: Stunned for 4d4 rounds; 
+ 30 to 59 Hit Points: Stunned for 2d4 rounds; 
+ 60 to 89 Hit Points: Stunned for 1d4 rounds; 
+ 90 or more Hit Points: unaffected.
+Note that if a creature is weakened so that its Hit Points are below its usual maximum, the current number of Hit Points is used to determine this spell's effects. This spell ignores magic resistance.~
+
+OUTER_SPRINT SA_SPELL_704_NAME ~Sword of the Night~
+OUTER_SPRINT SA_SPELL_704_DESC ~Sword of the Night
+(Invocation/Evocation – Shadow Weave)
+
+Level: 7
+Range: 0
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: Special
+Saving Throw: None
+
+Upon casting this spell, the shadow adept brings into being a shimmering, sword-like plane of force that leaps into <PRO_HISHER> hands. The sword acts as a +4 weapon in all respects and deals 3d4 points of slashing damage and 2d4 cold damage upon hitting a target. Once the spell is cast, the sword will float in the air completely under the caster's control. This does not prevent the caster from doing any other actions during the spell's duration.~
+
+OUTER_SPRINT SA_SPELL_705_NAME ~Shadowplague~
+OUTER_SPRINT SA_SPELL_705_DESC ~Shadowplague
+(Conjuration/Summoning – Shadow Weave)
+Level: 7
+Range: Long
+Duration: 6 rounds
+Casting Time: 5
+Area of Effect: Target, and enemies within 30'
+Saving Throw: Special
+
+When the caster utters the spell, he calls forth a swarm of venomous biting and stinging shadow creatures to plague the target. This carpet-like mass swarms over a large area, spreading to all creatures within 30 feet of the target. Invisibility is no protection.
+
+For the duration of the spell, those affected fight with a -2 penalty to attack rolls and armor class. In addition, each round, the victims suffer 2d6 points of damage from bites, have a 100% chance of spell failure, and must make saving throws vs. Death at -2 or run away in fear. If a successful Save vs. breath at -6 is made, the target manages to avoid most of the swarm, reducing damage from bites by half and completely negating the spell failure penalty.
+
+This spell is not affected by Magic Resistance.~
+
+OUTER_SPRINT SA_SPELL_706_NAME ~Greater Drain Vitality~
+OUTER_SPRINT SA_SPELL_706_DESC ~Greater Drain Vitality
+(Necromancy – Shadow Weave)
+
+Level: 7
+Range: Touch
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell allows the shadow adept to drain eight points of Constitution from a single target, increasing the caster's own for 1 turn. Greater Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
+
+OUTER_SPRINT SA_SPELL_707_NAME ~Vengeful Shade~
+OUTER_SPRINT SA_SPELL_707_DESC ~Vengeful Shade
+(Necromancy – Shadow Weave)
+
+Level: 7
+Range: Touch
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This powerful and dangerous spell has the power to temporarily revive dead allies. For 1 turn, the target ally is resurrected with full hit points and dramatically increased power - the resurrected ally is hasted for the duration, Strength and Dexterity are set to 25, base AC is set to -6 and target gains immunity to all mind-affecting spells. The target deals maximum damage for the duration of the spell and their casting speed is increased by 4. However, this spell does not truly resurrect the target - once the spell has expired, the target dies again, regardless of their current hit points.~
+
+OUTER_SPRINT SA_SPELL_708_NAME ~Nightmare~
+OUTER_SPRINT SA_SPELL_708_DESC ~Nightmare
+(Enchantment/Charm – Shadow Weave)
+
+Level: 7
+Range: Visual range of the caster
+Duration: 5 rounds
+Casting Time: 1 
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Nightmare is both a deadly weapon and a horrific torture device. When the shadow adept casts this spell, <PRO_HESHE> causes all creatures within a 15-ft. radius to fall into a deep sleep and become tormented with terrible nightmares. For each round that the target remains asleep, they must make a Save vs. Spell at -4 to wake up from the nightmare. If the save is failed, they must make a Save vs. Death at -2 or lose 10% of their hit points. Once 5 rounds have passed, the victim awakens from their nightmare without needing a save.~
+
+OUTER_SPRINT SA_SPELL_709_NAME ~Possess~
+OUTER_SPRINT SA_SPELL_709_DESC ~Possess
+(Enchantment/Charm – Shadow Weave)
+
+Level: 7
+Range: Visual range of the caster
+Duration: 10 turns
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+When the shadow adept casts Possess, <PRO_HESHE> attempts to forcibly take control of one creature within <PRO_HISHER> visual range. The target must make as Saving Throw vs. Spells at -7 or become directly controlled by the caster. The shadow adept loses control of <PRO_HISHER> body but may see through the eyes of <PRO_HISHER> target and use spells and abilities available to them. Additionally, the possessed target's Strength, Dexterity and Constitution are increased to 25 while they are possessed. Possess may not be dispelled and the target only regains control over their own body once the duration has ended or if the caster chooses to relinquish control of <PRO_HISHER> own volition.
+
+Once the duration expires, the vertigo and shock of suddenly regaining control causes the target to suffer 5d10 non-lethal damage and fall unconscious for 5 rounds (no save).~
+
+OUTER_SPRINT SA_SPELL_710_NAME ~Malefic Bomb~
+OUTER_SPRINT SA_SPELL_710_DESC ~Malefic Bomb
+(Invocation/Evocation – Shadow Weave)
+
+Level: 7
+Range: 50 ft.
+Duration: Permanent
+Casting Time: 6
+Area of Effect: 10 ft. radius
+Saving Throw: 1/2
+
+The shadow adept launches a mass of volatile shadowstuff towards a target location, dealing 8d6 magic cold damage in a 20 ft. radius (Save vs. Death at -2 for half). All afflicted enemies will, after 1 round, spontaneously explode with another Malefic Bomb dealing 4d6 damage in a 20 ft. radius (Save vs. Death for half), afflicting all enemies with another Malefic Bomb dealing 2d6 damage in a 20 ft. radius.~
+
+OUTER_SPRINT SA_SPELL_711_NAME ~Shadow Gate~
+OUTER_SPRINT SA_SPELL_711_DESC ~Shadow Gate
+(Conjuration – Shadow Weave)
+
+Level: 7
+Range: Visual range of the caster
+Duration: 8 rounds
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell conjures a one-way portal linked to the Plane of Shadow at the caster's targeted location for 8 rounds. For each round that the portal is active, a creature of the Plane of Shadow has a chance of emerging. These creatures are allied with the caster. There is a 50% chance of spawning a Shadow, a 20% chance of spawning a Shadow Fiend, a 20% chance of spawning a Wraith and a 10% chance of spawning a Shadow of the Void each turn. The Shadow Gate may be targeted and destroyed by enemies, though it is immune to elemental damage as well as weapons of +1 enchantment and below.
+
+Creatures summoned by this spell remain for 1 turn.~
+
+OUTER_SPRINT SA_SPELL_712_NAME ~Nightfall~
+OUTER_SPRINT SA_SPELL_712_DESC ~Nightfall
+(Invocation/Evocation – Shadow Weave) 
+
+Level: 7
+Range: Self
+Duration: 6 rounds
+Casting Time: 8
+Area of Effect: 50-ft. radius
+Saving Throw: None
+
+This spell creates a rainfall of shadowstuff centered on the caster for six rounds. Enemy creatures suffer 1d6 magical damage for every round that they remain within the rainfall and suffer a cumulative penalty of -1 to Armor Class and all Saving Throws for one turn. Non-hostile creatures are healed for 2d6 hit points every round instead.~
+
+OUTER_SPRINT SA_SPELL_713_NAME ~Mass Drain Vitality~
+OUTER_SPRINT SA_SPELL_713_DESC ~Mass Drain Vitality
+(Necromancy – Shadow Weave)
+
+Level: 7
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+This spell inflicts the effects of the Drain Vitality spell upon every enemy creature within the area of effect, draining four points of Constitution from each target for 1 turn. Mass Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
+
+OUTER_SPRINT SA_SPELL_714_NAME ~Dark Renewal~
+OUTER_SPRINT SA_SPELL_714_DESC ~Dark Renewal
+(Necromancy – Shadow Weave) 
+
+Level: 7
+Sphere: Healing 
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This powerful spell calls upon the energies of the Shadow Weave to wipe away disease and injury in the creature who receives the benefits of the spell. It completely cures all disease and blindness in the recipient and heals all points of damage suffered due to wounds or injury. It also dispels a Feeblemind spell and cures those mental disorders caused by spells or injury to the brain. Naturally, the effects can be negated by later wounds, injuries, and diseases.
+
+Additionally, if this spell is cast upon a dead party member, it will restore them to life, but the caster is permanently drained of four levels which may only be recovered via a Restoration spell.~
+
+OUTER_SPRINT SA_SPELL_715_NAME ~Death Touch~
+OUTER_SPRINT SA_SPELL_715_DESC ~Death Touch
+(Necromancy – Shadow Weave) 
+
+Level: 7
+Range: Touch
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+After casting this spell, the shadow adept touches the target creature with a> hand charged with necrotic energy. If the target fails a Save vs. Death at -4, the touch will reduce them to 1 Hit Point. The amount of damage dealt by this spell is added to the caster's Hit Points, but will not heal <PRO_HIMHER> past <PRO_HISHER> maximum.~
+
+OUTER_SPRINT SA_SPELL_716_NAME ~Greater Shadow Conjuration~
+OUTER_SPRINT SA_SPELL_716_DESC ~Greater Shadow Conjuration
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 7
+Range: Special
+Duration: Special
+Casting Time: 1
+Area of Effect: Special
+Saving Throw: Special
+
+Using this spell, the shadow adept draws upon power from the Plane of Shadow to cast a shadow variant of one mage spell among a randomly selected set. The sets are as following:
+
+1st Set: Ice Storm, Minor Globe of Invulnerability, Sunfire, Demi-Shadow Monsters.
+2nd Set: Fireshield (Red), Monster Summoning II, Chaos, Demi-Shadow Monsters.
+3rd Set: Contagion, Spirit Armor, Cloudkill, Demi-Shadow Monsters.
+4th Set: Improved Invisibility, Teleport Field, Hold Monster, Demi-Shadow Monsters.
+5th Set: Emotion Hopelessness, Otiluke's Resilient Sphere, Phantom Blade, Demi-Shadow Monsters.
+
+The chosen spell is functionally identical to one cast by a regular mage of the same level.~
+
+OUTER_SPRINT SA_SPELL_801_NAME ~Negastorm~
+OUTER_SPRINT SA_SPELL_801_DESC ~Negastorm
+(Necromancy – Shadow Weave) 
+
+Level: 8
+Range: Visual range of the caster 
+Duration: 2 rounds
+Casting Time: 8
+Area of Effect: 30-ft. radius
+Saving Throw: 1/2
+
+This spell summons a shower of negative energy upon a targeted location, inflicting 1d4 cold damage per level plus 20% of their maximum hit points in damage (+2% per caster level after 16th level) over two rounds as well as draining one level and one point of strength for each instance of damage dealt. Affected creatures are allowed a Saving Throw vs. Spell to avoid the cold damage and loss of levels (but not strength). Effects last for 1 turn.
+
+The negastorm lasts for 2 rounds and does not affect allies. If an enemy enters the negastorm after the first round, they only suffer half of the effects.~
+
+OUTER_SPRINT SA_SPELL_802_NAME ~Annulment~
+OUTER_SPRINT SA_SPELL_802_DESC ~Annulment
+(Abjuration – Shadow Weave)
+
+Level: 8
+Range: Touch
+Duration: 5 rounds
+Casting Time: 8
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, a malignant wave of energy assaults tbe magical defenses of all creatures within a 15-ft. radius, completely nullfying the Magic Resistance of all creatures for 5 rounds and removing one spell protection of any level, then dispelling any effects on all affected creatures. Additionally, all creatures in the initial area of effect are unable to cast any spells for one round.~
+
+OUTER_SPRINT SA_SPELL_803_NAME ~Shadow Prison~
+OUTER_SPRINT SA_SPELL_803_DESC ~Shadow Prison
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 8
+Range: Touch 
+Duration: Special
+Casting Time: 3
+Area of Effect: 1 creature 
+Saving Throw: None
+
+An extradimensional space is brought into being upon utterance of a Shadow Prison spell. The subject and all enemies within a 10 ft radius vanish into the shifting labyrinth in the Shadow Plane for a period of time that is totally dependent upon its Intelligence.
+
+Intelligence of Target    -    Time trapped in maze
+         under 3                -            2d4 turns
+         3 to 5                   -            1d4 turns
+         6 to 8                   -            5d4 rounds
+         9 to 11                 -            4d4 rounds
+         12 to 14               -            3d4 rounds
+         15 to 17               -            2d4 rounds
+         18 and up            -           1d4 rounds
+
+Note that if the 9th-level spell Freedom is cast in the area where a creature is mazed, it will effectively bring <PRO_HIMHER> back to this plane, ending the spell prematurely. Note that a mazed creature is not freed through Dispel Magic.~
+
+OUTER_SPRINT SA_SPELL_804_NAME ~Power Word, Blind~
+OUTER_SPRINT SA_SPELL_804_DESC ~Power Word, Blind
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 8
+Range: Visual range of the caster
+Duration: 6 rounds
+Casting Time: 1
+Area of Effect: 10-ft. radius
+Saving Throw: None
+
+When a Power Word, Blind spell is cast, one or more creatures within the area of effect become sightless. The spellcaster selects one creature as the target center, and the effect spreads outward from the center, affecting all within a 10-ft. radius. This lasts for 6 rounds or until dispelled. All of the effects of blindness apply to the victims, such as a penalty to hit and to AC. The visibility range of the afflicted character is also decreased. This spell is not effected by magic resistance.~
+
+OUTER_SPRINT SA_SPELL_805_NAME ~Shadow Shield~
+OUTER_SPRINT SA_SPELL_805_DESC ~Shadow Shield
+(Abjuration – Shadow Weave)
+
+Level: 8
+Range: 0
+Duration: 2 turns
+Casting Time: 8
+Area of Effect: The caster
+Saving Throw: None
+
+This spell shrouds the shadow adept in a cloak of shadow that protects <PRO_HIMHER> with the following effects: +5 bonus to AC, immunity to magic damage, 20% magic and physical resistance. This spell, unlike other Shadow Weave spells, does not drain the caster's life force and will in fact temporarily protect the shadow adept from loss of Constitution while it is active.~
+
+OUTER_SPRINT SA_SPELL_806_NAME ~Blackfire Fury~
+OUTER_SPRINT SA_SPELL_806_DESC ~Blackfire Fury
+(Invocation/Evocation – Shadow Weave)
+
+Level: 8
+Range: 0
+Duration: 1 turn
+Casting Time: 8
+Area of Effect: The caster
+Saving Throw: 1/2
+
+The shadow adept conjures a rift from the Shadow Plane beneath the target's feet, which unleashes black fire after a short delay dealing 10d10 magical fire damage (Save vs. Spells at -4 for half damage). This damage is not mitigated by fire resistance and ignores magic resistance.
+
+If a creature is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel, which immediately charges towards the nearest enemy and explodes on a successful attack, dealing 5d6 unmitigated fire damage to all enemies within a 5-ft. radius before becoming assimilated into the Shadow Plane.~
+
+OUTER_SPRINT SA_SPELL_807_NAME ~Shar's Mantle~
+OUTER_SPRINT SA_SPELL_807_DESC ~Shar's Mantle
+(Abjuration – Shadow Weave)
+
+Level: 8
+Range: 0
+Duration: 1 round/4 levels
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: Neg.
+
+This spell surrounds the shadow adept with a barrier of dark energy. Missiles are completely deflected and weapons of +3 enchantment or below are unable to penetrate the darkness. Additionally, attackers within a 5-ft. radius will suffer 10% of their maximum hit points in damage, transferring the same amount to the caster, as well as losing one level permanently if they fail a Save vs. Death at -2.~
+
+OUTER_SPRINT SA_SPELL_808_NAME ~Shadow's Refuge~
+OUTER_SPRINT SA_SPELL_808_DESC ~Shadow's Refuge
+(Abjuration – Shadow Weave)
+
+Level: 8
+Range: 0
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+When a shadow adept casts Shadow's Refuge, <PRO_HESHE> opens a gate to a safe (in relative terms) pocket area in the Plane of Shadow, where time passes more slowly and gives <PRO_HIMHER> time to rest and recuperate away from the present battle. For one turn, the shadow adept is safe from combat and <PRO_HISHER> hit points are restored to full, and <PRO_HESHE> regains two arcane spells of each spell level of 7th level and below when <PRO_HESHE> returns. In addition, as the caster will be resting for a long period of time, all effects whether beneficial or otherwise will be removed when they return.
+
+The shadow adept may choose to return from the refuge before its duration has expired, but <PRO_HESHE> will only get partial benefits.~
+
+OUTER_SPRINT SA_SPELL_809_NAME ~Dark Premonition~
+OUTER_SPRINT SA_SPELL_809_DESC ~Dark Premonition
+(Divination – Shadow Weave)
+
+Level: 8
+Range: Self
+Duration: 4 rounds
+Casting Time: 1
+Area of Effect: Caster
+Saving Throw: None
+
+This spell grants the caster with a brief and short-sighted degree of prescience, enough to predict events in the immediate future and react to them in advance. For 4 rounds, the shadow adept gains a bonus of 20 to Armor Class, a +20 bonus to hit, +20 to all saves and immunity to backstabs. Due to this spell's short casting time and duration, it is mainly used to buy the shadow adept a few rounds in the thick of combat.~
+
+OUTER_SPRINT SA_SPELL_810_NAME ~Dark Passage~
+OUTER_SPRINT SA_SPELL_810_DESC ~Dark Passage
+(Evocation – Shadow Weave)
+
+Level: 8
+Range: Party
+Duration: Special
+Casting Time: 1 round
+Area of Effect: 20-ft. radius
+Saving Throw: None
+
+This powerful but dangerous spell temporarily turns the caster into a gateway for the energies of the Shadow Weave, which <PRO_HESHE> may control and bestow upon <PRO_HISHER> allies within 20' in range for as long as <PRO_HESHE> can maintain it. For an indefinite amount of time, the shadow adept is unable to make any actions as <PRO_HESHE> channels power into <PRO_HISHER> party, providing a +4 bonus to all attributes, +6 to Armor Class, +4 to to-hit and damage modifiers, +50% magic resistance, +50% resistance to elemental damage and immunity to level drain. However, for each round the link is maintained, the caster loses 10% of <PRO_HISHER> hit points (Save vs. Death at -4 to avoid) and <PRO_HESHE> is completely vulnerable to attack unless <PRO_HESHE> breaks the connection. Additionally, if <PRO_HESHE> ends the channel, the backlash causes <PRO_HIMHER> to become stunned for 2 rounds unless a Save vs. Death at -2 is made.~
+
+OUTER_SPRINT SA_SPELL_811_NAME ~Invoke Reflection~
+OUTER_SPRINT SA_SPELL_811_DESC ~Invoke Reflection
+(Illusion/Phantasm – Shadow Weave) 
+
+Level: 8
+Range: Visual range of the caster
+Duration: 2 turns
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: Special
+
+A duplicate of the target is created with this spell. The duplicate is almost identical to the target, making it a very powerful ally. It is created at 60% of the target's level and has all the spells and abilities that the target would have at that level. It also has 60% of the target's Hit Points and is fully under the caster's control. Enemies can make a Saving Throw vs. Spells at -3 to avoid the spell's effect.~
+
+OUTER_SPRINT SA_SPELL_812_NAME ~Merciless Blizzard~
+OUTER_SPRINT SA_SPELL_812_DESC ~Merciless Blizzard
+(Invocation/Evocation – Shadow Weave) 
+
+Level: 8
+Range: Visual range of the caster
+Duration: 1 turn 
+Casting Time: 8
+Area of Effect: 30-ft. radius cloud 
+Saving Throw: 1/2
+
+This spell creates a vicious blizzard within a 30 ft. radius. Any in the area of the spell must leave the blizzard immediately or suffer 6d4 magical cold damage per round and become slowed for two rounds. Additionally, all creatures must make a Save vs. Spells at -2 each round or be paralyzed for that round.
+
+This spell is not affected by Magic Resistance, but creatures immune to cold are unaffected.~
+
+OUTER_SPRINT SA_SPELL_813_NAME ~Blackfire Ruin~
+OUTER_SPRINT SA_SPELL_813_DESC ~Blackfire Ruin
+(Invocation/Evocation – Shadow Weave)
+
+Level: 8
+Range: 0
+Duration: 1 turn
+Casting Time: 8
+Area of Effect: 20-ft. radius
+Saving Throw: 1/2
+
+This powerful spell is the upgraded version of Blackfire Fury. The shadow adept conjures a rift from the Shadow Plane beneath their own feet, which unleashes shadow fire in a 20' radius centered on them dealing 10d10 magical fire damage (Save vs. Spells at -4 for half damage) to all enemies within range. This damage is not mitigated by fire resistance and ignores magic resistance.
+
+If a creature is slain by this spell, it is burned to ash completely and its remaining consciousness becomes a Blackfire Vessel, which immediately charges towards the nearest enemy and explodes on a successful attack, dealing 5d6 unmitigated fire damage to all enemies within a 5-ft. radius before becoming assimilated into the Shadow Plane.~
+
+OUTER_SPRINT SA_SPELL_814_NAME ~Sacred Shadow~
+OUTER_SPRINT SA_SPELL_814_DESC ~Sacred Shadow
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 8
+Range: 90 ft.
+Duration: Special
+Casting Time: 9
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This powerful spell inscribes a blessed symbol upon the targeted location, which remains there until any creature comes too close, at which point it will explode, causing all enemies within the area to make a Save vs. Spell at a -4 penalty or become silenced and deal 50% reduced damage for 1 turn. Allies within the area gain a +50% bonus to damage for the duration.~
+
+OUTER_SPRINT SA_SPELL_815_NAME ~Curse of Oblivion~
+OUTER_SPRINT SA_SPELL_815_DESC ~Curse of Oblivion
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 8
+Range: 90 ft.
+Duration: Special
+Casting Time: 9
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This powerful spell inscribes a cursed symbol upon the targeted location, which remains there until any creature comes too close, at which point it will explode, causing all those within the area to make a Save vs. Spell at a -4 penalty or have their morale and senses crippled, affecting them with fear, blindness, silence, slow and deafness (75% chance to miscast magic) for 1 turn.~
+
+OUTER_SPRINT SA_SPELL_901_NAME ~Darkbolt~
+OUTER_SPRINT SA_SPELL_901_DESC ~Darkbolt
+(Invocation/Evocation – Shadow Weave) 
+
+Level: 9
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 0
+Area of Effect: 1 creature
+Saving Throw: Special 
+
+This spell strikes down the target with a bolt of pure dark energy which shreds all magical defenses, dealing 15d10+10 (Save vs. Spells at -4 for half) magic damage and removing the effects of magical protections including Minor Spell Turning, Minor Globe of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. The target's Magic Resistance, which does not affect this spell, is also nullified for one turn.~
+
+OUTER_SPRINT SA_SPELL_902_NAME ~Umbral Stasis~
+OUTER_SPRINT SA_SPELL_902_DESC ~Umbral Stasis
+(Alteration – Shadow Weave)
+
+Level: 9
+Range: 0
+Duration: Special
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None 
+
+This powerful spell causes the shadow adept to partially shift to the Plane of Shadow at the exact same point as he was, creating an effect identical to the Time Stop spell. The caster may move freely for 3 rounds in terms of time in the Plane of Shadow while time stands still in the Prime Material Plane. Additionally, the shadow adept's casting speed is increased by 4 and <PRO_HISHER> movement rate is doubled for the duration of the spell.~
+
+OUTER_SPRINT SA_SPELL_903_NAME ~Nightsinger's Tithe~
+OUTER_SPRINT SA_SPELL_903_DESC ~Nightsinger's Tithe
+(Conjuration/Summoning – Shadow Weave) 
+
+Level: 9
+Range: Visual range of the caster 
+Duration: Instant
+Casting Time: 1 
+Area of Effect: 1 creature 
+Saving Throw: None
+
+When Nightsinger's Tithe is uttered, one creature within the spell range is slain. The target must have 60 or fewer current Hit Points, otherwise the spell has no effect. There is no Saving Throw. Creatures slain by this spell have their souls sent to the Plane of Shadow as a sacrifice to Shar. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), they take 120 magic damage.
+
+There is an 50% chance that killing a target with this spell will permanently bestow 1 bonus hit point to the caster. Once 50 enemies have been slain with this spell, the shadow adept permanently gains +2 to Constitution, +1 to all saves and -1 casting time, and further castings of this spell will no longer grant hit points.~
+
+OUTER_SPRINT SA_SPELL_904_NAME ~Enervation~
+OUTER_SPRINT SA_SPELL_904_DESC ~Enervation
+(Necromancy – Shadow Weave) 
+
+Level: 9
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None 
+
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining the target of two levels of experience every round for four rounds. A Saving Throw vs. Death at -4 can be made to avoid losing levels after the first round. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. Additionally, the caster is restored of 1-4 lost spells of 8th level or below for every instance of level loss of the target. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) are not allowed a Saving Throw.~
+
+OUTER_SPRINT SA_SPELL_905_NAME ~Black Blade of Disaster~
+OUTER_SPRINT SA_SPELL_905_DESC ~Black Blade of Disaster
+(Invocation/Evocation – Shadow Weave) 
+
+Level: 9
+Range: 0
+Duration: 18 rounds
+Casting Time: 4
+Area of Effect: Special
+Saving Throw: None 
+
+This spell enables the caster to create a black, blade-shaped planar rift about three feet long. It jumps into the caster's hand and is used as a normal sword, remaining there for the duration of the spell. The caster is considered to be proficient to the point of Grand Mastery in this weapon. The sword acts as a +5 weapon and deals 2-24 damage to its victims. Also, every time it hits a target, the victim must make a Save vs. Death at +4 or be disintegrated. There is also a 10% chance with every hit that the sword drains 4 levels from the target and heals the wielder 20 Hit Points.~
+
+OUTER_SPRINT SA_SPELL_906_NAME ~Weird~
+OUTER_SPRINT SA_SPELL_906_DESC ~Weird
+(Illusion/Phantasm – Shadow Weave) 
+
+Level: 9
+Range: 0
+Duration: Instant
+Casting Time: 8
+Area of Effect: Special
+Saving Throw: Special
+
+You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes. The target first gets a Save vs. Spells at -4 to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Save vs. Death at -2 or die from fear. If a subject succeeds, it still takes 3d6 points of damage and is stunned for 1 round. The subject also takes 1d4 points of temporary Strength damage.
+
+If the target is mentally incapacitated (stunned, panic, berserk, charmed, feebleminded, confused), they are only allowed to make a Saving Throw vs. Death.~
+
+OUTER_SPRINT SA_SPELL_907_NAME ~Death Mark~
+OUTER_SPRINT SA_SPELL_907_DESC ~Death Mark
+(Necromancy – Shadow Weave) 
+
+Level: 9
+Range: 0
+Duration: Special
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: Special 
+
+This horrific spell marks a specific target with a curse that dooms them to an inevitable end. The victim suffers 15% of their maximum hit points in damage on the first round with no save. On the next round, they must make another Saving Throw vs. Death at -8 or suffer the same amount of damage, then on the next round, make another saving throw at -7, and so on until a save modifier of zero. The curse remains indefinitely until the target is either killed, the curse is dispelled or resisted, or a successful save is made.~
+
+OUTER_SPRINT SA_SPELL_908_NAME ~Oblivion Pull~
+OUTER_SPRINT SA_SPELL_908_DESC ~Oblivion Pull
+(Abjuration – Shadow Weave)
+
+Level: 9
+Range: 30 ft.
+Duration: 3 rounds
+Casting Time: 9
+Area of Effect: 1 creature and any creature within 7.5 ft.
+Saving Throw: Special
+
+When Oblivion Pull is cast, the shadow adept launches a tiny, fast-moving projectile towards a target which opens a portal using the target's body as a catalyst. When this happens, the portal pulls it and all other creatures within a 7.5 ft. radius into it and sends them to a small pocket in the Plane of Shadow where they are trapped indefinitely. The victim remains there unless the spell "Freedom" is cast. If a Freedom spell is cast in the area where the creature was imprisoned, then <PRO_HESHE> will reappear exactly where <PRO_HESHE> was last standing. Dispel Magic will not free creatures trapped in this manner. There is no Saving Throw against imprisonment for the target, but creatures within a 7.5 ft. radius may make a Save vs. Spells at -6 to resist being pulled into the portal.~
+
+OUTER_SPRINT SA_SPELL_909_NAME ~Fiery Pandemonium~
+OUTER_SPRINT SA_SPELL_909_DESC ~Fiery Pandemonium
+(Invocation/Evocation – Shadow Weave)
+
+Level: 9
+Range: 270 ft.
+Duration: 6 rounds
+Casting Time: 9
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon powerful forces indeed. These forces bring forth a storm of shadow fire, dealing 6d10 magical fire and magical damage per round with no Saving Throw. Additionally, anyone within the storm must make a Saving Throw vs. Death each round or be petrified permanently. If a statue created by this spell is subjected to attacks of any sort, it will shatter into tiny pieces, making it impossible for the creature to be returned to flesh. The caster is well advised to be careful in <PRO_HISHER> use of this spell.
+
+This spell is not affected by Magic Resistance.~
+
+OUTER_SPRINT SA_SPELL_910_NAME ~Mass Greater Drain Vitality~
+OUTER_SPRINT SA_SPELL_910_DESC ~Mass Greater Drain Vitality
+(Necromancy – Shadow Weave)
+
+Level: 9
+Range: Area centered on caster
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+This spell inflicts the effects of the Greater Drain Vitality spell upon every enemy creature within the area of effect, draining eight points of Constitution from each target for 1 turn. Mass Greater Drain Vitality (and its variants) does not cost Constitution as other spells of the Shadow Weave and may not affect the same target more than once per turn. Targets who are physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded) do not make a Saving Throw.~
+
+OUTER_SPRINT SA_SPELL_911_NAME ~Dark Meteor~
+OUTER_SPRINT SA_SPELL_911_DESC ~Dark Meteor
+(Invocation/Evocation – Shadow Weave)
+
+Level: 9
+Range: 270 ft.
+Duration: 8 rounds
+Casting Time: 9
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+Only the most desperate of Shadow Adepts dare to call upon this dangerous spell. The caster calls upon a gigantic, meteoric mass of shadowstuff from the Plane of Shadow and drops it upon the target location. Any creature with less than 12 Hit Die are killed instantly with no Saving Throw, while other creatures must make a Saving Throw vs. Breath or die. The meteor deals 5d10 fire damage, 5d10 cold damage, 5d10 electrical damage and 5d10 magic damage to any survivors, knocks them unconscious for 1 round, and reduces their Saving Throws and Luck by -10 for 8 rounds. The strain of channelling this spell, however, causes the caster to lose 50% of their current hit points and become unable to cast spells for four rounds.
+
+This spell is not affected by Magic Resistance.~
+
+OUTER_SPRINT SA_SPELL_912_NAME ~Shadowcall~
+OUTER_SPRINT SA_SPELL_912_DESC ~Shadowcall
+(Conjuration/Summoning – Shadow Weave)
+
+Level: 9
+Range: 30 ft.
+Duration: 8 hours
+Casting Time: 9
+Area of Effect: Special 
+Saving Throw: None 
+
+By means of this powerful spell, the shadow adept calls upon a mighty shadow dragon from the Plane of Shadow to assist <PRO_HIMHER> in combat. The shadow dragon will fight as the summoner's ally, but cannot be directly controlled. Only one dragon may be summoned every eight hours.~
+
+OUTER_SPRINT SA_SPELL_913_NAME ~Shadowsight~
+OUTER_SPRINT SA_SPELL_913_DESC ~Shadowsight
+(Divination – Shadow Weave)
+
+Level: 9
+Range: 30 ft.
+Duration: Permanent
+Casting Time: 10
+Area of Effect: Self 
+Saving Throw: None 
+
+When this powerful spell is cast, the shadow adept peers into the endless depths of the Shadow Weave, drawing upon its power to completely restore <PRO_HISHER> used arcane spells. The strain of casting this spell, however, causes the caster to suffer 90% of their maximum hit points in damage.~
+
+OUTER_SPRINT SA_SPELL_914_NAME ~Shades~
+OUTER_SPRINT SA_SPELL_914_DESC ~Shades
+(Illusion/Phantasm – Shadow Weave)
+
+Level: 9
+Range: Special
+Duration: Special
+Casting Time: 1
+Area of Effect: Special
+Saving Throw: Special
+
+Using this spell, the shadow adept draws upon power from the Plane of Shadow to cast a shadow variant of one mage spell among a randomly selected set. The sets are as following:
+
+1st Set: Delayed Blast Fireball, Mass Invisibility, Simulacrum, Symbol Fear, Symbol Stun.
+2nd Set: Project Image, Cacofiend, Pierce Shield, Abi-Dalzim's Horrid Wilting, Bigby's Clenched Fist.
+3rd Set: Spell Turning, Summon Hakeashar, Protection from Energy, Maze, Symbol Death.
+4th Set: Prismatic Spray, Limited Wish, Improved Mantle, Summon Fiend, Incendiary Cloud
+
+The chosen spell is functionally identical to one cast by a regular mage of the same level.~

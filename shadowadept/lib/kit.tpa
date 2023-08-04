@@ -1,439 +1,407 @@
-PRINT ~Please choose one of the following:
-[1] Constitution drain on cast
-[2] Drain Current Hit Points on cast
-[3] Drain Maximum Hit Points on cast
-[4] No Cost~
+////////////////////////////
+////////DESCRIPTIONS////////
+////////////////////////////
 
-OUTER_SPRINT ~hpcost~ ~placeholder_value~
-OUTER_WHILE (!(IS_AN_INT ~hpcost~) OR (~hpcost~ > 0x5) OR (~hpcost~ < 0x1)) BEGIN
-  PRINT ~Please select 1, 2, 3 or 4 and press Enter.~
-  ACTION_READLN ~hpcost~
+OUTER_SPRINT shadow_adept_desc ~SHADOW ADEPT: Shadow adepts hurl themselves into the abyss of the Shadow Weave, immediately acquiring all the gifts available to casual students and discovering secrets unavailable to all but the most dedicated.
+
+Advantages:
+– Hit Die: d6
+– May cast one additional spell per level.
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– May use Shadow Magic.
+
+REPLACE_ME
+
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.
+ 
+Prime Requisites For Dual-Classing: Intelligence, Charisma~
+OUTER_SPRINT shadow_disciple_desc ~SHADOW DISCIPLE: Shadow disciples are born with the innate ability to wield magic of the Shadow Weave, usually granted as a blessing from Shar, the Nightsinger. Like their equivalent, the sorcerer, they wield the power of their native magic, the Shadow Weave, with a level of skill that other spellcasters would envy.
+
+Advantages:
+– Hit Die: d6
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– May use Shadow Magic.
+
+REPLACE_ME
+
+– Gains the Darkvision innate ability.
+
+DARKVISION: The shadow disciple is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
+
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow disciple cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow disciple creates a copy of <HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+OUTER_SPRINT nightsinger_desc ~NIGHTSINGER: A rare class of bards that choose to study the power of the Shadow Weave gain access to its dark powers, bestowing upon them a dirge capable of cursing their enemies.
+
+Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– The Nightsinger's Bard Song, "Dirge of Despair", inflicts a harrowing curse upon all enemies who listen. Victims suffer from the pain of overwhelming sorrow and slowly lose the will to live. Enemies with less than 50% maximum hit points lose twice as many hit points per round. Enemies with less than 25% hit points additionally incur a penalty to morale.
+	
+	1st level: Enemies incur a -2 penalty to Luck and Saving Throws and lose 1 Hit Point per round. -1 to Morale.
+	15th level: Enemies incur a -3 penalty to Luck and Saving Throws and lose 3 Hit Points per round. -2 to Morale.
+	20th level: Enemies incur a -4 penalty to Luck and Saving Throws and lose 5 Hit Points per round. -3 to Morale.
+
+– May use Shadow Magic.
+
+REPLACE_ME
+
+– 6th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 7th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 8th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 18th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to Lawful Neutral, True Neutral, Chaotic Neutral or Neutral Evil.~
+OUTER_SPRINT nightblade_desc ~NIGHTBLADE: Nightblades use the illusory and deceptive powers of the Shadow Weave to supplement their thievery skills. This character can use the abilities of a Shadow Adept and a Thief, though arcane spells cannot be cast while wearing armor.
+
+Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– May use Shadow Magic.
+
+REPLACE_ME
+
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+OUTER_SPRINT nightbringer_desc ~NIGHTBRINGER: Nightbringers are faithfuls of Shar who have been granted magic of the Shadow Weave for their piety. This character can use the abilities of a Cleric and a Shadow Adept, though weapons are restricted to only those allowed by the Cleric's ethos, and arcane spells cannot be cast while wearing armor.
+
+Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– May use Shadow Magic.
+
+REPLACE_ME
+
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+OUTER_SPRINT shade_warrior_desc ~SHADE WARRIOR: Shade Warriors are dangerous combatants on the battlefield, using Shadow Weave magic to weaken and drain their opponents before striking them down with steel. This character can use the abilities of a Fighter and a Shadow Adept, though they cannot cast spells while wearing armor. They may Specialize in, but not Master, any weapon they can use.
+
+Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– May use Shadow Magic.
+
+REPLACE_ME
+
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+OUTER_SPRINT shadow_enforcer_desc ~SHADOW ENFORCER: Shadow Enforcers are exceptional agents, capable of using the Shadow Weave in tasks such as espionage and assassination, while also possessing considerable martial skill. This character can use the abilities of a Fighter, Shadow Adept, and Thief, though they cannot use their thieving skills while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.
+
+Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– May use Shadow Magic.
+
+REPLACE_ME
+
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+OUTER_SPRINT dark_justiciar_desc ~DARK JUSTICIAR: Dark Justiciars are unholy warriors capable of granted both divine and Shadow Weave magic from Shar. This character can use the abilities of a Fighter, Shadow Adept, and Cleric, though they are restricted to weapons allowed by the Cleric's ethos and cannot cast arcane spells while wearing armor. This character may Specialize in, but not Master, any weapon they can use.
+
+Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– May use Shadow Magic.
+
+REPLACE_ME
+
+– 4th level: May use the Shield of Shadows ability once per day.
+ 
+SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
+
+From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
+
+– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
+ 
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
+
+– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
+ 
+FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
+
+– 14th level: May use the Shadow Double ability once per day.
+ 
+SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
+
+Disadvantages:
+– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
+– May not learn or use spells from the Weave.
+– Alignment restricted to non-good.~
+OUTER_SPRINT shadow_adept_constitution_cost ~SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Saving Throw vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Hit Points equal to double the level of the spell cast.~
+OUTER_SPRINT shadow_adept_maxhp_cost ~SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.~
+OUTER_SPRINT shadow_adept_curhp_cost ~SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Saving Throw vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Hit Points equal to double the level of the spell cast.~
+OUTER_SPRINT shadow_adept_no_cost ~SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic. The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic.~
+
+ACTION_IF ("hpcost" = 1) THEN BEGIN
+OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_constitution_cost%~
 END
-      ACTION_IF ("hpcost" = 1) THEN BEGIN
-LOAD_TRA ~%MOD_FOLDER%/languages/english/setup.tra~
-COPY_EXISTING ~c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-1 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
+OUTER_PATCH_SAVE shadow_disciple_desc ~%shadow_disciple_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_constitution_cost%~
+END
+OUTER_PATCH_SAVE nightsinger_desc ~%nightsinger_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_constitution_cost%~
+END
+OUTER_PATCH_SAVE nightblade_desc ~%nightblade_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_constitution_cost%~
+END
+OUTER_PATCH_SAVE nightbringer_desc ~%nightbringer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_constitution_cost%~
+END
+OUTER_PATCH_SAVE shade_warrior_desc ~%shade_warrior_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_constitution_cost%~
+END
+OUTER_PATCH_SAVE shadow_enforcer_desc ~%shadow_enforcer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_constitution_cost%~
+END
+OUTER_PATCH_SAVE dark_justiciar_desc ~%dark_justiciar_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_constitution_cost%~
+END
+END
 
-COPY_EXISTING ~c0sacon2.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
+ACTION_IF ("hpcost" = 2) THEN BEGIN
+OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_maxhp_cost%~
+END
+OUTER_PATCH_SAVE shadow_disciple_desc ~%shadow_disciple_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_maxhp_cost%~
+END
+OUTER_PATCH_SAVE nightsinger_desc ~%nightsinger_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_maxhp_cost%~
+END
+OUTER_PATCH_SAVE nightblade_desc ~%nightblade_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_maxhp_cost%~
+END
+OUTER_PATCH_SAVE nightbringer_desc ~%nightbringer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_maxhp_cost%~
+END
+OUTER_PATCH_SAVE shade_warrior_desc ~%shade_warrior_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_maxhp_cost%~
+END
+OUTER_PATCH_SAVE shadow_enforcer_desc ~%shadow_enforcer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_maxhp_cost%~
+END
+OUTER_PATCH_SAVE dark_justiciar_desc ~%dark_justiciar_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_maxhp_cost%~
+END
+END
 
-COPY_EXISTING ~c0sacon3.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-3 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
+ACTION_IF ("hpcost" = 3) THEN BEGIN
+OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_curhp_cost%~
+END
+OUTER_PATCH_SAVE shadow_disciple_desc ~%shadow_disciple_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_curhp_cost%~
+END
+OUTER_PATCH_SAVE nightsinger_desc ~%nightsinger_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_curhp_cost%~
+END
+OUTER_PATCH_SAVE nightblade_desc ~%nightblade_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_curhp_cost%~
+END
+OUTER_PATCH_SAVE nightbringer_desc ~%nightbringer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_curhp_cost%~
+END
+OUTER_PATCH_SAVE shade_warrior_desc ~%shade_warrior_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_curhp_cost%~
+END
+OUTER_PATCH_SAVE shadow_enforcer_desc ~%shadow_enforcer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_curhp_cost%~
+END
+OUTER_PATCH_SAVE dark_justiciar_desc ~%dark_justiciar_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_curhp_cost%~
+END
+END
 
-COPY_EXISTING ~c0sacon4.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
+ACTION_IF ("hpcost" = 4) THEN BEGIN
+OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_no_cost%~
+END
+OUTER_PATCH_SAVE shadow_disciple_desc ~%shadow_disciple_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_no_cost%~
+END
+OUTER_PATCH_SAVE nightsinger_desc ~%nightsinger_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_no_cost%~
+END
+OUTER_PATCH_SAVE nightblade_desc ~%nightblade_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_no_cost%~
+END
+OUTER_PATCH_SAVE nightbringer_desc ~%nightbringer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_no_cost%~
+END
+OUTER_PATCH_SAVE shade_warrior_desc ~%shade_warrior_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_no_cost%~
+END
+OUTER_PATCH_SAVE shadow_enforcer_desc ~%shadow_enforcer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_no_cost%~
+END
+OUTER_PATCH_SAVE dark_justiciar_desc ~%dark_justiciar_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME~ ~%shadow_adept_no_cost%~
+END
+END
 
-COPY_EXISTING ~c0sacon5.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-5 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon6.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon7.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-7 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon8.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon9.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-9 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0sacon0.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 penalty to Constitution^-~) END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-
-COPY_EXISTING ~c0saco01.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 1^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco02.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 2^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco03.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 3^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco04.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 4^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco05.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 5^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco06.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 6^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco07.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 7^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco08.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 8^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco09.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 9^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco10.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 10^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco11.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 11^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco12.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 12^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco13.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 13^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco14.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 14^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco15.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 15^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco16.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 16^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco17.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 17^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco18.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 18^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco19.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 19^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco20.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 20^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco21.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 21^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco22.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 22^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco23.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 23^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco24.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 24^-~) END
-COPY_EXISTING ~c0saco01.spl~ ~override/c0saco25.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 330  parameter1 = RESOLVE_STR_REF (~^0xFFC76777Constitution: 25^-~) END
-
-COPY_EXISTING ~c0sacons.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 parameter1 = 1 parameter2 = %C0SACON% END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 1 parameter1 = 2 match_parameter2 = %C0SACON% STR_VAR resource = c0saco02 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 2 parameter1 = 3 match_parameter2 = %C0SACON% STR_VAR resource = c0saco03 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 3 parameter1 = 4 match_parameter2 = %C0SACON% STR_VAR resource = c0saco04 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 4 parameter1 = 5 match_parameter2 = %C0SACON% STR_VAR resource = c0saco05 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 5 parameter1 = 6 match_parameter2 = %C0SACON% STR_VAR resource = c0saco06 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 6 parameter1 = 7 match_parameter2 = %C0SACON% STR_VAR resource = c0saco07 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 7 parameter1 = 8 match_parameter2 = %C0SACON% STR_VAR resource = c0saco08 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 8 parameter1 = 9 match_parameter2 = %C0SACON% STR_VAR resource = c0saco09 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 9 parameter1 = 10 match_parameter2 = %C0SACON% STR_VAR resource = c0saco10 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 10 parameter1 = 11 match_parameter2 = %C0SACON% STR_VAR resource = c0saco11 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 11 parameter1 = 12 match_parameter2 = %C0SACON% STR_VAR resource = c0saco12 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 12 parameter1 = 13 match_parameter2 = %C0SACON% STR_VAR resource = c0saco13 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 13 parameter1 = 14 match_parameter2 = %C0SACON% STR_VAR resource = c0saco14 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 14 parameter1 = 15 match_parameter2 = %C0SACON% STR_VAR resource = c0saco15 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 15 parameter1 = 16 match_parameter2 = %C0SACON% STR_VAR resource = c0saco16 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 16 parameter1 = 17 match_parameter2 = %C0SACON% STR_VAR resource = c0saco17 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 17 parameter1 = 18 match_parameter2 = %C0SACON% STR_VAR resource = c0saco18 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 18 parameter1 = 19 match_parameter2 = %C0SACON% STR_VAR resource = c0saco19 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 19 parameter1 = 20 match_parameter2 = %C0SACON% STR_VAR resource = c0saco20 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 20 parameter1 = 21 match_parameter2 = %C0SACON% STR_VAR resource = c0saco21 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 21 parameter1 = 22 match_parameter2 = %C0SACON% STR_VAR resource = c0saco22 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 22 parameter1 = 23 match_parameter2 = %C0SACON% STR_VAR resource = c0saco23 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 23 parameter1 = 24 match_parameter2 = %C0SACON% STR_VAR resource = c0saco24 END
-  LPF CLONE_EFFECT INT_VAR header = 0 check_globals = 1 check_headers = 1 match_parameter1 = 24 parameter1 = 25 match_parameter2 = %C0SACON% STR_VAR resource = c0saco25 END
-  
-COPY_EXISTING ~C0SA207.spl~ ~override~
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
-SAY NAME1 @12
-SAY UNIDENTIFIED_DESC @13
-COPY_EXISTING ~C0SA207a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
-
-COPY_EXISTING ~C0SA513.spl~ ~override~
-SAY NAME1 @14
-SAY UNIDENTIFIED_DESC @15
-
-COPY_EXISTING ~C0SA407.spl~ ~override~
-SAY NAME1 @16
-SAY UNIDENTIFIED_DESC @17
-COPY_EXISTING ~C0SA407a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
-
-COPY_EXISTING ~C0SA713.spl~ ~override~
-SAY NAME1 @18
-SAY UNIDENTIFIED_DESC @19
-
-COPY_EXISTING ~C0SA706.spl~ ~override~
-SAY NAME1 @20
-SAY UNIDENTIFIED_DESC @21
-COPY_EXISTING ~C0SA706a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 142 parameter2 = c0saic02 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 4 duration = 60 parameter1 = RESOLVE_STR_REF (~Constitution Restored~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 timing = 1 duration = 0 parameter1 = RESOLVE_STR_REF (~Constitution Drained~) END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA207 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA513 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA407 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA713 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA706 END
-  LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 0 duration = 60 resist_dispel = 2 parameter1 = RESOLVE_STR_REF (~Target's Constitution has already been drained~) STR_VAR resource = C0SA910 END
-
-COPY_EXISTING ~C0SA910.spl~ ~override~
-SAY NAME1 @22
-SAY UNIDENTIFIED_DESC @23
-
-      PRINT ~Resource: Constitution drain on cast~
-      END
-      ACTION_IF ("hpcost" = 2) THEN BEGIN
-LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-2.tra~
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Current Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon#.spl~ ~override~
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 326
-			parameter2 = C0CURHP
-	END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon_.spl~ ~override~
-
-COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY_EXISTING ~C0SA207.spl~ ~override~
-SAY NAME1 @12
-SAY UNIDENTIFIED_DESC @13
-
-COPY_EXISTING ~C0SA513.spl~ ~override~
-SAY NAME1 @14
-SAY UNIDENTIFIED_DESC @15
-
-COPY_EXISTING ~C0SA407.spl~ ~override~
-SAY NAME1 @16
-SAY UNIDENTIFIED_DESC @17
-
-COPY_EXISTING ~C0SA713.spl~ ~override~
-SAY NAME1 @18
-SAY UNIDENTIFIED_DESC @19
-
-COPY_EXISTING ~C0SA706.spl~ ~override~
-SAY NAME1 @20
-SAY UNIDENTIFIED_DESC @21
-
-COPY_EXISTING ~C0SA910.spl~ ~override~
-SAY NAME1 @22
-SAY UNIDENTIFIED_DESC @23
-
-COPY_EXISTING ~c0sa207a.spl~ ~override~
-	LPF ALTER_EFFECT
-		INT_VAR
-			duration = 0
-			special = 1
-	END
-
-COPY_EXISTING ~c0sa407a.spl~ ~override~
-	LPF ALTER_EFFECT
-		INT_VAR
-			duration = 0
-			special = 1
-	END
-
-COPY_EXISTING ~c0sa706a.spl~ ~override~
-	LPF ALTER_EFFECT
-		INT_VAR
-			duration = 0
-			special = 1
-	END
-
-      PRINT ~Resource: Drain Current Hit Points on cast~
-      END
-      ACTION_IF ("hpcost" = 3) THEN BEGIN
-LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-3.tra~
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-2 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-4 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-6 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-8 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-10 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-12 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-14 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-16 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-18 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 17 opcode = 18 timing = 0 duration = 36 END
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 139 match_parameter1 = 0 parameter1 = RESOLVE_STR_REF (~^0xFFC76777-20 Maximum Hit Points^-~) END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon#.spl~ ~override~
-	LPF ALTER_EFFECT
-		INT_VAR
-			match_opcode = 326
-			parameter2 = C0CURHP
-	END
-	
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon_.spl~ ~override~
-
-COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
-COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
-COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
-COPY_EXISTING ~C0SA207.spl~ ~override~
-SAY NAME1 @12
-SAY UNIDENTIFIED_DESC @13
-
-COPY_EXISTING ~C0SA513.spl~ ~override~
-SAY NAME1 @14
-SAY UNIDENTIFIED_DESC @15
-
-COPY_EXISTING ~C0SA407.spl~ ~override~
-SAY NAME1 @16
-SAY UNIDENTIFIED_DESC @17
-
-COPY_EXISTING ~C0SA713.spl~ ~override~
-SAY NAME1 @18
-SAY UNIDENTIFIED_DESC @19
-
-COPY_EXISTING ~C0SA706.spl~ ~override~
-SAY NAME1 @20
-SAY UNIDENTIFIED_DESC @21
-
-COPY_EXISTING ~C0SA910.spl~ ~override~
-SAY NAME1 @22
-SAY UNIDENTIFIED_DESC @23
-
-COPY_EXISTING ~c0sa207a.spl~ ~override~
-	LPF ALTER_EFFECT
-		INT_VAR
-			special = 1
-	END
-
-COPY_EXISTING ~c0sa407a.spl~ ~override~
-	LPF ALTER_EFFECT
-		INT_VAR
-			special = 1
-	END
-
-COPY_EXISTING ~c0sa706a.spl~ ~override~
-	LPF ALTER_EFFECT
-		INT_VAR
-			special = 1
-	END
-
-      PRINT ~Resource: Drain Maximum Hit Points on cast~
-      END
-      ACTION_IF ("hpcost" = 4) THEN BEGIN
-LOAD_TRA ~%MOD_FOLDER%/languages/english/setup-4.tra~
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon1.spl~ ~override~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon2.spl~ ~override/c0sacon2.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon3.spl~ ~override/c0sacon3.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon4.spl~ ~override/c0sacon4.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon5.spl~ ~override/c0sacon5.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon6.spl~ ~override/c0sacon6.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon7.spl~ ~override/c0sacon7.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon8.spl~ ~override/c0sacon8.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon9.spl~ ~override/c0sacon9.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-COPY ~%MOD_FOLDER%/alt-spell/c0sacon0.spl~ ~override/c0sacon0.spl~
-  LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = %-1% END
-
-COPY ~%MOD_FOLDER%/alt-spell/c0sa207a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY ~%MOD_FOLDER%/alt-spell/c0sa407a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY ~%MOD_FOLDER%/alt-spell/c0sa706a.spl~ ~override~
-  LPF ALTER_EFFECT INT_VAR check_globals = 1 check_headers = 1 match_opcode = 12 duration = 0 END
-COPY_EXISTING ~C0SA207.spl~ ~override~
-SAY NAME1 @12
-SAY UNIDENTIFIED_DESC @13
-
-COPY_EXISTING ~C0SA513.spl~ ~override~
-SAY NAME1 @14
-SAY UNIDENTIFIED_DESC @15
-
-COPY_EXISTING ~C0SA407.spl~ ~override~
-SAY NAME1 @16
-SAY UNIDENTIFIED_DESC @17
-
-COPY_EXISTING ~C0SA713.spl~ ~override~
-SAY NAME1 @18
-SAY UNIDENTIFIED_DESC @19
-
-COPY_EXISTING ~C0SA706.spl~ ~override~
-SAY NAME1 @20
-SAY UNIDENTIFIED_DESC @21
-
-COPY_EXISTING ~C0SA910.spl~ ~override~
-SAY NAME1 @22
-SAY UNIDENTIFIED_DESC @23
-
-      PRINT ~Resource: No Cost~
-      END
-	  
-COPY_EXISTING ~C0SACON1.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON1~ END	  
-COPY_EXISTING ~C0SACON2.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON2~ END
-COPY_EXISTING ~C0SACON3.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON3~ END
-COPY_EXISTING ~C0SACON4.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON4~ END
-COPY_EXISTING ~C0SACON5.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON5~ END
-COPY_EXISTING ~C0SACON6.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON6~ END
-COPY_EXISTING ~C0SACON7.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON7~ END
-COPY_EXISTING ~C0SACON8.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON8~ END
-COPY_EXISTING ~C0SACON9.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON9~ END
-COPY_EXISTING ~C0SACON0.SPL~ ~OVERRIDE~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 insert_point = 0 target = 1 duration = 0 parameter2 = 1 STR_VAR resource = EVAL ~C0SACON0~ END
-	
 ////////////////////////////
 ////////SHADOW ADEPT////////
 ////////////////////////////
@@ -453,7 +421,7 @@ ADD_KIT ~C0SADEPT~
  ~C0SADEPT				0	0	0	0	0	0~
 
  // appended to ABDCDSRQ.2da
- ~C0SADEPT                		0       0       15       15       0       15~
+ ~C0SADEPT                		0       0       0       15       0       15~
 
  // appended to ABDCSCRQ.2da
  ~C0SADEPT                 	0       0       0       0       0		0~
@@ -471,7 +439,7 @@ ADD_KIT ~C0SADEPT~
  ~K_M_H K_M_E K_M_HE K_M_HL K_M_G K_M_D K_M_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00400000     1~
+ ~0x00004000     1~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA~
@@ -480,9 +448,9 @@ ADD_KIT ~C0SADEPT~
  ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
 
  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY @0
-  SAY @1
-  SAY @2
+  SAY ~shadow adept~
+  SAY ~Shadow Adept~
+  SAY ~%shadow_adept_desc%~
 
 LAF fl#add_kit_ee
   INT_VAR
@@ -496,66 +464,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-/*
-ADD_KIT ~C0SADEP2~
 
- // appended to CLASWEAP.2da
- ~C0SADEP2		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
- ~C0SADEP2		0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SADEP2				0	0	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SADEP2				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SADEP2                		0       0       0       15       0       15~
-
- // appended to ABDCSCRQ.2da
- ~C0SADEP2                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SADEP2                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SADEP2                  	1       1       0       1       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/c0sadep2.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     1~
-
- // HLA table to use; see LUABBR.2da
- ~C0SA~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY @0
-  SAY @1
-  SAY @3
-
-LAF fl#add_kit_ee
-  INT_VAR
-	briefdesc = RESOLVE_STR_REF (~SHADOW ADEPT: Shadow adepts hurl themselves into the abyss of the Shadow Weave, immediately acquiring all the gifts available to casual students and discovering secrets unavailable to all but the most dedicated.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-
-When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
-  STR_VAR
-    kit_name = C0SADEP2
-	hpclass = ~HPDD~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-*/
 ADD_KIT ~C0SASORC~
 
  // appended to CLASWEAP.2da
@@ -571,7 +480,7 @@ ADD_KIT ~C0SASORC~
  ~C0SASORC				0	0	0	0	0	0~
 
  // appended to ABDCDSRQ.2da
- ~C0SASORC                		0       0       15       15       0       15~
+ ~C0SASORC                		0       0       0       15       0       15~
 
  // appended to ABDCSCRQ.2da
  ~C0SASORC                 	0       0       0       0       0		0~
@@ -589,7 +498,7 @@ ADD_KIT ~C0SASORC~
  ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00400000     19~
+ ~0x00004000     19~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA~
@@ -600,7 +509,7 @@ ADD_KIT ~C0SASORC~
  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
   SAY ~shadow disciple~
   SAY ~Shadow Disciple~
-  SAY @4
+  SAY ~%shadow_disciple_desc%~
 
 LAF fl#add_kit_ee
   INT_VAR
@@ -614,64 +523,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-/*
-ADD_KIT ~C0SASOR2~
 
- // appended to CLASWEAP.2da
- ~C0SASOR2		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
- ~C0SASOR2		0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SASOR2				0	0	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SASOR2				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SASOR2                		0       0       0       15       0       15~
-
- // appended to ABDCSCRQ.2da
- ~C0SASOR2                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SASOR2                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SASOR2                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/c0sadep2.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000 19~
-
- // HLA table to use; see LUABBR.2da
- ~C0SA~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~shadow disciple~
-  SAY ~Shadow Disciple~
-  SAY @4
-
-LAF fl#add_kit_ee
-  INT_VAR
-	briefdesc = RESOLVE_STR_REF (~SHADOW DISCIPLE: Shadow disciples are born with the innate ability to wield magic of the Shadow Weave, usually granted as a blessing from Shar, the Nightsinger. Like their equivalent, the sorcerer, they wield the power of their native magic, the Shadow Weave, with a level of skill that other spellcasters would envy.~)
-	biography = RESOLVE_STR_REF (~Born during a moonless, starless night, you were bestowed with the power of the Shadow Weave, a dark imitation of Mystra's Art created by Shar, the Nightsinger. Though you know not why you were granted it, your power has earned you the scrutiny of Candlekeep's scholars and mages–and the discomfort of many others–for as long as you can remember. At an early age, your guardians attempted to instigate the teaching of the Weave into you, hoping to divert you from using magic you were born with. Despite this, however, you have continued to nurture the spark of darkness within you, taking advantage of your natural talent and the tutelage of Gorion and your other tutors to become a capable practitioner of the Shadow Art.~)
-  STR_VAR
-    kit_name = C0SASOR2
-	hpclass = ~HPDD~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-*/
 ADD_KIT ~C0SABARD~
 
  // appended to CLASWEAP.2da
@@ -698,7 +550,7 @@ ADD_KIT ~C0SABARD~
  ~C0SABARD				0	0	0	0	0	0~
 
  // appended to ABDCDSRQ.2da
- ~C0SABARD                		0       0       15       15       0       15~
+ ~C0SABARD                		0       0       0       15       0       15~
 
  // appended to ABDCSCRQ.2da
  ~C0SABARD                 	0       0       0       0       0		0~
@@ -716,7 +568,7 @@ ADD_KIT ~C0SABARD~
  ~K_B_H K_B_E K_B_HE K_B_HL K_B_G K_B_D K_B_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00400000     5~
+ ~0x00004000     5~
 
  // HLA table to use; see LUABBR.2da
  ~C0SA2~
@@ -727,7 +579,7 @@ ADD_KIT ~C0SABARD~
  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
   SAY ~nightsinger~
   SAY ~Nightsinger~
-  SAY @5
+  SAY ~%nightsinger_desc%~
 
 LAF fl#add_kit_ee
   INT_VAR
@@ -741,88 +593,22 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	clascolr = ~27 136 119 21 187~
 	clsrcreq = ~1 1 1 1 1 1 1~
 END
-/*
-ADD_KIT ~C0SABAR2~
 
- // appended to CLASWEAP.2da
- ~C0SABAR2		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//11                                T   S           F   Q             S S
-//10                                W   C           L   U             W I
-//9                         B L S   O   I   W       A   A             O N
-//8                         A O H   H   M   A       I   R C   S       R G
-//7         L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6         _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5         S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4         W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3         O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2         R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1         D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
- ~C0AURA	1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SABAR2				0	12	12	13	0	15~
-
- // appended to ABCLSMOD.2da
- ~C0SABAR2				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SABAR2                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SABAR2                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SABAR2                  	0       1       0       0       1	1       0       1       0~
-
- // appended to DUALCLAS.2da
- ~C0SABAR2                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/c0sadep2.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_B_H K_B_E K_B_HE K_B_HL K_B_G K_B_D K_B_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     5~
-
- // HLA table to use; see LUABBR.2da
- ~C0SA~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~nightsinger~
-  SAY ~Nightsinger~
-  SAY @6
-
-LAF fl#add_kit_ee
-  INT_VAR
-	briefdesc = RESOLVE_STR_REF (~NIGHTSINGER: A rare class of bards that choose to study the power of the Shadow Weave gain access to its dark powers, bestowing upon them a dirge capable of cursing their enemies.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-
-When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
-  STR_VAR
-    kit_name = C0SABAR2
-	hpclass = ~HPROG~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-*/
 COPY ~%MOD_FOLDER%/spells/c0sahlac.spl~ ~override~
 SAY NAME1 ~Light's Requiem~
 SAY NAME2 ~Light's Requiem~
 SAY UNIDENTIFIED_DESC ~Light's Requiem
-This dark hymn is a powerful aid to the Nightsinger. The song gives the Nightsinger <PRO_HIMHER>self a 10-point bonus to <PRO_HISHER> Armor Class, 25% Magic Resistance and +5 to all saving throws. The song also inflicts a -5 penalty to THAC0, damage, saving throws and morale to all nearby foes.
+This dark hymn is a powerful aid to the Nightsinger. The song gives the Nightsinger <PRO_HIMHER>self a 10-point bonus to <PRO_HISHER> Armor Class, 25% Magic Resistance and +5 to all saving throws. The song also inflicts a -6 penalty to Luck and Saving Throws while draining 8 Hit Points per round to all nearby foes, healing the Nightsinger. Targets must also make a Save vs. Death at -4 or be drained of one level for 24 hours. Enemies with less than 50% maximum hit points lose twice as many hit points per round. Enemies with less than 25% hit points additionally incur a penalty to morale.
 
 This ability replaces the current Bard Song.~
 
 COPY ~%MOD_FOLDER%/spells/c0sabrds.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0saso2a.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~One Level Drained~) END
 COPY ~%MOD_FOLDER%/spells/c0sason2.spl~ ~override~
 COPY ~%MOD_FOLDER%/spells/c0sasong.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0saso01.eff~ ~override~
+  WRITE_SHORT 0x20 ~C0CURHP~
 
 ////////////////////////////
 //////SHADOW ADEPT/THIEF////
@@ -873,7 +659,7 @@ ADD_KIT ~C0SAMT~
  ~K_MT_H K_MT_E K_MT_HE K_MT_HL K_MT_G K_MT_D K_MT_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00400000     13~
+ ~0x00004000     13~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAMT~
@@ -884,7 +670,7 @@ ADD_KIT ~C0SAMT~
  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
   SAY ~nightblade~
   SAY ~Nightblade~
-  SAY @7
+  SAY ~%nightblade_desc%~
 
 LAF fl#add_kit_ee
   INT_VAR
@@ -905,85 +691,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-/*
-ADD_KIT ~C0SAMT2~
 
- // appended to CLASWEAP.2da
- ~C0SAMT2		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SAMT2    1 1 1 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SAMT2				0	9	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SAMT2				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SAMT2                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SAMT2                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SAMT2                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SAMT2                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_MT_H K_MT_E K_MT_HE K_MT_HL K_MT_G K_MT_D K_MT_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     13~
-
- // HLA table to use; see LUABBR.2da
- ~C0SAMT~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~nightblade~
-  SAY ~Nightblade~
-  SAY @7
-
-LAF fl#add_kit_ee
-  INT_VAR
-	briefdesc = RESOLVE_STR_REF (~NIGHTBLADE: This character can use the abilities of a Shadow Adept and a Thief, though arcane spells cannot be cast while wearing armor.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-
-When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
-  STR_VAR
-    kit_name = C0SAMT2
-	hpclass = ~HPMT~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SAMT2
-		kit_clab = BLANKCLAB
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
-END
-*/
 ////////////////////////////
 /////CLERIC/SHADOW ADEPT////
 ////////////////////////////
@@ -1033,7 +741,7 @@ ADD_KIT ~C0SACM~
   ~K_CM_H K_CM_E K_CM_HE K_CM_HL K_CM_G K_CM_D K_CM_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00400000     14~
+ ~0x00004000     14~
 
  // HLA table to use; see LUABBR.2da
  ~C0SACM~
@@ -1044,7 +752,7 @@ ADD_KIT ~C0SACM~
  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
   SAY ~nightbringer~
   SAY ~Nightbringer~
-  SAY @8
+  SAY ~%nightbringer_desc%~
 
 LAF fl#add_kit_ee
   INT_VAR
@@ -1065,85 +773,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-/*
-ADD_KIT ~C0SACM2~
 
- // appended to CLASWEAP.2da
- ~C0SACM2		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SACM2    0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SACM2				0	0	12	9	9	9~
-
- // appended to ABCLSMOD.2da
- ~C0SACM2				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SACM2                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SACM2                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SACM2                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SACM2                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
-  ~K_CM_H K_CM_E K_CM_HE K_CM_HL K_CM_G K_CM_D K_CM_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     14~
-
- // HLA table to use; see LUABBR.2da
- ~C0SACM~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~nightbringer~
-  SAY ~Nightbringer~
-  SAY @8
-
-LAF fl#add_kit_ee
-  INT_VAR
-	briefdesc = RESOLVE_STR_REF (~NIGHTBRINGER: This character can use the abilities of a Cleric and a Shadow Adept, though weapons are restricted to only those allowed by the Cleric's ethos, and arcane spells cannot be cast while wearing armor.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-
-When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
-  STR_VAR
-    kit_name = C0SACM2
-	hpclass = ~HPCM~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SACM2
-		kit_clab = BLANKCLAB
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
-END
-*/
 ////////////////////////////
 ////FIGHTER/SHADOW ADEPT////
 ////////////////////////////
@@ -1193,7 +823,7 @@ ADD_KIT ~C0SAFM~
  ~K_FM_H K_FM_E K_FM_HE K_FM_HL K_FM_G K_FM_D K_FM_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00400000     7~
+ ~0x00004000     7~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFM~
@@ -1204,7 +834,7 @@ ADD_KIT ~C0SAFM~
  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
   SAY ~shade warrior~
   SAY ~Shade Warrior~
-  SAY @9
+  SAY ~%shade_warrior_desc%~
 
 LAF fl#add_kit_ee
   INT_VAR
@@ -1225,85 +855,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-/*
-ADD_KIT ~C0SAFM2~
 
- // appended to CLASWEAP.2da
- ~C0SAFM2		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SAFM2    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SAFM2				9	0	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SAFM2				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SAFM2                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SAFM2                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SAFM2                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SAFM2                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_FM_H K_FM_E K_FM_HE K_FM_HL K_FM_G K_FM_D K_FM_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     7~
-
- // HLA table to use; see LUABBR.2da
- ~C0SAFM~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~shade warrior~
-  SAY ~Shade Warrior~
-  SAY @9
-
-LAF fl#add_kit_ee
-  INT_VAR
-	briefdesc = RESOLVE_STR_REF (~SHADE WARRIOR: This character can use the abilities of a Fighter and a Shadow Adept, though they cannot cast spells while wearing armor. They may Specialize in, but not Master, any weapon they can use.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-
-When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
-  STR_VAR
-    kit_name = C0SAFM2
-	hpclass = ~HPFM~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SAFM2
-		kit_clab = BLANKCLAB
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
-END
-*/
 //////////////////////////////
 //FIGHTER/SHADOW ADEPT/THIEF//
 //////////////////////////////
@@ -1353,7 +905,7 @@ ADD_KIT ~C0SAFMT~
  ~K_FMT_H K_FMT_E K_FMT_HE K_FMT_HL K_FMT_G K_FMT_D K_FMT_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00400000     10~
+ ~0x00004000     10~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFT~
@@ -1364,7 +916,7 @@ ADD_KIT ~C0SAFMT~
  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
   SAY ~shadow enforcer~
   SAY ~Shadow Enforcer~
-  SAY @10
+  SAY ~%shadow_enforcer_desc%~
 
 LAF fl#add_kit_ee
   INT_VAR
@@ -1385,85 +937,7 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-/*
-ADD_KIT ~C0SAFMT2~
 
- // appended to CLASWEAP.2da
- ~C0SAFMT2		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SAFMT2    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SAFMT2				9	9	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SAFMT2				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SAFMT2                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SAFMT2                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SAFMT2                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SAFMT2                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_FMT_H K_FMT_E K_FMT_HE K_FMT_HL K_FMT_G K_FMT_D K_FMT_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     10~
-
- // HLA table to use; see LUABBR.2da
- ~C0SAFT~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~shadow enforcer~
-  SAY ~Shadow Enforcer~
-  SAY @10
-
-LAF fl#add_kit_ee
-  INT_VAR
-	briefdesc = RESOLVE_STR_REF (~SHADOW ENFORCER: This character can use the abilities of a Fighter, Shadow Adept, and Thief, though they cannot use their thieving skills while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-
-When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
-  STR_VAR
-    kit_name = C0SAFMT2
-	hpclass = ~HPFMT~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SAFMT2
-		kit_clab = BLANKCLAB
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
-END
-*/
 //////////////////////////////
 //FIGHTER/SHADOWADEPT/CLERIC//
 //////////////////////////////
@@ -1513,7 +987,7 @@ ADD_KIT ~C0SAFMC~
  ~K_FMC_H K_FMC_E K_FMC_HE K_FMC_HL K_FMC_G K_FMC_D K_FMC_HO~
 
  // usability flags, added to the end of the KITLIST.2da entry
- ~0x00400000     17~
+ ~0x00004000     17~
 
  // HLA table to use; see LUABBR.2da
  ~C0SAFC~
@@ -1524,7 +998,7 @@ ADD_KIT ~C0SAFMC~
  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
   SAY ~dark justiciar~
   SAY ~Dark Justiciar~
-  SAY @11
+  SAY ~%dark_justiciar_desc%~
 
 LAF fl#add_kit_ee
   INT_VAR
@@ -1545,82 +1019,3 @@ LAF qd_multiclass
 		base_class = ~M~
 		mc_dir = ~%MOD_FOLDER%/2DA~
 END
-/*
-ADD_KIT ~C0SAFMC2~
-
- // appended to CLASWEAP.2da
- ~C0SAFMC2		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SAFMC2    0 0 0 0 2 2 0 2 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SAFMC2				9	0	12	9	9	9~
-
- // appended to ABCLSMOD.2da
- ~C0SAFMC2				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SAFMC2                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SAFMC2                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SAFMC2                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SAFMC2                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_FMC_H K_FMC_E K_FMC_HE K_FMC_HL K_FMC_G K_FMC_D K_FMC_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     17~
-
- // HLA table to use; see LUABBR.2da
- ~C0SAFC~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~dark justiciar~
-  SAY ~Dark Justiciar~
-  SAY @11
-
-LAF fl#add_kit_ee
-  INT_VAR
-	briefdesc = RESOLVE_STR_REF (~DARK JUSTICIAR: This character can use the abilities of a Fighter, Shadow Adept, and Cleric, though they are restricted to weapons allowed by the Cleric's ethos and cannot cast arcane spells while wearing armor. This character may Specialize in, but not Master, any weapon they can use.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-
-When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
-  STR_VAR
-    kit_name = C0SAFMC2
-	hpclass = ~HPFM~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SAFMC2
-		kit_clab = BLANKCLAB
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
-END
-*/

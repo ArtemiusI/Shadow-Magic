@@ -4,17 +4,7 @@ APPEND ~racetext.2da~ ~SHADOW   132        %shad_lcase%       -1         %shad_u
 
 COPY ~%MOD_FOLDER%/portraits/C0SHADEL.BMP~ ~OVERRIDE~
 
-PRINT ~Please choose one of the following:
-[1] Hardcore version (Level 18, casts up to 9th level spells)
-[2] Standard version (Level 14, casts up to 7th level spells)
-[3] No modification (Adds special ability only)~
-
-OUTER_SPRINT ~shadelord~ ~placeholder_value~
-OUTER_WHILE (!(IS_AN_INT ~shadelord~) OR (~shadelord~ > 0x5) OR (~shadelord~ < 0x1)) BEGIN
-  PRINT ~Please select 1, 2 or 3 and press Enter.~
-  ACTION_READLN ~shadelord~
-END
-      ACTION_IF ("shadelord" = 1) THEN BEGIN
+      ACTION_IF ("shade_lord_difficulty" = 1) THEN BEGIN
 COPY ~%MOD_FOLDER%/creatures/shadel.cre~ ~override~
 SAY NAME1 ~Shade Lord~
 SAY NAME2 ~Shade Lord~
@@ -31,7 +21,7 @@ COPY_EXISTING ~shadel.cre~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 END
 END
-      ACTION_IF ("shadelord" = 2) THEN BEGIN
+      ACTION_IF ("shade_lord_difficulty" = 2) THEN BEGIN
 COPY ~%MOD_FOLDER%/creatures/shade2.cre~ ~override/shadel.cre~
 SAY NAME1 ~Shade Lord~
 SAY NAME2 ~Shade Lord~
@@ -48,7 +38,7 @@ COPY_EXISTING ~shadel.cre~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 END
 END
-      ACTION_IF ("shadelord" = 3) THEN BEGIN
+      ACTION_IF ("shade_lord_difficulty" = 3) THEN BEGIN
 END
 
 COMPILE ~%MOD_FOLDER%/dialogue/shadel.d~
@@ -60,7 +50,7 @@ COPY_EXISTING ~ar1404.bcs~ ~override~
 	 !Global("C0SAShadeLordKilled","GLOBAL",1)~
 	 END
 BUT_ONLY  
-EXTEND_BOTTOM ~AR1404.BCS~ ~%MOD_FOLDER%/scripts/AR1404.BAF~
+EXTEND_BOTTOM ~AR1404.BCS~ ~%MOD_FOLDER%/scripts/bg2/AR1404.BAF~
 
 COPY ~%MOD_FOLDER%/spells/bams/c0sa3b.bam~ ~override~
 COPY ~%MOD_FOLDER%/spells/c0sa3.itm~ ~override~

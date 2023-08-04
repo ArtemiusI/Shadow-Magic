@@ -1,0 +1,22 @@
+///////////////////////////
+/////////CROSSMOD//////////
+///////////////////////////
+
+// Foundling
+
+ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~ AND FILE_EXISTS_IN_GAME ~L#Fou25.cre~
+THEN BEGIN
+  PRINT ~Adding crossmod compatibility between Foundling and Shadow Magic~
+  COMPILE ~%MOD_FOLDER%/dialogue/npc/foundling.d~
+COPY_EXISTING ~L#Fou.cre~ ~override~
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+COPY_EXISTING ~L#Fou25.cre~ ~override~
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+END
+
+ACTION_IF MOD_IS_INSTALLED ~WEASELS!.TP2~ ~0~ THEN BEGIN
+COPY_EXISTING ~L#WI176.ITM~ OVERRIDE
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) timing = 2 END
+COPY_EXISTING ~L#WI577.ITM~ OVERRIDE
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) timing = 2 END
+END

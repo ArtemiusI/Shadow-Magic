@@ -4,6 +4,7 @@ COPY ~%MOD_FOLDER%/animations~ ~override~
 COPY ~%MOD_FOLDER%/portraits~ ~override~
 COPY ~%MOD_FOLDER%/spells~ ~override~
 COPY ~%MOD_FOLDER%/spells/bams~ ~override~
+COPY ~%MOD_FOLDER%/spells/main~ ~override~
 
 ////////////////////////////////////////
 ///////////////ANIMATIONS///////////////
@@ -21,6 +22,8 @@ LAF HANDLE_AUDIO END
 
 INCLUDE ~%MOD_FOLDER%/lib/shadow_magic.tpa~
 
+INCLUDE ~%MOD_FOLDER%/lib/LearnClassSpell.tpa~
+
 ACTION_IF MOD_IS_INSTALLED ~SETUP-RR.TP2~ ~6~ THEN BEGIN
 COPY ~%MOD_FOLDER%/2DA/OTHER/C0SABARD-RR.2DA~ ~OVERRIDE/C0SABARD.2DA~
 END
@@ -29,17 +32,11 @@ ACTION_IF MOD_IS_INSTALLED ~SETUP-CDTWEAKS.TP2~ ~2270~ THEN BEGIN
 COPY ~%MOD_FOLDER%/2DA/OTHER/C0SABARD-CD.2DA~ ~OVERRIDE/C0SABARD.2DA~
 END
 
-////////////////////////////////////////////
-///////////////////KIT//////////////////////
-////////////////////////////////////////////
-
-INCLUDE ~%MOD_FOLDER%/lib/kit.tpa~
-
 ////////////////////////////////////////
 /////////DIALOGUE///////////////////////
 ////////////////////////////////////////
 
-COMPILE ~%MOD_FOLDER%/dialogue/c0satalk.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0satalk.d~
 COMPILE ~%MOD_FOLDER%/dialogue/c0saorb.d~
 
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
@@ -118,7 +115,7 @@ COPY ~%MOD_FOLDER%/Items/c0sabook.itm~ ~override~
 	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
 	  parameter2 = 6
 	  power = 1
-	  special = RESOLVE_STR_REF (@1)
+	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Book~
 SAY NAME2 ~Shadow Tome of Shar~
@@ -153,36 +150,9 @@ INCLUDE ~%MOD_FOLDER%/lib/familiars.tpa~
 
 INCLUDE ~%MOD_FOLDER%/lib/item_pack.tpa~
 
-///////////////////////////
-/////////CROSSMOD//////////
-///////////////////////////
+INCLUDE ~%MOD_FOLDER%/lib/scrolls.tpa~
 
-// Shadow Magic
-
-ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~ AND FILE_EXISTS_IN_GAME ~L#Fou25.cre~
-THEN BEGIN
-  PRINT ~Adding crossmod compatibility between Foundling and Shadow Magic~
-  COMPILE ~%MOD_FOLDER%/dialogue/npc/foundling.d~
-COPY_EXISTING ~L#Fou.cre~ ~override~
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
-COPY_EXISTING ~L#Fou25.cre~ ~override~
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
+INCLUDE ~%MOD_FOLDER%/components/3_quests.tpa~
 END
 
-///////////////////////////
-/////BETA SPELL SYSTEM/////
-///////////////////////////
-PRINT ~Install BETA Spell Learning System?
-[1] Yes
-[2] No~
-
-OUTER_SPRINT ~spellsystem~ ~placeholder_value~
-OUTER_WHILE (!(IS_AN_INT ~spellsystem~) OR (~spellsystem~ > 0x5) OR (~spellsystem~ < 0x1)) BEGIN
-  PRINT ~Please select 1 or 2 and press Enter.~
-  ACTION_READLN ~spellsystem~
-END
-      ACTION_IF ("spellsystem" = 1) THEN BEGIN
-	  INCLUDE ~%MOD_FOLDER%/LIB/SPELLSYSTEM.TPA~
-END
-      ACTION_IF ("spellsystem" = 2) THEN BEGIN
-END

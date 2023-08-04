@@ -4,22 +4,15 @@
 
 Advantages:
 – Hit Die: d6
+– May cast one additional spell per level.
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
 – May use Shadow Magic.
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.
 
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– May cast one additional spell per level.
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 4th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -45,70 +38,23 @@ Disadvantages:
 – Alignment restricted to non-good.
  
 Prime Requisites For Dual-Classing: Intelligence, Charisma~
-@3	= ~SHADOW ADEPT: Shadow adepts hurl themselves into the abyss of the Shadow Weave, immediately acquiring all the gifts available to casual students and discovering secrets unavailable to all but the most dedicated.
 
-Advantages:
-– Hit Die: d6
-– May use Shadow Magic.
-
-SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.
-
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– May cast one additional spell per level.
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– 4th level: May use the Shield of Shadows ability once per day.
- 
-SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
-
-From 8th level onwards, the shield of shadows also grants +4 to saving throws vs. death and +1 to all other saving throws.
-
-– 5th level: May use Shadowstep once per day. Gains one use every 5 levels thereafter.
- 
-SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The shadow adept cannot attack or use spells while in the Shadow Plane.
-
-– 6th level: May use Find Shadow Familiar. This ability is only available to the protagonist.
- 
-FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creature from the Plane of Shadow to them permanently, sacrificing four points of Constitution (which gradually recovers over several weeks) to summon a shadow familiar.
-
-– 14th level: May use the Shadow Double ability once per day.
- 
-SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
-
-Disadvantages:
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
-– -2 penalty to saving throws against spells of the Invocation and Alteration schools.
-– May not learn or use spells from the Weave. (Spells chosen at character creation will be erased)
-– Alignment restricted to non-good.
- 
-Prime Requisites For Dual-Classing: Intelligence, Charisma~
 @4	= ~SHADOW DISCIPLE: Shadow disciples are born with the innate ability to wield magic of the Shadow Weave, usually granted as a blessing from Shar, the Nightsinger. Like their equivalent, the sorcerer, they wield the power of their native magic, the Shadow Weave, with a level of skill that other spellcasters would envy.
 
 Advantages:
 – Hit Die: d6
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
 – May use Shadow Magic.
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow disciple must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or temporarily lose Constitution equal to the level of the spell cast for 3 rounds. If the shadow disciple's Constitution reaches zero, <PRO_HESHE> is killed instantly.
-
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
 
 – Gains the Darkvision innate ability.
 
 DARKVISION: The shadow disciple is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
 
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 4th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow disciple surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -130,31 +76,26 @@ SHADOW DOUBLE: The shadow disciple creates a copy of <HIMHER>self out of shadows
 Disadvantages:
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
-– May not learn or use spells from the Weave. (Spells chosen on level-up will be erased)
+– May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
+
 @5	= ~NIGHTSINGER: A rare class of bards that choose to study the power of the Shadow Weave gain access to its dark powers, bestowing upon them a dirge capable of cursing their enemies.
 
 Advantages:
-– The Nightsinger's Bard Song, "Dirge of Despair", curses <PRO_HISHER> enemies, reducing their morale and saving throws.
-	1st level: -1 penalty to THAC0, damage and saving throws, lowers morale
-	11th level: -2 penalty to THAC0, damage and saving throws, lowers morale
-	21st level: -3 penalty to THAC0, damage and saving throws, lowers morale
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– The Nightsinger's Bard Song, "Dirge of Despair", inflicts a harrowing curse upon all enemies who listen. Victims suffer from the pain of overwhelming sorrow and slowly lose the will to live. Enemies with less than 50% maximum hit points lose twice as many hit points per round. Enemies with less than 25% hit points additionally incur a penalty to morale.
+	
+	1st level: Enemies incur a -2 penalty to THAC0 and damage and lose 1 hit point per round. -1 to morale.
+	15th level: Enemies incur a -3 penalty to THAC0 and damage and lose 3 hit points per round. -2 to morale.
+	20th level: Enemies incur a -4 penalty to THAC0 and damage and lose 5 hit points per round. -3 to morale.
 
 – May use Shadow Magic.
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or temporarily lose Constitution equal to the level of the spell cast for 3 rounds. If the Nightsinger's Constitution reaches zero, <PRO_HESHE> is killed instantly.
 
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 6th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -178,9 +119,14 @@ Disadvantages:
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to Lawful Neutral, True Neutral, Chaotic Neutral or Neutral Evil.~
+
 @6	= ~NIGHTSINGER: A rare class of bards that choose to study the power of the Shadow Weave gain access to its dark powers, bestowing upon them a dirge capable of cursing their enemies.
 
 Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
 – The Nightsinger's Bard Song, "Dirge of Despair", curses <PRO_HISHER> enemies, reducing their morale and saving throws.
 	1st level: -1 penalty to THAC0, damage and saving throws, lowers morale
 	11th level: -2 penalty to THAC0, damage and saving throws, lowers morale
@@ -190,17 +136,6 @@ Advantages:
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or temporarily lose Constitution equal to the level of the spell cast for 3 rounds. If the Nightsinger's Constitution reaches zero, <PRO_HESHE> is killed instantly.
 
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 6th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -222,27 +157,20 @@ SHADOW DOUBLE: The shadow adept creates a copy of <HIMHER>self out of shadowstuf
 Disadvantages:
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
-– May not learn or use spells from the Weave. (Spells chosen at character creation will be erased)
+– May not learn or use spells from the Weave.
 – Alignment restricted to Lawful Neutral, True Neutral, Chaotic Neutral or Neutral Evil.~
+
 @7	= ~NIGHTBLADE: This character can use the abilities of a Shadow Adept and a Thief, though arcane spells cannot be cast while wearing armor.
 
 Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
 – May use Shadow Magic.
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.
 
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– May cast one additional spell per level.
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 4th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -266,25 +194,18 @@ Disadvantages:
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
+
 @8	= ~NIGHTBRINGER: This character can use the abilities of a Cleric and a Shadow Adept, though weapons are restricted to only those allowed by the Cleric's ethos, and arcane spells cannot be cast while wearing armor.
 
 Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
 – May use Shadow Magic.
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.
 
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– May cast one additional spell per level.
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 4th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -308,25 +229,18 @@ Disadvantages:
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
+
 @9	= ~SHADE WARRIOR: This character can use the abilities of a Fighter and a Shadow Adept, though they cannot cast spells while wearing armor. They may Specialize in, but not Master, any weapon they can use.
 
 Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
 – May use Shadow Magic.
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.
 
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– May cast one additional spell per level.
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 4th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -350,25 +264,18 @@ Disadvantages:
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
+
 @10	= ~SHADOW ENFORCER: This character can use the abilities of a Fighter, Shadow Adept, and Thief, though they cannot use their thieving skills while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.
 
 Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
 – May use Shadow Magic.
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.
 
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– May cast one additional spell per level.
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 4th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -392,25 +299,18 @@ Disadvantages:
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
+
 @11	= ~DARK JUSTICIAR: This character can use the abilities of a Fighter, Shadow Adept, and Cleric, though they are restricted to weapons allowed by the Cleric's ethos and cannot cast arcane spells while wearing armor. This character may Specialize in, but not Master, any weapon they can use.
 
 Advantages:
+– +5% Magic Resistance.
+– +25% Cold and Magic Damage Resistance.
+– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
 – May use Shadow Magic.
 
 SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.
 
-The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic. High intelligence, wisdom and charisma benefits those who choose to stray into Shar's domain.
-
-  INTELLIGENCE: Bonus spell slots
-  WISDOM: Increased spell duration
-  CHARISMA: Bonus saving throws and elemental resistance
-
-– Gains the Darkvision innate ability.
-
-DARKVISION: The shadow adept is gifted with the ability to see in the dark even better than in light, permanently gaining infravision and immunity to blindness.
-
-– May cast one additional spell per level.
-– +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
 – 4th level: May use the Shield of Shadows ability once per day.
  
 SHIELD OF SHADOWS: The shadow adept surrounds <HIMHER>self with a barrier of purpleblack force. This shield of shadows functions like a shield spell, setting <HISHER> armor class to 4 (2 against ranged weapons) and absorbing magic missiles cast at <PRO_HIMHER> for 1 hour per 2 levels to a maximum of 9 hours.
@@ -434,6 +334,7 @@ Disadvantages:
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
+
 @12 = ~Lesser Drain Vitality~
 @13 = ~Lesser Drain Vitality
 (Necromancy – Shadow Weave)

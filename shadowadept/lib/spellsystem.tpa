@@ -1,6 +1,6 @@
 COPY ~%MOD_FOLDER%/2da/spellselect~ ~override~
 COMPILE ~%MOD_FOLDER%/dialogue/spellselect/c0sascrl.d~
-COMPILE ~%MOD_FOLDER%/dialogue/spellselect/c0satalk.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/spellselect/c0satalk.d~
 COMPILE ~%MOD_FOLDER%/scripts/spellselect/c0saplay.baf~
 EXTEND_BOTTOM ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/spellselect/c0saplay.baf~
 

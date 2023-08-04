@@ -1,0 +1,29 @@
+IF
+  Global("C0SAJevanSpawn","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("C0SAJevanSpawn","GLOBAL",1)
+	CreateCreature("c0jevan",[1328.3097],SW)
+END
+
+IF
+  Global("C0JevanShop","Global",0)
+  InMyArea("C0Jevan")
+  Specifics([PC],SHADOW_ADEPT)
+  OR(2)
+  Global("RefusedQilueBrain","GLOBAL",1)
+  Global("GetQilueBrain","GLOBAL",2)
+THEN
+  RESPONSE #100
+    ActionOverride("C0Jevan",StartDialogueNoSet(Player1))
+END
+
+IF
+  Global("C0SAJevanSpawn","GLOBAL",1)
+  Global("DrowCityHostile","GLOBAL",1)
+  InMyArea("C0Jevan")
+THEN
+  RESPONSE #100
+    SetGlobal("C0SAJevanSpawn","GLOBAL",-1)
+    ActionOverride("C0Jevan",ForceSpell(Myself,DRYAD_TELEPORT))
+END

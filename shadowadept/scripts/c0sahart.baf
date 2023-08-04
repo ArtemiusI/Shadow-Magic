@@ -1,0 +1,19 @@
+// Kit change
+
+IF
+  TimeOfDay(DAY)
+  TimeOfDay(MORNING)
+  IsActive(Myself)
+THEN
+  RESPONSE #100
+	Deactivate(Myself)
+END
+
+IF
+  TimeOfDay(DUSK)
+  TimeOfDay(NIGHT)
+  !IsActive(Myself)
+THEN
+  RESPONSE #100
+	Activate(Myself)
+END

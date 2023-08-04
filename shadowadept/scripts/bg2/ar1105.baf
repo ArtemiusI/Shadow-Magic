@@ -1,0 +1,10 @@
+IF
+  Dead("SHADEL")
+  Global("C0SACiceroSpawn","GLOBAL",0)
+  Global("C0SAShadeLordKilled","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("C0SACiceroSpawn","GLOBAL",1)
+	CreateCreature("c0cicer",[856.470],E)
+	ActionOverride("c0cicer",Dialogue([PC])
+END

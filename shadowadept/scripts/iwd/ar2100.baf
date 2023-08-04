@@ -1,0 +1,58 @@
+IF
+	Global("C0SAORRIK","AR2100",0)  // Kuldahar
+	GlobalGT("Chapter","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("C0SAORRIK","AR2100",1)  // Kuldahar
+		AddStoreItem("KUORK0","C0SA302A",1,1) 
+		AddStoreItem("KUORK0","C0SA304A",1,1) 
+		AddStoreItem("KUORK0","C0SA305A",1,1) 
+		AddStoreItem("KUORK0","C0SA306A",1,1) 
+		AddStoreItem("KUORK0","C0SA309A",1,1) 
+		AddStoreItem("KUORK0","C0SA310A",1,1) 
+		AddStoreItem("KUORK0","C0SA311A",1,1) 
+		AddStoreItem("KUORK0","C0SA312A",1,1) 
+		AddStoreItem("KUORK0","C0SA401A",1,1) 
+		AddStoreItem("KUORK0","C0SA402A",1,1) 
+		AddStoreItem("KUORK0","C0SA403A",1,1) 
+		AddStoreItem("KUORK0","C0SA404A",1,1) 
+		AddStoreItem("KUORK0","C0SA405A",1,1) 
+		AddStoreItem("KUORK0","C0SA406A",1,1) 
+		AddStoreItem("KUORK0","C0SA407A",1,1) 
+		AddStoreItem("KUORK0","C0SA408A",1,1) 
+		AddStoreItem("KUORK0","C0SA409A",1,1) 
+		AddStoreItem("KUORK0","C0SA410A",1,1) 
+		AddStoreItem("KUORK0","C0SA411A",1,1) 
+		AddStoreItem("KUORK0","C0SA412A",1,1) 
+		AddStoreItem("KUORK0","C0SA413A",1,1) 
+		AddStoreItem("KUORK0","C0SA414A",1,1) 
+		AddStoreItem("KUORK0","C0SA503A",1,1) 
+		AddStoreItem("KUORK0","C0SA505A",1,1) 
+		AddStoreItem("KUORK0","C0SA510A",1,1) 
+		SetInterrupt(TRUE)
+		Continue()
+END
+
+IF
+	Global("C0SAORRIK","AR2100",1)  // Kuldahar
+	GlobalGT("Chapter","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("C0SAORRIK","AR2100",2)  // Kuldahar
+		AddStoreItem("KUORK0","C0SA501A",1,1) 
+		AddStoreItem("KUORK0","C0SA502A",1,1) 
+		AddStoreItem("KUORK0","C0SA504A",1,1) 
+		AddStoreItem("KUORK0","C0SA506A",1,1) 
+		AddStoreItem("KUORK0","C0SA507A",1,1) 
+		AddStoreItem("KUORK0","C0SA508A",1,1) 
+		AddStoreItem("KUORK0","C0SA509A",1,1) 
+		AddStoreItem("KUORK0","C0SA511A",1,1) 
+		AddStoreItem("KUORK0","C0SA512A",1,1) 
+		AddStoreItem("KUORK0","C0SA513A",1,1) 
+		AddStoreItem("KUORK0","C0SA605A",1,1) 
+		AddStoreItem("KUORK0","C0SA609A",1,1) 
+		SetInterrupt(TRUE)
+		Continue()
+END
