@@ -261,6 +261,10 @@ THEN BEGIN
 OUTER_TEXT_SPRINT area_map_bgee "BG"
 END
 
+ ACTION_FOR_EACH area_map_name IN 0130 0224 0900 2300 2615 3802 3901 5001 BEGIN
+EXTEND_TOP ~%area_map_bgee%%area_map_name%.bcs~ ~%MOD_FOLDER%/scripts/bg1/ar%area_map_name%.baf~ EVALUATE_BUFFER 
+END
+
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcaelar.cre~
 THEN BEGIN
 EXTEND_TOP ~bd0113.bcs~ ~%MOD_FOLDER%/scripts/bd0113.baf~
