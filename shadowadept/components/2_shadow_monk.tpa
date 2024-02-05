@@ -1,62 +1,35 @@
-COPY ~%MOD_FOLDER%/shadowmonk/luc0sm.2da~ ~override~
+COPY ~%MOD_FOLDER%/shadowmonk~ ~override~
 
-INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
-ADD_KIT ~C0SMONK~
-
- // appended to CLASWEAP.2da
- ~C0SMONK		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//11                                T   S           F   Q             S S
-//10                                W   C           L   U             W I
-//9                         B L S   O   I   W       A   A             O N
-//8                         A O H   H   M   A       I   R C   S       R G
-//7         L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6         _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5         S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4         W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3         O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2         R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1         D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
- ~C0AURA	1 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SMONK				0      14	5	0	9	0~
-
- // appended to ABCLSMOD.2da
- ~C0SMONK				-2	1	-4	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SMONK                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SMONK                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SMONK                  	0       0       0       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SMONK                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/shadowmonk/C0SMONK.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_MN_H~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     20~
-
- // HLA table to use; see LUABBR.2da
- ~C0SM~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * HELM19 BAG23 RING06 RING29 CLCK02 BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN4,2 POTN14,5 * * *~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~shadow monk~
-  SAY ~Shadow Monk~
-  SAY ~SHADOW MONK: Little is known about the secretive order of shadow monks, other than the fact that they draw upon the power of the Shadow Plane to wield dark ki. They are masterful assassins, manipulating powerful illusions to their advantage and skilled at striking from the shadows, but their ritualistic training has taken a toll on their physical stamina.
+LAF ADD_KIT_EX
+  INT_VAR
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 20
+	
+    mixed         = RESOLVE_STR_REF(~Shadow Monk~)
+	
+    lower         = RESOLVE_STR_REF(~shadow monk~)
+	
+    help          = RESOLVE_STR_REF(~SHADOW MONK: Little is known about the secretive order of shadow monks, other than the fact that they draw upon the power of the Shadow Plane to wield dark ki. They are masterful assassins, manipulating powerful illusions to their advantage and skilled at striking from the shadows, but their ritualistic training has taken a toll on their physical stamina.
 
 Advantages:
 – +1 bonus to Dexterity.
@@ -100,18 +73,93 @@ Disadvantages:
 – Uses the shadowdancer's high level abilities table instead of the fighter's, with the exclusion of Use Any Item.
 – May not use the Lay On Hands ability.
 – May not use the Stunning Blow ability.
-– May not use the Quivering Palm ability.~
-
-LAF fl#add_kit_ee
+– May not use the Quivering Palm ability.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~SHADOW MONK: Little is known about the secretive order of shadow monks, other than the fact that they draw upon the power of the Shadow Plane to wield dark ki. They are masterful assassins, manipulating powerful illusions to their advantage and skilled at striking from the shadows, but their ritualistic training has taken a toll on their physical stamina.~)
   STR_VAR
-    kit_name = C0SMONK
-	hpclass = ~HPROG~
+    kit_name      = ~C0SMONK~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~0 14 5 0 9 0~
+	
+    abclsmod      = ~-2 1 -4 0 0 0~
+	
+    // abdcdsrq      = ~0 0 0 0 0 0~
+	
+    // abdcscrq      = ~15 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 0 0 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SM~
+	
+    stweap        = ~* * HELM19 BAG23 RING06 RING29 CLCK02 BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN4,2 POTN14,5 * * *~
+	
+    clab_path     = ~override/C0SMONK.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	// base_class = 
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	// clab_base_m = 
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPPR~
+	
+    // numwslot      = ~4~
+	
 	clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	backstab = ~2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4~
+	
+	sneakatt = ~2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4~
+	
+	crippstr = ~0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4~
+	
+	// thiefskl
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~* * * * RING06 * * * * BRAC09 BELT02 * BULL02,40 * POTN08,5 POTN17,3 * * DAGG02 SLNG02~
+  RET
+    kit_id
 END
-
-APPEND ~backstab.2da~ ~C0SMONK 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4~
-APPEND ~sneakatt.2da~ ~C0SMONK 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4~
-APPEND ~crippstr.2da~ ~C0SMONK 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4~
 
 COPY_EXISTING ~c0sa101.spl~ ~override/c0sm101.spl~
 WRITE_SHORT 0x1C 4 
@@ -305,9 +353,7 @@ BEGIN
 SET "num_abil" = ("%num_abil%" - 1)
 END
 
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMNKAB.spl~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMDRN.eff~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMDRN2.spl~ ~override~
+COPY_EXISTING ~C0SMDRN2.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -317,44 +363,34 @@ COPY ~%MOD_FOLDER%/shadowmonk/C0SMDRN2.spl~ ~override~
  parameter1 = RESOLVE_STR_REF (~One Level Drained~)
   END
 
-COPY ~%MOD_FOLDER%/shadowmonk/C0MNKHLA.bam~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0MNKHLB.bam~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0MNKHLA.spl~ ~override~
+COPY_EXISTING ~C0MNKHLA.spl~ ~override~
 SAY NAME1 ~One With Shadows~
 SAY NAME2 ~One With Shadows~
 SAY UNIDENTIFIED_DESC ~One With Shadows
 The shadow monk's training has allowed <PRO_HIMHER> to become a being of both the Prime Material Plane and the Shadow Plane, giving <PRO_HIMHER> 20% resistance to physical damage, +2 bonus to all saves, -2 bonus to armor class and immunity to Imprisonment and Time Stop.~
 
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK1.2da~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK1.bam~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK1.spl~ ~override~
+COPY_EXISTING ~C0SMONK1.spl~ ~override~
 SAY NAME1 ~Shadow Pool I~
 SAY NAME2 ~Shadow Pool I~
 SAY UNIDENTIFIED_DESC ~Shadow Pool I
 
 The shadow monk channels the power of the Shadow Weave to cast one of the following 1st level Shadow Weave spells: Shadow Missile, Blinding Darkness, Shadow Veil, Decoy.~
 
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK2.2da~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK2.bam~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK2.spl~ ~override~
+COPY_EXISTING ~C0SMONK2.spl~ ~override~
 SAY NAME1 ~Shadow Pool II~
 SAY NAME2 ~Shadow Pool II~
 SAY UNIDENTIFIED_DESC ~Shadow Pool II
 
 The shadow monk channels the power of the Shadow Weave to cast one of the following 2nd level Shadow Weave spells: Dark Mirage, Black Mist, Ghostly Visage, Shadow Walk.~
 
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK3.2da~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK3.bam~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK3.spl~ ~override~
+COPY_EXISTING ~C0SMONK3.spl~ ~override~
 SAY NAME1 ~Shadow Pool III~
 SAY NAME2 ~Shadow Pool III~
 SAY UNIDENTIFIED_DESC ~Shadow Pool III
 
 The shadow monk channels the power of the Shadow Weave to cast one of the following 3rd level Shadow Weave spells: Shadowblast, Lifedrinker Touch, Shadow Comets, Impose.~
 
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK4.2da~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK4.bam~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK4.spl~ ~override~
+COPY_EXISTING ~C0SMONK4.spl~ ~override~
 SAY NAME1 ~Shadow Pool IV~
 SAY NAME2 ~Shadow Pool IV~
 SAY UNIDENTIFIED_DESC ~Shadow Pool IV
@@ -374,9 +410,7 @@ WRITE_SHORT (("%offset_abil%" + 0x02) + (("%num_abil%" - 1) * 0x28)) 4
 SET "num_abil" = ("%num_abil%" - 1)
 END
 
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK6.bam~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMSP6A.eff~ ~override~
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMSP6A.spl~ ~override~
+COPY_EXISTING ~C0SMSP6A.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -385,7 +419,7 @@ COPY ~%MOD_FOLDER%/shadowmonk/C0SMSP6A.spl~ ~override~
       match_parameter1 = 1
  parameter1 = RESOLVE_STR_REF (~Six Levels Drained~)
   END
-COPY ~%MOD_FOLDER%/shadowmonk/C0SMONK6.spl~ ~override~
+COPY_EXISTING ~C0SMONK6.spl~ ~override~
 SAY NAME1 ~Deathstrike~
 SAY NAME2 ~Deathstrike~
 SAY UNIDENTIFIED_DESC ~Deathstrike

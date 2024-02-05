@@ -118,7 +118,7 @@ Disadvantages:
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
-– Alignment restricted to Lawful Neutral, True Neutral, Chaotic Neutral or Neutral Evil.~
+– Alignment restricted to non-good.~
 OUTER_SPRINT nightblade_desc ~NIGHTBLADE: Nightblades use the illusory and deceptive powers of the Shadow Weave to supplement their thievery skills. This character can use the abilities of a Shadow Adept and a Thief, though arcane spells cannot be cast while wearing armor.
 
 Advantages:
@@ -406,192 +406,349 @@ END
 ////////SHADOW ADEPT////////
 ////////////////////////////
 
-ADD_KIT ~C0SADEPT~
-
- // appended to CLASWEAP.2da
- ~C0SADEPT		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
- ~C0SADEPT		0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SADEPT				0	0	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SADEPT				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SADEPT                		0       0       0       15       0       15~
-
- // appended to ABDCSCRQ.2da
- ~C0SADEPT                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SADEPT                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SADEPT                  	1       1       0       1       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/C0SADEPT.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_M_H K_M_E K_M_HE K_M_HL K_M_G K_M_D K_M_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     1~
-
- // HLA table to use; see LUABBR.2da
- ~C0SA~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~shadow adept~
-  SAY ~Shadow Adept~
-  SAY ~%shadow_adept_desc%~
-
-LAF fl#add_kit_ee
+LAF ADD_KIT_EX
   INT_VAR
-	briefdesc = RESOLVE_STR_REF (~SHADOW ADEPT: Shadow adepts hurl themselves into the abyss of the Shadow Weave, immediately acquiring all the gifts available to casual students and discovering secrets unavailable to all but the most dedicated.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 1
+	
+    mixed         = RESOLVE_STR_REF(~Shadow Adept~)
+	
+    lower         = RESOLVE_STR_REF(~shadow adept~)
+	
+    help          = RESOLVE_STR_REF(~%shadow_adept_desc%~)
+	
+	biography	  = RESOLVE_STR_REF(~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
 
 When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~SHADOW ADEPT: Shadow adepts hurl themselves into the abyss of the Shadow Weave, immediately acquiring all the gifts available to casual students and discovering secrets unavailable to all but the most dedicated.~)
   STR_VAR
-    kit_name = C0SADEPT
-	hpclass = ~HPDD~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
+    kit_name      = ~C0SADEPT~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~0 0 12 9 0 9~
+	
+    // abclsmod      = ~0 0 0 0 0 0~
+	
+    abdcdsrq      = ~0 0 0 15 0 15~
+	
+    // abdcscrq      = ~15 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 1 1 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SA~
+	
+    stweap        = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+	
+    clab_path     = ~override/C0SADEPT.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	// base_class = 
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	// clab_base_m = 
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPDD~
+	
+    // numwslot      = ~4~
+	
+    clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 POTN24,1 SLNG02 DAGG05,40 STAF02~
+  RET
+    kit_id
 END
 
-ADD_KIT ~C0SASORC~
+////////////////////////////
+///////SHADOW DISCIPLE//////
+////////////////////////////
 
- // appended to CLASWEAP.2da
- ~C0SASORC		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
- ~C0SASORC		0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SASORC				0	0	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SASORC				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SASORC                		0       0       0       15       0       15~
-
- // appended to ABDCSCRQ.2da
- ~C0SASORC                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SASORC                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SASORC                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/C0SADEP3.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_S_H K_S_E K_S_HE K_S_HL K_S_G K_S_D K_S_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     19~
-
- // HLA table to use; see LUABBR.2da
- ~C0SA~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~shadow disciple~
-  SAY ~Shadow Disciple~
-  SAY ~%shadow_disciple_desc%~
-
-LAF fl#add_kit_ee
+LAF ADD_KIT_EX
   INT_VAR
-	briefdesc = RESOLVE_STR_REF (~SHADOW DISCIPLE: Shadow disciples are born with the innate ability to wield magic of the Shadow Weave, usually granted as a blessing from Shar, the Nightsinger. Like their equivalent, the sorcerer, they wield the power of their native magic, the Shadow Weave, with a level of skill that other spellcasters would envy.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
-
-When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 19
+	
+    mixed         = RESOLVE_STR_REF(~Shadow Disciple~)
+	
+    lower         = RESOLVE_STR_REF(~shadow disciple~)
+	
+    help          = RESOLVE_STR_REF(~%shadow_disciple_desc%~)
+	
+	biography	  = RESOLVE_STR_REF(~Born during a moonless, starless night, you were bestowed with the power of the Shadow Weave, a dark imitation of Mystra's Art created by Shar, the Nightsinger. Though you know not why you were granted it, your power has earned you the scrutiny of Candlekeep's scholars and mages–and the discomfort of many others–for as long as you can remember. At an early age, your guardians attempted to instigate the teaching of the Weave into you, hoping to divert you from using magic you were born with. Despite this, however, you have continued to nurture the spark of darkness within you, taking advantage of your natural talent and the tutelage of Gorion and your other tutors to become a capable practitioner of the Shadow Art.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~SHADOW DISCIPLE: Shadow disciples are born with the innate ability to wield magic of the Shadow Weave, usually granted as a blessing from Shar, the Nightsinger. Like their equivalent, the sorcerer, they wield the power of their native magic, the Shadow Weave, with a level of skill that other spellcasters would envy.~)
   STR_VAR
-    kit_name = C0SASORC
-	hpclass = ~HPDD~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
+    kit_name      = ~C0SASORC~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~0 0 12 9 0 9~
+	
+    // abclsmod      = ~0 0 0 0 0 0~
+	
+    abdcdsrq      = ~0 0 0 0 0 0~
+	
+    // abdcscrq      = ~0 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 1 1 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SA~
+	
+    stweap        = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+	
+    clab_path     = ~override/C0SADEP3.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	// base_class = 
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	// clab_base_m = 
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPDD~
+	
+    // numwslot      = ~4~
+	
+    clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 POTN24,1 SLNG02 DAGG05,40 STAF02~
+  RET
+    kit_id
 END
 
-ADD_KIT ~C0SABARD~
+////////////////////////////
+////////NIGHTSINGER/////////
+////////////////////////////
 
- // appended to CLASWEAP.2da
- ~C0SABARD		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//11                                T   S           F   Q             S S
-//10                                W   C           L   U             W I
-//9                         B L S   O   I   W       A   A             O N
-//8                         A O H   H   M   A       I   R C   S       R G
-//7         L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6         _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5         S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4         W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3         O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2         R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1         D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
- ~C0AURA	1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SABARD				0	0	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SABARD				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SABARD                		0       0       0       15       0       15~
-
- // appended to ABDCSCRQ.2da
- ~C0SABARD                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SABARD                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SABARD                  	1       1       0       1       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/C0SABARD.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_B_H K_B_E K_B_HE K_B_HL K_B_G K_B_D K_B_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     5~
-
- // HLA table to use; see LUABBR.2da
- ~C0SA2~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~nightsinger~
-  SAY ~Nightsinger~
-  SAY ~%nightsinger_desc%~
-
-LAF fl#add_kit_ee
+LAF ADD_KIT_EX
   INT_VAR
-	briefdesc = RESOLVE_STR_REF (~NIGHTSINGER: A rare class of bards that choose to study the power of the Shadow Weave gain access to its dark powers, bestowing upon them a dirge capable of cursing their enemies.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 5
+	
+    mixed         = RESOLVE_STR_REF(~Nightsinger~)
+	
+    lower         = RESOLVE_STR_REF(~nightsinger~)
+	
+    help          = RESOLVE_STR_REF(~%nightsinger_desc%~)
+	
+	biography	  = RESOLVE_STR_REF(~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
 
 When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~NIGHTSINGER: A rare class of bards that choose to study the power of the Shadow Weave gain access to its dark powers, bestowing upon them a dirge capable of cursing their enemies.~)
   STR_VAR
-    kit_name = C0SABARD
-	hpclass = ~HPROG~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
+    kit_name      = ~C0SABARD~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~0 0 12 9 0 9~
+	
+    // abclsmod      = ~0 0 0 0 0 0~
+	
+    abdcdsrq      = ~0 0 0 0 0 0~
+	
+    // abdcscrq      = ~0 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 1 1 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SA2~
+	
+    stweap        = ~CHAN12 * * BAG30 RING06 RING34 CLCK02 BOOT01 AMUL19 BRAC16 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 DAGG12 SW1H28 STAF08~
+	
+    clab_path     = ~override/C0SABARD.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	// base_class = 
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	// clab_base_m = 
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPROG~
+	
+    // numwslot      = ~4~
+	
+    clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~LEAT01 * * * RING06 * * * * BRAC09 BELT04 AROW02,40 BULL02,40 BOLT02,40 POTN08,5 POTN17,3 * * SW1H08 STAF02~
+  RET
+    kit_id
 END
 
 COPY ~%MOD_FOLDER%/spells/c0sahlac.spl~ ~override~
@@ -614,408 +771,583 @@ COPY ~%MOD_FOLDER%/spells/c0saso01.eff~ ~override~
 //////SHADOW ADEPT/THIEF////
 ////////////////////////////
 
-ADD_KIT ~C0SAMT~
-
- // appended to CLASWEAP.2da
- ~C0SAMT		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SAMT    1 1 1 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SAMT				0	9	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SAMT				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SAMT                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SAMT                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SAMT                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SAMT                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_MT_H K_MT_E K_MT_HE K_MT_HL K_MT_G K_MT_D K_MT_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     13~
-
- // HLA table to use; see LUABBR.2da
- ~C0SAMT~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~nightblade~
-  SAY ~Nightblade~
-  SAY ~%nightblade_desc%~
-
-LAF fl#add_kit_ee
+LAF ADD_KIT_EX
   INT_VAR
-	briefdesc = RESOLVE_STR_REF (~NIGHTBLADE: This character can use the abilities of a Shadow Adept and a Thief, though arcane spells cannot be cast while wearing armor.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 13
+	
+    mixed         = RESOLVE_STR_REF(~Nightblade~)
+	
+    lower         = RESOLVE_STR_REF(~nightblade~)
+	
+    help          = RESOLVE_STR_REF(~%nightblade_desc%~)
+	
+	biography	  = RESOLVE_STR_REF(~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
 
 When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~NIGHTBLADE: This character can use the abilities of a Shadow Adept and a Thief, though arcane spells cannot be cast while wearing armor.~)
   STR_VAR
-    kit_name = C0SAMT
-	hpclass = ~HPMT~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SAMT
-		kit_clab = C0SADEPT
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
+    kit_name      = ~C0SAMT~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~0 9 12 9 0 9~
+	
+    // abclsmod      = ~0 0 0 0 0 0~
+	
+    abdcdsrq      = ~0 0 0 0 0 0~
+	
+    // abdcscrq      = ~0 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 1 1 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SAMT~
+	
+    stweap        = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+	
+    // clab_path     = ~override/C0SADEPT.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	base_class = M
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	clab_base_m = ~C0SADEPT~
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPMT~
+	
+    // numwslot      = ~4~
+	
+    clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 POTN24,1 SLNG02 DAGG05,40 STAF02~
+  RET
+    kit_id
 END
 
 ////////////////////////////
 /////CLERIC/SHADOW ADEPT////
 ////////////////////////////
 
-ADD_KIT ~C0SACM~
-
- // appended to CLASWEAP.2da
- ~C0SACM		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SACM    0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SACM				0	0	12	9	9	9~
-
- // appended to ABCLSMOD.2da
- ~C0SACM				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SACM                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SACM                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SACM                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SACM                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
-  ~K_CM_H K_CM_E K_CM_HE K_CM_HL K_CM_G K_CM_D K_CM_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     14~
-
- // HLA table to use; see LUABBR.2da
- ~C0SACM~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~nightbringer~
-  SAY ~Nightbringer~
-  SAY ~%nightbringer_desc%~
-
-LAF fl#add_kit_ee
+LAF ADD_KIT_EX
   INT_VAR
-	briefdesc = RESOLVE_STR_REF (~NIGHTBRINGER: This character can use the abilities of a Cleric and a Shadow Adept, though weapons are restricted to only those allowed by the Cleric's ethos, and arcane spells cannot be cast while wearing armor.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 14
+	
+    mixed         = RESOLVE_STR_REF(~Nightbringer~)
+	
+    lower         = RESOLVE_STR_REF(~nightbringer~)
+	
+    help          = RESOLVE_STR_REF(~%nightbringer_desc%~)
+	
+	biography	  = RESOLVE_STR_REF(~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
 
 When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~NIGHTBRINGER: This character can use the abilities of a Cleric and a Shadow Adept, though weapons are restricted to only those allowed by the Cleric's ethos, and arcane spells cannot be cast while wearing armor.~)
   STR_VAR
-    kit_name = C0SACM
-	hpclass = ~HPCM~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SACM
-		kit_clab = C0SADEPT
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
+    kit_name      = ~C0SACM~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~0 0 12 9 9 9~
+	
+    // abclsmod      = ~0 0 0 0 0 0~
+	
+    abdcdsrq      = ~0 0 0 0 0 0~
+	
+    // abdcscrq      = ~0 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 1 1 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SACM~
+	
+    stweap        = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+	
+    // clab_path     = ~override/C0SADEPT.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	base_class = M
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	clab_base_m = ~C0SADEPT~
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPCM~
+	
+    // numwslot      = ~4~
+	
+    clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 POTN24,1 SLNG02 DAGG05,40 STAF02~
+  RET
+    kit_id
 END
 
 ////////////////////////////
 ////FIGHTER/SHADOW ADEPT////
 ////////////////////////////
 
-ADD_KIT ~C0SAFM~
-
- // appended to CLASWEAP.2da
- ~C0SAFM		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SAFM    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SAFM				9	0	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SAFM				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SAFM                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SAFM                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SAFM                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SAFM                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_FM_H K_FM_E K_FM_HE K_FM_HL K_FM_G K_FM_D K_FM_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     7~
-
- // HLA table to use; see LUABBR.2da
- ~C0SAFM~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~shade warrior~
-  SAY ~Shade Warrior~
-  SAY ~%shade_warrior_desc%~
-
-LAF fl#add_kit_ee
+LAF ADD_KIT_EX
   INT_VAR
-	briefdesc = RESOLVE_STR_REF (~SHADE WARRIOR: This character can use the abilities of a Fighter and a Shadow Adept, though they cannot cast spells while wearing armor. They may Specialize in, but not Master, any weapon they can use.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 7
+	
+    mixed         = RESOLVE_STR_REF(~Shade Warrior~)
+	
+    lower         = RESOLVE_STR_REF(~shade warrior~)
+	
+    help          = RESOLVE_STR_REF(~%shade_warrior_desc%~)
+	
+	biography	  = RESOLVE_STR_REF(~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
 
 When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~SHADE WARRIOR: This character can use the abilities of a Fighter and a Shadow Adept, though they cannot cast spells while wearing armor. They may Specialize in, but not Master, any weapon they can use.~)
   STR_VAR
-    kit_name = C0SAFM
-	hpclass = ~HPFM~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SAFM
-		kit_clab = C0SADEPT
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
+    kit_name      = ~C0SAFM~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~9 0 12 9 0 9~
+	
+    // abclsmod      = ~0 0 0 0 0 0~
+	
+    abdcdsrq      = ~0 0 0 0 0 0~
+	
+    // abdcscrq      = ~0 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 1 1 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SAFM~
+	
+    stweap        = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+	
+    // clab_path     = ~override/C0SADEPT.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	base_class = M
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	clab_base_m = ~C0SADEPT~
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPCM~
+	
+    // numwslot      = ~4~
+	
+    clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 POTN24,1 SLNG02 DAGG05,40 STAF02~
+  RET
+    kit_id
 END
 
 //////////////////////////////
 //FIGHTER/SHADOW ADEPT/THIEF//
 //////////////////////////////
 
-ADD_KIT ~C0SAFMT~
-
- // appended to CLASWEAP.2da
- ~C0SAFMT		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SAFMT    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SAFMT				9	9	12	9	0	9~
-
- // appended to ABCLSMOD.2da
- ~C0SAFMT				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SAFMT                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SAFMT                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SAFMT                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SAFMT                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_FMT_H K_FMT_E K_FMT_HE K_FMT_HL K_FMT_G K_FMT_D K_FMT_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     10~
-
- // HLA table to use; see LUABBR.2da
- ~C0SAFT~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~shadow enforcer~
-  SAY ~Shadow Enforcer~
-  SAY ~%shadow_enforcer_desc%~
-
-LAF fl#add_kit_ee
+LAF ADD_KIT_EX
   INT_VAR
-	briefdesc = RESOLVE_STR_REF (~SHADOW ENFORCER: This character can use the abilities of a Fighter, Shadow Adept, and Thief, though they cannot use their thieving skills while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 10
+	
+    mixed         = RESOLVE_STR_REF(~Shadow Enforcer~)
+	
+    lower         = RESOLVE_STR_REF(~shadow enforcer~)
+	
+    help          = RESOLVE_STR_REF(~%shadow_enforcer_desc%~)
+	
+	biography	  = RESOLVE_STR_REF(~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
 
 When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~SHADOW ENFORCER: This character can use the abilities of a Fighter, Shadow Adept, and Thief, though they cannot use their thieving skills while wearing more than studded leather armor and cannot cast spells while wearing any armor. They may Specialize in, but not Master, any weapon they can use.~)
   STR_VAR
-    kit_name = C0SAFMT
-	hpclass = ~HPFMT~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SAFMT
-		kit_clab = C0SADEPT
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
+    kit_name      = ~C0SAFMT~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~9 9 12 9 0 9~
+	
+    // abclsmod      = ~0 0 0 0 0 0~
+	
+    abdcdsrq      = ~0 0 0 0 0 0~
+	
+    // abdcscrq      = ~0 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 1 1 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SAFT~
+	
+    stweap        = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+	
+    // clab_path     = ~override/C0SADEPT.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	base_class = M
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	clab_base_m = ~C0SADEPT~
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPFMT~
+	
+    // numwslot      = ~4~
+	
+    clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 POTN24,1 SLNG02 DAGG05,40 STAF02~
+  RET
+    kit_id
 END
 
 //////////////////////////////
 //FIGHTER/SHADOWADEPT/CLERIC//
 //////////////////////////////
 
-ADD_KIT ~C0SAFMC~
-
- // appended to CLASWEAP.2da
- ~C0SAFMC		1           1           1           1           1           1           1           1~
-
- // appended column-wise to WEAPPROF.2da
-//WEAPPROF.2DA
-//11                               T   S           F   Q             S S
-//10                               W   C           L   U             W I
-//9                        B L S   O   I   W       A   A             O N
-//8                        A O H   H   M   A       I   R C   S       R G
-//7        L S           M S N O   A   I   R     H L   T R L H     2 D L 2                 E E E E E E E E E E E
-//6        _ _       S   I T G R   N K T D H     A M   E O O O     H A E W E E E E E E E E X X X X X X X X X X X
-//5        S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E X X X X X X X X T T T T T T T T T T T
-//4        W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A T T T T T T T T R R R R R R R R R R R
-//3        O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P R R R R R R R R A A A A A A A A A A A
-//2        R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O A A A A A A A A 1 1 1 1 1 1 1 1 1 1 2
-//1        D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
-~C0SAFMC    0 0 0 0 2 2 0 2 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-    
- // appended to ABCLASRQ.2da
- ~C0SAFMC				9	0	12	9	9	9~
-
- // appended to ABCLSMOD.2da
- ~C0SAFMC				0	0	0	0	0	0~
-
- // appended to ABDCDSRQ.2da
- ~C0SAFMC                		0       0       0       0       0       0~
-
- // appended to ABDCSCRQ.2da
- ~C0SAFMC                 	0       0       0       0       0		0~
-
- // appended to ALIGNMNT.2da
- ~C0SAFMC                  	0       1       1       0       1	1       0       1       1~
-
- // appended to DUALCLAS.2da
- ~C0SAFMC                  	0       0       0       0       0       0~
-
- // path to your CLAB-style 2da file 
- ~%MOD_FOLDER%/2da/blankclab.2da~
-
- // PC races and classes allowed to use this kit, from KITTABLE.2da
- ~K_FMC_H K_FMC_E K_FMC_HE K_FMC_HL K_FMC_G K_FMC_D K_FMC_HO~
-
- // usability flags, added to the end of the KITLIST.2da entry
- ~0x00004000     17~
-
- // HLA table to use; see LUABBR.2da
- ~C0SAFC~
-
- // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
- ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
-
- // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
-  SAY ~dark justiciar~
-  SAY ~Dark Justiciar~
-  SAY ~%dark_justiciar_desc%~
-
-LAF fl#add_kit_ee
+LAF ADD_KIT_EX
   INT_VAR
-	briefdesc = RESOLVE_STR_REF (~DARK JUSTICIAR: This character can use the abilities of a Fighter, Shadow Adept, and Cleric, though they are restricted to weapons allowed by the Cleric's ethos and cannot cast arcane spells while wearing armor. This character may Specialize in, but not Master, any weapon they can use.~)
-	biography = RESOLVE_STR_REF (~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
+    // Mage	= 1
+	// Fighter = 2
+	// Cleric = 3
+	// Thief = 4
+	// Bard = 5
+	// Paladin = 6
+	// Fighter/Mage = 7
+	// Fighter/Cleric = 8
+	// Fighter/Thief = 9
+	// Fighter/Mage/Thief = 10
+	// Druid = 11
+	// Ranger = 12
+	// Mage/Thief = 13
+	// Cleric/Mage = 14
+	// Cleric/Thief = 15
+	// Fighter/Druid = 16
+	// Fighter/Mage/Cleric = 17
+	// Cleric/Ranger = 18
+	// Sorcerer = 19
+	// Monk = 20
+	// Shaman = 21
+    kit_class     = 17
+	
+    mixed         = RESOLVE_STR_REF(~Dark Justiciar~)
+	
+    lower         = RESOLVE_STR_REF(~dark justiciar~)
+	
+    help          = RESOLVE_STR_REF(~%dark_justiciar_desc%~)
+	
+	biography	  = RESOLVE_STR_REF(~There is a dark secret hidden within the walls of Candlekeep, forbidden to be spoken of among the scribes and monks even in hushed voices. A well of shadow magic, fueled by darkness and loss, shunned by most practitioners of the arcane arts. Such powers originate from the realm of the Shadow Weave, the distorted mockery of Mystra's Weave created by Shar, the Nightsinger. So obscure is this power that most are unaware of its existence, and those that know of it refuse to acknowledge it due to its dark origins. However, the seductive whispers of this power has called to you, an apprentice mage who had barely mastered your first cantrip, since a young age, deep beneath the great library.
 
 When the voices became too much to resist, you snuck into the depths of Candlekeep in the dead of night, where unwanted and dangerous secrets are left to rot. Inside of a once-sealed chamber stood a strange fountain, an open wound in the Prime Material Plane through which the energies of the Shadow Weave bled. As soon as you touched the eerie yet beautiful strands of magic that flowed from the wound, you felt an awakening as your connection to the Weave was severed and the power of Shar's dark Weave coursed through you in its place, bestowing upon you a magic that few are gifted with. As you matured, the growing magic within you developed a symbiotic connection until it became one with your very being, and the power of the Shadow Weave became subservient to your will. Gorion and your tutors grew wary of the strange magic that you wielded, though they never learned of the source. Though you knew the dangers of toying with Shar's domain were great, the temptation of such a little-known power in your hands were a thousand times worth the cost.~)
+	
+    briefdesc     = RESOLVE_STR_REF(~DARK JUSTICIAR: This character can use the abilities of a Fighter, Shadow Adept, and Cleric, though they are restricted to weapons allowed by the Cleric's ethos and cannot cast arcane spells while wearing armor. This character may Specialize in, but not Master, any weapon they can use.~)
   STR_VAR
-    kit_name = C0SAFMC
-	hpclass = ~HPFM~
-	clascolr = ~27 136 119 21 187~
-	clsrcreq = ~1 1 1 1 1 1 1~
-END
-LAF qd_multiclass
-	STR_VAR
-		kit_name = C0SAFMC
-		kit_clab = C0SADEPT
-		base_class = ~M~
-		mc_dir = ~%MOD_FOLDER%/2DA~
+    kit_name      = ~C0SAFMC~
+	
+    unusable      = ~0x00004000~
+    // clasweap      = ~1 1 1 1 1 1 1 1~
+	//                                       T   S           F   Q             S S
+	//                                       W   C           L   U             W I
+	//                               B L S   O   I   W       A   A             O N
+	//                               A O H   H   M   A       I   R C   S       R G
+	//               L S           M S N O   A   I   R     H L   T R L H     2 D L 2
+	//               _ _       S   I T G R   N K T D H     A M   E O O O     H A E W
+	//               S S   S B P   S A S T   D A A A A   S L O   R S N R   S A N W E
+	//               W W   P L I   S R W S   E T R G M C P B R M S S G T D L N D E A
+	//               O O B E U K A I D O W A D A W G M L E E N A T B B B A I D S A P
+	//               R R O A N E X L S R O X S N A E E U A R I C A O O O R N E H P O
+	//               D D W R T D E E W D R E W A K R R B R D N E F W W W T G D I O N
+    //weapprof      = ~0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0~
+	
+    abclasrq      = ~9 9 12 9 0 9~
+	
+    // abclsmod      = ~0 0 0 0 0 0~
+	
+    abdcdsrq      = ~0 0 0 0 0 0~
+	
+    // abdcscrq      = ~0 0 0 0 0 0~
+	
+	//               L L L N N N C C C
+	//               G N E G N E G N E
+    alignmnt      = ~0 1 1 0 1 1 0 1 1~
+	
+    // dualclas      = ~0 1 1 1 1 0~
+	
+    luabbr        = ~C0SAFC~
+	
+    stweap        = ~* * * BAG29 RING06 RING40 * BOOT01 AMUL21 BRAC15 BELT10 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 SLNG05 DAGG05,20 STAF20~
+	
+    // clab_path     = ~override/C0SADEPT.2da~
+	
+    // kittable      = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+	
+	base_class = M
+	
+	// clab_base_f = 
+	
+	// clab_base_p = 
+	
+	// clab_base_d = 
+	
+	// clab_base_r = 
+	
+	clab_base_m = ~C0SADEPT~
+	
+	// clab_base_t = 
+	
+    // clsrcreq      = ~1 1 1 1 1 1 1~
+	
+    // clswpbon      = ~1 0 2~
+	
+    hpclass       = ~HPFM~
+	
+    // numwslot      = ~4~
+	
+    clascolr = ~27 136 119 21 187~
+	
+	// clasiskl = ~0 0 0 0 0 0 0~
+	
+	// clasthac = ~0~
+	
+	// thiefscl = ~0 0 0 0 0 0 0 0~
+	
+	// traplimt = ~6~
+	
+    bdstweap      = ~CLCK12 * * * RING06 * * * * BRAC02 BELT04 * BULL02,40 * POTN08,5 POTN17,3 POTN24,1 SLNG02 DAGG05,40 STAF02~
+  RET
+    kit_id
 END

@@ -68,7 +68,7 @@ CHAIN C0SAKRYN a1.9
 = ~I feel 'twould be appropriate to warn you in advance—my apprentices are talented shadowweavers, each and every one. Even in their fragile states, or perhaps owing to them, they will likely use their magic to resist.~
 = ~Should you find any of them, however, alive or dead... I will reward you for the deed. If it must come to their deaths, then their wizard staves, branded with their sigils, will suffice as evidence.~
 = ~Farewell. I hope you will return with favorable news.~
-EXIT
+DO ~ForceSpellRES("c0savis",Player1)~ EXIT
 
 CHAIN IF ~!Global("C0KrynTalk","GLOBAL",0)~ THEN C0SAKRYN b
 ~I see you have returned. What might I do for you this time?~
@@ -260,7 +260,9 @@ AddStoreItem("c0sasto2","c0sa509a",1,1)
 AddStoreItem("c0sasto2","c0sa510a",1,1)
 AddStoreItem("c0sasto2","c0sa511a",1,1)
 AddStoreItem("c0sasto2","c0sa512a",1,1)
-AddStoreItem("c0sasto2","c0sa513a",1,1)~
+AddStoreItem("c0sasto2","c0sa513a",1,1)
+AddStoreItem("c0sasto2","c0salea2",1,1)
+AddStoreItem("c0sasto2","c0sacha2",1,1)~
 = ~Regardless, I appreciate your assistance in this matter. Take this as a token of my gratitude.~
 END
 IF ~OR(6)

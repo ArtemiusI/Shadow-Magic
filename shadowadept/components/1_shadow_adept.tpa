@@ -156,3 +156,11 @@ ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/components/3_quests.tpa~
 END
 
+//////////////////////////
+////DARK INSPIRATIONS/////
+//////////////////////////
+
+
+ACTION_IF MOD_IS_INSTALLED ~SETUP-BARDICWONDERS.TP2~ ~12~ THEN BEGIN
+INCLUDE ~BardicWonders\lib\dark_inspirations.tpa~
+END

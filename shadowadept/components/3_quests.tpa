@@ -15,6 +15,10 @@ WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
+COPY_EXISTING ~c0savis.spl~ ~override~
+SAY NAME1 ~Darkflame Brand~
+SAY UNIDENTIFIED_DESC #-1
+
 COPY ~%MOD_FOLDER%/creatures/c0samag1.cre~ ~override~
 WRITE_ASCII 0x248 ~~  #8  // override
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
