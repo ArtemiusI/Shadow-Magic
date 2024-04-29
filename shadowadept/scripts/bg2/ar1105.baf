@@ -5,5 +5,6 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("C0SACiceroSpawn","GLOBAL",1)
-	CreateCreature("c0cicer",[766.440],SW)
+	CreateCreature("c0cicer",[856.470],E)
+	ActionOverride("c0cicer",Dialogue([PC])
 END

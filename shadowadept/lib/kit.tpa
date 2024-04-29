@@ -808,7 +808,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     briefdesc     = RESOLVE_STR_REF(~NIGHTBLADE: This character can use the abilities of a Shadow Adept and a Thief, though arcane spells cannot be cast while wearing armor.~)
   STR_VAR
-    kit_name      = ~C0SAMT~
+    kit_name      = ~C0SA_MT~
 	
     unusable      = ~0x00004000~
     // clasweap      = ~1 1 1 1 1 1 1 1~
@@ -925,7 +925,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     briefdesc     = RESOLVE_STR_REF(~NIGHTBRINGER: This character can use the abilities of a Cleric and a Shadow Adept, though weapons are restricted to only those allowed by the Cleric's ethos, and arcane spells cannot be cast while wearing armor.~)
   STR_VAR
-    kit_name      = ~C0SACM~
+    kit_name      = ~C0SA_CM~
 	
     unusable      = ~0x00004000~
     // clasweap      = ~1 1 1 1 1 1 1 1~
@@ -1042,7 +1042,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     briefdesc     = RESOLVE_STR_REF(~SHADE WARRIOR: This character can use the abilities of a Fighter and a Shadow Adept, though they cannot cast spells while wearing armor. They may Specialize in, but not Master, any weapon they can use.~)
   STR_VAR
-    kit_name      = ~C0SAFM~
+    kit_name      = ~C0SA_FM~
 	
     unusable      = ~0x00004000~
     // clasweap      = ~1 1 1 1 1 1 1 1~
