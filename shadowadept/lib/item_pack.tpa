@@ -369,7 +369,7 @@ Combat abilities:
 – 25% chance to cast Drain Vitality on successful hit
 
 Equipped abilities:
-– Casting Level: +2 (+4 during nighttime)
+– Casting Speed: +2 (+4 during nighttime)
 – Magic Resistance: +10% (20% during nighttime)
 – Magic Damage Resistance: +20% (40% during nighttime)
 
@@ -1209,45 +1209,6 @@ Charge abilities (three times per day):
 
 Weight: 3~
 
-ACTION_IF FILE_EXISTS_IN_GAME ~CHAN09.ITM~ THEN BEGIN
-COPY ~%MOD_FOLDER%/itempack/c0sacha1.itm~ ~override/chan09.itm~
-  LPF ADD_ITEM_EQEFFECT
-    INT_VAR
-      opcode = 319
-	  target = 1
-	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
-	  special = RESOLVE_STR_REF (~Shadow Adept~)
-END
-SAY NAME1 ~Chain Mail~
-SAY NAME2 ~Darkmail +3~
-SAY DESC ~A chain mail tunic fashioned from some sort of bright metal. It is always worn over a layer of padded fabric or soft leather to prevent chafing and lessen the impact of blows.
-
-STATISTICS:
-
-Armor Class: 5 (3 vs. slashing, 7 vs. crushing)
-Requires:
- 8 Strength
-
-Weight: 5~
-SAY DESC ~This suit of dark-colored chain mail is surprisingly light and somehow makes no sound, despite being composed of countless metal links. Having been worn by inhabitants of the Shadow Plane, it appears to have taken on some of its previous owner's power, giving it magical properties. Those who wear this armor find their forms shrouded in a protective veil of shadow.
-
-STATISTICS:
-
-Equipped abilities:
-– Save vs. Death: +2
-– Immunity to level drain
-– Spellcasting is not disabled
-– All magic damage inflicted by the wearer is increased by 15%
-
-Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
-Requires:
- 8 Strength
-
-Weight: 5~
-END
 /*
 COPY ~%MOD_FOLDER%/itempack/c0samas1.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0samas2.eff~ ~override~
@@ -1319,6 +1280,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~leat19.itm~ THEN BEGIN
 COPY ~%MOD_FOLDER%/itempack/leat19a.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19b.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19c.eff~ ~override~
+COPY ~%MOD_FOLDER%/itempack/leat19d.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19.itm~ ~override~
   LPF ALTER_EFFECT
 	INT_VAR
@@ -1333,9 +1295,8 @@ STATISTICS:
 
 Equipped abilities:
 – Immunity to level drain
-– Spellcasting is not disabled (Shadow Adepts)
-– Save vs. Death: +4 (Shadow Adepts), +2 (Others)
-– Maximum Hit Points: +20% (Shadow Adepts)
+– Save vs. Death: +2
+– Shadowblessed: Shadow Adepts may cast spells while wearing this armor, gain an additional +2 bonus to Save vs. Death, and regenerate for 1 hit point per 3 seconds
 
 Armor Class: 1 (-1 vs. slashing, 0 vs. piercing and missile)
 Requires:

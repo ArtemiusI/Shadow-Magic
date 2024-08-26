@@ -3,8 +3,8 @@ INCLUDE ~%MOD_FOLDER%/lib/replace_multiline.tpa~
 OUTER_SET Shadow_Adept_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SADEPT~)
 OUTER_SET Shadow_Disciple_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SASORC~)
 OUTER_SET Nightsinger_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SABARD~)
-OUTER_SET Shade_Warrior_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SA_FM~)
-OUTER_SET Nightbringer_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SA_CM~)
+OUTER_SET Shade_Warrior_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SAFM~)
+OUTER_SET Nightbringer_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SACM~)
 OUTER_SET Dark_Justiciar_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SAFMC~)
   
 COPY ~%MOD_FOLDER%/lua/m_c0sas1.lua~      ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
@@ -116,7 +116,7 @@ COPY_EXISTING ~thiefscl.2da~ ~override~
   COUNT_2DA_COLS col_count
   FOR (col = 1 ; col < col_count ; ++col) BEGIN
     READ_2DA_ENTRY 0 col col_count kit
-    PATCH_IF ("%kit%" STRING_COMPARE_CASE "C0SA_FM" = 0) BEGIN
+    PATCH_IF ("%kit%" STRING_COMPARE_CASE "C0SAFM" = 0) BEGIN
       READ_2DA_ENTRY 4 col col_count val
       SET_2DA_ENTRY  4 col col_count 100
       READ_2DA_ENTRY 5 col col_count val
@@ -133,7 +133,7 @@ COPY_EXISTING ~thiefscl.2da~ ~override~
   COUNT_2DA_COLS col_count
   FOR (col = 1 ; col < col_count ; ++col) BEGIN
     READ_2DA_ENTRY 0 col col_count kit
-    PATCH_IF ("%kit%" STRING_COMPARE_CASE "C0SA_CM" = 0) BEGIN
+    PATCH_IF ("%kit%" STRING_COMPARE_CASE "C0SACM" = 0) BEGIN
       READ_2DA_ENTRY 4 col col_count val
       SET_2DA_ENTRY  4 col col_count 100
       READ_2DA_ENTRY 5 col col_count val
@@ -218,7 +218,7 @@ COPY_EXISTING ~clasiskl.2da~ ~override~
   COUNT_2DA_COLS col_count
   FOR (col = 1 ; col < col_count ; ++col) BEGIN
     READ_2DA_ENTRY 0 col col_count kit
-    PATCH_IF ("%kit%" STRING_COMPARE_CASE "C0SA_FM" = 0) BEGIN
+    PATCH_IF ("%kit%" STRING_COMPARE_CASE "C0SAFM" = 0) BEGIN
       READ_2DA_ENTRY 4 col col_count val
       SET_2DA_ENTRY  4 col col_count 20
       READ_2DA_ENTRY 5 col col_count val
@@ -235,7 +235,7 @@ COPY_EXISTING ~clasiskl.2da~ ~override~
   COUNT_2DA_COLS col_count
   FOR (col = 1 ; col < col_count ; ++col) BEGIN
     READ_2DA_ENTRY 0 col col_count kit
-    PATCH_IF ("%kit%" STRING_COMPARE_CASE "C0SA_CM" = 0) BEGIN
+    PATCH_IF ("%kit%" STRING_COMPARE_CASE "C0SACM" = 0) BEGIN
       READ_2DA_ENTRY 4 col col_count val
       SET_2DA_ENTRY  4 col col_count 20
       READ_2DA_ENTRY 5 col col_count val

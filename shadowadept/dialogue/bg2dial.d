@@ -16,7 +16,7 @@ CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",1)
 Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0CICER CICERO-STORE
 ~We meet again. I still have many scrolls to offer, should you be in need. The gold will aid in my research.~
 END
-++ ~Show me what you have.~ DO ~StartStore("c0sasto4",Lasttalkedtoby(Myself))~ EXIT
+++ ~Show me what you have.~ DO ~StartStore("c0sascr1",Lasttalkedtoby(Myself))~ EXIT
 ++ ~Perhaps another time.~ + CICERO-5
 
 CHAIN C0CICER CICERO-1
@@ -47,11 +47,14 @@ EXIT
 
 BEGIN C0JEVAN
 
-CHAIN IF WEIGHT #-1 ~!Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0JEVAN JEVAN-NO
+CHAIN IF WEIGHT #-1 ~OR(2)
+GlobalLT("GetQilueBrain","GLOBAL",1)
+!Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0JEVAN JEVAN-NO
 ~Please, friend. I have much in my thoughts right now. I do not mean to be rude, but truly have no time for you.~
-END
+EXIT
 
-CHAIN IF WEIGHT #-1 ~Global("C0JevanShop","Global",0)
+CHAIN IF WEIGHT #-1 ~Global("GetQilueBrain","GLOBAL",1)
+Global("C0JevanShop","Global",0)
 Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0JEVAN JEVAN
 ~Quite the obstinate creature, the aboleth. Would you not agree, 'Veldrin'?~
 END
@@ -97,5 +100,5 @@ CHAIN IF WEIGHT #-1 ~Global("C0JevanShop","Global",1)
 Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0JEVAN JEVAN-STORE
 ~Greetings. You are here to see what I have to offer, are you not? Take your time, there is much to see.~
 END
-++ ~Show me what you have.~ DO ~StartStore("c0sasto5",Lasttalkedtoby(Myself))~ EXIT
+++ ~Show me what you have.~ DO ~StartStore("c0sascr2",Lasttalkedtoby(Myself))~ EXIT
 ++ ~Perhaps another time.~ EXIT

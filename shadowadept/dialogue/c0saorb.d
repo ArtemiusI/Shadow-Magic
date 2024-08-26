@@ -61,15 +61,15 @@ IF ~Class(Myself,BARD_ALL)~ DO ~CreateVisualEffectObject("c0darkbo",LastTalkedTo
 IF ~Class(Myself,FIGHTER_MAGE)
 	!OriginalClass(Myself,FIGHTER)
 	!OriginalClass(Myself,MAGE)~ DO ~CreateVisualEffectObject("c0darkbo",LastTalkedToBy(Myself)) ApplySpellRES("c0erase2",Myself)
-	ActionOverride(LastTalkedToBy(Myself),AddSuperKit(C0SA_FM))~ EXIT
+	ActionOverride(LastTalkedToBy(Myself),AddSuperKit(C0SAFM))~ EXIT
 IF ~Class(Myself,MAGE_THIEF)
 	!OriginalClass(Myself,MAGE)
 	!OriginalClass(Myself,THIEF)~ DO ~CreateVisualEffectObject("c0darkbo",LastTalkedToBy(Myself)) ApplySpellRES("c0erase2",Myself)
-	ActionOverride(LastTalkedToBy(Myself),AddSuperKit(C0SA_MT))~ EXIT
+	ActionOverride(LastTalkedToBy(Myself),AddSuperKit(C0SAMT))~ EXIT
 IF ~Class(Myself,CLERIC_MAGE)
 	!OriginalClass(Myself,CLERIC)
 	!OriginalClass(Myself,MAGE)~ DO ~CreateVisualEffectObject("c0darkbo",LastTalkedToBy(Myself)) ApplySpellRES("c0erase2",Myself)
-	ActionOverride(LastTalkedToBy(Myself),AddSuperKit(C0SA_CM))~ EXIT
+	ActionOverride(LastTalkedToBy(Myself),AddSuperKit(C0SACM))~ EXIT
 IF ~Class(Myself,FIGHTER_MAGE_THIEF)
 	!OriginalClass(Myself,FIGHTER)
 	!OriginalClass(Myself,MAGE)

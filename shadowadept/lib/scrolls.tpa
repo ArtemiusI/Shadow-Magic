@@ -2519,6 +2519,15 @@ Using this spell, the shadow adept draws upon power from the Plane of Shadow to 
 
 The chosen spell is functionally identical to one cast by a regular mage of the same level.~
 
+COPY_EXISTING ~SCRL75.ITM~ ~OVERRIDE/C0SCRL75.ITM~
+COPY_EXISTING ~SCRL6P.ITM~ ~OVERRIDE/C0SCRL6P.ITM~
+COPY_EXISTING ~SCRL7U.ITM~ ~OVERRIDE/C0SCRL7U.ITM~
+COPY_EXISTING ~SCRL8L.ITM~ ~OVERRIDE/C0SCRL8L.ITM~
+COPY_EXISTING ~SCRLA4.ITM~ ~OVERRIDE/C0SCRLA4.ITM~
+COPY_EXISTING ~SCRL9D.ITM~ ~OVERRIDE/C0SCRL9D.ITM~
+COPY_EXISTING ~SCRL9Q.ITM~ ~OVERRIDE/C0SCRL9Q.ITM~
+COPY_EXISTING ~SCRLB4.ITM~ ~OVERRIDE/C0SCRLB4.ITM~
+
 COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN01.ITM~
 COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN02.ITM~
 COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN03.ITM~
@@ -2792,7 +2801,7 @@ SAY NAME2 ~Cicero~
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
   
 COPY ~%MOD_FOLDER%/creatures/c0jevan.cre~ ~override~
-WRITE_ASCII SCRIPT_OVERRIDE ~c0sapp13~  // override
+WRITE_ASCII SCRIPT_OVERRIDE ~c0jevan~  // override
 WRITE_ASCII SCRIPT_CLASS ~c0sadept~  // class
 WRITE_ASCII DIALOG ~c0jevan~  // dialogue
 WRITE_ASCII SCRIPT_DEFAULT ~shout~  // race
@@ -2803,14 +2812,15 @@ SAY NAME2 ~Jevan Dyrr~
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COMPILE ~%MOD_FOLDER%/dialogue/bg2dial.d~
+COMPILE ~%MOD_FOLDER%/scripts/bg2/c0jevan.baf~
 
 EXTEND_TOP ~ar1105.bcs~ ~%MOD_FOLDER%/scripts/bg2/ar1105.baf~
 EXTEND_TOP ~ar2200.bcs~ ~%MOD_FOLDER%/scripts/bg2/ar2200.baf~
 
-COPY ~%MOD_FOLDER%/items/bg2/c0sasto4.sto~ ~override~
+COPY ~%MOD_FOLDER%/items/bg2/c0sascr1.sto~ ~override~
 SAY 0xc ~Cicero the Scribe~
 
-COPY ~%MOD_FOLDER%/items/bg2/c0sasto5.sto~ ~override~
+COPY ~%MOD_FOLDER%/items/bg2/c0sascr2.sto~ ~override~
 SAY 0xc ~Jevan Dyrr~
 
 COPY_EXISTING ~ar0082.are~ ~override~

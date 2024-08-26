@@ -183,42 +183,6 @@ COPY_EXISTING ~splprot.2da~ ~override~
 	END
 	
 	
-// INTELLIGENCE
-APPEND ~splprot.2da~ ~C0SAINT 38 -1 1~
-COPY_EXISTING ~splprot.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SAINT~ BEGIN
-	    SET C0SAINT = %row%
-	  END
-	END
-	
-// WISDOM
-APPEND ~splprot.2da~ ~C0SAWIS 39 -1 1~
-COPY_EXISTING ~splprot.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SAWIS~ BEGIN
-	    SET C0SAWIS = %row%
-	  END
-	END
-	
-// CHARISMA
-APPEND ~splprot.2da~ ~C0SACHA 42 -1 1~
-COPY_EXISTING ~splprot.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SACHA~ BEGIN
-	    SET C0SACHA = %row%
-	  END
-	END
-	
 // STONESKINS
 APPEND ~splprot.2da~ ~C0SASTONE 88 -1 1~
 COPY_EXISTING ~splprot.2da~ ~override~
@@ -1904,9 +1868,23 @@ COPY_EXISTING ~C0SA113.spl~ ~override~
       match_opcode = 139 
  parameter1 = RESOLVE_STR_REF (~Charisma Modification~)
 END
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 318
+		match_parameter2 = 199
+        parameter2 = C0SADAY
+      END
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 6 parameter2 = 2 timing = 1 STR_VAR resource = C0SA#E0 END
 SAY NAME1 ~%SA_SPELL_113_NAME%~
 SAY UNIDENTIFIED_DESC ~%SA_SPELL_113_DESC%~
+
+COPY_EXISTING ~C0SA113A.spl~ ~override~
+      LPF ALTER_EFFECT
+      INT_VAR
+	    match_opcode = 318
+		match_parameter2 = 199
+        parameter2 = C0SADAY
+      END
 
 COPY_EXISTING ~C0SA201.spl~ ~override~
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 2 parameter2 = 2 timing = 1 STR_VAR resource = C0SA#I0 END
@@ -4105,6 +4083,12 @@ SAY NAME2 ~Eternal Night~
 SAY UNIDENTIFIED_DESC ~Eternal Night
 The shadow adept's incredible power allows <PRO_HIMHER> to shroud <PRO_HIMHER>self in darkness, negating daylight penalties. Additionally, the shroud reduces the Magic Resistance of all enemies with in a 15-ft. radius by 25%.~
 
+COPY_EXISTING ~c0sahlad.spl~ ~override~
+SAY NAME1 ~Nocturn Chant~
+SAY UNIDENTIFIED_DESC ~Nocturn Chant
+The nightsinger channels into the Shadow Weave and draws upon a magical spell using dark music, allowing them to cast a known spell in their spellbook of any level at the cost of half of their maximum hit points as nonlethal damage. If the caster lacks the necessary hit points to cast the spell, they will be knocked unconscious.
+
+This ability may be chosen twice.~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/lib/replace_multiline.tpa~

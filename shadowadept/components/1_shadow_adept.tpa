@@ -156,6 +156,7 @@ ACTION_IF GAME_IS ~bgee eet~ THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/components/3_quests.tpa~
 END
 
+
 //////////////////////////
 ////DARK INSPIRATIONS/////
 //////////////////////////
