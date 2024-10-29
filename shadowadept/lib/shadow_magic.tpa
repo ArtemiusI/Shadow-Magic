@@ -327,6 +327,7 @@ COPY_EXISTING ~C0SADAY2.SPL~ ~OVERRIDE~
   ACTION_IF FILE_EXISTS_IN_GAME ~%magescrolls%.ITM~ BEGIN
 	COPY_EXISTING ~%magescrolls%.ITM~ ~override~
 	  LPF DELETE_EFFECT INT_VAR match_opcode = 319 match_parameter1 = (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)) END
+	COPY_EXISTING ~%magescrolls%.ITM~ ~override/C0%magescrolls%.ITM~
 	BUT_ONLY
 	END
 	END

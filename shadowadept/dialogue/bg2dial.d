@@ -39,7 +39,7 @@ END
 
 CHAIN C0CICER CICERO-4
 ~Please, take your time.~
-DO ~StartStore("c0sasto4",Lasttalkedtoby(Myself))~ EXIT
+DO ~StartStore("c0sascr1",Lasttalkedtoby(Myself))~ EXIT
 
 CHAIN C0CICER CICERO-5
 ~Of course. May we meet again.~

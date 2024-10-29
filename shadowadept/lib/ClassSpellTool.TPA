@@ -1,5 +1,7 @@
 //If your mod wants to look through a list of all the spells in the game, but won't add any new spells with this tool, call this function before looking through the MEPR/MEWI files.
 DEFINE_ACTION_FUNCTION INITIALIZE_SPELL_LISTS
+	INT_VAR
+		reinitialize = 0
 BEGIN
 
 ACTION_IF !(FILE_EXISTS_IN_GAME ~MEWI1.txt~) BEGIN
@@ -65,7 +67,41 @@ SPRA306~
 	APPEND ~MEPR4.txt~ ~SPDR401~
 	APPEND ~MEPR5.txt~ ~SPDR501~
 	APPEND ~MEPR6.txt~ ~SPDR601~
+END ELSE ACTION_IF reinitialize = 1 BEGIN
+
+	OUTER_FOR (i = 1; i <= 8; ++i) BEGIN
+		OUTER_FOR (j = 0; j <= 3; ++j) BEGIN
+			OUTER_FOR (k = 0; k <= 9; ++k) BEGIN
+				ACTION_IF (FILE_EXISTS_IN_GAME ~SPWI%i%%j%%k%.spl~) AND NOT FILE_CONTAINS_EVALUATED (~MEWI%i%.txt~ ~SPWI%i%%j%%k%~) BEGIN
+					APPEND ~MEWI%i%.txt~ ~SPWI%i%%j%%k%~
+				END
+			END
+		END
+	END
+
+	OUTER_FOR (j = 0; j <= 2; ++j) BEGIN
+		OUTER_FOR (k = 0; k <= 9; ++k) BEGIN
+			ACTION_IF (FILE_EXISTS_IN_GAME ~SPWI9%j%%k%.spl~) AND (j <= 1 OR k <= 5) AND NOT FILE_CONTAINS_EVALUATED (~MEWI9.txt~ ~SPWI9%j%%k%~) BEGIN
+				APPEND ~MEWI9.txt~ ~SPWI9%j%%k%~
+			END
+		END
+	END
+
+	OUTER_FOR (i = 1; i <= 7; ++i) BEGIN
+		OUTER_FOR (j = 0; j <= 5; ++j) BEGIN
+			OUTER_FOR (k = 0; k <= 9; ++k) BEGIN
+				ACTION_IF (FILE_EXISTS_IN_GAME ~SPPR%i%%j%%k%.spl~) AND NOT FILE_CONTAINS_EVALUATED (~MEPR%i%.txt~ ~SPPR%i%%j%%k%~) BEGIN
+					APPEND ~MEPR%i%.txt~ ~SPPR%i%%j%%k%~
+				END
+			END
+		END
+	END
+
+	COPY_EXISTING ~MEPR7.txt~ ~override~
+		REPLACE_TEXTUALLY ~[%WNL%%LNL%%MNL%]+SPPR731~ ~~
+		REPLACE_TEXTUALLY ~[%WNL%%LNL%%MNL%]+SPPR732~ ~~
 END
+
 END
 
 //Here's an example of the ADD_CLASS_SPELL function in use:
@@ -144,7 +180,7 @@ ACTION_IF !(FILE_EXISTS_IN_GAME ~M_MEEXSP.lua~) BEGIN
 		INSERT_2DA_ROW numrows 1 ~MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   AP_MENO49   ~
 		UNLESS ~MENO49~
 
-//ACTION_IF !(MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
+ACTION_IF !(MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
 
 OUTER_TEXT_SPRINT get_class_from_inventory ~~~~~local me_realClass = -1
 	local me_realKit = -1
@@ -167,33 +203,24 @@ OUTER_TEXT_SPRINT get_class_from_record ~~~~~local me_realClass = -1
 	if me_alignmentTextID[Infinity_FetchString(characters[currentID].alignment)] ~= nil then
 		me_realAlignment = me_alignmentTextID[Infinity_FetchString(characters[currentID].alignment)]
 	end~~~~~
-/*
+
 END ELSE BEGIN
 
-OUTER_TEXT_SPRINT get_class_from_inventory ~local me_realClass = EEex_GetActorClass(id)
-	local me_realKit = EEex_GetActorKit(id)
-	local me_realAlignment = EEex_GetActorAlignment(id)~
+OUTER_TEXT_SPRINT get_class_from_inventory ~local me_realClass = EEex_GameObject_Get(id).m_typeAI.m_Class
+	local me_realKit = EEex_Sprite_GetStat(EEex_GameObject_Get(id), 152)
+	local me_realAlignment = EEex_GameObject_Get(id).m_typeAI.m_Alignment~
 
-OUTER_TEXT_SPRINT get_class_from_record ~local me_realClass = EEex_GetActorClass(currentID)
-	local me_realKit = EEex_GetActorKit(currentID)
-	local me_realAlignment = EEex_GetActorAlignment(currentID)~
+OUTER_TEXT_SPRINT get_class_from_record ~local me_realClass = EEex_GameObject_Get(currentID).m_typeAI.m_Class
+	local me_realKit = EEex_Sprite_GetStat(EEex_GameObject_Get(currentID), 152)
+	local me_realAlignment = EEex_GameObject_Get(currentID).m_typeAI.m_Alignment~
 
 END
-*/
+
 COPY_EXISTING ~ui.menu~ ~override~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~--reload language~ ~~~~~--reload language
 function me_canLearnSpell()
 	if id <= 0 or itemDescRightButtonText() ~= Infinity_FetchString(17104) then return itemDescRightButtonEnabled() end
-	local me_realClass = -1
-	local me_realKit = -1
-	local me_realAlignment = 0
-	if me_classTextID[characters[id].class] ~= nil then
-		me_realClass = me_classTextID[characters[id].class][1]
-		me_realKit = me_classTextID[characters[id].class][2]
-	end
-	if me_alignmentTextID[Infinity_FetchString(characters[id].alignment)] ~= nil then
-		me_realAlignment = me_alignmentTextID[Infinity_FetchString(characters[id].alignment)]
-	end
+	%get_class_from_inventory%
 	local foundSpell = false
 	local canLearnSpell = false
 	if me_excludeAllNormalWizardSpellsFromTheseKits[me_realKit] then
@@ -249,7 +276,7 @@ COPY_EXISTING ~splautop.2da~ ~override~ ~splautos.2da~ ~override~
 	END
 	IF_EXISTS
 
-//ACTION_IF !(MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
+ACTION_IF !(MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
 
 ACTION_GET_STRREF 1102 stringlawfulgood
 ACTION_GET_STRREF 1103 stringlawfulevil
@@ -273,7 +300,7 @@ me_alignmentTextID = {["%stringlawfulgood%"] = 0x11, ["%stringlawfulneutral%"] =
 ~
 	END
 
-//END
+END
 
 COPY_EXISTING ~ui.menu~ ~override~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~enabled[ %TAB%]*\"\([^\"]*\)itemDescRightButtonEnabled()\([\"]*\)\"~ ~enabled "\1me_canLearnSpell()\2"~
