@@ -242,7 +242,6 @@ COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0samage.d~
 COMPILE ~%MOD_FOLDER%/dialogue/bg1dial.d~
 
 COMPILE ~%MOD_FOLDER%/scripts/c0sahart.baf~
-COMPILE ~%MOD_FOLDER%/scripts/c0sadept.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sakryn.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0satele.baf~
 

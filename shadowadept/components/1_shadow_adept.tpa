@@ -97,6 +97,7 @@ COMPILE ~%MOD_FOLDER%/scripts/c0sasumm.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0devsha.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0nighth.baf~
 COMPILE ~%MOD_FOLDER%/scripts/c0sa711.baf~
+COMPILE ~%MOD_FOLDER%/scripts/c0sadept.baf~
 
 COPY_EXISTING ~c0sadep.spl~ ~override~
   LPF ALTER_EFFECT
