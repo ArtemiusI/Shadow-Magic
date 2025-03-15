@@ -230,3 +230,26 @@ APPEND ~SPLSTATE.ids~ ~252 EVASION~ UNLESS ~\bEVASION\b~
 APPEND ~SPLSTATE.ids~ ~253 ACID_LEVEL_2~ UNLESS ~\bACID_LEVEL_2\b~
 APPEND ~SPLSTATE.ids~ ~254 ACID_LEVEL_3~ UNLESS ~\bACID_LEVEL_3\b~
 APPEND ~SPLSTATE.ids~ ~255 CYNICISM_EQUIPPED~ UNLESS ~\bCYNICISM_EQUIPPED\b~
+
+
+APPEND ~OBJECT.IDS~ ~94 LastKilled~ UNLESS ~LastKilled~
+APPEND ~OBJECT.IDS~ ~95 NearestAllyOf~ UNLESS ~NearestAllyOf~
+APPEND ~OBJECT.IDS~ ~96 SecondNearestAllyOf~ UNLESS ~SecondNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~97 ThirdNearestAllyOf~ UNLESS ~ThirdNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~98 FourthNearestAllyOf~ UNLESS ~FourthNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~99 FifthNearestAllyOf~ UNLESS ~FifthNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~100 SixthNearestAllyOf~ UNLESS ~SixthNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~101 SeventhNearestAllyOf~ UNLESS ~SeventhNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~102 EighthNearestAllyOf~ UNLESS ~EighthNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~103 NinthNearestAllyOf~ UNLESS ~NinthNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~104 TenthNearestAllyOf~ UNLESS ~TenthNearestAllyOf~
+APPEND ~OBJECT.IDS~ ~105 FarthestEnemyOf~ UNLESS ~FarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~106 SecondFarthestEnemyOf~ UNLESS ~SecondFarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~107 ThirdFarthestEnemyOf~ UNLESS ~ThirdFarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~108 FourthFarthestEnemyOf~ UNLESS ~FourthFarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~109 FifthFarthestEnemyOf~ UNLESS ~FifthFarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~110 SixthFarthestEnemyOf~ UNLESS ~SixthFarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~111 SeventhFarthestEnemyOf~ UNLESS ~SeventhFarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~112 EighthFarthestEnemyOf~ UNLESS ~EighthFarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~113 NinthFarthestEnemyOf~ UNLESS ~NinthFarthestEnemyOf~
+APPEND ~OBJECT.IDS~ ~114 TenthFarthestEnemyOf~ UNLESS ~TenthFarthestEnemyOf~
