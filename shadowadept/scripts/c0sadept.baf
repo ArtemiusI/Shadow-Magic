@@ -404,14 +404,14 @@ THEN
   RESPONSE #50
     SetGlobal("OH_MSeq","LOCALS",1)
     SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetSequence(SEQ_CAST)
+    SetSequence(2)
     DisplayString(Myself,~Minor Sequencer Activated~) // 'Minor Sequencer Activated'
     ReallyForceSpellRES("C0SA201",Myself)
     ReallyForceSpellRES("C0SA110",Myself)
   RESPONSE #50
     SetGlobal("OH_MSeq","LOCALS",1)
     SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetSequence(SEQ_CAST)
+    SetSequence(2)
     DisplayString(Myself,~Minor Sequencer Activated~) // 'Minor Sequencer Activated'
     ReallyForceSpellRES("C0SA201",Myself)
     ReallyForceSpellRES("C0SA208",Myself)
@@ -7040,14 +7040,14 @@ THEN
   RESPONSE #50
     SetGlobal("OH_MSeq","LOCALS",1)
     SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetSequence(SEQ_CAST)
+    SetSequence(2)
     DisplayString(Myself,~Minor Sequencer Activated~) // 'Minor Sequencer Activated'
     ReallyForceSpellRES("C0SA201",Myself)
     ReallyForceSpellRES("C0SA110",Myself)
   RESPONSE #50
     SetGlobal("OH_MSeq","LOCALS",1)
     SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-    SetSequence(SEQ_CAST)
+    SetSequence(2)
     DisplayString(Myself,~Minor Sequencer Activated~) // 'Minor Sequencer Activated'
     ReallyForceSpellRES("C0SA201",Myself)
     ReallyForceSpellRES("C0SA208",Myself)
