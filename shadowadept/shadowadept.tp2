@@ -19,6 +19,10 @@ ALWAYS
   OUTER_SPRINT "bg1_eet_symbol" BG
   END
   
+  ACTION_IF MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~ THEN BEGIN
+  OUTER_SET eeex = 1
+  END
+  
   OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
     OUTER_SET bg2_chapter = bg2_chapter + 1
     OUTER_SPRINT name_source ~bg2_chapter_%i%~

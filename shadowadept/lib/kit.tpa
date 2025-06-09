@@ -37,9 +37,7 @@ Disadvantages:
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
-– Alignment restricted to non-good.
- 
-Prime Requisites For Dual-Classing: Intelligence, Charisma~
+– Alignment restricted to non-good.REPLACE_ME2~
 OUTER_SPRINT shadow_disciple_desc ~SHADOW DISCIPLE: Shadow disciples are born with the innate ability to wield magic of the Shadow Weave, usually granted as a blessing from Shar, the Nightsinger. Like their equivalent, the sorcerer, they wield the power of their native magic, the Shadow Weave, with a level of skill that other spellcasters would envy.
 
 Advantages:
@@ -294,6 +292,21 @@ OUTER_SPRINT shadow_adept_constitution_cost ~SHADOW MAGIC: Spells of the Shadow 
 OUTER_SPRINT shadow_adept_maxhp_cost ~SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Save vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Maximum Hit Points equal to double the level of the spell cast for six rounds.~
 OUTER_SPRINT shadow_adept_curhp_cost ~SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic, but drains the caster's life force. When a spell is cast, the shadow adept must make a Saving Throw vs. Death at a modifier equal to the spell level (e.g. -1 for 1st level, -9 for 9th level) or lose Hit Points equal to double the level of the spell cast.~
 OUTER_SPRINT shadow_adept_no_cost ~SHADOW MAGIC: Spells of the Shadow Weave are usually more powerful than regular magic. The Shadow Weave is a mysterious and dark entity, far more alien and harder to control than that of Mystra's equivalent. As such, a great amount of mental acuity is required in order to master shadow magic.~
+OUTER_SPRINT dualclass ~
+
+Prime Requisites For Dual-Classing: Intelligence, Charisma~
+
+ACTION_IF ("eeex" = 1) THEN BEGIN
+OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME2~ ~%dualclass%~
+END
+END
+
+ACTION_IF NOT ("eeex" = 1) THEN BEGIN
+OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~REPLACE_ME2~ ~~
+END
+END
 
 ACTION_IF ("hpcost" = 1) THEN BEGIN
 OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
@@ -403,6 +416,14 @@ OUTER_PATCH_SAVE dark_justiciar_desc ~%dark_justiciar_desc%~ BEGIN
 END
 END
 
+ACTION_IF ("eeex" = 1) THEN BEGIN
+  OUTER_SPRINT dual_class_enabled ~0 1 1 1 1 0~
+END
+
+ACTION_IF NOT ("eeex" = 1) THEN BEGIN
+  OUTER_SPRINT dual_class_enabled ~0 0 0 0 0 0~
+END
+
 ////////////////////////////
 ////////SHADOW ADEPT////////
 ////////////////////////////
@@ -473,7 +494,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	//               G N E G N E G N E
     alignmnt      = ~0 1 1 0 1 1 0 1 1~
 	
-    // dualclas      = ~0 1 1 1 1 0~
+    dualclas      = EVAL ~%dual_class_enabled%~
 	
     luabbr        = ~C0SA~
 	
