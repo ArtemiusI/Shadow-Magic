@@ -1,11 +1,11 @@
 BEGIN C0CICER
 
-CHAIN IF WEIGHT #-1 ~!Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0CICER CICERO-NO
+CHAIN IF WEIGHT #-1 ~!%is_shadow_adept_lasttalkedtoby%~ THEN C0CICER CICERO-NO
 ~Greetings, stranger. My apologies, but I have little time to spare at the moment.~
 EXIT
 
 CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",0)
-Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0CICER CICERO
+%is_shadow_adept_lasttalkedtoby%~ THEN C0CICER CICERO
 ~Greetings, stranger. Is there something...? Hmm.~
 END
 ++ ~You...~ DO ~SetGlobal("C0CiceroShop","Global",1)~ + CICERO-1
@@ -13,7 +13,7 @@ END
 ++ ~Have we met?~ DO ~SetGlobal("C0CiceroShop","Global",1)~ + CICERO-1
 
 CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",1)
-Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0CICER CICERO-STORE
+%is_shadow_adept_lasttalkedtoby%~ THEN C0CICER CICERO-STORE
 ~We meet again. I still have many scrolls to offer, should you be in need. The gold will aid in my research.~
 END
 ++ ~Show me what you have.~ DO ~StartStore("c0sascr1",Lasttalkedtoby(Myself))~ EXIT
@@ -49,13 +49,13 @@ BEGIN C0JEVAN
 
 CHAIN IF WEIGHT #-1 ~OR(2)
 GlobalLT("GetQilueBrain","GLOBAL",1)
-!Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0JEVAN JEVAN-NO
+!%is_shadow_adept_lasttalkedtoby%~ THEN C0JEVAN JEVAN-NO
 ~Please, friend. I have much in my thoughts right now. I do not mean to be rude, but truly have no time for you.~
 EXIT
 
 CHAIN IF WEIGHT #-1 ~Global("GetQilueBrain","GLOBAL",1)
 Global("C0JevanShop","Global",0)
-Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0JEVAN JEVAN
+%is_shadow_adept_lasttalkedtoby%~ THEN C0JEVAN JEVAN
 ~Quite the obstinate creature, the aboleth. Would you not agree, 'Veldrin'?~
 END
 ++ ~You...~ DO ~SetGlobal("C0JevanShop","Global",1)~ + JEVAN-1
@@ -75,14 +75,20 @@ CHAIN C0JEVAN JEVAN-2
 ~* Calm, Veldrin. What you intend to do in this place in such a disguise is none of my affair. I am neither a native of this city, nor do my loyalties lie with those who would see you dead. 'Twas mere coincidence that we crossed paths. *~ [EFF_P05]
 = ~* So long as you do not interfere with my business, I will treat you the same in turn. In fact... we may even be able to be of benefit to each other. *~
 END
-IF ~Specifics(Player1,SHADOW_ADEPT)~ EXTERN C0JEVAN JEVAN-3
-IF ~!Specifics(Player1,SHADOW_ADEPT)
+IF ~OR(6)
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ EXTERN C0JEVAN JEVAN-3
+IF ~!%is_shadow_adept_player1%
 OR(5)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ EXTERN C0JEVAN JEVAN-4
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ EXTERN C0JEVAN JEVAN-4
 
 CHAIN C0JEVAN JEVAN-3
 ~* You are a shadowcaster, as am I. I have items of value that would be of great value to our those of our craft. My kin here could not appreciate the worth of what I have, so I offer them to you for a reasonable price. *~
@@ -97,7 +103,7 @@ CHAIN C0JEVAN JEVAN-5
 EXIT
 
 CHAIN IF WEIGHT #-1 ~Global("C0JevanShop","Global",1)
-Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0JEVAN JEVAN-STORE
+%is_shadow_adept_lasttalkedtoby%~ THEN C0JEVAN JEVAN-STORE
 ~Greetings. You are here to see what I have to offer, are you not? Take your time, there is much to see.~
 END
 ++ ~Show me what you have.~ DO ~StartStore("c0sascr2",Lasttalkedtoby(Myself))~ EXIT

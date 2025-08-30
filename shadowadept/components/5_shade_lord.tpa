@@ -5,12 +5,27 @@ APPEND ~racetext.2da~ ~SHADOW   132        %shad_lcase%       -1         %shad_u
 COPY ~%MOD_FOLDER%/portraits/C0SHADEL.BMP~ ~OVERRIDE~
 
       ACTION_IF ("shade_lord_difficulty" = 1) THEN BEGIN
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+
+COPY ~%MOD_FOLDER%/creatures/shadel.cre~ ~override~
+SAY NAME1 ~Shade Lord~
+SAY NAME2 ~Shade Lord~
+  WRITE_ASCII 0X34 ~C0SHADEL~ #8   //small portrait
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+  END ELSE BEGIN
+
 COPY ~%MOD_FOLDER%/creatures/shadel.cre~ ~override~
 SAY NAME1 ~Shade Lord~
 SAY NAME2 ~Shade Lord~
   WRITE_ASCII 0X34 ~C0SHADEL~ #8   //small portrait
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+END
+
 ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~
 THEN BEGIN
   PRINT ~Crossmod: Adding Foundling's Shadow Summoning I Scroll~
@@ -22,12 +37,27 @@ BUT_ONLY_IF_IT_CHANGES
 END
 END
       ACTION_IF ("shade_lord_difficulty" = 2) THEN BEGIN
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+
+COPY ~%MOD_FOLDER%/creatures/shade2.cre~ ~override/shadel.cre~
+SAY NAME1 ~Shade Lord~
+SAY NAME2 ~Shade Lord~
+  WRITE_ASCII 0X34 ~C0SHADEL~ #8   //small portrait
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+  END ELSE BEGIN
+
 COPY ~%MOD_FOLDER%/creatures/shade2.cre~ ~override/shadel.cre~
 SAY NAME1 ~Shade Lord~
 SAY NAME2 ~Shade Lord~
   WRITE_ASCII 0X34 ~C0SHADEL~ #8   //small portrait
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+END
+
 ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~
 THEN BEGIN
   PRINT ~Crossmod: Adding Foundling's Shadow Summoning I Scroll~
@@ -41,8 +71,8 @@ END
       ACTION_IF ("shade_lord_difficulty" = 3) THEN BEGIN
 END
 
-COMPILE ~%MOD_FOLDER%/dialogue/shadel.d~
-COMPILE ~%MOD_FOLDER%/scripts/c0cut30a.baf~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/shadel.d~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0cut30a.baf~
 
 COPY_EXISTING ~ar1404.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN

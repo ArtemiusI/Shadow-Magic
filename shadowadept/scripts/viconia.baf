@@ -1,6 +1,0 @@
-IF
-	!Specifics(Myself,SHADOW_ADEPT)
-THEN
-  RESPONSE #100
-	ChangeSpecifics(Myself,SHADOW_ADEPT)
-END

@@ -3,7 +3,7 @@
 IF
 	TriggerOverride(Player1,ActionListEmpty())
 	!TriggerOverride(Player1,HaveKnownSpellRES("C0SAFAM1"))
-	Specifics(Player1,SHADOW_ADEPT)
+	%is_shadow_adept_player1%
 	ClassLevelGT(Player1,WIZARD,5)
 	Global("C0SASummonFamiliar","GLOBAL",0)
 THEN
@@ -15,7 +15,7 @@ END
 IF
 	TriggerOverride(Player1,ActionListEmpty())
 	TriggerOverride(Player1,HaveKnownSpellRES("C0SAFAM1"))
-	Specifics(Player1,SHADOW_ADEPT)
+	%is_shadow_adept_player1%
 	ClassLevelGT(Player1,WIZARD,5)
 	Global("C0SASummonFamiliar","GLOBAL",0)
 THEN
@@ -26,7 +26,7 @@ END
 IF
 	TriggerOverride(Player1,ActionListEmpty())
 	!TriggerOverride(Player1,HaveKnownSpellRES("C0SAFAM1"))
-	Specifics(Player1,SHADOW_ADEPT)
+	%is_shadow_adept_player1%
 	Class(Player1,BARD_ALL)
 	LevelGT(Player1,7)
 	Global("C0SASummonFamiliar","GLOBAL",0)
@@ -39,7 +39,7 @@ END
 IF
 	TriggerOverride(Player1,ActionListEmpty())
 	TriggerOverride(Player1,HaveKnownSpellRES("C0SAFAM1"))
-	Specifics(Player1,SHADOW_ADEPT)
+	%is_shadow_adept_player1%
 	Class(Player1,BARD_ALL)
 	LevelGT(Player1,7)
 	Global("C0SASummonFamiliar","GLOBAL",0)

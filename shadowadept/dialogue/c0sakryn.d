@@ -3,7 +3,7 @@ BEGIN C0SAKRYN
 CHAIN IF ~Global("C0KrynTalk","GLOBAL",0)~ THEN C0SAKRYN a
 ~Hail, stranger. Is there aught of importance that you require?~
 END
-+ ~Specifics(Lasttalkedtoby(Myself),SHADOW_ADEPT)~ + ~You... there's something strangely familiar about you.~ DO ~SetGlobal("C0KrynTalk","GLOBAL",1)~ + a1.2
++ ~%is_shadow_adept_lasttalkedtoby%~ + ~You... there's something strangely familiar about you.~ DO ~SetGlobal("C0KrynTalk","GLOBAL",1)~ + a1.2
 ++ ~You don't look like an ordinary traveller. What is your purpose for being here?~ DO ~SetGlobal("C0KrynTalk","GLOBAL",1)~ + a1.0
 ++ ~I apologize for bothering you. Goodbye.~ + b0
 
@@ -84,19 +84,19 @@ END
 + ~PartyHasItem("c0samag3")~ + ~I have the staff of Mak'kai.~ DO ~TakePartyItem("c0samag3") DestroyItem("c0samag3") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
 + ~PartyHasItem("c0samag4")~ + ~I have the staff of Nym Phaundal.~ DO ~TakePartyItem("c0samag4") DestroyItem("c0samag4") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
 + ~PartyHasItem("c0samag5")~ + ~I have the staff of Ivette Cold-Whisper.~ DO ~TakePartyItem("c0samag5") DestroyItem("c0samag5") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
-+ ~GlobalGT("C0KrynTalk","GLOBAL",1) !Specifics(Lasttalkedtoby(Myself),SHADOW_ADEPT)
++ ~GlobalGT("C0KrynTalk","GLOBAL",1) !%is_shadow_adept_lasttalkedtoby%
 Class(Lasttalkedtoby(Myself),MAGE_ALL)
 !Alignment(Lasttalkedtoby(Myself),MASK_GOOD)~ + ~I want to learn Shadow Magic.~ + b1.6
 + ~Global("C0KrynKnowsStore","GLOBAL",0)~ + ~I was wondering, do you have any magical wares for sale?~ DO ~SetGlobal("C0KrynKnowsStore","GLOBAL",1)~ + b1.7
 + ~Global("C0KrynKnowsStore","GLOBAL",1)~ + ~May I see what wares you have available?~ + b2
 + ~Global("C0KrynKnowsStore","GLOBAL",1)
 OR(6)
-Specifics(Player1,SHADOW_ADEPT)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ + ~I would like to see your special stock.~ + b3
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ + ~I would like to see your special stock.~ + b3
 ++ ~Nothing for now.~ + b0
 
 CHAIN C0SAKRYN b.1
@@ -113,19 +113,19 @@ END
 + ~PartyHasItem("c0samag3")~ + ~I have the staff of Mak'kai.~ DO ~TakePartyItem("c0samag3") DestroyItem("c0samag3") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
 + ~PartyHasItem("c0samag4")~ + ~I have the staff of Nym Phaundal.~ DO ~TakePartyItem("c0samag4") DestroyItem("c0samag4") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
 + ~PartyHasItem("c0samag5")~ + ~I have the staff of Ivette Cold-Whisper.~ DO ~TakePartyItem("c0samag5") DestroyItem("c0samag5") IncrementGlobal("C0SAMageStaves","GLOBAL",1)~ + b1
-+ ~GlobalGT("C0KrynTalk","GLOBAL",1) !Specifics(Lasttalkedtoby(Myself),SHADOW_ADEPT)
++ ~GlobalGT("C0KrynTalk","GLOBAL",1) !%is_shadow_adept_lasttalkedtoby%
 Class(Lasttalkedtoby(Myself),MAGE_ALL)
 !Alignment(Lasttalkedtoby(Myself),MASK_GOOD)~ + ~I want to learn Shadow Magic.~ + b1.6
 + ~Global("C0KrynKnowsStore","GLOBAL",0)~ + ~I was wondering, do you have any magical wares for sale?~ DO ~SetGlobal("C0KrynKnowsStore","GLOBAL",1)~ + b1.7
 + ~Global("C0KrynKnowsStore","GLOBAL",1)~ + ~May I see what wares you have available?~ + b2
 + ~Global("C0KrynKnowsStore","GLOBAL",1)
 OR(6)
-Specifics(Player1,SHADOW_ADEPT)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ + ~I would like to see your special stock.~ + b3
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ + ~I would like to see your special stock.~ + b3
 ++ ~Nothing for now.~ + b0
 
 CHAIN C0SAKRYN HEART
@@ -196,52 +196,52 @@ CHAIN C0SAKRYN b1.1
 ~You have my thanks. I regret that there was no peaceful solution possible, but it seems that the madness has overtaken my former students. I hope you may find the rest of them soon.~
 END
 + ~OR(6)
-Specifics(Player1,SHADOW_ADEPT)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ + ~Your apprentice was using Shadow Weave magic. What have you not told me?~ DO ~SetGlobal("C0KrynTalk","GLOBAL",2)~ + b1.4
-+ ~!Specifics(Player1,SHADOW_ADEPT)
-!Specifics(Player2,SHADOW_ADEPT)
-!Specifics(Player3,SHADOW_ADEPT)
-!Specifics(Player4,SHADOW_ADEPT)
-!Specifics(Player5,SHADOW_ADEPT)
-!Specifics(Player6,SHADOW_ADEPT)~ + ~What was that strange magic that your apprentice used? I have never seen anything like it before.~ DO ~SetGlobal("C0KrynTalk","GLOBAL",2)~ + b1.5
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ + ~Your apprentice was using Shadow Weave magic. What have you not told me?~ DO ~SetGlobal("C0KrynTalk","GLOBAL",2)~ + b1.4
++ ~!%is_shadow_adept_player1%
+!%is_shadow_adept_player2%
+!%is_shadow_adept_player3%
+!%is_shadow_adept_player4%
+!%is_shadow_adept_player5%
+!%is_shadow_adept_player6%~ + ~What was that strange magic that your apprentice used? I have never seen anything like it before.~ DO ~SetGlobal("C0KrynTalk","GLOBAL",2)~ + b1.5
 
 CHAIN C0SAKRYN b1.2
 ~You have my gratitude for your efforts. I pray you may find the rest of my apprentices.~
 END
 IF ~RandomNum(2,1)
 OR(6)
-Specifics(Player1,SHADOW_ADEPT)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ DO ~GiveItemCreate("c0sarn09",Lasttalkedtoby(Myself),1,0,0)
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ DO ~GiveItemCreate("c0sarn09",Lasttalkedtoby(Myself),1,0,0)
 GiveItemCreate("c0sarn03",Lasttalkedtoby(Myself),1,0,0)
 GiveItemCreate("c0sarn05",Lasttalkedtoby(Myself),1,0,0)
 GiveItemCreate("c0sarn07",Lasttalkedtoby(Myself),1,0,0)
 Addexperienceparty(1000)~ EXIT
 IF ~RandomNum(2,2)
 OR(6)
-Specifics(Player1,SHADOW_ADEPT)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ DO ~GiveItemCreate("c0sarn09",Lasttalkedtoby(Myself),1,0,0)
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ DO ~GiveItemCreate("c0sarn09",Lasttalkedtoby(Myself),1,0,0)
 GiveItemCreate("c0sarn04",Lasttalkedtoby(Myself),1,0,0)
 GiveItemCreate("c0sarn06",Lasttalkedtoby(Myself),1,0,0)
 GiveItemCreate("c0sarn08",Lasttalkedtoby(Myself),1,0,0)
 Addexperienceparty(1000)~ EXIT
-IF ~!Specifics(Player1,SHADOW_ADEPT)
-!Specifics(Player2,SHADOW_ADEPT)
-!Specifics(Player3,SHADOW_ADEPT)
-!Specifics(Player4,SHADOW_ADEPT)
-!Specifics(Player5,SHADOW_ADEPT)
-!Specifics(Player6,SHADOW_ADEPT)~ DO ~Addexperienceparty(1000)~ EXIT
+IF ~!%is_shadow_adept_player1%
+!%is_shadow_adept_player2%
+!%is_shadow_adept_player3%
+!%is_shadow_adept_player4%
+!%is_shadow_adept_player5%
+!%is_shadow_adept_player6%~ DO ~Addexperienceparty(1000)~ EXIT
 
 CHAIN C0SAKRYN b1.3
 ~You have found all five of my apprentices. *sigh* 'Tis unfortunate that the madness had taken them beyond any chance of recovery, and now their souls will become one with the Shadow Weave. Perhaps I should have sought them out myself after all...~
@@ -266,22 +266,22 @@ AddStoreItem("c0sasto2","c0sacha2",1,1)~
 = ~Regardless, I appreciate your assistance in this matter. Take this as a token of my gratitude.~
 END
 IF ~OR(6)
-Specifics(Player1,SHADOW_ADEPT)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ DO ~SetGlobal("C0KrynTalk","GLOBAL",3)
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ DO ~SetGlobal("C0KrynTalk","GLOBAL",3)
 GiveItemCreate("c0saamu2",Lasttalkedtoby(Myself),1,0,0)
 GiveItemCreate("c0sarn09",Lasttalkedtoby(Myself),1,0,0)
 GiveItemCreate("c0sarn10",Lasttalkedtoby(Myself),1,0,0)
 Addexperienceparty(10000)~ EXIT
-IF ~!Specifics(Player1,SHADOW_ADEPT)
-!Specifics(Player2,SHADOW_ADEPT)
-!Specifics(Player3,SHADOW_ADEPT)
-!Specifics(Player4,SHADOW_ADEPT)
-!Specifics(Player5,SHADOW_ADEPT)
-!Specifics(Player6,SHADOW_ADEPT)~ DO ~SetGlobal("C0KrynTalk","GLOBAL",3)
+IF ~!%is_shadow_adept_player1%
+!%is_shadow_adept_player2%
+!%is_shadow_adept_player3%
+!%is_shadow_adept_player4%
+!%is_shadow_adept_player5%
+!%is_shadow_adept_player6%~ DO ~SetGlobal("C0KrynTalk","GLOBAL",3)
 GiveItemCreate("c0saamu2",Lasttalkedtoby(Myself),1,0,0)
 Addexperienceparty(10000)~ EXIT
 
@@ -295,12 +295,12 @@ CHAIN C0SAKRYN b1.5
 = ~Shadow magic is powerful, but fatally dangerous for the untrained. It is the dangers of the art that led to the current state of my apprentices. They attempted to draw upon more power than they could manage, and lost their sanities as a result.~
 = ~I hope, after witnessing the dreadful power of the Shadow Weave, you understand why my apprentices must not be allowed to roam free.~
 END
-+ ~!Specifics(Lasttalkedtoby(Myself),SHADOW_ADEPT)
++ ~!%is_shadow_adept_lasttalkedtoby%
 Class(Lasttalkedtoby(Myself),MAGE_ALL)
 !Alignment(Lasttalkedtoby(Myself),MASK_GOOD)~ + ~I want to learn Shadow Magic.~ DO ~Addexperienceparty(1000)~ + b1.6
 + ~Global("C0KrynKnowsStore","GLOBAL",0)~ + ~I was wondering, do you have any magical wares for sale?~ DO ~Addexperienceparty(1000) SetGlobal("C0KrynKnowsStore","GLOBAL",1)~ + b1.7
 + ~Global("C0KrynKnowsStore","GLOBAL",0)
-Specifics(Lasttalkedtoby(Myself),SHADOW_ADEPT)~ + ~Do you have any special wares for those versed in shadow magic?~ DO ~Addexperienceparty(1000) SetGlobal("C0KrynKnowsStore","GLOBAL",1)~ + b1.7
+%is_shadow_adept_lasttalkedtoby%~ + ~Do you have any special wares for those versed in shadow magic?~ DO ~Addexperienceparty(1000) SetGlobal("C0KrynKnowsStore","GLOBAL",1)~ + b1.7
 ++ ~I will do what I can to find them.~ + b1.2
 
 CHAIN C0SAKRYN b1.6
@@ -313,21 +313,21 @@ END
 CHAIN C0SAKRYN b1.7
 ~Indeed. I have a selection of potions, spells and other items available for purchase, if you wish it.~
 = IF ~OR(6)
-Specifics(Player1,SHADOW_ADEPT)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ THEN ~And for those capable of wielding the magic of the Shadow Weave... I have a few magical items separate from the rest of my stock that may interest you.~
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ THEN ~And for those capable of wielding the magic of the Shadow Weave... I have a few magical items separate from the rest of my stock that may interest you.~
 END
 ++ ~May I see what wares you have available?~ + b2
 + ~OR(6)
-Specifics(Player1,SHADOW_ADEPT)
-Specifics(Player2,SHADOW_ADEPT)
-Specifics(Player3,SHADOW_ADEPT)
-Specifics(Player4,SHADOW_ADEPT)
-Specifics(Player5,SHADOW_ADEPT)
-Specifics(Player6,SHADOW_ADEPT)~ + ~I would like to see your special stock.~ + b3
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ + ~I would like to see your special stock.~ + b3
 ++ ~Not right now. Goodbye.~ + b0
 
 CHAIN C0SAKRYN b1.8

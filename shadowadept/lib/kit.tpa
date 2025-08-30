@@ -34,6 +34,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
+– Incurs a -1 penalty to Wisdom.
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
@@ -73,6 +74,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 SHADOW DOUBLE: The shadow disciple creates a copy of <HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
+– Incurs a -1 penalty to Wisdom.
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
@@ -114,6 +116,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 SHADOW DOUBLE: The shadow adept creates a copy of <HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
+– Incurs a -1 penalty to Wisdom.
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
@@ -148,6 +151,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
+– Incurs a -1 penalty to Wisdom.
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
@@ -182,6 +186,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
+– Incurs a -1 penalty to Wisdom.
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
@@ -216,6 +221,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
+– Incurs a -1 penalty to Wisdom.
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
@@ -250,6 +256,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
+– Incurs a -1 penalty to Wisdom.
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
@@ -284,6 +291,7 @@ FIND SHADOW FAMILIAR: The shadow adept may, once in their lifetime, bind a creat
 SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadowstuff. The copy is at 60% of the caster's level and has all the spells and abilities that the caster would have at that level.
 
 Disadvantages:
+– Incurs a -1 penalty to Wisdom.
 – Suffers a -2 penalty to casting speed and caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
@@ -484,7 +492,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     abclasrq      = ~0 0 12 9 0 9~
 	
-    // abclsmod      = ~0 0 0 0 0 0~
+    abclsmod      = ~0 0 0 0 -1 0~
 	
     abdcdsrq      = ~0 0 0 15 0 15~
 	
@@ -599,7 +607,7 @@ LAF ADD_KIT_EX
 	
     abclasrq      = ~0 0 12 9 0 9~
 	
-    // abclsmod      = ~0 0 0 0 0 0~
+    abclsmod      = ~0 0 0 0 -1 0~
 	
     abdcdsrq      = ~0 0 0 0 0 0~
 	
@@ -716,7 +724,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     abclasrq      = ~0 0 12 9 0 9~
 	
-    // abclsmod      = ~0 0 0 0 0 0~
+    abclsmod      = ~0 0 0 0 -1 0~
 	
     abdcdsrq      = ~0 0 0 0 0 0~
 	
@@ -849,7 +857,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     abclasrq      = ~0 9 12 9 0 9~
 	
-    // abclsmod      = ~0 0 0 0 0 0~
+    abclsmod      = ~0 0 0 0 -1 0~
 	
     abdcdsrq      = ~0 0 0 0 0 0~
 	
@@ -966,7 +974,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     abclasrq      = ~0 0 12 9 9 9~
 	
-    // abclsmod      = ~0 0 0 0 0 0~
+    abclsmod      = ~0 0 0 0 -1 0~
 	
     abdcdsrq      = ~0 0 0 0 0 0~
 	
@@ -1083,7 +1091,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     abclasrq      = ~9 0 12 9 0 9~
 	
-    // abclsmod      = ~0 0 0 0 0 0~
+    abclsmod      = ~0 0 0 0 -1 0~
 	
     abdcdsrq      = ~0 0 0 0 0 0~
 	
@@ -1200,7 +1208,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     abclasrq      = ~9 9 12 9 0 9~
 	
-    // abclsmod      = ~0 0 0 0 0 0~
+    abclsmod      = ~0 0 0 0 -1 0~
 	
     abdcdsrq      = ~0 0 0 0 0 0~
 	
@@ -1317,7 +1325,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
 	
     abclasrq      = ~9 9 12 9 0 9~
 	
-    // abclsmod      = ~0 0 0 0 0 0~
+    abclsmod      = ~0 0 0 0 -1 0~
 	
     abdcdsrq      = ~0 0 0 0 0 0~
 	

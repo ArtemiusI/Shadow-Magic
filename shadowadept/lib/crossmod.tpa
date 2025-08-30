@@ -7,16 +7,28 @@
 ACTION_IF FILE_EXISTS_IN_GAME ~L#Fou.cre~ AND FILE_EXISTS_IN_GAME ~L#Fou25.cre~
 THEN BEGIN
   PRINT ~Adding crossmod compatibility between Foundling and Shadow Magic~
-  COMPILE ~%MOD_FOLDER%/dialogue/npc/foundling.d~
+  COMPILE EVAL ~%MOD_FOLDER%/dialogue/npc/foundling.d~
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+
+COPY_EXISTING ~L#Fou.cre~ ~override~
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+COPY_EXISTING ~L#Fou25.cre~ ~override~
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+  END ELSE BEGIN
+
 COPY_EXISTING ~L#Fou.cre~ ~override~
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 COPY_EXISTING ~L#Fou25.cre~ ~override~
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+END
 END
 
 ACTION_IF MOD_IS_INSTALLED ~WEASELS!.TP2~ ~0~ THEN BEGIN
 COPY_EXISTING ~L#WI176.ITM~ OVERRIDE
-	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) timing = 2 END
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = %eeex_sa_splprot_param2% parameter1 = %eeex_sa_splprot_param1% timing = 2 END
 COPY_EXISTING ~L#WI577.ITM~ OVERRIDE
-	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) timing = 2 END
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = %eeex_sa_splprot_param2% parameter1 = %eeex_sa_splprot_param1% timing = 2 END
 END

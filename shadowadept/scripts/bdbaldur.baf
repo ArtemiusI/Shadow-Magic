@@ -1,7 +1,7 @@
 // Familiar
 
 IF
-	Specifics(Player1,SHADOW_ADEPT)
+	%is_shadow_adept_player1%
 	ClassLevelGT(Player1,WIZARD,5)
 	Global("C0SASummonFamiliar","GLOBAL",0)
 THEN
@@ -11,7 +11,7 @@ THEN
 END
 
 IF
-	Specifics(Player1,SHADOW_ADEPT)
+	%is_shadow_adept_player1%
 	Class(Player1,BARD_ALL)
 	LevelGT(Player1,7)
 	Global("C0SASummonFamiliar","GLOBAL",0)

@@ -48,7 +48,7 @@ END
 
 ACTION_IF GAME_IS ~bg2ee~
 THEN BEGIN
-COMPILE ~%MOD_FOLDER%/dialogue/c0safam.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0safam.d~
 EXTEND_TOP ~ar1402.bcs~ ~%MOD_FOLDER%/familiars/scripts/ar1402.baf~
 EXTEND_TOP ~ar1404.bcs~ ~%MOD_FOLDER%/familiars/scripts/ar1404.baf~
 EXTEND_TOP ~spshadom.bcs~ ~%MOD_FOLDER%/familiars/scripts/spshadow.baf~
@@ -59,7 +59,7 @@ END
 
 ACTION_IF GAME_IS ~eet~
 THEN BEGIN
-COMPILE ~%MOD_FOLDER%/dialogue/eet/c0safam.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/eet/c0safam.d~
 EXTEND_TOP ~ar1402.bcs~ ~%MOD_FOLDER%/familiars/scripts/ar1402.baf~
 EXTEND_TOP ~ar1404.bcs~ ~%MOD_FOLDER%/familiars/scripts/ar1404.baf~
 EXTEND_TOP ~spshadom.bcs~ ~%MOD_FOLDER%/familiars/scripts/spshadow.baf~
@@ -70,10 +70,10 @@ END
 
 ACTION_IF GAME_IS ~iwdee~
 THEN BEGIN
-COMPILE ~%MOD_FOLDER%/dialogue/iwd/c0safam.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/iwd/c0safam.d~
 END
 
-COMPILE ~%MOD_FOLDER%/scripts/c0safam.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0safam.baf~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
@@ -86,6 +86,48 @@ END
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
 END
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+
+COPY ~%MOD_FOLDER%/familiars/c0safam1.cre~ ~override~
+WRITE_ASCII 0x248 ~c0safam~  #8  // override
+WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
+SAY NAME1 ~Yin'rou~
+SAY NAME2 ~Yin'rou~
+WRITE_ASCII 0X34 ~C0Yinrou~ #8   //small portrait
+SAY BATTLE_CRY1 ~~ [VWOLF03]
+SAY BATTLE_CRY2 ~~ [VWOLF04]
+SAY ATTACK1 ~~ [VWOLF05]
+SAY ATTACK2 ~~ [VWOLF06]
+SAY DAMAGE ~~ [VWOLF08]
+SAY DYING ~~ [VWOLF09]
+SAY SELECT_COMMON1 ~~ [VWOLF01]
+SAY SELECT_COMMON2 ~~ [VWOLF02]
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_WOLF~))
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/familiars/c0safam2.cre~ ~override~
+WRITE_ASCII 0x248 ~c0safam~  #8  // override
+WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
+SAY NAME1 ~Ka'Shai~
+SAY NAME2 ~Ka'Shai~
+WRITE_ASCII 0X34 ~C0Kashai~ #8   //small portrait
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW~))
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/familiars/c0safam3.cre~ ~override~
+WRITE_ASCII 0x248 ~c0safam~  #8  // override
+WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
+SAY NAME1 ~Nyx~
+SAY NAME2 ~Nyx~
+WRITE_ASCII 0X34 ~C0Nyx~ #8   //small portrait
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_MEPHIT~))
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+  END ELSE BEGIN
 
 COPY ~%MOD_FOLDER%/familiars/c0safam1.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
@@ -112,6 +154,7 @@ WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
 SAY NAME1 ~Ka'Shai~
 SAY NAME2 ~Ka'Shai~
 WRITE_ASCII 0X34 ~C0Kashai~ #8   //small portrait
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 COPY ~%MOD_FOLDER%/familiars/c0safam3.cre~ ~override~
@@ -123,6 +166,8 @@ SAY NAME2 ~Nyx~
 WRITE_ASCII 0X34 ~C0Nyx~ #8   //small portrait
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_MEPHIT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+END
 
 ////////////////////////////////////////
 ///////////////familiars///////////////////

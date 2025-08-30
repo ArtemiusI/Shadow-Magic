@@ -1,7 +1,13 @@
 
 IF
   Global("C0JevanShop","Global",0)
-  Specifics([PC],SHADOW_ADEPT)
+  OR(6)
+  %is_shadow_adept_player1%
+  %is_shadow_adept_player2%
+  %is_shadow_adept_player3%
+  %is_shadow_adept_player4%
+  %is_shadow_adept_player5%
+  %is_shadow_adept_player6%
   OR(2)
   Global("RefusedQilueBrain","GLOBAL",1)
   Global("GetQilueBrain","GLOBAL",1)

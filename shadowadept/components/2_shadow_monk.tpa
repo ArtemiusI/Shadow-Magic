@@ -67,7 +67,7 @@ DEATHSTRIKE: The shadow monk teleports to a chosen target and turns invisible fo
 
 Disadvantages:
 – Hit Die: d6
-– -2 penalty to Strength.
+– -1 penalty to Strength.
 – -4 penalty to Constitution.
 – Alignment restricted to non-lawful and non-good.
 – Uses the shadowdancer's high level abilities table instead of the fighter's, with the exclusion of Use Any Item.
@@ -96,7 +96,7 @@ Disadvantages:
 	
     abclasrq      = ~0 14 5 0 9 0~
 	
-    abclsmod      = ~-2 1 -4 0 0 0~
+    abclsmod      = ~-1 1 -4 0 0 0~
 	
     // abdcdsrq      = ~0 0 0 0 0 0~
 	

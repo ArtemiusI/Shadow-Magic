@@ -1,8 +1,8 @@
 COPY ~%MOD_FOLDER%/2da/spellselect~ ~override~
-COMPILE ~%MOD_FOLDER%/dialogue/spellselect/c0sascrl.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/spellselect/c0sascrl.d~
 COMPILE EVAL ~%MOD_FOLDER%/dialogue/spellselect/c0satalk.d~
-COMPILE ~%MOD_FOLDER%/scripts/spellselect/c0saplay.baf~
-EXTEND_BOTTOM ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/spellselect/c0saplay.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/spellselect/c0saplay.baf~
+EXTEND_BOTTOM ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/spellselect/c0saplay.baf~ EVAL
 
 ACTION_IF MOD_IS_INSTALLED ~SETUP-RR.TP2~ ~6~ THEN BEGIN
 COPY ~%MOD_FOLDER%/2DA/SPELLSELECT/OTHER/C0SALSB-RR.2DA~ ~OVERRIDE/C0SALSB.2DA~
@@ -13,15 +13,15 @@ COPY ~%MOD_FOLDER%/2DA/SPELLSELECT/OTHER/C0SALSB-CD.2DA~ ~OVERRIDE/C0SALSB.2DA~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/spellselect/baldur.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/spellselect/baldur.baf~ EVAL
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/spellselect/bdbaldur.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/spellselect/bdbaldur.baf~ EVAL
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/spellselect/baldur.baf~
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/spellselect/baldur.baf~ EVAL
 END
 
 INCLUDE	~%MOD_FOLDER%/lib/SA_SEQUENCER_MENU.TPA~

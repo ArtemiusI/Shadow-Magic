@@ -9,7 +9,7 @@ END
 
 IF
 	TriggerOverride(Player1,ActionListEmpty())
-	Specifics(Player1,SHADOW_ADEPT)
+	%is_shadow_adept_player1%
 	OR(9)
 	TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
@@ -28,7 +28,7 @@ THEN
 END
 IF
 	TriggerOverride(Player1,ActionListEmpty())
-	Specifics(Player1,SHADOW_ADEPT)
+	%is_shadow_adept_player1%
 	OR(9)
 	TriggerOverride(Player1,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player1,GlobalGT("C0SALv2","LOCALS",0))
@@ -48,7 +48,7 @@ END
 
 IF
 	TriggerOverride(Player2,ActionListEmpty())
-	Specifics(Player2,SHADOW_ADEPT)
+	%is_shadow_adept_player2%
 	OR(9)
 	TriggerOverride(Player2,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player2,GlobalGT("C0SALv2","LOCALS",0))
@@ -67,7 +67,7 @@ THEN
 END
 IF
 	TriggerOverride(Player2,ActionListEmpty())
-	Specifics(Player2,SHADOW_ADEPT)
+	%is_shadow_adept_player2%
 	OR(9)
 	TriggerOverride(Player2,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player2,GlobalGT("C0SALv2","LOCALS",0))
@@ -87,7 +87,7 @@ END
 
 IF
 	TriggerOverride(Player3,ActionListEmpty())
-	Specifics(Player3,SHADOW_ADEPT)
+	%is_shadow_adept_player3%
 	OR(9)
 	TriggerOverride(Player3,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player3,GlobalGT("C0SALv2","LOCALS",0))
@@ -106,7 +106,7 @@ THEN
 END
 IF
 	TriggerOverride(Player3,ActionListEmpty())
-	Specifics(Player3,SHADOW_ADEPT)
+	%is_shadow_adept_player3%
 	OR(9)
 	TriggerOverride(Player3,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player3,GlobalGT("C0SALv2","LOCALS",0))
@@ -126,7 +126,7 @@ END
 
 IF
 	TriggerOverride(Player4,ActionListEmpty())
-	Specifics(Player4,SHADOW_ADEPT)
+	%is_shadow_adept_player4%
 	OR(9)
 	TriggerOverride(Player4,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player4,GlobalGT("C0SALv2","LOCALS",0))
@@ -145,7 +145,7 @@ THEN
 END
 IF
 	TriggerOverride(Player4,ActionListEmpty())
-	Specifics(Player4,SHADOW_ADEPT)
+	%is_shadow_adept_player4%
 	OR(9)
 	TriggerOverride(Player4,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player4,GlobalGT("C0SALv2","LOCALS",0))
@@ -165,7 +165,7 @@ END
 
 IF
 	TriggerOverride(Player5,ActionListEmpty())
-	Specifics(Player5,SHADOW_ADEPT)
+	%is_shadow_adept_player5%
 	OR(9)
 	TriggerOverride(Player5,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player5,GlobalGT("C0SALv2","LOCALS",0))
@@ -184,7 +184,7 @@ THEN
 END
 IF
 	TriggerOverride(Player5,ActionListEmpty())
-	Specifics(Player5,SHADOW_ADEPT)
+	%is_shadow_adept_player5%
 	OR(9)
 	TriggerOverride(Player5,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player5,GlobalGT("C0SALv2","LOCALS",0))
@@ -204,7 +204,7 @@ END
 
 IF
 	TriggerOverride(Player6,ActionListEmpty())
-	Specifics(Player6,SHADOW_ADEPT)
+	%is_shadow_adept_player6%
 	OR(9)
 	TriggerOverride(Player6,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player6,GlobalGT("C0SALv2","LOCALS",0))
@@ -223,7 +223,7 @@ THEN
 END
 IF
 	TriggerOverride(Player6,ActionListEmpty())
-	Specifics(Player6,SHADOW_ADEPT)
+	%is_shadow_adept_player6%
 	OR(9)
 	TriggerOverride(Player6,GlobalGT("C0SALv1","LOCALS",0))
 	TriggerOverride(Player6,GlobalGT("C0SALv2","LOCALS",0))

@@ -5,7 +5,6 @@ THEN
   RESPONSE #100
     CutSceneId(Player1)
     CreateCreature("c02samag",[161.3608],NE)
-	ChangeSpecifics("c02samag",SHADOW_ADEPT)
 	ActionOverride("c02samag",ChangeAIScript("c02samag",OVERRIDE))
 	ActionOverride("c02samag",ChangeAIScript("bdasc",CLASS))
 	ActionOverride("c02samag",DestroyItem("bdmisc1b"))

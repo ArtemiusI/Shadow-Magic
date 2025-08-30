@@ -4,7 +4,7 @@
 
 // LEVEL 1
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,MAGE_ALL)
 	!HaveKnownSpellRES("SPWI110")
 THEN
@@ -13,7 +13,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,BARD_ALL)
 	Kit(Myself,C0SABARD)
 	LevelGT(Myself,1)
@@ -24,7 +24,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA101","LOCALS",1)
 	!HaveKnownSpellRES("C0SA101")
@@ -34,7 +34,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA102","LOCALS",1)
 	!HaveKnownSpellRES("C0SA102")
@@ -44,7 +44,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA103","LOCALS",1)
 	!HaveKnownSpellRES("C0SA103")
@@ -54,7 +54,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA104","LOCALS",1)
 	!HaveKnownSpellRES("C0SA104")
@@ -64,7 +64,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA105","LOCALS",1)
 	!HaveKnownSpellRES("C0SA105")
@@ -74,7 +74,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA106","LOCALS",1)
 	!HaveKnownSpellRES("C0SA106")
@@ -84,7 +84,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA107","LOCALS",1)
 	!HaveKnownSpellRES("C0SA107")
@@ -94,7 +94,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA108","LOCALS",1)
 	!HaveKnownSpellRES("C0SA108")
@@ -104,7 +104,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA109","LOCALS",1)
 	!HaveKnownSpellRES("C0SA109")
@@ -114,7 +114,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA110","LOCALS",1)
 	!HaveKnownSpellRES("C0SA110")
@@ -124,7 +124,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA111","LOCALS",1)
 	!HaveKnownSpellRES("C0SA111")
@@ -134,7 +134,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA112","LOCALS",1)
 	!HaveKnownSpellRES("C0SA112")
@@ -146,7 +146,7 @@ END
 
 // LEVEL 2
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA201","LOCALS",1)
 	!HaveKnownSpellRES("C0SA201")
@@ -156,7 +156,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA202","LOCALS",1)
 	!HaveKnownSpellRES("C0SA202")
@@ -166,7 +166,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA203","LOCALS",1)
 	!HaveKnownSpellRES("C0SA203")
@@ -176,7 +176,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA204","LOCALS",1)
 	!HaveKnownSpellRES("C0SA204")
@@ -186,7 +186,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA205","LOCALS",1)
 	!HaveKnownSpellRES("C0SA205")
@@ -196,7 +196,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA206","LOCALS",1)
 	!HaveKnownSpellRES("C0SA206")
@@ -206,7 +206,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA207","LOCALS",1)
 	!HaveKnownSpellRES("C0SA207")
@@ -216,7 +216,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA208","LOCALS",1)
 	!HaveKnownSpellRES("C0SA208")
@@ -226,7 +226,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA209","LOCALS",1)
 	!HaveKnownSpellRES("C0SA209")
@@ -236,7 +236,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA210","LOCALS",1)
 	!HaveKnownSpellRES("C0SA210")
@@ -246,7 +246,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA211","LOCALS",1)
 	!HaveKnownSpellRES("C0SA211")
@@ -256,7 +256,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA212","LOCALS",1)
 	!HaveKnownSpellRES("C0SA212")
@@ -266,7 +266,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA213","LOCALS",1)
 	!HaveKnownSpellRES("C0SA213")
@@ -278,7 +278,7 @@ END
 
 // LEVEL 3
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA301","LOCALS",1)
 	!HaveKnownSpellRES("C0SA301")
@@ -288,7 +288,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA302","LOCALS",1)
 	!HaveKnownSpellRES("C0SA302")
@@ -298,7 +298,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA303","LOCALS",1)
 	!HaveKnownSpellRES("C0SA303")
@@ -308,7 +308,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA304","LOCALS",1)
 	!HaveKnownSpellRES("C0SA304")
@@ -318,7 +318,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA305","LOCALS",1)
 	!HaveKnownSpellRES("C0SA305")
@@ -328,7 +328,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA306","LOCALS",1)
 	!HaveKnownSpellRES("C0SA306")
@@ -338,7 +338,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA307","LOCALS",1)
 	!HaveKnownSpellRES("C0SA307")
@@ -348,7 +348,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA308","LOCALS",1)
 	!HaveKnownSpellRES("C0SA308")
@@ -358,7 +358,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA309","LOCALS",1)
 	!HaveKnownSpellRES("C0SA309")
@@ -368,7 +368,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA310","LOCALS",1)
 	!HaveKnownSpellRES("C0SA310")
@@ -378,7 +378,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA311","LOCALS",1)
 	!HaveKnownSpellRES("C0SA311")
@@ -388,7 +388,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA312","LOCALS",1)
 	!HaveKnownSpellRES("C0SA312")
@@ -400,7 +400,7 @@ END
 
 // LEVEL 4
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,MAGE_ALL)
 	!Class(Myself,SORCERER)
 	ClassLevelGT(Myself,WIZARD,6)
@@ -411,7 +411,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,SORCERER)
 	ClassLevelGT(Myself,WIZARD,7)
 	!HaveKnownSpellRES("SPWI420")
@@ -421,7 +421,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,BARD_ALL)
 	Kit(Myself,C0SABARD)
 	LevelGT(Myself,9)
@@ -432,7 +432,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA401","LOCALS",1)
 	!HaveKnownSpellRES("C0SA401")
@@ -442,7 +442,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA402","LOCALS",1)
 	!HaveKnownSpellRES("C0SA402")
@@ -452,7 +452,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA403","LOCALS",1)
 	!HaveKnownSpellRES("C0SA403")
@@ -462,7 +462,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA404","LOCALS",1)
 	!HaveKnownSpellRES("C0SA404")
@@ -472,7 +472,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA405","LOCALS",1)
 	!HaveKnownSpellRES("C0SA405")
@@ -482,7 +482,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA406","LOCALS",1)
 	!HaveKnownSpellRES("C0SA406")
@@ -492,7 +492,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA407","LOCALS",1)
 	!HaveKnownSpellRES("C0SA407")
@@ -502,7 +502,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA408","LOCALS",1)
 	!HaveKnownSpellRES("C0SA408")
@@ -512,7 +512,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA409","LOCALS",1)
 	!HaveKnownSpellRES("C0SA409")
@@ -522,7 +522,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA410","LOCALS",1)
 	!HaveKnownSpellRES("C0SA410")
@@ -532,7 +532,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA411","LOCALS",1)
 	!HaveKnownSpellRES("C0SA411")
@@ -542,7 +542,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA412","LOCALS",1)
 	!HaveKnownSpellRES("C0SA412")
@@ -552,7 +552,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA412","LOCALS",1)
 	!HaveKnownSpellRES("C0SA413")
@@ -564,7 +564,7 @@ END
 
 // LEVEL 5
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA501","LOCALS",1)
 	!HaveKnownSpellRES("C0SA501")
@@ -574,7 +574,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA502","LOCALS",1)
 	!HaveKnownSpellRES("C0SA502")
@@ -584,7 +584,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA503","LOCALS",1)
 	!HaveKnownSpellRES("C0SA503")
@@ -594,7 +594,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA504","LOCALS",1)
 	!HaveKnownSpellRES("C0SA504")
@@ -604,7 +604,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA505","LOCALS",1)
 	!HaveKnownSpellRES("C0SA505")
@@ -614,7 +614,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA506","LOCALS",1)
 	!HaveKnownSpellRES("C0SA506")
@@ -624,7 +624,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA507","LOCALS",1)
 	!HaveKnownSpellRES("C0SA507")
@@ -634,7 +634,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA508","LOCALS",1)
 	!HaveKnownSpellRES("C0SA508")
@@ -644,7 +644,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA509","LOCALS",1)
 	!HaveKnownSpellRES("C0SA509")
@@ -654,7 +654,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA510","LOCALS",1)
 	!HaveKnownSpellRES("C0SA510")
@@ -664,7 +664,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA511","LOCALS",1)
 	!HaveKnownSpellRES("C0SA511")
@@ -674,7 +674,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA512","LOCALS",1)
 	!HaveKnownSpellRES("C0SA512")
@@ -686,7 +686,7 @@ END
 
 // LEVEL 6
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,MAGE_ALL)
 	ClassLevelGT(Myself,WIZARD,11)
 	!HaveKnownSpellRES("SPWI617")
@@ -696,7 +696,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,BARD_ALL)
 	Kit(Myself,C0SABARD)
 	LevelGT(Myself,15)
@@ -707,7 +707,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA601","LOCALS",1)
 	!HaveKnownSpellRES("C0SA601")
@@ -717,7 +717,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA602","LOCALS",1)
 	!HaveKnownSpellRES("C0SA602")
@@ -727,7 +727,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA603","LOCALS",1)
 	!HaveKnownSpellRES("C0SA603")
@@ -737,7 +737,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA604","LOCALS",1)
 	!HaveKnownSpellRES("C0SA604")
@@ -747,7 +747,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA605","LOCALS",1)
 	!HaveKnownSpellRES("C0SA605")
@@ -757,7 +757,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA606","LOCALS",1)
 	!HaveKnownSpellRES("C0SA606")
@@ -767,7 +767,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA607","LOCALS",1)
 	!HaveKnownSpellRES("C0SA607")
@@ -777,7 +777,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA608","LOCALS",1)
 	!HaveKnownSpellRES("C0SA608")
@@ -787,7 +787,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA609","LOCALS",1)
 	!HaveKnownSpellRES("C0SA609")
@@ -797,7 +797,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA610","LOCALS",1)
 	!HaveKnownSpellRES("C0SA610")
@@ -807,7 +807,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA611","LOCALS",1)
 	!HaveKnownSpellRES("C0SA611")
@@ -819,7 +819,7 @@ END
 
 // LEVEL 7
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,MAGE_ALL)
 	ClassLevelGT(Myself,WIZARD,13)
 	!HaveKnownSpellRES("SPWI710")
@@ -829,7 +829,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA701","LOCALS",1)
 	!HaveKnownSpellRES("C0SA701")
@@ -839,7 +839,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA702","LOCALS",1)
 	!HaveKnownSpellRES("C0SA702")
@@ -849,7 +849,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA703","LOCALS",1)
 	!HaveKnownSpellRES("C0SA703")
@@ -859,7 +859,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA704","LOCALS",1)
 	!HaveKnownSpellRES("C0SA704")
@@ -869,7 +869,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA705","LOCALS",1)
 	!HaveKnownSpellRES("C0SA705")
@@ -879,7 +879,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA706","LOCALS",1)
 	!HaveKnownSpellRES("C0SA706")
@@ -889,7 +889,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA707","LOCALS",1)
 	!HaveKnownSpellRES("C0SA707")
@@ -899,7 +899,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA708","LOCALS",1)
 	!HaveKnownSpellRES("C0SA708")
@@ -909,7 +909,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA709","LOCALS",1)
 	!HaveKnownSpellRES("C0SA709")
@@ -919,7 +919,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA710","LOCALS",1)
 	!HaveKnownSpellRES("C0SA710")
@@ -929,7 +929,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA711","LOCALS",1)
 	!HaveKnownSpellRES("C0SA711")
@@ -939,7 +939,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA712","LOCALS",1)
 	!HaveKnownSpellRES("C0SA712")
@@ -951,7 +951,7 @@ END
 
 // LEVEL 8
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,MAGE_ALL)
 	ClassLevelGT(Myself,WIZARD,15)
 	!HaveKnownSpellRES("SPWI809")
@@ -961,7 +961,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA801","LOCALS",1)
 	!HaveKnownSpellRES("C0SA801")
@@ -971,7 +971,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA802","LOCALS",1)
 	!HaveKnownSpellRES("C0SA802")
@@ -981,7 +981,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA803","LOCALS",1)
 	!HaveKnownSpellRES("C0SA803")
@@ -991,7 +991,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA804","LOCALS",1)
 	!HaveKnownSpellRES("C0SA804")
@@ -1001,7 +1001,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA805","LOCALS",1)
 	!HaveKnownSpellRES("C0SA805")
@@ -1011,7 +1011,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA806","LOCALS",1)
 	!HaveKnownSpellRES("C0SA806")
@@ -1022,7 +1022,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA806","LOCALS",1)
 	Global("C0BlackfireRuin","LOCALS",3)
@@ -1033,7 +1033,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA807","LOCALS",1)
 	!HaveKnownSpellRES("C0SA807")
@@ -1043,7 +1043,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA808","LOCALS",1)
 	!HaveKnownSpellRES("C0SA808")
@@ -1053,7 +1053,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA809","LOCALS",1)
 	!HaveKnownSpellRES("C0SA809")
@@ -1063,7 +1063,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA810","LOCALS",1)
 	!HaveKnownSpellRES("C0SA810")
@@ -1073,7 +1073,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA811","LOCALS",1)
 	!HaveKnownSpellRES("C0SA811")
@@ -1083,7 +1083,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA812","LOCALS",1)
 	!HaveKnownSpellRES("C0SA812")
@@ -1095,7 +1095,7 @@ END
 
 // LEVEL 9
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	Class(Myself,MAGE_ALL)
 	ClassLevelGT(Myself,WIZARD,17)
 	!HaveKnownSpellRES("SPWI908")
@@ -1105,7 +1105,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA901","LOCALS",1)
 	!HaveKnownSpellRES("C0SA901")
@@ -1115,7 +1115,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA902","LOCALS",1)
 	!HaveKnownSpellRES("C0SA902")
@@ -1125,7 +1125,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA903","LOCALS",1)
 	!HaveKnownSpellRES("C0SA903")
@@ -1135,7 +1135,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA904","LOCALS",1)
 	!HaveKnownSpellRES("C0SA904")
@@ -1145,7 +1145,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA905","LOCALS",1)
 	!HaveKnownSpellRES("C0SA905")
@@ -1155,7 +1155,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA906","LOCALS",1)
 	!HaveKnownSpellRES("C0SA906")
@@ -1165,7 +1165,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA907","LOCALS",1)
 	!HaveKnownSpellRES("C0SA907")
@@ -1175,7 +1175,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA908","LOCALS",1)
 	!HaveKnownSpellRES("C0SA908")
@@ -1185,7 +1185,7 @@ THEN
 	Continue()
 END
 IF 
-	Specifics(Myself,SHADOW_ADEPT)
+	%is_shadow_adept_myself%
 	ActionListEmpty()
 	Global("C0SA909","LOCALS",1)
 	!HaveKnownSpellRES("C0SA909")

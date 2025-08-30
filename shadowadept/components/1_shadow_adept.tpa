@@ -6,6 +6,53 @@ COPY ~%MOD_FOLDER%/spells~ ~override~
 COPY ~%MOD_FOLDER%/spells/bams~ ~override~
 COPY ~%MOD_FOLDER%/spells/main~ ~override~
 
+ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+    LAF ADD_IDS_ENTRY INT_VAR preferredValue = 205 STR_VAR idsFile = "stats.ids" identifier = "IS_SHADOW_ADEPT" RET value END
+
+OUTER_SET is_shadow_adept_stat = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~)
+
+OUTER_TEXT_SPRINT %is_shadow_adept_player1% ~CheckStatGT(Player1,0,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player2% ~CheckStatGT(Player2,0,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player3% ~CheckStatGT(Player3,0,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player4% ~CheckStatGT(Player4,0,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player5% ~CheckStatGT(Player5,0,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player6% ~CheckStatGT(Player6,6,IS_SHADOW_ADEPT)~
+
+OUTER_TEXT_SPRINT %is_shadow_adept_lasttalkedtoby% ~CheckStatGT(LastTalkedToBy,0,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_myself% ~CheckStatGT(Myself,0,IS_SHADOW_ADEPT)~
+
+APPEND ~splprot.2da~ ~C0_IS_SHADOW_ADEPT %is_shadow_adept_stat% 1 1~ UNLESS ~C0_IS_SHADOW_ADEPT 0x111 1 1~
+COPY_EXISTING ~splprot.2da~ ~override~ 
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0_IS_SHADOW_ADEPT~ BEGIN
+	    SET C0_IS_SHADOW_ADEPT = %row%
+	  END
+	END
+    OUTER_SET eeex_sa_splprot_param1 = %-1%
+    OUTER_SET eeex_sa_splprot_param2 = C0_IS_SHADOW_ADEPT
+    OUTER_SET eeex_sa_splprot_power = 3
+  END ELSE BEGIN
+
+    LAF ADD_IDS_ENTRY INT_VAR minValue = 200 maxValue = 255 preferredValue = 200 STR_VAR idsFile = "specific.ids" identifier = "SHADOW_ADEPT" RET value END
+
+OUTER_TEXT_SPRINT %is_shadow_adept_player1% ~Specifics(Player1,SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player2% ~Specifics(Player2,SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player3% ~Specifics(Player3,SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player4% ~Specifics(Player4,SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player5% ~Specifics(Player5,SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player6% ~Specifics(Player6,SHADOW_ADEPT)~
+
+OUTER_TEXT_SPRINT %is_shadow_adept_lasttalkedtoby% ~Specifics(LastTalkedToBy,SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_myself% ~Specifics(Myself,SHADOW_ADEPT)~
+
+    OUTER_SET eeex_sa_splprot_param1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+    OUTER_SET eeex_sa_splprot_param2 = 6
+    OUTER_SET eeex_sa_splprot_power = 1
+  END
+
 ////////////////////////////////////////
 ///////////////ANIMATIONS///////////////
 ////////////////////////////////////////
@@ -37,10 +84,10 @@ END
 ////////////////////////////////////////
 
 COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0satalk.d~
-COMPILE ~%MOD_FOLDER%/dialogue/c0saorb.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0saorb.d~
 
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
-COMPILE ~%MOD_FOLDER%/dialogue/bg2dial.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/bg2dial.d~
 END
 
 ////////////////////////////////////////
@@ -73,37 +120,37 @@ END
 ////////////////////////////////////////
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~ EVAL
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/bdbaldur.baf~
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/bdbaldur.baf~ EVAL
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~ EVAL
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~bdcutgl2.bcs~ THEN BEGIN
-COMPILE ~%MOD_FOLDER%/dialogue/soddial.d~
-COMPILE ~%MOD_FOLDER%/scripts/c0cutgl2.baf~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/soddial.d~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0cutgl2.baf~
 END
 
-COMPILE ~%MOD_FOLDER%/scripts/c0saplay.baf~
-EXTEND_BOTTOM ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/c0saplay.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0saplay.baf~
+EXTEND_BOTTOM ~dplayer2.bcs~ ~%MOD_FOLDER%/scripts/c0saplay.baf~ EVAL
 
-COMPILE ~%MOD_FOLDER%/scripts/c0saorb.baf~
-COMPILE ~%MOD_FOLDER%/scripts/c0sasumm.baf~
-COMPILE ~%MOD_FOLDER%/scripts/c0devsha.baf~
-COMPILE ~%MOD_FOLDER%/scripts/c0nighth.baf~
-COMPILE ~%MOD_FOLDER%/scripts/c0sa711.baf~
-COMPILE ~%MOD_FOLDER%/scripts/c0sadept.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0saorb.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0sasumm.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0devsha.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0nighth.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0sa711.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0sadept.baf~
 
 COPY_EXISTING ~c0sadep.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
 	  match_opcode = 72
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+	  parameter1 = %eeex_sa_splprot_param1%
   END
 
 COPY ~%MOD_FOLDER%/Items/c0sabook.bam~ ~override~
@@ -113,9 +160,9 @@ COPY ~%MOD_FOLDER%/Items/c0sabook.itm~ ~override~
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
+	  parameter1 = %eeex_sa_splprot_param1%
+	  parameter2 = %eeex_sa_splprot_param2%
+	  power = %eeex_sa_splprot_power%
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Book~
@@ -128,7 +175,7 @@ STATISTICS:
 
 Weight: 2~
 
-COMPILE ~%MOD_FOLDER%/dialogue/c0sabook.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0sabook.d~
 
 OUTER_SET readtome = RESOLVE_STR_REF (~Read Tome~)
 APPEND ~ITEMDIAL.2da~ ~C0SABOOK    %readtome%    C0SABOOK~

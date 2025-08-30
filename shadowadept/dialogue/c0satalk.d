@@ -5,23 +5,23 @@ BEGIN C0SABOX2
 BEGIN C0SABOX3
 BEGIN C0SABOX4
 
-CHAIN IF WEIGHT #-1 ~!Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0SABOX1 NO_ADEPT
+CHAIN IF WEIGHT #-1 ~!%is_shadow_adept_lasttalkedtoby%~ THEN C0SABOX1 NO_ADEPT
 ~The box resists any attempt to open it.~
 EXIT
 
-CHAIN IF WEIGHT #-1 ~!Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0SABOX2 NO_ADEPT
+CHAIN IF WEIGHT #-1 ~!%is_shadow_adept_lasttalkedtoby%~ THEN C0SABOX2 NO_ADEPT
 ~The box resists any attempt to open it.~
 EXIT
 
-CHAIN IF WEIGHT #-1 ~!Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0SABOX3 NO_ADEPT
+CHAIN IF WEIGHT #-1 ~!%is_shadow_adept_lasttalkedtoby%~ THEN C0SABOX3 NO_ADEPT
 ~The box resists any attempt to open it.~
 EXIT
 
-CHAIN IF WEIGHT #-1 ~!Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0SABOX4 NO_ADEPT
+CHAIN IF WEIGHT #-1 ~!%is_shadow_adept_lasttalkedtoby%~ THEN C0SABOX4 NO_ADEPT
 ~The box resists any attempt to open it.~
 EXIT
 
-CHAIN IF WEIGHT #-1 ~Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0SABOX1 ADEPT
+CHAIN IF WEIGHT #-1 ~%is_shadow_adept_lasttalkedtoby%~ THEN C0SABOX1 ADEPT
 ~The box seems to respond to magic from the Plane of Shadow. Even a novice shadow adept may open it and discover what's inside.~
 END
 ++ ~Open the box.~ DO ~SetInterrupt(FALSE)
@@ -35,7 +35,7 @@ CreateCreatureObject("C0SAMON1",Myself,1,0,0)
 SetInterrupt(TRUE)~ EXIT
 ++ ~Leave the box alone.~ EXIT
 
-CHAIN IF WEIGHT #-1 ~Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0SABOX2 ADEPT
+CHAIN IF WEIGHT #-1 ~%is_shadow_adept_lasttalkedtoby%~ THEN C0SABOX2 ADEPT
 ~The box seems to respond to magic from the Plane of Shadow. A shadow adept with some experience may open it and discover what's inside.~
 END
 ++ ~Open the box.~ DO ~SetInterrupt(FALSE)
@@ -51,7 +51,7 @@ CreateCreatureObject("C0SAMOS1",Myself,1,0,0)
 SetInterrupt(TRUE)~ EXIT
 ++ ~Leave the box alone.~ EXIT
 
-CHAIN IF WEIGHT #-1 ~Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0SABOX3 ADEPT
+CHAIN IF WEIGHT #-1 ~%is_shadow_adept_lasttalkedtoby%~ THEN C0SABOX3 ADEPT
 ~The box seems to respond to magic from the Plane of Shadow. An experienced shadow adept may open it and discover what's inside.~
 END
 ++ ~Open the box.~ DO ~SetInterrupt(FALSE)
@@ -67,7 +67,7 @@ CreateCreatureObject("C0SAMOS2",Myself,1,0,0)
 SetInterrupt(TRUE)~ EXIT
 ++ ~Leave the box alone.~ EXIT
 
-CHAIN IF WEIGHT #-1 ~Specifics(LastTalkedToBy,SHADOW_ADEPT)~ THEN C0SABOX4 ADEPT
+CHAIN IF WEIGHT #-1 ~%is_shadow_adept_lasttalkedtoby%~ THEN C0SABOX4 ADEPT
 ~The box seems to respond to magic from the Plane of Shadow. A particularly skilled shadow adept may open it and discover what's inside.~
 END
 ++ ~Open the box.~ DO ~SetInterrupt(FALSE)

@@ -5,6 +5,83 @@
 COPY ~%MOD_FOLDER%/items/c0sainvu.itm~ ~override~
 COPY ~%MOD_FOLDER%/items/c0unisha.itm~ ~override~
 
+ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+
+COPY ~%MOD_FOLDER%/creatures/c0sakryn.cre~ ~override~
+WRITE_ASCII 0x248 ~c0sakryn~  #8  // override
+WRITE_ASCII 0x2cc ~c0sakryn~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0sakryn~ #32 // death variable
+SAY NAME1 ~Kryn Darkflame~
+SAY NAME2 ~Kryn Darkflame~
+WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/creatures/c0samag1.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag1~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/creatures/c0samag2.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag2~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/creatures/c0samag3.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag3~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/creatures/c0samag4.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag4~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/creatures/c0samag5.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag5~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/creatures/c02sachi.cre~ ~override~
+WRITE_ASCII 0x280 ~c02sachi~ #32 // death variable
+SAY NAME1 ~Shadow Chimera~
+SAY NAME2 ~Shadow Chimera~
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_CHIMERA~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+    /////////////////
+ 
+  END ELSE BEGIN
+
+	/////////////////
+
 COPY ~%MOD_FOLDER%/creatures/c0sakryn.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sakryn~  #8  // override
 WRITE_ASCII 0x2cc ~c0sakryn~  #8  // dialogue
@@ -14,10 +91,6 @@ SAY NAME2 ~Kryn Darkflame~
 WRITE_ASCII 0X34 ~c0kryn~ #8   //small portrait
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
-
-COPY_EXISTING ~c0savis.spl~ ~override~
-SAY NAME1 ~Darkflame Brand~
-SAY UNIDENTIFIED_DESC #-1
 
 COPY ~%MOD_FOLDER%/creatures/c0samag1.cre~ ~override~
 WRITE_ASCII 0x248 ~~  #8  // override
@@ -29,15 +102,68 @@ SAY NAME2 ~Shadowy Apparition~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
+COPY ~%MOD_FOLDER%/creatures/c0samag2.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag2~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+COPY ~%MOD_FOLDER%/creatures/c0samag3.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag3~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+COPY ~%MOD_FOLDER%/creatures/c0samag4.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag4~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+COPY ~%MOD_FOLDER%/creatures/c0samag5.cre~ ~override~
+WRITE_ASCII 0x248 ~~  #8  // override
+WRITE_ASCII 0x250 ~c0sadept~  #8  // class
+WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
+WRITE_ASCII 0x280 ~c0samag5~ #32 // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+COPY ~%MOD_FOLDER%/creatures/c02sachi.cre~ ~override~
+WRITE_ASCII 0x280 ~c02sachi~ #32 // death variable
+SAY NAME1 ~Shadow Chimera~
+SAY NAME2 ~Shadow Chimera~
+WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_CHIMERA~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+END
+
+COPY_EXISTING ~c0savis.spl~ ~override~
+SAY NAME1 ~Darkflame Brand~
+SAY UNIDENTIFIED_DESC #-1
+
 COPY ~%MOD_FOLDER%/itempack/c0samag1.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
+	  parameter1 = %eeex_sa_splprot_param1%
+	  parameter2 = %eeex_sa_splprot_param2%
+	  power = %eeex_sa_splprot_power%
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Quarterstaff~
@@ -61,25 +187,15 @@ Requires:
 
 Weight: 4~
 
-COPY ~%MOD_FOLDER%/creatures/c0samag2.cre~ ~override~
-WRITE_ASCII 0x248 ~~  #8  // override
-WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
-WRITE_ASCII 0x280 ~c0samag2~ #32 // death variable
-SAY NAME1 ~Shadowy Apparition~
-SAY NAME2 ~Shadowy Apparition~
-  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
-
 COPY ~%MOD_FOLDER%/itempack/c0samag2.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
+	  parameter1 = %eeex_sa_splprot_param1%
+	  parameter2 = %eeex_sa_splprot_param2%
+	  power = %eeex_sa_splprot_power%
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Quarterstaff~
@@ -103,25 +219,15 @@ Requires:
 
 Weight: 4~
 
-COPY ~%MOD_FOLDER%/creatures/c0samag3.cre~ ~override~
-WRITE_ASCII 0x248 ~~  #8  // override
-WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
-WRITE_ASCII 0x280 ~c0samag3~ #32 // death variable
-SAY NAME1 ~Shadowy Apparition~
-SAY NAME2 ~Shadowy Apparition~
-  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
-
 COPY ~%MOD_FOLDER%/itempack/c0samag3.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
+	  parameter1 = %eeex_sa_splprot_param1%
+	  parameter2 = %eeex_sa_splprot_param2%
+	  power = %eeex_sa_splprot_power%
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Quarterstaff~
@@ -145,25 +251,15 @@ Requires:
 
 Weight: 4~
 
-COPY ~%MOD_FOLDER%/creatures/c0samag4.cre~ ~override~
-WRITE_ASCII 0x248 ~~  #8  // override
-WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
-WRITE_ASCII 0x280 ~c0samag4~ #32 // death variable
-SAY NAME1 ~Shadowy Apparition~
-SAY NAME2 ~Shadowy Apparition~
-  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
-
 COPY ~%MOD_FOLDER%/itempack/c0samag4.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
+	  parameter1 = %eeex_sa_splprot_param1%
+	  parameter2 = %eeex_sa_splprot_param2%
+	  power = %eeex_sa_splprot_power%
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Quarterstaff~
@@ -187,25 +283,15 @@ Requires:
 
 Weight: 4~
 
-COPY ~%MOD_FOLDER%/creatures/c0samag5.cre~ ~override~
-WRITE_ASCII 0x248 ~~  #8  // override
-WRITE_ASCII 0x250 ~c0sadept~  #8  // class
-WRITE_ASCII 0x2cc ~c0samage~  #8  // dialogue
-WRITE_ASCII 0x280 ~c0samag5~ #32 // death variable
-SAY NAME1 ~Shadowy Apparition~
-SAY NAME2 ~Shadowy Apparition~
-  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
-
 COPY ~%MOD_FOLDER%/itempack/c0samag5.itm~ ~override~
   LPF ADD_ITEM_EQEFFECT
     INT_VAR
       opcode = 319
 	  target = 1
 	  timing = 2
-	  parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-	  parameter2 = 6
-	  power = 1
+	  parameter1 = %eeex_sa_splprot_param1%
+	  parameter2 = %eeex_sa_splprot_param2%
+	  power = %eeex_sa_splprot_power%
 	  special = RESOLVE_STR_REF (~Shadow Adept~)
 END
 SAY NAME1 ~Quarterstaff~
@@ -230,7 +316,7 @@ Requires:
 Weight: 4~
 
 
-COMPILE ~%MOD_FOLDER%/dialogue/c0sakryn.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0sakryn.d~
 
 OUTER_SET shadow_mage_name1 = RESOLVE_STR_REF (~Xarius the Black~)
 OUTER_SET shadow_mage_name2 = RESOLVE_STR_REF (~Chang Yu'lien~)
@@ -239,11 +325,11 @@ OUTER_SET shadow_mage_name4 = RESOLVE_STR_REF (~Nym Phaundal~)
 OUTER_SET shadow_mage_name5 = RESOLVE_STR_REF (~Ivette Cold-Whisper~)
 
 COMPILE EVAL ~%MOD_FOLDER%/dialogue/c0samage.d~
-COMPILE ~%MOD_FOLDER%/dialogue/bg1dial.d~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/bg1dial.d~
 
-COMPILE ~%MOD_FOLDER%/scripts/c0sahart.baf~
-COMPILE ~%MOD_FOLDER%/scripts/c0sakryn.baf~
-COMPILE ~%MOD_FOLDER%/scripts/c0satele.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0sahart.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0sakryn.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c0satele.baf~
 
 COPY ~%MOD_FOLDER%/items/c0sasto1.sto~ ~override~
 SAY 0xc ~Darkflame Enclave~
@@ -273,20 +359,14 @@ THEN BEGIN
 EXTEND_TOP ~bd0113.bcs~ ~%MOD_FOLDER%/scripts/bd0113.baf~
 EXTEND_TOP ~bd3000.bcs~ ~%MOD_FOLDER%/scripts/bd3000.baf~
 EXTEND_TOP ~bdcut42.bcs~ ~%MOD_FOLDER%/scripts/bdcut42.baf~
-COMPILE ~%MOD_FOLDER%/dialogue/c02samag.d~
-COMPILE ~%MOD_FOLDER%/scripts/c02samag.baf~
+COMPILE EVAL ~%MOD_FOLDER%/dialogue/c02samag.d~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/c02samag.baf~
+
 COPY ~%MOD_FOLDER%/creatures/c02samag.cre~ ~override~
 WRITE_ASCII 0x2cc ~c02samag~  #8  // dialogue
 WRITE_ASCII 0x280 ~c02samag~ #32 // death variable
 SAY NAME1 ~Kaladan Za'al~
 SAY NAME2 ~Kaladan Za'al~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
-
-COPY ~%MOD_FOLDER%/creatures/c02sachi.cre~ ~override~
-WRITE_ASCII 0x280 ~c02sachi~ #32 // death variable
-SAY NAME1 ~Shadow Chimera~
-SAY NAME2 ~Shadow Chimera~
-WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_CHIMERA~))
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
 END

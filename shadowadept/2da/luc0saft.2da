@@ -31,5 +31,3 @@
 28          GA_C0SAHLA3 c0sahla3   *          1          99         1          *           *           *          
 29          GA_C0SAHLA4 c0sahla4   *          1          99         1          *           *           *          
 30         GA_C0SAHLAA c0sahlab   *          1          99         1          *           *           *          
-31         AP_C0SAHLA5 c0sahla5   *          1          99         1          *           AP_C0SAHLA6 *          
-32         AP_C0SAHLA6 c0sahla6   *          1          99         1          *           AP_C0SAHLA5 *          

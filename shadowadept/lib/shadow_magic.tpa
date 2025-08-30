@@ -1,11 +1,5 @@
 INCLUDE ~%MOD_FOLDER%/lib/spell_desc.tpa~
 
-// SPECIFICS value SHADOW_ADEPT
-LAF ADD_IDS_ENTRY INT_VAR minValue = 200 maxValue = 255 preferredValue = 200 STR_VAR idsFile = "specific.ids" identifier = "SHADOW_ADEPT" RET value END
-
-// SPLSTATE
-LAF ADD_IDS_ENTRY INT_VAR preferredValue = 127 STR_VAR idsFile = "splstate.ids" identifier = "SA_LIFE_DRAIN" RET value END
-
 ////////////////////////////////////////
 //////////////SPLPROT.2DA///////////////
 ////////////////////////////////////////
@@ -41,6 +35,7 @@ DEFINE_ACTION_FUNCTION	ADD_SPLPROT	INT_VAR	stat = 0	value = 0	relation = 0	RET	n
 		END
 	BUT_ONLY
 END
+
 //	Array of Restistance / Stat#
 ACTION_DEFINE_ASSOCIATIVE_ARRAY	DMG_ARRAY	BEGIN
 	~CRUSH~		=>	22
@@ -318,7 +313,7 @@ COPY_EXISTING ~C0SADAY2.SPL~ ~OVERRIDE~
   ACTION_IF FILE_EXISTS_IN_GAME ~%scroll%.itm~ BEGIN
 	PRINT ~%scroll% is a wizard scroll~
 	COPY_EXISTING ~%scroll%.itm~ ~override~
-	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)) timing = 2 special = RESOLVE_STR_REF (~Shadow Adept~) END
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = %eeex_sa_splprot_param2% parameter1 = (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)) timing = 2 special = RESOLVE_STR_REF (~Shadow Adept~) END
 	BUT_ONLY
   END
  END
@@ -1845,8 +1840,8 @@ SAY NAME1 ~%SA_SPELL_112_NAME%~
 SAY UNIDENTIFIED_DESC ~%SA_SPELL_112_DESC%~
 
 COPY_EXISTING ~C0SA112.itm~ ~override~
-LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) match_parameter2 = 106 END
-LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~) match_parameter2 = 116 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = %eeex_sa_splprot_param1% match_parameter2 = 106 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = %eeex_sa_splprot_param1% match_parameter2 = 116 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (~*gulp*~) END
 SAY NAME2 ~Ebonfruit~
 SAY DESC ~Created by the Ebonfruit spell, these pitch-black berries harvested from the Plane of Shadow will cause a random effect when eaten.
@@ -1965,7 +1960,7 @@ LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 2 parameter2
 LPF ALTER_EFFECT
 	INT_VAR
 		match_opcode = 177
-		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
+		parameter1 = %eeex_sa_splprot_param1%
 END
   LPF ALTER_EFFECT
     INT_VAR
@@ -2227,6 +2222,7 @@ SAY NAME2 ~Shadow of the Void~
   WRITE_ASCII 0x248 ~c0devsha~ #8
   WRITE_ASCII 0x280 ~c0devsha~  #32
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_LARGE~))
 
 COPY_EXISTING ~c0shadsu.cre~ ~override~
 SAY NAME1 ~Shadow~
@@ -2987,6 +2983,7 @@ SAY NAME2 ~Nighthaunt~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x248 ~c0nighth~ #8
   WRITE_ASCII 0x280 ~c0nighth~  #32
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_NIGHTHAUNT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
   
 COPY_EXISTING ~c0nvamp1.itm~ ~override~
@@ -3547,8 +3544,8 @@ LPF ADD_SPELL_EFFECT
 		opcode = 177
 		target = 1
 		timing = 1
-		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-		parameter2 = 6
+		parameter1 = %eeex_sa_splprot_param1%
+		parameter2 = %eeex_sa_splprot_param2%
 	STR_VAR
 		resource = c0misled
 END
@@ -3560,8 +3557,8 @@ LPF ADD_SPELL_EFFECT
 		opcode = 177
 		target = 1
 		timing = 1
-		parameter1 = IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~)
-		parameter2 = 6
+		parameter1 = %eeex_sa_splprot_param1%
+		parameter2 = %eeex_sa_splprot_param2%
 	STR_VAR
 		resource = c0simula
 END
@@ -3940,13 +3937,29 @@ Saving Throw: Neg.
 
 The shadow adept summons a deadly nightwalker, one of the most powerful creatures from the Plane of Shadows, under <PRO_HISHER> command.~
 
+ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+
 COPY_EXISTING ~c0nightw.cre~ ~override~
 SAY NAME1 ~Nightwalker~
 SAY NAME2 ~Nightwalker~
   WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
   WRITE_ASCII 0x280 ~c0nightw~  #32
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_NIGHTWALKER~))
-  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 66 target = 1 parameter1 = 25 parameter2 = 0 timing = 9 END
+
+  END ELSE BEGIN
+
+COPY_EXISTING ~c0nightw.cre~ ~override~
+SAY NAME1 ~Nightwalker~
+SAY NAME2 ~Nightwalker~
+  WRITE_ASCII 0x268 ~c0sasumm~  #8  // default
+  WRITE_ASCII 0x280 ~c0nightw~  #32
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_NIGHTWALKER~))
+    WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+    LPF ADD_CRE_EFFECT INT_VAR opcode = 66 target = 1 parameter1 = 25 parameter2 = 0 timing = 9 END
+
+END
 
 COPY_EXISTING ~c0sahla4.spl~ ~override~
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 9 parameter2 = 2 timing = 1 STR_VAR resource = C0SA#T0 END
@@ -4028,7 +4041,7 @@ COPY_EXISTING ~c0sahla5.spl~ ~override~
 SAY NAME1 ~Disciple of Darkness~
 SAY NAME2 ~Disciple of Darkness~
 SAY UNIDENTIFIED_DESC ~Disciple of Darkness
-The shadow adept has fully mastered control over the Shadow Weave, gaining +2 to Intelligence, Wisdom and Charisma as well as 20% magic resistance.
+The shadow adept has fully mastered control over the Shadow Weave, gaining +2 to Intelligence and Charisma as well as 20% magic resistance.
 
 Only one of either Disciple of Darkness or Wrath of Darkness may be chosen.~
 
@@ -4036,7 +4049,7 @@ COPY_EXISTING ~c0sahla6.spl~ ~override~
 SAY NAME1 ~Wrath of Darkness~
 SAY NAME2 ~Wrath of Darkness~
 SAY UNIDENTIFIED_DESC ~Wrath of Darkness 
-The shadow adept infuses the power of the Shadow Weave into <PRO_HISHER> very body, gaining +2 to Strength, Dexterity and Constitution, regeneration of one hit point per 3 seconds, +4 to THAC0 and one bonus attack per round.
+The shadow adept infuses the power of the Shadow Weave into <PRO_HISHER> very body, gaining +2 to Strength and Constitution, regeneration of one hit point per 3 seconds, +4 to THAC0 and one bonus attack per round.
 
 Only one of either Disciple of Darkness or Wrath of Darkness may be chosen.~
 
@@ -4085,8 +4098,8 @@ SAY UNIDENTIFIED_DESC ~Eternal Night
 The shadow adept's incredible power allows <PRO_HIMHER> to shroud <PRO_HIMHER>self in darkness, negating daylight penalties. Additionally, the shroud reduces the Magic Resistance of all enemies with in a 15-ft. radius by 25%.~
 
 COPY_EXISTING ~c0sahlad.spl~ ~override~
-SAY NAME1 ~Nocturn Chant~
-SAY UNIDENTIFIED_DESC ~Nocturn Chant
+SAY NAME1 ~Nocturna's Chant~
+SAY UNIDENTIFIED_DESC ~Nocturna's Chant
 The nightsinger channels into the Shadow Weave and draws upon a magical spell using dark music, allowing them to cast a known spell in their spellbook of any level at the cost of half of their maximum hit points as nonlethal damage. If the caster lacks the necessary hit points to cast the spell, they will be knocked unconscious.
 
 This ability may be chosen twice.~

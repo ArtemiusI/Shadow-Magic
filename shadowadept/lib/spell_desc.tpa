@@ -9,7 +9,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None 
 
-The shadow adept launches a missile of energy that unerringly strikes the target for 1d3+1 unmitigated magic cold damage. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), an additional +3 damage is dealt. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d4+10 damage) at level 9.~
+The shadow adept launches a missile of energy that unerringly strikes the target for 1d3+1 unmitigated magic cold damage. If the target is physically incapacitated (held, asleep, silenced, poisoned, diseased, slowed, blinded), an additional +3 damage is dealt. An additional missile is launched for every 2 levels of the caster to a maximum of five missiles (5d3+5 damage) at level 9.~
 
 OUTER_SPRINT SA_SPELL_102_NAME ~Sigil of Despair~
 OUTER_SPRINT SA_SPELL_102_DESC ~Sigil of Despair
@@ -184,12 +184,14 @@ OUTER_SPRINT SA_SPELL_201_DESC ~Dark Mirage
 
 Level: 2
 Range: 0
-Duration: 1 hour
+Duration: 3 rounds + 1 round/level
 Casting Time: 2
 Area of Effect: The caster
 Saving Throw: None
 
-When Dark Mirage is cast, the shadow adept causes the outline of <PRO_HISHER> form to become blurred, shifting and wavering. This distortion causes all missile and melee attacks against the caster to be made with a -3 penalty. The shadow adept also gains a +1 bonus to all of <PRO_HISHER> Saving Throws. Additionally, the caster causes from 2 to 8 exact duplicates of <PRO_HIMHER>self to come into being around <PRO_HIMHER>. These images do exactly what the shadow adept does. Since the spell causes a blurring and slight distortion when cast, it is impossible for opponents to be certain which are the illusions and which is the actual shadow adept. When an image is struck by a melee or missile attack—magical or otherwise—it disappears, but any other existing images remain intact until they are struck. However, it is important to note that this will not protect the caster against every attack, as it is possible for an enemy to choose the real caster amongst all the images.~
+When Dark Mirage is cast, the shadow adept causes the outline of <PRO_HISHER> form to become blurred, shifting and wavering. This distortion causes all missile attacks against the caster to be made with a -4 penalty. Additionally, for the duration of the spell, the caster is surrounded by an illusory duplicate of <PRO_HIMHER>self, copying ann their actions. Since the spell causes a blurring and slight distortion when cast, it is impossible for opponents to be certain which are the illusions and which is the actual shadow adept. When an image is struck by a melee or missile attack—magical or otherwise—it reforms after a brief moment. However, it is important to note that this will not protect the caster against every attack, as it is possible for an enemy to choose the real caster amongst all the images.
+
+From 13th level onwards, this spell generates two duplicates, and from 18th level onwards, it generates three.~
 
 OUTER_SPRINT SA_SPELL_202_NAME ~Night Terrors~
 OUTER_SPRINT SA_SPELL_202_DESC ~Night Terrors
@@ -467,7 +469,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: Neg. 
 
-This spell holds one creature of any type rigidly immobile and in place for one turn, unless a Saving Throw vs. Spell is made with a -4 penalty. Those who succeed on their Saving Throws are totally unaffected by the spell.
+This spell holds one creature of any type rigidly immobile and in place for one turn, unless a Saving Throw vs. Spell is made with a -3 penalty. Those who succeed on their Saving Throws are totally unaffected by the spell.
 
 Held creatures cannot move or speak, but they remain aware of events around them and can use abilities not requiring motion or speech. Being held does not prevent the worsening of the subject's condition due to wounds, diseases, or poison.~
 
@@ -732,7 +734,7 @@ Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces – a shimmering – allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus. Additionally, for as long as the caster is at least partially invisible, <PRO_HESHE> is healed for 2d6 hit points per round for the duration.
+This spell is similar to Invisibility, but the recipient is able to attack by missile discharge, melee combat, or spellcasting while remaining unseen. However, telltale traces – a shimmering – allow an observant opponent to attack the invisible spell recipient. These traces are only noticeable when specifically looked for (after the invisible character has made <PRO_HISHER> presence known). Attacks against the invisible character suffer a -4 penalty to attack rolls, and the invisible character's Saving Throws are made with a +4 bonus. Additionally, for as long as the caster is at least partially invisible, <PRO_HESHE> is healed for 1d6 hit points per round for the duration.
 
 Note: After making an attack, the caster is no longer completely invisible. Opponents can target the caster. The caster is treated as Non-Detected for the duration.~
 
@@ -972,7 +974,7 @@ Casting Time: 8
 Area of Effect: Special
 Saving Throw: None
 
-This spell conjures forth a nighthaunt, an undead monster from the Shadow Plane. Nighthaunts are deadly creatures that emit an aura of desecration, reducing the THAC0 and damage of all nearby living creatures by two points while increasing THAC0 and damage of all undead creatures by two points. Its natural weapon is capable of draining two levels on hit and strikes as a +4 weapon. However, nighthaunts are greatly weakened in natural daylight. From 14th level onwards, two nighthaunts are summoned instead.
+This spell conjures forth a nighthaunt, an undead monster from the Shadow Plane. Nighthaunts are deadly creatures that emit an aura of desecration, reducing the THAC0 and damage of all nearby living creatures by two points while increasing THAC0 and damage of all undead creatures by two points. Its natural weapon is capable of draining one level on hit on a failed Save vs. Death and strikes as a +3 weapon. However, nighthaunts are greatly weakened in natural daylight. From 16th level onwards, two nighthaunts are summoned instead.
 
 The nighthaunt is fully under the control of the caster for the duration of the spell and will follow all of <PRO_HISHER> orders until the duration has expired.~
 

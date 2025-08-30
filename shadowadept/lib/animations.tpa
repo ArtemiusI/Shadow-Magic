@@ -18,6 +18,9 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY sa_anims_Exxx BEGIN
     ~C0WO~ => ~C0_Shadow_Wolf~
     ~C0CH~ => ~C0_Shadow_Chimera~
     ~C0HD~ => ~C0_Half_Dragon_Shadow~
+    ~C0NH~ => ~C0_Nighthaunt~
+    ~C0SH1~ => ~C0_Shadow~
+    ~C0SH2~ => ~C0_Shadow_Large~
   END
   ACTION_PHP_EACH sa_anims_Exxx AS sa_folder => symbol BEGIN
     ACTION_BASH_FOR ~%MOD_FOLDER%/animations/%sa_folder%~ ~.+\.bam~ ~%MOD_FOLDER%/animations/%sa_folder%~ ~.+\.bmp~ BEGIN
