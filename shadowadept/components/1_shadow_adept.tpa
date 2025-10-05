@@ -7,7 +7,7 @@ COPY ~%MOD_FOLDER%/spells/bams~ ~override~
 COPY ~%MOD_FOLDER%/spells/main~ ~override~
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
-    LAF ADD_IDS_ENTRY INT_VAR preferredValue = 205 STR_VAR idsFile = "stats.ids" identifier = "IS_SHADOW_ADEPT" RET value END
+	LAF ADD_IDS_ENTRY INT_VAR minValue = 1 preferredValue = 200 STR_VAR idsFile = "stats.ids" identifier = "IS_SHADOW_ADEPT" RET value END
 
 OUTER_SET is_shadow_adept_stat = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~)
 
