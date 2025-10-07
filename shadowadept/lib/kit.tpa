@@ -1381,3 +1381,7 @@ When the voices became too much to resist, you snuck into the depths of Candleke
   RET
     kit_id
 END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~C0BDS00.SPL~ BEGIN
+	INCLUDE ~BardicWonders/lib/dark_inspirations.tpa~
+END
