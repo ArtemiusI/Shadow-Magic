@@ -12,8 +12,7 @@ END
 ++ ~What is the meaning of that look?~ DO ~SetGlobal("C0CiceroShop","Global",1)~ + CICERO-1
 ++ ~Have we met?~ DO ~SetGlobal("C0CiceroShop","Global",1)~ + CICERO-1
 
-CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",1)
-%is_shadow_adept_lasttalkedtoby%~ THEN C0CICER CICERO-STORE
+CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",1)~ THEN C0CICER CICERO-STORE
 ~We meet again. I still have many scrolls to offer, should you be in need. The gold will aid in my research.~
 END
 ++ ~Show me what you have.~ DO ~StartStore("c0sascr1",Lasttalkedtoby(Myself))~ EXIT
