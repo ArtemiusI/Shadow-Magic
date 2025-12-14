@@ -12,8 +12,7 @@ END
 ++ ~What is the meaning of that look?~ DO ~SetGlobal("C0CiceroShop","Global",1)~ + CICERO-1
 ++ ~Have we met?~ DO ~SetGlobal("C0CiceroShop","Global",1)~ + CICERO-1
 
-CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",1)
-%is_shadow_adept_lasttalkedtoby%~ THEN C0CICER CICERO-STORE
+CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",1)~ THEN C0CICER CICERO-STORE
 ~We meet again. I still have many scrolls to offer, should you be in need. The gold will aid in my research.~
 END
 ++ ~Show me what you have.~ DO ~StartStore("c0sascr1",Lasttalkedtoby(Myself))~ EXIT
@@ -75,13 +74,7 @@ CHAIN C0JEVAN JEVAN-2
 ~* Calm, Veldrin. What you intend to do in this place in such a disguise is none of my affair. I am neither a native of this city, nor do my loyalties lie with those who would see you dead. 'Twas mere coincidence that we crossed paths. *~ [EFF_P05]
 = ~* So long as you do not interfere with my business, I will treat you the same in turn. In fact... we may even be able to be of benefit to each other. *~
 END
-IF ~OR(6)
-%is_shadow_adept_player1%
-%is_shadow_adept_player2%
-%is_shadow_adept_player3%
-%is_shadow_adept_player4%
-%is_shadow_adept_player5%
-%is_shadow_adept_player6%~ EXTERN C0JEVAN JEVAN-3
+IF ~%is_shadow_adept_player1%~ EXTERN C0JEVAN JEVAN-3
 IF ~!%is_shadow_adept_player1%
 OR(5)
 %is_shadow_adept_player2%
