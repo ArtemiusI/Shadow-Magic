@@ -1,0 +1,61 @@
+IF
+  OR(6)
+  %is_shadow_adept_player1%
+  %is_shadow_adept_player2%
+  %is_shadow_adept_player3%
+  %is_shadow_adept_player4%
+  %is_shadow_adept_player5%
+  %is_shadow_adept_player6%
+  !Dead("C0SASMIT")
+  Global("C0SASmithSpawn","AR0334",0)
+THEN
+	RESPONSE #100
+  SetGlobal("C0SASmithSpawn","AR0334",1)
+  CreateCreature("C0SASMI2",[617.230],NE)
+  Continue()
+	END
+
+IF
+  !%is_shadow_adept_player1%
+  !%is_shadow_adept_player2%
+  !%is_shadow_adept_player3%
+  !%is_shadow_adept_player4%
+  !%is_shadow_adept_player5%
+  !%is_shadow_adept_player6%
+  !Dead("C0SASMIT")
+  Global("C0SASmithSpawn","AR0334",1)
+THEN
+	RESPONSE #100
+  SetGlobal("C0SASmithSpawn","AR0334",2)
+  Deactivate("C0SASMI2")
+  Continue()
+	END
+
+IF
+  OR(6)
+  %is_shadow_adept_player1%
+  %is_shadow_adept_player2%
+  %is_shadow_adept_player3%
+  %is_shadow_adept_player4%
+  %is_shadow_adept_player5%
+  %is_shadow_adept_player6%
+  !Dead("C0SASMIT")
+  Global("C0SASmithSpawn","AR0334",2)
+THEN
+	RESPONSE #100
+  SetGlobal("C0SASmithSpawn","AR0334",1)
+  Activate("C0SASMI2")
+  Continue()
+	END
+
+IF
+  OR(2)
+  Dead("C0SASMIT")
+  Global("C0SASmithEnemy","GLOBAL",1)
+  !Global("C0SASmithSpawn","AR0334",-1)
+THEN
+	RESPONSE #100
+  SetGlobal("C0SASmithSpawn","AR0334",-1)
+  Deactivate("C0SASMI2")
+  Continue()
+	END

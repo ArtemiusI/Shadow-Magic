@@ -35,7 +35,7 @@ SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadow
 
 Disadvantages:
 – Incurs a -1 penalty to Wisdom.
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– Suffers a -20% penalty to spell duration and -2 penalty to caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.REPLACE_ME2~
@@ -75,7 +75,7 @@ SHADOW DOUBLE: The shadow disciple creates a copy of <HIMHER>self out of shadows
 
 Disadvantages:
 – Incurs a -1 penalty to Wisdom.
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– Suffers a -20% penalty to spell duration and -2 penalty to caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
@@ -117,7 +117,7 @@ SHADOW DOUBLE: The shadow adept creates a copy of <HIMHER>self out of shadowstuf
 
 Disadvantages:
 – Incurs a -1 penalty to Wisdom.
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– Suffers a -20% penalty to spell duration and -2 penalty to caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
@@ -152,7 +152,7 @@ SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadow
 
 Disadvantages:
 – Incurs a -1 penalty to Wisdom.
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– Suffers a -20% penalty to spell duration and -2 penalty to caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
@@ -187,7 +187,7 @@ SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadow
 
 Disadvantages:
 – Incurs a -1 penalty to Wisdom.
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– Suffers a -20% penalty to spell duration and -2 penalty to caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
@@ -222,7 +222,7 @@ SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadow
 
 Disadvantages:
 – Incurs a -1 penalty to Wisdom.
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– Suffers a -20% penalty to spell duration and -2 penalty to caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
@@ -257,7 +257,7 @@ SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadow
 
 Disadvantages:
 – Incurs a -1 penalty to Wisdom.
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– Suffers a -20% penalty to spell duration and -2 penalty to caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~
@@ -292,7 +292,7 @@ SHADOW DOUBLE: The shadow adept creates a copy of <PRO_HIMHER>self out of shadow
 
 Disadvantages:
 – Incurs a -1 penalty to Wisdom.
-– Suffers a -2 penalty to casting speed and caster level while in daylight.
+– Suffers a -20% penalty to spell duration and -2 penalty to caster level while in daylight.
 – -2 penalty to saving throws against spells of the Invocation and Alteration schools.
 – May not learn or use spells from the Weave.
 – Alignment restricted to non-good.~

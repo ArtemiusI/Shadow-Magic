@@ -1,0 +1,37 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("C0SASMIT")  // Cromwell
+        ClearAllActions()
+        FadeToColor([30.0],0)
+        Wait(1)
+        JumpToPoint([401.348])
+        Face(NW)
+        Wait(1)
+        FadeFromColor([30.0],0)
+        Wait(2)
+        SetSequence(SEQ_CAST)
+        CreateVisualEffect("c0blackf",[401.348])
+        Wait(2)
+        Swing()
+        Wait(2)
+        CreateVisualEffect("c0darkbo",[401.348])
+        Wait(1)
+        Swing()
+        Wait(1)
+        Swing()
+        Wait(1)
+        CreateVisualEffect("c0flmbld",[401.348])
+        Wait(2)
+        FadeToColor([30.0],0)
+        Wait(1)
+        JumpToPoint([503.339])
+        Face(SE)
+        Wait(1)
+        SetAreaScript("",OVERRIDE)
+        FadeFromColor([30.0],0)
+        SetGlobal("C0SASmithForgeStuff","GLOBAL",1)
+        EndCutSceneMode()
+END
+

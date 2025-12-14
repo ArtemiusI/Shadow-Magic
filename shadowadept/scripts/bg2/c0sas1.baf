@@ -1,0 +1,36 @@
+IF
+    Global("C0SASmithDaystar","GLOBAL",1)
+    Global("C0SASmithForgeStuff","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("C0SASmithForgeStuff","GLOBAL",0)
+          TakePartyItem("SW1H06")
+          TakePartyItem("SW1H31")
+          DestroyItem("SW1H06")
+          DestroyItem("SW1H31")
+        GiveItemCreate("C0SAS1H6",Player1,0,0,0)  // Wave +4
+        ActionOverride("C0SASMIT",StartDialogueNoSet([PC]))
+END
+
+IF
+    Global("C0SASmithItem","GLOBAL",1)
+    Global("C0SASmithForgeStuff","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("C0SASmithForgeStuff","GLOBAL",0)
+        GiveItemCreate("C0SAS1H7",Player1,0,0,0)  // Wave +4
+        ActionOverride("C0SASMIT",StartDialogueNoSet([PC]))
+END
+
+IF
+    Allegiance("C0SASMIT",ENEMY)
+THEN
+    RESPONSE #100
+        SetGlobal("C0SASmithEnemy","GLOBAL",1)
+        ActionOverride(Player1,LeaveAreaLUA("AR0334","",[574.385],NW))
+ActionOverride(Player2,LeaveAreaLUA("AR0334","",[580.380],NW))
+ActionOverride(Player3,LeaveAreaLUA("AR0334","",[579.391],NW))
+ActionOverride(Player4,LeaveAreaLUA("AR0334","",[585.385],NW))
+ActionOverride(Player5,LeaveAreaLUA("AR0334","",[590.400],NW))
+ActionOverride(Player6,LeaveAreaLUA("AR0334","",[600.405],NW))
+END

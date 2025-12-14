@@ -1,5 +1,7 @@
 // SCROLLS
 
+COPY ~%MOD_FOLDER%/areas~ ~override~
+
 COPY_EXISTING ~C0SA101A.ITM~ OVERRIDE
 LPF ALTER_EFFECT INT_VAR match_opcode = 319 parameter1 = %eeex_sa_splprot_param1% parameter2 = %eeex_sa_splprot_param2% power = %eeex_sa_splprot_power% special = RESOLVE_STR_REF (~Shadow Adept~) END
 SAY NAME1 ~Scroll~
@@ -534,7 +536,7 @@ LPF ALTER_EFFECT STR_VAR match_resource = C0SA101 resource = C0SA504 END
 LPF ALTER_ITEM_HEADER INT_VAR target = 5 STR_VAR icon = C0SA504A END
 SAY NAME1 ~Scroll~
 SAY NAME2 ~%SA_SPELL_504_NAME%~
-SAY DESC ~%SA_SPELL_504_0ESC%~
+SAY DESC ~%SA_SPELL_504_DESC%~
 
 COPY_EXISTING ~C0SA101A.ITM~ ~OVERRIDE/C0SA505A.ITM~
 WRITE_LONG 0x34 2150
@@ -1421,6 +1423,28 @@ SAY NAME2 ~Jevan Dyrr~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
    LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
 
+COPY ~%MOD_FOLDER%/creatures/c0sasmit.cre~ ~override~
+   ADD_CRE_ITEM ~MINHP1~ #0 #0 #0 ~NONE~ ~lring~
+WRITE_ASCII SCRIPT_OVERRIDE ~c0sasmit~  // override
+WRITE_ASCII DIALOG ~c0sasmit~  // dialogue
+WRITE_ASCII DEATHVAR ~c0sasmit~ // death variable
+SAY NAME1 ~Aldon Val'kar~
+SAY NAME2 ~Aldon Val'kar~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+
+COPY ~%MOD_FOLDER%/creatures/c0sasmit.cre~ ~override/c0sasmi2.cre~
+   ADD_CRE_ITEM ~MINHP1~ #0 #0 #0 ~NONE~ ~lring~
+WRITE_ASCII SCRIPT_OVERRIDE ~c0sasmit~  // override
+WRITE_ASCII DIALOG ~c0sasmit~  // dialogue
+WRITE_ASCII DEATHVAR ~c0sasmi2~ // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 7 target = 1 parameter1 = 75 parameter2 = 255 timing = 9 END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 66 target = 1 parameter1 = 175 parameter2 = 0 timing = 9 END
+
     /////////////////
  
   END ELSE BEGIN
@@ -1448,11 +1472,36 @@ SAY NAME2 ~Jevan Dyrr~
   WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
   WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
 
+COPY ~%MOD_FOLDER%/creatures/c0sasmit.cre~ ~override~
+   ADD_CRE_ITEM ~MINHP1~ #0 #0 #0 ~NONE~ ~lring~
+WRITE_ASCII SCRIPT_OVERRIDE ~c0sasmit~  // override
+WRITE_ASCII DIALOG ~c0sasmit~  // dialogue
+WRITE_ASCII DEATHVAR ~c0sasmit~ // death variable
+SAY NAME1 ~Aldon Val'kar~
+SAY NAME2 ~Aldon Val'kar~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+
+COPY ~%MOD_FOLDER%/creatures/c0sasmit.cre~ ~override/c0sasmi2.cre~
+   ADD_CRE_ITEM ~MINHP1~ #0 #0 #0 ~NONE~ ~lring~
+WRITE_ASCII SCRIPT_OVERRIDE ~c0sasmit~  // override
+WRITE_ASCII DIALOG ~c0sasmit~  // dialogue
+WRITE_ASCII DEATHVAR ~c0sasmi2~ // death variable
+SAY NAME1 ~Shadowy Apparition~
+SAY NAME2 ~Shadowy Apparition~
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SADEPT~))
+  WRITE_BYTE 0x274 (IDS_OF_SYMBOL (~SPECIFIC~ ~SHADOW_ADEPT~))
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 7 target = 1 parameter1 = 75 parameter2 = 255 timing = 9 END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 66 target = 1 parameter1 = 175 parameter2 = 0 timing = 9 END
+
 END
 
 COMPILE EVAL ~%MOD_FOLDER%/dialogue/bg2dial.d~
 COMPILE EVAL ~%MOD_FOLDER%/scripts/bg2/c0jevan.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/bg2/c0sasmi2.baf~
+COMPILE EVAL ~%MOD_FOLDER%/scripts/bg2/c0sas1.baf~
 
+EXTEND_TOP  ~ar0334.bcs~ ~%MOD_FOLDER%/scripts/bg2/ar0334.baf~ EVAL 
 EXTEND_TOP ~ar1105.bcs~ ~%MOD_FOLDER%/scripts/bg2/ar1105.baf~
 EXTEND_TOP ~ar2200.bcs~ ~%MOD_FOLDER%/scripts/bg2/ar2200.baf~
 

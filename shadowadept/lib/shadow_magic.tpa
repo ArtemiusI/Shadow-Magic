@@ -1962,11 +1962,49 @@ SAY UNIDENTIFIED_DESC ~%SA_SPELL_212_DESC%~
 
 COPY_EXISTING ~C0SA213.spl~ ~override~
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 2 parameter2 = 2 timing = 1 STR_VAR resource = C0SA#I0 END
-LPF ALTER_EFFECT
-	INT_VAR
-		match_opcode = 177
-		parameter1 = %eeex_sa_splprot_param1%
-END
+  LPF ALTER_EFFECT
+    INT_VAR
+    match_opcode = 177 // display string
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	STR_VAR
+	  match_resource = C0SA213A
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
   LPF ALTER_EFFECT
     INT_VAR
       check_globals = 1
@@ -3542,31 +3580,99 @@ SAY NAME1 ~%SA_SPELL_811_NAME%~
 SAY UNIDENTIFIED_DESC ~%SA_SPELL_811_DESC%~
 
 COPY_EXISTING ~mislead.spl~ ~override~
-LPF ADD_SPELL_EFFECT
-	INT_VAR
-		check_globals = 1
-		check_headers = 1
-		opcode = 177
-		target = 1
-		timing = 1
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 1
 	STR_VAR
-		resource = c0misled
-END
+	  resource = C0MISLED
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
 COPY_EXISTING ~simulacr.spl~ ~override~
-LPF ADD_SPELL_EFFECT
-	INT_VAR
-		check_globals = 1
-		check_headers = 1
-		opcode = 177
-		target = 1
-		timing = 1
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 1
 	STR_VAR
-		resource = c0simula
-END
+	  resource = C0SIMULA
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
 
 COPY_EXISTING ~C0SA812.spl~ ~override~
 LPF ADD_SPELL_CFEFFECT INT_VAR opcode = 146 target = 1 parameter1 = 8 parameter2 = 2 timing = 1 STR_VAR resource = C0SA#V0 END

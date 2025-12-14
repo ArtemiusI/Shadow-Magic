@@ -109,3 +109,165 @@ THEN
 	ApplySpellRES("C0SA903B",Player6)
 	DisplayStringHead(Player6,~Nightinger's Boon: Permanent +2 Constitution, +1 to all saves, -1 casting time~)
 END
+
+IF
+    OR(2)
+    TimeOfDay(DUSK)
+    TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H5",Player1)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player1)
+    ActionOverride(Player1,TransformItem("C0SAS1H5","C0SAS1H6"))
+    ActionOverride(Player1,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    !TimeOfDay(DUSK)
+    !TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H6",Player1)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player1)
+    ActionOverride(Player1,TransformItem("C0SAS1H6","C0SAS1H5"))
+    ActionOverride(Player1,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    OR(2)
+    TimeOfDay(DUSK)
+    TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H5",Player2)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player2)
+    ActionOverride(Player2,TransformItem("C0SAS1H5","C0SAS1H6"))
+    ActionOverride(Player2,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    !TimeOfDay(DUSK)
+    !TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H6",Player2)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player2)
+    ActionOverride(Player2,TransformItem("C0SAS1H6","C0SAS1H5"))
+    ActionOverride(Player2,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    OR(2)
+    TimeOfDay(DUSK)
+    TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H5",Player3)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player3)
+    ActionOverride(Player3,TransformItem("C0SAS1H5","C0SAS1H6"))
+    ActionOverride(Player3,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    !TimeOfDay(DUSK)
+    !TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H6",Player3)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player3)
+    ActionOverride(Player3,TransformItem("C0SAS1H6","C0SAS1H5"))
+    ActionOverride(Player3,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    OR(2)
+    TimeOfDay(DUSK)
+    TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H5",Player4)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player4)
+    ActionOverride(Player4,TransformItem("C0SAS1H5","C0SAS1H6"))
+    ActionOverride(Player4,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    !TimeOfDay(DUSK)
+    !TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H6",Player4)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player4)
+    ActionOverride(Player4,TransformItem("C0SAS1H6","C0SAS1H5"))
+    ActionOverride(Player4,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    OR(2)
+    TimeOfDay(DUSK)
+    TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H5",Player5)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player5)
+    ActionOverride(Player5,TransformItem("C0SAS1H5","C0SAS1H6"))
+    ActionOverride(Player5,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    !TimeOfDay(DUSK)
+    !TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H6",Player5)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player5)
+    ActionOverride(Player5,TransformItem("C0SAS1H6","C0SAS1H5"))
+    ActionOverride(Player5,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    OR(2)
+    TimeOfDay(DUSK)
+    TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H5",Player6)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player6)
+    ActionOverride(Player6,TransformItem("C0SAS1H5","C0SAS1H6"))
+    ActionOverride(Player6,EquipMostDamagingMelee())
+    Continue()
+END
+
+IF
+    !TimeOfDay(DUSK)
+    !TimeOfDay(NIGHT)
+    !AreaCheck("C0SAS1")
+    HasItemEquiped("C0SAS1H6",Player6)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("SPSTRENH",Player6)
+    ActionOverride(Player6,TransformItem("C0SAS1H6","C0SAS1H5"))
+    ActionOverride(Player6,EquipMostDamagingMelee())
+    Continue()
+END

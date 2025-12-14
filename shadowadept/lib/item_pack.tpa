@@ -25,11 +25,62 @@ END
 COPY ~%MOD_FOLDER%/itempack/c0saluck.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0salea2.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0salea2.itm~ ~override~
-  LPF ALTER_EFFECT
+  LPF ADD_ITEM_EQEFFECT
     INT_VAR
-      match_opcode = 177 // display string
- parameter1 = %eeex_sa_splprot_param1%
- parameter2 = %eeex_sa_splprot_param2%
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = C0SALEA2
+  END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = C0SALUCK
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
   END
 SAY NAME1 ~Studded Leather Armor~
 SAY NAME2 ~Shadowskin +2~
@@ -51,11 +102,51 @@ Weight: 2~
 
 COPY ~%MOD_FOLDER%/itempack/c0sacha2.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sacha2.itm~ ~override~
-  LPF ALTER_EFFECT
+  LPF ADD_ITEM_EQEFFECT
     INT_VAR
-      match_opcode = 177 // display string
- parameter1 = %eeex_sa_splprot_param1%
- parameter2 = %eeex_sa_splprot_param2%
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = C0SACHA2
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
   END
 SAY NAME1 ~Chain Mail~
 SAY NAME2 ~The Onyx Mail +3~
@@ -787,17 +878,52 @@ Weight: 7~
 COPY ~%MOD_FOLDER%/itempack/c0sawand.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sawand.spl~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sawan1.itm~ ~override~
-  LPF ADD_ITEM_EFFECT
-	INT_VAR
-		insert_point = 0
-		opcode = 177
-		target = 1
-		duration = 0
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
 	STR_VAR
-		resource = C0SAWAND
-END
+	  resource = C0SAWAND
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
   LPF ALTER_ITEM_HEADER
 	INT_VAR
 	projectile = c0proj06
@@ -824,17 +950,52 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan2.itm~ ~override~
-  LPF ADD_ITEM_EFFECT
-	INT_VAR
-		insert_point = 0
-		opcode = 177
-		target = 1
-		duration = 0
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
 	STR_VAR
-		resource = C0SAWAND
-END
+	  resource = C0SAWAND
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
   LPF ADD_SPELL_EFFECT
     INT_VAR
       opcode = 139
@@ -871,17 +1032,52 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan3.itm~ ~override~
-  LPF ADD_ITEM_EFFECT
-	INT_VAR
-		insert_point = 0
-		opcode = 177
-		target = 1
-		duration = 0
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
 	STR_VAR
-		resource = C0SAWAND
-END
+	  resource = C0SAWAND
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
   LPF ALTER_ITEM_HEADER
 	INT_VAR
 	projectile = c0proj22
@@ -913,17 +1109,52 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan4.itm~ ~override~
-  LPF ADD_ITEM_EFFECT
-	INT_VAR
-		insert_point = 0
-		opcode = 177
-		target = 1
-		duration = 0
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
 	STR_VAR
-		resource = C0SAWAND
-END
+	  resource = C0SAWAND
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
   LPF ALTER_ITEM_HEADER
 	INT_VAR
 	projectile = c0proj02
@@ -950,17 +1181,52 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan5.itm~ ~override~
-  LPF ADD_ITEM_EFFECT
-	INT_VAR
-		insert_point = 0
-		opcode = 177
-		target = 1
-		duration = 0
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
 	STR_VAR
-		resource = C0SAWAND
-END
+	  resource = C0SAWAND
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
   LPF ALTER_ITEM_HEADER
 	INT_VAR
 	header = 1
@@ -988,17 +1254,52 @@ Requires:
 Weight: 1~
 
 COPY ~%MOD_FOLDER%/itempack/c0sawan6.itm~ ~override~
-  LPF ADD_ITEM_EFFECT
-	INT_VAR
-		insert_point = 0
-		opcode = 177
-		target = 1
-		duration = 0
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
 	STR_VAR
-		resource = C0SAWAND
-END
+	  resource = C0SAWAND
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
 SAY NAME1 ~Wand~
 SAY NAME2 ~Wand of Shadow Binding~
 SAY UNIDENTIFIED_DESC ~Wands are 1 1/4 feet long and slender. They are made of ivory, bone, or wood and are usually tipped with something – metal, crystal, stone, etc. They are fragile and tend to break easily. Because of this, they are often kept in cases. Wands generally store one or more magical effects powered by charges, each use costing one or more charges (depending in the item). When a wand runs out of charges, it is consumed and destroyed.~
@@ -1021,14 +1322,62 @@ Weight: 1~
 COPY ~%MOD_FOLDER%/itempack/c0sabo1a.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0sabo1b.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/c0saboo1.itm~ ~override~
-  LPF ALTER_EFFECT
+  LPF ADD_ITEM_EQEFFECT
     INT_VAR
-      check_globals = 1
-      check_headers = 1
-      match_opcode = 177 // display string
-      match_parameter1 = 0
- parameter1 = %eeex_sa_splprot_param1%
- parameter2 = %eeex_sa_splprot_param2%
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = C0SABO1A
+  END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = C0SABO1B
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
   END
 SAY NAME1 ~Boots~
 SAY NAME2 ~Night Treads~
@@ -1282,13 +1631,85 @@ COPY ~%MOD_FOLDER%/itempack/leat19b.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19c.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19d.eff~ ~override~
 COPY ~%MOD_FOLDER%/itempack/leat19.itm~ ~override~
-  LPF ALTER_EFFECT
-	INT_VAR
-		insert_point = 0
-		match_opcode = 177
-		parameter1 = %eeex_sa_splprot_param1%
-		parameter2 = %eeex_sa_splprot_param2%
-END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = LEAT19A
+  END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = LEAT19B
+  END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = LEAT19C
+  END
+  LPF ADD_ITEM_EQEFFECT
+    INT_VAR
+      insert_point = 0
+      opcode = 177 // display string
+	  target = 1
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter2 = 9
+	  timing = 2
+	STR_VAR
+	  resource = LEAT19D
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SASORC~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SABARD~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SACM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFM~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMT~)
+  END
+  LPF CLONE_EFFECT
+    INT_VAR
+	  match_parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SADEPT~)
+	  parameter1 = IDS_OF_SYMBOL (~KIT~ ~C0SAFMC~)
+  END
 SAY DESC ~This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer immunity to level drain, but while worn by a shadow adept, it greatly empowers them, allowing them to use their magic with less risk.
 
 STATISTICS:
@@ -1304,3 +1725,92 @@ Requires:
 
 Weight: 10~
 END
+
+COPY ~%MOD_FOLDER%/itempack/c0sas1h5.itm~ ~override~
+SAY NAME1 ~Long Sword~
+SAY NAME2 ~Daystar +3~
+SAY DESC ~Sunblade: Daystar
+Whether created specifically for use in the service of Torm or appropriated at some point in the long history of the church, paladins of the Loyal Fury have made good use of Daystar in their battles against evil undead. Through magic or blessing it is empowered with the Sunray, a force of pure life energy so potent that it slays both living and unliving.
+
+Using the power of the Shadow Weave and arcane smithery, a parallel blade to Daystar was forged and fused with this holy weapon, turning it into a weapon of duality. During daytime, it appears the same as it ever has, but at night it takes on the form of its sister blade, Duskstar.
+
+STATISTICS:
+
+Equipped abilities:
+– Negative Plane Protection
+– Duality: When the sun sets, this weapon transforms into Duskstar
+– Solar Eclipse: After using Daystar's Sunray ability, a Shadow Weave wielder will no longer be negatively affected by daylight for the next two hours. This protection is lost if the blade transforms back to Duskstar.
+
+Charge abilities:
+– Sunray once per day
+ Damage: 3d6 (Save vs. Spell or be blinded for 1 turn)
+ Undead: An additional 1d6 points of damage per level of caster (Save vs. Spell or be destroyed)
+ Range: 20 ft.
+ Area: 15-ft. radius
+
+THAC0: +3, +5 vs. evil creatures
+Damage: 1d8+3, +5 vs. evil creatures, does double damage against undead
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+COPY ~%MOD_FOLDER%/itempack/c0sas1h6.itm~ ~override~
+SAY NAME1 ~Long Sword~
+SAY NAME2 ~Duskstar +3~
+SAY DESC ~Gloamblade: Duskstar
+Whether created specifically for use in the service of Torm or appropriated at some point in the long history of the church, paladins of the Loyal Fury have made good use of Daystar in their battles against evil undead. Through magic or blessing it is empowered with the Sunray, a force of pure life energy so potent that it slays both living and unliving.
+
+Using the power of the Shadow Weave and arcane smithery, a parallel blade to Daystar was forged and fused with this holy weapon, turning it into a weapon of duality. During daytime, it appears the same as it ever has, but at night it takes on the form of its sister blade, Duskstar.
+
+STATISTICS:
+
+Equipped abilities:
+– Negative Plane Protection
+– Duality: When the sun sets, this weapon transforms into Daystar
+– Lunar Eclipse: After using Duskstar's Nightfall ability, a Shadow Weave wielder gains a +1 bonus to damage and casting speed for the next two hours. This bonus is lost if the blade transforms back to Daystar.
+
+Charge abilities:
+– Nightfall once per day
+ Special: The wielder summons a rainfall of shadowstuff centered on themself, dealing 1d6 damage per round to enemies and inflicting a cumulative -1 penalty to Armor Class and Saving Throws for one turn. Non-hostile creatures are healed for 2d6 hit points each round.
+ Duration: 6 rounds
+ Range: Self
+ Area: 50-ft. radius
+
+THAC0: +3
+Damage: 1d8+3, +1 magic cold damage, does double damage against undead
+Damage type: Slashing
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 2~
+
+COPY ~%MOD_FOLDER%/itempack/c0sas1h7.itm~ ~override~
+SAY NAME1 ~Long Sword~
+SAY NAME2 ~Varscona +4~
+SAY DESC ~Blades of this type were long used by Sharran priests during the sacrificial rites of "Feast of the Moon" ceremonies. Legends say that, when she passed on, the remains of this sword's wielder were mummified and the blade was placed within her chest as a symbol of power. In the first stage of a long forgotten ritual, she was to have been exhumed in a season, born again in some new form. Unfortunately, cult wars killed the few that knew of her existence; her tomb became a prison where she was forgotten, and there she developed a rage that bordered on insanity. Her grave was eventually found, but it was deserted and gave no indication of her whereabouts. Some venture to say that her anger was so concentrated that she became one with the very blade of her weapon. Regardless, after hundreds of years surrounded by constant hate, the sword harvested a power of its own. It is now exceedingly deadly in combat.
+
+With enhancements made by a smith practiced in shadow magic, the latent powers within Varscona have been further strengthened, its chilling bite now restoring some of the wielder's vitality with each strike.
+
+STATISTICS:
+
+Combat abilities:
+– The wielder is healed for the cold damage dealt by this weapon
+
+THAC0: +4
+Damage: 1d8+4, +1d4 cold damage
+Damage type: Slashing
+Speed Factor: 1
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
