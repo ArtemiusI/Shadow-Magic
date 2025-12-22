@@ -1151,6 +1151,10 @@ COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN16.ITM~
 COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN17.ITM~
 COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN18.ITM~
 
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RNDTRES.2DA~ THEN BEGIN
+  COPY ~%MOD_FOLDER%/2da/rndtres/rndtres.2da~ ~override~
+END
+
 APPEND ~RNDTRES.2DA~
 ~C0SARN01 C0SA101A C0SA103A C0SA106A C0SA107A *        *        *        *        *        *        *        *        *        *        *        *        *        *        *        *
 C0SARN02 C0SA102A C0SA104A C0SA105A C0SA118A C0SA109A C0SA110A C0SA111A C0SA112A *        *        *        *        *        *        *        *        *        *        *        *
