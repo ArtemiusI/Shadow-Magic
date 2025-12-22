@@ -1303,6 +1303,9 @@ COPY_EXISTING ~%bg1_eet_symbol%3901.are~ ~override~
         item_to_add = ~C0SABOX1~
       END
 
+ACTION_IF GAME_INCLUDES ~sod~
+THEN BEGIN
+
 COPY_EXISTING ~bd0115.are~ ~override~
       LPF ADD_AREA_ITEM
       INT_VAR
@@ -1358,6 +1361,8 @@ COPY_EXISTING ~bd7410.are~ ~override~
       STR_VAR
         item_to_add = ~C0SABOX2~
       END
+
+END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~ANDRIS.cre~ THEN BEGIN
 COPY_EXISTING ~ANDRIS.cre~ ~override~
