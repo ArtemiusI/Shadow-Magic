@@ -1,7 +1,5 @@
 IF
-  Dead("SHADEL")
   Global("C0SACiceroSpawn","GLOBAL",0)
-  Global("C0SAShadeLordKilled","GLOBAL",1)
 THEN
   RESPONSE #100
     SetGlobal("C0SACiceroSpawn","GLOBAL",1)
